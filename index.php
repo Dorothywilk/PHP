@@ -5,6 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>1er Pgm</title>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	
 	<body>
@@ -15,8 +16,8 @@
 		
 		<article>
 			
-			<?php echo 'Hello World !<br>
-			La somme de 1 et 2 fait '. (1+2); ?>
+			
+			<?php include './tuto/premier_pgm.php' ?>
 
 			<ol>
 				<li>Un</li>
