@@ -10,9 +10,9 @@
 	<body>
 	
 		<header>
-			Mon entête
+			Mon entête<hr>
 		</header>
-
+		
 		<article>
 			
 			<?php echo 'Hello World !<br>
@@ -24,6 +24,7 @@
 				<li>Trois</li>
 			</ol>
 		
+			<hr>
 		</article>
 
 	<footer>
