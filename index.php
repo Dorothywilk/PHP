@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-	
 
 	<head>
 		<meta charset="UTF-8">
@@ -11,7 +10,8 @@
 	<body>
 	
 		<header>
-			Mon entête<hr>
+			<a href="https://apprendre-php.com/tutoriels.html" target="_blank">Tutoriel</a>
+		<hr>
 		</header>
 		
 		<article>
@@ -29,7 +29,7 @@
 		</article>
 
 	<footer>
-		Mon footer
+		Do 's website
 	</footer>
 	
 	</body>
