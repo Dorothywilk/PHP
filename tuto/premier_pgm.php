@@ -31,7 +31,7 @@ Pi vaut env. <b>' . M_PI . '</b><br><br>';
 define('FORMULE_EAU','H2O');
  
 // Affichage de sa valeur
-echo 'Formule chimique de l\'eau :, FORMULE_EAU </br></br>';
+echo 'Formule chimique de l\'eau : FORMULE_EAU </br></br>';
 
 /* Déclaration de variables de types différents
            
