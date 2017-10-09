@@ -10,7 +10,7 @@
 	<body>
 	
 		<header>
-			<a href="https://apprendre-php.com/tutoriels.html" target="_blank">Tutoriel</a>
+			<a href="https://apprendre-php.com/tutoriels.html" target="_blank" title="Lien du totoriel d'Emacs">Tutoriel</a>
 		<hr>
 		</header>
 		
