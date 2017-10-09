@@ -19,6 +19,8 @@
 			
 			<?php include './tuto/premier_pgm.php' ?>
 
+			<hr>
+
 			<ol>
 				<li>Un</li>
 				<li>Deux</li>
