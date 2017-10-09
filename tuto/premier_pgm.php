@@ -33,11 +33,17 @@ define('FORMULE_EAU','H2O');
 // Affichage de sa valeur
 echo 'Formule chimique de l\'eau :, FORMULE_EAU </br></br>';
 
+/* Déclaration de variables de types différents
 
+Correct	Incorrect	Explications
+Déclaration de variables PHP
+$variable	variable	Une variable doit commencer par $
+$Variable1	$Variable 1	Les espaces sont interdits
+$variable_suite	$variable-suite	Le tiret est interdit
+$_variable	$-variable	Le tiret est interdit
+$variable2	$2variable	Il ne peut y avoir de chiffre après le $
 
-
-
-
+*/
 
 
 
