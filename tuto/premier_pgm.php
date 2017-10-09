@@ -23,9 +23,15 @@ echo 'Je suis une ligne de texte après le commentaire multiligne !<hr>';
 define('TEMPERATURE_EBULLITION_EAU', 100);
  
 // Affichage de sa valeur
-echo 'L\'eau bout à ', TEMPERATURE_EBULLITION_EAU ,'°C<br><br>
+echo 'L\'eau bout à ', TEMPERATURE_EBULLITION_EAU ,'°C </br></br>
 
 Pi vaut env. <b>' . M_PI . '</b><br><br>';
+
+// Déclaration de la constante
+define('FORMULE_EAU','H2O');
+ 
+// Affichage de sa valeur
+echo 'Formule chimique de l\'eau :, FORMULE_EAU </br></br>';
 
 
 
