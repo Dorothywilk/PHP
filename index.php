@@ -27,10 +27,10 @@
 				<li>Trois</li>
 			</ol>
 		
-			<hr>
 		</article>
-
+	
 	<footer>
+	<hr>
 		Do 's website
 	</footer>
 	
