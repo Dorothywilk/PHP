@@ -24,7 +24,6 @@
 			<ol>
 				<li>Un</li>
 				<li>Deux</li>
-				<li>Trois</li>
 			</ol>
 		
 		</article>
