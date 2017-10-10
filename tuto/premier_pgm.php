@@ -62,6 +62,17 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
   $cours = array('physique','chimie','informatique','philosophie'); // Type tableau
   $unEtudiant = new Etudiant (); // Objet de type Etudiant
 */
+/* Pour les tableaux, on recontre le plus souvent cette notation :
+$t = [item1, item2];
+Exemple suit...
+*/
+echo '<hr>';
+
+$tablo_des_prenoms = ['Pierre', 'Paul', 'Jacques'];
+echo 'On peut le voir ensuite dans la page web :';
+echo '<pre>';
+print_r($tablo_des_prenoms);
+echo '</pre>';
 
   $prenom = 'Hugo';
   $age = 19;
