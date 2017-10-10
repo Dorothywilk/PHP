@@ -1,6 +1,18 @@
 <?php
 
 
+
+
+  // Déclaration des variables
+  $prenom = 'Hugo';
+  $nom = 'Hamon';
+  // On concatène $nom dans $prenom
+  $nomComplet = $prenom . ' '. $nom;
+  // Affiche 'Hugo Hamon'
+  echo $nomComplet;
+
+
+
 /* Déclaration de variables de types différents
            
            Déclaration de variables PHP
@@ -39,7 +51,7 @@ Exemple suit...
 
 
 for ($i=1; $i<=2; $i++)
-echo'<h1 style ="color:blue">' . $user[$i]['prenom'].'<hr><hr></h1>';
+echo'<h1 style ="color:blue">' . $user[$i]['prenom'] . '<hr><hr></h1>';
 
 
   $prenom1 = 'Hugo';
