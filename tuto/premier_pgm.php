@@ -1,6 +1,9 @@
 <?php
+echo '<strong> Hello Lionel !</strong></br></br>';
 
-echo '<strong> Hello World !</strong></br></br>';
+echo 'Tu m\'ennuyes vraiment, d\'où du coup je suis très en colère !!!! <hr>' ;
+
+
  
 // Ceci est un premier commentaire sur une ligne
 
@@ -17,6 +20,9 @@ echo 'Bonjour le monde !</br></br>';
 */
 
 echo 'Je suis une ligne de texte après le commentaire multiligne !<hr>';
+
+
+
 
 
 // Déclaration de la constante
@@ -71,6 +77,10 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
   echo '<br/>';
   echo $age; 
   echo '</br></br>';       // Affiche 18
+
+
+
+
 
 $a=3;
 
