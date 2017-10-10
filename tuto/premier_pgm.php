@@ -1,9 +1,9 @@
 <?php
 echo '<strong> Hello Lionel !</strong></br></br>';
 
-echo 'Tu m\'ennuyes vraiment, d\'où du coup je suis très en colère !!!! <hr>' ;
+echo '- Tu m\'ennuyes vraiment, d\'où du coup je suis très en colère !!!! <br>' ;
 
-
+echo '- Je t\'ennuie pk ?!?<hr>';
  
 // Ceci est un premier commentaire sur une ligne
 
@@ -37,7 +37,7 @@ Pi vaut env. <b>' . M_PI . '</b><br><br>';
 define('FORMULE_EAU','H2O');
  
 // Affichage de sa valeur
-echo 'Formule chimique de l\'eau :, FORMULE_EAU </br></br>';
+echo 'Formule chimique de l\'eau : FORMULE_EAU </br></br>';
 
 /* Déclaration de variables de types différents
            
