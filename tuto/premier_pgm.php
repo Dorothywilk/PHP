@@ -1,6 +1,5 @@
 <?php
-
-echo '<strong> Hello World !</strong></br></br>';
+echo '<strong> Hello Lionel !</strong></br></br>';
  
 // Ceci est un premier commentaire sur une ligne
 
@@ -31,7 +30,7 @@ Pi vaut env. <b>' . M_PI . '</b><br><br>';
 define('FORMULE_EAU','H2O');
  
 // Affichage de sa valeur
-echo 'Formule chimique de l\'eau :, FORMULE_EAU </br></br>';
+echo 'Formule chimique de l\'eau : FORMULE_EAU </br></br>';
 
 /* Déclaration de variables de types différents
            
@@ -69,9 +68,6 @@ print_r($tablo_des_prenoms);
 echo '</pre>';
 
 
-
-echo '<hr>';
-
   $prenom = 'Hugo';
   $age = 19;
  
@@ -86,6 +82,10 @@ echo '<hr>';
   echo '<br/>';
   echo $age; 
   echo '</br></br>';       // Affiche 18
+
+
+
+
 
 $a=3;
 
