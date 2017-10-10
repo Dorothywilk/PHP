@@ -3,6 +3,10 @@ echo '<strong> Hello Lionel !</strong></br></br>';
 
 echo 'Tu m\'ennuyes vraiment, d\'où du coup je suis très en colère !!!! <hr>' ;
 
+echo 'Oui je ne supporte plus que tu me dises de t\'écrire le matin quand je me réveille, alors que toi tu te permets de ne pas me donner de nouvelles depuis cette nuit. Et de grâce ne me dit pas que tu dormais , cette heure à laquelle tu me  réponds je la connais de trop. De plus tu n\'est pas capable de téléphoner. Zut et zut et zut. !!!!!!!!!';
+
+
+
 
  
 // Ceci est un premier commentaire sur une ligne
