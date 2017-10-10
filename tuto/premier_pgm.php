@@ -1,9 +1,5 @@
 <?php
 echo '<strong> Hello Lionel !</strong></br></br>';
-
-echo '- Tu m\'ennuyes vraiment, d\'où du coup je suis très en colère !!!! <br>' ;
-
-echo '- Je t\'ennuie pk ?!?<hr>';
  
 // Ceci est un premier commentaire sur une ligne
 
