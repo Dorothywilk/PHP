@@ -1,36 +1,5 @@
 <?php
-echo '<strong> Hello Lionel !</strong></br></br>';
- 
-// Ceci est un premier commentaire sur une ligne
 
-echo 'Hello World !</br></br>';
-
-# Ceci est un second commentaire sur une ligne
-
-echo 'Bonjour le monde !</br></br>';
-
-/* 
-  Ce programme a été écrit par Emacs
-
-  Il affiche la chaîne 'Hello Word' ! à l'écran
-*/
-
-echo 'Je suis une ligne de texte après le commentaire multiligne !<hr>';
-
-
-// Déclaration de la constante
-define('TEMPERATURE_EBULLITION_EAU', 100);
- 
-// Affichage de sa valeur
-echo 'L\'eau bout à ', TEMPERATURE_EBULLITION_EAU ,'°C </br></br>
-
-Pi vaut env. <b>' . M_PI . '</b><br><br>';
-
-// Déclaration de la constante
-define('FORMULE_EAU','H2O');
- 
-// Affichage de sa valeur
-echo 'Formule chimique de l\'eau : FORMULE_EAU </br></br>';
 
 /* Déclaration de variables de types différents
            
@@ -59,34 +28,46 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
 $t = [item1, item2];
 Exemple suit...
 */
-echo '<hr>';
 
-$tablo_des_prenoms = ['Pierre', 'Paul', 'Jacques'];
-echo 'On peut le voir ensuite dans la page web :';
-echo '<pre>';
-print_r($tablo_des_prenoms);
-echo '</pre>';
+	$user[1]['prenom']='Hugo';
+	$user[1]['age']=21;
 
 
-  $prenom = 'Hugo';
-  $age = 19;
+	$user[2]['prenom']='Hadrien';
+	$user[2]['age']=18;
+
+
+
+for ($i=1; $i<=2; $i++)
+echo'<h1 style ="color:blue">' . $user[$i]['prenom'].'<hr><hr></h1>';
+
+
+  $prenom1 = 'Hugo';
+  $age1 = 21;
  
-  echo $prenom;        // Affiche 'Hugo'
-  echo '<br/>';
-  echo $age;        // Affiche 19
- 
-  $prenom = 'Hadrien';
-  $age = 18;
- 
-  echo $prenom;        // Affiche 'Hadrien'
-  echo '<br/>';
-  echo $age; 
-  echo '</br></br>';       // Affiche 18
+  echo $prenom1;        // Affiche 'Hugo'
+  echo ' a ';
+  echo $age1;        // Affiche 19
+  echo ' ans' . '<hr>';
 
+
+  // Avantage de la concaténation: 1 seule fois echo appelé.
+  $prenom2 = 'Hadrien';
+  $age2 = 18;
+ 
+  echo $prenom2 . ' a ' . $age2  . ' ans';
+
+echo '<hr><hr>';
+
+// Ici
+
+echo $prenom1 . ' a ' . $age1 . ' ans' ;
+
+echo '<hr><hr>';
 
 
 
 
 $a=3;
 
-echo 'Ma var <b>$a</b> vaut <b>' . $a . '</b>';
+// echo 'Ma var <b>$a</b> vaut <b>' . $a . '</b>';
