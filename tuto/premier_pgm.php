@@ -18,9 +18,6 @@ echo 'Bonjour le monde !</br></br>';
 echo 'Je suis une ligne de texte après le commentaire multiligne !<hr>';
 
 
-
-
-
 // Déclaration de la constante
 define('TEMPERATURE_EBULLITION_EAU', 100);
  
