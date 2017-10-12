@@ -28,7 +28,7 @@
 		
 			<footer>
 			<hr>
-				&copy;GC7
+				&copy;2017 - GC7
 			</footer>
 		</div>
 	</body>
