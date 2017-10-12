@@ -12,12 +12,11 @@
 		<header>
 			<a href="https://apprendre-php.com/tutoriels.html" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a>
 			<a href="a">Techs GC7</a>
-		<hr>
+			<hr>
 		</header>
 		
 		<article>
-			
-			
+						
 			<?php include './tuto/premier_pgm.php' ?>
 
 			<hr>
@@ -29,11 +28,11 @@
 		
 		</article>
 	
-	<footer>
-	<hr>
-		Do 's website
-	</footer>
-	
+		<footer>
+		<hr>
+			Do 's website
+		</footer>
+		
 	</body>
 
 </html>
