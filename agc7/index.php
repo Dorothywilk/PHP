@@ -30,6 +30,9 @@
 			<hr>
 				&copy;2017 - GC7
 			</footer>
+			<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
+			<script src="assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+			<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
 		</div>
 	</body>
 
