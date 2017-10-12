@@ -19,6 +19,9 @@
 			
 			<article>
 
+				<?php include './content/test_semantic.html' ?>
+				<hr>
+				En cours: 
 				<?php include './installation.php' ?>
 
 			</article>
