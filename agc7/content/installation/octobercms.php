@@ -65,6 +65,7 @@
         <li>Lovata.Toolbox ( tool -> Toolbox )</li>
       </div>
     </div>
+    <div class="ui message"></div>
 
   </div>
 

@@ -23,14 +23,13 @@
         });
 
 
-    $('#tab23').click();
+    $('#tab31').click();
 
 
     $('#context1 .menu .item')
         .tab({
             context: $('#context1')
-        })
-    ;
+        });
 
     $('.examplemenu .menu .browse')
         .popup({
@@ -41,19 +40,23 @@
                 show: 300,
                 hide: 800
             }
-        })
-    ;
+        });
 
+    $('#git').on('click', function () {
+        $('.ui.basic.modal').modal('show');
+    });
 
-    // $('#MoviesFilter').on('change','input, select', function(){
-    // 	var $form = $(this).closest('form');
-    // 	$form.request();
-    // })
+//$('.ui.basic.modal').modal('show');
+// $('#MoviesFilter').on('change','input, select', function(){
+// 	var $form = $(this).closest('form');
+// 	$form.request();
+// })
 
     setTimeout(function () {
         console.log(new Date() + ': OK, prêt !')
     }, 3000);
 
 
-})(jQuery);
+})
+(jQuery);
 

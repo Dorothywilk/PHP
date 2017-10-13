@@ -1,8 +1,19 @@
 .container {
-	// background-color: white;
-	padding-top: 20px;
-	width: 97%;
-	margin: 0 auto;
-	font-size: 1.2em;
+/ / background-color: white;
+    padding-top: 20px;
+    width: 97%;
+    margin: 0 auto;
+    font-size: 1.2em;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
+.gc7 .ui.message p {
+    color: blue;
+}
+
+.justify {
+    text-align: justify;
+}
