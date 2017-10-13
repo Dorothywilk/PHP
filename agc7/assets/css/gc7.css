@@ -34,10 +34,10 @@ a {
 }
 
 a:hover {
-    color: green;
-    text-decoration: underline;
+    color: blue;
+    text-decoration: overline underline;
     text-shadow: 0 0 3px orange;
-    transition: all 3s ease-in-out;
+    transition: all .7s ease-in-out;
     cursor: pointer;
 }
 
@@ -50,5 +50,5 @@ a.navbar-brand:hover {
 }
 
 #opop {
-/ / color: blue;
+// color: blue;
 }

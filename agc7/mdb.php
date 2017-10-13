@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Install GC7</title>
   <link rel="shortcut icon" href="/agc7/assets/images/favicon.ico"/>
-  <!-- <link rel="stylesheet" href="../agc7/assets/css/semantic.min.css"> -->
+  <link rel="stylesheet" href="../agc7/assets/css/semantic.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="../agc7/assets/css/bootstrap.min.css"> -->
 
@@ -19,7 +19,6 @@
 <div class="container">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark blue darken-3">
-
 
     <!-- Logo -->
       <span class="nav-item active logo-sn waves-light">
@@ -47,7 +46,7 @@
           <a class="nav-link" href="#" style="margin-left: 30px;">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="https://mdbootstrap.com/components/" target="_blank">Doc MDB</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
@@ -75,7 +74,7 @@
 
   <div class="bg-primary clearfix" style="margin: 15px; width: 100%; margin-left: 0; ">
     <button class="btn btn-secondary float-left">Exemple Bouton floated left</button>
-    <button class="btn btn-red float-right">Exemple Bouton floated right</button>
+    <button class="btn btn-yellow float-right">Exemple Bouton floated right</button>
   </div>
 
   <div class="embed-responsive embed-responsive-16by9">
@@ -85,21 +84,25 @@
   <article>
 
     <form class="form-inline" style="margin-top: 20px;">
+
       <div class="md-form">
         <i class="fa fa-user prefix"></i>
         <input type="text" id="form1" class="form-control">
         <label for="form1">Saisissez votre nom</label>
       </div>
+
       <div class="md-form">
         <i class="fa fa-envelope prefix"></i>
         <input type="text" id="form2" class="form-control">
         <label for="form2">Saisissez votre email</label>
       </div>
+
       <div class="md-form">
         <i class="fa fa-lock prefix"></i>
         <input type="password" id="form10" class="form-control validate">
         <label for="form10" data-error="wrong" data-success="right">Saississez votre code</label>
       </div>
+
       <!--Basic textarea-->
       <div class="md-form">
         <textarea type="text" id="form7" class="md-textarea"></textarea>
@@ -112,9 +115,11 @@
         <textarea type="text" id="form8" class="md-textarea"></textarea>
         <label for="form8">Préfix Icône</label>
       </div>
+
       <div class="md-form form-group">
-        <a class="btn btn-primary btn-lg">Login</a>
+        <a class="btn btn-primary btn-lg">Enregistrer</a>
       </div>
+
       <div class="form-group">
         <input type="checkbox" id="checkbox1">
         <label for="checkbox1">Classic checkbox</label>
@@ -129,17 +134,28 @@
 
     <section>
       <br>
+
       <!-- <div class="md-form" style="width: 22rem;"> -->
-      <div class="md-form" style="width: 22rem;">
+      <div class="md-form" style="width: 10rem;">
         <input id="input-char-counter" type="text" length="10">
         <label for="input-char-counter">Champ texte</label>
       </div>
     </section>
 
     <div class="md-form">
-      <textarea id="textarea-char-counter" class="md-textarea" length="10"></textarea>
+      <textarea id="textarea-char-counter" class="md-textarea" length="30"></textarea>
       <label for="textarea-char-counter">Saississez votre texte ci-dessous</label>
     </div>
+
+
+    <?php
+
+    $prenom='Jade';
+    $nom= 'D.';
+    $bio='Etudiante';
+    $sonSlogan='Caca<br><br>poumpoum !'
+
+    ?>
 
     <!--Card-->
     <div class="card m-5" style="width: 22rem;">
@@ -150,7 +166,7 @@
              alt="Tof">
         <a href="#">
           <div class="mask flex-center">
-            <h2 class="font-weight-bold	purple-text">Effet Zoom</h2>
+            <h2 class="font-weight-bold	rose-text text-center"><?= $sonSlogan ?></h2>
           </div>
           <div class="mask"></div>
         </a>
@@ -159,11 +175,10 @@
       <!--Card content-->
       <div class="card-body">
         <!--Title-->
-        <h4 class="card-title">Card title</h4>
+        <h4 class="card-title"><?php echo $prenom . ' ' . $nom; ?></h4>
         <!--Text-->
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
+        <p class="card-text"><?= $bio ?></p>
+        <a href="#" class="btn btn-primary">Contacter</a>
       </div>
 
     </div>
@@ -295,10 +310,10 @@
       <div class="col-md-2 col-lg-2 ml-auto">
         <h5 class="title mb-4 font-bold">About</h5>
         <ul>
-          <p><a href="#!">PROJECTS</a></p>
-          <p><a href="#!">ABOUT US</a></p>
-          <p><a href="#!">BLOG</a></p>
-          <p><a href="#!">AWARDS</a></p>
+          <p><a href="#">PROJECTS</a></p>
+          <p><a href="#">ABOUT US</a></p>
+          <p><a href="#">BLOG</a></p>
+          <p><a href="#">AWARDS</a></p>
         </ul>
       </div>
       <!--/.Second column-->
@@ -349,10 +364,14 @@
   <!--/.Copyright-->
 
   </footer>
+
+   <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+
   <!--/.Footer-->
   <!--
+    <script src="assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-    <!-- <script src="assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script> -->
   <script src="assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
