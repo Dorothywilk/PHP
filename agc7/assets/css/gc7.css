@@ -1,4 +1,5 @@
 .container {
+/ / background-color: white;
     padding-top: 20px;
     width: 97%;
     margin: 0 auto;
@@ -9,23 +10,10 @@ a:hover {
     cursor: pointer;
 }
 
-.gc7 .ui.message {
-	margin-left: 100px;
-	margin-right: 100px;
-	background-color: cornsilk;
-}
-
 .gc7 .ui.message p {
     color: blue;
 }
 
 .justify {
     text-align: justify;
-}
-
-#tof {
-	border-radius: 15px 0 15px;
-	border: 2px solid red;
-	box-shadow: 9px 7px grey;
-
 }

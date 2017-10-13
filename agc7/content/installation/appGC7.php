@@ -30,14 +30,6 @@
       <a class="ui header" id="git"><i class="code icon"></i> php artisan october:up<br></a>
     </div>
     <p>Migrations et seeds</p>
-    <p class="justify">Nous contacter pour y avoir accès.
-    <img src="assets/images/picture3.jpg" alt="" id="tof" class="ui right floated image"> 
-      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea placeat, excepturi. Facili</span>
-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Tenetur eius nulla doloribus atque laudantium quos sit, alias asperiores inventore natus et blanditiis similique, deleniti saepe illo quo quae distinctio quis.
-      
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Tenetur eius nulla doloribus atque laudantium quos sit, alias asperiores inventore natus et blanditiis similique, deleniti saepe illo quo quae distinctio quis.
-    </p>
 
   </div>
 
