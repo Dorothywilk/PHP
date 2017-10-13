@@ -29,7 +29,7 @@
           <a class="item">Gitkraken</a>
 
         </div>
-
+        <br>
         <span class="ui big header"> II / Navigateur</span>
         <div class="ui ordered list">
           <a class="item">Navigateur Chrome</a>
@@ -41,9 +41,13 @@
 
   </div>
 
-  <div class="ui bottom attached tab segment" data-tab="base/localserver">1C</div>
+  <div class="ui bottom attached tab segment" data-tab="base/localserver">
+    <span class="ui big header"> II / Serveur local</span>
+    <div class="ui ordered list">
+      <a class="item"> Laragon</a>
+      <a class="item"> VirtualHost</a>
+      <a class="item"> git, nodejs, npm, etc...</a>
+    </div>
+  </div>
 
 </div>
- 
-
-
