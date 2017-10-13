@@ -69,7 +69,7 @@
   </nav>
 
   <header class="ui header" style="margin: 75px auto 0;">
-    <p href="/" class="font-weight-bold" id="opop">Exemples d'utilisation de MDBootstrap</p>
+    <p href="/" class="font-weight-bold" id="opop">Exemples d'utilisation de MDBootstrap v2</p>
   </header>
 
   <div class="bg-primary clearfix" style="margin: 15px; width: 100%; margin-left: 0; ">
