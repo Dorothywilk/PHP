@@ -13,48 +13,47 @@
 // new HelloWorld('Doro');
 
 
-(function($){
+(function ($) {
 
-	$('.menu .etape').tab();
+    $('.menu .etape').tab();
 
-	$('#procedure .menu .item')
-  .tab({
-    context: $('#procedure')
-  });
-
-	// $('#btn1').click();
-	$('#tab1').click();
-
-	$('#context1 .menu .item')
-	  .tab({
-	    context: $('#context1')
-	  })
-	;
-	$('#context2 .menu .item')
-	  .tab({
-	    // special keyword works same as above
-	    context: 'parent'
-	  })
-	;
-
-	$('.examplemenu .menu .browse')
-	  .popup({
-	    inline     : true,
-	    hoverable  : true,
-	    position   : 'bottom left',
-	    delay: {
-	      show: 300,
-	      hide: 800
-	    }
-	  })
-	;
+    $('#procedure .menu .item')
+        .tab({
+            context: $('#procedure')
+        });
 
 
+    $('#tab11').click();
 
-	// $('#MoviesFilter').on('change','input, select', function(){
-	// 	var $form = $(this).closest('form');
-	// 	$form.request();
-	// })
+
+    $('#context1 .menu .item')
+        .tab({
+            context: $('#context1')
+        })
+    ;
+
+    $('.examplemenu .menu .browse')
+        .popup({
+            inline: true,
+            hoverable: true,
+            position: 'bottom left',
+            delay: {
+                show: 300,
+                hide: 800
+            }
+        })
+    ;
+
+
+    // $('#MoviesFilter').on('change','input, select', function(){
+    // 	var $form = $(this).closest('form');
+    // 	$form.request();
+    // })
+
+    setTimeout(function () {
+        console.log(new Date() + ': OK, prêt !')
+    }, 3000);
+
 
 })(jQuery);
 
