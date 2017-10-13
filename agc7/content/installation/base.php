@@ -45,7 +45,7 @@
     <span class="ui big header"> II / Serveur local</span>
     <div class="ui ordered list">
       <a class="item"> Laragon</a>
-      <a class="item"> VirtualHost</a>
+      <a class="item"> VirtualHost</a> (Ocms et wl)
       <a class="item"> git, nodejs, npm, etc...</a>
     </div>
   </div>

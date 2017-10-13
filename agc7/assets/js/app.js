@@ -25,7 +25,6 @@
 
     $('#tab32').click();
 
-
     $('#context1 .menu .item')
         .tab({
             context: $('#context1')

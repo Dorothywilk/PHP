@@ -9,15 +9,16 @@
   <div class="ui bottom attached tab segment active" data-tab="octobercms/install">
 
     <div class="ui header">OctoberCMS</div>
-    <div class="ui ordered list">
+    <div class="ui ordered large list">
       <div class="item"><a class="linkColor"
                            href="https://octobercms.com/docs/setup/installation"
-                           target="_blank">Download the installer archive file</a>.
+                           target="_blank">Download the installer archive file</a> dans votre dossier
+        <strong>wwww</strong>.
       </div>
       <div class="item">Décompresser install-master.zip</div>
-      <div class="item">Copier le contenu du dossier obtenu dans le dossier parent</div>
-      <div class="item">Lancer install.php dans le navigateur (<a href="http://wl/install.php"
-                                                                  target="_blank" class="linkColor">WL</a>)
+      <div class="item">Renommer le dossier obtenu du même nom en <strong>ocms</strong></div>
+      <div class="item">Lancer install.php dans le navigateur (<a href="http://ocms/install.php"
+                                                                  target="_blank" class="linkColor">Ocms</a>)
       </div>
       <br>
       <p>Essai avec le thème Clean Blog</p>

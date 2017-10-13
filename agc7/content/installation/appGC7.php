@@ -8,13 +8,14 @@
 
   <div class="ui bottom attached tab segment active" data-tab="appgc7/a">
 
-    <p>En console, depuis:</p>
+    <p>En console, depuis le dossier www:</p>
     <div class="ui inverted segment">
       <a class="ui header" id="git"><i class="warning sign huge red icon"></i> git clone
         https://gitlab.com/grcote7/wl<br></a>
     </div>
 
-    <div class="ui tiny message justify"><p><i class="list layout icon"></i> TODO: Déplacer dépôt wl dans <i class="github icon"></i>.</p></div>
+    <div class="ui tiny message justify"><p><i class="list layout icon"></i> TODO: Déplacer dépôt wl dans <i
+          class="github icon"></i>.</p></div>
     </a>
 
     <?php include 'content/installation/details/git.html'; ?>
@@ -24,7 +25,11 @@
 
   <div class="ui bottom attached tab segment" data-tab="appgc7/b">
 
-    <div class="ui header"></div>
+    <p>En console, dans <strong>www</strong> :</p>
+    <div class="ui inverted segment">
+      <a class="ui header" id="git"><i class="code icon"></i> php artisan october:up<br></a>
+    </div>
+    <p>Migrations et seeds</p>
 
   </div>
 
