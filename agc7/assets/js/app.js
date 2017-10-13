@@ -25,6 +25,18 @@
 	// $('#btn1').click();
 	$('#tab1').click();
 
+	$('#context1 .menu .item')
+	  .tab({
+	    context: $('#context1')
+	  })
+	;
+	$('#context2 .menu .item')
+	  .tab({
+	    // special keyword works same as above
+	    context: 'parent'
+	  })
+	;
+
 	$('.examplemenu .menu .browse')
 	  .popup({
 	    inline     : true,

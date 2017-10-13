@@ -13,7 +13,8 @@
 		<div class="container">
 		
 			<header class="ui header">
-				<a href="/">Accueil</a>
+				<a href="/">Accueil</a> | 
+				<a href="exemples">SemanticUI</a>
 				<hr>
 			</header>
 			
