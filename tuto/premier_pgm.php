@@ -51,7 +51,7 @@ Exemple suit...
 
 
 for ($i=1; $i<=2; $i++)
-echo'<h1 style ="color:blue">' . $user[$i]['prenom'] . '<hr><hr></h1>';
+//echo'<h1 style ="color:blue">' . $user[$i]['prenom'] . '<hr><hr></h1>';
 
 
   $prenom1 = 'Hugo';
@@ -71,15 +71,27 @@ echo'<h1 style ="color:blue">' . $user[$i]['prenom'] . '<hr><hr></h1>';
 
 echo '<hr><hr>';
 
-// Ici
-
-echo $prenom1 . ' a ' . $age1 . ' ans' ;
-
-echo '<hr><hr>';
+echo $prenom1 . ' a ' . $age1 . ' ans.<br>' ;
 
 
 
 
-$a=3;
 
-// echo 'Ma var <b>$a</b> vaut <b>' . $a . '</b>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function nf($v) {
+  return number_format( $v , 2 ,',', ' ');
+}
+*/
