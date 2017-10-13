@@ -52,6 +52,9 @@
 // 	$form.request();
 // })
 
+    $('input#input-char-counter, textarea#textarea-char-counter').characterCounter();
+
+
     setTimeout(function () {
         console.log(new Date() + ': OK, prêt !')
     }, 3000);
