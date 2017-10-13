@@ -23,7 +23,7 @@
         });
 
 
-    $('#tab32').click();
+    $('#tab31').click();
 
     $('#context1 .menu .item')
         .tab({
@@ -45,7 +45,8 @@
         $('.ui.basic.modal').modal('show');
     });
 
-//$('.ui.basic.modal').modal('show');
+ // $('.ui.basic.modal').modal('show');
+
 // $('#MoviesFilter').on('change','input, select', function(){
 // 	var $form = $(this).closest('form');
 // 	$form.request();

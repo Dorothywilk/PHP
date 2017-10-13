@@ -1,7 +1,7 @@
 <div class="ui tab" data-tab="octobercms">
   <div class="ui top attached tabular menu">
     <a class="item active" data-tab="octobercms/install" id="tab21"><i class="download icon"></i>Installation</a>
-    <a class="item" data-tab="octobercms/config" id="tab22"><i class="settings icon"></i>Configuration</a>
+    <a class="item" data-tab="octobercms/config" id="tab22"><i class="setting icon"></i>Configuration</a>
     <a class="item" data-tab="octobercms/plugins" id="tab23"><i class="toggle down icon"></i>Plugins</a>
   </div>
 
@@ -13,7 +13,7 @@
       <div class="item"><a class="linkColor"
                            href="https://octobercms.com/docs/setup/installation"
                            target="_blank">Download the installer archive file</a> dans votre dossier
-        <strong>wwww</strong>.
+        <strong>www</strong>.
       </div>
       <div class="item">Décompresser install-master.zip</div>
       <div class="item">Renommer le dossier obtenu du même nom en <strong>ocms</strong></div>
