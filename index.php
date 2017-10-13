@@ -30,7 +30,7 @@
 	
 		<footer>
 		<hr>
-			Do 's website v2| <a href="https://github.com/Dorothywilk/PHP/tree/dev" target="_blank">Dépôt GitHub</a>
+			Do 's website v2 | <a href="https://github.com/Dorothywilk/PHP/tree/dev" target="_blank">Dépôt GitHub</a>
 		</footer>
 		
 	</body>
