@@ -23,7 +23,7 @@
         });
 
 
-    $('#tab31').click();
+    $('#tab23').click();
 
 
     $('#context1 .menu .item')

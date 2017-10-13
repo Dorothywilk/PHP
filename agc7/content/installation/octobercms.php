@@ -43,26 +43,26 @@
     </div>
   </div>
 
+
   <div class="ui bottom attached tab segment" data-tab="octobercms/plugins">
 
     <div class="ui header">Ajout de plugins</div>
     <div class="ui message">Dans BE / Réglages / Système - Mise à jour / Installer des plugins</div>
     <div class="ui ordered list">
       <div class="gc7List">
-        <li>RainLab.Blog</li>
-        <li>BnB.ScaffoldTranslation</li>
-        <li>Indikator.Backend</li>
-        <li>RainLab.Builder</li>
-        <li>Bluhex.YouTube</li>
-        <li>Hambern.Html5media</li>
-        <li>Mohsin.Txt</li>
-        <li>RainLab.Pages</li>
-        <li>RainLab.User</li>
-        <li>RainLab.Forum</li>
-        <li>Rahman.Faker</li>
-        <li>OFFLINE.SiteSearch</li>
-        <li>Bedard.Debugbar</li>
-        <li>Lovata.Toolbox</li>
+        <li>BnB.ScaffoldTranslation ( sca -> Scaffold Translation )</li>
+        <li>Indikator.Backend ( bac -> Backend Plus )</li>
+        <li>RainLab.Builder ( bui -> Builder )</li>
+        <li>Bluhex.YouTube ( you -> YouTube )</li>
+        <li>Hambern.Html5media ( htm -> Html5media )</li>
+        <li>Mohsin.Txt ( moh -> Txt )</li>
+        <li>RainLab.Pages ( stat -> Static Pages )</li>
+        <li>RainLab.User ( use -> User )</li>
+        <li>RainLab.Forum ( for -> Forum )</li>
+        <li>Rahman.Faker ( fak -> Faker )</li>
+        <li>OFFLINE.SiteSearch( sea -> SiteSearch )</li>
+        <li>Bedard.Debugbar ( deb -> Deburbar )</li>
+        <li>Lovata.Toolbox ( tool -> Toolbox )</li>
       </div>
     </div>
 
