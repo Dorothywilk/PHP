@@ -49,7 +49,7 @@
           <a class="nav-link" href="https://mdbootstrap.com/components/" target="_blank">Doc MDB</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="http://fontawesome.io/icons" target="_blank">FontAwesome (Icônes)</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
