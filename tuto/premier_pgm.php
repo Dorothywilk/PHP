@@ -1,5 +1,6 @@
 <?php
 
+echo 'oOo';
 
 
 
@@ -9,7 +10,7 @@
   // On concatène $nom dans $prenom
   $nomComplet = $prenom . ' '. $nom;
   // Affiche 'Hugo Hamon'
-  echo $nomComplet;
+  // echo $nomComplet,'<br>';
 
 
 
@@ -50,29 +51,28 @@ Exemple suit...
 
 
 
-for ($i=1; $i<=2; $i++)
+//for ($i=1; $i<=2; $i++)
 //echo'<h1 style ="color:blue">' . $user[$i]['prenom'] . '<hr><hr></h1>';
 
 
   $prenom1 = 'Hugo';
   $age1 = 21;
  
-  echo $prenom1;        // Affiche 'Hugo'
-  echo ' a ';
-  echo $age1;        // Affiche 19
-  echo ' ans' . '<hr>';
+  // echo $prenom1;        // Affiche 'Hugo'
+  // echo ' a ';
+  // echo $age1;        // Affiche 19
+  // echo ' ans' . '<hr>';
 
 
   // Avantage de la concaténation: 1 seule fois echo appelé.
   $prenom2 = 'Hadrien';
   $age2 = 18;
  
-  echo $prenom2 . ' a ' . $age2  . ' ans';
+  //echo $prenom2 . ' a ' . $age2  . ' ans';
 
-echo '<hr><hr>';
+//echo '<hr><hr>';
 
-echo $prenom1 . ' a ' . $age1 . ' ans.<br>' ;
-
+//
 
 
 
