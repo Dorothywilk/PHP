@@ -26,7 +26,7 @@
 		
 			<footer>
 			<hr>
-				&copy;2017 - GC7
+				&copy;2017 - GC7 | <a href="https://github.com/GrCOTE7/Do"><i class="github icon" target="_blank"></i></a>
 			</footer>
 			<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
 			<script src="assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
