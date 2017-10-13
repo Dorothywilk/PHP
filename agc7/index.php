@@ -14,7 +14,8 @@
 		
 			<header class="ui header">
 				<a href="/">Accueil</a> | 
-				<a href="exemples">SemanticUI</a>
+				<a href="/agc7/exemples">SemanticUI</a> | 
+				<a href="mdb.php">MDB</a>
 				<hr>
 			</header>
 			
