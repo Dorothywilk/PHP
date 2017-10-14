@@ -8,17 +8,36 @@
 
   <div class="ui bottom attached tab segment active" data-tab="appgc7/a">
 
-    <p>En console, depuis le dossier www:</p>
+    <p>En console :</p>
+    
+    <h3>  I / Télécharger les fichiers</h3>
+    
+    <p><i class="huge announcement icon"></i>Depuis votre dossier <strong>www</strong></p>
+
     <div class="ui inverted segment">
-      <a class="ui header" id="git"><i class="warning sign huge red icon"></i> git clone
+      <a class="ui header"><i class="gitlab huge orange icon"></i> git clone
         https://gitlab.com/grcote7/wl<br></a>
     </div>
 
-    <div class="ui tiny message justify"><p><i class="list layout icon"></i> TODO: Déplacer dépôt wl dans <i
+    <div class="ui tiny message justify"><p><i class="list layout icon"></i> NOUVEAU: Dépôt mis en public<i
           class="github icon"></i>.</p></div>
     </a>
 
     <?php include 'content/installation/details/git.html'; ?>
+
+    <h3>II / Télécharger les librairies</h3>
+    <p><i class="huge announcement icon"></i>Depuis votre dossier <strong>wl</strong></p>
+    <p>(cd wl)</p>
+
+    <div class="ui inverted segment">
+      <a class="ui header"><i class="download huge green icon"></i> composer update<br></a>
+    </div>
+
+    <h3>III / Installer les données</h3>
+    <div class="ui ordered large list">
+    <div class="item">Créer votre base de données (Nommer la <strong>wl</strong>)</div>
+    <div class="item">Importez-y le fichier <strong>wl.sql</strong> du dossier <strong>BdD</strong></div>
+    </div>
 
   </div>
 
