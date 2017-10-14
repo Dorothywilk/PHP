@@ -68,7 +68,7 @@ Exemple suit...
   $prenom2 = 'Hadrien';
   $age2 = 18;
  
-  //echo $prenom2 . ' a ' . $age2  . ' ans';
+  //echo '<hr>'.$prenom2 . ' a ' . $age2  . ' ans';
 
 //echo '<hr><hr>';
 
