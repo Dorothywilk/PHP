@@ -81,6 +81,13 @@
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fH03Do2m6Mg" allowfullscreen></iframe>
   </div>
 
+  <hr class="my-2">
+  <div class="text-center">
+    Pour <strong>formater text et horizontal bar</strong>:<br>
+    See: <a href="https://mdbootstrap.com/utilities/bootstrap-spacing" target="_blank">https://mdbootstrap.com/utilities/bootstrap-spacing</a>
+  </div>
+  <hr class="my-3">
+
   <article>
 
     <form class="form-inline" style="margin-top: 20px;">
@@ -150,10 +157,10 @@
 
     <?php
 
-    $prenom='Jade';
-    $nom= 'D.';
-    $bio='Etudiante';
-    $sonSlogan='Caca<br><br>poumpoum !'
+    $prenom = 'Jade';
+    $nom    = 'D.';
+    $bio    = 'Etudiante';
+    $sonSlogan = 'Caca<br><br>poumpoum !'
 
     ?>
 
@@ -365,7 +372,7 @@
 
   </footer>
 
-   <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
 
   <!--/.Footer-->
