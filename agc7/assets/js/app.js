@@ -12,7 +12,6 @@
 // new HelloWorld('Lionel');
 // new HelloWorld('Doro');
 
-
 (function ($) {
 
     $('.menu .etape').tab();
@@ -22,13 +21,14 @@
             context: $('#procedure')
         });
 
-
-    $('#tab31').click();
-
     $('#context1 .menu .item')
         .tab({
             context: $('#context1')
         });
+
+    
+    $('#tab32').click();
+
 
     $('.examplemenu .menu .browse')
         .popup({
@@ -45,21 +45,18 @@
         $('.ui.basic.modal').modal('show');
     });
 
- // $('.ui.basic.modal').modal('show');
+
+    // $('.ui.basic.modal').modal('show');
 
 // $('#MoviesFilter').on('change','input, select', function(){
-// 	var $form = $(this).closest('form');
-// 	$form.request();
+//  var $form = $(this).closest('form');
+//  $form.request();
 // })
 
-    $('input#input-char-counter, textarea#textarea-char-counter').characterCounter();
-
-
+    //$('input#input-char-counter, textarea#textarea-char-counter').characterCounter();
     setTimeout(function () {
         console.log(new Date() + ': OK, prêt !')
     }, 3000);
 
-
 })
 (jQuery);
-
