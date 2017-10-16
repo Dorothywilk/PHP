@@ -6,7 +6,7 @@ include ('classes/User.php');
 // include('initiation/tableauIndexe.php');
 // 
 // include('cours/variables.php');
-include('cours/objets.php');
+include('cours/variables.php');
 
 
 
