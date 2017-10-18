@@ -34,16 +34,17 @@ $personne4->prenom = 'Pierre';
 $personne4->dateDeNaissance = '23-05-1993';
 $personne4->taille = '155';
 $personne4->sexe = 'M';
-?>
-<pre>
-	<?php
+
+// <pre>
 	// var_dump($personne1);
-	?>
-</pre>
+// </pre>
 
-<?php
+$personne1->boire();
+$personne2->boire();
+$personne3->manger();
+$personne4->manger();
 
-echo 'Personne 1 :<br/><br/>';
+echo '<hr>Personne 1 :<br/><br/>';
 echo 'Nom : ', $personne1->nom ,'<br/>';
 echo 'Prénom : ', $personne1->prenom;
 
