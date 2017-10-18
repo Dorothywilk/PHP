@@ -19,6 +19,8 @@
 	// Classe Mère & classe fille /|\ : Bur exprès en fin de fichier
 	// include 'kid.php';
 
+	// Méthodes magiques __call()
+	include 'manchot.php';
 
 
 	?>
