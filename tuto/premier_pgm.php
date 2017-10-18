@@ -1,6 +1,8 @@
 <?php
 
-echo 'oOo';
+// Toléré en PHP: Il traduit une chaine comme une valeur numérique si elle ne contient que des chiffres...
+
+echo '119'+2;
 
 
 
