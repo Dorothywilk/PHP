@@ -21,12 +21,12 @@ class Personne
 
   public function boire()
   {
-      echo 'La personne boit<br/>';
+    echo 'La personne boit<br/>';
   }
 
   public function manger()
   {
-      echo 'La personne mange<br/>';
+    echo 'La personne mange<br/>';
   }
 
   public function getNbr2Bras(){
