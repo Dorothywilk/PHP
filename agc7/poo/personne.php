@@ -44,12 +44,12 @@ $personne2->boire();
 $personne3->manger();
 $personne4->manger();
 
-echo '<hr>Personne 1 :<br/><br/>';
+echo '<br>Personne 1 :<br/><br/>';
 echo 'Nom : ', $personne1->nom ,'<br/>';
 echo 'Prénom : ', $personne1->prenom;
 
 echo '<br><br>Chaque personne a ', Personne::NOMBRE_DE_BRAS ,' bras.';
-echo '<br><br>Donc, Personne 1 a ', $personne1->getNbr2Bras() ,' yeux<hr>', $personne1->boire();
+echo '<br><br>Donc, Personne 1 a aussi ', $personne1->getNbr2Bras() ,' yeux<br>', $personne1->boire().'<hr>';
 
 
 

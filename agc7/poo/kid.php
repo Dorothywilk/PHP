@@ -1,4 +1,4 @@
-<h1>Kid</h1><?php
+<h3>Kid</h3><?php
 
 include '../class/Kid.php';
 
