@@ -20,7 +20,10 @@
 	// include 'kid.php';
 
 	// Méthodes magiques __call()
-	include 'manchot.php';
+	// include 'manchot.php';
+
+	// Méthodes magiques __clone()
+	include 'point.php';
 
 
 	?>
