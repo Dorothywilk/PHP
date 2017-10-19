@@ -7,9 +7,9 @@
 	<link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 <body>
-	P.O.O.
-	<hr>
-	<?php
+P.O.O.
+<hr>
+<?php
 
 // Simple classe
 // include 'personne.php';
@@ -36,10 +36,13 @@
 
 
 // Iterator (Interface)
-	include 'iterator.php';
+// include 'iterator.php';
+
+// OneTrait (Trait)
+include '../class/OneTrait.php';
 
 
-	?>
+?>
 </body>
 </html>
 
