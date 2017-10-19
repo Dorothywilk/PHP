@@ -48,7 +48,7 @@ abstract class EtreHumain
    * @param void
    * @return string $nom
    */
-  public function getNom()
+  public final function getNom()
   {
     return $this->nom;
   }
@@ -59,7 +59,7 @@ abstract class EtreHumain
    * @param void
    * @return string $sexe
    */
-  public function getSexe()
+  public final function getSexe()
   {
     return $this->sexe;
   }

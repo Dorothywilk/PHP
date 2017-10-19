@@ -73,6 +73,14 @@ final class Femme extends EtreHumain
   {
   	echo 'Shopping entre filles';
   }
+
+  /* Ne peut pas être déclarée car getSexe est final dans parent
+  public function getSexe()
+  {
+    return 'Masculin';
+  }
+  */
+
 }
 
 // class JeuneGarcon extends Homme => Erreur car la classe Homme est final
