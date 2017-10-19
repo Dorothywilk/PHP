@@ -1,6 +1,6 @@
 <?php
 
-class Homme extends EtreHumain
+final class Homme extends EtreHumain
 {
   /**
    * Construit l'objet Homme
@@ -37,7 +37,8 @@ class Homme extends EtreHumain
   }
 }
 
-class Femme extends EtreHumain
+
+final class Femme extends EtreHumain
 {
   /**
    * Construit l'objet Femme
@@ -72,4 +73,19 @@ class Femme extends EtreHumain
   {
   	echo 'Shopping entre filles';
   }
+}
+
+// class JeuneGarcon extends Homme => Erreur car la classe Homme est final
+class JeuneGarcon
+{
+  /**
+   * Construit l'objet JeuneGarcon
+   *
+   * @param string $nom Nom du jeune garcon
+   * @return void
+   */
+  public function __construct($nom)
+  {
+    parent::__construct($nom);
+  }  
 }
