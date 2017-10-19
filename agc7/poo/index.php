@@ -7,9 +7,9 @@
 	<link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 <body>
-P.O.O.
-<hr>
-<?php
+	P.O.O.
+	<hr>
+	<?php
 
 // Simple classe
 // include 'personne.php';
@@ -32,10 +32,10 @@ P.O.O.
 
 
 // Classes abstraites et finales
-include 'humains.php';
+	include 'humains.php';
 
 
-?>
+	?>
 </body>
 </html>
 

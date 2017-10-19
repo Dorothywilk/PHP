@@ -1,5 +1,5 @@
 <?php
-include '../class/Homme.php';
+include '../class/HommeFemme.php';
 
 abstract class EtreHumain
 {
@@ -18,12 +18,26 @@ abstract class EtreHumain
   protected $nom;
 
   /**
+   * La personne fait du sport
+   *
+   * @abstract
+   */
+  abstract function faireDuSport();
+
+  /**
+   * Divertit la personne
+   *
+   * @abstract
+   */
+  abstract function seDivertir();
+
+  /**
    * Met à jour le nom
    *
    * @param string $nom
    * @return void
    */
-  public function setNom($nom)
+  public function  setNom($nom)
   {
     $this->nom = $nom;
   }
