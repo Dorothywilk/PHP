@@ -7,26 +7,30 @@
 	<link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 <body>
-	P.O.O.<hr>
-	<?php
+P.O.O.
+<hr>
+<?php
 
-	// Simple classe
-	// include 'personne.php';
-	
-	// Classe Mère & classe fille
-	// include 'vehicule.php';
+// Simple classe
+// include 'personne.php';
 
-	// Classe Mère & classe fille /|\ : Bur exprès en fin de fichier
-	// include 'kid.php';
+// Classe Mère & classe fille
+// include 'vehicule.php';
 
-	// Méthodes magiques __call()
-	// include 'manchot.php';
+// Classe Mère & classe fille /|\ : Bur exprès en fin de fichier
+// include 'kid.php';
 
-	// Méthodes magiques __clone()
-	include 'point.php';
+// Méthodes magiques __call()
+// include 'manchot.php';
+
+// Méthodes magiques __clone()
+//include 'point.php';
+
+// Méthodes magiques __sleep() & __wakeup()
+include 'dormeur.php';
 
 
-	?>
+?>
 </body>
 </html>
 
