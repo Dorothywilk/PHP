@@ -32,7 +32,11 @@
 
 
 // Classes abstraites et finales
-	include 'humains.php';
+// include 'humains.php';
+
+
+// Iterator (Interface)
+	include 'iterator.php';
 
 
 	?>
