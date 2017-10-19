@@ -17,11 +17,12 @@
 		
 		<article>
 						
-			<?php include './tuto/premier_pgm.php' ?>
+			<?php include './tuto/cours.php' ?>
 
 		</article>
 	
 		<footer>
+	 <br/>
 		<hr>
 			Do 's website | <a href="https://github.com/Dorothywilk/PHP/tree/dev" target="_blank">Dépôt GitHub</a>
 		</footer>
