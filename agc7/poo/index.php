@@ -17,8 +17,9 @@ P.O.O.
 // Classe Mère & classe fille
 // include 'vehicule.php';
 
-// Classe Mère & classe fille /|\ : Bur exprès en fin de fichier
+// Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
 // include 'kid.php';
+
 
 // Méthodes magiques __call()
 // include 'manchot.php';
@@ -27,7 +28,11 @@ P.O.O.
 //include 'point.php';
 
 // Méthodes magiques __sleep() & __wakeup()
-include 'dormeur.php';
+// include 'dormeur.php';
+
+
+// Classes abstraites et finales
+include 'humains.php';
 
 
 ?>
