@@ -43,4 +43,39 @@ $p2->setCoords( 1, 2 );
 
 echo '<pre>';
 var_dump( $p1 );
+echo '</pre><hr>';
+
+
+class Sheep {
+	/**
+	 * Nom du mouton
+	 *
+	 * @var String
+	 */
+	protected $_name;
+
+	/**
+	 * Contructeur de la classe Sheep
+	 *
+	 * @param String $name nom du mouton
+	 */
+	public function __construct( $name ) {
+		$this->_name = (string) $name;
+	}
+
+	/**
+	 * Methode magique clone
+	 *
+	 * @return void
+	 */
+	public function __clone() {
+		$this->_name = 'Copie de ' . $this->_name;
+	}
+}
+
+$oSheep    = new Sheep( 'Dolly' );
+$oNewSheep = clone $oSheep;
+echo '<pre>';
+var_dump( $oSheep );
+var_dump( $oNewSheep );
 echo '</pre>';
