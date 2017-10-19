@@ -58,6 +58,11 @@ class SearchEngine {
 	 * @see SearchEngine::search()
 	 */
 	public function __call( $method, $args ) {
+
+		echo '<pre>';
+		//echo var_dump( debug_backtrace() );
+		echo '</pre>';
+
 		if ( preg_match( '#^searchBy#i', $method ) ) {
 			$searchConditions = str_replace( 'searchBy', '', $method );
 			$searchCriterias  = explode( 'And', $searchConditions );
