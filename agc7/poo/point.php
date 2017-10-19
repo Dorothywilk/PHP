@@ -78,4 +78,54 @@ $oNewSheep = clone $oSheep;
 echo '<pre>';
 var_dump( $oSheep );
 var_dump( $oNewSheep );
-echo '</pre>';
+echo '</pre><hr>';
+
+class Singleton {
+	/**
+	 * Instance de la classe Singleton
+	 *
+	 * @var Singleton
+	 */
+	protected static $_instance = null;
+
+	/**
+	 * Constructeur de la classe
+	 *
+	 * @access protected
+	 */
+	protected function __construct() {
+	}
+
+	/**
+	 * getInstance() : recuperation de l'instance de la classe
+	 *
+	 * @return Singleton
+	 */
+	public static function getInstance() {
+		if ( null === self::$_instance ) {
+			self::$_instance = new Singleton();
+		}
+
+		return self::$_instance;
+	}
+
+	/**
+	 * Methode magique clone
+	 *
+	 * @return void
+	 */
+	public function __clone() {
+		throw new Exception( 'Are you Trying to clone me ? I\'m a Singleton dude !' );
+	}
+}
+
+try {
+	$oSingleton = Singleton::getInstance();
+	echo 'Tentative de clônage d\'un signgleton :<br>';
+	clone $oSingleton;
+}
+catch ( Exception $e ) {
+	echo 'Oops, exception : ', $e->getMessage();
+}
+
+echo '<hr>';
