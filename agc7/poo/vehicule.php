@@ -9,6 +9,6 @@ $monVehicule->demarrer();
 $monVehicule->reparer();
 
 // Je remplis mon réservoir de 50 L d'essence
-$monVehicule->setVolumeCarburant(50);
+$monVehicule->setVolumeCarburant(100);
 
 echo sprintf("Il me reste %u L d'essence<br>", $monVehicule->getVolumeCarburant()).'<hr>';

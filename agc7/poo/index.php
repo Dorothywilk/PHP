@@ -15,7 +15,7 @@ P.O.O.
 // include 'personne.php';
 
 // Classe Mère & classe fille
-// include 'vehicule.php';
+include 'vehicule.php';
 
 // Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
 // include 'kid.php';
@@ -39,7 +39,7 @@ P.O.O.
 // include 'iterator.php';
 
 // OneTrait (Trait)
-include '../class/OneTrait.php';
+// include '../class/OneTrait.php';
 
 
 ?>

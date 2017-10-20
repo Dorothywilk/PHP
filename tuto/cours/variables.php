@@ -2,15 +2,16 @@
 
 <?php
 
-echo '$a = ooo...';
-
-  $a= 20;
-  $b= 10;
-  $c= $a + $b ;
+include './tuto/initiation/tableMultiplication.php';
 
 
 
- 
+
+
+
+
+
+
 
 
 
