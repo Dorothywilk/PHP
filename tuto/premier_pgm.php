@@ -32,12 +32,12 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
 
 */
 
- /* $prenom = 'Hugo';  // Type string (chaine de caractères)
-  $nom = "Hamon";    // Type string (chaine de caractères)
-  $age = 19;    // Type entier
-  $estEtudiant = true;  // Type booléen
+ /* $prenom = 'Hugo';                                               // Type string (chaine de caractères)
+  $nom = "Hamon";                                                   // Type string (chaine de caractères)
+  $age = 19;                                                        // Type entier
+  $estEtudiant = true;                                              // Type booléen
   $cours = array('physique','chimie','informatique','philosophie'); // Type tableau
-  $unEtudiant = new Etudiant (); // Objet de type Etudiant
+  $unEtudiant = new Etudiant ();                                    // Objet de type Etudiant
 */
 /* Pour les tableaux, on recontre le plus souvent cette notation :
 $t = [item1, item2];
@@ -72,9 +72,49 @@ Exemple suit...
  
   //echo $prenom2 . ' a ' . $age2  . ' ans';
 
-//echo '<hr><hr>';
+  //echo '<hr><hr>';
 
-//
+  // Déclaration des variables
+
+  $prenom = 'Hugo';
+  $nom = 'Hamon';
+  $identite = '';
+
+  // On contatène $nom et $prenom dans $identite
+
+  $identite = $prenom . '' . $nom;
+
+  // Affiche 'Hugo Hamon'
+
+  echo $identite;
+
+  //Opérations mathématiques sur les variables
+
+  // Déclaration des variables mathématiques
+  $a = 10;
+  $b = 2;
+  $c = 0;
+  // $c vaut 10+2 = 12
+  $c = $a + $b;
+  // $c vaut 10x2 = 20
+  $c = $a * $b;
+  // $c vaut 10/2 = 5
+  $c = $a / $b;
+  // $c vaut 10-2 = 8
+  $c = $a - $b;
+  // $c vaut le reste de la division de $a par $b soit 0
+  $c = $a % $b;
+  // Incrémentation de $a
+  $a++;
+  // Décrémentation de $b
+  $b--;
+
+  $a= 20;
+  $b= 10;
+  $c= $a + $b;
+
+  echo $c;
+
 
 
 
