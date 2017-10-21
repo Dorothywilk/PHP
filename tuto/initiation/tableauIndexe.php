@@ -1,8 +1,8 @@
 <?php
 
 $t=[
-	'prenom'  =>  'Jade',
-	'nom'			=>	'W.',
+	'prenom'  	=>  'Jade',
+	'nom'		=>	'W.',
 ];
 
 echo $t['prenom'] . ' ' . $t['nom'];
