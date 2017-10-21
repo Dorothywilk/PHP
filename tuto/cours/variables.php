@@ -2,14 +2,52 @@
 
 <?php
 
-include './tuto/initiation/tableMultiplication.php';
+// include './tuto/initiation/tableMultiplication.php';
 
 
 
 
+ $a = [
+    'Soleil',
+    'lune',
+    'mars'
+];
+
+for ($i=0; $i < 3; $i++) { 
+  
+  echo $a[$i].'<br>';
+  
+}
 
 
 
+echo '<hr>';
+
+
+
+$a[1]="Jupiter";
+
+
+
+echo '<hr>';
+
+
+
+
+for ($i=0; $i < 10; $i++) { 
+ echo "$i ";
+}
+
+
+
+echo '<hr>';
+
+
+for ($i=0; $i < 3; $i++) { 
+  
+  echo $a[$i].'<br>';
+  
+}
 
 
 
@@ -24,7 +62,7 @@ Correct	        Incorrect	      Explications
            
            
 
-$variable	    variable	    Une variable doit commencer par $
+$variable	      variable	      Une variable doit commencer par $
 $Variable1	    $Variable 1	    Les espaces sont interdits
 $variable_suite	$variable-suite	Le tiret est interdit
 $_variable	    $-variable	    Le tiret est interdit
