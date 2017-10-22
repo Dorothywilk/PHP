@@ -3,12 +3,9 @@
 <?php
 
 
-$t[]='a';
-$t[]='b';
-$t[]='c';
-$t[]='d';
+$t=range('a','e');
 
-// $t['a'..'z'];
+
 
 echo '<pre>';
 print_r($t);
@@ -18,11 +15,12 @@ echo '</pre>';
 
 for ($i=0; $c=count($t), $i < $c ; $i++) { 
 
-$t[$i] = strtoupper($t[$i]);
+	$t[$i] = strtoupper($t[$i]);
 
   echo $t[$i] . ( ($i < $c-1) ? ' | ':'' );
 
 }
+
 echo '<hr>Nbr = '. $c;
 
 echo '<pre>';
