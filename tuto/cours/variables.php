@@ -6,12 +6,10 @@
 // include './tuto/initiation/tableMultiplication.php';
 
 
-$nom='Jade';
 
 
-$nom.=' W.'; // <=> $nom = $nom . ' W.';
 
-echo $nom;
+
 
 
 
