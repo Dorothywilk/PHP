@@ -2,10 +2,9 @@
 include ('classes/Humain.php');
 include ('classes/User.php');
 
-
 // include('cours/concatenation.php');
+
 include('cours/variables.php');
-// include('cours/objets.php');
 
 
 
@@ -29,13 +28,11 @@ include('cours/variables.php');
 
 
 
-
-
-//TODODO Faire ICI selon même principe init... concatenation.php
 
 // include('initiation/tableau.php');
 // include('initiation/tableauIndexe.php');
 
+// include('cours/objets.php');
 
 
 

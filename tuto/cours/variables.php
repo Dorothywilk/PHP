@@ -6,7 +6,9 @@
 // include './tuto/initiation/tableMultiplication.php';
 
 
+$a =7;
 
+echo $a;
 
 
 
