@@ -2,9 +2,8 @@
 
 <?php
 
+// Exemple avec formulaire
 // include './tuto/initiation/tableMultiplication.php';
-
-
 
 
  $a = [
