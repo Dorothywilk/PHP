@@ -1,3 +1,5 @@
+<h3>Mon cours sur les tableaux indexés</h3>
+
 <?php
 
 $t=[

@@ -1,4 +1,4 @@
-<h3>Mon cours sur les variables</h3>
+<h3>Mon cours sur les variables simples</h3>
 
 <?php
 
@@ -6,50 +6,12 @@
 // include './tuto/initiation/tableMultiplication.php';
 
 
- $a = [
-    'Soleil',
-    'lune',
-    'mars'
-];
-
-for ($i=0; $i < 3; $i++) { 
-  
-  echo $a[$i].'<br>';
-  
-}
+$nom='Jade';
 
 
+$nom.=' W.'; // <=> $nom = $nom . ' W.';
 
-echo '<hr>';
-
-
-
-$a[1]="Jupiter";
-
-
-
-echo '<hr>';
-
-
-
-
-for ($i=0; $i < 10; $i++) { 
- echo "$i ";
-}
-
-
-
-echo '<hr>';
-
-
-for ($i=0; $i < 3; $i++) { 
-  
-  echo $a[$i].'<br>';
-  
-}
-
-
-
+echo $nom;
 
 
 
