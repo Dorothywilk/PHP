@@ -20,6 +20,8 @@ function affR( $r )
 { //aff( $r );
 	// $args = func_get_args(); // Réc arguments
 
+	if (!isset($r[0])) $r = [$r];
+
 	$ps = array_keys( (array) $r[0] ); // Get les clefs, nom des propriété
 	//aff( $ps );
 

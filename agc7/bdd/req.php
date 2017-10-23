@@ -24,4 +24,4 @@ echo $t['prenom'] . ' ' . $t['nom'];
 
 aff($t);
 
-affR([$t]);
+affR($t);
