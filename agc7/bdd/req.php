@@ -2,9 +2,10 @@
 
 // $q pour Question
 //$q = 'select * from transports limit 99';
- $q = 'select title, slug from categories';
-
-aff( $q );
+$q = 'select title, slug from categories';
+echo '<mark>';
+echo $q;
+echo '</mark>';
 
 // $r pur Réponse
 $r = $cnx->query( $q )

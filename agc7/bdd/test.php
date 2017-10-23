@@ -6,7 +6,6 @@
  * Time: 20:41
  */
 
-
 $o=new stdClass();
 
 $o->id=1;

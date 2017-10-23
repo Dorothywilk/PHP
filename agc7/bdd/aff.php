@@ -23,8 +23,7 @@ function affR()
 	}
 
 	$ps = array_keys( (array) $args[0][0] );
-
-	aff( $ps );
+	//aff( $ps );
 
 	echo '<table class="table table-bordered table-striped table-sm">
 	<thead class="grey lighten-1">
