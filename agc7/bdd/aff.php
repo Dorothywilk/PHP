@@ -14,6 +14,36 @@ function aff( $v )
 	echo '</pre>';
 }
 
+//aff( $r );
+function affR()
+{
+	$args = func_get_args();
+	if ( count( $args ) > 1 ) {
+		echo 'Il existe params';
+	}
 
-// AffR à venir
+	$ps = array_keys( (array) $args[0][0] );
+
+	aff( $ps );
+
+	echo '<table class="table table-bordered table-striped table-sm">
+	<thead class="grey lighten-1">
+
+	<tr>';
+	foreach ( $ps as $p ) {
+		echo '<th>' . ucfirst( $p ) . '</th>';
+	}
+	echo '</tr></thead>';
+
+	echo '<tr>';
+	foreach ( $args[0] as $k => $row ) {
+		foreach ( $ps as $k => $v ) {
+			echo '<td>' . $row->$v . '</td>';
+		}
+		echo '</tr>';
+	}
+	echo '</table>';
+	//echo '</pre>';
+}
+
 
