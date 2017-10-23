@@ -14,13 +14,14 @@ function aff( $v )
 	echo '</pre>';
 }
 
-//aff( $r );
-// Aff Réponse
+// Aff Réel
 function affR( $r )
 { //aff( $r );
 	// $args = func_get_args(); // Réc arguments
 
-	if (!isset($r[0])) $r = [$r];
+	//if (!isset($r[0])) $r = [$r];
+
+	if ( ! array_key_exists(0, $r) ) $r = [$r];
 
 	$ps = array_keys( (array) $r[0] ); // Get les clefs, nom des propriété
 	//aff( $ps );
