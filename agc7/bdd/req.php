@@ -34,11 +34,11 @@ function affR()
 	echo '</tr></thead>';
 
 
-	foreach ( $args[0] as $row ) {
+	foreach ( $args[0] as $k=>$row ) {
 		echo
-			'<td>' . $row->id . '</td>
-		<td>&nbsp;' . $row->nom . '&nbsp;</td>
-		<td>&nbsp;' . $row->pere . '&nbsp;</td>';
+			'<td>'.($k).' --- ' . $row->id . '</td>
+		<td>'.($k).' --- ' .  $row->nom . '</td>
+		<td>' . $row->pere . '&nbsp;</td>';
 
 		echo '</tr>';
 	}
