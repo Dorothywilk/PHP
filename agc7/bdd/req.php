@@ -14,20 +14,27 @@ aff( $rep );
 function affR()
 {
 	$args = func_get_args();
-	if (count($args)>1){
-		echo 'Il existe paramsi';
+	if ( count( $args ) > 1 ) {
+		echo 'Il existe params';
 	}
-	aff(array($args[0][0])[0]);
+
+	$ps = array_keys( (array) $args[0][0] );
+
 
 	//echo '<tr>';
-	//aff ( (array) array_keys($args[0]) );
 	//echo' </tr>';
 	//echo '<tr>';
 
-	echo '<table class="table table-bordered table-striped table-sm">';
+	echo '<table class="table table-bordered table-striped table-sm">
+	<thead class="grey lighten-1">
+	<tr>';
+	foreach ( $ps as $p ) {
+		echo '<th>' . ucfirst( $p ) . '</th>';
+	}
+	echo '</tr></thead>';
+
+
 	foreach ( $args[0] as $row ) {
-
-
 		echo
 			'<td>' . $row->id . '</td>
 		<td>&nbsp;' . $row->nom . '&nbsp;</td>
