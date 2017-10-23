@@ -15,7 +15,7 @@ function affR()
 {
 	$args = func_get_args();
 	if (count($args)>1){
-		echo 'oui';
+		echo 'Il existe paramsi';
 	}
 	aff(array($args[0][0])[0]);
 
@@ -24,7 +24,7 @@ function affR()
 	//echo' </tr>';
 	//echo '<tr>';
 
-	echo '<table border="1" class="table table-bordered table-striped table-hover table-sm">';
+	echo '<table class="table table-bordered table-striped table-sm">';
 	foreach ( $args[0] as $row ) {
 
 

@@ -15,7 +15,11 @@ BdD - Procédure
 include 'cnx.php';
 include 'aff.php';
 
+include('test.php');
+
+
 include 'req.php';
+
 
 $dbh = null;
 
