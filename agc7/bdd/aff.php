@@ -15,14 +15,16 @@ function aff( $v )
 }
 
 //aff( $r );
-function affR()
+// Aff Réponse
+function affR($r)
 {
-	$args = func_get_args();
-	if ( count( $args ) > 1 ) {
-		echo 'Il existe params';
-	}
+	// $args = func_get_args();
+	// if ( count( $args ) > 1 ) {
+	// 	echo 'Il existe params';
+	// }
+	// $ps = array_keys( (array) $args[0][0] );
 
-	$ps = array_keys( (array) $args[0][0] );
+	$ps = array_keys( (array) $r[0] );
 	//aff( $ps );
 
 	echo '<table class="table table-bordered table-striped table-sm">
@@ -35,9 +37,9 @@ function affR()
 	echo '</tr></thead>';
 
 	echo '<tr>';
-	foreach ( $args[0] as $k => $row ) {
-		foreach ( $ps as $k => $v ) {
-			echo '<td>' . $row->$v . '</td>';
+	foreach ( $r as $row ) {
+		foreach ( $ps as $p ) {
+			echo '<td>' . $row->$p . '</td>';
 		}
 		echo '</tr>';
 	}

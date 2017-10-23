@@ -29,8 +29,8 @@ include('cours/variables.php');
 
 
 
-include('initiation/tableau.php');
-// include('initiation/tableauIndexe.php');
+// include('initiation/tableau.php');
+include('initiation/tableauIndexe.php');
 
 // include('cours/objets.php');
 

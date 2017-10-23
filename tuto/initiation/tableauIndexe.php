@@ -17,3 +17,7 @@ print_r($t);
 echo '</pre>';
 
 
+foreach ($t as $k => $v) {
+	echo ucfirst($k) .' : '.$v;
+	echo '<br>';
+}

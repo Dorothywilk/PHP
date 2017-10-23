@@ -1,8 +1,10 @@
 <?php
 
 // $q pour Question
-//$q = 'select * from transports limit 99';
-$q = 'select title, slug from categories';
+// $q = 'select nom from transports limit 99';
+// $q = 'select title, slug from categories';
+$q = 'select nom, email from clients';
+
 echo '<mark>';
 echo $q;
 echo '</mark>';
