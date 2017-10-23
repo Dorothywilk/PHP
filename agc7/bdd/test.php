@@ -21,8 +21,7 @@ echo '<hr>';
 
 echo 'Ici: Réc. nom de propriété';
 
-$array = get_object_vars($o);
-$properties = array_keys($array);
+$properties = array_keys((array)$o);
 aff($properties);
 
 echo '<hr>';
