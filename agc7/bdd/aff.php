@@ -10,9 +10,10 @@ function aff( $v )
 {
 	echo '<pre>';
 	print_r( $v );
+	// var_dump($v);
 	echo '</pre>';
 }
 
 
-
+// AffR à venir
 

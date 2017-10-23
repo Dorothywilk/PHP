@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 <body>
+	<div class="maingc7">
 BdD - Procédure
 <hr>
 <?php
@@ -29,7 +30,9 @@ $dbh = null;
 	<hr>
 	&copy;2017 - GC7
 </footer>
+</div>
 <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
 <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
 </html>

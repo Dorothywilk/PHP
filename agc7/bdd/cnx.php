@@ -8,5 +8,5 @@
 
 
 // Of course, la BdD laravel doit être créée
-$db = new PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
+$cnx = new PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
 

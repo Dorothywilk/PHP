@@ -1,15 +1,21 @@
 <?php
 
-$q = 'select * from transports';
+
+// $q pour Question
+$q = 'select * from transports limit 7';
+// $q = 'select * from categories limit 7';
 aff( $q );
 
-// Ok
-$rep = $db->query( $q )->fetchAll( PDO::FETCH_OBJ );
+// $r pur Réponse
+$r = $cnx->query( $q )
+	   ->fetchAll( PDO::FETCH_OBJ );
+
+// aff( $r );
 
 
-affR( $rep );
+// Affichage Réel
+affR( $r );
 
-aff( $rep );
 
 function affR()
 {
