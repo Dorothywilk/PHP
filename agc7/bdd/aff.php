@@ -16,15 +16,11 @@ function aff( $v )
 
 //aff( $r );
 // Aff Réponse
-function affR($r)
-{
-	// $args = func_get_args();
-	// if ( count( $args ) > 1 ) {
-	// 	echo 'Il existe params';
-	// }
-	// $ps = array_keys( (array) $args[0][0] );
+function affR( $r )
+{ //aff( $r );
+	// $args = func_get_args(); // Réc arguments
 
-	$ps = array_keys( (array) $r[0] );
+	$ps = array_keys( (array) $r[0] ); // Get les clefs, nom des propriété
 	//aff( $ps );
 
 	echo '<table class="table table-bordered table-striped table-sm">
@@ -37,14 +33,31 @@ function affR($r)
 	echo '</tr></thead>';
 
 	echo '<tr>';
+
 	foreach ( $r as $row ) {
-		foreach ( $ps as $p ) {
-			echo '<td>' . $row->$p . '</td>';
+		foreach ( $row as $p ) { // p comme propriété
+			echo '<td>' . $p . '</td>';
 		}
 		echo '</tr>';
 	}
+
 	echo '</table>';
-	//echo '</pre>';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

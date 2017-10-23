@@ -1,13 +1,11 @@
 <?php
 
 // $q pour Question
-// $q = 'select nom from transports limit 99';
-// $q = 'select title, slug from categories';
-$q = 'select nom, email from clients';
+ $q = 'select id, nom, pere from transports limit 7, 2';
+ //$q = 'select title, slug from categories';
+//$q = 'select nom, email from clients';
 
-echo '<mark>';
 echo $q;
-echo '</mark>';
 
 // $r pur Réponse
 $r = $cnx->query( $q )
@@ -17,3 +15,13 @@ $r = $cnx->query( $q )
 affR( $r );
 
 
+$t=[
+  'prenom'  	=>  'Jade',
+  'nom'		=>	'W.',
+];
+
+echo $t['prenom'] . ' ' . $t['nom'];
+
+aff($t);
+
+affR([$t]);
