@@ -17,14 +17,19 @@ function affR()
 	if (count($args)>1){
 		echo 'oui';
 	}
-	//aff(var_export($args));
+	aff(array($args[0][0])[0]);
 
-	echo '<table border="1">';
+	//echo '<tr>';
+	//aff ( (array) array_keys($args[0]) );
+	//echo' </tr>';
+	//echo '<tr>';
+
+	echo '<table border="1" class="table table-bordered table-striped table-hover table-sm">';
 	foreach ( $args[0] as $row ) {
-		echo '<tr>';
+
 
 		echo
-			'<td>&nbsp;&nbsp;' . $row->id . '&nbsp;</td>
+			'<td>' . $row->id . '</td>
 		<td>&nbsp;' . $row->nom . '&nbsp;</td>
 		<td>&nbsp;' . $row->pere . '&nbsp;</td>';
 
