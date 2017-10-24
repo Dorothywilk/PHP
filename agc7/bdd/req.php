@@ -8,9 +8,10 @@
 echo '<h1>oki 21 abc
 
 
-</h1>';
+</h1>oOo';
 
-echo 'xxxxx';
+
+//echo 'xxxxx';
 
 //phpinfo();
 
