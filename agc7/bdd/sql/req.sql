@@ -1,4 +1,5 @@
--- Requête pour taux de pertinence
+-- Requête pour taux de pertinence<br><br>
+
 SELECT
   id,
   nom,
