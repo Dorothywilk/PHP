@@ -5,7 +5,7 @@
 //$q = 'select title, slug from categories';
 //$q = 'select nom, email from clients';
 
-echo '<h1>oki 21
+echo '<h1>oki 21 abc
 
 
 </h1>';
