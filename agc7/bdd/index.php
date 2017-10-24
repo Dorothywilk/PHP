@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<title>POO</title>
+	<title>BdD</title>
 	<link rel="stylesheet" href="../assets/css/mdb.min.css">
 	<link rel="stylesheet" href="../../css/style.css">
 	<link rel="stylesheet" href="../assets/css/gc7.css">
