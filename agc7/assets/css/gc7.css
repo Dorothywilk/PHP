@@ -29,8 +29,8 @@
 a {
     text-decoration: none;
     transition: all 5s ease-in-out;
-    color: #da0005;
-
+    color: #da0005!
+    
 }
 
 a:hover {

@@ -1,11 +1,11 @@
 <?php
-
 include ('classes/Humain.php');
 include ('classes/User.php');
 
 // include('cours/concatenation.php');
 
-include ('cours/variables.php');
+    include('cours/variables.php');
+
 
 
 
@@ -20,7 +20,7 @@ include ('cours/variables.php');
 
 
 // include('initiation/tableau.php');
-include ('initiation/tableauIndexe.php');
+include('initiation/tableauIndexe.php');
 
 // include('cours/objets.php');
 
@@ -42,8 +42,16 @@ include ('initiation/tableauIndexe.php');
 
 
 
-/*
+function affUser($user) {
+  echo $user->prenom . ' (' . $user->genre . ') : '. $user->estAutorise().'.<br>';
+}
 
+
+
+/*
+function nf($v) {
+  return number_format( $v , 2 ,',', ' ');
+}
 */
 
 /*
