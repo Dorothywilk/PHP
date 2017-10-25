@@ -28,7 +28,11 @@ class Requete
       $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
       $this->réponse = $cnx->query( $this->getSql() )
           ->fetchAll( \PDO::FETCH_OBJ ); 
-      $this->réponse = $this->réponse[0]->nom;
+      
+      if (!empty($this->réponse[0])) {
+        $this->réponse = $this->réponse[0]->nom;
+      }
+      else $this->réponse ='';
   }
     
   

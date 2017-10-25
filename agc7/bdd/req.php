@@ -24,12 +24,11 @@ include('../class/Req.php');
 
 $req = [
   'sql'  => 'getPere1.sql',
-  'item' => 'Parachute'
+  'item' => 'Marin'
 ];
-
 $maReq = new Requete((Array) $req);
 affR($maReq);
-//aff($maReq);
+aff($maReq);
 
 
 
