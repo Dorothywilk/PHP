@@ -6,5 +6,5 @@ function affUser($user)
   
 function nfmt($var)
 {
-  return number_format($var, 2, ',', ' ');
+  return number_format ( $var, 2, ',', ' ');
 }
