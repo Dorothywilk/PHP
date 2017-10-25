@@ -23,17 +23,17 @@ namespace GC7;
 include('../class/Req.php');
 
 $req = [
-  'sql'  => 'getPere1.sql',
-  'item' => 'Marin'
+    'sql' => 'getPere1.sql',
+    'item' => 'Marin'
 ];
-$maReq = new Requete((Array) $req);
+$maReq = new Requete((Array)$req);
 affR($maReq);
-aff($maReq);
+//aff($maReq);
 
-
+echo 'oki';
 
 // Affichage Réel
-if ( isset($r) ) {
-	affR( $r );
+if (isset($r)) {
+    affR($r);
 //aff( $r );
 }

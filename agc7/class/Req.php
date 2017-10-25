@@ -12,6 +12,7 @@ class Requete
   {
     $this->sql = $req['sql'];
     $this->param = $req['item'];
+    
     $this->getRep();
   }
 
