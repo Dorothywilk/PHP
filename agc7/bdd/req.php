@@ -1,16 +1,5 @@
 <?php
 
-// $q pour Question
-// $q = 'select id, nom, pere from transports';
-//$q = 'select title, slug from categories';
-//$q = 'select nom, email from clients';
-
-//phpinfo();
-
-// Trouve le père de id = 12
-//$q='SELECT * FROM transports WHERE id = (SELECT pere FROM transports WHERE id = 12)';
-
-
 //$q = "
 //Procedure RecherchePeres (in i integer, inout reponse string)
 //begin
@@ -31,7 +20,18 @@
 //$q = import 'req.sql';
 
 
-$q=file_get_contents('sql/req.sql');
+$req = [
+  'sql'  => 'sql/getPere.sql',
+  'item' => 'Parachute'
+];
+
+$q=sprintf(file_get_contents($req['sql']), $req['item']);
+
+
+
+
+
+
 
 echo $q;
 
