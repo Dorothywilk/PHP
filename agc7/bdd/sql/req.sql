@@ -1,10 +1,11 @@
--- Requête pour taux de pertinence<br><br>
-
 SELECT
   id,
-  nom,
-  espece,
-  MATCH(nom)
-    AGAINST ('bubulle') AS tx
+  nom
+
 FROM animal
-ORDER BY tx DESC
+
+WHERE nom > ''
+
+ORDER BY nom
+
+LIMIT 7

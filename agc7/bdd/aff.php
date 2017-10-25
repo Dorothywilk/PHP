@@ -14,7 +14,11 @@ function aff( $v )
 	echo '</pre>';
 }
 
-// Aff Réel
+/**
+ * Affichage réel
+ *
+ * @param $r array indexé ou object
+ */
 function affR( $r )
 { //aff( $r );
 	// $args = func_get_args(); // Réc arguments
@@ -23,7 +27,7 @@ function affR( $r )
 
 	if ( ! array_key_exists(0, $r) ) $r = [$r];
 
-	$ps = array_keys( (array) $r[0] ); // Get les clefs, nom des propriété
+	$ps = array_keys( (array) $r[0] ); // Get les clefs, nom des propriétés
 	//aff( $ps );
 
 	echo '<table class="table table-bordered table-striped table-sm">

@@ -20,20 +20,33 @@ namespace GC7;
 //
 //";
 
-include('../class/Req.php');
+include( '../class/Req.php' );
 
+// Exemple requête simple
 $req = [
-    'sql' => 'getPere1.sql',
-    'item' => 'Marin'
+  'sql' => 'req'
 ];
-$maReq = new Requete((Array)$req);
-affR($maReq);
-//aff($maReq);
 
-echo 'Oki';
+$maReq = new Requete( (Array) $req );
+echo $maReq->sql;
+affR( $maReq->réponse );
+
+// Exemple requête père
+$req = [
+  'sql' => 'getPere1',
+  'item' => 'Transport'
+  //  'item' => 'Marin'
+];
+$maReq = new Requete( (Array) $req );
+//aff($maReq);
+affR( $maReq );
+
 
 // Affichage Réel
-if (isset($r)) {
-    affR($r);
+if ( isset( $r ) ) {
+  affR( $r );
 //aff( $r );
 }
+
+
+//TOupLi Macro formatAndSave
