@@ -13,7 +13,7 @@ BdD - Procédure
 <hr>
 <?php
 
-include 'cnx.php';
+//include 'cnx.php';
 include 'aff.php';
 
 //include('test.php');
