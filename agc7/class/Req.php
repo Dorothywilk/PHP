@@ -10,14 +10,18 @@ class Requete
   
   public function __construct(Array $req)
   {
+    $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
     $this->sqlFile = 'sql/'.$req['sql'];
     $this->param = $req['item'];
-    $this->sql = $this->getSql();
+    
+    $this->rep = $cnx->query( $this->getSql() )
+         ->fetchAll( \PDO::FETCH_OBJ );  
   }
 
   public function getSql ()
   {
     $query=sprintf(file_get_contents($this->sqlFile), $this->param);
+    
     
     // $r pur Réponse
 //$r = $cnx->query( $q )
