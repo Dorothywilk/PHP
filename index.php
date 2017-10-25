@@ -10,7 +10,8 @@
 <body>
 
 	<header>
-		<a href="https://apprendre-php.com/tutoriels.html" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a>
+	<a href="/">Accueil<a> | 
+		<a href="https://apprendre-php.com/tutoriels.html" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a> | 
 		<a href="agc7">Techs GC7</a>
 		<hr>
 	</header>

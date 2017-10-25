@@ -30,7 +30,7 @@ $maReq = new Requete((Array)$req);
 affR($maReq);
 //aff($maReq);
 
-echo 'oki';
+echo 'Oki';
 
 // Affichage Réel
 if (isset($r)) {
