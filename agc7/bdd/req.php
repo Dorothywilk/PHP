@@ -38,7 +38,7 @@ $req = [
   //  'item' => 'Marin'
 ];
 $maReq = new Requete( (Array) $req );
-//aff($maReq);
+aff('Recherche Père');
 affR( $maReq );
 
 
