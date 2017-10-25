@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container maingc7">
 
   <header class="ui header">
     <a href="/">Accueil</a> | 
