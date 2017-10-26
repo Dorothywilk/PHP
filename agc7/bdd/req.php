@@ -27,10 +27,10 @@ namespace GC7;
 
 
 // Requêtes et sous-requêtes
-//include ('ssreq.php');
+//include ('subreq.php');
 
 // Jointures et sous-requêtes
-//include ('jointures.php');
+//include ('joints.php');
 
 // UNION de plusieurs requêtes
 //include ('union.php');
@@ -38,8 +38,8 @@ namespace GC7;
 // Clés étrangèes (Foreign Keys)
 //include ('foreign_key.php');
 
-// Viols (Foreign Keys)
-// include ('viols.php');
+// Fonctions natives MySQL
+include ('functions.php');
 
 
 
