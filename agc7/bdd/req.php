@@ -23,8 +23,10 @@ namespace GC7;
 //include ('ssreq.php');
 
 // Jointures et sous-requêtes
-include ('jointures.php');
+//include ('jointures.php');
 
+// UNION de plusieurs requêtes
+include ('union.php');
 
 
 
