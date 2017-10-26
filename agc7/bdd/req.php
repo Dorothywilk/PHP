@@ -20,7 +20,10 @@ namespace GC7;
 
 
 // Requêtes et sous-requêtes
-include ('ssreq.php');
+//include ('ssreq.php');
+
+// Jointures et sous-requêtes
+include ('jointures.php');
 
 
 

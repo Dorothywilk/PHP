@@ -1,7 +1,10 @@
 <?php
 namespace GC7;
-
-
+?>
+<div class="jumbotron">
+  <h1 class="h1-responsive">Sous-requêtes</h1>
+</div>
+<?php
 $req= function ($sql) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
 
