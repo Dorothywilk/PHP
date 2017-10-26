@@ -26,9 +26,10 @@ namespace GC7;
 //include ('jointures.php');
 
 // UNION de plusieurs requêtes
-include ('union.php');
+//include ('union.php');
 
-
+// Clés étrangèes (Foreign Keys)
+include ('foreign_key.php');
 
 //$maReq = new Requete( (Array) $req );
 

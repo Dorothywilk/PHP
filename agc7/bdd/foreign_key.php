@@ -2,14 +2,12 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-    <h3>UNION [ALL]</h3>
+    <h3>Clés étrangères</h3>
     <p class="lead">
-        Pour UNION de 2 (ou +) résultats de requêtes
+        Pour automatiser cohérences des opérations update et delete entre 2 tables
     </p>
 </div>
 <?php
-// Req pour initiales en maj
-// update animal set espece = CONCAT(UCASE(SUBSTRING(espece, 1, 1)), LCASE(SUBSTRING(espece, 2)))
 
 $req = function ( $sql ) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
@@ -27,29 +25,9 @@ $nbr = function ( $table ) {
 };
 
 
-$sql='(select id, nom, ("<em>Non renseigné</em>")as propriétaire, espece, sexe, "pets" as "<= Table" from pets limit 3)
-UNION
-(select id, nom, (select concat(users.name, " (", clt_id, ")") from users where id=clt_id) as p, espece, sexe, "animaux" from animaux where nom > "" and clt_id > 0 order by clt_id limit 66)
-order by id
-limit 8';
-// order by id // Est prioritaire si placé avant limit 6
-echo '<g>(</g>select id, nom, ("<em>Non renseigné</em>") as propriétaire, espece, sexe from <g>pets</g> limit 3<g>)</g><br>
-<g>UNION</g><br>
-<g>(</g>select id, nom, <mark>(</mark>select concat(users.name, " (", clt_id, ")")<br>from <mark>users</mark> where id=clt_id<mark>)</mark> as p, espece, sexe<br>from <g>animaux </g><br>where nom > "" <g>and</g> clt_id > 0 order by clt_id limit 66<g>)</g><br>order by id limit 8';
-$req( $sql );
-
-echo '<h3>UNION ALL</h3>Sinon, dédoublonnage automatique (DISTINCT induit)';
-$sql='select *, "sql 1" as "Source" from pets
-UNION ALL
-(select *, "sql 2" from pets)
-order by id, Source
-limit 3';
-aff('select *, "sql 1" as "Source" from pets
-<g>UNION ALL</g>
-(select *, "sql 2" from pets)
-order by id, Source
-limit 3');
-
+//echo '<h3>UNION ALL</h3>Sinon, dédoublonnage automatique (DISTINCT induit)';
+$sql='select * from pets limit 3';
+aff($sql);
 $req($sql);
 
 
