@@ -59,6 +59,3 @@ if ( isset( $r ) ) {
   affR( $r );
 //aff( $r );
 }
-
-
-//ToUpLi Macro formatAndSave ds PhpS

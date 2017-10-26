@@ -32,8 +32,21 @@ $nbr = function ( $table ) {
 ( select id from users where id = (1 +floor(rand()*21)) limit 1);';
 $req($sql);
 */
-?>
 
+echo 'Animaux: '.$nbr('animaux').'<br>';
+//echo ('(Test)');
+$sql = 'select nom, clt_id, espece, date_naissance, sexe from pets';
+aff($sql);
+$req($sql);
+
+echo ('Jointure... (Et avec sous-requête)');
+$sql = 'select id, nom, clt_id, espece, sexe, commentaires from animaux limit 3';
+aff($sql);
+$req($sql);
+
+
+echo 'Animaux: '.$nbr('animaux').'<br>';
+?>
 <div class="jumbotron">
   <p class="h3-responsive">Les tables de référence</p>
   <?php
