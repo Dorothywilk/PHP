@@ -36,7 +36,13 @@ namespace GC7;
 //include ('union.php');
 
 // Clés étrangèes (Foreign Keys)
-include ('foreign_key.php');
+//include ('foreign_key.php');
+
+// Viols (Foreign Keys)
+// include ('viols.php');
+
+
+
 
 //$maReq = new Requete( (Array) $req );
 
