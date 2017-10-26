@@ -7,7 +7,14 @@ namespace GC7;
       Pour automatiser cohérences des opérations INSERT, UPDATE et DELETE entre 2 tables
     </p>
     <p>Options: RESTRICT | SET NULL | CASCADE</p>
-  </div>
+    <p>NB:
+     <ul>
+       <li>IGNORE permet d'ignore le message d'erreur mais la contrainte est respectée</li>
+       <li>REPLACE au lieu de INSERT force les modifs (Voir exemple)</li>
+       <li>ON DUPLICATE KEY UPDATE permet une alternative (Voir exemple)</li>
+     </ul>
+      
+      </div>
   <?php
 
 $req = function ( $sql ) {
@@ -48,14 +55,15 @@ $req($sql);
 //$sql='replace into pets (id, clt_id, nom, espece, sexe, date_naissance) values (2, 1, "Jeny", "Chien", "F", "2014-07-05")'; // Fonctionne car malgré la clé REPLACE écrase l'enregistremenet et le remplace par ces nouvelles valeurs.
 // IMPORTANT: Si l'id n'était pas précisé, le nouvel enregistrement aurait la valeur id du compteur d'Auto-increment => En fait, tous les enregistrements qui normalement empêcheraient l'insertion avec INSERT, sont supprimés et ce nouvel enregistrement est créé.
 
-$sql='insert into pets (clt_id, nom, espece, sexe, date_naissance) values (1, "Jeny", "Chien", "F", "2014-06-05") ON DUPLICATE KEY UPDATE nom = "Jeny"';
+// Changer date_naissance pour voir effet: 2 ranfs affectés !
+$sql='insert into pets (clt_id, nom, espece, sexe, date_naissance) values (1, "Jeny", "Chien", "F", "2014-06-05") ON DUPLICATE KEY UPDATE nom = "Jeny", date_naissance="2014-07-05"';
 // Cette fois, même si présente, insertion de Jeny avec les SEULS params précisés en fin de commande
 
 //$sql='delete from clients where id =1'; // Refusé par le système
 //$sql='insert into clients (id, nom, prenom, date_naissance) values (1, "CÔTE", "Lionel", "1965-03-23")';
 aff($sql);
 
-$req($sql);
+//$req($sql);
 
 
 
