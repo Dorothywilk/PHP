@@ -56,3 +56,8 @@ a.navbar-brand:hover {
 .table-sm th {
 	padding: 0 3%;
 }
+
+mark {
+  font-size: .79em;
+  background: yellow;
+}

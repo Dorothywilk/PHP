@@ -18,55 +18,18 @@ namespace GC7;
 //
 //";
 
-include( '../class/Req.php' );
 
-$sql = 'select id, name as pseudo, email from users where id in (1,15,16)';
-aff('Users');
-req($sql);
-
-$sql = 'select id, id_user, nom, prenom, date_naissance from clients';
-aff('Clients');
-req($sql);
-
-$sql = 'select id as num, clt_id, date, total from factures';
-aff('Factures');
-req($sql);
+// Requêtes et sous-requêtes
+include ('ssreq.php');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function req($sql) {
-$cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
-
-$r = $cnx->query( $sql )
-    ->fetchAll( \PDO::FETCH_OBJ );
-  affR($r);
-}
 
 //$maReq = new Requete( (Array) $req );
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
+include( '../class/Req.php' );
 // Exemple requête simple
 //$req = [
 //  'sql' => 'req'
