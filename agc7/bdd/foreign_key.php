@@ -6,6 +6,7 @@ namespace GC7;
     <p class="lead">
         Pour automatiser cohérences des opérations update et delete entre 2 tables
     </p>
+    <p>Options: RESTRICT | SET NULL | CASCADE</p>
 </div>
 <?php
 
