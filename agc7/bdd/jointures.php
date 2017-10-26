@@ -3,6 +3,7 @@ namespace GC7;
 ?>
 <div class="jumbotron">
   <h1>Jointure et sous-requêtes</h1>
+
   <p class="lead">
     <i class="fa fa-edit"></i> Pour mises à jour (UPDATE)
   </p>
@@ -16,7 +17,14 @@ $req = function ( $sql ) {
 
   $rep = $cnx->query( $sql )
     ->fetchAll( \PDO::FETCH_OBJ );
+//  aff($rep);
   affR( $rep );
+};
+
+$nbr = function ( $table ) {
+  $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
+
+  return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
 
@@ -24,16 +32,15 @@ echo( 'Factures avec pseudos (Sous-requête dans SELECT)' );
 $sql = 'select id as num, clt_id,
 (select name from users where users.id=factures.clt_id)
 as pseudo, date, total from factures limit 3';
-aff( $sql );
-$req( $sql );
-
+//aff( $sql );
+//$req( $sql );
 
 ?>
 <div class="jumbotron">
-  <p class="h3-responsive">Les 3 tables de référence</p>
+  <p class="h3-responsive">Les tables de référence</p>
   <?php
-  aff( 'Users (Les 3 premiers)' );
-  $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
+  $sql = 'select id, nom, espece, sexe from pets limit 3';
+  aff( 'Pets (Les 3 premiers ' . '/' . $nbr( 'pets' ) . ')' );
   $req( $sql );
 
   aff( 'Clients' );
