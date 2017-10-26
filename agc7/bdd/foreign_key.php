@@ -1,22 +1,30 @@
 <?php
 namespace GC7;
 ?>
-<div class="jumbotron">
+  <div class="jumbotron">
     <h3>Clés étrangères</h3>
     <p class="lead">
-        Pour automatiser cohérences des opérations update et delete entre 2 tables
+      Pour automatiser cohérences des opérations INSERT, UPDATE et DELETE entre 2 tables
     </p>
     <p>Options: RESTRICT | SET NULL | CASCADE</p>
-</div>
-<?php
+  </div>
+  <?php
 
 $req = function ( $sql ) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
 
-  $rep = $cnx->query( $sql )
-    ->fetchAll( \PDO::FETCH_OBJ );
+  $cnx = $cnx->query( $sql );
+  $rep =$cnx->fetchAll( \PDO::FETCH_OBJ );
+    
 //  aff($rep);
-  if ( $rep ) affR( $rep );
+  if ( $rep ) {affR( $rep );
+              }
+  if (preg_match('/INSERT|UPDATE|REPLACE|DELETE/i', $sql)) {
+               $nbra = $cnx->rowCount(); // Nombre de rangs affectés
+               $plur = ($nbra>1)?'s':'';
+               echo '=> '.$nbra . ' rang'.$plur.' affecté'.$plur.'<hr>';
+  }
+  
 };
 
 $nbr = function ( $table ) {
@@ -27,18 +35,29 @@ $nbr = function ( $table ) {
 
 
 //echo '<h3>UNION ALL</h3>Sinon, dédoublonnage automatique (DISTINCT induit)';
-$sql='select * from pets limit 3';
+$sql='select * from pets limit 2';
 aff($sql);
 $req($sql);
 
-//$sql='delete from pets where id =2'; // Fonctionne: La clé est sur clients vers animaux et non la réciproque
-$sql='insert into pets (id, clt_id, nom, espece, sexe,
-date_naissance) values (2, 1, "Jeny", "Chien", "F", "2014-06-05")';
 
-$sql='delete from clients where id =1'; // Refusé par le système
+// Lignes pour tests des contraintes (Clé UNIQUE ou Foreign_Key)
+
+//$sql='delete from pets where id =2'; // Fonctionne: La clé est sur clients vers animaux et non la réciproque
+//$sql='insert into pets (id, clt_id, nom, espece, sexe, date_naissance) values (200, 1, "Jeny", "Chien", "F", "2014-06-05")'; // Si présente, insertion de Jeny refusée car contrainte d'unicité posée sur le champs pets.nom
+
+//$sql='replace into pets (id, clt_id, nom, espece, sexe, date_naissance) values (2, 1, "Jeny", "Chien", "F", "2014-07-05")'; // Fonctionne car malgré la clé REPLACE écrase l'enregistremenet et le remplace par ces nouvelles valeurs.
+// IMPORTANT: Si l'id n'était pas précisé, le nouvel enregistrement aurait la valeur id du compteur d'Auto-increment => En fait, tous les enregistrements qui normalement empêcheraient l'insertion avec INSERT, sont supprimés et ce nouvel enregistrement est créé.
+
+$sql='insert into pets (clt_id, nom, espece, sexe, date_naissance) values (1, "Jeny", "Chien", "F", "2014-06-05") ON DUPLICATE KEY UPDATE nom = "Jeny"';
+// Cette fois, même si présente, insertion de Jeny avec les SEULS params précisés en fin de commande
+
+//$sql='delete from clients where id =1'; // Refusé par le système
 //$sql='insert into clients (id, nom, prenom, date_naissance) values (1, "CÔTE", "Lionel", "1965-03-23")';
 aff($sql);
-//$req($sql);
+
+$req($sql);
+
+
 
 $sql='select * from pets limit 3';
 aff($sql);
@@ -46,9 +65,9 @@ $req($sql);
 
 
 ?>
-<div class="jumbotron">
-  <p class="h3-responsive">Les tables de référence</p>
-  <?php
+    <div class="jumbotron">
+      <p class="h3-responsive">Les tables de référence</p>
+      <?php
   $sql = 'select id, clt_id, nom, espece, sexe, date_naissance from pets limit 4';
   aff( 'Pets (Les 4 premiers ' . '/' . $nbr( 'pets' ) . ')' );
   $req( $sql );
@@ -66,4 +85,4 @@ $req($sql);
   $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
   $req( $sql );
   ?>
-</div>
+    </div>

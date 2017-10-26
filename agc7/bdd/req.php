@@ -1,6 +1,13 @@
 <?php
 namespace GC7;
 
+//
+//$subject = "abcdef";
+//$pattern = '/^def/';
+//preg_match($pattern, $subject, $matches, PREG_OFFSET_CAPTURE, 3);
+//print_r($matches);
+
+
 //$q = "
 //Procedure RecherchePeres (in i integer, inout reponse string)
 //begin
@@ -35,7 +42,7 @@ include ('foreign_key.php');
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
-include( '../class/Req.php' );
+//include( '../class/Req.php' );
 // Exemple requête simple
 //$req = [
 //  'sql' => 'req'
