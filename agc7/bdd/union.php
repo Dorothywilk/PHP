@@ -52,13 +52,13 @@ echo 'Animaux: ' . $nbr( 'animaux' ) . '<br>'; // Aff 64
 //echo $sql;
 //$req( $sql );
 
-$sql='(select id, nom, ("<em>Non renseigné</em>")as propriétaire, espece, sexe from pets limit 3)
+$sql='(select id, nom, ("<em>Non renseigné</em>")as propriétaire, espece, sexe, "pets" as "<= Table" from pets limit 3)
 UNION
-(select id, nom, (select concat(users.name, " (", clt_id, ")") from users where id=clt_id) as p, espece, sexe from animaux where nom > "" and clt_id > 0 order by clt_id limit 66)
+(select id, nom, (select concat(users.name, " (", clt_id, ")") from users where id=clt_id) as p, espece, sexe, "animaux" from animaux where nom > "" and clt_id > 0 order by clt_id limit 66)
 order by id
 limit 8';
 // order by id // Est prioritaire si placé avant limit 6
-echo '<g>(</g>select id, nom, ("<em>Non renseigné</em>") as propriétaire, espece, sexe from <g>pets</g> limit 3<g>)</g>
+echo '<g>(</g>select id, nom, ("<em>Non renseigné</em>") as propriétaire, espece, sexe from <g>pets</g> limit 3<g>)</g><br>
 <g>UNION</g><br>
 <g>(</g>select id, nom, <mark>(</mark>select concat(users.name, " (", clt_id, ")")<br>from <mark>users</mark> where id=clt_id<mark>)</mark> as p, espece, sexe<br>from <g>animaux </g><br>where nom > "" <g>and</g> clt_id > 0 order by clt_id limit 66<g>)</g><br>order by id limit 8';
 $req( $sql );
