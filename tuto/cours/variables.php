@@ -6,9 +6,9 @@
 // include './tuto/initiation/tableMultiplication.php';
 
 
-$a =777;
+$a =77777.77;
 
-echo number_format($a*3,2,',',' ');
+echo '<h1>' . number_format($a,2,',',' ') . '</h1>';
 
 
 
