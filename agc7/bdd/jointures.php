@@ -9,7 +9,7 @@ namespace GC7;
   </p>
 </div>
 <?php
-// Req pour initiale en maj
+// Req pour initiales en maj
 // update animal set espece = CONCAT(UCASE(SUBSTRING(espece, 1, 1)), LCASE(SUBSTRING(espece, 2)))
 
 $req = function ( $sql ) {
@@ -28,27 +28,26 @@ $nbr = function ( $table ) {
 };
 
 
-echo( 'Factures avec pseudos (Sous-requête dans SELECT)' );
-$sql = 'select id as num, clt_id,
-(select name from users where users.id=factures.clt_id)
-as pseudo, date, total from factures limit 3';
-//aff( $sql );
-//$req( $sql );
+echo( '...' );
+$sql = 'select * from pets';
+aff( $sql );
+//affR( [$sql] );
+$req( $sql );
 
 ?>
 <div class="jumbotron">
   <p class="h3-responsive">Les tables de référence</p>
   <?php
-  $sql = 'select id, nom, espece, sexe from pets limit 3';
+  $sql = 'select id, clt_id, nom, espece, sexe from pets limit 3';
   aff( 'Pets (Les 3 premiers ' . '/' . $nbr( 'pets' ) . ')' );
   $req( $sql );
 
-  aff( 'Clients' );
-  $sql = 'select id, user_id, nom, prenom, date_naissance from clients';
+  aff( 'Animal (Les 3 premiers ' . '/' . $nbr( 'animals' ) . ')' );
+  $sql = 'select id, nom, espece, sexe, commentaires from animals limit 3';
   $req( $sql );
 
-  aff( 'Factures' );
-  $sql = 'select concat("00",id) as num, clt_id, date, total from factures';
+  aff( 'Animal (Les 3 premiers ' . '/' . $nbr( 'users' ) . ')' );
+  $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
   $req( $sql );
   ?>
 </div>

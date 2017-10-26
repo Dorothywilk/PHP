@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  jeu. 26 oct. 2017 à 06:27
+-- Généré le :  jeu. 26 oct. 2017 à 07:26
 -- Version du serveur :  5.7.18
 -- Version de PHP :  7.1.7
 
@@ -25,12 +25,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `animal`
+-- Structure de la table `animals`
 --
 
-CREATE TABLE `animal` (
-  `id` smallint(6) UNSIGNED NOT NULL,
+CREATE TABLE `animals` (
+  `id` int(10) UNSIGNED NOT NULL,
   `nom` varchar(30) DEFAULT NULL,
+  `clt_id` int(11) UNSIGNED DEFAULT NULL,
   `espece` varchar(40) NOT NULL,
   `sexe` char(1) DEFAULT NULL,
   `date_naissance` datetime DEFAULT NULL,
@@ -38,69 +39,150 @@ CREATE TABLE `animal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `animal`
+-- Déchargement des données de la table `animals`
 --
 
-INSERT INTO `animal` (`id`, `nom`, `espece`, `sexe`, `date_naissance`, `commentaires`) VALUES
-(1, 'Rox', 'Chien', 'M', '2010-04-05 13:43:00', 'Mordille beaucoup'),
-(2, 'Roucky', 'Chat', NULL, '2010-03-24 02:23:00', NULL),
-(3, 'Schtroumpfette', 'Chat', 'F', '2010-09-13 15:02:00', NULL),
-(4, NULL, 'Tortue', 'F', '2009-08-03 05:12:00', NULL),
-(5, 'Choupi', 'Chat', NULL, '2010-10-03 16:44:00', 'Né sans oreille gauche'),
-(6, 'Bobosse', 'Tortue', 'F', '2009-06-13 08:17:00', 'Carapace bizarre'),
-(7, 'Caroline', 'Chien', 'F', '2008-12-06 05:18:00', NULL),
-(8, 'Bagherra', 'Chat', 'M', '2008-09-11 15:38:00', NULL),
-(9, NULL, 'Tortue', NULL, '2010-08-23 05:18:00', NULL),
-(10, 'Bobo', 'Chien', 'M', '2010-07-21 15:41:00', NULL),
-(11, 'Canaille', 'Chien', 'F', '2008-02-20 15:45:00', NULL),
-(12, 'Cali', 'Chien', 'F', '2009-05-26 08:54:00', NULL),
-(13, 'Rouquine', 'Chien', 'F', '2007-04-24 12:54:00', NULL),
-(14, 'Fila', 'Chien', 'F', '2009-05-26 08:56:00', NULL),
-(15, 'Anya', 'Chien', 'F', '2008-02-20 15:47:00', NULL),
-(16, 'Louya', 'Chien', 'F', '2009-05-26 08:50:00', NULL),
-(17, 'Welva', 'Chien', 'F', '2008-03-10 13:45:00', NULL),
-(18, 'Zira', 'Chien', 'F', '2007-04-24 12:59:00', NULL),
-(19, 'Java', 'Chien', 'F', '2009-05-26 09:02:00', NULL),
-(20, 'Balou', 'Chien', 'M', '2007-04-24 12:45:00', NULL),
-(21, 'Pataude', 'Chien', 'F', '2008-03-10 13:43:00', NULL),
-(22, 'Bouli', 'Chien', 'M', '2007-04-24 12:42:00', NULL),
-(24, 'Cartouche', 'Chien', 'M', '2007-04-12 05:23:00', NULL),
-(25, 'Zambo', 'Chien', 'M', '2006-05-14 15:50:00', NULL),
-(26, 'Samba', 'Chien', 'M', '2006-05-14 15:48:00', NULL),
-(27, 'Moka', 'Chien', 'M', '2008-03-10 13:40:00', NULL),
-(28, 'Pilou', 'Chien', 'M', '2006-05-14 15:40:00', NULL),
-(29, 'Fiero', 'Chat', 'M', '2009-05-14 06:30:00', NULL),
-(30, 'Zonko', 'Chat', 'M', '2007-03-12 12:05:00', NULL),
-(31, 'Filou', 'Chat', 'M', '2008-02-20 15:45:00', NULL),
-(32, 'Farceur', 'Chat', 'M', '2007-03-12 12:07:00', NULL),
-(33, 'Caribou', 'Chat', 'M', '2006-05-19 16:17:00', NULL),
-(34, 'Capou', 'Chat', 'M', '2008-04-20 03:22:00', NULL),
-(35, 'Raccou', 'Chat', 'M', '2006-05-19 16:56:00', 'Pas de queue depuis la naissance'),
-(36, 'Boucan', 'Chat', 'M', '2009-05-14 06:42:00', NULL),
-(37, 'Callune', 'Chat', 'F', '2006-05-19 16:06:00', NULL),
-(38, 'Boule', 'Chat', 'F', '2009-05-14 06:45:00', NULL),
-(39, 'Zara', 'Chat', 'F', '2008-04-20 03:26:00', NULL),
-(40, 'Milla', 'Chat', 'F', '2007-03-12 12:00:00', NULL),
-(41, 'Feta', 'Chat', 'F', '2006-05-19 15:59:00', NULL),
-(42, 'Bilba', 'Chat', 'F', '2008-04-20 03:20:00', 'Sourde de l\'oreille droite à 80%'),
-(43, 'Cracotte', 'Chat', 'F', '2007-03-12 11:54:00', NULL),
-(44, 'Cawette', 'Chat', 'F', '2006-05-19 16:16:00', NULL),
-(45, 'Nikki', 'Tortue', 'F', '2007-04-01 18:17:00', NULL),
-(46, 'Tortilla', 'Tortue', 'F', '2009-03-24 08:23:00', NULL),
-(47, 'Scroupy', 'Tortue', 'F', '2009-03-26 01:24:00', NULL),
-(48, 'Lulla', 'Tortue', 'F', '2006-03-15 14:56:00', NULL),
-(49, 'Dana', 'Tortue', 'F', '2008-03-15 12:02:00', NULL),
-(50, 'Cheli', 'Tortue', 'F', '2009-05-25 19:57:00', NULL),
-(51, 'Chicaca', 'Tortue', 'F', '2007-04-01 03:54:00', NULL),
-(52, 'Redbul', 'Tortue', 'F', '2006-03-15 14:26:00', 'Insomniaque'),
-(53, 'Spoutnik', 'Tortue', 'M', '2007-04-02 01:45:00', NULL),
-(54, 'Bubulle', 'Tortue', 'M', '2008-03-16 08:20:00', NULL),
-(55, 'Relou', 'Tortue', 'M', '2008-03-15 18:45:00', 'Surpoids'),
-(56, 'Bulbizard', 'Tortue', 'M', '2009-05-25 18:54:00', NULL),
-(57, 'Safran', 'Perroquet', 'M', '2007-03-04 19:36:00', NULL),
-(58, 'Gingko', 'Perroquet', 'M', '2008-02-20 02:50:00', NULL),
-(59, 'Bavard', 'Perroquet', 'M', '2009-03-26 08:28:00', NULL),
-(60, 'Parlotte', 'Perroquet', 'F', '2009-03-26 07:55:00', NULL);
+INSERT INTO `animals` (`id`, `nom`, `clt_id`, `espece`, `sexe`, `date_naissance`, `commentaires`) VALUES
+(1, 'Rox', NULL, 'Chien', 'M', '2010-04-05 13:43:00', 'Mordille beaucoup'),
+(2, 'Roucky', NULL, 'Chat', NULL, '2010-03-24 02:23:00', NULL),
+(3, 'Schtroumpfette', NULL, 'Chat', 'F', '2010-09-13 15:02:00', NULL),
+(4, NULL, NULL, 'Tortue', 'F', '2009-08-03 05:12:00', NULL),
+(5, 'Choupi', NULL, 'Chat', NULL, '2010-10-03 16:44:00', 'Né sans oreille gauche'),
+(6, 'Bobosse', NULL, 'Tortue', 'F', '2009-06-13 08:17:00', 'Carapace bizarre'),
+(7, 'Caroline', NULL, 'Chien', 'F', '2008-12-06 05:18:00', NULL),
+(8, 'Bagherra', NULL, 'Chat', 'M', '2008-09-11 15:38:00', NULL),
+(9, NULL, NULL, 'Tortue', NULL, '2010-08-23 05:18:00', NULL),
+(10, 'Bobo', NULL, 'Chien', 'M', '2010-07-21 15:41:00', NULL),
+(11, 'Canaille', NULL, 'Chien', 'F', '2008-02-20 15:45:00', NULL),
+(12, 'Cali', NULL, 'Chien', 'F', '2009-05-26 08:54:00', NULL),
+(13, 'Rouquine', NULL, 'Chien', 'F', '2007-04-24 12:54:00', NULL),
+(14, 'Fila', NULL, 'Chien', 'F', '2009-05-26 08:56:00', NULL),
+(15, 'Anya', NULL, 'Chien', 'F', '2008-02-20 15:47:00', NULL),
+(16, 'Louya', NULL, 'Chien', 'F', '2009-05-26 08:50:00', NULL),
+(17, 'Welva', NULL, 'Chien', 'F', '2008-03-10 13:45:00', NULL),
+(18, 'Zira', NULL, 'Chien', 'F', '2007-04-24 12:59:00', NULL),
+(19, 'Java', NULL, 'Chien', 'F', '2009-05-26 09:02:00', NULL),
+(20, 'Balou', NULL, 'Chien', 'M', '2007-04-24 12:45:00', NULL),
+(21, 'Pataude', NULL, 'Chien', 'F', '2008-03-10 13:43:00', NULL),
+(22, 'Bouli', NULL, 'Chien', 'M', '2007-04-24 12:42:00', NULL),
+(24, 'Cartouche', NULL, 'Chien', 'M', '2007-04-12 05:23:00', NULL),
+(25, 'Zambo', NULL, 'Chien', 'M', '2006-05-14 15:50:00', NULL),
+(26, 'Samba', NULL, 'Chien', 'M', '2006-05-14 15:48:00', NULL),
+(27, 'Moka', NULL, 'Chien', 'M', '2008-03-10 13:40:00', NULL),
+(28, 'Pilou', NULL, 'Chien', 'M', '2006-05-14 15:40:00', NULL),
+(29, 'Fiero', NULL, 'Chat', 'M', '2009-05-14 06:30:00', NULL),
+(30, 'Zonko', NULL, 'Chat', 'M', '2007-03-12 12:05:00', NULL),
+(31, 'Filou', NULL, 'Chat', 'M', '2008-02-20 15:45:00', NULL),
+(32, 'Farceur', NULL, 'Chat', 'M', '2007-03-12 12:07:00', NULL),
+(33, 'Caribou', NULL, 'Chat', 'M', '2006-05-19 16:17:00', NULL),
+(34, 'Capou', NULL, 'Chat', 'M', '2008-04-20 03:22:00', NULL),
+(35, 'Raccou', NULL, 'Chat', 'M', '2006-05-19 16:56:00', 'Pas de queue depuis la naissance'),
+(36, 'Boucan', NULL, 'Chat', 'M', '2009-05-14 06:42:00', NULL),
+(37, 'Callune', NULL, 'Chat', 'F', '2006-05-19 16:06:00', NULL),
+(38, 'Boule', NULL, 'Chat', 'F', '2009-05-14 06:45:00', NULL),
+(39, 'Zara', NULL, 'Chat', 'F', '2008-04-20 03:26:00', NULL),
+(40, 'Milla', NULL, 'Chat', 'F', '2007-03-12 12:00:00', NULL),
+(41, 'Feta', NULL, 'Chat', 'F', '2006-05-19 15:59:00', NULL),
+(42, 'Bilba', NULL, 'Chat', 'F', '2008-04-20 03:20:00', 'Sourde de l\'oreille droite à 80%'),
+(43, 'Cracotte', NULL, 'Chat', 'F', '2007-03-12 11:54:00', NULL),
+(44, 'Cawette', NULL, 'Chat', 'F', '2006-05-19 16:16:00', NULL),
+(45, 'Nikki', NULL, 'Tortue', 'F', '2007-04-01 18:17:00', NULL),
+(46, 'Tortilla', NULL, 'Tortue', 'F', '2009-03-24 08:23:00', NULL),
+(47, 'Scroupy', NULL, 'Tortue', 'F', '2009-03-26 01:24:00', NULL),
+(48, 'Lulla', NULL, 'Tortue', 'F', '2006-03-15 14:56:00', NULL),
+(49, 'Dana', NULL, 'Tortue', 'F', '2008-03-15 12:02:00', NULL),
+(50, 'Cheli', NULL, 'Tortue', 'F', '2009-05-25 19:57:00', NULL),
+(51, 'Chicaca', NULL, 'Tortue', 'F', '2007-04-01 03:54:00', NULL),
+(52, 'Redbul', NULL, 'Tortue', 'F', '2006-03-15 14:26:00', 'Insomniaque'),
+(53, 'Spoutnik', NULL, 'Tortue', 'M', '2007-04-02 01:45:00', NULL),
+(54, 'Bubulle', NULL, 'Tortue', 'M', '2008-03-16 08:20:00', NULL),
+(55, 'Relou', NULL, 'Tortue', 'M', '2008-03-15 18:45:00', 'Surpoids'),
+(56, 'Bulbizard', NULL, 'Tortue', 'M', '2009-05-25 18:54:00', NULL),
+(57, 'Safran', NULL, 'Perroquet', 'M', '2007-03-04 19:36:00', NULL),
+(58, 'Gingko', NULL, 'Perroquet', 'M', '2008-02-20 02:50:00', NULL),
+(59, 'Bavard', NULL, 'Perroquet', 'M', '2009-03-26 08:28:00', NULL),
+(60, 'Parlotte', NULL, 'Perroquet', 'F', '2009-03-26 07:55:00', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `animals_copy`
+--
+
+CREATE TABLE `animals_copy` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `clt_id` int(11) UNSIGNED DEFAULT NULL,
+  `espece` varchar(40) NOT NULL,
+  `sexe` char(1) DEFAULT NULL,
+  `date_naissance` datetime DEFAULT NULL,
+  `commentaires` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+--
+-- Déchargement des données de la table `animals_copy`
+--
+
+INSERT INTO `animals_copy` (`id`, `nom`, `clt_id`, `espece`, `sexe`, `date_naissance`, `commentaires`) VALUES
+(1, 'Rox', NULL, 'Chien', 'M', '2010-04-05 13:43:00', 'Mordille beaucoup'),
+(2, 'Roucky', NULL, 'Chat', NULL, '2010-03-24 02:23:00', NULL),
+(3, 'Schtroumpfette', NULL, 'Chat', 'F', '2010-09-13 15:02:00', NULL),
+(4, NULL, NULL, 'Tortue', 'F', '2009-08-03 05:12:00', NULL),
+(5, 'Choupi', NULL, 'Chat', NULL, '2010-10-03 16:44:00', 'Né sans oreille gauche'),
+(6, 'Bobosse', NULL, 'Tortue', 'F', '2009-06-13 08:17:00', 'Carapace bizarre'),
+(7, 'Caroline', NULL, 'Chien', 'F', '2008-12-06 05:18:00', NULL),
+(8, 'Bagherra', NULL, 'Chat', 'M', '2008-09-11 15:38:00', NULL),
+(9, NULL, NULL, 'Tortue', NULL, '2010-08-23 05:18:00', NULL),
+(10, 'Bobo', NULL, 'Chien', 'M', '2010-07-21 15:41:00', NULL),
+(11, 'Canaille', NULL, 'Chien', 'F', '2008-02-20 15:45:00', NULL),
+(12, 'Cali', NULL, 'Chien', 'F', '2009-05-26 08:54:00', NULL),
+(13, 'Rouquine', NULL, 'Chien', 'F', '2007-04-24 12:54:00', NULL),
+(14, 'Fila', NULL, 'Chien', 'F', '2009-05-26 08:56:00', NULL),
+(15, 'Anya', NULL, 'Chien', 'F', '2008-02-20 15:47:00', NULL),
+(16, 'Louya', NULL, 'Chien', 'F', '2009-05-26 08:50:00', NULL),
+(17, 'Welva', NULL, 'Chien', 'F', '2008-03-10 13:45:00', NULL),
+(18, 'Zira', NULL, 'Chien', 'F', '2007-04-24 12:59:00', NULL),
+(19, 'Java', NULL, 'Chien', 'F', '2009-05-26 09:02:00', NULL),
+(20, 'Balou', NULL, 'Chien', 'M', '2007-04-24 12:45:00', NULL),
+(21, 'Pataude', NULL, 'Chien', 'F', '2008-03-10 13:43:00', NULL),
+(22, 'Bouli', NULL, 'Chien', 'M', '2007-04-24 12:42:00', NULL),
+(24, 'Cartouche', NULL, 'Chien', 'M', '2007-04-12 05:23:00', NULL),
+(25, 'Zambo', NULL, 'Chien', 'M', '2006-05-14 15:50:00', NULL),
+(26, 'Samba', NULL, 'Chien', 'M', '2006-05-14 15:48:00', NULL),
+(27, 'Moka', NULL, 'Chien', 'M', '2008-03-10 13:40:00', NULL),
+(28, 'Pilou', NULL, 'Chien', 'M', '2006-05-14 15:40:00', NULL),
+(29, 'Fiero', NULL, 'Chat', 'M', '2009-05-14 06:30:00', NULL),
+(30, 'Zonko', NULL, 'Chat', 'M', '2007-03-12 12:05:00', NULL),
+(31, 'Filou', NULL, 'Chat', 'M', '2008-02-20 15:45:00', NULL),
+(32, 'Farceur', NULL, 'Chat', 'M', '2007-03-12 12:07:00', NULL),
+(33, 'Caribou', NULL, 'Chat', 'M', '2006-05-19 16:17:00', NULL),
+(34, 'Capou', NULL, 'Chat', 'M', '2008-04-20 03:22:00', NULL),
+(35, 'Raccou', NULL, 'Chat', 'M', '2006-05-19 16:56:00', 'Pas de queue depuis la naissance'),
+(36, 'Boucan', NULL, 'Chat', 'M', '2009-05-14 06:42:00', NULL),
+(37, 'Callune', NULL, 'Chat', 'F', '2006-05-19 16:06:00', NULL),
+(38, 'Boule', NULL, 'Chat', 'F', '2009-05-14 06:45:00', NULL),
+(39, 'Zara', NULL, 'Chat', 'F', '2008-04-20 03:26:00', NULL),
+(40, 'Milla', NULL, 'Chat', 'F', '2007-03-12 12:00:00', NULL),
+(41, 'Feta', NULL, 'Chat', 'F', '2006-05-19 15:59:00', NULL),
+(42, 'Bilba', NULL, 'Chat', 'F', '2008-04-20 03:20:00', 'Sourde de l\'oreille droite à 80%'),
+(43, 'Cracotte', NULL, 'Chat', 'F', '2007-03-12 11:54:00', NULL),
+(44, 'Cawette', NULL, 'Chat', 'F', '2006-05-19 16:16:00', NULL),
+(45, 'Nikki', NULL, 'Tortue', 'F', '2007-04-01 18:17:00', NULL),
+(46, 'Tortilla', NULL, 'Tortue', 'F', '2009-03-24 08:23:00', NULL),
+(47, 'Scroupy', NULL, 'Tortue', 'F', '2009-03-26 01:24:00', NULL),
+(48, 'Lulla', NULL, 'Tortue', 'F', '2006-03-15 14:56:00', NULL),
+(49, 'Dana', NULL, 'Tortue', 'F', '2008-03-15 12:02:00', NULL),
+(50, 'Cheli', NULL, 'Tortue', 'F', '2009-05-25 19:57:00', NULL),
+(51, 'Chicaca', NULL, 'Tortue', 'F', '2007-04-01 03:54:00', NULL),
+(52, 'Redbul', NULL, 'Tortue', 'F', '2006-03-15 14:26:00', 'Insomniaque'),
+(53, 'Spoutnik', NULL, 'Tortue', 'M', '2007-04-02 01:45:00', NULL),
+(54, 'Bubulle', NULL, 'Tortue', 'M', '2008-03-16 08:20:00', NULL),
+(55, 'Relou', NULL, 'Tortue', 'M', '2008-03-15 18:45:00', 'Surpoids'),
+(56, 'Bulbizard', NULL, 'Tortue', 'M', '2009-05-25 18:54:00', NULL),
+(57, 'Safran', NULL, 'Perroquet', 'M', '2007-03-04 19:36:00', NULL),
+(58, 'Gingko', NULL, 'Perroquet', 'M', '2008-02-20 02:50:00', NULL),
+(59, 'Bavard', NULL, 'Perroquet', 'M', '2009-03-26 08:28:00', NULL),
+(60, 'Parlotte', NULL, 'Perroquet', 'F', '2009-03-26 07:55:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -436,6 +518,7 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `pets` (
   `id` int(11) NOT NULL,
   `nom` varchar(60) DEFAULT NULL,
+  `clt_id` int(11) UNSIGNED DEFAULT NULL,
   `espece` enum('Chien','Chat') DEFAULT NULL,
   `sexe` enum('M','F') DEFAULT NULL,
   `date_naissance` date DEFAULT NULL
@@ -445,11 +528,11 @@ CREATE TABLE `pets` (
 -- Déchargement des données de la table `pets`
 --
 
-INSERT INTO `pets` (`id`, `nom`, `espece`, `sexe`, `date_naissance`) VALUES
-(1, 'Rex', 'Chien', 'M', '2080-10-24'),
-(2, 'Jeny', 'Chien', 'F', '2006-10-24'),
-(3, 'Félix', 'Chat', 'M', '2012-10-24'),
-(4, 'Mimine', 'Chat', 'F', '1997-10-24');
+INSERT INTO `pets` (`id`, `nom`, `clt_id`, `espece`, `sexe`, `date_naissance`) VALUES
+(1, 'Rex', NULL, 'Chien', 'M', '2080-10-24'),
+(2, 'Jeny', NULL, 'Chien', 'F', '2006-10-24'),
+(3, 'Félix', NULL, 'Chat', 'M', '2012-10-24'),
+(4, 'Mimine', NULL, 'Chat', 'F', '1997-10-24');
 
 -- --------------------------------------------------------
 
@@ -665,11 +748,18 @@ INSERT INTO `users` (`id`, `created_at`, `updated_at`, `name`, `email`, `passwor
 --
 
 --
--- Index pour la table `animal`
+-- Index pour la table `animals`
 --
-ALTER TABLE `animal`
-  ADD PRIMARY KEY (`id`);
-ALTER TABLE `animal` ADD FULLTEXT KEY `Index 2` (`nom`);
+ALTER TABLE `animals`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_animals_clients` (`clt_id`);
+
+--
+-- Index pour la table `animals_copy`
+--
+ALTER TABLE `animals_copy`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_animals_clients` (`clt_id`);
 
 --
 -- Index pour la table `arbre`
@@ -760,7 +850,8 @@ ALTER TABLE `password_resets`
 -- Index pour la table `pets`
 --
 ALTER TABLE `pets`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_pets_clients` (`clt_id`);
 
 --
 -- Index pour la table `posts`
@@ -798,10 +889,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `animal`
+-- AUTO_INCREMENT pour la table `animals`
 --
-ALTER TABLE `animal`
-  MODIFY `id` smallint(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+ALTER TABLE `animals`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+
+--
+-- AUTO_INCREMENT pour la table `animals_copy`
+--
+ALTER TABLE `animals_copy`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT pour la table `arbre`
@@ -892,6 +989,18 @@ ALTER TABLE `users`
 --
 
 --
+-- Contraintes pour la table `animals`
+--
+ALTER TABLE `animals`
+  ADD CONSTRAINT `FK_animals_clients` FOREIGN KEY (`clt_id`) REFERENCES `clients` (`id`);
+
+--
+-- Contraintes pour la table `animals_copy`
+--
+ALTER TABLE `animals_copy`
+  ADD CONSTRAINT `animals_copy_ibfk_1` FOREIGN KEY (`clt_id`) REFERENCES `clients` (`id`);
+
+--
 -- Contraintes pour la table `category_post`
 --
 ALTER TABLE `category_post`
@@ -909,6 +1018,12 @@ ALTER TABLE `clients`
 --
 ALTER TABLE `factures`
   ADD CONSTRAINT `FK_factures_users` FOREIGN KEY (`clt_id`) REFERENCES `clients` (`id`);
+
+--
+-- Contraintes pour la table `pets`
+--
+ALTER TABLE `pets`
+  ADD CONSTRAINT `FK_pets_clients` FOREIGN KEY (`clt_id`) REFERENCES `clients` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
