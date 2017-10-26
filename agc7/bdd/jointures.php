@@ -4,7 +4,7 @@ namespace GC7;
 <div class="jumbotron">
     <h3>Jointure et sous-requêtes</h3>
     <p class="lead">
-        <i class="fa fa-edit"></i> Pour mises à jour (UPDATE)
+        <i class="fa fa-edit"></i> Pour mises à jour (UPDATE) & insertions (INSERT INTO)
     </p>
 </div>
 <?php
@@ -25,6 +25,7 @@ $nbr = function ( $table ) {
 
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
+
 /*
 // Requete qui attribue un propriétaire aléatoire, parfois null
 // Annuler clé étrangère pour l'occasion
