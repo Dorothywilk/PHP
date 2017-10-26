@@ -33,14 +33,35 @@ from factures where id=(select max(id) from clients)';
 aff($sql);
 $req($sql);
 
-
-echo('Facture du dernier client (Sous-requête corrélée)');
+echo('Pseudos des users qui sont aussi clients (Sous-requête corrélée)');
 $sql = 'select name as pseudo, email
 from users
 where id in (
 select user_id from clients
 where clients.user_id = users.id
 )';
+aff($sql);
+$req($sql);
+
+echo('Les 3 premiers users n\'ayant pas de facture<br>(Sous-requête corrélée)');
+$sql = 'select id, name as pseudo, email
+from users
+where id not in  (
+	select id from factures
+	where factures.clt_id = users.id
+) limit 3';
+aff($sql);
+$req($sql);
+
+
+
+echo('Idem précédent mais avec [NOT] EXITS<br>(Sous-requête corrélée)');
+$sql = 'select id, name as pseudo, email
+from users
+where not exists  (
+	select * from factures
+	where factures.clt_id = users.id
+) limit 3';
 aff($sql);
 $req($sql);
 
