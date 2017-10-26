@@ -8,11 +8,40 @@
 
 $a =777;
 
-echo $a;
+echo number_format($a*3,2,',',' ');
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ToDoDo J'en suis là !
 
 
 /* Déclaration de variables de types différents
@@ -42,3 +71,4 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
 $t = [item1, item2];
 Exemple suit...
 */
+//tododo Avancer !
