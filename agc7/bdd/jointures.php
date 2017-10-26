@@ -2,10 +2,10 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3>Jointure et sous-requêtes</h3>
-  <p class="lead">
-    <i class="fa fa-edit"></i> Pour mises à jour (UPDATE)
-  </p>
+    <h3>Jointure et sous-requêtes</h3>
+    <p class="lead">
+        <i class="fa fa-edit"></i> Pour mises à jour (UPDATE)
+    </p>
 </div>
 <?php
 // Req pour initiales en maj
@@ -33,22 +33,19 @@ $nbr = function ( $table ) {
 $req($sql);
 */
 
-echo 'Animaux: '.$nbr('animaux').'<br>';
-//echo ('(Test)');
-$sql = 'select nom, clt_id, espece, date_naissance, sexe from pets';
-aff($sql);
-$req($sql);
+/*
+// Ajout d'une table dans un autre
+echo 'Animaux: ' . $nbr( 'animaux' ) . '<br>'; // Aff 60
+//echo ('(Test)'); // pets contient 4 items
+$sql = 'INSERT into animaux 	(nom, sexe, date_naissance, espece)
+select pets.nom, pets.sexe, pets.date_naissance, pets.espece from pets';
+$req( $sql );
+echo 'Animaux: ' . $nbr( 'animaux' ) . '<br>'; // Aff 64
+*/
 
-echo ('Jointure... (Et avec sous-requête)');
-$sql = 'select id, nom, clt_id, espece, sexe, commentaires from animaux limit 3';
-aff($sql);
-$req($sql);
-
-
-echo 'Animaux: '.$nbr('animaux').'<br>';
 ?>
 <div class="jumbotron">
-  <p class="h3-responsive">Les tables de référence</p>
+    <p class="h3-responsive">Les tables de référence</p>
   <?php
   $sql = 'select id, clt_id, nom, espece, sexe from pets limit 4';
   aff( 'Pets (Les 4 premiers ' . '/' . $nbr( 'pets' ) . ')' );
