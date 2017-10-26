@@ -44,9 +44,18 @@ $req( $sql );
 echo 'Animaux: ' . $nbr( 'animaux' ) . '<br>'; // Aff 64
 */
 
+$sql='update animaux set commentaires ="Très maligne" where id=86';
+echo $sql.'<hr>';
+$req( $sql );
+
+$sql='select id, nom, espece, sexe, commentaires from animaux order by id desc limit 5';
+echo $sql;
+$req( $sql );
+
+
 ?>
 <div class="jumbotron">
-    <p class="h3-responsive">Les tables de référence</p>
+  <p class="h3-responsive">Les tables de référence</p>
   <?php
   $sql = 'select id, clt_id, nom, espece, sexe from pets limit 4';
   aff( 'Pets (Les 4 premiers ' . '/' . $nbr( 'pets' ) . ')' );
