@@ -39,14 +39,14 @@ echo '<g>(</g>select id, nom, ("<em>Non renseigné</em>") as propriétaire, espe
 $req( $sql );
 
 echo '<h3>UNION ALL</h3>Sinon, dédoublonnage automatique (DISTINCT induit)';
-$sql='select *, "sql 1" as "Source" from pets
+$sql='select id, nom, espece, sexe, date_naissance, "sql 1" as "Source" from pets
 UNION ALL
-(select *, "sql 2" from pets)
+(select id, nom, espece, sexe, date_naissance, "sql 2" from pets)
 order by id, Source
 limit 3';
-aff('select *, "sql 1" as "Source" from pets
+aff('select nom, espece, sexe, date_naissance,<br>"sql 1" as "Source" from <g>pets</g>
 <g>UNION ALL</g>
-(select *, "sql 2" from pets)
+(select select nom, espece, sexe, date_naissance,<br>"sql 2" from <g>pets</g>)
 order by id, Source
 limit 3');
 
