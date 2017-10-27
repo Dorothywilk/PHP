@@ -40,7 +40,7 @@ CREATE TABLE `utilisateurs` (
 	`id` INT UNSIGNED AUTO_INCREMENT,
 	`pseudo` VARCHAR(150) NOT NULL,
 	`email` VARCHAR(150) NOT NULL,
-	`passe` VARCHAR(150) NOT NULL,
+	`passe` CHAR(150) NOT NULL,
 	PRIMARY KEY (`id`)
 );
 
@@ -91,3 +91,11 @@ ALTER TABLE `commentaires`
 
 ALTER TABLE `commentaires`
 	ADD CONSTRAINT `FK_commentaires_articles` FOREIGN KEY (`id_article`) REFERENCES `articles` (`id`) ON UPDATE CASCADE ON DELETE CASCADE;
+  
+  -- Index
+  -- Index
+CREATE UNIQUE INDEX unique_email
+ON utilisateurs(email);
+
+CREATE UNIQUE INDEX unique_pseudo
+ON utilisateurs(pseudo);
