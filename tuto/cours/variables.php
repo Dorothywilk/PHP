@@ -6,13 +6,19 @@
 // include './tuto/initiation/tableMultiplication.php';
 
 
-$a =77777.77;
+$a =77777.7;
 
 
-echo '<h1>' . number_format($a,2,',',' ') . '</h1>';
+echo 
+    '<h1 class="is-size-1">' 
+    .
+    number_format($a, 2, ',', ' ')
+    .
+    '</h1>'
+    ;
 
 
-$n=25; // 17
+$n=233333; // 17
 $diviseur = 3; //3
 
 echo '<div class="meaDo">'.$n.' / '.$diviseur.' = '.(int) ($n / $diviseur).' x '.$diviseur.' + '.($n%$diviseur).'</div>';
