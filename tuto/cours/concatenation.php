@@ -11,5 +11,10 @@ $nom='Jade';
 
 $nom.=' W.'; // <=> $nom = $nom . ' W.';
 
-echo $nom;
+echo $nom.'<hr>';
 
+
+$n=17; // 17
+$diviseur = 3; //3
+
+echo '<h2>'.$n.' / '.$diviseur.' = '.(int) ($n / $diviseur).' x '.$diviseur.' + '.($n%$diviseur).'</h2>';
