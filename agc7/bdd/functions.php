@@ -2,7 +2,7 @@
 namespace GC7;
 ?>
   <div class="jumbotron">
-    <h3>Fonctons natives MySQL</h3>
+    <h3>Fonctions natives MySQL</h3>
 
     <p>
     <ul>
@@ -177,6 +177,21 @@ aff( $sql );
 $req( $sql );
 
 $sql = "SELECT ASCII('A'), CHAR(65), CHAR('65', 65+32, 65.2)";
+aff( $sql );
+$req( $sql );
+
+
+
+$sql = "SELECT nom_courant, replace(nom_courant, left(nom_courant,1),lcase(left(nom_courant,1))) FROM Espece";
+aff( $sql );
+$req( $sql );
+
+
+$sql = "SELECT nom, nom_courant
+FROM Animal
+INNER JOIN Espece ON Animal.espece_id = Espece.id
+WHERE nom_courant = 'Chat' AND sexe='F' AND CHAR_LENGTH(nom)%2 = 0
+limit 3;";
 aff( $sql );
 $req( $sql );
 

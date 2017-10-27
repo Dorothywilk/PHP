@@ -39,7 +39,8 @@ namespace GC7;
 //include ('foreign_key.php');
 
 // Fonctions natives MySQL
-include ('functions.php');
+//include ('functions.php');
+include ('functionsAggregation.php');
 
 
 
