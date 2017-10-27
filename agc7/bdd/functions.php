@@ -121,6 +121,13 @@ $sql = 'SELECT SUBSTRING("texte", 2) AS from2_court,
 aff( $sql );
 $req( $sql );
 
+$sql = 'SELECT INSTR("tralala", "la") AS fct_INSTR,
+       POSITION("la" IN "tralala") AS fct_POSITION,
+       LOCATE("la", "tralala") AS fct_LOCATE,
+       LOCATE("la", "tralala", 5) AS fct_LOCATE2';
+aff( $sql );
+$req( $sql );
+
 
 
 
