@@ -34,12 +34,11 @@ $nbr = function ( $table ) {
 };
 
 
-$sql='select * from pets limit 2999';
+$sql='select 1+2, 2*3, 10/2, 1/3, 20%3';
 aff($sql);
 $req($sql);
 
-
-
+/*
 ?>
     <div class="jumbotron">
       <p class="h3-responsive">Les tables de référence</p>
@@ -61,4 +60,6 @@ $req($sql);
   $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
   $req( $sql );
   ?>
-    </div>
+</div>
+<?php
+*/
