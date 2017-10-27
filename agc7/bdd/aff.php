@@ -43,7 +43,7 @@ function affR( $r )
 
 	foreach ( $r as $row ) {
 		foreach ( $row as $p ) { // p comme propriété
-			echo '<td>' . $p . '</td>';
+			echo '<td style="background-color: white">' . $p . '</td>';
 		}
 		echo '</tr>';
 	}

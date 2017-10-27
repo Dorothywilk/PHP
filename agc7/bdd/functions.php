@@ -3,11 +3,13 @@ namespace GC7;
 ?>
   <div class="jumbotron">
     <h3>Fonctons natives MySQL</h3>
+
     <p>
     <ul>
       <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
       <li>D'aggrégation (MAX(), AVG(), etc...)</li>
-    </ul></p>
+    </ul>
+    </p>
 
     <p class="lead">
       Mathématiques, chaînes, etc...
@@ -46,7 +48,7 @@ $nbr = function ( $table ) {
 
 // Fonctions scalaires
 
-$sql = 'select 17+3, 9*3, 17/3, 17 DIV 3, 17 MOD 3, concat(17 DIV 3, " X 3 + ", 17%3) as "17 / 3"';
+$sql = 'select 17+3, 9*3, 17/3, 17 DIV 3, 17%3, 17 MOD 3, MOD(17, 3), concat(17 DIV 3, " X 3 + ", 17%3) as "17 / 3"';
 aff( $sql );
 $req( $sql );
 
@@ -62,7 +64,51 @@ $sql = 'select CAST("870303" AS DATE), POW(3, 4), SQRT(81), RAND()';
 aff( $sql );
 $req( $sql );
 
-$sql = 'select SIGN(-7), SIGN(0), SIGN(7)';
+$sql = 'select SIGN(-7), SIGN(0), SIGN(7), ABS(-7)';
+aff( $sql );
+$req( $sql );
+
+$sql = 'SELECT BIT_LENGTH("élevage"), CHAR_LENGTH("élevage"), LENGTH("élevage")
+ -- Les caractères accentués sont codés sur 2 octets en UTF-8';
+aff( $sql );
+$req( $sql );
+//
+$sql = 'SELECT STRCMP("texte", "texte") AS "texte=texte",
+        STRCMP("texte","texte2") AS "texte<texte2",
+        STRCMP("chaine","texte") AS "chaine<texte",
+        STRCMP("texte", "chaine") AS "texte>chaine",
+        STRCMP("texte3","texte24") AS "texte3>texte24";
+        -- 3 est après 24 dans l\'ordre alphabétique
+        ';
+aff( $sql );
+$req( $sql );
+//
+$sql = ' SELECT LPAD("texte", 3, "@") AS "3_gauche_@",
+       RPAD("texte", 3, "v") AS "3_droite_@",
+       LPAD("texte", 7, "$") AS "7_gauche_$",
+       RPAD("texte", 3, "*") AS "3_droite_*",
+       RPAD("texte", 7, "*") AS "7_droite_*" ';
+aff( $sql );
+$req( $sql );
+//
+$sql = 'SELECT "    abc " as "(<i>4 espaces</i>) abc (<i>1 espace</i>)", TRIM( "    abc ") as "TRIM (Même
+ chaîne)"
+UNION
+SELECT  CHAR_LENGTH("    abc ") , CHAR_LENGTH(TRIM( "    abc "))';
+aff( $sql );
+$req( $sql );
+
+$sql = 'SELECT TRIM("   Tralala  ") AS both_espace, 
+       TRIM(LEADING FROM "   Tralala  ") AS lead_espace, 
+       TRIM(TRAILING FROM "   Tralala  ") AS trail_espace,
+
+       TRIM("e" FROM "eeeBouHeee") AS both_e,
+       TRIM(LEADING "e" FROM "eeeBouHeee") AS lead_e,
+       TRIM(BOTH "e" FROM "eeeBouHeee") AS both_e,
+
+       TRIM("123" FROM "1234ABCD4321") AS both_123
+
+-- TRIM([[BOTH | LEADING | TRAILING] [caract] FROM] texte)';
 aff( $sql );
 $req( $sql );
 
