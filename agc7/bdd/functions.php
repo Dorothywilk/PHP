@@ -104,13 +104,31 @@ $sql = 'SELECT TRIM("   Tralala  ") AS both_espace,
 
        TRIM("e" FROM "eeeBouHeee") AS both_e,
        TRIM(LEADING "e" FROM "eeeBouHeee") AS lead_e,
-       TRIM(BOTH "e" FROM "eeeBouHeee") AS both_e,
+       TRIM(TRAILING "e" FROM "eeeBouHeee") AS trail_e,
 
        TRIM("123" FROM "1234ABCD4321") AS both_123
 
 -- TRIM([[BOTH | LEADING | TRAILING] [caract] FROM] texte)';
 aff( $sql );
 $req( $sql );
+
+
+$sql = 'SELECT SUBSTRING("texte", 2) AS from2_court,
+        SUBSTRING("texte", -4, 3) AS "from -4 for 3 court",
+        SUBSTRING("texte" FROM 3) AS from3,
+        SUBSTRING("texte", 3, 2) AS from3long2_court,
+        SUBSTRING("texte" FROM 3 FOR 2) AS from3long2;';
+aff( $sql );
+$req( $sql );
+
+
+
+
+
+
+
+
+
 
 
 /*
