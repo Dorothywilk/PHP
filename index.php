@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>1er Pgm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1er</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bulma.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,10 +21,11 @@
 
     <article>
 
-        <?php include './tuto/cours.php' ?>
+        <?php
+        include './tuto/cours.php';
+        // ToDoDo Étude framework CSS Bulma: https://bulma.io/
+        ?>
 
-        // ToDoDo Étude framework CSS Bulma: https://bulma.io/   
-      
     </article>
 
     <footer>

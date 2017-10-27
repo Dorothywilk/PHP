@@ -1,21 +1,21 @@
 <?php
 namespace GC7;
 ?>
-  <div class="jumbotron">
-    <h3>Fonctons natives MySQL</h3>
+    <div class="jumbotron">
+        <h3>Fonctons natives MySQL</h3>
 
-    <p>
-    <ul>
-      <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
-      <li>D'aggrégation (MAX(), AVG(), etc...)</li>
-    </ul>
-    </p>
+        <p>
+            <ul>
+                <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
+                <li>D'aggrégation (MAX(), AVG(), etc...)</li>
+            </ul>
+        </p>
 
-    <p class="lead">
-      Mathématiques, chaînes, etc...
-    </p>
-  </div>
-  <?php
+        <p class="lead">
+            Mathématiques, chaînes, etc...
+        </p>
+    </div>
+    <?php
 
 $req = function ( $sql ) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
@@ -140,9 +140,9 @@ $req( $sql );
 
 /*
 ?>
-    <div class="jumbotron">
-      <p class="h3-responsive">Les tables de référence</p>
-      <?php
+        <div class="jumbotron">
+            <p class="h3-responsive">Les tables de référence</p>
+            <?php
   $sql = 'select id, clt_id, nom, espece, sexe, date_naissance from pets limit 4';
   aff( 'Pets (Les 4 premiers ' . '/' . $nbr( 'pets' ) . ')' );
   $req( $sql );
@@ -160,6 +160,6 @@ $req( $sql );
   $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
   $req( $sql );
   ?>
-    </div>
-    <?php
+        </div>
+        <?php
 */

@@ -12,7 +12,10 @@ $a =77777.77;
 echo '<h1>' . number_format($a,2,',',' ') . '</h1>';
 
 
+$n=25; // 17
+$diviseur = 3; //3
 
+echo '<h2>'.$n.' / '.$diviseur.' = '.(int) ($n / $diviseur).' x '.$diviseur.' + '.($n%$diviseur).'</h2>';
 
 
 

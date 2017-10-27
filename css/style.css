@@ -1,40 +1,25 @@
 body {
-	font-size:1.2em;
-	color: maroon;
-	font-family: Comic Sans MS, arial;
-	background: cornsilk;
+    font-size: 1.2em;
+    color: maroon;
+    font-family: Comic Sans MS, arial;
+    background: cornsilk;
+    width: 97%;
+    margin: 0 auto;
 }
 
-a {
-	text-decoration: none;
-}
-body {
-	font-size:1.2em;
-	color: maroon;
-	font-family: Comic Sans MS, arial;
-	background: cornsilk;
-}
 
 a {
-	text-decoration: none;
-}
-body {
-	font-size:1.2em;
-	color: maroon;
-	font-family: Comic Sans MS, arial;
-	background: cornsilk;
+    text-decoration: none;
 }
 
-a {
-	text-decoration: none;
-}
-body {
-	font-size:1.2em;
-	color: maroon;
-	font-family: Comic Sans MS, arial;
-	background: cornsilk;
+
+.cellDo {
+    margin: 10px;
+    border: 1px solid red;
+    border-radius: 7px;
+    background-color: white;
 }
 
-a {
-	text-decoration: none;
+.buttonDo {
+    border-radius: 7px;
 }
