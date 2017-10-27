@@ -176,7 +176,7 @@ ORDER BY FIELD(nom_courant, 'Rat brun', 'Chat', 'Tortue d''Hermann',
 aff( $sql );
 $req( $sql );
 
-$sql = "SELECT 1";
+$sql = "SELECT ASCII('A'), CHAR(65), CHAR('65', 65+32, 65.2)";
 aff( $sql );
 $req( $sql );
 
