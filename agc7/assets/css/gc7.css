@@ -1,69 +1,80 @@
 .maingc7 {
-	padding-top: 20px;
-	width: 97%;
-	margin: 0 auto;
-	font-size: 1.2em;
+    padding-top: 20px;
+    width: 97%;
+    margin: 0 auto;
+    font-size: 1.2em;
+    border: 1px sild red;
 }
 
 .gc7 .ui.message {
-	margin-left: 100px;
-	margin-right: 100px;
-	background-color: cornsilk;
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: cornsilk;
 }
 
 .gc7 .ui.message p {
-	color: #0045ff;
+    color: #0045ff;
 }
 
 .justify {
-	text-align: justify;
+    text-align: justify;
 }
 
 #tof {
-	border-radius: 15px 0 15px;
-	border: 2px solid red;
-	box-shadow: 9px 7px grey;
+    border-radius: 15px 0 15px;
+    border: 2px solid red;
+    box-shadow: 9px 7px grey;
 
 }
 
 a {
-	text-decoration: none;
-	transition: all 5s ease-in-out;
-	color: #da0005!
+    text-decoration: none;
+    transition: all 5s ease-in-out;
+    color: #da0005
 }
 
 a:hover {
-	color: blue;
-	text-decoration: overline underline;
-	text-shadow: 0 0 3px orange;
-	transition: all .7s ease-in-out;
-	cursor: pointer;
+    color: blue;
+    text-decoration: overline underline;
+    text-shadow: 0 0 3px orange;
+    transition: all .7s ease-in-out;
+    cursor: pointer;
 }
 
 a.navbar-brand:hover {
-	color: #ddd;
-	background-color: rgba(0, 0, 0, .7);
-	/* border: solid red 3px;*/
-	border-radius: 5px;
-	padding: auto 20px;
+    color: #ddd;
+    background-color: rgba(0, 0, 0, .7);
+    /* border: solid red 3px;*/
+    border-radius: 5px;
+    padding: auto 20px;
 }
 
 #opop {
-	/ / color: blue;
+/ / color : blue;
 }
 
 .table-sm td,
 .table-sm th {
-	padding: 0 3%;
+    padding: 0 3%;
 }
 
 mark {
-  font-size: .79em;
-  background: yellow;
+    font-size: .79em;
+    background: yellow;
 }
 
 g {
-  color: #ff4500;
-  font-weight: 800;
-background: yellow;
+    color: #ff4500;
+    font-weight: 800;
+    background: yellow;
+}
+
+div.navLi {
+    padding: 0;
+    margin: -10px 0 10px;
+    /*color: blue;*/
+}
+
+div.navLi a {
+    color: maroon;
 }

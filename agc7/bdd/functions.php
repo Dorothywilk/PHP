@@ -1,21 +1,21 @@
 <?php
 namespace GC7;
 ?>
-    <div class="jumbotron">
-        <h3>Fonctons natives MySQL</h3>
+  <div class="jumbotron">
+    <h3>Fonctons natives MySQL</h3>
 
-        <p>
-            <ul>
-                <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
-                <li>D'aggrégation (MAX(), AVG(), etc...)</li>
-            </ul>
-        </p>
+    <p>
+    <ul>
+      <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
+      <li>D'aggrégation (MAX(), AVG(), etc...)</li>
+    </ul>
+    </p>
 
-        <p class="lead">
-            Mathématiques, chaînes, etc...
-        </p>
-    </div>
-    <?php
+    <p class="lead">
+      Mathématiques, chaînes, etc...
+    </p>
+  </div>
+  <?php
 
 $req = function ( $sql ) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
@@ -74,20 +74,20 @@ aff( $sql );
 $req( $sql );
 //
 $sql = 'SELECT STRCMP("texte", "texte") AS "texte=texte",
-        STRCMP("texte","texte2") AS "texte<texte2",
-        STRCMP("chaine","texte") AS "chaine<texte",
-        STRCMP("texte", "chaine") AS "texte>chaine",
-        STRCMP("texte3","texte24") AS "texte3>texte24";
-        -- 3 est après 24 dans l\'ordre alphabétique
+       STRCMP("texte","texte2") AS "texte<texte2",
+       STRCMP("chaine","texte") AS "chaine<texte",
+       STRCMP("texte", "chaine") AS "texte>chaine",
+       STRCMP("texte3","texte24") AS "texte3>texte24";
+       -- 3 est après 24 dans l\'ordre alphabétique
         ';
 aff( $sql );
 $req( $sql );
 //
-$sql = ' SELECT LPAD("texte", 3, "@") AS "3_gauche_@",
+$sql = 'SELECT LPAD("texte", 3, "@") AS "3_gauche_@",
        RPAD("texte", 3, "v") AS "3_droite_@",
        LPAD("texte", 7, "$") AS "7_gauche_$",
        RPAD("texte", 3, "*") AS "3_droite_*",
-       RPAD("texte", 7, "*") AS "7_droite_*" ';
+       RPAD("texte", 7, "*") AS "7_droite_*"';
 aff( $sql );
 $req( $sql );
 //
@@ -98,8 +98,8 @@ SELECT  CHAR_LENGTH("    abc ") , CHAR_LENGTH(TRIM( "    abc "))';
 aff( $sql );
 $req( $sql );
 
-$sql = 'SELECT TRIM("   Tralala  ") AS both_espace, 
-       TRIM(LEADING FROM "   Tralala  ") AS lead_espace, 
+$sql = 'SELECT TRIM("   Tralala  ") AS both_espace,
+       TRIM(LEADING FROM "   Tralala  ") AS lead_espace,
        TRIM(TRAILING FROM "   Tralala  ") AS trail_espace,
 
        TRIM("e" FROM "eeeBouHeee") AS both_e,
@@ -114,19 +114,73 @@ $req( $sql );
 
 
 $sql = 'SELECT SUBSTRING("texte", 2) AS from2_court,
-        SUBSTRING("texte", -4, 3) AS "from -4 for 3 court",
-        SUBSTRING("texte" FROM 3) AS from3,
-        SUBSTRING("texte", 3, 2) AS from3long2_court,
-        SUBSTRING("texte" FROM 3 FOR 2) AS from3long2;';
+       SUBSTRING("texte", -4, 3) AS "from -4 for 3 court",
+       SUBSTRING("texte" FROM 3) AS from3,
+       SUBSTRING("texte", 3, 2) AS from3long2_court,
+       SUBSTRING("texte" FROM 3 FOR 2) AS from3long2;';
 aff( $sql );
 $req( $sql );
 
 $sql = 'SELECT INSTR("tralala", "la") AS fct_INSTR,
        POSITION("la" IN "tralala") AS fct_POSITION,
        LOCATE("la", "tralala") AS fct_LOCATE,
-       LOCATE("la", "tralala", 5) AS fct_LOCATE2';
+       LOCATE("la", "tralala", 5) AS fct_LOCATE2
+       -- Attention : Fonctions renoient 0 si pas trouvé chaîne,
+       -- Donc: 1<sup>ère</sup> pos = 1...';
 aff( $sql );
 $req( $sql );
+
+$sql = 'SELECT LOWER("AhAh") AS minuscule,
+       LCASE("AhAh") AS minuscule2,
+       UPPER("AhAh") AS majuscule,
+       UCASE("AhAh") AS majuscule2;';
+aff( $sql );
+$req( $sql );
+
+$sql = 'SELECT  LEFT("123456789", 7), RIGHT("123456789", 7), REVERSE("abcde")';
+aff( $sql );
+$req( $sql );
+
+$sql = 'SELECT INSERT("texte", 3, 2, "blabla") AS fct_INSERT,
+       REPLACE("texte", "e", "a") AS fct_REPLACE,
+       REPLACE("texte", "ex", "ou") AS fct_REPLACE2;';
+aff( $sql );
+$req( $sql );
+
+$sql = 'SELECT CONCAT("My", "SQL", "!"), CONCAT_WS("-", "My", "SQL", "!")';
+aff( $sql );
+$req( $sql );
+
+$sql = "SELECT FIELD('Bonjour', 'Bonjour !', 'Au revoir', 'Bonjour',
+             'Au revoir !') AS field_bonjour
+
+-- La fonction FIELD(rech, chaine1, chaine2, chaine3,…) recherche le
+-- premier argument (rech) parmi les arguments suivants (chaine1,
+-- chaine2, chaine3,…) et retourne l'index auquel rech est trouvée
+-- (1 si rech = chaine1, 2 si rech = chaine2,…). Si rech n'est pas
+-- trouvée parmi les arguments, 0 est renvoyé.";
+aff( $sql );
+$req( $sql );
+
+$sql = "SELECT nom_courant, nom_latin, FIELD(nom_courant, 'Rat brun', 'Chat',
+'Tortue d''Hermann', 'Chien', 'Perroquet amazone') AS resultat_field
+FROM Espece
+ORDER BY FIELD(nom_courant, 'Rat brun', 'Chat', 'Tortue d''Hermann',
+               'Chien', 'Perroquet amazone')
+
+-- Par conséquent, FIELD peut être utilisée pour définir un ordre
+-- arbitraire dans une clause ORDER BY.
+-- Exemple : Ordonnons les espèces selon un ordre arbitraire.
+-- La fonction FIELD() dans la clause SELECT n'est là que pour
+-- illustrer la façon dont ce tri fonctionne.";
+aff( $sql );
+$req( $sql );
+
+$sql = "SELECT 1";
+aff( $sql );
+$req( $sql );
+
+
 
 
 
@@ -150,7 +204,7 @@ $req( $sql );
   aff( 'Clients (Les 3 premiers ' . '/' . $nbr( 'clients' ) .')');
   $sql = 'select id, nom, prenom, date_naissance from clients';
   $req( $sql );
-  
+
 //  aff( 'Animaux (Les 3 premiers ' . '/' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
 //  $sql = 'select id, clt_id, nom, espece, sexe, commentaires from animaux where clt_id > ""
 // limit 3';
