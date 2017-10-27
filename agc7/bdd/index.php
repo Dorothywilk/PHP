@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="maingc7">
-    BdD - Procédure
+    <a href="/">Do</a> | BdD - Procédure
     <hr>
 
     <?php
