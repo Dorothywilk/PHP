@@ -34,7 +34,9 @@ $nbr = function ( $table ) {
 };
 
 
-$sql='select 1+2, 2*3, 10/2, 1/3, 20%3';
+
+
+$sql='select 17+3, 9*3, 17/3, 17 DIV 3, 17 MOD 3, concat(17 DIV 3, " X 3 + ", 17%3) as "17 / 3 "';
 aff($sql);
 $req($sql);
 
