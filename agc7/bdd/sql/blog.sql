@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS `p2p_blog`;
 
-CREATE DATABASE IF NOT EXISTS p2p_blog CHARACTER SET 'utf8';
+CREATE DATABASE p2p_blog CHARACTER SET 'utf8';
 USE p2p_blog;
 
 CREATE TABLE `articles` (
@@ -30,6 +30,7 @@ CREATE TABLE Categorie_article (
 
 CREATE TABLE `commentaires` (
 	`id` INT UNSIGNED AUTO_INCREMENT,
+	`id_article` INT UNSIGNED NULL,
 	`id_utilisateur` INT UNSIGNED NULL,
 	`texte` VARCHAR(255) NULL,
 	PRIMARY KEY (`id`)
@@ -48,11 +49,12 @@ ALTER TABLE `categorie_article`
 	ADD CONSTRAINT `FK_categorie_article_categories` FOREIGN KEY (`categorie_id`) REFERENCES `categories` (`id`) ON UPDATE CASCADE ON DELETE CASCADE,
 	ADD CONSTRAINT `FK_categorie_article_articles` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON UPDATE CASCADE  ON DELETE CASCADE;
 
+  
 
 INSERT INTO `p2p_blog`.`articles` (utilisateur_id,`titre`, `extrait`, `texte`)
 VALUES (1,'titre1', 'extrait1', 'tatati 1');
-INSERT INTO `p2p_blog`.`articles` (`titre`, `extrait`, `texte`)
-VALUES ('titre2', 'extrait2', 'tatati 2');
+INSERT INTO `p2p_blog`.`articles` (utilisateur_id, `titre`, `extrait`, `texte`)
+VALUES (2, 'titre2', 'extrait2', 'tatati 2');
 INSERT INTO `p2p_blog`.`articles` (`titre`, `extrait`, `texte`)
 VALUES ('titre3', 'extrait3', 'tatati 3');
 INSERT INTO `p2p_blog`.`articles` (`titre`, `extrait`, `texte`)
@@ -79,3 +81,13 @@ INSERT INTO `p2p_blog`.`categorie_article` (`categorie_id`, `article_id`) VALUES
 
 INSERT INTO `p2p_blog`.`utilisateurs` (`pseudo`, `email`, `passe`) VALUES ('GC7', 'fdsfds@dfsfds.com', 'dfdsfds');
 INSERT INTO `p2p_blog`.`utilisateurs` (`pseudo`, `email`, `passe`) VALUES ('Li', 'Li@dfsfds.com', 'lili');
+
+
+ALTER TABLE `articles`
+	ADD CONSTRAINT `FK_articles_utilisateurs` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateurs` (`id`) ON UPDATE CASCADE ON DELETE SET NULL;
+  
+ALTER TABLE `commentaires`
+	ADD CONSTRAINT `FK_commentaires_utilisateurs` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`id`) ON UPDATE CASCADE ON DELETE SET NULL;
+
+ALTER TABLE `commentaires`
+	ADD CONSTRAINT `FK_commentaires_articles` FOREIGN KEY (`id_article`) REFERENCES `articles` (`id`) ON UPDATE CASCADE ON DELETE CASCADE;
