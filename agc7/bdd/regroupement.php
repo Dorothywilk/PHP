@@ -105,7 +105,6 @@ aff( $sql );
 $req( $sql );
 
 
-
 $sql = 'SELECT nom_courant, COUNT(*) AS "Nombre"
 FROM animal
 INNER JOIN Espece ON Espece.id = Animal.espece_id
@@ -131,6 +130,45 @@ FROM Animal
   INNER JOIN Espece ON Espece.id = Animal.espece_id
 GROUP BY nom_courant
 having nombre > 15;';
+aff( $sql );
+$req( $sql );
+
+
+$sql = '-- Prix moyen d\'un chien ou d\'un chat, par espèce et en général
+
+SELECT coalesce(nom_courant, "Moyenne Pondérée") AS Espèce, round(AVG(Race.prix),2) AS "prix moyen"
+FROM Race
+  INNER JOIN Espece ON Race.espece_id = Espece.id
+WHERE Espece.nom_courant IN ("Chat", "Chien")
+GROUP BY Espece.nom_courant WITH ROLLUP';
+aff( $sql );
+$req( $sql );
+
+$sql = '-- Combien avons-nous de perroquets mâles et femelles,
+-- et quels sont leurs noms ?
+
+select sexe, count(nom) as nb, group_concat(nom SEPARATOR ", ") Nom
+from animal
+  INNER JOIN espece on espece.id = espece_id
+where nom_courant like "%perroquet%"
+group by sexe
+order by sexe desc';
+aff( $sql );
+$req( $sql );
+
+
+$sql = '-- Coût, par espèce et au total, de l\'adoption de
+-- Parlotte, Spoutnik, Caribou, Cartouche, Cali, Canaille, Yoda,
+-- Zambo et Lulla
+
+SELECT Espece.nom_courant,
+SUM(COALESCE(Race.prix, Espece.prix)) AS somme
+FROM Animal
+  INNER JOIN Espece ON Espece.id = Animal.espece_id
+  LEFT JOIN Race ON Race.id = Animal.race_id
+WHERE Animal.nom IN ("Parlotte", "Spoutnik", "Caribou",
+"Cartouche", "Cali", "Canaille", "Yoda", "Zambo", "Lulla")
+GROUP BY Espece.nom_courant WITH ROLLUP';
 aff( $sql );
 $req( $sql );
 
