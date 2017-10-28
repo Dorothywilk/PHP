@@ -45,9 +45,9 @@ $nbr = function ( $table ) {
 };
 
 
-echo '<h3>Bases</h3>';
+echo '<h3>Bases - Diff entre 2 dates</h3>';
 
-$sql = 'SELECT DATEDIFF("2011-12-25 22:12:18","2011-11-10") AS nb_jours';
+$sql = 'SELECT DATEDIFF("2011-12-25 22:12:18","2011-11-10") AS "nbre de jours entre le 2011-12-25 22:12:18 et le 2011-11-10"';
 aff( $sql );
 $req( $sql );
 
@@ -60,6 +60,44 @@ $sql = 'SELECT
 aff( $sql );
 $req( $sql );
 
+
+$sql = 'SELECT TIMESTAMPDIFF(DAY, "2011-11-10", "2011-12-25") AS nb_jours,
+       TIMESTAMPDIFF(HOUR,"2011-11-10", "2011-12-25 22:00:00") AS nb_heures_def, 
+       TIMESTAMPDIFF(HOUR,"2011-11-10 14:00:00", "2011-12-25 22:00:00") AS nb_heures,
+       TIMESTAMPDIFF(QUARTER,"2011-11-10 14:00:00", "2012-08-25 22:00:00") AS nb_trimestres;';
+aff( $sql );
+$req( $sql );
+
+echo '<h3>Intervalles</h3>';
+?>
+  <ul>
+    <li>ADDDATE() : qui s'utilise avec un INTERVAL ou un nombre de jours.</li>
+    <li>DATE_ADD() : qui s'utilise avec un INTERVAL.</li>
+    <li>TIMESTAMPADD() : qui n'utilise pas d'INTERVAL mais un nombre plus limité d'unités de
+      temps.
+    </li>
+
+  </ul>
+
+  <?php
+$sql = 'SELECT ADDDATE("2011-05-21", INTERVAL 3 MONTH) AS date_interval,  
+        -- Avec DATE et INTERVAL
+       ADDDATE("2011-05-21 12:15:56", INTERVAL "3 02:10:32" DAY_SECOND) AS datetime_interval, 
+        -- Avec DATETIME et INTERVAL
+       ADDDATE("2011-05-21", 12) AS date_nombre_jours,                                        
+        -- Avec DATE et nombre de jours
+       ADDDATE("2011-05-21 12:15:56", 42) AS datetime_nombre_jours;                           
+        -- Avec DATETIME et nombre de jours';
+aff( $sql );
+$req( $sql );
+
+
+$sql = 'SELECT DATE_ADD("2011-05-21", INTERVAL 3 MONTH) AS avec_DATE,
+        -- Avec DATE
+       DATE_ADD("2011-05-21 12:15:56", INTERVAL "3 02:10:32" DAY_SECOND) AS avec_DATETIME;
+        -- Avec DATETIME';
+aff( $sql );
+$req( $sql );
 
 ?>
   <div class="jumbotron">
