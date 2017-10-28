@@ -20,7 +20,6 @@
      title="Lien du tutoriel d'Emacs">Tutoriel</a> |
   <a href="agc7">Techs GC7</a>
 </header>
-<hr class="hrDo">
 
 <article>
   <div class="main">
@@ -31,11 +30,9 @@
 
 </article>
 
-<footer>
-  <br/>
-  <hr class="hrDo">
-  Do 's website | <a href="https://github.com/Dorothywilk/PHP/tree/dev" target="_blank">Dépôt
-    GitHub</a>
+<footer class="footerDo">
+  <p>Do 's website | <a href="https://github.com/Dorothywilk/PHP/tree/dev" target="_blank">Dépôt
+    GitHub</a></p>
 </footer>
 </div>
 </body>

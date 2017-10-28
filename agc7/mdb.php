@@ -6,7 +6,8 @@
   <title>Install GC7</title>
   <link rel="shortcut icon" href="/agc7/assets/images/favicon.ico"/>
   <link rel="stylesheet" href="../agc7/assets/css/semantic.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="../agc7/assets/css/bootstrap.min.css"> -->
 
   <!-- -->
@@ -27,7 +28,8 @@
       </span>
     <!--/. Logo -->
 
-			<span class="nav-item waves-light" style="border: 0px solid red;padding-left: 20px;margin: 0 20px;">
+			<span class="nav-item waves-light"
+            style="border: 0px solid red;padding-left: 20px;margin: 0 20px;">
         <a class="nav-item waves-light navbar-brand" href="/agc7">GC7</a>
       </span>
 
@@ -36,8 +38,10 @@
       </span>
 
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -49,12 +53,15 @@
           <a class="nav-link" href="https://mdbootstrap.com/components/" target="_blank">Doc MDB</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://fontawesome.io/icons" target="_blank">FontAwesome (Icônes)</a>
+          <a class="nav-link" href="http://fontawesome.io/icons" target="_blank">FontAwesome
+            (Icônes)</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+             aria-haspopup="true"
              aria-expanded="false">Dropdown
           </a>
+
           <div class="dropdown-menu dropdown-purple" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
@@ -78,7 +85,8 @@
   </div>
 
   <div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fH03Do2m6Mg" allowfullscreen></iframe>
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/fH03Do2m6Mg"
+            allowfullscreen></iframe>
   </div>
 
   <hr class="my-2">
@@ -158,9 +166,9 @@
     <?php
 
     $prenom = 'Jade';
-    $nom    = 'D.';
-    $bio    = 'Etudiante';
-    $sonSlogan = 'Caca<br><br>poumpoum !'
+    $nom = 'D.';
+    $bio = 'Étudiante';
+    $sonSlogan = 'Caca<br><br>Poumpoum !'
 
     ?>
 
@@ -169,7 +177,8 @@
 
       <!--Card image-->
       <div class="view overlay hm-zoom rounded-top">
-        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg" class="img-fluid"
+        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg"
+             class="img-fluid"
              alt="Tof">
         <a href="#">
           <div class="mask flex-center">
@@ -198,8 +207,10 @@
       <!--Section heading-->
       <h2 class="section-heading h1 pt-4">Contact us</h2>
       <!--Section description-->
-      <p class="section-description pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
-        numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur
+      <p class="section-description pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Fugit, error amet
+        numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum
+        porro a pariatur
         accusamus veniam.</p>
 
       <div class="row">
@@ -245,7 +256,8 @@
               </div>
 
               <div class="text-center">
-                <button class="btn btn-indigo">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+                <button class="btn btn-indigo">Send <i class="fa fa-paper-plane-o ml-1"></i>
+                </button>
               </div>
 
             </div>
@@ -267,19 +279,25 @@
           <div class="row text-center">
             <div class="col-md-4">
               <a class="btn-floating blue accent-1"><i class="fa fa-map-marker"></i></a>
+
               <p>San Francisco, CA 94126</p>
+
               <p>United States</p>
             </div>
 
             <div class="col-md-4">
               <a class="btn-floating blue accent-1"><i class="fa fa-phone"></i></a>
+
               <p>+ 01 234 567 89</p>
+
               <p>Mon - Fri, 8:00-22:00</p>
             </div>
 
             <div class="col-md-4">
               <a class="btn-floating blue accent-1"><i class="fa fa-envelope"></i></a>
+
               <p>info@gmail.com</p>
+
               <p>sale@gmail.com</p>
             </div>
           </div>
@@ -295,7 +313,8 @@
 
   <footer>
     <hr>
-    &copy;2017 - GC7 | <a href="https://github.com/GrCOTE7/Do" target="_blank"><i class="github icon"></i></a>
+    &copy;2017 - GC7 | <a href="https://github.com/GrCOTE7/Do" target="_blank"><i
+        class="github icon"></i></a>
   </footer>
 
   <!--Footer Links-->
@@ -305,8 +324,11 @@
       <!--First column-->
       <div class="col-md-4 col-lg-4">
         <h5 class="title mb-4 font-bold">Footer Content</h5>
+
         <p>Here you can use rows and columns here to organize your footer content.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure
+          provident
           voluptate esse quasi, veritatis totam voluptas nostrum. </p>
       </div>
       <!--/.First column-->
@@ -318,8 +340,11 @@
         <h5 class="title mb-4 font-bold">About</h5>
         <ul>
           <p><a href="#">PROJECTS</a></p>
+
           <p><a href="#">ABOUT US</a></p>
+
           <p><a href="#">BLOG</a></p>
+
           <p><a href="#">AWARDS</a></p>
         </ul>
       </div>
@@ -332,8 +357,11 @@
         <h5 class="title mb-4 font-bold">Adress</h5>
         <!--Info-->
         <p><i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+
         <p><i class="fa fa-envelope mr-3"></i> info@example.com</p>
+
         <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+
         <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
       </div>
       <!--/.Third column-->
@@ -350,9 +378,11 @@
           <!--Twitter-->
           <a type="button" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"></i></a>
           <!--Google +-->
-          <a type="button" class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"></i></a>
+          <a type="button" class="btn-floating btn-small btn-gplus"><i
+              class="fa fa-google-plus"></i></a>
           <!--Dribbble-->
-          <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fa fa-dribbble"></i></a>
+          <a type="button" class="btn-floating btn-small btn-dribbble"><i
+              class="fa fa-dribbble"></i></a>
         </div>
       </div>
       <!--/.Fourth column-->

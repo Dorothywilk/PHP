@@ -15,11 +15,10 @@
 <div class="navDo">
   <h1><a href="/">Accueil</a> | Titre</h1>
 </div>
-<hr class="hrDo">
 <div class="main">
 
   <div class="columns mt5">
-    <div class="column cellDo is-capitalized is-size-1">1 sdjgdsgs
+    <div class="column cellDo is-capitalized is-size-4">1 sdjgdsgs
 
       <?php
 
@@ -75,6 +74,9 @@
   <button class="button is-primary is-large .buttonDo"><i class="fa fa-cab"></i> &nbsp;Go go go !
   </button>
 </div>
+<footer class="footerDo">
+  <p><a href="https://bulma.io/documentation/overview/start" target="_blank">Bulma</a></p>
+</footer>
 </body>
 
 </html>

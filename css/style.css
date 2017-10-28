@@ -9,8 +9,13 @@ body {
     background: cornsilk;
 }
 
-.navDo {
+.navDo, .footerDo {
+    background-color: #ffdd90;
+}
+
+.navDo a, .footerDo p {
     margin: 2px 5px;
+
 }
 
 .main {
