@@ -68,7 +68,7 @@ $sql = 'SELECT TIMESTAMPDIFF(DAY, "2011-11-10", "2011-12-25") AS nb_jours,
 aff( $sql );
 $req( $sql );
 
-echo '<h3>Intervalles</h3>';
+echo '<h3>Intervalles - ADD</h3>';
 ?>
   <ul>
     <li>ADDDATE(date, INTERVAL quantite unite) : qui s'utilise avec un INTERVAL ou un nombre de
@@ -112,6 +112,33 @@ $sql = 'SELECT NOW() AS Maintenant, ADDTIME(NOW(), "01:00:00") AS DansUneHeure,
         -- Avec un TIME';
 aff( $sql );
 $req( $sql );
+
+
+echo '<h3>Intervalles - SUB</h3>';
+
+$sql = 'SELECT SUBDATE("2011-05-21 12:15:56", INTERVAL "3 02:10:32" DAY_SECOND) AS SUBDATE1, 
+       SUBDATE("2011-05-21", 12) AS SUBDATE2,
+       DATE_SUB("2011-05-21", INTERVAL 3 MONTH) AS DATE_SUB;';
+aff( $sql );
+$req( $sql );
+
+$sql = 'SELECT SUBTIME("2011-05-21 12:15:56", "18:35:15") AS SUBTIME1,
+       SUBTIME("12:15:56", "8:35:15") AS SUBTIME2,
+       "2011-05-21" - INTERVAL 5 DAY;';
+aff( $sql );
+$req( $sql );
+
+
+
+echo '<h3>Intervalles - SUB</h3>';
+
+$sql = 'SELECT SUBDATE("2011-05-21 12:15:56", INTERVAL "3 02:10:32" DAY_SECOND) AS SUBDATE1,
+       SUBDATE("2011-05-21", 12) AS SUBDATE2,
+       DATE_SUB("2011-05-21", INTERVAL 3 MONTH) AS DATE_SUB;';
+aff( $sql );
+$req( $sql );
+
+
 
 /*
 ?>
