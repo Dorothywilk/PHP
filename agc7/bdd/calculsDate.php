@@ -71,9 +71,12 @@ $req( $sql );
 echo '<h3>Intervalles</h3>';
 ?>
   <ul>
-    <li>ADDDATE() : qui s'utilise avec un INTERVAL ou un nombre de jours.</li>
-    <li>DATE_ADD() : qui s'utilise avec un INTERVAL.</li>
-    <li>TIMESTAMPADD() : qui n'utilise pas d'INTERVAL mais un nombre plus limité d'unités de
+    <li>ADDDATE(date, INTERVAL quantite unite) : qui s'utilise avec un INTERVAL ou un nombre de
+      jours.
+    </li>
+    <li>DATE_ADD(date, INTERVAL quantite unite) : qui s'utilise avec un INTERVAL.</li>
+    <li>TIMESTAMPADD(unite, quantite, date) : qui n'utilise pas d'INTERVAL mais un nombre plus
+      limité d'unités de
       temps.
     </li>
 
@@ -94,11 +97,23 @@ $req( $sql );
 
 $sql = 'SELECT DATE_ADD("2011-05-21", INTERVAL 3 MONTH) AS avec_DATE,
         -- Avec DATE
-       DATE_ADD("2011-05-21 12:15:56", INTERVAL "3 02:10:32" DAY_SECOND) AS avec_DATETIME;
-        -- Avec DATETIME';
+       DATE_ADD("2011-05-21 12:15:56", INTERVAL "3 02:10:32" DAY_SECOND) AS avec_DATETIME,
+        -- Avec DATETIME,
+        "2011-05-21" + INTERVAL 5 DAY AS droite,                    
+        -- Avec DATE et intervalle à droite
+       INTERVAL "3 12" DAY_HOUR + "2011-05-21 12:15:56" AS gauche; 
+        -- Avec DATETIME et intervalle à gauche';
 aff( $sql );
 $req( $sql );
 
+$sql = 'SELECT NOW() AS Maintenant, ADDTIME(NOW(), "01:00:00") AS DansUneHeure,  
+        -- Avec un DATETIME
+       CURRENT_TIME() AS HeureCourante, ADDTIME(CURRENT_TIME(), "03:20:02") AS PlusTard; 
+        -- Avec un TIME';
+aff( $sql );
+$req( $sql );
+
+/*
 ?>
   <div class="jumbotron">
     <p class="h3-responsive">Les tables de référence</p>
@@ -119,5 +134,6 @@ $req( $sql );
     $sql = "select id, nom_courant, nom_latin, concat(left(description, 28), '...'), prix from espece limit 3";
     $req( $sql );
     ?>
-  </div>
-  <?php
+</div >
+*/
+
