@@ -43,12 +43,14 @@ namespace GC7;
 //include ('functionsAgregation.php');
 //include ('regroupement.php');
 //include ('date.php');
-include ('calculsDate.php');
+//include ('calculsDate.php');
+include ('tests.php');
 
 
 
 
 //$maReq = new Requete( (Array) $req );
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
