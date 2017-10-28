@@ -38,27 +38,30 @@ $nbr = function ( $table ) {
 
 
 $sql = "
+-- Afficher la date au format ISO du 5e anniversaire des animaux dont on connaît
+-- soit le père, soit la mère.
 
-SELECT count(*) as NbreDeChien
+select date_format(adddate(date_naissance, interval 5 year), '%Y-%m-%dT%TZ') as 'Date ISOdu 5<sup>
+ème</sup>
+Anniversaire', id, nom
+
 from animal
-where espece_id=1
 
-and year(date_naissance)>2005
-and year(date_naissance)<2011
-
-
+where pere_id is not null
+or mere_id is not null
 ";
 aff( $sql );
 $req( $sql );
-
 
 
 $sql = "
-
-SELECT date_naissance
-from animal
-where espece_id=1
-order by date_naissance
+SELECT DATE_FORMAT(DATE_ADD(date_naissance, INTERVAL 5 YEAR), GET_FORMAT(DATE, 'ISO')) AS dateIso
+FROM Animal
+WHERE pere_id IS NOT NULL
+OR mere_id IS NOT NULL;
 ";
 aff( $sql );
 $req( $sql );
+echo 'Soit: 21 naissances sur 5 années: 21 / 5 = '. 21/5;
+
+

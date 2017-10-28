@@ -236,6 +236,46 @@ $req( $sql );
 
 
 
+$sql = "
+-- Calculer combien de chiens (espece_id = 1) sont nés en moyenne
+-- chaque année entre 2006 et 2010 (sachant qu'on a eu au moins
+-- une naissance chaque année).
+
+SELECT avg(nb)
+
+from (
+  SELECT count(id) as nb
+  from animal
+
+  where espece_id=1
+  and year(date_naissance)>2005
+  and year(date_naissance)<2011
+
+  group by year(date_naissance)
+) as temp
+";
+aff( $sql );
+$req( $sql );
+
+
+$sql = "
+-- Détail des naissances dans l'exemple précédent
+
+SELECT year(date_naissance), count(id) as NbreDeChien
+from animal
+
+where espece_id=1
+and year(date_naissance)>2005
+and year(date_naissance)<2011
+
+group by year(date_naissance) with rollup
+
+";
+aff( $sql );
+$req( $sql );
+echo 'Soit: 21 naissances sur 5 années: 21 / 5 = '. 21/5;
+
+
 
 /*
 ?>
