@@ -1,21 +1,21 @@
 <?php
 namespace GC7;
 ?>
-  <div class="jumbotron">
-    <h3 class="meaDo">Fonctions natives MySQL</h3>
+    <div class="jumbotron">
+        <h3 class="meaDo">Fonctions natives MySQL</h3>
 
-    <p>
-    <ul>
-      <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
-      <li>D'aggrégation (MAX(), AVG(), etc...)</li>
-    </ul>
-    </p>
+        <p>
+            <ul>
+                <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
+                <li>D'aggrégation (MAX(), AVG(), etc...)</li>
+            </ul>
+        </p>
 
-    <p class="lead">
-      Mathématiques, chaînes, etc...
-    </p>
-  </div>
-  <?php
+        <p class="lead">
+            Mathématiques, chaînes, etc...
+        </p>
+    </div>
+    <?php
 
 $req = function ( $sql ) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
@@ -182,7 +182,7 @@ $req( $sql );
 
 
 
-$sql = "SELECT nom_courant, replace(nom_courant, left(nom_courant,1),lcase(left(nom_courant,1))) FROM Espece";
+$sql = "SELECT nom_courant, replace(nom_courant, left(nom_courant,1),lcase(left(nom_courant,1))) FROM espece";
 aff( $sql );
 $req( $sql );
 

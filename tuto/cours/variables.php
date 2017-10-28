@@ -11,6 +11,7 @@ $a = 77777.7;
 echo '<h1 class="is-size-1">' . number_format( $a, 2, ',', ' ' ) . '</h1>';
 
 
+
 $n = 233333; // 17
 $diviseur = 3; //3
 
