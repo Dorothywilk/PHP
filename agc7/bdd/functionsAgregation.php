@@ -3,7 +3,7 @@ namespace GC7;
 ?>
   <div class="jumbotron">
 
-    <h3 class="meaDo">Fonctions d'aggrégation</h3>
+    <h3 class="meaDo">Fonctions d'agrégation</h3>
 
     <p>
     <ul>
