@@ -114,6 +114,27 @@ aff( $sql );
 $req( $sql );
 
 
+$sql = '-- Utilisation de COALESCE (Remplace NULL par la chaîne)
+
+SELECT COALESCE(nom_courant, "<g>Total :</g>"), COUNT(*) as "nb d\'animaux"
+FROM Animal
+INNER JOIN Espece ON Espece.id = Animal.espece_id
+GROUP BY nom_courant WITH ROLLUP';
+aff( $sql );
+$req( $sql );
+
+
+$sql = '-- Utilisation de HAVING
+
+SELECT nom_courant, COUNT(*) as nombre
+FROM Animal
+  INNER JOIN Espece ON Espece.id = Animal.espece_id
+GROUP BY nom_courant
+having nombre > 15;';
+aff( $sql );
+$req( $sql );
+
+
 ?>
   <div class="jumbotron">
     <p class="h3-responsive">Les tables de référence</p>
