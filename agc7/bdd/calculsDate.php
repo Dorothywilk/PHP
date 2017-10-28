@@ -129,7 +129,6 @@ aff( $sql );
 $req( $sql );
 
 
-
 echo '<h3>FROM_UNIXTIME & UNIX_TIMESTAMP</h3>';
 
 $sql = 'SELECT FROM_UNIXTIME(1325595287), UNIX_TIMESTAMP("2012-01-03 13:54:47");';
@@ -149,6 +148,15 @@ echo '<h3>SEC_TO_TIME & TIME_TO_SEC</h3>';
 $sql = 'SELECT SEC_TO_TIME(102569), TIME_TO_SEC("01:00:30")';
 aff( $sql );
 $req( $sql );
+
+
+echo '<h3>LAST_DAY</h3>';
+
+$sql = "SELECT LAST_DAY('2017-02-03') AS fevrier2012, LAST_DAY('2100-02-03') AS fevrier2100;";
+aff( $sql );
+$req( $sql );
+
+
 
 
 
