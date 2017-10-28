@@ -137,6 +137,13 @@ aff( $sql );
 $req( $sql );
 
 
+echo '<h3>MAKEDATE & MAKETIME</h3>';
+
+$sql = 'SELECT MAKEDATE(2012, 60) AS 60eJour2012, MAKETIME(3, 45, 34) AS heureCree;';
+aff( $sql );
+$req( $sql );
+
+
 
 /*
 ?>
