@@ -1,4 +1,6 @@
 <?php
+$nf=function($n){return (($n>10)?number_format($n, 2, ',', ' '):$n);};
+
 
 include ('classes/Humain.php');
 include ('classes/User.php');

@@ -18,6 +18,7 @@
 <div class="main">
 
   <div class="columns mt5">
+
     <div class="column cellDo is-capitalized is-size-4">1 sdjgdsgs
 
       <?php
@@ -26,14 +27,13 @@
 
       ?>
 
-
     </div>
-
 
     <div class="column cellDo">2</div>
     <div class="column cellDo">3</div>
     <div class="column cellDo">4</div>
     <div class="column cellDo">5</div>
+
   </div>
 
   <div class="box">
