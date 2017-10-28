@@ -157,9 +157,11 @@ aff( $sql );
 $req( $sql );
 
 
-echo '<h3>Exemples</h3>';
+echo '<h1>Exemples</h1>';
 
-$sql = "-- Animaux nés en juin
+$sql = "
+
+-- Animaux nés en juin
 SELECT id, nom, date_naissance
 FROM Animal
 WHERE MONTH(date_naissance) = 6;";
@@ -167,7 +169,9 @@ aff( $sql );
 $req( $sql );
 
 
-$sql = "-- Animaux nés en juin
+$sql = "
+
+-- Animaux nés en juin
 SELECT id, nom, date_naissance
 FROM Animal
 WHERE MONTH(date_naissance) = 6;";
@@ -175,18 +179,41 @@ aff( $sql );
 $req( $sql );
 
 
-$sql = "-- Jour (en chiffres) et mois de naissance (en toutes lettres)
+$sql = "
+
+-- Jour (en chiffres) et mois de naissance (en toutes lettres)
 -- des tortues et des chats nés avant 2007.
 
-select concat(day(date_naissance), ' ', monthname(date_naissance)), nom, date_naissance, nom_courant
-from animal
-inner join espece on espece.id = espece_id
-where
-  (nom_courant like '%tortue%'
-  or
-    nom_courant like '%chat%')
-and
-year(date_naissance) < '2007'";
+SELECT DATE_FORMAT(date_naissance, '%e %M'), nom, nom_courant
+FROM animal
+INNER JOIN espece ON espece.id = espece_id
+WHERE
+    (nom_courant LIKE '%tortue%'
+  OR
+    nom_courant LIKE '%chat%')
+  AND
+    year(date_naissance) < 2007";
+aff( $sql );
+$req( $sql );
+
+
+$sql = "
+
+-- Calcul du décalage en minutes de chatons d'une même portée
+-- (Id des chatons fourni).
+
+SELECT TIMESTAMPDIFF(MINUTE,
+                     (
+                       SELECT MIN(date_naissance)
+                       FROM Animal
+                       WHERE id IN (13, 18, 20, 22)
+                     ),
+                     (
+                       SELECT MAX(date_naissance)
+                       FROM Animal
+                       WHERE id IN (13, 18, 20, 22)
+                     )
+       ) AS 'Décalage max de DoB des chatons d\'une même portée (En minutes)'";
 aff( $sql );
 $req( $sql );
 
