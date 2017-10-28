@@ -40,7 +40,8 @@ namespace GC7;
 
 // Fonctions natives MySQL
 //include ('functions.php');
-include ('functionsAgregation.php');
+//include ('functionsAgregation.php');
+include ('regroupement.php');
 
 
 

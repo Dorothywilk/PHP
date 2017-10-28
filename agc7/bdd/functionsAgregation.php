@@ -8,6 +8,7 @@ namespace GC7;
     <p class="mt5">
       Principalement pour stats
     </p>
+
     <p class="lead">
       COUNT(colonne ou *), SUM(), GROUP_CONCAT()
     </p>
@@ -51,10 +52,9 @@ $req( $sql );
 
 $sql = "-- Combien de chiens avons-nous ? --
 -- ---------------------------------
-SELECT COUNT(*) AS nb_chiens
-FROM Animal
-INNER JOIN Espece ON Espece.id = Animal.espece_id
-WHERE Espece.nom_courant = 'Chien'";
+SELECT COUNT(*) AS nb_chiens FROM animal
+INNER JOIN espece ON espece.id = animal.espece_id
+WHERE espece.nom_courant = 'Chien'";
 aff( $sql );
 $req( $sql );
 
@@ -65,41 +65,34 @@ aff( $sql );
 $req( $sql );
 
 
-
-$sql = "SELECT GROUP_CONCAT(' ', nom_courant,': ', prix, '€.'),
- SUM(prix) as 'Total:' FROM espece;";
-aff( $sql );
+$sql = "SELECT GROUP_CONCAT('- ',nom_courant,': ', prix, ' €'
+ORDER BY nom_courant SEPARATOR '<br>'), SUM(prix) as 'Total:' FROM espece;";
+aff( "SELECT GROUP_CONCAT<g>(</g>' ', nom_courant,': ', prix, ' €.'
+ORDER BY nom_courant SEPARATOR '&lt;br&gt;'<g>)</g>, SUM(prix) as 'Total:'
+FROM espece;" );
 $req( $sql );
 
 
-
-
-
-
-
-
-
-
 ?>
-        <div class="jumbotron">
-            <p class="h3-responsive">Les tables de référence</p>
-            <?php
-  $sql = 'select Id, Sexe, Nom, Commentaires, Espece_id, Race_id from animal limit 4';
-  aff( 'Animal (Les 10 premiers ' . '/' . $nbr( 'animal' ) . ')' );
-  $req( $sql );
+  <div class="jumbotron">
+    <p class="h3-responsive">Les tables de référence</p>
+    <?php
+    $sql = 'select Id, Sexe, Nom, Commentaires, Espece_id, Race_id from animal limit 4';
+    aff( 'Animal (Les 10 premiers ' . '/' . $nbr( 'animal' ) . ')' );
+    $req( $sql );
 
-  aff( 'Race (Les 3 premiers ' . '/' . $nbr( 'race' ) .')');
-  $sql = 'select * from race limit 3';
-  $req( $sql );
+    aff( 'Race (Les 3 premiers ' . '/' . $nbr( 'race' ) . ')' );
+    $sql = 'select * from race limit 3';
+    $req( $sql );
 
-//  aff( 'Animaux (Les 3 premiers ' . '/' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
-//  $sql = 'select id, clt_id, nom, espece, sexe, commentaires from animaux where clt_id > ""
-// limit 3';
-//  $req( $sql );
+    //  aff( 'Animaux (Les 3 premiers ' . '/' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
+    //  $sql = 'select id, clt_id, nom, espece, sexe, commentaires from animaux where clt_id > ""
+    // limit 3';
+    //  $req( $sql );
 
-  aff( 'Espèce (Les 4 premiers ' . '/' . $nbr( 'espece' ) . ')' );
-  $sql = 'select * from espece';
-  $req( $sql );
-  ?>
-        </div>
-        <?php
+    aff( 'Espèce (Les 4 premiers ' . '/' . $nbr( 'espece' ) . ')' );
+    $sql = 'select * from espece';
+    $req( $sql );
+    ?>
+  </div>
+  <?php
