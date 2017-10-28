@@ -8,7 +8,7 @@
     <!--External Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <!--	<link rel="stylesheet" href="../css/style.css">-->
+    	<link rel="stylesheet" href="../css/style.css">
 
     <!-- Internal Styles -->
     <style>
@@ -65,8 +65,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-        <a href="/">Accueil</a>
-        <a class="navbar-brand" href="index.html">Sublime-Voyance.be</a>
+        <a class="navbar-brand" href="/">Sublime-Voyance.be</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -98,7 +97,7 @@
 
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt5">
         <h1>Titre</h1>
 
         <p>Ok 21 u</p>
