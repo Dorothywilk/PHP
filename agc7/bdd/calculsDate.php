@@ -218,6 +218,24 @@ aff( $sql );
 $req( $sql );
 
 
+$sql = "
+
+-- Pour les chiens et les chats (espece_id = 1 et espece_id = 2 respectivement),
+-- afficher les différentes dates de naissance des portées d'au moins deux individus
+-- (format JJ/MM/AAAA), ainsi que le nombre d'individus pour chacune de ces portées.
+
+SELECT (select DATE_FORMAT(date_naissance, '%d/%m/%Y')
+        from animal aa
+        where aa.id=a.id), COUNT(*) as nb_individus,
+        group_concat(' ',a.nom) as nom
+FROM Animal a
+WHERE a.espece_id IN (1, 2)
+GROUP BY DATE(a.date_naissance), a.espece_id
+HAVING nb_individus > 1;";
+aff( $sql );
+$req( $sql );
+
+
 
 
 
