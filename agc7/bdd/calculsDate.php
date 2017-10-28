@@ -144,6 +144,13 @@ aff( $sql );
 $req( $sql );
 
 
+echo '<h3>SEC_TO_TIME & TIME_TO_SEC</h3>';
+
+$sql = 'SELECT SEC_TO_TIME(102569), TIME_TO_SEC("01:00:30")';
+aff( $sql );
+$req( $sql );
+
+
 
 /*
 ?>
