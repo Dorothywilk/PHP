@@ -5,15 +5,11 @@ namespace GC7;
 
     <h3 class="meaDo">Fonctions d'agrégation</h3>
 
-    <p>
-    <ul>
-      <li>Scalaires (ROUND(), FLOOR(), etc...)</li>
-      <li>D'aggrégation (MAX(), AVG(), etc...)</li>
-    </ul>
+    <p class="mt5">
+      Principalement pour stats
     </p>
-
     <p class="lead">
-      Mathématiques, chaînes, etc...
+      COUNT(colonne ou *), SUM(), GROUP_CONCAT()
     </p>
   </div>
   <?php
@@ -46,10 +42,24 @@ $nbr = function ( $table ) {
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
+$sql = "-- Combien de races avons-nous ? --
+-- ---------------------------------
+SELECT COUNT(*) AS nb_races
+FROM Race";
+aff( $sql );
+$req( $sql );
 
-// Fonctions scalaires
+$sql = "-- Combien de chiens avons-nous ? --
+-- ---------------------------------
+SELECT COUNT(*) AS nb_chiens
+FROM Animal
+INNER JOIN Espece ON Espece.id = Animal.espece_id
+WHERE Espece.nom_courant = 'Chien'";
+aff( $sql );
+$req( $sql );
 
-$sql = 'select 1';
+$sql = "SELECT COUNT(race_id), COUNT(DISTINCT race_id), COUNT(*)
+FROM Animal;";
 aff( $sql );
 $req( $sql );
 
@@ -62,18 +72,16 @@ $req( $sql );
 
 
 
-
-/*
 ?>
         <div class="jumbotron">
             <p class="h3-responsive">Les tables de référence</p>
             <?php
-  $sql = 'select id, clt_id, nom, espece, sexe, date_naissance from pets limit 4';
-  aff( 'Pets (Les 4 premiers ' . '/' . $nbr( 'pets' ) . ')' );
+  $sql = 'select Id, Sexe, Nom, Commentaires, Espece_id, Race_id from animal limit 4';
+  aff( 'Animal (Les 10 premiers ' . '/' . $nbr( 'animal' ) . ')' );
   $req( $sql );
 
-  aff( 'Clients (Les 3 premiers ' . '/' . $nbr( 'clients' ) .')');
-  $sql = 'select id, nom, prenom, date_naissance from clients';
+  aff( 'Race (Les 3 premiers ' . '/' . $nbr( 'race' ) .')');
+  $sql = 'select * from race limit 3';
   $req( $sql );
 
 //  aff( 'Animaux (Les 3 premiers ' . '/' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
@@ -81,10 +89,9 @@ $req( $sql );
 // limit 3';
 //  $req( $sql );
 
-  aff( 'Users (Les 3 premiers ' . '/' . $nbr( 'users' ) . ')' );
-  $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
+  aff( 'Espèce (Les 4 premiers ' . '/' . $nbr( 'espece' ) . ')' );
+  $sql = 'select * from espece';
   $req( $sql );
   ?>
         </div>
         <?php
-*/
