@@ -58,8 +58,16 @@ WHERE Espece.nom_courant = 'Chien'";
 aff( $sql );
 $req( $sql );
 
-$sql = "SELECT COUNT(race_id), COUNT(DISTINCT race_id), COUNT(*)
+$sql = "SELECT  COUNT(*), COUNT(race_id), COUNT(DISTINCT race_id), MIN(nom),
+  (select max(date_naissance) from pets)
 FROM Animal;";
+aff( $sql );
+$req( $sql );
+
+
+
+$sql = "SELECT GROUP_CONCAT(' ', nom_courant,': ', prix, '€.'),
+ SUM(prix) as 'Total:' FROM espece;";
 aff( $sql );
 $req( $sql );
 
