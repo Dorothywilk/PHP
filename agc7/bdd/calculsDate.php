@@ -130,11 +130,9 @@ $req( $sql );
 
 
 
-echo '<h3>Intervalles - SUB</h3>';
+echo '<h3>FROM_UNIXTIME & UNIX_TIMESTAMP</h3>';
 
-$sql = 'SELECT SUBDATE("2011-05-21 12:15:56", INTERVAL "3 02:10:32" DAY_SECOND) AS SUBDATE1,
-       SUBDATE("2011-05-21", 12) AS SUBDATE2,
-       DATE_SUB("2011-05-21", INTERVAL 3 MONTH) AS DATE_SUB;';
+$sql = 'SELECT FROM_UNIXTIME(1325595287), UNIX_TIMESTAMP("2012-01-03 13:54:47");';
 aff( $sql );
 $req( $sql );
 
