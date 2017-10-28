@@ -44,19 +44,19 @@ $nbr = function ( $table ) {
 };
 
 
+$sql2 = "SELECT (select nom_courant from espece where id=espece_id),
+COUNT(*) AS 'Nombre'  FROM animal
+GROUP BY espece_id";
+aff( $sql2 );
+$req( $sql2 );
+
+
 $sql1 = "SELECT (select nom_courant from espece where id=espece_id),
 COUNT(*) AS 'Mâles'  FROM animal
 where sexe='M'
 GROUP BY espece_id";
 aff( $sql1 );
 $req( $sql1 );
-
-
-$sql2 = "SELECT (select nom_courant from espece where id=espece_id),
-COUNT(*) AS 'Nombre'  FROM animal
-GROUP BY espece_id";
-aff( $sql2 );
-$req( $sql2 );
 
 
 $sql = 'SELECT Espece.nom_courant, COUNT(animal.espece_id) AS nb_animaux
@@ -77,7 +77,6 @@ GROUP BY nom_courant";
 //$req( $sql );
 
 
-// Regroupement sur plusieurs critères
 $sql = "SELECT sexe, COUNT(*) as nb_animaux
 FROM Animal
 GROUP BY sexe";
@@ -85,29 +84,34 @@ aff( $sql );
 $req( $sql );
 
 
+// Regroupement sur plusieurs critères
+
+$sql = "SELECT nom_courant, sexe, COUNT(*) as nb_animaux
+FROM Animal
+INNER JOIN Espece ON Espece.id = Animal.espece_id
+GROUP BY nom_courant, sexe";
+aff( $sql );
+$req( $sql );
+
+
+$sql = '-- Super-agrégat WITH ROLLUP
+
+SELECT nom_courant, sexe, COUNT(*) as nb_animaux
+FROM Animal
+INNER JOIN Espece ON Espece.id = Animal.espece_id
+where sexe is not null
+GROUP BY sexe, nom_courant WITH ROLLUP';
+aff( $sql );
+$req( $sql );
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$sql = 'SELECT nom_courant, COUNT(*) AS "Nombre"
+FROM animal
+INNER JOIN Espece ON Espece.id = Animal.espece_id
+GROUP BY nom_courant WITH ROLLUP';
+aff( $sql );
+$req( $sql );
 
 
 ?>
