@@ -9,11 +9,13 @@ body {
     background: cornsilk;
 }
 
-.navDo, .footerDo {
+.navDo,
+.footerDo {
     background-color: #ffdd90;
 }
 
-.navDo a, .footerDo p {
+.navDo a,
+.footerDo p {
     margin: 2px 5px;
 
 }
@@ -63,4 +65,10 @@ a {
     border-radius: 7px;
     background-color: #fff;
     padding-bottom: 5px;
+
+
+}
+
+.bleuDo {
+    color: #0052ff;
 }
