@@ -2,7 +2,7 @@
 namespace GC7;
 ?>
   <div class="jumbotron">
-    <h3>Fonctions natives MySQL</h3>
+    <h3 class="meaDo">Fonctions natives MySQL</h3>
 
     <p>
     <ul>

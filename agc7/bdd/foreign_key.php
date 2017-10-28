@@ -2,8 +2,8 @@
 namespace GC7;
 ?>
   <div class="jumbotron">
-    <h3>Clés étrangères</h3>
-    <p class="lead">
+    <h3 class="meaDo">Clés étrangères</h3>
+    <p class="lead mt5">
       Pour automatiser cohérences des opérations INSERT, UPDATE et DELETE entre 2 tables
     </p>
     <p>Options: RESTRICT | SET NULL | CASCADE</p>

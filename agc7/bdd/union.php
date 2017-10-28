@@ -2,8 +2,8 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-    <h3>UNION [ALL]</h3>
-    <p class="lead">
+    <h3 class="meaDo">UNION [ALL]</h3>
+    <p class="lead mt5">
         Pour UNION de 2 (ou +) résultats de requêtes
     </p>
 </div>

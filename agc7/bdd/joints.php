@@ -2,8 +2,8 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-    <h3>Jointure et sous-requêtes</h3>
-    <p class="lead">
+    <h3 class="meaDo">Jointure et sous-requêtes</h3>
+    <p class="lead mt5">
         <i class="fa fa-edit"></i> Pour mises à jour (UPDATE) & insertions (INSERT INTO)
     </p>
 </div>

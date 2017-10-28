@@ -2,7 +2,7 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h1 class="h1-responsive">Sous-requêtes</h1>
+  <h1 class="h1-responsive meaDo">Sous-requêtes</h1>
 </div>
 <?php
 $req= function ($sql) {
