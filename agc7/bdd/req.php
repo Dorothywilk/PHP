@@ -42,7 +42,8 @@ namespace GC7;
 //include ('functions.php');
 //include ('functionsAgregation.php');
 //include ('regroupement.php');
-include ('date.php');
+//include ('date.php');
+include ('calculsDate.php');
 
 
 

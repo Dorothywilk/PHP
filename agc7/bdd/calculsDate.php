@@ -3,18 +3,22 @@ namespace GC7;
 ?>
   <div class="jumbotron">
 
-    <h3 class="meaDo">Date / Heure</h3>
+    <h3 class="meaDo">Calculs de dates</h3>
 
-    <p class="lead mt10">Fonctions temporelles</p>
-
-    <p>DATE, TIME, DATETIME, TIMESTAMP et YEAR.</p>
+    <ul class="lead mt10">
+      <li>DATEDIFF() : qui donne un résultat en nombre de jours;</li>
+      <li>TIMEDIFF() : qui donne un résultat sous forme de TIME;</li>
+      <li>TIMESTAMPDIFF() : qui donne le résultat dans l'unité de temps souhaitée (heure, secondes,
+        mois,…).
+      </li>
+    </ul>
 
   </div>
   <?php
 
 $req = function ( $sql ) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
-$cnx->query('SET lc_time_names = "fr_FR"');
+  $cnx->query( 'SET lc_time_names = "fr_FR"' );
   $cnx = $cnx->query( $sql );
   try {
     $rep = $cnx->fetchAll( \PDO::FETCH_OBJ );
@@ -43,106 +47,16 @@ $nbr = function ( $table ) {
 
 echo '<h3>Bases</h3>';
 
-$sql = "SELECT date(20171028), time(75521),YEAR(now()), month(now()), day(now()), time(now()) ";
+$sql = 'SELECT DATEDIFF("2011-12-25 22:12:18","2011-11-10") AS nb_jours';
 aff( $sql );
 $req( $sql );
-
-
-$sql = "SELECT curdate(), current_date (), current_date";
-aff( $sql );
-$req( $sql );
-
-$sql = "SELECT curtime(), now(), sysdate()";
-aff( $sql );
-$req( $sql );
-
-
-$sql = "SELECT LOCALTIME, CURRENT_TIMESTAMP(), LOCALTIMESTAMP";
-aff( $sql );
-$req( $sql );
-
-
-$sql = "SELECT *, unix_timestamp() FROM testDate";
-aff( $sql );
-$req( $sql );
-
-
-echo '<h3>Formater une date</h3>';
-
-$sql = 'SELECT nom, date_naissance,
-       DATE(date_naissance) AS uniquementDate,
-       TIME(date_naissance) AS uniquementTime
-FROM Animal
-WHERE espece_id = 4 limit 3';
-aff( $sql );
-$req( $sql );
-
-
-$req($sql);
-
-$sql = '-- > <g>$sql=\'SET lc_time_names = "fr_FR"\'; // Date en français</g>
-
-SELECT nom, DATE(date_naissance) AS date_naiss,
-       DAY(date_naissance) AS jour,
-       DAYOFMONTH(date_naissance) AS jour,
-       DAYOFWEEK(date_naissance) AS jour_sem,
-       WEEKDAY(date_naissance) AS jour_sem2,
-       DAYNAME(date_naissance) AS nom_jour,
-       DAYOFYEAR(date_naissance) AS jour_annee
-FROM Animal
-WHERE espece_id = 4 limit 3';
-aff( $sql );
-$req( $sql );
-
-
-$sql = 'SELECT nom, date_naissance, WEEK(date_naissance) AS semaine, WEEKOFYEAR(date_naissance) AS semaine2, YEARWEEK(date_naissance) AS semaine_annee
-FROM Animal
-WHERE espece_id = 4';
-aff( $sql );
-$req( $sql );
-
-$sql = 'SELECT nom, date_naissance, MONTH(date_naissance) AS numero_mois, MONTHNAME(date_naissance) AS
-nom_mois, year(date_naissance)
-FROM Animal
-WHERE espece_id = 4';
-aff( $sql );
-$req( $sql );
-
-
-$sql = 'SELECT nom, date_naissance,
-       TIME(date_naissance) AS time_complet,
-       HOUR(date_naissance) AS heure,
-       MINUTE(date_naissance) AS minutes,
-       SECOND(date_naissance) AS secondes
-FROM Animal
-WHERE espece_id = 4 limit 3';
-aff( $sql );
-$req( $sql );
-
-
-$sql = 'SELECT nom, date_naissance, CONCAT_WS(" ", "le", DAYNAME(date_naissance), DAY(date_naissance), MONTHNAME(date_naissance), YEAR(date_naissance)) AS jolie_date
-FROM Animal
-WHERE espece_id = 4 limit 3';
-aff( $sql );
-$req( $sql );
-
-
-$sql = 'SELECT nom, date_naissance, DATE_FORMAT(date_naissance, "le %W %e %M %Y") AS jolie_date
-FROM Animal
-WHERE espece_id = 4 limit 3';
-aff( $sql );
-$req( $sql );
-
-
-$sql = 'SELECT DATE_FORMAT(NOW(), "Nous sommes aujourd\'hui le %d %M de l\'année %Y.<br>   Il est actuellement %k heures et %i minutes.") AS Top_date_longue,
-   DATE_FORMAT(NOW(), "%d %b. %y - %T") AS Top_date_courte;';
-aff( $sql );
-$req( $sql );
-
 
 $sql = 'SELECT
-STR_TO_DATE("23/04/2011 à 09h17", "%d/%m/%Y à %Hh%i") AS Str2Date,
-STR_TO_DATE("20111027133056", GET_FORMAT(TIMESTAMP, "INTERNAL")) AS date_heure_int;';
+-- Avec des DATETIME
+   "2011-10-08 12:35:45" AS datetime1, "2011-10-07 16:00:25" AS datetime2,
+   TIMEDIFF("2011-10-08 12:35:45", "2011-10-07 16:00:25") as diffDATETIME,
+-- Avec des TIME
+   "12:35:45" AS time1, "00:00:25" AS time2, TIMEDIFF("12:35:45", "00:00:25") as diffTIME;';
 aff( $sql );
 $req( $sql );
 
