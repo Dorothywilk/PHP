@@ -157,6 +157,40 @@ aff( $sql );
 $req( $sql );
 
 
+echo '<h3>Exemples</h3>';
+
+$sql = "-- Animaux nés en juin
+SELECT id, nom, date_naissance
+FROM Animal
+WHERE MONTH(date_naissance) = 6;";
+aff( $sql );
+$req( $sql );
+
+
+$sql = "-- Animaux nés en juin
+SELECT id, nom, date_naissance
+FROM Animal
+WHERE MONTH(date_naissance) = 6;";
+aff( $sql );
+$req( $sql );
+
+
+$sql = "-- Jour (en chiffres) et mois de naissance (en toutes lettres)
+-- des tortues et des chats nés avant 2007.
+
+select concat(day(date_naissance), ' ', monthname(date_naissance)), nom, date_naissance, nom_courant
+from animal
+inner join espece on espece.id = espece_id
+where
+  (nom_courant like '%tortue%'
+  or
+    nom_courant like '%chat%')
+and
+year(date_naissance) < '2007'";
+aff( $sql );
+$req( $sql );
+
+
 
 
 
