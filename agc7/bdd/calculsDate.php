@@ -277,6 +277,23 @@ echo 'Soit: 21 naissances sur 5 années: 21 / 5 = '. 21/5;
 
 
 
+$sql = "
+-- Afficher la date au format ISO du 5e anniversaire des animaux dont on connaît
+-- soit le père, soit la mère.
+
+select date_format(adddate(date_naissance, interval 5 year), GET_FORMAT(DATE,'ISO')) as 'Date ISOdu 5<sup>
+ème</sup>
+Anniversaire', id, nom
+
+from animal
+
+where pere_id is not null
+or mere_id is not null
+";
+aff( $sql );
+$req( $sql );
+
+
 /*
 ?>
   <div class="jumbotron">
