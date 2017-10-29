@@ -79,6 +79,10 @@ div.navLi a {
     color: maroon;
 }
 
+div.navLi.mtnav {
+    margin-top: 5px;
+}
+
 .sameLine {
     font-family: Arial;
     color: #555;
@@ -89,3 +93,13 @@ div.navLi a {
 hr {
     background-color: #000;
 }
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+

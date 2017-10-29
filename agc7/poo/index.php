@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 <body>
-<div class="navLi">
+<div class="navLi mtnav">
   <a href="/">Do</a> | P.O.O.
 </div>
 <hr>
