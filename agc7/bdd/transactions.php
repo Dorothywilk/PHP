@@ -40,9 +40,14 @@ $nbr = function ( $table ) {
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
+?>
 
-echo '<h3>Bases - Diff entre 2 dates</h3>';
+  <h3>Autocommit</h3>
+  <p>Par defaut, AUTOCOMMIT activé</p>
+  <code>SET AUTOCOMMIT=0;</code> pour le désactiver
+  Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;
 
+  <?php
 $sql = 'SELECT DATEDIFF("2011-12-25 22:12:18","2011-11-10") AS "nbre de jours entre le 2011-12-25 22:12:18 et le 2011-11-10"';
 aff( $sql );
 $req( $sql );
