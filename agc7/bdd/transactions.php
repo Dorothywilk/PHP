@@ -6,6 +6,7 @@ namespace GC7;
     <h3 class="meaDo">Transactions</h3>
 
     <ul class="lead mt10">
+      <li>Uniquement moteur MySQl InnoDB</li>
     </ul>
 
   </div>
