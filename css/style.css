@@ -84,5 +84,8 @@ a {
 .fdNoireDo {
   color: white;
   background-color: black;
+}
 
+.espaceEntreCodePostalEtCommune {
+  margin-left: 10px;
 }

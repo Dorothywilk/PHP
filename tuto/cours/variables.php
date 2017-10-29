@@ -58,11 +58,20 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
 
   // Déclaration des variables
   $rue = 'Bihet';
-  $numero = 12 ; 
+  $numero = 12 ;
+  $codePostal = 4500 ;
+  $commune = 'Jupille sur Meuse';
+  $espace = str_REPEAT('&nbsp;',25);
+  $pays = 'B'.$espace.'Belgium';
   // On concatène $rue dans $numero
-  $rue =  ' ' . $numero;
+
+  // Meilleure façon
+  //  $adresse .= ', ' . $numero . '<br>' . $codePostal . ' <span class="espaceEntreCodePostalEtCommune">' . $commune.'</span>';
+
+  $adresse =$rue . ', ' . $numero . '<br>' . $codePostal . ' &nbsp; ' . $commune . '<br>' .$pays;
+
   // Affiche 'Bihet 12'
-  echo $rue;
+  echo 'Rue ' .  $adresse .   '<hr>';
 
 // Déclaration des variables
   $prenom = 'Hugo';
@@ -70,10 +79,12 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
   // On concatène $nom dans $prenom
   $prenom .= ' '. $nom;
   // Affiche 'Hugo Hamon'
-  echo $prenom;
+  echo $prenom.'<hr>';
 
 
 
 
 
+
+echo '<hr>';
   /* Pour les tableaux, on recontre le plus souvent cette notation : $t = [item1, item2]; Exemple suit... */ //tododo Avancer !
