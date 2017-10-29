@@ -58,11 +58,19 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
 
   // Déclaration des variables
   $rue = 'Bihet';
-  $numero = 12 ;
+  $numero = 12 ; 
   // On concatène $rue dans $numero
   $rue =  ' ' . $numero;
   // Affiche 'Bihet 12'
-  echo $numero;
+  echo $rue;
+
+// Déclaration des variables
+  $prenom = 'Hugo';
+  $nom = 'Hamon';
+  // On concatène $nom dans $prenom
+  $prenom .= ' '. $nom;
+  // Affiche 'Hugo Hamon'
+  echo $prenom;
 
 
 
