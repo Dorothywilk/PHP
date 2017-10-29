@@ -69,15 +69,13 @@ $req( $sql, $pdo );
 $sql = 'SELECT prix from espece where id=5';
 $req( $sql, $pdo );
 
-$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
-//$sql = 'ROLLBACK';
+//$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
+$sql = 'ROLLBACK';
 $req( $sql, $pdo );
 
-//echo '<hr>Après ROLLBACK';
 $sql = 'SELECT prix from espece where id=5';
 $pdo = $req( $sql );
 
-//echo __LINE__;
 $sql = 'UPDATE espece SET prix=10 where id=5';
 $req( $sql, $pdo );
 
