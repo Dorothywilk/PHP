@@ -11,7 +11,7 @@
 <div class="maingc7">
 
   <div class="navLi">
-    <a href="/">Do</a> | BdD - Procédure
+    <a href="/">Do</a> | BdD - Procédures MySQL
   </div>
 
   <?php
