@@ -78,7 +78,7 @@ a {
 
 .fdRougeDo {
   background-color: red;
-  border: black;
+  border: 2px solid black;
 }
 
 .fdNoireDo {
