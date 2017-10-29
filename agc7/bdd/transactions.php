@@ -14,8 +14,23 @@ namespace GC7;
     </div>
   <?php
 */
+
+$sql = 'select * from t';
+?>
+<hr class="hrDo">
+
+
+<div class="sameLg">
+  <div><p>Paraph</p>
+    <pre>PRE</pre>
+  </div>
+</div>
+
+
+<?php
+
+
 $req = function ( $sql, $pdo = null ) {
-  aff( $sql );
 //  aff( $pdo );
   if ( null === $pdo ) {
     echo 'Instanciation PDO';
@@ -50,12 +65,12 @@ $nbr = function ( $table ) {
 
 ?>
 
-  <!--    <h3>Autocommit</h3>-->
-  <!--    <p>Par defaut, AUTOCOMMIT activé</p>-->
-  <!--    <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
-  <!--    Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;-->
+<!--    <h3>Autocommit</h3>-->
+<!--    <p>Par defaut, AUTOCOMMIT activé</p>-->
+<!--    <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
+<!--    Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;-->
 
-  <?php
+<?php
 
 $sql = 'SELECT prix from espece where id=5';
 $pdo = $req( $sql );
@@ -66,20 +81,19 @@ $pdo = $req( $sql, $pdo );
 $sql = 'UPDATE espece SET prix=20 where id=5';
 $req( $sql, $pdo );
 
-echo __LINE__;
+affLign( $sql );
 $sql = 'SELECT prix from espece where id=5';
 $req( $sql, $pdo );
 
-echo __LINE__;
-//$sql = 'COMMIT';
-
-
-$sql = 'ROLLBACK';
+affLign( $sql );
+$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
+//$sql = 'ROLLBACK';
 $req( $sql, $pdo );
+
 
 //echo '<hr>Après ROLLBACK';
-echo __LINE__;
 $sql = 'SELECT prix from espece where id=5';
+affLign( $sql );
 $pdo = $req( $sql );
 
 //echo __LINE__;
@@ -110,4 +124,15 @@ $req( $sql, $pdo );
     ?>
 </div >
 */
+
+function affLign( $sql )
+{
+  $lign = debug_backtrace()[0]['line'];
+  ?>
+  <div class="clearfix" style="margin: 5px; width: 100%; margin-left: 0;">
+    <p class="float-left"><?= $sql ?></p>
+    <p class="float-right">Ligne <?=$lign?></p>
+  </div>
+  <?php
+}
 
