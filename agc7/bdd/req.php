@@ -44,13 +44,13 @@ namespace GC7;
 //include ('regroupement.php');
 //include ('date.php');
 //include ('calculsDate.php');
-include ('tests.php');
 
+// Transactions
+include ('transactions.php');
 
-
+//include( 'tests.php' );
 
 //$maReq = new Requete( (Array) $req );
-
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
