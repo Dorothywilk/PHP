@@ -72,16 +72,15 @@ ORDER BY nom_courant SEPARATOR '&lt;br&gt;'<g>)</g>, SUM(prix) as 'Total:'
 FROM espece;" );
 $req( $sql );
 
-
 ?>
   <div class="jumbotron">
     <p class="h3-responsive">Les tables de référence</p>
     <?php
     $sql = 'select Id, Sexe, Nom, Commentaires, Espece_id, Race_id from animal limit 4';
-    aff( 'Animal (Les 10 premiers ' . '/' . $nbr( 'animal' ) . ')' );
+    aff( 'Animal (Les 10 premiers /' . $nbr( 'animal' ) . ')' );
     $req( $sql );
 
-    aff( 'Race (Les 3 premiers ' . '/' . $nbr( 'race' ) . ')' );
+    aff( 'Race (Les 3 premiers /' . $nbr( 'race' ) . ')' );
     $sql = 'select * from race limit 3';
     $req( $sql );
 
@@ -90,7 +89,7 @@ $req( $sql );
     // limit 3';
     //  $req( $sql );
 
-    aff( 'Espèce (Les 4 premiers ' . '/' . $nbr( 'espece' ) . ')' );
+    aff( 'Espèce (Les 4 premiers /' . $nbr( 'espece' ) . ')' );
     $sql = 'select * from espece';
     $req( $sql );
     ?>
