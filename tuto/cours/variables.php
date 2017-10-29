@@ -48,18 +48,24 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
  $unEtudiant = new Etudiant ();// Objet de type Etudiant
 */
 
-$a = 'Dorothy' ;
-$b = 'Wilkinson';
+  $a = 'Dorothy' ;
+  $b = 'Wilkinson';
 
-$qui = 'Maman';
+  $qui = 'Maman';
 
-echo '<hr>' . $qui . ' est ' . $a .' ' . $b . '<hr>';
-
-
+  echo '<hr>' . $qui . ' est ' . $a .' ' . $b . '<hr>';
 
 
-/* Pour les tableaux, on recontre le plus souvent cette notation :
-$t = [item1, item2];
-Exemple suit...
-*/
-//tododo Avancer !
+  // Déclaration des variables
+  $rue = 'Bihet';
+  $numero = 12 ;
+  // On concatène $rue dans $numero
+  $rue =  ' ' . $numero;
+  // Affiche 'Bihet 12'
+  echo $numero;
+
+
+
+
+
+  /* Pour les tableaux, on recontre le plus souvent cette notation : $t = [item1, item2]; Exemple suit... */ //tododo Avancer !
