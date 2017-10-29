@@ -24,9 +24,9 @@ echo 'Tps Train2 = ' . gmdate('H:i:s', $secondesTrain2*3600).'<hr>';
 // 2 H 13 MN 20 SEC
   
 
-echo SQRT(400/180/110);
+echo SQRT(400/180/110) . ' <hr>';
 
-echo 'jtm';
+echo 'jtm moi aussi';
 
 
 
