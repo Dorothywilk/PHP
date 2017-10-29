@@ -32,7 +32,7 @@
       ?>
         </div>
 
-        <div class="column cellDo is-capitalized is-size-4 yellowdo">
+        <div class="column cellDo is-capitalized is-size-4 fdJauneDo">
 
           2.
 
@@ -72,7 +72,7 @@
       </nav>
 
 
-      <div class="box mt10">
+      <div class="box mt10 fdJauneDo">
         <article class=" media ">
           <div class="media-left ">
             <figure class="image is-64x64 ">

@@ -8,7 +8,7 @@
 
 function aff( $v )
 {
-	echo '<pre>';
+	echo '<pre class="mt10">';
 	print_r( $v );
 	// var_dump($v);
 	echo '</pre>';
@@ -50,21 +50,3 @@ function affR( $r )
 
 	echo '</table>';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

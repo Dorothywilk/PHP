@@ -36,11 +36,12 @@ $nbr = function ( $table ) {
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
+echo '11%3 = '.(11%3);
+
+
 
 $sql = "
-select 1
+select 11%3
 ";
 aff( $sql );
 $req( $sql );
-
-
