@@ -1,19 +1,19 @@
 <?php
 
 namespace GC7;
-/*
+
 ?>
-    <div class="jumbotron">
+  <div class="jumbotron">
 
-        <h3 class="meaDo">Transactions</h3>
+    <h3 class="meaDo">Transactions</h3>
 
-        <ul class="lead mt10">
-            <li>Uniquement moteur MySQl InnoDB</li>
-        </ul>
+    <ul class="lead mt10">
+      <li>Uniquement moteur MySQl InnoDB</li>
+    </ul>
 
-    </div>
+  </div>
   <?php
-*/
+
 
 $req = function ( $sql, $pdo = null ) {
 //  aff( $pdo );
@@ -50,10 +50,10 @@ $nbr = function ( $table ) {
 
 ?>
 
-  <!--    <h3>Autocommit</h3>-->
-  <!--    <p>Par defaut, AUTOCOMMIT activé</p>-->
-  <!--    <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
-  <!--    Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;-->
+  <h3>Autocommit</h3>
+  <p>Par defaut, AUTOCOMMIT activé</p>
+  <code>SET AUTOCOMMIT=0;</code> pour le désactiver
+  Permet de faire ensuite <code>ROLLBACK</code> si nécessaire.
 
   <?php
 
@@ -113,6 +113,7 @@ function affLign( $sql )
   ?>
   <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
     <p class="float-left"><?= $sql ?></p>
+
     <p class="float-right">Ligne <?= $lign ?></p>
   </div>
   <?php
