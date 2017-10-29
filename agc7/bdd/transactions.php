@@ -3,15 +3,15 @@
 namespace GC7;
 
 ?>
-  <div class="jumbotron">
-
-    <h3 class="meaDo">Transactions</h3>
-
-    <ul class="lead mt10">
-      <li>Uniquement moteur MySQl InnoDB</li>
-    </ul>
-
-  </div>
+  <!--  <div class="jumbotron">-->
+  <!---->
+  <!--    <h3 class="meaDo">Transactions</h3>-->
+  <!---->
+  <!--    <ul class="lead mt10">-->
+  <!--      <li>Uniquement moteur MySQl InnoDB</li>-->
+  <!--    </ul>-->
+  <!---->
+  <!--  </div>-->
   <?php
 
 
@@ -50,37 +50,77 @@ $nbr = function ( $table ) {
 
 ?>
 
-  <h3>Autocommit</h3>
-  <p>Par defaut, AUTOCOMMIT activé</p>
-  <code>SET AUTOCOMMIT=0;</code> pour le désactiver
-  Permet de faire ensuite <code>ROLLBACK</code> si nécessaire.
+  <!--  <h3>Autocommit</h3>-->
+  <!--  <p>Par defaut, AUTOCOMMIT activé</p>-->
+  <!--  <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
+  <!--  Permet de faire ensuite <code>ROLLBACK</code> si nécessaire.-->
 
   <?php
 
 $sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
 $pdo = $req( $sql );
 
-$sql = 'SET AUTOCOMMIT=0';
+$sql = 'SET AUTOCOMMIT=0'; // Sera pour toute la cession
+//$sql = 'START TRANSACTION'; // Ne sera que jusqu'au COMMIT ou ROLLBACK qui mettent fin à la transaction
 $pdo = $req( $sql, $pdo );
 
-$sql = 'UPDATE espece SET prix=20 where id=5 or id =1';
+$sql = 'UPDATE espece SET prix=50 where id=5 or id =1';
 $req( $sql, $pdo );
 
 $sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
 $req( $sql, $pdo );
 
-$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
-//$sql = 'ROLLBACK';
+//$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
+$sql = 'ROLLBACK';
 $req( $sql, $pdo );
 
+echo 'Valeurs réelles 1';
 $sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
-$pdo = $req( $sql );
+$req( $sql );
+
+
+
+
+
+$sql = 'UPDATE espece SET prix=50 where id=5 or id =1';
+$req( $sql, $pdo );
+
+
+//$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
+$sql = 'ROLLBACK';
+$req( $sql, $pdo );
+
+
+echo '<hr>Valeurs réelles 2';
+$sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
+$req( $sql, $pdo );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 $sql = 'UPDATE espece SET prix=200 where id=1';
-$req( $sql, $pdo );
-
-$sql = 'UPDATE espece SET prix=10 where id=5';
-$req( $sql, $pdo );
+$req( $sql);
+$sql = 'UPDATE espece SET prix=20 where id=5';
+$req( $sql);
 
 /*
 ?>

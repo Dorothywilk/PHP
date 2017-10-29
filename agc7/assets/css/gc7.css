@@ -85,3 +85,7 @@ div.navLi a {
     border-top: 1px solid #b4b4b4;
     padding-top: 5px;
 }
+
+hr {
+    background-color: #000;
+}
