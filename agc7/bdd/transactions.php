@@ -57,28 +57,30 @@ $nbr = function ( $table ) {
 
   <?php
 
-$sql = 'SELECT prix from espece where id=5';
+$sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
 $pdo = $req( $sql );
 
 $sql = 'SET AUTOCOMMIT=0';
 $pdo = $req( $sql, $pdo );
 
-$sql = 'UPDATE espece SET prix=20 where id=5';
+$sql = 'UPDATE espece SET prix=20 where id=5 or id =1';
 $req( $sql, $pdo );
 
-$sql = 'SELECT prix from espece where id=5';
+$sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
 $req( $sql, $pdo );
 
-//$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
-$sql = 'ROLLBACK';
+$sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
+//$sql = 'ROLLBACK';
 $req( $sql, $pdo );
 
-$sql = 'SELECT prix from espece where id=5';
+$sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
 $pdo = $req( $sql );
+
+$sql = 'UPDATE espece SET prix=200 where id=1';
+$req( $sql, $pdo );
 
 $sql = 'UPDATE espece SET prix=10 where id=5';
 $req( $sql, $pdo );
-
 
 /*
 ?>
@@ -111,7 +113,6 @@ function affLign( $sql )
   ?>
   <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
     <p class="float-left"><?= $sql ?></p>
-
     <p class="float-right">Ligne <?= $lign ?></p>
   </div>
   <?php
