@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>POO</title>
-	<link rel="stylesheet" href="../../css/style.css">
-	<link rel="stylesheet" href="../assets/css/gc7.css">
+  <meta charset="UTF-8">
+  <title>POO</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 <body>
-P.O.O.
+<div class="navLi">
+  <a href="/">Do</a> | P.O.O.
+</div>
 <hr>
 <?php
 
