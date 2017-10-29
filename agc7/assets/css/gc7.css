@@ -3,7 +3,7 @@
     width: 97%;
     margin: 0 auto;
     font-size: 1.0em;
-    border: 1px sild red;
+    /*border: 1px solid red;*/
 }
 
 .gc7 .ui.message {
@@ -79,6 +79,9 @@ div.navLi a {
     color: maroon;
 }
 
-.sameLg{
-
+.sameLine {
+    font-family: Arial;
+    color: #555;
+    border-top: 1px solid #b4b4b4;
+    padding-top: 5px;
 }

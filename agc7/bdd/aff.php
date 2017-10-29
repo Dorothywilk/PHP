@@ -26,27 +26,22 @@ function affR( $r )
 	//if (!isset($r[0])) $r = [$r];
 
 	if ( ! array_key_exists(0, $r) ) $r = [$r];
-
 	$ps = array_keys( (array) $r[0] ); // Get les clefs, nom des propriétés
 	//aff( $ps );
 
 	echo '<table class="table table-bordered table-striped table-sm">
 	<thead class="grey lighten-1">
-
 	<tr>';
 	foreach ( $ps as $p ) {
 		echo '<th>' . ucfirst( $p ) . '</th>';
 	}
 	echo '</tr></thead>';
-
 	echo '<tr>';
-
 	foreach ( $r as $row ) {
 		foreach ( $row as $p ) { // p comme propriété
 			echo '<td style="background-color: white">' . $p . '</td>';
 		}
 		echo '</tr>';
 	}
-
 	echo '</table>';
 }

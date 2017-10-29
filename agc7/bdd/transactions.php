@@ -15,29 +15,14 @@ namespace GC7;
   <?php
 */
 
-$sql = 'select * from t';
-?>
-<hr class="hrDo">
-
-
-<div class="sameLg">
-  <div><p>Paraph</p>
-    <pre>PRE</pre>
-  </div>
-</div>
-
-
-<?php
-
-
 $req = function ( $sql, $pdo = null ) {
 //  aff( $pdo );
+  affLign( $sql );
   if ( null === $pdo ) {
     echo 'Instanciation PDO';
     $pdo = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
-//    aff( $cnx );
   }
-//  $cnx->query( 'SET lc_time_names = "fr_FR"' );
+//  $cnx->query( 'SET lc_time_names = "fr_FR"' ); // jours en français depuis MySQL
   $cnx = $pdo->query( $sql );
   try {
     $rep = $cnx->fetchAll( \PDO::FETCH_OBJ );
@@ -52,7 +37,7 @@ $req = function ( $sql, $pdo = null ) {
   if ( preg_match( '/INSERT|UPDATE|REPLACE|DELETE/i', $sql ) ) {
     $nbra = $cnx->rowCount(); // Nombre de rangs affectés
     $plur = ( $nbra > 1 ) ? 's' : ''; // Pluriel
-    echo '=> ' . $nbra . ' rang' . $plur . ' affecté' . $plur . '<hr>';
+    echo '=> ' . $nbra . ' rang' . $plur . ' affecté' . $plur;
   }
   return $pdo;
 };
@@ -65,12 +50,12 @@ $nbr = function ( $table ) {
 
 ?>
 
-<!--    <h3>Autocommit</h3>-->
-<!--    <p>Par defaut, AUTOCOMMIT activé</p>-->
-<!--    <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
-<!--    Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;-->
+  <!--    <h3>Autocommit</h3>-->
+  <!--    <p>Par defaut, AUTOCOMMIT activé</p>-->
+  <!--    <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
+  <!--    Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;-->
 
-<?php
+  <?php
 
 $sql = 'SELECT prix from espece where id=5';
 $pdo = $req( $sql );
@@ -81,19 +66,15 @@ $pdo = $req( $sql, $pdo );
 $sql = 'UPDATE espece SET prix=20 where id=5';
 $req( $sql, $pdo );
 
-affLign( $sql );
 $sql = 'SELECT prix from espece where id=5';
 $req( $sql, $pdo );
 
-affLign( $sql );
 $sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
 //$sql = 'ROLLBACK';
 $req( $sql, $pdo );
 
-
 //echo '<hr>Après ROLLBACK';
 $sql = 'SELECT prix from espece where id=5';
-affLign( $sql );
 $pdo = $req( $sql );
 
 //echo __LINE__;
@@ -127,11 +108,13 @@ $req( $sql, $pdo );
 
 function affLign( $sql )
 {
-  $lign = debug_backtrace()[0]['line'];
+  $lign = debug_backtrace()[ 1 ][ 'line' ];
+//  aff( debug_backtrace() );
   ?>
-  <div class="clearfix" style="margin: 5px; width: 100%; margin-left: 0;">
+  <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
     <p class="float-left"><?= $sql ?></p>
-    <p class="float-right">Ligne <?=$lign?></p>
+
+    <p class="float-right">Ligne <?= $lign ?></p>
   </div>
   <?php
 }
