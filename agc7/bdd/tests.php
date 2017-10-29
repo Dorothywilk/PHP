@@ -9,7 +9,7 @@ namespace GC7;
   <?php
 
 $req = function ( $sql ) {
-  $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
+  $cnx = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
   $cnx->query( 'SET lc_time_names = "fr_FR"' );
   $cnx = $cnx->query( $sql );
   try {
