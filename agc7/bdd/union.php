@@ -1,13 +1,13 @@
 <?php
 namespace GC7;
 ?>
-<div class="jumbotron">
+  <div class="jumbotron">
     <h3 class="meaDo">UNION [ALL]</h3>
     <p class="lead mt5">
-        Pour UNION de 2 (ou +) résultats de requêtes
+      Pour UNION de 2 (ou +) résultats de requêtes
     </p>
-</div>
-<?php
+  </div>
+  <?php
 // Req pour initiales en maj
 // update animal set espece = CONCAT(UCASE(SUBSTRING(espece, 1, 1)), LCASE(SUBSTRING(espece, 2)))
 
@@ -54,20 +54,20 @@ $req($sql);
 
 
 ?>
-<div class="jumbotron">
-  <p class="h3-responsive">Les tables de référence</p>
-  <?php
+    <div class="jumbotron">
+      <p class="h3-responsive">Les tables de référence</p>
+      <?php
   $sql = 'select id, clt_id, nom, espece, sexe from pets limit 4';
-  aff( 'Pets (Les 4 premiers ' . '/' . $nbr( 'pets' ) . ')' );
+  aff( 'Pets (Les 4 premiers /' . $nbr( 'pets' ) . ')' );
   $req( $sql );
 
-  aff( 'Animaux (Les 3 premiers ' . '/' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
+  aff( 'Animaux (Les 3 premiers /' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
   $sql = 'select id, clt_id, nom, espece, sexe, commentaires from animaux where clt_id > ""
  limit 3';
   $req( $sql );
 
-  aff( 'Users (Les 3 premiers ' . '/' . $nbr( 'users' ) . ')' );
+  aff( 'Users (Les 3 premiers /' . $nbr( 'users' ) . ')' );
   $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
   $req( $sql );
   ?>
-</div>
+    </div>

@@ -68,7 +68,7 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
   // Meilleure façon
   //  $adresse .= ', ' . $numero . '<br>' . $codePostal . ' <span class="espaceEntreCodePostalEtCommune">' . $commune.'</span>';
 
-  $adresse =$rue . ', ' . $numero . '<br>' . $codePostal . ' &nbsp; ' . $commune . '<br>' .$pays;
+  $adresse = $rue . ', ' . $numero . '<br>' . $codePostal . ' &nbsp; ' . $commune . '<br>' .$pays;
 
   // Affiche 'Bihet 12'
   echo 'Rue ' .  $adresse .   '<hr>';
