@@ -20,9 +20,6 @@ echo '<div class="meaDo">' . $nf( $n ) . ' / ' . $nf( $diviseur ) . ' = ' . $nf(
 
 
 
-
-
-
 //ToDoDo J'en suis là !
 
 
@@ -42,13 +39,32 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
 
 */
 
-/* $prenom = 'Hugo';  // Type string (chaine de caractères)
- $nom = "Hamon";    // Type string (chaine de caractères)
- $age = 19;    // Type entier
- $estEtudiant = true;  // Type booléen
- $cours = array('physique','chimie','informatique','philosophie'); // Type tableau
- $unEtudiant = new Etudiant (); // Objet de type Etudiant
+/* $prenom = 'Hugo';           // Type string (chaine de caractères)
+ $nom = "Hamon";               // Type string (chaine de caractères)
+ $age = 19;                    // Type entier
+ $estEtudiant = true;          // Type booléen
+ $cours = array('physique','chimie','informatique','philosophie'); 
+                               // Type tableau
+ $unEtudiant = new Etudiant ();// Objet de type Etudiant
 */
+
+$a = 'Dorothy' ;
+$b = 'Wilkinson';
+
+$qui = 'Maman';
+
+echo '<hr>'.
+  
+  
+  $qui . ' est ' . $a .' ' . $b  
+  
+  
+  
+  .'<hr>';
+
+
+
+
 /* Pour les tableaux, on recontre le plus souvent cette notation :
 $t = [item1, item2];
 Exemple suit...
