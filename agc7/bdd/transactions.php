@@ -71,11 +71,10 @@ $sql = 'SELECT prix from espece where id=5';
 $req( $sql, $pdo );
 
 echo __LINE__;
-$sql = 'COMMIT';
-$req( $sql, $pdo );
+//$sql = 'COMMIT';
 
 
-//$sql = 'ROLLBACK';
+$sql = 'ROLLBACK';
 $req( $sql, $pdo );
 
 //echo '<hr>Après ROLLBACK';
