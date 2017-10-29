@@ -53,14 +53,7 @@ $b = 'Wilkinson';
 
 $qui = 'Maman';
 
-echo '<hr>'.
-  
-  
-  $qui . ' est ' . $a .' ' . $b  
-  
-  
-  
-  .'<hr>';
+echo '<hr>' . $qui . ' est ' . $a .' ' . $b . '<hr>';
 
 
 
