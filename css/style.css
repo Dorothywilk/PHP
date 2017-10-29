@@ -75,3 +75,13 @@ a {
 .fdJauneDo {
   background-color: yellow;
 }
+
+.fdRougeDo {
+  background-color: red;
+}
+
+.fdNoireDo {
+  color: white;
+  background-color: black;
+
+}
