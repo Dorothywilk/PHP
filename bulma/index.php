@@ -23,7 +23,7 @@
 
       <div class="columns mt5">
 
-        <div class="column cellDo is-capitalized is-size-4">
+        <div class="column cellDo is-capitalized is-size-4 fdRougeDo">
 
           1. sdjgdsgs
 
@@ -44,9 +44,10 @@
 
         </div>
 
-        <div class="column cellDo">
+        <div class="column cellDo is-capitalized is-size-4 fdNoireDo
+          ">
 
-          3
+          3.
 
         </div>
 
