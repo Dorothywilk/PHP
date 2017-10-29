@@ -1,21 +1,29 @@
 <?php
+
 namespace GC7;
+/*
 ?>
-  <div class="jumbotron">
+    <div class="jumbotron">
 
-    <h3 class="meaDo">Transactions</h3>
+        <h3 class="meaDo">Transactions</h3>
 
-    <ul class="lead mt10">
-      <li>Uniquement moteur MySQl InnoDB</li>
-    </ul>
+        <ul class="lead mt10">
+            <li>Uniquement moteur MySQl InnoDB</li>
+        </ul>
 
-  </div>
+    </div>
   <?php
-
-$req = function ( $sql ) {
-  $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
-  $cnx->query( 'SET lc_time_names = "fr_FR"' );
-  $cnx = $cnx->query( $sql );
+*/
+$req = function ( $sql, $pdo = null ) {
+  aff( $sql );
+//  aff( $pdo );
+  if ( null === $pdo ) {
+    echo 'Instanciation PDO';
+    $pdo = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
+//    aff( $cnx );
+  }
+//  $cnx->query( 'SET lc_time_names = "fr_FR"' );
+  $cnx = $pdo->query( $sql );
   try {
     $rep = $cnx->fetchAll( \PDO::FETCH_OBJ );
   } catch ( Exception $e ) {
@@ -31,7 +39,7 @@ $req = function ( $sql ) {
     $plur = ( $nbra > 1 ) ? 's' : ''; // Pluriel
     echo '=> ' . $nbra . ' rang' . $plur . ' affecté' . $plur . '<hr>';
   }
-
+  return $pdo;
 };
 
 $nbr = function ( $table ) {
@@ -42,16 +50,42 @@ $nbr = function ( $table ) {
 
 ?>
 
-  <h3>Autocommit</h3>
-  <p>Par defaut, AUTOCOMMIT activé</p>
-  <code>SET AUTOCOMMIT=0;</code> pour le désactiver
-  Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;
+  <!--    <h3>Autocommit</h3>-->
+  <!--    <p>Par defaut, AUTOCOMMIT activé</p>-->
+  <!--    <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
+  <!--    Permet de faire ensuite <code>ROLLBACK</code> si nécessaire;-->
 
   <?php
-$sql = 'SELECT DATEDIFF("2011-12-25 22:12:18","2011-11-10") AS "nbre de jours entre le 2011-12-25 22:12:18 et le 2011-11-10"';
-aff( $sql );
-$req( $sql );
 
+$sql = 'SELECT prix from espece where id=5';
+$pdo = $req( $sql );
+
+$sql = 'SET AUTOCOMMIT=0';
+$pdo = $req( $sql, $pdo );
+
+$sql = 'UPDATE espece SET prix=20 where id=5';
+$req( $sql, $pdo );
+
+echo __LINE__;
+$sql = 'SELECT prix from espece where id=5';
+$req( $sql, $pdo );
+
+echo __LINE__;
+$sql = 'COMMIT';
+$req( $sql, $pdo );
+
+
+//$sql = 'ROLLBACK';
+$req( $sql, $pdo );
+
+//echo '<hr>Après ROLLBACK';
+echo __LINE__;
+$sql = 'SELECT prix from espece where id=5';
+$pdo = $req( $sql );
+
+//echo __LINE__;
+$sql = 'UPDATE espece SET prix=10 where id=5';
+$req( $sql, $pdo );
 
 
 /*
