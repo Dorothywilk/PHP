@@ -39,8 +39,8 @@ namespace GC7;
 
 // Fonctions natives MySQL
 //include ('bases/functions.php');
-include ('bases/functionsAgregation.php');
-include ('bases/regroupement.php');
+//include ('bases/functionsAgregation.php');
+//include ('bases/regroupement.php');
 include ('bases/date.php');
 include ('bases/calculsDate.php');
 
