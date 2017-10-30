@@ -34,8 +34,6 @@
 
     $('#tab32').click();
 
-    $('[data-toggle="tooltipNum"]').tooltip();
-
     $('.examplemenu .menu .browse').popup({
         inline: true,
         hoverable: true,
@@ -54,10 +52,10 @@
 
     //$('.ui.basic.modal').modal('show');
 
-    $('#MoviesFilter').on('change', 'input, select', function () {
-        var $form = $(this).closest('form');
-        $form.request();
-    })
+    //$('#MoviesFilter').on('change', 'input, select', function () {
+    //    var $form = $(this).closest('form');
+    //    $form.request();
+    //})
 
 
     //$('input#input-char-counter, textarea#textarea-char-counter').characterCounter();

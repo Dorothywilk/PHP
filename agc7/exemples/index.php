@@ -10,14 +10,14 @@
 </head>
 
 <body>
+
+<header class="ui header">
+  <a href="/">Accueil</a> |
+  <a href="/agc7">AGC7</a> |
+  <a href="/agc7/mdb.php" class="active">MDB</a>
+</header>
+
 <div class="container maingc7">
-
-  <header class="ui header">
-    <a href="/">Accueil</a> | 
-    <a href="/agc7">AGC7</a> | 
-    <a href="/agc7/mdb.php" class="active">MDB</a>
-  </header>
-
   <article>
 
     <?php include '../content/semantic/menu.html' ?><br>
@@ -32,9 +32,10 @@
     <hr>
     &copy;2017 - GC7
   </footer>
-  <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async
+          defer></script>
   <script src="../assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../assets/js/appSemantic.js" type="text/javascript" charset="utf-8"></script>
 </div>
 </body>
 

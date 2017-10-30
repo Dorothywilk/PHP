@@ -23,13 +23,12 @@
 
     <!-- Logo -->
       <span class="nav-item active logo-sn waves-light">
-        <a class="pl-0 navbar-brand" href="/" style="margin-right: 25px">
+        <a class="pl-0 navbar-brand" href="/">
           <img id="GC7-logo" src="assets/images/logo_150x93_c7.png" width="70px" alt="GC7 Logo"> Do</a>
       </span>
     <!--/. Logo -->
 
-			<span class="nav-item waves-light"
-            style="border: 0px solid red;padding-left: 20px;margin: 0 20px;">
+			<span class="nav-item waves-light">
         <a class="nav-item waves-light navbar-brand" href="/agc7">GC7</a>
       </span>
 
@@ -47,7 +46,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#" style="margin-left: 30px;">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#" style="margin-left: 30px;">Home <span
+              class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://mdbootstrap.com/components/" target="_blank">Doc MDB</a>
@@ -311,12 +311,6 @@
 
   </article>
 
-  <footer>
-    <hr>
-    &copy;2017 - GC7 | <a href="https://github.com/GrCOTE7/Do" target="_blank"><i
-        class="github icon"></i></a>
-  </footer>
-
   <!--Footer Links-->
   <div class="container">
     <div class="row my-4">
@@ -391,15 +385,6 @@
   </div>
   <!--/.Footer Links-->
 
-  <!--Copyright-->
-  <div class="footer-copyright">
-    <div class="container-fluid">
-      © 2017 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-
-    </div>
-  </div>
-  <!--/.Copyright-->
-
   </footer>
 
   <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -414,6 +399,13 @@
   <script src="assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
   <!--  <script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>-->
 </div>
+<!--Copyright-->
+<div class="footer-copyright" style="margin-left: 10px;margin-top: 10px;">
+  <!--  <div class="container-fluid">-->
+  © 2017 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+  <!--  </div>-->
+</div>
+<!--/.Copyright-->
 </body>
 
 </html>

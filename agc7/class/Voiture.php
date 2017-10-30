@@ -1,24 +1,23 @@
- <?php
- 
- class Voiture extends Vehicule
- {
+<?php
+
+class Voiture extends Vehicule
+{
   // Attributs
   private $_volumeCarburant;
 
   // Constructeur
-  public function __construct($marque)
+  public function __construct( $marque )
   {
     // Appel du constructeur de la classe parente
-    parent::__construct($marque);
+    parent::__construct( $marque );
     $this->_volumeCarburant = 40;
   }
 
   // Démarre la voiture si le réservoir
   // n'est pas vide
-  public function demarrer() 
+  public function demarrer()
   {
-    if ($this->_controlerVolumeCarburant())
-    {
+    if ( $this->_controlerVolumeCarburant() ) {
       echo 'Le véhicule démarre<br>';
       return true;
     }
@@ -28,12 +27,12 @@
   }
 
   // Vérifie qu'il y'a du carburant dans le réservoir
-  private function _controlerVolumeCarburant() 
+  private function _controlerVolumeCarburant()
   {
-    return ($this->_volumeCarburant > 0);
+    return ( $this->_volumeCarburant > 0 );
   }
 
-  public function setVolumeCarburant($dVolume)
+  public function setVolumeCarburant( $dVolume )
   {
     $this->_volumeCarburant = $dVolume;
   }

@@ -5,7 +5,7 @@ namespace GC7;
 ?>
 <div class="jumbotron">
 
-  <h3 class="meaDo">Transactions</h3>
+  <h3 class="meaDo pb10">Transactions</h3>
 
   <ul class="lead mt10">
     <li>Groupement de plusieurs requêtes, éxécutées complètement toutes en mêm temps, ou pas du
@@ -116,12 +116,13 @@ namespace GC7;
 
   </ul>
   <?php
+//
+//  $sql = 'SELECT nom, pere_id, commentaires from animal where id=71';
+//  $req( $sql );
 
-  $sql = 'SELECT nom, pere_id, commentaires from animal where id=71';
-  $req( $sql );
 
+  echo str_repeat( '<br>&nbsp;', 1 );
 
-  echo str_repeat( '<br>&nbsp;', 50 );
   /*
   ?>
     <div class="jumbotron">

@@ -6,9 +6,18 @@
     /*border: 1px solid red;*/
 }
 
+.mainPoo {
+    margin-top: 40px;
+}
+
+.ui.header:first-child {
+    margin-top: 10px;
+/*    margin-left: 10px;*/
+}
+
 .gc7 .ui.message {
-    margin-left: 100px;
-    margin-right: 100px;
+/*    margin-left: 100px;*/
+/*    margin-right: 100px;*/
     background-color: cornsilk;
 }
 
@@ -41,12 +50,53 @@ a:hover {
     cursor: pointer;
 }
 
-a.navbar-brand:hover {
-    color: #ddd;
-    background-color: rgba(0, 0, 0, .7);
-    /* border: solid red 3px;*/
-    border-radius: 5px;
-    padding: auto 20px;
+a.navbar-brand {
+    text-align: center;
+    width: 120px;
+    vertical-align: middle;
+    height: 60px;
+    padding: 25px 20px;
+  display: inline;
+/*  color: white;*/
+  padding-left: 0;
+/*  background-color: #000;*/
+  height: 50px;
+  width: 70px;
+  text-align: center;
+  padding: 30px;
+  margin: 0;
+  color: #ffff00!important;
+}
+
+a.navbar-brand:hover!important, a.navbar-brand:visited {
+    color: #ff0303!important;
+    height: 5px;
+  font-weight: 800;
+    padding: 25px 20px!important;
+  text-shadow: 0 0 10px red,
+    0 0 10px red;
+  padding-left: 0;
+  margin: 0;
+  
+}
+.navbar .navbar-brand {
+  align-self: center;
+}
+
+.p1-0, .p1-0.navbar-brand {
+  padding-left: 0!important;
+      color: #ff0303!important;
+  
+  padding: 30px;
+    height: 50px;
+  width: 70px;
+  text-align: center;
+}
+.p1-0, .p1-0.navbar-brand:hover!important {
+  padding-left: 0;
+  font-weight: 800;
+    text-shadow: 0 0 10px red,
+      color:blue;
 }
 
 a.lkdo {
@@ -58,11 +108,12 @@ a.lkdo {
 
 div.navLi {
     font-size: 1.4rem;
-    padding: 0;
     /*margin: 7px 0 10px;*/
-    margin: 0 0 10px;
-    padding-top: 5px;
+    top: 0;
+    margin: 0 0 10px 0;
+    padding-top: 4px;
     padding-bottom: 5px;
+    padding-left: 10px;
     /*color: blue;*/
     position: fixed;
     background-color: #fff;
@@ -73,14 +124,12 @@ div.navLi {
     0 2px 10px 0 rgba(0, 0, 0, .12);
 }
 
-}
-
 div.navLi a {
     color: maroon;
 }
 
 div.navLi.mtnav {
-    margin-top: 5px;
+/ / margin-top : 5 px;
 }
 
 .sameLine {

@@ -110,7 +110,7 @@ function affLign( $sql )
   ?>
   <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
     <pre class="float-left"><?= $sql ?></pre>
-    <button class="btn float-right numLign" type="button" data-toggle="tooltip"
+    <button class="btn float-right numLign" type="button" data-toggle="tooltipNum"
             data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
 
 
