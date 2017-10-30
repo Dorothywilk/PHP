@@ -1,6 +1,8 @@
 <?php
 
-echo 'Ready.';
+$ch = 'Ready.<hr>';
+
+echo $ch;
 
 
 
@@ -46,7 +48,8 @@ echo 'Ready.';
 
 
 
-//echo $a;
+
+
 
 /*
 // $n=17; // 17 // $diviseur = 3; //3
