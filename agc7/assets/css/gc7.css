@@ -49,8 +49,14 @@ a.navbar-brand:hover {
     padding: auto 20px;
 }
 
+a.lkdo {
+    text-decoration: none;
+    padding: 5px 7px;
+    border-radius: 7px;
+}
+
 #opop {
- color : blue;
+    color: blue;
 }
 
 .table-sm td,
@@ -121,17 +127,17 @@ hr {
 
 .jumbotronRef {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     padding: 10px 20px;
 }
 
 #lineFile {
-  cursor:auto;
-    color: rgba(111, 89, 63, 0.5)!important;
+    cursor: auto;
+    color: rgba(111, 89, 63, 0.5) !important;
     padding: 3px 5px 2px;
     font-size: 2em;
     line-height: 1;
-  margin-top: 3px;
+    margin-top: 3px;
 }
 
 

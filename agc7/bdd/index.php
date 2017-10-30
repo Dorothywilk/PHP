@@ -11,7 +11,7 @@
 <div class="maingc7">
 
   <div class="navLi">
-    <a href="/" class="hoverable">Do</a> | BdD - But: Procédures MySQL
+    <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
   </div>
 
   <?php

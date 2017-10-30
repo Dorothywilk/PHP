@@ -14,16 +14,13 @@
 
 (function ($) {
 
-  
-  $('button').addClass('gc7');
-    console.log('Oki btn');
 
-  $('[data-toggle="tooltip"]').tooltip();
-  
-  
-$('.menu .etape').tab();
+    //$('button').addClass('gc7');
+    //console.log('Oki btn');
 
-$('#procedure .menu .item')
+    $('.menu .etape').tab();
+
+    $('#procedure .menu .item')
         .tab({
             context: $('#procedure')
         });
@@ -52,15 +49,17 @@ $('#procedure .menu .item')
         $('.ui.basic.modal').modal('show');
     });
 
-  
-      
 
-    // $('.ui.basic.modal').modal('show');
+    //todoli Vérif tooltip bdd on num ok (inverted)
+    $('[data-toggle="tooltip"]').tooltip();
 
-// $('#MoviesFilter').on('change','input, select', function(){
-//  var $form = $(this).closest('form');
-//  $form.request();
-// })
+    //$('.ui.basic.modal').modal('show');
+
+    $('#MoviesFilter').on('change', 'input, select', function () {
+        var $form = $(this).closest('form');
+        $form.request();
+    })
+
 
     //$('input#input-char-counter, textarea#textarea-char-counter').characterCounter();
 //    setTimeout(function () {

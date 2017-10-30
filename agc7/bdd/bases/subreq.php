@@ -6,7 +6,7 @@ namespace GC7;
 </div>
 <?php
 
-echo( 'Factures avec pseudos (Sous-requête dans SELECT)' );
+echo '<h5 class="mt10">Factures avec pseudos (Sous-requête dans SELECT)</h5>';
 $sql = 'SELECT id AS num, clt_id,
   (SELECT name FROM users WHERE users.id=factures.clt_id) AS pseudo,
    date, total
@@ -14,7 +14,7 @@ FROM factures
 LIMIT 3';
 $req( $sql );
 
-echo( 'Facture de GrCOTE7 (Sous-requête dans WHERE)' );
+echo '<h5>Facture de GrCOTE7 (Sous-requête dans WHERE)</h5>';
 $sql = 'select id as num, clt_id, date, total
 from factures
 where clt_id=(select id from users where name="GrCOTE7")';
@@ -22,12 +22,12 @@ $req( $sql );
 
 echo '<mark class="mt10">Les 2 premières peuvent être réalisées avec jointures, pas celle
 ci-dessous)</mark><br>';
-echo 'Facture du dernier client (Sous-requête dans WHERE)';
+echo '<h5 class="mt10">Facture du dernier client (Sous-requête dans WHERE)</h5>';
 $sql = 'select concat("00",id) as num, clt_id, date, total
 from factures where id=(select max(id) from clients)';
 $req( $sql );
 
-echo( 'Pseudos des users qui sont aussi clients (Sous-requête corrélée)' );
+echo '<h5>Pseudos des users qui sont aussi clients (Sous-requête corrélée)</h5>';
 $sql = 'SELECT users.id AS "User Id",
        ( SELECT CONCAT("00", clients.id, " | ", nom) FROM clients
        WHERE clients.user_id = users.id ) AS "Numéro & Nom client",
@@ -37,7 +37,7 @@ WHERE users.id IN ( SELECT user_id FROM clients
                     WHERE clients.user_id = users.id )';
 $req( $sql );
 
-echo( 'Les 3 premiers users n\'ayant pas de facture<br>(Sous-requête corrélée)' );
+echo '<h5>Les 3 premiers users n\'ayant pas de facture<br>(Sous-requête corrélée)</h5>';
 $sql = 'select id, name as pseudo, email
 from users
 where id not in  (
@@ -46,7 +46,7 @@ where id not in  (
 ) limit 3';
 $req( $sql );
 
-echo( 'Idem précédent mais avec [NOT] EXITS<br>(Sous-requête corrélée)' );
+echo '<h5>Idem précédent mais avec [NOT] EXITS<br>(Sous-requête corrélée)</h5>';
 $sql = 'select id, name as pseudo, email
 from users
 where not exists  (
@@ -58,7 +58,7 @@ $req( $sql );
 
 ?>
 <div class="jumbotron jumbotronRef">
-  <p class="h3-responsive">Les 3 tables de référence</p>
+  <h3 class="h3-responsive text-center">Les 3 tables de référence</h3>
   <?php
   aff( 'Users (Les 3 premiers)' );
   $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';

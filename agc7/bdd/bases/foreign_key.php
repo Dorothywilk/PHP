@@ -20,11 +20,6 @@ namespace GC7;
 </div>
 <?php
 
-
-$sql = 'select * from pets limit 2999';
-$req( $sql );
-
-
 // Lignes pour tests des contraintes (Clé UNIQUE ou Foreign_Key)
 
 //$sql='delete from pets where id =2'; // Fonctionne: La clé est sur clients vers animaux et non la réciproque
@@ -39,35 +34,28 @@ $req( $sql );
 
 //$sql='delete from clients where id =1'; // Refusé par le système
 //$sql='insert into clients (id, nom, prenom, date_naissance) values (1, "CÔTE", "Lionel", "1965-03-23")';
-aff( $sql );
-
 //$req($sql);
 
-
 $sql = 'select * from pets limit 3';
-aff( $sql );
 $req( $sql );
 
 
 ?>
-<div class="jumbotron">
-  <p class="h3-responsive">Les tables de référence</p>
+<div class="jumbotron jumbotronRef">
+  <p class="h3-responsive text-center">Les tables de référence</p>
   <?php
-  $sql = 'select id, clt_id, nom, espece, sexe, date_naissance from pets limit 4';
-  aff( 'Pets (Les 4 premiers ' . '/' . $nbr( 'pets' ) . ')' );
+  $sql = 'SELECT id, clt_id, nom, espece, sexe, date_naissance
+FROM pets LIMIT 4';
+  aff( 'Pets (Les 4 premiers /' . $nbr( 'pets' ) . ')' );
   $req( $sql );
 
-  aff( 'Clients (Les 3 premiers ' . '/' . $nbr( 'clients' ) . ')' );
-  $sql = 'select id, nom, prenom, date_naissance from clients';
+  aff( 'Clients (Les 3 premiers /' . $nbr( 'clients' ) . ')' );
+  $sql = 'SELECT id, nom, prenom, date_naissance FROM clients';
   $req( $sql );
 
-  //  aff( 'Animaux (Les 3 premiers ' . '/' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
-  //  $sql = 'select id, clt_id, nom, espece, sexe, commentaires from animaux where clt_id > ""
-  // limit 3';
-  //  $req( $sql );
-
-  aff( 'Users (Les 3 premiers ' . '/' . $nbr( 'users' ) . ')' );
-  $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
+  aff( 'Users (Les 3 premiers /' . $nbr( 'users' ) . ')' );
+  $sql = 'SELECT id, name AS pseudo, email, role
+FROM users WHERE id IN (1,15,16)';
   $req( $sql );
   ?>
 </div>
