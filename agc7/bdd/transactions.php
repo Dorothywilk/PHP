@@ -3,15 +3,15 @@
 namespace GC7;
 
 ?>
-  <!--  <div class="jumbotron">-->
-  <!---->
-  <!--    <h3 class="meaDo">Transactions</h3>-->
-  <!---->
-  <!--    <ul class="lead mt10">-->
-  <!--      <li>Uniquement moteur MySQl InnoDB</li>-->
-  <!--    </ul>-->
-  <!---->
-  <!--  </div>-->
+  <div class="jumbotron">
+
+    <h3 class="meaDo">Transactions</h3>
+
+    <ul class="lead mt10">
+      <li>Uniquement moteur MySQl InnoDB</li>
+    </ul>
+
+  </div>
   <?php
 
 
@@ -50,10 +50,11 @@ $nbr = function ( $table ) {
 
 ?>
 
-  <!--  <h3>Autocommit</h3>-->
-  <!--  <p>Par defaut, AUTOCOMMIT activé</p>-->
-  <!--  <code>SET AUTOCOMMIT=0;</code> pour le désactiver-->
-  <!--  Permet de faire ensuite <code>ROLLBACK</code> si nécessaire.-->
+  <h2>Autocommit</h2>
+  <p>Par defaut, AUTOCOMMIT activé (Chaque requête est exécutée immédiatement)</p>
+  <code>SET AUTOCOMMIT=0;</code> pour le désactiver
+  Permet de faire ensuite <code>ROLLBACK</code> si nécessaire.
+  <code>START TRANSACTION</code> pour transaction jusqu'au prochain <code>ROLLBACK</code> ou <code>COMMIT</code>
 
   <?php
 
@@ -79,9 +80,6 @@ $sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
 $req( $sql );
 
 
-
-
-
 $sql = 'UPDATE espece SET prix=50 where id=5 or id =1';
 $req( $sql, $pdo );
 
@@ -96,31 +94,20 @@ $sql = 'SELECT id, nom_courant, prix from espece where id=5 or id=1';
 $req( $sql, $pdo );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $sql = 'UPDATE espece SET prix=200 where id=1';
-$req( $sql);
+$req( $sql );
 $sql = 'UPDATE espece SET prix=20 where id=5';
-$req( $sql);
+$req( $sql );
+
+?>
+
+<h2 class="mt10">Jalons</h2><h4>
+<CODE>START TRANSACTION</CODE>...<CODE>SAVEPOINT Jalon1;</CODE>... <CODE>COMMIT</CODE> ou <CODE>ROLLBACK</code></h4>
+<p>NB: Toutes opérations de modification de la structure de la Base de données, et/ou des table, des utilisateurs, etc..., y compris la création d'objets tels les vues et les procédures, entraînent une validation ( = COMMIT) implicite.</p>
+
+
+
+<?php
 
 /*
 ?>
