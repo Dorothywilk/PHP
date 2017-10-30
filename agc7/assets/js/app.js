@@ -3,10 +3,10 @@
 //sayHi('Toi 123 !');
 
 // class HelloWorld {
-//     constructor(name) {
-//         $('#maCase')
-//         	.html('<b>Salut, le Monde !</b>... Et <strong>' + name + '</strong> !');
-//     }
+//  constructor(name) {
+//   $('#maCase')
+// 	 .html('<b>Salut, le Monde !</b>... Et <strong>' + name + '</strong> !'        );
+//  }
 // }
 
 // new HelloWorld('Lionel');
@@ -14,9 +14,16 @@
 
 (function ($) {
 
-    $('.menu .etape').tab();
+  
+  $('button').addClass('gc7');
+    console.log('Oki btn');
 
-    $('#procedure .menu .item')
+  $('[data-toggle="tooltip"]').tooltip();
+  
+  
+$('.menu .etape').tab();
+
+$('#procedure .menu .item')
         .tab({
             context: $('#procedure')
         });
@@ -26,7 +33,7 @@
             context: $('#context1')
         });
 
-    
+
     $('#tab32').click();
 
 
@@ -45,6 +52,8 @@
         $('.ui.basic.modal').modal('show');
     });
 
+  
+      
 
     // $('.ui.basic.modal').modal('show');
 
@@ -54,9 +63,8 @@
 // })
 
     //$('input#input-char-counter, textarea#textarea-char-counter').characterCounter();
-    setTimeout(function () {
-        console.log(new Date() + ': OK, prêt !')
-    }, 3000);
+//    setTimeout(function () {
+//        console.log(new Date() + ': OK, prêt !')
+//    }, 3000);
 
-})
-(jQuery);
+})(jQuery);

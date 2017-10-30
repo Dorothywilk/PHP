@@ -40,8 +40,6 @@ echo '11%3 = '.(11%3);
 
 
 
-$sql = "
-select 11%3
-";
+$sql = "select 11%3";
 aff( $sql );
 $req( $sql );

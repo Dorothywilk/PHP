@@ -11,19 +11,16 @@
 <div class="maingc7">
 
   <div class="navLi">
-    <a href="/">Do</a> | BdD - Procédures MySQL
+    <a href="/" class="hoverable">Do</a> | BdD - But: Procédures MySQL
   </div>
 
   <?php
 
-  //include 'cnx.php';
-  include 'aff.php';
+  include 'inc/fctns.php';
 
   //include('test.php');
 
   include 'req.php';
-
-  $dbh = null;
 
   ?>
 
@@ -35,6 +32,7 @@
 <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async
         defer></script>
 <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
 
 </body>
 </html>

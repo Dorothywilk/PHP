@@ -12,7 +12,7 @@
     background-color: cornsilk;
 }
 
-.gc7 .ui.message p {
+.gc7, .gc7 .ui.message p {
     color: #0045ff;
 }
 
@@ -50,7 +50,7 @@ a.navbar-brand:hover {
 }
 
 #opop {
-/ / color : blue;
+ color : blue;
 }
 
 .table-sm td,
@@ -90,6 +90,14 @@ div.navLi.mtnav {
     padding-top: 5px;
 }
 
+.jumbotron + .sameLine {
+    border-top: 0;
+}
+
+.float-left {
+    width: 85%;
+}
+
 hr {
     background-color: #000;
 }
@@ -101,5 +109,36 @@ hr {
 .mt10 {
     margin-top: 10px;
 }
+
+.jumbotron {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin: 0 -5% 7px -9%;
+    padding: 10px 20% 12px;
+    width: 120%;
+}
+
+.jumbotronRef {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+#lineFile {
+  cursor:auto;
+    color: rgba(111, 89, 63, 0.5)!important;
+    padding: 3px 5px 2px;
+    font-size: 2em;
+    line-height: 1;
+  margin-top: 3px;
+}
+
+
+
+
+
+
+
 
 
