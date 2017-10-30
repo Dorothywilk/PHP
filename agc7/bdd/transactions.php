@@ -101,14 +101,47 @@ $req( $sql );
 
 ?>
 
-<h2 class="mt10">Jalons</h2><h4>
-<CODE>START TRANSACTION</CODE>...<CODE>SAVEPOINT Jalon1;</CODE>... <CODE>COMMIT</CODE> ou <CODE>ROLLBACK</code></h4>
-<p>NB: Toutes opérations de modification de la structure de la Base de données, et/ou des table, des utilisateurs, etc..., y compris la création d'objets tels les vues et les procédures, entraînent une validation ( = COMMIT) implicite.</p>
+  <h2 class="mt10">Jalons</h2><h4>
+  <CODE>START TRANSACTION</CODE>...<CODE>SAVEPOINT Jalon1;</CODE>... <CODE>COMMIT</CODE> ou <CODE>ROLLBACK</code>
+</h4>
+  <p>NB: Toutes opérations de modification de la structure de la Base de données, et/ou des table,
+    des utilisateurs, etc..., y compris la création d'objets tels les vues et les procédures,
+    entraînent une validation ( = COMMIT) implicite.</p>
+
+  <h2>ACID</h2>
+  <p>Critères pour avoir un système qui utilise les transactions, fiable:</p>
+  <ul>
+    <li>
+      <g>A</g>
+      tomicité
+    </li>
+    (Atôme: Qui ne peut être divisé) De même, une transaction doit former un tout. Toutes les
+    transactions doivent être validées ou aucune ne doit l'être.
+    <li>
+      <g>C</g>
+      ohérence
+    </li>
+    Les données doivent rester cohérentes, que la transaction se termine sans encombre (Toutes les
+    requêtes sont exécutées), qi'il y ait une erreur ou une interruption (Toutes les requêtes sont
+    annulées).<br>Les différentes étapes ne sont pas visibles de l'extérieur de la transaction.
+    <li>
+      <g>I</g>
+      solation
+    </li>
+    Chaque transaction ne doit pas interagir avec une autre. (Les transactions ne peuvent pas s'imbriquer entre elles)
+    <li>
+      <g>D</g>
+      urabilité
+    </li>
+  </ul>
+  Ok
+  <?php
+
+$sql = 'SELECT nom, pere_id from animal where id=71';
+$req( $sql );
 
 
-
-<?php
-
+echo str_repeat( '<br>&nbsp;', 50 );
 /*
 ?>
   <div class="jumbotron">
