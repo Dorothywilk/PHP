@@ -5,10 +5,20 @@
  * Date: 23/10/2017
  * Time: 18:33
  */
-
-$req = function ( $sql, $pdo = null ) {
+/**
+ * Effectue recherche MySQL + [aff]
+ *
+ * @param $sql      Requête MySQL : Seul param indispensable
+ * @param null $pdo PDO           : Nécessaire de reporter pour garder même cession
+ *                                  Notamment pour transactions
+ * @param null $inv Si défini, aucun affichage (Mettre 2ème param ($pdo ou null))
+ *        NB: Pour aff des rands affectés, car replace() dans select => Minuscule,
+ *            Fonctions agissant sur Tables en MAJ
+ * @return null|PDO
+ */
+$req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 //  aff( $pdo );
-  affLign( $sql );
+  if ( ! isset( $inv ) ) affLign( $sql );
   if ( null === $pdo ) {
 //    echo 'Instanciation PDO';
     $pdo = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
@@ -25,7 +35,7 @@ $req = function ( $sql, $pdo = null ) {
   if ( $rep ) {
     affR( $rep );
   }
-  if ( preg_match( '/INSERT|UPDATE|REPLACE|DELETE/i', $sql ) ) {
+  if ( ! isset( $inv ) && preg_match( '/INSERT|UPDATE|REPLACE|DELETE/', $sql ) ) {
     $nbra = $cnx->rowCount(); // Nombre de rangs affectés
     $plur = ( $nbra > 1 ) ? 's' : ''; // Pluriel
     echo '=> ' . $nbra . ' rang' . $plur . ' affecté' . $plur;
@@ -50,7 +60,7 @@ function aff( $v )
 /**
  * Affichage réel
  *
- * @param $r array indexé ou object
+ * @param $r array indexé ou object ou résultat de req MySQL
  */
 function affR( $r )
 { //aff( $r );
@@ -65,14 +75,27 @@ function affR( $r )
   echo '<table class="table table-bordered table-striped table-sm">
 	<thead class="grey lighten-1">
 	<tr>';
+  $i = 0;
+//  $caseTotal='';
   foreach ( $ps as $p ) {
+    $i++;
+    $caseTotal[ $i ] = null;
     echo '<th>' . ucfirst( $p ) . '</th>';
+    if ( $p == 'total:' ) $caseTotal[ $i ] = 1;
   }
   echo '</tr></thead>';
   echo '<tr>';
   foreach ( $r as $row ) {
+    $i = 0;
     foreach ( $row as $p ) { // p comme propriété
-      echo '<td style="background-color: white">' . $p . '</td>';
+      $MEAvt1 = $MEAvt2 = null;
+      $i++;
+      if ( $caseTotal[ $i ] ) {
+        $MEAvt1 = '<g style="font-size:1.2em; margin-left: 7%;">';
+        $MEAvt2 = '</g>';
+        $p = number_format( $p, 2, ',', ' ' ). '€.';
+      }
+      echo '<td style="background-color: white">' . $MEAvt1 . $p . $MEAvt2 . '</td>';
     }
     echo '</tr>';
   }
@@ -87,17 +110,16 @@ function affLign( $sql )
   ?>
   <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
     <pre class="float-left"><?= $sql ?></pre>
-
-<!--    <p class="float-right">Ligne --><?//= $lign ?><!--</p>-->
-    <button class="btn float-right numLign" type ="button" data-toggle="tooltip" data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
+    <button class="btn float-right numLign" type="button" data-toggle="tooltip"
+            data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
 
 
   </div>
-<?php
-/*
-?>
-  <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
-  Tooltip on left
-</button>
-  */
+  <?php
+  /*
+  ?>
+    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+    Tooltip on left
+  </button>
+    */
 }

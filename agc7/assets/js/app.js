@@ -25,6 +25,8 @@
             context: $('#procedure')
         });
 
+    $('[data-toggle="tooltip"]').tooltip();
+
     $('#context1 .menu .item')
         .tab({
             context: $('#context1')
@@ -49,9 +51,6 @@
         $('.ui.basic.modal').modal('show');
     });
 
-
-    //todoli Vérif tooltip bdd on num ok (inverted)
-    $('[data-toggle="tooltip"]').tooltip();
 
     //$('.ui.basic.modal').modal('show');
 

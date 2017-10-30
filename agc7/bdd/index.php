@@ -8,27 +8,23 @@
   <link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 <body>
-<div class="maingc7">
-
-  <div class="navLi">
-    <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
-  </div>
-
-  <?php
-
-  include 'inc/fctns.php';
-
-  //include('test.php');
-
-  include 'req.php';
-
-  ?>
-
-  <footer>
-    <hr>
-    &copy;2017 - GC7
-  </footer>
+<div class="navLi">
+  <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
 </div>
+
+<?php
+
+include 'inc/fctns.php';
+
+//include('test.php');
+
+include 'req.php';
+
+?>
+
+<footer>
+  <p>&copy;2017 - GC7
+</footer>
 <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async
         defer></script>
 <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>

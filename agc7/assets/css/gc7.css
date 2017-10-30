@@ -1,5 +1,5 @@
 .maingc7 {
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     width: 97%;
     margin: 0 auto;
     font-size: 1.0em;
@@ -51,8 +51,73 @@ a.navbar-brand:hover {
 
 a.lkdo {
     text-decoration: none;
-    padding: 5px 7px;
+    padding: 2px 7px 2px;
     border-radius: 7px;
+    margin-left: 4px;
+}
+
+div.navLi {
+    font-size: 1.4rem;
+    padding: 0;
+    /*margin: 7px 0 10px;*/
+    margin: 0 0 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*color: blue;*/
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    color: rgba(80, 00, 00, .77);
+    /*background-color: rgba(255, 255, 255, .3);*/
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16),
+    0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+}
+
+div.navLi a {
+    color: maroon;
+}
+
+div.navLi.mtnav {
+    margin-top: 5px;
+}
+
+.sameLine {
+    font-family: Arial;
+    color: #F00;
+    border-top: 2px solid #b4b4b4;
+    padding-top: 5px;
+}
+
+.sameLine:nth-child(1) {
+    border-top: 0;
+}
+
+.maingc7 > p.sameLine {
+    border-top: 2px solid #b4b4b4;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    color: rgba(80, 00, 00, .77);
+    /*background-color: rgba(255, 255, 255, .3);*/
+    box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, .12),
+    0 -2px 10px 0 rgba(0, 0, 0, .16);
+}
+
+footer > p {
+    margin: 5px auto 0;
+    padding-left: 1%;
+}
+
+.lead {
+    margin-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 0;
 }
 
 #opop {
@@ -75,31 +140,6 @@ g {
     background: yellow;
 }
 
-div.navLi {
-    padding: 0;
-    margin: -10px 0 10px;
-    /*color: blue;*/
-}
-
-div.navLi a {
-    color: maroon;
-}
-
-div.navLi.mtnav {
-    margin-top: 5px;
-}
-
-.sameLine {
-    font-family: Arial;
-    color: #555;
-    border-top: 1px solid #b4b4b4;
-    padding-top: 5px;
-}
-
-.jumbotron + .sameLine {
-    border-top: 0;
-}
-
 .float-left {
     width: 85%;
 }
@@ -108,26 +148,20 @@ hr {
     background-color: #000;
 }
 
-.mt5 {
-    margin-top: 5px;
-}
-
-.mt10 {
-    margin-top: 10px;
+.mt20 {
+    margin-top: 20px;
 }
 
 .jumbotron {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
     border-radius: 0;
-    margin: 0 -5% 7px -9%;
-    padding: 10px 20% 12px;
-    width: 120%;
+    margin: 0 auto 10px;
+    padding: 50px 0 12px;
+    width: 100%;
 }
 
-.jumbotronRef {
+div.jumbotronRef {
     width: 100%;
-    margin: 0 auto 30px;
+    margin: 0 auto 50px;
     padding: 10px 20px;
 }
 
@@ -140,9 +174,23 @@ hr {
     margin-top: 3px;
 }
 
+h5 {
+    margin-top: 0;
+}
 
+.mv0 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
+.pv0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
+.ml10 {
+    margin-left: 10px;
+}
 
 
 

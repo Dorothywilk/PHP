@@ -5,47 +5,49 @@ namespace GC7;
 
   <h3 class="meaDo mt10 pb10">Fonctions d'agrégation</h3>
 
-  <p class="mt10">
+  <p class="lead mv0">
     Principalement pour stats
   </p>
 
   <p class="lead">
-    COUNT(colonne ou *), SUM(), GROUP_CONCAT()
+    <code>COUNT (colonne ou *)</code>, <code>SUM()</code>, <code>GROUP_CONCAT()</code>
   </p>
 </div>
+
+<div class="maingc7">
 
 <?php
 
 $sql = "-- Combien de races avons-nous ? --
 -- ---------------------------------
-SELECT COUNT(*) AS nb_races
+SELECT COUNT(*) AS 'Nombre de races'
 FROM Race";
 $req( $sql );
 
 
 $sql = "-- Combien de chiens avons-nous ? --
 -- ---------------------------------
-SELECT COUNT(*) AS nb_chiens FROM animal
+SELECT COUNT(*) AS 'Nombre de chiens' FROM animal
   INNER JOIN espece
   ON espece.id = animal.espece_id
 WHERE espece.nom_courant = 'Chien'";
 $req( $sql );
 
 
-$sql = "SELECT  COUNT(*), COUNT(race_id), COUNT(DISTINCT race_id), MIN(nom),
-  (select max(date_naissance) from pets)
+$sql = "SELECT  COUNT(*) as 'total:', COUNT(race_id), COUNT(DISTINCT race_id),
+        MIN(nom), (select max(date_naissance) from pets)
 FROM Animal";
 $req( $sql );
 
 
-$sql = "SELECT GROUP_CONCAT('- ',nom_courant,': ', prix, ' €'
-ORDER BY nom_courant SEPARATOR '<br>'), SUM(prix) as 'Total:' FROM espece;";
-
-aff( "SELECT GROUP_CONCAT<g>(</g>' ', nom_courant,': ', prix, ' €.'
-ORDER BY nom_courant SEPARATOR '&lt;br&gt;'<g>)</g>, SUM(prix) as 'Total:'
+$sql = "SELECT GROUP_CONCAT('- ',nom_courant,': ', prix, '€'
+ORDER BY nom_courant SEPARATOR '<br>') as 'Sélection d\'animaux et leurs prix', SUM(prix) AS
+'total:' FROM
+espece";
+affLign( "SELECT <g>GROUP_CONCAT</g> <g>(</g>' ', nom_courant,': ', prix, ' €.'
+ORDER BY nom_courant SEPARATOR '&lt;br&gt;'<g>)</g>, SUM(prix) AS 'Total:'
 FROM espece" );
-
-$req( $sql );
+$req( $sql, null, 0 );
 
 
 ?>
@@ -65,4 +67,6 @@ FROM animal LIMIT 4';
   $sql = 'SELECT * FROM espece';
   $req( $sql );
   ?>
+
+</div>
 </div>

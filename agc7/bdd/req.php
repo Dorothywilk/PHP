@@ -25,29 +25,37 @@ namespace GC7;
 //
 //";
 
+
 // Requêtes et sous-requêtes
 //include ('bases/subReq.php');
 
+
 // Jointures et sous-requêtes
-//include ('bases/joints.php');
+//include( 'bases/joints.php' );
+
 
 // UNION de plusieurs requêtes
-//include ('bases/union.php');
+//include( 'bases/union.php' );
+
 
 // Clés étrangèes (Foreign Keys)
 //include ('bases/foreign_key.php');
 
+
 // Fonctions natives MySQL
-//include ('bases/functions.php');
-//include ('bases/functionsAgregation.php');
-//include ('bases/regroupement.php');
-include ('bases/date.php');
-include ('bases/calculsDate.php');
+// include ('bases/functions.php');
+// include( 'bases/functionsAgregation.php' );
+// include ('bases/regroupement.php');
+//include ('bases/date.php');
+//include ('bases/calculsDate.php');
+
 
 // Transactions
-include( 'transactions.php' );
+include( 'transactions/transaction.php' );
 
-include( 'tests.php' );
+
+//include( 'tests.php' );
+
 
 //$maReq = new Requete( (Array) $req );
 

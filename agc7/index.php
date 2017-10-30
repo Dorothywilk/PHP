@@ -10,18 +10,19 @@
 </head>
 
 <body>
-	<div class="maingc7">
 
-		<header class="ui header">
+<!--		<header class="ui header navLi mt10 pb10">-->
+<!--		<header class="navLi">-->
+		<div class="navLi" style="font-size: 1.5rem;margin-left: 12px;border-bottom: 1px solid grey;padding-bottom: 7px;">
+<!--			<a href="/" class="hoverable lkdo">Accueil</a> |-->
 			<a href="/">Accueil</a> |
 			<a href="/agc7/exemples">SemanticUI</a> |
 			<a href="mdb.php">MDB</a> |
 			<a href="bdd/index.php">BdD</a> |
 			<a href="poo/index.php">POO</a>
-		</header>
+		</div>
 
-		<hr>
-
+	<div class="maingc7">
 		<article>
 
 			<?php include './installation.php' ?>
