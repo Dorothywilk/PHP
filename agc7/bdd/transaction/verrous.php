@@ -12,12 +12,20 @@ namespace GC7;
     </li>
     <li>Différentes sortes: Verrous de table, verrous de ligne</li>
   </ul>
+  
+  <ul class="lead">
+    <li><code>LOCK TABLES tables [AS alias_table] [READ | WRITE][, ...]</code></li>
+    
+    <li><code>UNLOCK TABLES</code> déverrouille toutes les tables verrouillées</li>
+  </ul>
 
 </div>
 
 <div class="maingc7">
 
   <h2>Principe</h2>
+  <p>Une cession qui pose un verrou ne peut opérer selon le niveau de verrou (READ || WRITE) que sur les lignes | tables qu'elle a vérouillé.</p>
+  <p>Attention: Avec les transactions (Rappel: InnoDB uniquement), <code>START TRANSACTION</code> ôte les verrous et <code>LOCK TABLES</code> et <code>UNLOCK TABLES</code> provoquent une validation implicite si elles sont exécutées à l'intérieur d'une transaction => Utiliser <code>SET AUTOCOMMIT = 0</code></p>
   <?php
   $sql = 'SELECT 1';
   $pdo = $req( $sql );
