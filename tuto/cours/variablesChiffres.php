@@ -13,7 +13,6 @@ if ($a === $b){
 else echo '$a n\'est pas identique à $b';
 
 
-
 echo '<hr>Ready>|<hr>';
 
 
