@@ -5,7 +5,7 @@ $ch = 'Ready.<hr>';
 
 echo $ch;
 
-<?php
+
   // Déclaration des variables mathématiques
   $a = 10;
   $b = 2;
@@ -24,9 +24,11 @@ echo $ch;
   $a++;
   // Décrémentation de $b
   $b--;
-?>
 
 
+//L'opérateur modulo (%) retourne le reste de la division de deux nombres.
+//L'opérateur d'incrémentation augmente de 1 la valeur de la variable. La syntaxe $a++ est identique à $a+=1 et $a = $a+1.
+//L'opérateur de décrémentation diminue de 1 la valeur de la variable. La syntaxe $b-- est identique à $b-= 1 et $b = $b-1.
 
 
 
