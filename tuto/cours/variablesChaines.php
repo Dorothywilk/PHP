@@ -20,8 +20,6 @@ echo '<div class="meaDo">' . $nf( $n ) . ' / ' . $nf( $diviseur ) . ' = ' . $nf(
 
 
 
-//ToDoDo J'en suis là !
-
 
 /* Déclaration de variables de types différents
            
@@ -87,4 +85,3 @@ $variable2	    $2variable	    Il ne peut y avoir de chiffre après le $
 
 
 echo '<hr>';
-  /* Pour les tableaux, on recontre le plus souvent cette notation : $t = [item1, item2]; Exemple suit... */ //tododo Avancer !
