@@ -43,4 +43,6 @@ echo $ch;
   //echo '<hr><h2>'.$n.' / '.$diviseur.' = '.(int) ($n / $diviseur).' x '.$diviseur.' + '.($n%$diviseur).'</h2>';
   */
 
+// ToDoDo Sauvgarder les settings themes de brackets
+
 // TODOLI Mettre Fichier origine ASV
