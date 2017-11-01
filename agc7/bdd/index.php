@@ -20,6 +20,8 @@ include 'inc/fctns.php';
 
 include 'req.php';
 
+  // TODOLI Réc Fonts dont hardLight (Dossier prêt)
+  
 ?>
 
 <footer>

@@ -93,7 +93,7 @@ function affR( $r )
       if ( $caseTotal[ $i ] ) {
         $MEAvt1 = '<g style="font-size:1.2em; margin-left: 7%;">';
         $MEAvt2 = '</g>';
-        $p = number_format( $p, 2, ',', ' ' ). '€.';
+        $p = number_format( $p, 2, ',', ' ' ) . '€.';
       }
       echo '<td style="background-color: white">' . $MEAvt1 . $p . $MEAvt2 . '</td>';
     }
@@ -112,14 +112,6 @@ function affLign( $sql )
     <pre class="float-left"><?= $sql ?></pre>
     <button class="btn float-right numLign" type="button" data-toggle="tooltipNum"
             data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
-
-
   </div>
   <?php
-  /*
-  ?>
-    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
-    Tooltip on left
-  </button>
-    */
 }

@@ -1,8 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+
+body {
+    /*background-color: wheat;*/@font-face{
+    font-family: 'Action_Man_Shaded';
+    src: url('fonts/Action_Man_Shaded-webfont.eot');
+    src: url('fonts/Action_Man_Shaded-webfont.eot?iefix') format('eot'),
+    url('fonts/Action_Man_Shaded-webfont.woff') format('woff'),
+    url('fonts/Action_Man_Shaded-webfont.ttf') format('truetype'),
+    url('fonts/Action_Man_Shaded-webfont.svg') format('svg');
+}
+
+
+    font-size: 1em;
+}
+
 .maingc7 {
+    font-family: Action_Man_Shaded, "Arial", sans-serif;
+    font-size: 1.2em;
+    color: #420000;
+    font-weight: 400;
     /*padding-top: 20px;*/
     width: 97%;
     margin: 0 auto;
-    font-size: 1.0em;
     /*border: 1px solid red;*/
 }
 
@@ -12,12 +31,11 @@
 
 .ui.header:first-child {
     margin-top: 10px;
-/*    margin-left: 10px;*/
+    /* margin-left: 10px;*/
 }
 
 .gc7 .ui.message {
-/*    margin-left: 100px;*/
-/*    margin-right: 100px;*/
+    /* margin-right: 100px;*/
     background-color: cornsilk;
 }
 
@@ -52,51 +70,48 @@ a:hover {
 
 a.navbar-brand {
     text-align: center;
-    width: 120px;
     vertical-align: middle;
-    height: 60px;
-    padding: 25px 20px;
-  display: inline;
-/*  color: white;*/
-  padding-left: 0;
-/*  background-color: #000;*/
-  height: 50px;
-  width: 70px;
-  text-align: center;
-  padding: 30px;
-  margin: 0;
-  color: #ffff00!important;
+    /*padding: 25px 20px;*/
+    display: inline;
+    /*  color: white;*/
+    /*  background-color: #000;*/
+    height: 50px;
+    width: 70px;
+    /*text-align: center;*/
+    padding: 30px;
+    margin: 0;
+    color: #ffff00 !important;
 }
 
-a.navbar-brand:hover!important, a.navbar-brand:visited {
-    color: #ff0303!important;
+a.navbar-brand:hover, a.navbar-brand:visited {
+    color: #ff0303 !important;
     height: 5px;
-  font-weight: 800;
-    padding: 25px 20px!important;
-  text-shadow: 0 0 10px red,
+    font-weight: 800;
+    padding: 25px 20px 25px 0 !important;
+    text-shadow: 0 0 10px red,
     0 0 10px red;
-  padding-left: 0;
-  margin: 0;
-  
+    margin: 0;
+
 }
+
 .navbar .navbar-brand {
-  align-self: center;
+    align-self: center;
 }
 
 .p1-0, .p1-0.navbar-brand {
-  padding-left: 0!important;
-      color: #ff0303!important;
-  
-  padding: 30px;
+    color: #ff0303 !important;
+
+    padding: 30px;
     height: 50px;
-  width: 70px;
-  text-align: center;
+    width: 70px;
+    text-align: center;
 }
-.p1-0, .p1-0.navbar-brand:hover!important {
-  padding-left: 0;
-  font-weight: 800;
-    text-shadow: 0 0 10px red,
-      color:blue;
+
+.p1-0, .p1-0.navbar-brand:hover {
+    padding-left: 0;
+    font-weight: 800;
+    text-shadow: 0 0 10px red;
+    color: blue;
 }
 
 a.lkdo {
@@ -129,11 +144,11 @@ div.navLi a {
 }
 
 div.navLi.mtnav {
-/ / margin-top : 5 px;
+    /* margin-top: 5px; */
 }
 
 .sameLine {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     color: #F00;
     border-top: 2px solid #b4b4b4;
     padding-top: 5px;
