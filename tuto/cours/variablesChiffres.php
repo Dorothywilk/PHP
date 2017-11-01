@@ -3,8 +3,8 @@
 
 //ToDoDo J'en suis là !
 
-
 $a = 2;
+
 $b = 3;
 
 echo '$a = ' . $a . '<br>';
@@ -18,23 +18,5 @@ else echo '$a n\'est pas identique à $b';
 echo '<hr>Ready>|<hr>';
 
 echo 'https://github.com/Dorothywilk/PHP';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 echo '<br>&nbsp;';
