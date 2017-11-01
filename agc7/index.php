@@ -26,7 +26,7 @@
 <div class="maingc7">
   <article>
 
-    <?php include './installation.php' ?>
+    <?php include './installation.php';// ToDoLi Remettre http://localhost/t/a_tester/ac7/ateam/mooc/index.php ds tuto/ ?>
 
   </article>
 
