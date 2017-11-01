@@ -21,14 +21,32 @@ include 'inc/fctns.php';
 include 'req.php';
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
   // TODOLI Réc Fonts dont hardLight (Dossier prêt), Radioland, Wedgie - Écrire CSS d'import (@font) + une pade avec 1 exemple de chaque (stipulant le nom de la font)
   
 =======
 <<<<<<< Updated upstream
 =======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
   // TODOLI Réc Fonts dont hardLight (Dossier prêt), LCD_pixel7, adioland, Wedgie - Écrire CSS d'import (@font) + une pade avec 1 exemple de chaque (stipulant le nom de la font)
   
 >>>>>>> Stashed changes
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ?>
 
