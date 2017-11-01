@@ -1,12 +1,5 @@
-<h3>Mon cours sur les Opérateurs</h3>
-
-<p><a href="https://apprendre-php.com/tutoriels/tutoriel-8-les-operateurs.html" target="_blank">=> Tuto</a></p>
-
+<div class='titreCoursDo actionManShaded'><a href="https://apprendre-php.com/tutoriels/tutoriel-8-les-operateurs.html" target="_blank" title="Lien direct su tuto d'Emacs">Les Opérateurs</a></div>
 <?php
-
-$ch = 'Ready.<hr>';
-
-echo $ch;
 
   // Les 5 Opérateurs arithmétiques
   $a = 10;

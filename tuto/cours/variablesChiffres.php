@@ -1,4 +1,3 @@
-<h1>Exemples</h1><br>
 <?php
 
 //ToDoDo J'en suis là !
@@ -9,7 +8,7 @@ $b = 3;
 
 echo '$a = ' . $a . '<br>';
 echo '$b = ' . $b . '<hr>';
-  
+
 if ( $a === $b ){
   echo '$a est identique à $b';
 }
@@ -21,3 +20,6 @@ echo 'https://github.com/Dorothywilk/PHP';
 
 
 echo '<br>&nbsp;';
+
+?>
+<p class="policeGc7">JADE</p>
