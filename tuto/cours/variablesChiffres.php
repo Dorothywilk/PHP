@@ -17,35 +17,7 @@ else echo '$a n\'est pas identique à $b';
 
 echo '<hr>Ready>|<hr>';
 
-<<<<<<< HEAD
-
-
-echo '<hr>Ready>|';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 echo 'https://github.com/Dorothywilk/PHP';
->>>>>>> Dorothywilk/devDo
+
 
 echo '<br>&nbsp;';
