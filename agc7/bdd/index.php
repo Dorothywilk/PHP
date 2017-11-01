@@ -20,7 +20,7 @@ include 'inc/fctns.php';
 
 include 'req.php';
 
-  // TODOLI Réc Fonts dont hardLight (Dossier prêt)
+  // TODOLI Réc Fonts dont hardLight (Dossier prêt), Radioland, Wedgie - Écrire CSS d'import (@font) + une pade avec 1 exemple de chaque (stipulant le nom de la font)
   
 ?>
 
