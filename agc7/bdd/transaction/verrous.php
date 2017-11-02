@@ -26,7 +26,7 @@ namespace GC7;
     <li>Verrous de lignes:</li>
     <ol>
       <li>
-        Partagé (= READ): <code>IN SHARE MODE</code>
+        Partagé (= READ): <code>LOCK IN SHARE MODE</code>
       </li>
       <li>
         Exclusif (= WRITE): <code>FOR UPDATE</code>
@@ -82,13 +82,28 @@ namespace GC7;
 
   Pour pallier ce problème, qui est contraire au principe d'isolation, <strong>les verrous posés par des requêtes de lecture, de modification et de suppression sont des verrous dits "de clé suivante"</strong>; ils empêchent l'insertion d'une ligne dans les espaces entre les lignes verrouillées, ainsi que dans l'espace juste après les lignes verrouillées.
 
+<hr>
 
-
-
+  <h3>Verrou de ligne partagé ou exclusif ?</h3>
   <?php
 
-  $sql = 'SHOW tables';
-  $pdo = $req( $sql );
+  $sql = "-- START TRANSACTION;
+
+SELECT Animal.id, Animal.nom, Animal.date_naissance,
+       Race.nom as race,
+       COALESCE(Race.prix, Espece.prix) as prix
+FROM Animal
+  INNER JOIN Espece
+  ON Animal.espece_id = Espece.id
+    LEFT JOIN
+    Race ON Animal.race_id = Race.id
+    -- Jointure externe, on ne veut pas que les chats de race
+WHERE Espece.nom_courant = 'Chat'
+-- Uniquement les chats...
+AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
+    -- ... qui n'ont pas encore été adoptés
+LOCK IN SHARE MODE";
+  $pdo1 = $req( $sql ); // session 1
 
 
   echo str_repeat( '<br>&nbsp;', 25 );
