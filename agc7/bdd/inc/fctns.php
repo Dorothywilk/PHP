@@ -20,7 +20,7 @@ $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 //  aff( $pdo );
   if ( ! isset( $inv ) ) affLign( $sql );
   if ( null === $pdo ) {
-//    echo 'Instanciation PDO';
+//    echo '<h1>Instanciation PDO</h1>';
     $pdo = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
   }
 //  $cnx->query( 'SET lc_time_names = "fr_FR"' ); // jours en français depuis MySQL
