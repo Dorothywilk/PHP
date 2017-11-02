@@ -213,13 +213,12 @@ namespace GC7;
 
 
     // ##########################################################################
-
+    $sql = 'delete from adoption where client_id=1 and animal_id=8';
+    $req( $sql, null, 1 );
     ?>
 
     <li>Cas avec un verrou exclusif (Solution pour éviter ce problème)</li>
-    <p><i>(Les tables sontré-initialisées entre 2 exemples)</i></p>
-
-    exit;
+    <p><i>(Les tables sont ré-initialisées entre 2 exemples)</i></p>
 
     <?php
     //  $sql = 'delete from adoption where client_id=1 and animal_id=8';
@@ -270,7 +269,7 @@ AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
     WHERE email = 'jean.dupont@email.com'
 
     -- Session 1";
-    $pdo1 = $req( $sqlins, $pdo1, 1 ); // session 1
+        $pdo1 = $req( $sqlins, $pdo1, 1 ); // session 1
 
     $sql = 'select "Consultation de la liste des chats de la race \"Main Coon\"" as "1) Action pour le second client"';
     $req( $sql, null, 1 );
@@ -320,21 +319,23 @@ LOCK IN SHARE MODE
     // Attention: Comme les transactions mettent en attente certaines répponse aux requêtes, le script PHP s'en trouve bloqué... Aussi, l'ordre des requêtes ci-dessous a été adapté pour similer le réel comportement, mais en réel, l'affichage des chats Maine Coon pour le client 2 se fait avant l'adoption de Baghérra par le premier client
 
 
-    echo str_repeat( '<br>&nbsp;', 25 );
+    ?>
+    <p>Repeatable read signifie "lecture répétable", c'est-à-dire que si l'on fait plusieurs
+      requêtes de sélection (non-verrouillantes) de suite, elles donneront toujours le même
+      résultat, quels que soient les changements effectués par d'autres sessions.</p>
 
-      <p>Repeatable read signifie "lecture répétable", c'est-à-dire que si l'on fait plusieurs
-        requêtes de sélection (non-verrouillantes) de suite, elles donneront toujours le même
-        résultat, quels que soient les changements effectués par d'autres sessions.</p>
-
-      <p>Si l'on pense à bien utiliser les verrous là où c'est nécessaire, c'est un niveau
-        d'isolation tout à fait suffisant.</p>
+    <p>Si l'on pense à bien utiliser les verrous là où c'est nécessaire, c'est un niveau
+      d'isolation tout à fait suffisant.</p>
     </li>
 
     <li><code>READ COMMITTED</code>
 
-      <p>Avec ce niveau d'isolation, chaque requête<code>SELECT</code>(non-verrouillante) va reprendre une
-        "photo" à jour de la base de données, même si plusieurs<code>SELECT</code>se font dans la même
+      <p>Avec ce niveau d'isolation, chaque requête<code>SELECT</code>(non-verrouillante) va
+        reprendre une
+        "photo" à jour de la base de données, même si plusieurs<code>SELECT</code>se font dans la
+        même
         transaction.</p>
+
       <p>Ainsi, un <code>SELECT</code> verra toujours les derniers changements commités, même s'ils
         ont été faits dans une autre session, après le début de la transaction.</p>
     </li>
@@ -345,6 +346,7 @@ LOCK IN SHARE MODE
         commités par d'autres sessions.</p>
     </li>
   </ul>
+  <?php
   /*
 
   <div class="jumbotron">
@@ -367,5 +369,8 @@ LOCK IN SHARE MODE
     $req( $sql );
     ?>
   </div>
-  */ ?>
+  */
+  ?>
 </div>
+<?php
+    echo str_repeat( '<br>&nbsp;', 25 );
