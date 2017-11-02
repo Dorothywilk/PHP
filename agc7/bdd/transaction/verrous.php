@@ -44,7 +44,7 @@ namespace GC7;
 
   <h2>Principe</h2>
 
-  <p>Une cession qui pose un verrou ne peut opérer selon le niveau de verrou (READ || WRITE) que sur
+  <p>Une session qui pose un verrou ne peut opérer selon le niveau de verrou (READ || WRITE) que sur
     les lignes | tables qu'elle a vérouillé.</p>
 
   <p>Attention: Avec les transactions (Rappel: InnoDB uniquement), <code>START TRANSACTION</code>
@@ -65,9 +65,29 @@ namespace GC7;
     </li>
   </ul>
 
+  <hr>
+
+  En cas d'<code>UPDATE</code> avec un <code>WHERE</code> sur une colonne non indexée, le verrou se
+  fait implicitement sur toutes les lignes.<br>
+  Sinon, avec une requête concurrente ( = issue d'une autre session), même en référençant un index
+  différent dans sa clause <code>where</code> aura accès aux lignes non concernées par un verrou de
+  la première session.<br>
+  En conclusion, il faut un index pour pouvoir poser un verrou efficacement ( = Qui ne verouille que
+  le minimum de lignes nécéssaires ce qui permet des accès concurrents).
+  <hr>
+
+<h3>Lignes fantômes et index de clé suivante</h3>
+  Exemple:
+  Tentative d'insertion par une seconde session transactionnelle d'une ligne concerné pas un verrou: Si la première session refait une requête de selection avec verrou exclusif, elle verra apparaître une <strong>ligne fantôme</strong>, puisque, pour poser le verrou, elle ira chercher les données les plus à jour, prenant en compte le commit de la première session...<br><br>
+
+  Pour pallier ce problème, qui est contraire au principe d'isolation, <strong>les verrous posés par des requêtes de lecture, de modification et de suppression sont des verrous dits "de clé suivante"</strong>; ils empêchent l'insertion d'une ligne dans les espaces entre les lignes verrouillées, ainsi que dans l'espace juste après les lignes verrouillées.
+
+
+
 
   <?php
-  $sql = 'SELECT 1';
+
+  $sql = 'SHOW tables';
   $pdo = $req( $sql );
 
 
