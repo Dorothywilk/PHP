@@ -26,14 +26,7 @@ ORDER BY Commentaire.date_commentaire;";
   ?>
   <p>Auteur - id de l’auteur = 2</p>
   <?php
-  $sql = "SELECT DATE_FORMAT(date_publication, '%d/%m/%Y'),
-       utilisateur.pseudo,
-       titre, Resume,
-       (select count(*) from commentaire where commentaire.article_id=article.id)
-from article
-  left join utilisateur
-  on utilisateur.id = article.Auteur_id
-order by date_publication desc";
+  $sql = "SELECT 1";
   $req( $sql );
 
   //
@@ -47,6 +40,20 @@ order by date_publication desc";
   //from article";
   //  $req( $sql );
 
-
+  /*
+  ?>
+  <p>Accueil</p>
+  <?php
+  $sql = "SELECT DATE_FORMAT(date_publication, '%d/%m/%Y'),
+       utilisateur.pseudo,
+       titre, Resume,
+       (select count(*) from commentaire
+        where commentaire.article_id=article.id)
+from article
+  left join utilisateur
+  on utilisateur.id = article.Auteur_id
+order by date_publication desc";
+  $req( $sql );
+*/
   ?>
 </div>
