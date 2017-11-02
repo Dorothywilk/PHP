@@ -51,10 +51,10 @@ namespace GC7;
 
 //include( 'securisation/transactions.php' );
 //include( 'securisation/verrous.php' );
-include( 'securisation/requetesPreparees.php' );
+//include( 'securisation/requetesPreparees.php' );
 
 
-//include( 'tests.php' );
+include( 'tests.php' );
 
 
 //$maReq = new Requete( (Array) $req );

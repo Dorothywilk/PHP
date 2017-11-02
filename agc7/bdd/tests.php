@@ -1,45 +1,32 @@
 <?php
 namespace GC7;
 ?>
-  <div class="jumbotron">
+<div class="jumbotron">
 
-    <h3 class="meaDo">Tests</h3>
+  <h3 class="meaDo pb10">Tests</h3>
 
-  </div>
+</div>
+<div class="maingc7">
   <?php
 
-$req = function ( $sql ) {
-  $cnx = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
-  $cnx->query( 'SET lc_time_names = "fr_FR"' );
-  $cnx = $cnx->query( $sql );
-  try {
-    $rep = $cnx->fetchAll( \PDO::FETCH_OBJ );
-  } catch ( Exception $e ) {
-    aff( $e );
-  }
-
-//  aff($rep);
-  if ( $rep ) {
-    affR( $rep );
-  }
-  if ( preg_match( '/INSERT|UPDATE|REPLACE|DELETE/i', $sql ) ) {
-    $nbra = $cnx->rowCount(); // Nombre de rangs affectés
-    $plur = ( $nbra > 1 ) ? 's' : ''; // Pluriel
-    echo '=> ' . $nbra . ' rang' . $plur . ' affecté' . $plur . '<hr>';
-  }
-
-};
-
-$nbr = function ( $table ) {
-  $cnx = new \PDO( 'mysql:host=localhost;dbname=laravel;charset=utf8', 'root', '' );
-
-  return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
-};
-
-echo '11%3 = '.(11%3);
+  // Commentaires pour un article (Ici 2)
+  $sql = "SELECT Commentaire.contenu,
+      DATE_FORMAT(Commentaire.date_commentaire, '%d/%m/%Y'),
+      Utilisateur.pseudo
+FROM Commentaire
+  LEFT JOIN Utilisateur
+  ON Commentaire.auteur_id = Utilisateur.id
+WHERE Commentaire.article_id = 2
+ORDER BY Commentaire.date_commentaire;";
+  $req( $sql );
 
 
+  ?>
+  <p>Auteur - id de l’auteur = 2</p>
+  <?php
+  $sql = "SELECT 1";
+  $req( $sql );
 
-$sql = "select 11%3";
-aff( $sql );
-$req( $sql );
+
+  ?>
+</div>
