@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <title>P.O.O.</title>
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
 
 <body>
-<div class="navLi mtnav">
-  <a href="/">Do</a> | P.O.O.
-</div>
-<hr>
-<div class="maingc7 mainPoo">
+  <div class="navLi mtnav">
+    <a href="/">Do</a> | P.O.O.
+  </div>
+  <hr>
+  <div class="maingc7 mainPoo">
 
-  <?php
+    <?php
 
   // Simple classe
   // include 'personne.php';
@@ -49,7 +50,8 @@
   echo str_repeat( '<br>&nbsp;', 50 );
 
   ?>
-  oOo
-</div>
+      oOo
+  </div>
 </body>
+
 </html>

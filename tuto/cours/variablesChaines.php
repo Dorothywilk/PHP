@@ -1,6 +1,5 @@
-<h3>Mon cours sur les variables simples</h3>
-
 <?php
+
 
 // Exemple avec formulaire
 // include './tuto/initiation/tableMultiplication.php';

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <title>BdD</title>
   <link rel="stylesheet" href="../assets/css/mdb.min.css">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/gc7.css">
 </head>
-<body>
-<div class="navLi">
-  <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
-</div>
 
-<?php
+<body>
+  <div class="navLi">
+    <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
+  </div>
+
+  <?php
 
 include 'inc/fctns.php';
 
@@ -24,13 +26,13 @@ include 'req.php';
   
 ?>
 
-<footer>
-  <p>&copy;2017 - GC7
-</footer>
-<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async
-        defer></script>
-<script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../assets/js/app.js" type="text/javascript"></script>
+    <footer>
+      <p>&copy;2017 - GC7
+    </footer>
+    <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../assets/js/app.js" type="text/javascript"></script>
 
 </body>
+
 </html>

@@ -1,9 +1,6 @@
-<div class='titreCoursDo actionManShaded'><a
-    href="https://apprendre-php.com/tutoriels/tutoriel-8-les-operateurs.html" target="_blank"
-    title="Lien direct su tuto d'Emacs">Les Opérateurs</a></div>
 <?php
 
-// ToDoDo Si ce genre de titre te plaît, l'appliquer pour et sur tes 3 cours précédents ;-) !
+
 
 // Les 5 Opérateurs arithmétiques
 $a = 10;
