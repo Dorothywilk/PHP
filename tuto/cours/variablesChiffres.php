@@ -1,3 +1,5 @@
+<div class='titreCoursDo actionManShaded'>
+  <a href="https://apprendre-php.com/tutoriels/tutoriel-8-les-operateurs.html" target="_blank" title="Lien direct su tuto d'Emacs">Les Opérateurs</a></div>
 <?php
 
 //ToDoDo J'en suis là !
@@ -15,11 +17,4 @@ if ( $a === $b ){
 else echo '$a n\'est pas identique à $b';
 
 echo '<hr>Ready>|<hr>';
-
-echo 'https://github.com/Dorothywilk/PHP';
-
-
-echo '<br>&nbsp;';
-
-?>
-<p class="policeGc7">JADE</p>
+ echo 'https://github.com/Dorothywilk/PHP'; echo '<br>&nbsp;';
