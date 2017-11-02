@@ -25,22 +25,19 @@ namespace GC7;
 //
 //";
 
+// Bases
 
 // Requêtes et sous-requêtes
 //include ('bases/subReq.php');
 
-
 // Jointures et sous-requêtes
 //include( 'bases/joints.php' );
-
 
 // UNION de plusieurs requêtes
 //include( 'bases/union.php' );
 
-
 // Clés étrangèes (Foreign Keys)
 //include ('bases/foreign_key.php');
-
 
 // Fonctions natives MySQL
 // include ('bases/functions.php');
@@ -50,9 +47,11 @@ namespace GC7;
 //include ('bases/calculsDate.php');
 
 
-// Transactions
-//include( 'transaction/transactions.php' );
-include( 'transaction/verrous.php' );
+// Sécurisation
+
+//include( 'securisation/transactions.php' );
+//include( 'securisation/verrous.php' );
+include( 'securisation/requetesPreparees.php' );
 
 
 //include( 'tests.php' );
@@ -60,18 +59,6 @@ include( 'transaction/verrous.php' );
 
 //$maReq = new Requete( (Array) $req );
 
-
-//include ('bases/subreq.php');
-//include ('bases/joints.php');
-//include ('bases/union.php');
-//include ('bases/foreign_key.php');
-//include ('bases/functions.php');
-//include ('bases/functionsAgregation.php');
-//include ('bases/regroupement.php');
-//include ('bases/date.php');
-//include ('bases/calculsDate.php');
-//include( 'transactions.php' );
-//include( 'tests.php' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //include( '../class/Req.php' );
