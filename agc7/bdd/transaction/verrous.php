@@ -322,7 +322,28 @@ LOCK IN SHARE MODE
 
     echo str_repeat( '<br>&nbsp;', 25 );
 
-    ?>
+      <p>Repeatable read signifie "lecture répétable", c'est-à-dire que si l'on fait plusieurs
+        requêtes de sélection (non-verrouillantes) de suite, elles donneront toujours le même
+        résultat, quels que soient les changements effectués par d'autres sessions.</p>
+
+      <p>Si l'on pense à bien utiliser les verrous là où c'est nécessaire, c'est un niveau
+        d'isolation tout à fait suffisant.</p>
+    </li>
+
+    <li><code>READ COMMITTED</code>
+
+      <p>Avec ce niveau d'isolation, chaque requête<code>SELECT</code>(non-verrouillante) va reprendre une
+        "photo" à jour de la base de données, même si plusieurs<code>SELECT</code>se font dans la même
+        transaction.</p>
+      <p>Ainsi, un <code>SELECT</code> verra toujours les derniers changements commités, même s'ils
+        ont été faits dans une autre session, après le début de la transaction.</p>
+    </li>
+    <li><code>SERIALIZABLE</code>
+
+      <p>Fonctionne comme<code>READ COMMITTED</code>, si ce n'est qu'il autorise la
+        "lecture sale". C'est-à-dire qu'une session sera capable de lire des changements encore non
+        commités par d'autres sessions.</p>
+    </li>
   </ul>
   /*
 
