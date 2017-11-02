@@ -76,16 +76,47 @@ namespace GC7;
   le minimum de lignes nécéssaires ce qui permet des accès concurrents).
   <hr>
 
-<h3>Lignes fantômes et index de clé suivante</h3>
+  <h3>Lignes fantômes et index de clé suivante</h3>
   Exemple:
-  Tentative d'insertion par une seconde session transactionnelle d'une ligne concerné pas un verrou: Si la première session refait une requête de selection avec verrou exclusif, elle verra apparaître une <strong>ligne fantôme</strong>, puisque, pour poser le verrou, elle ira chercher les données les plus à jour, prenant en compte le commit de la première session...<br><br>
+  Tentative d'insertion par une seconde session transactionnelle d'une ligne concerné pas un verrou:
+  Si la première session refait une requête de selection avec verrou exclusif, elle verra apparaître
+  une <strong>ligne fantôme</strong>, puisque, pour poser le verrou, elle ira chercher les données
+  les plus à jour, prenant en compte le commit de la première session...<br><br>
 
-  Pour pallier ce problème, qui est contraire au principe d'isolation, <strong>les verrous posés par des requêtes de lecture, de modification et de suppression sont des verrous dits "de clé suivante"</strong>; ils empêchent l'insertion d'une ligne dans les espaces entre les lignes verrouillées, ainsi que dans l'espace juste après les lignes verrouillées.
+  Pour pallier ce problème, qui est contraire au principe d'isolation, <strong>les verrous posés par
+    des requêtes de lecture, de modification et de suppression sont des verrous dits "de clé
+    suivante"</strong>; ils empêchent l'insertion d'une ligne dans les espaces entre les lignes
+  verrouillées, ainsi que dans l'espace juste après les lignes verrouillées.
 
-<hr>
+  <hr>
 
-  <h3>Verrou de ligne partagé ou exclusif ?</h3>
+  <h3>Verrou de ligne partagé ou exclusif ? <strong>Exemple pratique</strong></h3>
+
+  <p>Un client arrive et veut adopter un chat...</p>
+
+  <p>On commence donc par consulter la liste de tous les chats disponibles.</p>
+  <ul>
+    <li>Cas avec un verrou partagé</li>
+  </ul>
   <?php
+
+  $sql = "
+
+SELECT Animal.id, Animal.nom, Animal.date_naissance,
+       Race.nom as race,
+       COALESCE(Race.prix, Espece.prix) as prix
+FROM Animal
+  INNER JOIN Espece
+  ON Animal.espece_id = Espece.id
+    LEFT JOIN
+    Race ON Animal.race_id = Race.id
+    -- Jointure externe, on ne veut pas que les chats de race
+WHERE Espece.nom_courant = 'Chat'
+-- Uniquement les chats...
+AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
+    -- ... qui n'ont pas encore été adoptés
+LOCK IN SHARE MODE";
+  $req( $sql ); // session 1
 
   $sql = "-- START TRANSACTION;
 
