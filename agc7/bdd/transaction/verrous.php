@@ -4,17 +4,17 @@ namespace GC7;
 
 ?>
 <div class="jumbotron">
-  
+
   <h3 class="meaDo pb10">Verrous</h3>
-   
+
   <ul class="lead mt10">
     <li>Sécurisation des requêtes par blocage ponctuel et partiel de l'accès aux données</li>
     <li>De 2 types: Verrous de table, verrous de ligne</li>
   </ul>
 
-<p class="lead"><span class="actionManShaded">Action Man Shaded</span></p>
+  <p class="lead"><span class="actionManShaded">Action Man Shaded</span></p>
 
-  
+
   <ol class="lead">
 
     <li>Verrous de tables:</li>
@@ -51,22 +51,24 @@ namespace GC7;
     ôte les verrous et <code>LOCK TABLES</code> et <code>UNLOCK TABLES</code> provoquent une
     validation implicite si elles sont exécutées à l'intérieur d'une transaction => Utiliser <code>SET
       AUTOCOMMIT = 0</code></p>
-Conclusion:
+  Conclusion:
   <ul>
     <li>On pose un verrou partagé lorsqu'on fait une requête dans le but de lire des données.</li>
-    <li>On pose un verrou exclusif lorsqu'on fait une requête dans le but (immédiat ou non) de modifier des données.
+    <li>On pose un verrou exclusif lorsqu'on fait une requête dans le but (immédiat ou non) de
+      modifier des données.
     </li>
-    <li>Un verrou partagé sur les lignes x va permettre aux autres sessions d'obtenir également un verrou partagé sur les lignes x, mais pas d'obtenir un verrou exclusif.</li>
-    <li>Un verrou exclusif sur les lignes x va empêcher les autres sessions d'obtenir un verrou sur les lignes x, qu'il soit partagé ou exclusif.</li>
+    <li>Un verrou partagé sur les lignes x va permettre aux autres sessions d'obtenir également un
+      verrou partagé sur les lignes x, mais pas d'obtenir un verrou exclusif.
+    </li>
+    <li>Un verrou exclusif sur les lignes x va empêcher les autres sessions d'obtenir un verrou sur
+      les lignes x, qu'il soit partagé ou exclusif.
+    </li>
   </ul>
+
 
   <?php
   $sql = 'SELECT 1';
   $pdo = $req( $sql );
-
-
-
-
 
 
   echo str_repeat( '<br>&nbsp;', 25 );
