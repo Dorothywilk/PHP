@@ -21,13 +21,33 @@ WHERE Commentaire.article_id = 2
 ORDER BY Commentaire.date_commentaire;";
   */
   //    $req( $sql );
+?>
+  <p>Categorie - id de la catégorie = 3</p>
+<?php
 
+    $sql = "SELECT 1";
+    $req( $sql );
 
+/*
   ?>
   <p>Auteur - id de l’auteur = 2</p>
   <?php
-  $sql = "SELECT 1";
-  $req( $sql );
+  $sql = "SET lc_time_names = 'fr_FR'";
+  $pdo = $req( $sql );
+
+  $sql="SELECT DATE_FORMAT(date_publication, '%d %M \'%y') date, pseudo, titre, resume
+from article
+
+  left join utilisateur
+  on utilisateur.id = article.Auteur_id
+
+where utilisateur.id = 2
+
+order by article.date_publication desc
+";
+  $pdo = $req( $sql, $pdo );
+*/
+
 
   //
   //  $sql = "SELECT *
