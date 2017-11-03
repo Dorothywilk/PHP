@@ -1,9 +1,14 @@
 -- Accueil
 
-SELECT titre, resume, date_publication as date, utilisateur.pseudo
+SELECT DATE_FORMAT(date_publication, '%d/%m/%Y') as date,
+       utilisateur.pseudo,
+       titre, resume,
+       (select count(*) from commentaire
+        where commentaire.article_id=article.id) as "Nombre de commentaires"
 from article
-  left outer join utilisateur
-  on utilisateur.id = article.auteur_id;
+  left join utilisateur
+  on utilisateur.id = article.Auteur_id
+order by date_publication desc;
 
 
 
@@ -42,3 +47,21 @@ where article.id in
 );
 
 
+-- Article - id de l’article = 4
+
+SELECT article.id, DATE_FORMAT(date_publication, '%d %M %Y à %H heures %i') as date,
+       titre, contenu, resume,
+		(select group_concat(categorie.nom SEPARATOR ', ') from categorie
+		 where id in ( select categorie_id 
+							from categorie_article
+							where article_id =4
+						)
+		) as catégories,
+		utilisateur.pseudo
+		 
+from article
+
+  left join utilisateur
+  on utilisateur.id = article.Auteur_id
+
+where article.id = 4;

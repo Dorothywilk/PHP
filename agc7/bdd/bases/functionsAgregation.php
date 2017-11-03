@@ -37,7 +37,7 @@ $req( $sql );
 $sql = "SELECT  COUNT(*) as 'total:', COUNT(race_id), COUNT(DISTINCT race_id),
         MIN(nom), (select max(date_naissance) from pets)
 FROM Animal";
-$req( $sql );
+//$req( $sql );
 
 
 $sql = "SELECT GROUP_CONCAT('- ',nom_courant,': ', prix, '€'
