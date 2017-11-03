@@ -11,7 +11,9 @@ namespace GC7;
     <li>Les variables utilisateurs stockent des données, propres uniquement à la session dans
       laquelle elles auront été créées.
     </li>
-    <li>...</li>
+    <li>Comme les variables utilisateurs, une requête préparée n'existe que pour la session qui la
+      crée.
+    </li>
   </ul>
 
   <p class="lead">...</span></p>
@@ -68,9 +70,41 @@ namespace GC7;
   -- En arrondissant à deux décimales
   FROM Race;";
   $req( $sql, $pdo );
+  ?>
 
+  <h3>Requête préparée</h3>
+
+  <?php
+
+  $sql = "-- exemple de requête préparée:
+PREPARE select_adoption
+FROM 'SELECT * FROM Adoption WHERE client_id = ? AND animal_id = ?';";
+  $req( $sql, $pdo );
+
+
+  $sql = "-- Excemple utilisant des variables utilisateur
+SET @req = 'SELECT * FROM Race';
+PREPARE select_race
+FROM @req;";
+  $req( $sql, $pdo );
+
+  $sql = "SET @colonne = 'nom';";
+  $req( $sql, $pdo );
+
+  $sql = "SET @req_animal =
+  CONCAT('SELECT ', @colonne, ' FROM Animal WHERE id = ?');
+PREPARE select_col_animal
+FROM @req_animal;";
+  $req( $sql, $pdo );
+
+  $sql = "EXECUTE nom_requete [USING @parametre1, @parametre2, ...];";
+  //  $req( $sql, $pdo );
 
   ?>
+
+  <h3>Usage et utilité</h3>
+
+
   <br>
 </div>
 
