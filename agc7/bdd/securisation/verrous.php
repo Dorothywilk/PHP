@@ -3,102 +3,79 @@
 namespace GC7;
 
 ?>
-<div class="jumbotron">
+  <div class="jumbotron">
 
-  <h3 class="meaDo pb10">Verrous</h3>
+    <h3 class="meaDo pb10">Verrous</h3>
 
-  <ul class="lead mt10">
-    <li>Sécurisation des requêtes par blocage ponctuel et partiel de l'accès aux données</li>
-    <li>De 2 types: Verrous de table, verrous de ligne</li>
-  </ul>
-
-  <p class="lead"><span class="actionManShaded">Action Man Shaded</span></p>
-
-
-  <ol class="lead">
-
-    <li>Verrous de tables:</li>
-    <ul>
-      <li><code>LOCK TABLES tables [AS alias_table] [READ | WRITE][, ...]</code></li>
-      <li><code>UNLOCK TABLES</code> déverrouille toutes les tables verrouillées</li>
+    <ul class="lead mt10">
+      <li>Sécurisation des requêtes par blocage ponctuel et partiel de l'accès aux données</li>
+      <li>De 2 types: Verrous de table, verrous de ligne</li>
     </ul>
 
-    <li>Verrous de lignes:</li>
-    <ol>
-      <li>
-        Partagé (= READ): <code>LOCK IN SHARE MODE</code>
-      </li>
-      <li>
-        Exclusif (= WRITE): <code>FOR UPDATE</code>
-      </li>
+    <p class="lead"><span class="actionManShaded">Action Man Shaded</span></p>
+
+
+    <ol class="lead">
+
+      <li>Verrous de tables:</li>
+      <ul>
+        <li><code>LOCK TABLES tables [AS alias_table] [READ | WRITE][, ...]</code></li>
+        <li><code>UNLOCK TABLES</code> déverrouille toutes les tables verrouillées</li>
+      </ul>
+
+      <li>Verrous de lignes:</li>
+      <ol>
+        <li>
+          Partagé (= READ): <code>LOCK IN SHARE MODE</code>
+        </li>
+        <li>
+          Exclusif (= WRITE): <code>FOR UPDATE</code>
+        </li>
+      </ol>
     </ol>
-  </ol>
-  <p class="lead">Automatiquement exclusifs sur les lignes concernées en cas d'<code>INSERT</code>,
-    d'
-    <code>UPDATE</code> ou de <code>DELETE</code><br> Intéressantes uniquement dans les
-    transactions, elles s'écrivent en fin de requête <code>SELECT</code></p>
+    <p class="lead">Automatiquement exclusifs sur les lignes concernées en cas d'<code>INSERT</code>, d'
+      <code>UPDATE</code> ou de <code>DELETE</code><br> Intéressantes uniquement dans les transactions, elles s'écrivent en fin de requête <code>SELECT</code></p>
 
-</div>
+  </div>
 
-<div class="maingc7">
+  <div class="maingc7">
 
-  <h2>Principe</h2>
+    <h2>Principe</h2>
 
-  <p>Une session qui pose un verrou ne peut opérer selon le niveau de verrou (READ || WRITE) que sur
-    les lignes | tables qu'elle a vérouillé.</p>
+    <p>Une session qui pose un verrou ne peut opérer selon le niveau de verrou (READ || WRITE) que sur les lignes | tables qu'elle a vérouillé.</p>
 
-  <p>Attention: Avec les transactions (Rappel: InnoDB uniquement), <code>START TRANSACTION</code>
-    ôte les verrous et <code>LOCK TABLES</code> et <code>UNLOCK TABLES</code> provoquent une
-    validation implicite si elles sont exécutées à l'intérieur d'une transaction => Utiliser <code>SET
+    <p>Attention: Avec les transactions (Rappel: InnoDB uniquement), <code>START TRANSACTION</code> ôte les verrous et <code>LOCK TABLES</code> et <code>UNLOCK TABLES</code> provoquent une validation implicite si elles sont exécutées à l'intérieur d'une transaction => Utiliser <code>SET
       AUTOCOMMIT = 0</code></p>
-  Conclusion:
-  <ul>
-    <li>On pose un verrou partagé lorsqu'on fait une requête dans le but de lire des données.</li>
-    <li>On pose un verrou exclusif lorsqu'on fait une requête dans le but (immédiat ou non) de
-      modifier des données.
-    </li>
-    <li>Un verrou partagé sur les lignes x va permettre aux autres sessions d'obtenir également un
-      verrou partagé sur les lignes x, mais pas d'obtenir un verrou exclusif.
-    </li>
-    <li>Un verrou exclusif sur les lignes x va empêcher les autres sessions d'obtenir un verrou sur
-      les lignes x, qu'il soit partagé ou exclusif.
-    </li>
-  </ul>
+    Conclusion:
+    <ul>
+      <li>On pose un verrou partagé lorsqu'on fait une requête dans le but de lire des données.</li>
+      <li>On pose un verrou exclusif lorsqu'on fait une requête dans le but (immédiat ou non) de modifier des données.
+      </li>
+      <li>Un verrou partagé sur les lignes x va permettre aux autres sessions d'obtenir également un verrou partagé sur les lignes x, mais pas d'obtenir un verrou exclusif.
+      </li>
+      <li>Un verrou exclusif sur les lignes x va empêcher les autres sessions d'obtenir un verrou sur les lignes x, qu'il soit partagé ou exclusif.
+      </li>
+    </ul>
 
-  <hr>
+    <hr> En cas d'<code>UPDATE</code> avec un <code>WHERE</code> sur une colonne non indexée, le verrou se fait implicitement sur toutes les lignes.<br> Sinon, avec une requête concurrente ( = issue d'une autre session), même en référençant un index différent dans sa clause <code>where</code> aura accès aux lignes non concernées par un verrou de la première session.<br> En conclusion, il faut un index pour pouvoir poser un verrou efficacement ( = Qui ne verouille que le minimum de lignes nécéssaires ce qui permet des accès concurrents).
+    <hr>
 
-  En cas d'<code>UPDATE</code> avec un <code>WHERE</code> sur une colonne non indexée, le verrou se
-  fait implicitement sur toutes les lignes.<br>
-  Sinon, avec une requête concurrente ( = issue d'une autre session), même en référençant un index
-  différent dans sa clause <code>where</code> aura accès aux lignes non concernées par un verrou de
-  la première session.<br>
-  En conclusion, il faut un index pour pouvoir poser un verrou efficacement ( = Qui ne verouille que
-  le minimum de lignes nécéssaires ce qui permet des accès concurrents).
-  <hr>
-
-  <h3>Lignes fantômes et index de clé suivante</h3>
-  Exemple:
-  Tentative d'insertion par une seconde session transactionnelle d'une ligne concerné pas un verrou:
-  Si la première session refait une requête de selection avec verrou exclusif, elle verra apparaître
-  une <strong>ligne fantôme</strong>, puisque, pour poser le verrou, elle ira chercher les données
-  les plus à jour, prenant en compte le commit de la première session...<br><br>
-
-  Pour pallier ce problème, qui est contraire au principe d'isolation, <strong>les verrous posés par
+    <h3>Lignes fantômes et index de clé suivante</h3>
+    Exemple: Tentative d'insertion par une seconde session transactionnelle d'une ligne concerné pas un verrou: Si la première session refait une requête de selection avec verrou exclusif, elle verra apparaître une <strong>ligne fantôme</strong>, puisque, pour poser le verrou, elle ira chercher les données les plus à jour, prenant en compte le commit de la première session...<br><br> Pour pallier ce problème, qui est contraire au principe d'isolation, <strong>les verrous posés par
     des requêtes de lecture, de modification et de suppression sont des verrous dits "de clé
-    suivante"</strong>; ils empêchent l'insertion d'une ligne dans les espaces entre les lignes
-  verrouillées, ainsi que dans l'espace juste après les lignes verrouillées.
+    suivante"</strong>; ils empêchent l'insertion d'une ligne dans les espaces entre les lignes verrouillées, ainsi que dans l'espace juste après les lignes verrouillées.
 
-  <hr>
+    <hr>
 
-  <h3>Verrou de ligne partagé ou exclusif ? <strong>Exemple pratique</strong></h3>
+    <h3>Verrou de ligne partagé ou exclusif ? <strong>Exemple pratique</strong></h3>
 
-  <p>Un client arrive et veut adopter un chat...</p>
+    <p>Un client arrive et veut adopter un chat...</p>
 
-  <p>On commence donc par consulter la liste de tous les chats disponibles.</p>
-  <ul>
-    <li>Cas avec un verrou partagé</li>
+    <p>On commence donc par consulter la liste de tous les chats disponibles.</p>
+    <ul>
+      <li>Cas avec un verrou partagé</li>
 
-    <?php
+      <?php
     $sql = 'delete from adoption where client_id=1 and animal_id=8';
     $req( $sql, null, 1 );
 
@@ -126,20 +103,20 @@ namespace GC7;
 
     ?>
 
-    <?php
+        <?php
 
     $pdo = $req( "START TRANSACTION;
 
       " . $sql, null, 1 ); // session 1
 
     ?>
-    <p>Il réfléchit...</p>
+          <p>Il réfléchit...</p>
 
-    <p>Cependant, un second client arrive et veut quand à lui, adopter un chat de la "Maine
-      Coon"...</p>
+          <p>Cependant, un second client arrive et veut quand à lui, adopter un chat de la race "Maine Coon"...
+          </p>
 
-    <p>On consulte donc la liste correspondante.</p>
-    <?php
+          <p>On consulte donc la liste correspondante.</p>
+          <?php
     $sql = 'select "Consultation de la liste des chats de la race \"Main Coon\"" as "1) Action pour le second client"';
     $req( $sql, null, 1 );
 
@@ -156,17 +133,16 @@ namespace GC7;
     AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
           -- ... qui n'ont pas encore été adoptés
 
-    -- Session 2 (Noraalament aussi avec un verrou exclusif (FOR UPDATE)";
+    -- Session 2 (Normalement aussi avec un verrou exclusif (FOR UPDATE)";
     $pdo2 = $req( $sql ); // session 2
 
     ?>
 
-    <p>À son tour, il réfléchit un peu, mais a déjà un petit faible pour Bagherra...</p>
+            <p>À son tour, il réfléchit un peu, mais a déjà un petit faible pour Bagherra...</p>
 
-    <p>Ce temps de réflexion va lui être pénalisant... En effet, le premier client pose aussi son
-      dévolu sur Bagherra et l'adopte donc.</p>
+            <p>Ce temps de réflexion va lui être pénalisant... En effet, le premier client pose aussi son dévolu sur Bagherra et l'adopte donc.</p>
 
-    <?php
+            <?php
 
     $sql = "INSERT INTO Adoption
            (client_id, animal_id, date_reservation, prix, paye)
@@ -201,12 +177,9 @@ namespace GC7;
     VALUES (LAST_INSERT_ID(), 8, NOW(), 735.00, 0);";
     aff( $sql );
     ?>
-    <p class="pink-text">Et lorque le second client veut réserver avec la requête ci-dessus, cette
-      dernière ne marche pas...
-      :-(... Car l'animal dont id = 8 (Bagherra) est déjà dans la base Adoption, et cette clé à un
-      index d'unicité !</p>
+              <p class="pink-text">Et lorque le second client veut réserver avec la requête ci-dessus, cette dernière ne marche pas... :-(... Car l'animal dont id = 8 (Bagherra) est déjà dans la base Adoption, et cette clé à un index d'unicité !</p>
 
-    <?php
+              <?php
     $sql = "rollback";
     $req( $sql, $pdo1, 1 ); // session 1
     $req( $sql, $pdo2, 1 ); // session 1
@@ -217,10 +190,10 @@ namespace GC7;
     $req( $sql, null, 1 );
     ?>
 
-    <li>Cas avec un verrou exclusif (Solution pour éviter ce problème)</li>
-    <p><i>(Les tables sont ré-initialisées entre 2 exemples)</i></p>
+                <li>Cas avec un verrou exclusif (Solution pour éviter ce problème)</li>
+                <p><i>(Les tables sont ré-initialisées entre 2 exemples)</i></p>
 
-    <?php
+                <?php
     //  $sql = 'delete from adoption where client_id=1 and animal_id=8';
     //  $req( $sql, null, 1 );
 
@@ -253,14 +226,14 @@ AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
     $sql = "commit";
     $req( $sql, $pdo1 ); // session 1
     ?>
-    <p>Il réfléchit...</p>
+                  <p>Il réfléchit...</p>
 
-    <p>Cependant, un second client arrive et veut quand à lui, adopter un chat de la "Maine
-      Coon"...</p>
+                  <p>Cependant, un second client arrive et veut quand à lui, adopter un chat de la "Maine Coon"...
+                  </p>
 
-    <p>On consulte donc la liste correspondante.</p>
+                  <p>On consulte donc la liste correspondante.</p>
 
-    <?php
+                  <?php
 
     $sqlins = "INSERT INTO Adoption
     (client_id, animal_id, date_reservation, prix, paye)
@@ -296,13 +269,11 @@ LOCK IN SHARE MODE
 
     ?>
 
-    <p class="green-text">Et cette fois, il ne peut plus y avoir de choix sur Baghérra, puisque plus
-      dans le listing <i class="fa fa-like icon"></i></p>
+                    <p class="green-text">Et cette fois, il ne peut plus y avoir de choix sur Bagherra, puisque plus dans le listing <i class="fa fa-like icon"></i></p>
 
-    <p>Pourtant, la requête d'adoption du client 1 n'est pas réellement encore faite... Procédons
-      maintenant !</p>
+                    <p>Pourtant, la requête d'adoption du client 1 n'est pas réellement encore faite... Procédons maintenant !</p>
 
-    <?php
+                    <?php
 
     aff( $sqlins );
 
@@ -320,33 +291,24 @@ LOCK IN SHARE MODE
 
 
     ?>
-    <p>Repeatable read signifie "lecture répétable", c'est-à-dire que si l'on fait plusieurs
-      requêtes de sélection (non-verrouillantes) de suite, elles donneront toujours le même
-      résultat, quels que soient les changements effectués par d'autres sessions.</p>
+                      <p>Repeatable read signifie "lecture répétable", c'est-à-dire que si l'on fait plusieurs requêtes de sélection (non-verrouillantes) de suite, elles donneront toujours le même résultat, quels que soient les changements effectués par d'autres sessions.</p>
 
-    <p>Si l'on pense à bien utiliser les verrous là où c'est nécessaire, c'est un niveau
-      d'isolation tout à fait suffisant.</p>
-    </li>
+                      <p>Si l'on pense à bien utiliser les verrous là où c'est nécessaire, c'est un niveau d'isolation tout à fait suffisant.</p>
+                      </li>
 
-    <li><code>READ COMMITTED</code>
+                      <li><code>READ COMMITTED</code>
 
-      <p>Avec ce niveau d'isolation, chaque requête<code>SELECT</code>(non-verrouillante) va
-        reprendre une
-        "photo" à jour de la base de données, même si plusieurs<code>SELECT</code>se font dans la
-        même
-        transaction.</p>
+                        <p>Avec ce niveau d'isolation, chaque requête<code>SELECT</code>(non-verrouillante) va reprendre une "photo" à jour de la base de données, même si plusieurs<code>SELECT</code>se font dans la même transaction.
+                        </p>
 
-      <p>Ainsi, un <code>SELECT</code> verra toujours les derniers changements commités, même s'ils
-        ont été faits dans une autre session, après le début de la transaction.</p>
-    </li>
-    <li><code>SERIALIZABLE</code>
+                        <p>Ainsi, un <code>SELECT</code> verra toujours les derniers changements commités, même s'ils ont été faits dans une autre session, après le début de la transaction.</p>
+                      </li>
+                      <li><code>SERIALIZABLE</code>
 
-      <p>Fonctionne comme<code>READ COMMITTED</code>, si ce n'est qu'il autorise la
-        "lecture sale". C'est-à-dire qu'une session sera capable de lire des changements encore non
-        commités par d'autres sessions.</p>
-    </li>
-  </ul>
-  <?php
+                        <p>Fonctionne comme<code>READ COMMITTED</code>, si ce n'est qu'il autorise la "lecture sale". C'est-à-dire qu'une session sera capable de lire des changements encore non commités par d'autres sessions.</p>
+                      </li>
+    </ul>
+    <?php
   /*
 
   <div class="jumbotron">
@@ -369,8 +331,7 @@ LOCK IN SHARE MODE
     $req( $sql );
     ?>
   </div>
-  */
-  ?>
-</div>
-<?php
+  */ ?>
+  </div>
+  <?php
     echo str_repeat( '<br>&nbsp;', 25 );

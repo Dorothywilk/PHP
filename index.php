@@ -13,6 +13,7 @@
 <body>
   <header class="navDo">
     <a href="/">Accueil</a> |
+    <a href="ajade">Jade</a> |
     <a href="sv">SV</a> |
     <a href="/assets/bulma">Bulma</a> |
     <a href="https://apprendre-php.com/tutoriels.html" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a> |

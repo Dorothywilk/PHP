@@ -45,7 +45,6 @@ $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 
 $nbr = function ( $table ) {
   $cnx = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
-
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
@@ -110,8 +109,7 @@ function affLign( $sql )
   ?>
   <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
     <pre class="float-left"><?= $sql ?></pre>
-    <button class="btn float-right numLign" type="button" data-toggle="tooltipNum"
-            data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
+    <button class="btn float-right numLign" type="button" data-toggle="tooltipNum" data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
   </div>
   <?php
 }
