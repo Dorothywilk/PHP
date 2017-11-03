@@ -51,7 +51,8 @@ namespace GC7;
 
 // include( 'securisation/transactions.php' );
 // include( 'securisation/verrous.php' );
-include( 'securisation/requetesPreparees.php' );
+//include( 'securisation/requetesPreparees.php' );
+include( 'securisation/procedures.php' );
 
 
 //include( 'tests.php' );

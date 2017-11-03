@@ -6,7 +6,7 @@ namespace GC7;
 <div class="jumbotron">
 
   <h3 class="meaDo pb10">Requêtes préparées</h3>
-
+<p class="lead">Modèle de requête nommée qui empêchent les injections SQL, et améliorent la performance si une même requête au moins est exécutée plusieurs fois par la même session.</p>
   <ul class="lead mt10">
     <li>Les variables utilisateurs stockent des données, propres uniquement à la session dans
       laquelle elles auront été créées.
@@ -20,7 +20,7 @@ namespace GC7;
   <p class="lead">Syntaxe:</span>
     <code>SET nom_req_preparee</code><br>
     <code>PREPARE '</code>(sql)<code>'</code>
-  </p>
+  <br>Puis<code>EXECUTE</code>...
 </div>
 
 <div class="maingc7">
