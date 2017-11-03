@@ -8,24 +8,67 @@ namespace GC7;
   <h3 class="meaDo pb10">Requêtes préparées</h3>
 
   <ul class="lead mt10">
-    <li>Sécurisation des requêtes par blocage ponctuel et partiel de l'accès aux données</li>
-    <li>De 2 types: Verrous de table, verrous de ligne</li>
+    <li>Les variables utilisateurs stockent des données</li>
+    <li>...</li>
   </ul>
 
-  <p class="lead"><span class="actionManShaded">Action Man Shaded</span></p>
+  <p class="lead">...</span></p>
 
 </div>
 
 <div class="maingc7">
 
+  <h3>Variables Utilisateur</h3>
+
+  <?php
+  $sql = 'SET @age = 24;';
+  $pdo = $req( $sql );
+
+  $sql = "SET @salut = 'Hello World !' , @poids = 7.8;";
+  $pdo = $req( $sql, $pdo );
+
+  $sql = "SELECT @age, @poids, @salut;";
+  $req( $sql, $pdo );
+
+  ?>
 
 
-    <?php
-    $sql = 'select 1';
-    $req( $sql);
+  <h3>Opérateur 'assignation</h3>
+
+  <?php
+
+  $sql = "SELECT @age := 32, @poids := 48.15, @perroquet := 4;";
+  $req( $sql, $pdo );
 
 
+  ?>
 
-?>
-  </div>
+
+  <h3>Exemple d'utilisation</h3>
+
+  <?php
+
+  $sql = "  SELECT id, sexe, nom, commentaires, espece_id
+  FROM Animal
+  WHERE espece_id = @perroquet;
+  -- On sélectionne les perroquets
+";
+  $req( $sql, $pdo );
+
+  $sql = "  SET @conversionDollar = 1.31564;
+  -- On crée une variable contenant le taux de conversion
+  -- des euros en dollars";
+  $req( $sql, $pdo );
+
+  $sql = "SELECT nom, prix AS prix_en_euros,
+  -- On sélectionne le prix des races, en euros et en dollars.
+  ROUND(prix * @conversionDollar, 2) AS prix_en_dollars
+  -- En arrondissant à deux décimales
+  FROM Race;";
+  $req( $sql, $pdo );
+
+
+  ?>
+  <br>
+</div>
 

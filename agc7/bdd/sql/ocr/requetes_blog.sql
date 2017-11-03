@@ -65,3 +65,14 @@ from article
   on utilisateur.id = article.Auteur_id
 
 where article.id = 4;
+
+-- Meilleure structure
+
+SELECT Article.id AS id_article, DATE_FORMAT(date_publication,'%d %M %Y à %H heures %i"') AS date_publication, 
+	titre, contenu, pseudo AS pseudo_auteur, GROUP_CONCAT(Categorie.nom) AS Nom_categories
+FROM Article
+  INNER JOIN Utilisateur ON auteur_id = Utilisateur.id
+  LEFT JOIN Categorie_article ON Article.id = Categorie_article.article_id
+  LEFT JOIN Categorie ON Categorie.id = categorie_id
+WHERE Article.id = 4
+GROUP BY Categorie_article.article_id;
