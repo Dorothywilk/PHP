@@ -6,7 +6,9 @@ namespace GC7;
 <div class="jumbotron">
 
   <h3 class="meaDo pb10">Requêtes préparées</h3>
-<p class="lead">Modèle de requête nommée qui empêchent les injections SQL, et améliorent la performance si une même requête au moins est exécutée plusieurs fois par la même session.</p>
+
+  <p class="lead">Modèle de requête nommée qui empêchent les injections SQL, et améliorent la
+    performance si une même requête au moins est exécutée plusieurs fois par la même session.</p>
   <ul class="lead mt10">
     <li>Les variables utilisateurs stockent des données, propres uniquement à la session dans
       laquelle elles auront été créées.
@@ -17,9 +19,9 @@ namespace GC7;
   </ul>
 
 
-  <p class="lead">Syntaxe:</span>
-    <code>SET nom_req_preparee</code><br>
-    <code>PREPARE '</code>(sql)<code>'</code>
+  <p class="lead">Syntaxe:</p>
+  <code>SET nom_req_preparee</code><br>
+  <code>PREPARE '</code>(sql)<code>'</code>
   <br>Puis<code>EXECUTE</code>...
 </div>
 
@@ -30,11 +32,8 @@ namespace GC7;
   <?php
   $bdd = pdo();
 
-  $sql = 'SET @age = 24;';
-  affLign( $sql );
-  $bdd->query( $sql );
-
-  $sql = "SET @salut = 'Hello World !' , @poids = 7.8;";
+  $sql = "SET @age = 24;
+SET @salut = 'Hello World ! ' , @poids = 7.8;";
   affLign( $sql );
   $bdd->query( $sql );
 

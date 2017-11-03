@@ -24,9 +24,20 @@ namespace GC7;
   <?php
   $bdd = pdo();
 
-  $sql = 'SELECT 1';
+  $sql = "DELIMITER | -- On change le délimiteur
+CREATE PROCEDURE afficher_races()
+    -- toujours pas de paramètres, toujours des parenthèses
+BEGIN
+    SELECT id, nom, espece_id, prix
+    FROM Race;
+-- Cette fois, le ; ne nous embêtera pas
+END|
+-- Et on termine bien sûr la commande CREATE PROCEDURE par notre nouveau délimiteur";
   affLign( $sql );
-  $bdd->query( $sql );
+//  $bdd->query( $sql );
+
+  $sql = "afficher_races_requete";
+//  $req( $sql, $bdd );
 
 
   echo str_repeat( '<br>', 28 ); // 28

@@ -21,6 +21,8 @@ namespace GC7;
 
   ?>
 
+     
+  
       <h2>Autocommit</h2>
 
       <p>Par defaut, AUTOCOMMIT est activé (Chaque requête est exécutée immédiatement)</p>
