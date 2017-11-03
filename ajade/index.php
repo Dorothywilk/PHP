@@ -11,16 +11,16 @@
 
 <body>
 
-  <!--		<header class="ui header navLi mt10 pb10">-->
-  <!--		<header class="navLi">-->
   <div class="navLi" style="font-size: 1.5rem;padding-left: 10px;border-bottom: 1px solid grey;padding-bottom: 7px;">
-    <!--			<a href="/" class="hoverable lkdo">Accueil</a> |-->
     <a href="/">Accueil</a> |
   </div>
+  <!--			<a href="/" class="hoverable lkdo">Accueil</a> |-->
 
   <article>
     <div class="jumbotron">
       <div class="maingc7">
+        <div class='titreCoursDo actionManShaded'>
+          <a href="#" target="_blank" title="Lien direct sur OpenClassRoom">Mathématiques</a></div>
         <?php include './math.php'; ?>
       </div>
     </div>
