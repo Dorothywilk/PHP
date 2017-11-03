@@ -16,8 +16,11 @@ namespace GC7;
     </li>
   </ul>
 
-  <p class="lead">...</span></p>
 
+  <p class="lead">Syntaxe:</span>
+    <code>SET nom_req_preparee</code><br>
+    <code>PREPARE '</code>(sql)<code>'</code>
+  </p>
 </div>
 
 <div class="maingc7">
@@ -25,86 +28,164 @@ namespace GC7;
   <h3>Variables Utilisateur</h3>
 
   <?php
+  $bdd = pdo();
+
   $sql = 'SET @age = 24;';
-  $pdo = $req( $sql );
+  affLign( $sql );
+  $bdd->query( $sql );
 
   $sql = "SET @salut = 'Hello World !' , @poids = 7.8;";
-  $pdo = $req( $sql, $pdo );
+  affLign( $sql );
+  $bdd->query( $sql );
 
   $sql = "SELECT @age, @poids, @salut;";
-  $req( $sql, $pdo );
-
+  $req( $sql, $bdd );
   ?>
 
 
   <h3>Opérateur 'assignation</h3>
-
   <?php
 
   $sql = "SELECT @age := 32, @poids := 48.15, @perroquet := 4;";
-  $req( $sql, $pdo );
-
+  $pdo = $req( $sql );
 
   ?>
 
 
-  <h3>Exemple d'utilisation</h3>
+  <h3>Exemples d'utilisation</h3>
 
   <?php
 
-  $sql = "  SELECT id, sexe, nom, commentaires, espece_id
-  FROM Animal
-  WHERE espece_id = @perroquet;
-  -- On sélectionne les perroquets
-";
+  $sql = "SELECT id, sexe, nom, commentaires, espece_id
+FROM Animal
+WHERE espece_id = @perroquet;
+-- On sélectionne les perroquets";
   $req( $sql, $pdo );
 
-  $sql = "  SET @conversionDollar = 1.31564;
-  -- On crée une variable contenant le taux de conversion
-  -- des euros en dollars";
+
+  $pdo = pdo();
+  $sql = "-- On crée une variable contenant le taux de conversion
+-- des euros en dollars
+SET @conversionDollar = 1.31564;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = 'select @conversionDollar;';
   $req( $sql, $pdo );
 
   $sql = "SELECT nom, prix AS prix_en_euros,
-  -- On sélectionne le prix des races, en euros et en dollars.
-  ROUND(prix * @conversionDollar, 2) AS prix_en_dollars
-  -- En arrondissant à deux décimales
-  FROM Race;";
+-- On sélectionne le prix des races, en euros et en dollars .
+ROUND( prix * @conversionDollar, 2 ) AS prix_en_dollars
+-- En arrondissant à deux décimales
+FROM Race;";
   $req( $sql, $pdo );
+
   ?>
 
-  <h3>Requête préparée</h3>
+  <h3>Requêtes préparées</h3>
 
   <?php
 
-  $sql = "-- exemple de requête préparée:
+  $pdo = pdo();
+
+  $sql = 'SET @uid := 1, @aid=8';
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "-- Exemple de requête préparée:
 PREPARE select_adoption
-FROM 'SELECT * FROM Adoption WHERE client_id = ? AND animal_id = ?';";
+FROM 'SELECT * FROM Adoption
+WHERE client_id = ? AND animal_id = ?';";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "EXECUTE select_adoption USING @uid, @aid";
   $req( $sql, $pdo );
 
+  // ###################################################################
 
-  $sql = "-- Excemple utilisant des variables utilisateur
-SET @req = 'SELECT * FROM Race';
-PREPARE select_race
+  $pdo = pdo();
+
+  $sql = "-- Exemple utilisant une variable utilisateur
+-- pour la requête elle-même
+SET @req = 'SELECT * FROM Race LIMIT 3'";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "PREPARE select_race
 FROM @req;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "EXECUTE select_race";
   $req( $sql, $pdo );
-
-  $sql = "SET @colonne = 'nom';";
-  $req( $sql, $pdo );
-
-  $sql = "SET @req_animal =
-  CONCAT('SELECT ', @colonne, ' FROM Animal WHERE id = ?');
-PREPARE select_col_animal
-FROM @req_animal;";
-  $req( $sql, $pdo );
-
-  $sql = "EXECUTE nom_requete [USING @parametre1, @parametre2, ...];";
-  //  $req( $sql, $pdo );
-
   ?>
 
+  <h3>Exemple plus complet</h3>
+
+  <?php
+
+  $pdo = pdo();
+  $sql = "SET @colonne = 'nom';";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SET @req_animal =
+  CONCAT( 'SELECT id,', @colonne, '
+           FROM Animal WHERE id = ?' );";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "PREPARE select_col_animal
+FROM @req_animal;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SET @id = 2;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "EXECUTE select_col_animal USING @id;";
+  $req( $sql, $pdo );
+
+  $sql = "-- Suppression de la requête préparée
+
+DEALLOCATE PREPARE select_col_animal";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  ?>
+  <hr>
   <h3>Usage et utilité</h3>
 
+  <?php
 
-  <br>
+  try {
+    $id = 1;
+
+    // On se connecte
+//  $bdd = new PDO('mysql:host=localhost;dbname=elevage', 'sdz', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
+    $bdd = pdo();
+
+    // On prépare la requête
+    $requete = $bdd->prepare( "SELECT id, nom
+FROM animal WHERE id = :id" );
+
+    // On lie la variable $id définie au-dessus au paramètre :id de la requête préparée
+    $requete->bindvalue( ':id', $id, \PDO::PARAM_STR );
+
+    //On exécute la requête
+    $requete->execute();
+
+    // On récupère le résultat
+    if ( $requete->fetch() ) {
+      echo 'L\'animal d\'id ' . $id . ' existe !';
+    }
+  } catch ( Exception $e ) {
+    die( 'Erreur : ' . $e->getMessage() );
+  }
+
+  echo str_repeat( '<br>', 3 ); // 30
+  ?>
 </div>
 

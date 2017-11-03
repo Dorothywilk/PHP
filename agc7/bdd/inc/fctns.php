@@ -16,19 +16,26 @@
  *            Fonctions agissant sur Tables en MAJ
  * @return null|PDO
  */
+
+function pdo()
+{
+  return new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '', array ( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ) );
+}
+
 $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 //  aff( $pdo );
-  if ( ! isset( $inv ) ) affLign( $sql );
+  if ( ! isset( $inv ) ) affLign( $sql, 1 );
   if ( null === $pdo ) {
 //    echo '<h1>Instanciation PDO</h1>';
-    $pdo = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
+    $pdo = pdo();
   }
 //  $cnx->query( 'SET lc_time_names = "fr_FR"' ); // jours en français depuis MySQL
   $cnx = $pdo->query( $sql );
   try {
     $rep = $cnx->fetchAll( \PDO::FETCH_OBJ );
   } catch ( Exception $e ) {
-    aff( $e );
+    echo( '<h3 class="red-text"><br>&nbsp;' . $e->getMessage() . '<br>' . $e->getFile() . ': <strong>
+' . $e->getLine() . '</strong></h3>' );
   }
 
 //  aff($rep);
@@ -44,7 +51,7 @@ $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 };
 
 $nbr = function ( $table ) {
-  $cnx = new \PDO( 'mysql:host=localhost;dbname=ocr;charset=utf8', 'root', '' );
+  $cnx = pdogc7();
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
@@ -101,15 +108,20 @@ function affR( $r )
   echo '</table>';
 }
 
-function affLign( $sql )
+/**
+ * @param $sql Chaîne requête SQL
+ * @param int $back 0 pour appel direct
+ */
+function affLign( $sql, $back = 0 )
 {
-  $lign = debug_backtrace()[ 1 ][ 'line' ];
-  $file = debug_backtrace()[ 1 ][ 'file' ];
+  $lign = debug_backtrace()[ $back ][ 'line' ];
+  $file = debug_backtrace()[ $back ][ 'file' ];
 //  aff( debug_backtrace() );
   ?>
   <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
     <pre class="float-left"><?= $sql ?></pre>
-    <button class="btn float-right numLign" type="button" data-toggle="tooltipNum" data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
+    <button class="btn float-right numLign" type="button" data-toggle="tooltipNum"
+            data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
   </div>
   <?php
 }

@@ -25,9 +25,33 @@ ORDER BY Commentaire.date_commentaire;";
   <p>Categorie - id de la catégorie = 3</p>
 <?php
 
-    $sql = "SELECT 1";
-    $req( $sql );
 
+try {
+  $id = 1;
+
+  // On se connecte
+//  $bdd = new PDO('mysql:host=localhost;dbname=elevage', 'sdz', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
+  $bdd = pdogc72();
+
+  // On prépare la requête
+  $requete = $bdd->prepare( "SEoLECT id, nom FROM animal WHERE id = :id" );
+
+  // On lie la variable $id définie au-dessus au paramètre :id de la requête préparée
+  $requete->bindvalue( ':id', $id, \PDO::PARAM_STR );
+
+  //On exécute la requête
+  $requete->execute();
+
+  // On récupère le résultat
+  if ( $requete->fetch() ) {
+    echo 'L\'animal d\'id <strong>' . $id . '</strong> existe !';
+  }
+} catch ( Exception $e ) {
+  echo( '<h3 class="red-text"><br>&nbsp;' . $e->getMessage() . '<br>' . $e->getFile() . ': <strong>
+' . $e->getLine() . '</strong></h3>' );
+}
+
+echo str_repeat( '<br>', 30 );
 /*
   ?>
   <p>Auteur - id de l’auteur = 2</p>
