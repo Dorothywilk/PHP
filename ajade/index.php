@@ -19,9 +19,27 @@
   <article>
     <div class="jumbotron">
       <div class="maingc7">
-        <div class='titreCoursDo actionManShaded'>
-          <a href="#" target="_blank" title="Lien direct sur OpenClassRoom">Mathématiques</a></div>
-        <?php include './math.php'; ?>
+
+        <?php
+        
+        $cours= 'Mathématiques';
+//        $cours='Conjugaisons'; // Commenter/Décommenter
+
+        switch($cours) {
+          case 'Mathématiques':
+            $filePhp='math';
+        break;
+        case 'Conjugaisons':
+          $filePhp='conjugaison';
+        break;
+        }
+        ?>
+          <div class='titreCoursDo actionManShaded'>
+            <a href="#" target="_blank" title="Lien direct sur OpenClassRoom">
+              <?=$cours?>
+            </a>
+          </div>
+          <?php include './'. $filePhp . '.php' ?>
       </div>
     </div>
   </article>
