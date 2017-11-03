@@ -8,7 +8,9 @@ namespace GC7;
   <h3 class="meaDo pb10">Requêtes préparées</h3>
 
   <ul class="lead mt10">
-    <li>Les variables utilisateurs stockent des données</li>
+    <li>Les variables utilisateurs stockent des données, propres uniquement à la session dans
+      laquelle elles auront été créées.
+    </li>
     <li>...</li>
   </ul>
 
