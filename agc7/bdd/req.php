@@ -40,18 +40,18 @@ namespace GC7;
 //include ('bases/foreign_key.php');
 
 // Fonctions natives MySQL
- include ('bases/functions.php');
- include( 'bases/functionsAgregation.php' );
- include ('bases/regroupement.php');
-include ('bases/date.php');
-include ('bases/calculsDate.php');
+// include ('bases/functions.php');
+// include( 'bases/functionsAgregation.php' );
+// include ('bases/regroupement.php');
+// include ('bases/date.php');
+// include ('bases/calculsDate.php');
 
 
 // Sécurisation
 
-//include( 'securisation/transactions.php' );
-//include( 'securisation/verrous.php' );
-//include( 'securisation/requetesPreparees.php' );
+// include( 'securisation/transactions.php' );
+// include( 'securisation/verrous.php' );
+// include( 'securisation/requetesPreparees.php' );
 
 
 include( 'tests.php' );

@@ -37,7 +37,8 @@ namespace GC7;
 
 
   $sql = "SELECT *, unix_timestamp() FROM testDate";
-  $req( $sql );
+  echo '<h4>';aff($sql);echo '</h4>';
+//  $req( $sql );
 
 
   echo '<h3>Formater une date</h3>';
