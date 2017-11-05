@@ -12,10 +12,31 @@ $nf=function($n){return (($n>10)?number_format($n, 2, ',', ' '):$n);};
 /* Y compris concaténation */
 //include ('cours/variablesChaines.php');
 
-//include ('cours/operateurs.php');
 //include ('cours/variablesChiffres.php');
 
-include 'cours/poo/index.php';
+
+include ('cours/variablesTableau.php');
+
+
+//include ('cours/operateurs.php');
+
+
+// Les IF
+
+// FOR i=0->99
+
+// function nom(){
+//  // code ...
+//  return ...;
+// }
+
+
+
+
+
+
+
+//include 'cours/poo/index.php';
 
 
 

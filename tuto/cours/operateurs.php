@@ -1,3 +1,6 @@
+<div class='titreCoursDo actionManShaded'>
+  <a href="https://apprendre-php.com/tutoriels/tutoriel-8-les-oprateurs.html" target="_blank" title="Lien direct su tuto d'Emacs">Les Opérateurs</a></div>
+
 <?php
 
 
@@ -28,14 +31,13 @@ $b--;
 // $a+=1 et $a = $a+1.
 // L'opérateur de décrémentation diminue de 1 la valeur de la variable. La syntaxe $b-- est identique à $b-= 1 et $b = $b-1.
 
-/*
 
-// $n=17;
+ $n=17;
 // 17
-// $diviseur = 3;
+ $diviseur = 3;
 // 3
-//echo '<hr><h2>'.$n.' / '.$diviseur.' = '.(int) ($n / $diviseur).' x '.$diviseur.' + '.($n%$diviseur).'</h2>';
-*/
+echo '<hr><h2>'.$n.' / '.$diviseur.' = '.(int) ($n / $diviseur).' x '.$diviseur.' + '.($n%$diviseur).'</h2>';
+
 
 // ToDoDo Sauvgarder les settings themes de brackets
 
