@@ -9,35 +9,61 @@ namespace GC7;
 
   <p class="lead">...</p>
   <ul class="lead mt10">
-    <li>...
+    <li>Nécessite de redéfinir le délimiter (| ou //)
     </li>
     <li>...
     </li>
   </ul>
 
+  <p class="lead"><code>CREATE PROCEDURE <i>nom_procedure</i> ([IN</code> | <code>OUT</code> | <code>INOUT <i>param</i> <i>TYPE</i>][, ...])</code>...</p>
 </div>
+
 
 <div class="maingc7">
 
-  <h3>...</h3>
 
   <?php
-  $bdd = pdo();
+
+  $pdo = pdo();
 
   $sql = "DELIMITER | -- On change le délimiteur
 CREATE PROCEDURE afficher_races()
-    -- toujours pas de paramètres, toujours des parenthèses
+    -- Pas de paramètres, toujours des parenthèses
 BEGIN
     SELECT id, nom, espece_id, prix
     FROM Race;
 -- Cette fois, le ; ne nous embêtera pas
 END|
--- Et on termine bien sûr la commande CREATE PROCEDURE par notre nouveau délimiteur";
+-- Et on termine bien sûr la commande CREATE PROCEDURE
+-- par notre nouveau délimiteur
+DELIMITER ;
+-- On remet le délimiteur par défaut";
   affLign( $sql );
-//  $bdd->query( $sql );
+//  $pdo->query( $sql );
 
-  $sql = "afficher_races_requete";
-//  $req( $sql, $bdd );
+  $sql = "CALL afficher_races();";
+  $req( $sql, $pdo );
+
+
+  $pdo = pdo();
+
+  $sql = "DELIMITER | -- On change le délimiteur
+CREATE PROCEDURE afficher_races()
+    -- Pas de paramètres, toujours des parenthèses
+BEGIN
+    SELECT id, nom, espece_id, prix
+    FROM Race;
+-- Cette fois, le ; ne nous embêtera pas
+END|
+-- Et on termine bien sûr la commande CREATE PROCEDURE
+-- par notre nouveau délimiteur
+DELIMITER ;
+-- On remet le délimiteur par défaut";
+  affLign( $sql );
+//  $pdo->query( $sql );
+
+  $sql = "CALL afficher_races();";
+  $req( $sql, $pdo );
 
 
   echo str_repeat( '<br>', 28 ); // 28

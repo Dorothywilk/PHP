@@ -1,4 +1,5 @@
 <?php
+namespace gc7;
 
 class Personne
 {

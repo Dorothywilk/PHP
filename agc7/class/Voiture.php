@@ -1,4 +1,5 @@
 <?php
+namespace Gc7;
 
 class Voiture extends Vehicule
 {

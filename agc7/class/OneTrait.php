@@ -1,5 +1,5 @@
 <?php
-
+namespace Gc7;
 /**
  * Created by C7.
  * User: Li
