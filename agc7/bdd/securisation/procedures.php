@@ -65,6 +65,11 @@ DELIMITER ;
   $sql = "CALL afficher_races();";
   $req( $sql, $pdo );
 
+  ?>
+
+<h3>Procédure avec deux paramètres dont un <code>INOUT</code></h3>
+
+  <?php
 
   echo str_repeat( '<br>', 28 ); // 28
   ?>
