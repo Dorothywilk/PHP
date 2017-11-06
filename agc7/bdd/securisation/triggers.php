@@ -4,14 +4,14 @@ namespace GC7;
 <div class="jumbotron">
   <h3 class="meaDo pb10">Triggers</h3>
 
-  <p class="lead">Permettent de déclencher des actions qd une table est modifiée, et celles-ci,
-    avant ou après le déclencheur.</p>
+  <p class="lead">Permettent de déclencher des actions qd une table est modifiée, et celles-ci, avant ou après le déclencheur.</p>
+
+  <p class="lead">Ne peuvent contenir de transactions, ni de requêtes préparées. Ne peuvent non plus utiliser de procédures qui renvoie des informations</p>
 
   <p class="lead"><code>CREATE TRIGGER nom_trigger moment_trigger evenement_trigger<br>
       ON nom_table FOR EACH ROW<br>
       corps_trigger;</code></p>
 </div>
-
 
 <div class="maingc7">
   <h3 class="lead">Exemple : </h3>
