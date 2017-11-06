@@ -145,11 +145,17 @@ BEGIN
 END|
 DELIMITER ;";
   affLign( $sql );
-//  $pdo->query( $sql );
-//
+  //  $pdo->query( $sql );
+  //
   $sql = "CALL aujourdhui_demain();";
   $pdo = $req( $sql, $pdo );
+  ?>
 
+  Voir <a
+    href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/structurer-ses-instructions"
+    target="_blank">Portée des varaibles</a>
+
+  <?php
 
   echo str_repeat( '<br>', 28 ); // 28
   ?>
