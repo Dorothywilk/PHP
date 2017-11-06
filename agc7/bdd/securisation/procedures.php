@@ -103,7 +103,7 @@ DELIMITER ;";
   $sql = "SELECT @prix AS prix_intermediaire_1;";
   affLign( $sql );
   $pdo = $req( $sql, $pdo );
-//  $pdo = $req( $sql );
+  //  $pdo = $req( $sql );
 
   $sql = "CALL calculer_prix (24, @prix);  -- Achat de Cartouche";
   affLign( $sql );
@@ -123,6 +123,32 @@ DELIMITER ;";
 
 
   //  $pdo->query($sql);
+
+
+  $pdo = pdo();
+
+  $sql = "DELIMITER |
+CREATE PROCEDURE aujourdhui_demain ()
+BEGIN
+    DECLARE v_date DATE DEFAULT CURRENT_DATE();
+    -- On déclare une variable locale et on lui met
+    -- une valeur par défaut
+
+    SET lc_time_names = 'fr_FR';
+    SET @today = v_date;
+
+    SET v_date = v_date + INTERVAL 1 DAY;
+    -- On change la valeur de la variable locale
+
+    SELECT DATE_FORMAT(@today, '%W %e %M %Y') AS Aujourdhui,
+           DATE_FORMAT(v_date, '%W %e %M %Y') AS Demain;
+END|
+DELIMITER ;";
+  affLign( $sql );
+//  $pdo->query( $sql );
+//
+  $sql = "CALL aujourdhui_demain();";
+  $pdo = $req( $sql, $pdo );
 
 
   echo str_repeat( '<br>', 28 ); // 28
