@@ -106,7 +106,47 @@ DELIMITER ;";
   $sql = "CALL message_sexe(9);   -- Ni l'un ni l'autre";
   $req( $sql, $pdo );
 
-  //  $pdo = $req( $sql );
+
+  ?>
+  <h3>CASE</h3>
+  <?php
+
+  $sql = "DELIMITER |
+CREATE PROCEDURE message_sexe2(IN p_animal_id INT)
+BEGIN
+    DECLARE v_sexe VARCHAR(10);
+
+    SELECT sexe INTO v_sexe
+    FROM Animal
+    WHERE id = p_animal_id;
+
+    CASE v_sexe
+        WHEN 'F' THEN   -- Première possibilité
+            SELECT 'Je suis une femelle !' AS sexe2;
+        WHEN 'M' THEN   -- Deuxième possibilité
+            SELECT 'Je suis un mâle !' AS sexe2;
+        ELSE            -- Défaut
+            SELECT 'Je suis en plein questionnement existentiel...' AS sexe2;
+    END CASE;
+END|
+DELIMITER ;";
+
+  affLign( $sql );
+//  $pdo->query( $sql );
+
+
+  $sql = "CALL message_sexe2(8);   -- Mâle";
+  $req( $sql, $pdo );
+
+
+  $sql = "CALL message_sexe2(6);   -- Femelle";
+  $req( $sql, $pdo );
+
+
+  $sql = "CALL message_sexe2(9);   -- Ni l'un ni l'autre";
+  $req( $sql, $pdo );
+
+
   echo str_repeat( '<br>', 28 ); // 28
   ?>
 </div>
