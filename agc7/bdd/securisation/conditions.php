@@ -114,25 +114,26 @@ DELIMITER ;";
   $sql = "DELIMITER |
 CREATE PROCEDURE message_sexe2(IN p_animal_id INT)
 BEGIN
-    DECLARE v_sexe VARCHAR(10);
+   DECLARE v_sexe VARCHAR(10);
 
-    SELECT sexe INTO v_sexe
-    FROM Animal
-    WHERE id = p_animal_id;
+   SELECT sexe INTO v_sexe
+   FROM Animal
+   WHERE id = p_animal_id;
 
-    CASE v_sexe
-        WHEN 'F' THEN   -- Première possibilité
-            SELECT 'Je suis une femelle !' AS sexe2;
-        WHEN 'M' THEN   -- Deuxième possibilité
-            SELECT 'Je suis un mâle !' AS sexe2;
-        ELSE            -- Défaut
-            SELECT 'Je suis en plein questionnement existentiel...' AS sexe2;
-    END CASE;
+   CASE v_sexe
+      WHEN 'F' THEN   -- Première possibilité
+         SELECT 'Je suis une femelle !' AS sexe2;
+      WHEN 'M' THEN   -- Deuxième possibilité
+         SELECT 'Je suis un mâle !' AS sexe2;
+      ELSE            -- Défaut
+         SELECT 'Je suis en plein questionnement existentiel...'
+         AS sexe2;
+   END CASE;
 END|
 DELIMITER ;";
 
   affLign( $sql );
-//  $pdo->query( $sql );
+  //  $pdo->query( $sql );
 
 
   $sql = "CALL message_sexe2(8);   -- Mâle";
@@ -146,6 +147,48 @@ DELIMITER ;";
   $sql = "CALL message_sexe2(9);   -- Ni l'un ni l'autre";
   $req( $sql, $pdo );
 
+
+  ?>
+
+  <h3>CASE dans une requête simple</h3>
+
+  <?php
+
+  $sql = "SELECT id, nom, CASE
+          WHEN sexe = 'M' THEN 'Je suis un mâle !'
+          WHEN sexe = 'F' THEN 'Je suis une femelle !'
+          ELSE 'Je suis en plein questionnement existentiel...'
+       END AS message
+FROM Animal
+WHERE id IN (9, 8, 6);";
+  $req( $sql );
+
+  ?>
+
+
+  <h3>IF dans une requête simple</h3>
+
+  <?php
+
+  $sql = "SELECT nom,
+       IF(sexe = 'M', 'Je suis un mâle',
+                       'Je ne suis pas un mâle') AS sexe
+FROM Animal
+WHERE espece_id = 4;";
+  $req( $sql );
+
+  ?>
+
+  <h3>Boucle</h3>
+
+  <?php
+
+  $sql = "SELECT nom,
+       IF(sexe = 'M', 'Je suis un mâle',
+                       'Je ne suis pas un mâle') AS sexe
+FROM Animal
+WHERE espece_id = 4;";
+  $req( $sql );
 
   echo str_repeat( '<br>', 28 ); // 28
   ?>
