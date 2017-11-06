@@ -27,20 +27,26 @@ namespace GC7;
 
   $pdo = pdo();
 
-  $sql = "DELIMITER | -- On change le délimiteur
+  $sql = "-- Poser un DELIMITER uniquement avec MySQL Cli,
+-- pas en PHP
+-- DELIMITER | -- On change le délimiteur
+
+DROP PROCEDURE IF EXISTS afficher_races;
+
 CREATE PROCEDURE afficher_races()
     -- Pas de paramètres, toujours des parenthèses
 BEGIN
     SELECT id, nom, espece_id, prix
     FROM Race;
 -- Cette fois, le ; ne nous embêtera pas
-END|
 -- Et on termine bien sûr la commande CREATE PROCEDURE
 -- par notre nouveau délimiteur
-DELIMITER ;
--- On remet le délimiteur par défaut";
+-- END| -- Si avec MySQL CLi
+END;
+-- DELIMITER ;
+-- On remettrait avec MySQL CLi, le délimiteur par défaut";
   affLign( $sql );
-  //  $pdo->query( $sql );
+  $pdo->query( $sql );
 
   $sql = "CALL afficher_races();";
   $req( $sql, $pdo );
@@ -145,8 +151,7 @@ BEGIN
 END|
 DELIMITER ;";
   affLign( $sql );
-  //  $pdo->query( $sql );
-  //
+//    $pdo->query( $sql );
   $sql = "CALL aujourdhui_demain();";
   $pdo = $req( $sql, $pdo );
   ?>
