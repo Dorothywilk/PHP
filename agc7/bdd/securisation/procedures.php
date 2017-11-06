@@ -31,17 +31,20 @@ namespace GC7;
 
 -- DELIMITER |
 
-CREATE PROCEDURE uuu(OUT p_var INT)
+CREATE PROCEDURE uuu(OUT p_var VARCHAR(255))
 
 BEGIN
 
-	declare v_var INT default 0;
+  declare v_var INT default 0;
 
-	set v_var = 7;
+  set v_var = 7;
 
-	select 1 as Valeur, v_var;
+  -- select 1 as Valeur, v_var;
+  -- Ne peut être affichée que via MySQL CLi
 
-	select IF(v_var=7, 777, 333) into p_var;
+  select concat(
+         'Var loc = ', v_var, ' - Résultat du IF(v_var = 7) = ',
+         IF(v_var=7, 777, 333)) into p_var;
 
 -- END|
 -- DELIMITER ;

@@ -87,6 +87,7 @@ END;
   <h4 class="text-danger">Attention: Plusieurs sorties... (Une seule affichée ici)</h4>
 </div>
 
+
 <div class="jumbotron" style="padding-top: 10px;">
 
   <h3 class="meaDo pb10">Curseurs</h3>
@@ -100,7 +101,7 @@ END;
 
   <?php
 
-  $pdo=pdo();
+  $pdo = pdo();
   $sql = "declare v_var INT default 0;
   select count(*) into v_var from animal;";
 
