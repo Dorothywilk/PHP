@@ -179,15 +179,16 @@ WHERE espece_id = 4;";
 
   ?>
 
-  <h3>Boucle</h3>
+  <h3>Boucles</h3>
+  <ul>
+    <li><code>WHILE</code> : Permet de répéter une série d'instructions tant que la condition donnée reste vraie.</li>
+    <li><code>REPEAT</code> : Exécute des instructions de la boucle jusqu'à ce que la condition donnée devienne vraie.</li>
+    <li><code>LOOP</code> : Doit intégrer dans ses instructions un élément qui va la faire s'arrêter</li>
+  </ul>
 
   <?php
 
-  $sql = "SELECT nom,
-       IF(sexe = 'M', 'Je suis un mâle',
-                       'Je ne suis pas un mâle') AS sexe
-FROM Animal
-WHERE espece_id = 4;";
+  $sql = "SELECT 1";
   $req( $sql );
 
   echo str_repeat( '<br>', 28 ); // 28
