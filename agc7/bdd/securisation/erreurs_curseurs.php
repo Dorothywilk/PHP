@@ -77,7 +77,6 @@ END;
 -- DELIMITER ;";
   $pdo->query( $sql );
 
-  aff( $pdo );
 
   //  $pdo = $req( $sql );
   $sql = "CALL ajouter_adoption_exit(12, 3, @date_adoption, 1);
@@ -87,27 +86,67 @@ END;
   <h4 class="text-danger">Attention: Plusieurs sorties... (Une seule affichée ici)</h4>
 </div>
 
-
 <div class="jumbotron" style="padding-top: 10px;">
-
   <h3 class="meaDo pb10">Curseurs</h3>
 
   <p class="lead">Permettent de parcourir les lignes de résultat d'une requête <code>SELECT</code>.
   </p>
+
+  <p class="lead">Ordre des déclarations</p>
+  <ul>
+    <li>Variables locales</li>
+    <li>Conditions</li>
+    <li>Curseur</li>
+    <li>Gestionnaires d'arreur</li>
+  </ul>
 </div>
 
 <div class="maingc7">
 
-
+<h3>Exemple d'utilisation de curseur avec sortie si pas de résultat</h3>
   <?php
 
   $pdo = pdo();
-  $sql = "declare v_var INT default 0;
-  select count(*) into v_var from animal;";
+  $sql = "
+  DELIMITER |
+CREATE PROCEDURE test_condition(IN p_ville VARCHAR(100))
+BEGIN
+    DECLARE v_nom, v_prenom VARCHAR(100);
 
+    DECLARE fin TINYINT DEFAULT 0;
+    -- Variable locale utilisée pour stopper la boucle
 
-  $sql = "select v_var;";
-  $req( $sql, $pdo );
+    DECLARE curs_clients CURSOR
+        FOR SELECT nom, prenom
+        FROM Client
+        WHERE ville = p_ville;
+
+    -- Gestionnaire d'erreur pour la condition NOT FOUND
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = 1;
+
+    OPEN curs_clients;
+
+    loop_curseur: LOOP
+        FETCH curs_clients INTO v_nom, v_prenom;
+
+        -- Structure IF pour quitter la boucle à la fin des résultats
+        IF fin = 1 THEN
+            LEAVE loop_curseur;
+        END IF;
+
+        SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
+    END LOOP;
+
+    CLOSE curs_clients;
+END|
+DELIMITER ;
+
+CALL test_condition2('Houtsiplou');
+CALL test_condition2('Bruxelles');";
+  //  $pdo->query( $sql );
+  affLign( $sql );
+  //  $sql = "select v_var;";
+  //  $req( $sql, $pdo );
 
 
   echo str_repeat( '<br>', 28 ); // 28
