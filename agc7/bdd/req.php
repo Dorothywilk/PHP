@@ -54,8 +54,9 @@ namespace GC7;
 //include( 'securisation/requetesPreparees.php' );
 //include( 'securisation/procedures.php' );
 //include( 'securisation/conditions.php' );
+//include( 'securisation/erreurs_curseurs.php' );
 
-include( 'securisation/erreurs_curseurs.php' );
+include( 'securisation/triggers.php' );
 
 //include( 'tests.php' );
 

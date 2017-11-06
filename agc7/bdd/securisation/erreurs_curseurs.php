@@ -103,34 +103,33 @@ END;
 
 <div class="maingc7">
 
-<h3>Exemple d'utilisation de curseur avec sortie si pas de résultat</h3>
+  <h3>Exemple d'utilisation de curseur avec sortie si pas de résultat</h3>
   <?php
 
   $pdo = pdo();
-  $sql = "
-  DELIMITER |
-CREATE PROCEDURE test_condition(IN p_ville VARCHAR(100))
+  $sql = "DROP PROCEDURE test_condition2;
+DELIMITER |
+CREATE PROCEDURE test_condition2(IN p_ville VARCHAR(100))
 BEGIN
     DECLARE v_nom, v_prenom VARCHAR(100);
 
-    DECLARE fin TINYINT DEFAULT 0;
-    -- Variable locale utilisée pour stopper la boucle
+    -- On déclare fin comme un BOOLEAN, avec FALSE pour défaut
+    DECLARE fin BOOLEAN DEFAULT FALSE;
 
     DECLARE curs_clients CURSOR
         FOR SELECT nom, prenom
         FROM Client
         WHERE ville = p_ville;
 
-    -- Gestionnaire d'erreur pour la condition NOT FOUND
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = 1;
+    -- On utilise TRUE au lieu de 1
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
 
     OPEN curs_clients;
 
     loop_curseur: LOOP
         FETCH curs_clients INTO v_nom, v_prenom;
 
-        -- Structure IF pour quitter la boucle à la fin des résultats
-        IF fin = 1 THEN
+        IF fin THEN     -- Plus besoin de ''= 1''
             LEAVE loop_curseur;
         END IF;
 
@@ -147,6 +146,35 @@ CALL test_condition2('Bruxelles');";
   affLign( $sql );
   //  $sql = "select v_var;";
   //  $req( $sql, $pdo );
+  ?>
+
+  <h3>Requêtes dynamiques</h3>
+
+  <?php
+
+  $pdo = pdo();
+
+  $sql = "DROP procedure IF EXISTS select_race_dynamique;
+-- DELIMITER |
+CREATE PROCEDURE select_race_dynamique(p_clause VARCHAR(255))
+BEGIN
+    SET @sql =
+        CONCAT('SELECT nom, description FROM Race ', p_clause);
+
+    PREPARE requete FROM @sql;
+    EXECUTE requete;
+-- END |
+-- DELIMITER ;
+END;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "-- Affichera les races de chats
+CALL select_race_dynamique('WHERE espece_id = 2');";
+  $req( $sql );
+
+  $sql = "CALL select_race_dynamique('ORDER BY nom LIMIT 2');";
+  $req( $sql );
 
 
   echo str_repeat( '<br>', 28 ); // 28
