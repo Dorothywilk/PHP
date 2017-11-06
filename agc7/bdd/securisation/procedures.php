@@ -7,11 +7,11 @@ namespace GC7;
 
   <h3 class="meaDo pb10">Procédures</h3>
 
-  <p class="lead">...</p>
+  <p class="lead">Ensemble d'instructions MySQl nommé.</p>
   <ul class="lead mt10">
     <li>Nécessite de redéfinir le délimiter (| ou //)
     </li>
-    <li>...
+    <li><code>DROP</code> pour supprimer une procédure stockée
     </li>
   </ul>
 
