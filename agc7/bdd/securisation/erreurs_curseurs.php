@@ -38,17 +38,50 @@ namespace GC7;
   target="_blank" class="lead">Exemple en ligne</a> (Y voir codes des erreurs)<br><br>
 
 <p class="lead">Il est possible de nommer les erreurs :<br>
-<code>DECLARE nom_erreur CONDITION FOR { SQLSTATE identifiant_SQL | numero_erreur_MySQL };</code></p>
+  <code>DECLARE nom_erreur CONDITION FOR { SQLSTATE identifiant_SQL | numero_erreur_MySQL };</code>
+</p>
 
 <div class="maingc7">
-
+  <h3 class="lead">Exemple avec plusieurs gestionnaires : </h3>
   <?php
+  $pdo = pdo();
+  $sql = "DROP PROCEDURE ajouter_adoption_exit;
+-- DELIMITER |
+CREATE PROCEDURE ajouter_adoption_exit(IN p_client_id INT,
+    IN p_animal_id INT, IN p_date DATE, IN p_paye TINYINT)
+BEGIN
+    DECLARE v_prix DECIMAL(7,2);
 
-  $sql = "CALL aujourdhui_demain();";
-//  $pdo = $req( $sql );
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+        BEGIN
+            SELECT 'Une erreur est survenue...';
+            SELECT 'Arrêt prématuré de la procédure';
+        END;
 
+    SELECT 'Début procédure';
 
+    SELECT COALESCE(Race.prix, Espece.prix) INTO v_prix
+    FROM Animal
+    INNER JOIN Espece ON Espece.id = Animal.espece_id
+    LEFT JOIN Race ON Race.id = Animal.race_id
+    WHERE Animal.id = p_animal_id;
+
+    INSERT INTO Adoption (animal_id, client_id, date_reservation,
+           date_adoption, prix, paye)
+    VALUES (p_animal_id, p_client_id, CURRENT_DATE(),
+           p_date, v_prix, p_paye);
+
+    SELECT 'Fin procédure';
+-- END|
+END;
+-- DELIMITER ;";
+  $pdo->query( $sql );
+  //  $pdo = $req( $sql );
+  $sql = "CALL ajouter_adoption_exit(12, 3, @date_adoption, 1);
+-- Violation unicité (animal 3 est déjà adopté)";
+  $req( $sql );
   ?>
+  <h4 class="text-danger">Attention: Plusieurs sorties... (Une seule affichée ici)</h4>
 </div>
 
 <div class="jumbotron" style="padding-top: 10px;">
