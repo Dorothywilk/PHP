@@ -7,21 +7,7 @@ namespace GC7;
 
 </div>
 <div class="maingc7">
-  <?php
 
-  // Commentaires pour un article (Ici 2)
-  /*
-  $sql = "SELECT Commentaire.contenu,
-      DATE_FORMAT(Commentaire.date_commentaire, '%d/%m/%Y'),
-      Utilisateur.pseudo
-FROM Commentaire
-  LEFT JOIN Utilisateur
-  ON Commentaire.auteur_id = Utilisateur.id
-WHERE Commentaire.article_id = 2
-ORDER BY Commentaire.date_commentaire;";
-  */
-  //    $req( $sql );
-  ?>
   <h3>Rappel</h3>
   <?php
 
@@ -36,13 +22,20 @@ ORDER BY Commentaire.date_commentaire;";
   $pdo = $req( $sql );
   ?>
 
-  <h3>IF() dans une procédure</h3>
+  <h3>IF() dans une procédure (est_adopté)</h3>
 
 
   <?php
   $pdo = pdo();
-  $sql = "DELIMITER |
-CREATE PROCEDURE est_adopte(IN p_animal_id INT)
+  $sql = "DROP PROCEDURE IF EXISTS est_adopte;";
+  AffLign( $sql );
+  $pdo->query( $sql );
+
+//  $sql = "DELIMITER |";
+//  AffLign( $sql );
+//  $pdo->query( $sql );
+
+  $sql = "CREATE PROCEDURE est_adopte(IN p_animal_id INT)
 BEGIN
     DECLARE v_nb INT DEFAULT 0;
     -- On crée une variable locale
@@ -59,10 +52,13 @@ BEGIN
         SELECT \"J'ai déjà été adopté !\" 'Adopté ?';
     END IF;
     -- Et on n'oublie surtout pas le END IF et le ; final
-END |
-DELIMITER ;";
-  affLign( $sql );
-  //  $pdo->query( $sql );
+END ;";
+  AffLign( $sql );
+  $pdo->query( $sql );
+
+//  $sql = "DELIMITER ;";
+//  affLign( $sql );
+//  $pdo->query( $sql );
 
 
   $sql = "CALL est_adopte(3);";
@@ -82,11 +78,12 @@ DELIMITER ;";
   WHERE id = p_animal_id;
 
   IF (v_sexe = 'F') THEN      -- Première possibilité
-  SELECT 'Je suis une femelle !' AS sexe;
+    SELECT 'Je suis une femelle !' AS sexe;
   ELSEIF (v_sexe = 'M') THEN  -- Deuxième possibilité
-  SELECT 'Je suis un mâle !' AS sexe;
+    SELECT 'Je suis un mâle !' AS sexe;
   ELSE                        -- Défaut
-  SELECT 'Je suis en plein questionnement existentiel...' AS sexe;
+    SELECT 'Je suis en plein questionnement existentiel...'
+           AS sexe;
   END IF;
   END|
   DELIMITER ;";
@@ -181,15 +178,20 @@ WHERE espece_id = 4;";
 
   <h3>Boucles</h3>
   <ul>
-    <li><code>WHILE</code> : Permet de répéter une série d'instructions tant que la condition donnée reste vraie.</li>
-    <li><code>REPEAT</code> : Exécute des instructions de la boucle jusqu'à ce que la condition donnée devienne vraie.</li>
-    <li><code>LOOP</code> : Doit intégrer dans ses instructions un élément qui va la faire s'arrêter</li>
+    <li><code>WHILE</code> : Permet de répéter une série d'instructions tant que la condition donnée
+      reste vraie.
+    </li>
+    <li><code>REPEAT</code> : Exécute des instructions de la boucle jusqu'à ce que la condition
+      donnée devienne vraie.
+    </li>
+    <li><code>LOOP</code> : Doit intégrer dans ses instructions un élément qui va la faire s'arrêter
+      (Usage des commandes ci-dessous)
+    </li>
   </ul>
 
-  <?php
+  <h4><code>LEAVE</code> et <code>ITERATE</code> <=> BREAK; et REPEAT; en PHP</h4>
 
-  $sql = "SELECT 1";
-  $req( $sql );
+  <?php
 
   echo str_repeat( '<br>', 28 ); // 28
   ?>
