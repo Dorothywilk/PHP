@@ -22,8 +22,40 @@ namespace GC7;
 
 <div class="maingc7">
 
-
+  <h3>Exemple basique</h3>
   <?php
+
+  $pdo = pdo();
+
+  $sql = "DROP PROCEDURE IF EXISTS uuu;
+
+-- DELIMITER |
+
+CREATE PROCEDURE uuu(OUT p_var INT)
+
+BEGIN
+
+	declare v_var INT default 0;
+
+	set v_var = 7;
+
+	select 1 as Valeur, v_var;
+
+	select IF(v_var=7, 777, 333) into p_var;
+
+-- END|
+-- DELIMITER ;
+
+END;
+
+call uuu(@une_var);";
+
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "select @une_var";
+  $req( $sql, $pdo );
+
 
   $pdo = pdo();
 
@@ -151,7 +183,7 @@ BEGIN
 END|
 DELIMITER ;";
   affLign( $sql );
-//    $pdo->query( $sql );
+  //    $pdo->query( $sql );
   $sql = "CALL aujourdhui_demain();";
   $pdo = $req( $sql, $pdo );
   ?>

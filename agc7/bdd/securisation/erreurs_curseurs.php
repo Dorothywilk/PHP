@@ -76,6 +76,9 @@ BEGIN
 END;
 -- DELIMITER ;";
   $pdo->query( $sql );
+
+  aff( $pdo );
+
   //  $pdo = $req( $sql );
   $sql = "CALL ajouter_adoption_exit(12, 3, @date_adoption, 1);
 -- Violation unicité (animal 3 est déjà adopté)";
@@ -93,7 +96,18 @@ END;
 </div>
 
 <div class="maingc7">
+
+
   <?php
+
+  $pdo=pdo();
+  $sql = "declare v_var INT default 0;
+  select count(*) into v_var from animal;";
+
+
+  $sql = "select v_var;";
+  $req( $sql, $pdo );
+
 
   echo str_repeat( '<br>', 28 ); // 28
   ?>
