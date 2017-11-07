@@ -13,7 +13,9 @@ namespace GC7;
     <li>Les tables mentionnées doivent exister, au moins lors de la création de la vue.</li>
   </ul>
   <p class="lead">Mais peut utiliser une autre vue, comme une requête.</p>
-<>  <p class="lead">NB: La vue n'est générée qu'au moment de sa création... En cas de changement ultérieur de la table, la vue ne sera pas modifiée (Sauf si re-création avec <code>OR&nbsp;REPLACE</code> ou <code>DROP</code> / <code>CREATE</code>.</p>
+  <> <p class="lead">NB: La vue n'est générée qu'au moment de sa création... En cas de changement
+    ultérieur de la table, la vue ne sera pas modifiée (Sauf si re-création avec <code>OR&nbsp;REPLACE</code>
+    ou <code>DROP</code> / <code>CREATE</code>.</p>
 </></div>
 
 <div class="maingc7">
@@ -86,7 +88,7 @@ WHERE race_id IS NOT NULL;";
   $req( $sql );
 
 
-  echo '<h3>Vue ...</h3>';
+  echo '<h3>Vue avec chaîne</h3>';
   $sql = "CREATE OR REPLACE VIEW V_Espece_dollars
 AS SELECT id, nom_courant, nom_latin, description,
           ROUND(prix*1.31564, 2) AS prix_dollars
@@ -96,6 +98,28 @@ FROM Espece;";
   $pdo->query( $sql );
 
   $sql = 'SELECT * FROM V_Espece_dollars';
+  $req( $sql );
+
+
+  echo '<h3>Vue avec tris</h3>';
+  $sql = "CREATE OR REPLACE VIEW V_Race
+AS SELECT Race.id, nom, Espece.nom_courant AS espece
+FROM Race
+INNER JOIN Espece ON Espece.id = Race.espece_id
+ORDER BY nom;";
+
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SELECT *
+FROM V_Race;
+-- Sélection sans ORDER BY, on prend l'ORDER BY de la définition";
+  $req( $sql );
+
+  $sql = "SELECT *
+FROM V_Race
+ORDER BY espece;
+-- Sélection avec ORDER BY, c'est celui-là qui sera pris en compte";
   $req( $sql );
 
 
