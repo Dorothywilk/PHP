@@ -4,9 +4,11 @@ namespace GC7;
 <div class="jumbotron">
   <h3 class="meaDo pb10">Triggers</h3>
 
-  <p class="lead">Permettent de déclencher des actions qd une table est modifiée, et celles-ci, avant ou après le déclencheur.</p>
+  <p class="lead">Permettent de déclencher des actions qd une table est modifiée, et celles-ci,
+    avant ou après le déclencheur.</p>
 
-  <p class="lead">Ne peuvent contenir de transactions, ni de requêtes préparées. Ne peuvent non plus utiliser de procédures qui renvoie des informations</p>
+  <p class="lead">Ne peuvent contenir de transactions, ni de requêtes préparées. Ne peuvent non plus
+    utiliser de procédures qui renvoie des informations</p>
 
   <p class="lead"><code>CREATE TRIGGER nom_trigger moment_trigger evenement_trigger<br>
       ON nom_table FOR EACH ROW<br>
@@ -77,12 +79,22 @@ WHERE id = 20;";
 
   $sql = "INSERT INTO Animal (nom, sexe, date_naissance, espece_id)
 VALUES ('Babar', 'A', '2011-08-04 12:34', 3);";
-  affLign($sql);
+  affLign( $sql );
   ?>
   <p>Cette requête n'est pas executée.</p>
 
+  <hr>
+
+  <h3>Champs d'applications:</h3>
+  <ul>
+    <li>Vérification des données</li>
+    <li>Mise à jour d'autre données pendant une modification de données</li>
+    <li>Historisation des données et archives</li>
+  </ul>
+
+
   <?php
-//  $pdo->query( $sql );
+  //  $pdo->query( $sql );
 
   echo str_repeat( '<br>', 28 ); // 28
   ?>
