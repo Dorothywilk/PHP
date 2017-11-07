@@ -10,11 +10,11 @@
 </head>
 
 <body>
-  <div class="navLi">
-    <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
-  </div>
+<div class="navLi">
+  <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
+</div>
 
-  <?php
+<?php
 
 include 'inc/fctns.php';
 
@@ -22,16 +22,16 @@ include 'inc/fctns.php';
 
 include 'req.php';
 
-  // TODOLI Réc Fonts dont hardLight (Dossier prêt), LCD_Pixel7, Radioland, Wedgie (HD 500) - Écrire CSS d'import (@font) + une page avec 1 exemple de chaque (stipulant le nom de la font)
-  
-?>
+// TODOLI Réc Fonts dont hardLight (Dossier prêt), LCD_Pixel7, Radioland, Wedgie (HD 500) - Écrire CSS d'import (@font) + une page avec 1 exemple de chaque (stipulant le nom de la font)
 
-    <footer>
-      <p>&copy;2017 - GC7
-    </footer>
-    <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../assets/js/app.js" type="text/javascript"></script>
+?>
+<footer>
+  <p>&copy;2017 - GC7
+</footer>
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async
+        defer></script>
+<script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/app.js" type="text/javascript"></script>
 
 </body>
 
