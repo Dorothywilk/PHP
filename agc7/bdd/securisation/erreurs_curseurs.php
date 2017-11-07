@@ -154,7 +154,7 @@ CALL test_condition2('Bruxelles');";
 
   $pdo = pdo();
 
-  $sql = "DROP procedure IF EXISTS select_race_dynamique;
+  $sql = "DROP PROCEDURE IF EXISTS select_race_dynamique;
 -- DELIMITER |
 CREATE PROCEDURE select_race_dynamique(p_clause VARCHAR(255))
 BEGIN
