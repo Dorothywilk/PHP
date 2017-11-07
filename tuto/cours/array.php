@@ -133,9 +133,42 @@ echo '<hr>';
 
 echo '<hr>';
 
+// Calcul de la taille du tableau $legumes
+ $tailleLegumes = count($legumes);  // 6
+ 
+
+sort($legumes);
+
+  // Parcours du tableau
+  for($i=0; $i<$tailleLegumes; $i++)
+  {
+    echo $i.' : '. $legumes[ $i ] ,'<br/>';  
+  }
+
+//Ci-dessous pour afficher si oui ou non, qq chose se trouve dans un tableau
+
+$onCherche = 'Azebois';
+$dans = 'adresse';
 
 
+if (in_array($onCherche, $$dans))
+      {
+        echo $onCherche . ' existe dans le tableau '. $dans;
+      }
+else  { 
+        echo $onCherche . ' n\'existe pas dans le tableau '. $dans;
+      };
 
+//Afficher le contenu d'un tableau
+
+//Lorsque l'on développe, il arrive très souvent que l'on veuille afficher le contenu d'un tableau dans le but de pouvoir débugguer un programme. Pour cela, PHP introduit la fonction print_r() qui assure cette fonction. Afin de respecter l'indentation à l'affichage, nous préfixons le résultat de cette fonction par les balises <pre> et </pre>. Le code qui suit affiche le contenu de notre tableau associatif $identite.
+
+//count() et sizeof() retournent toutes les deux la taille du tableau passé en paramètre.
+//sort() trie les éléments d'un tableau du plus petit au plus grand.
+//rsort() trie les éléments d'un tableau du plus grand au plus petit.
+//in_array() permet de vérifier qu'une valeur est présente dans un tableau.
+//array_rand() extrait une ou plusieurs valeurs du tableau au hasard.
+//current() retourne la valeur de l'élément courant du tableau (où se trouve le pointeur)
 
 
 
