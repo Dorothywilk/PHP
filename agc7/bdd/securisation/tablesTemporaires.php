@@ -11,10 +11,17 @@ namespace GC7;
   <?php
 
   $pdo = pdo();
-  $sql = "select 123";
-  //  affLign( $sql );
-  //  $pdo->query( $sql );
-  $req( $sql );
+  $sql = "CREATE TEMPORARY TABLE TMP_Animal (
+    id INT UNSIGNED PRIMARY KEY,
+    nom VARCHAR(30),
+    espece_id INT UNSIGNED,
+    sexe CHAR(1)
+);";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "DESCRIBE TMP_Animal;";
+  $req( $sql, $pdo );
 
 
   echo str_repeat( '<br>', 28 ); // 28
