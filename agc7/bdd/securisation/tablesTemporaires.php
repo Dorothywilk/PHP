@@ -128,7 +128,10 @@ DESCRIBE Animal_copy;";
 
 
   <h3>Utilité</h3>
-<p>Réyunir en une seule table les données qui nous seront utiles pour des traitements plus complexes</p>
+
+  <p>Réyunir en une seule table les données qui nous seront utiles pour des traitements plus
+    complexes</p>
+
   <P>Exemple : Faire une série de statistiques sur les adoptions de chiens</P>
   <?php
 
@@ -156,18 +159,65 @@ FROM Animal
   INNER JOIN Client ON Client.id = Adoption.client_id
 WHERE Animal.espece_id = 1;";
   affLign( $sql );
-//  $pdo->query( $sql );
-//
-//  $sql = "DESCRIBE Animal";
-//  $req( $sql, $pdo );
+  //  $pdo->query( $sql );
+  //
+  //  $sql = "DESCRIBE Animal";
 
 
   ?>
-  <p>Bien-sûr, appliquer poser un index sur cles hamps utilisés fréquement lors des requêtes <code>SELECT</code></p>
-  <p>Très utile aussi pour tester sur des tables temporaires copies des normales: Comme les tables temporaires qd elles ont le même noms que d'autres, sont choisies en priorité dans la session, lors de la mise en production, le nom des tables sera le même</p>
+  <p>Bien-sûr, appliquer poser un index sur cles hamps utilisés fréquement lors des requêtes <code>SELECT</code>
+  </p>
 
-  <p>Peut servir aussi à transmettre d'une procédures stockées à une autre, plus qu'une seule donnée telles que le limite le paramètre <code>OUT</code></p>
+  <p>Très utile aussi pour tester sur des tables temporaires copies des normales: Comme les tables
+    temporaires qd elles ont le même noms que d'autres, sont choisies en priorité dans la session,
+    lors de la mise en production, le nom des tables sera le même</p>
 
+  <p>Peut servir aussi à transmettre d'une procédures stockées à une autre, plus qu'une seule donnée
+    tel que le limite le paramètre <code>OUT</code></p>
+
+  <h3>Exemple: Procédure qui donne la liste des clients non à jour de paiement</h3>
+
+  <?php
+
+  $pdo = pdo();
+  $sql = "-- DELIMITER |
+DROP    PROCEDURE IF EXISTS table_adoption_non_payee;
+CREATE  PROCEDURE table_adoption_non_payee()
+BEGIN
+    DROP TEMPORARY TABLE IF EXISTS Adoption_non_payee;
+
+    CREATE TEMPORARY TABLE Adoption_non_payee
+    SELECT Client.id AS client_id,
+           Client.nom AS client_nom,
+           Client.prenom AS client_prenom,
+           Client.email AS client_email,
+           Animal.nom AS animal_nom,
+           Espece.nom_courant AS espece,
+           Race.nom AS race,
+           Adoption.date_reservation, Adoption.date_adoption,
+           Adoption.prix
+    FROM Adoption
+      INNER JOIN Client ON Client.id = Adoption.client_id
+      INNER JOIN Animal ON Animal.id = Adoption.animal_id
+      INNER JOIN Espece ON Espece.id = Animal.espece_id
+      LEFT JOIN Race ON Race.id = Animal.race_id
+    WHERE Adoption.paye = FALSE;
+END;
+-- END |
+-- DELIMITER ;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "CALL table_adoption_non_payee();";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SELECT client_id, client_nom, client_prenom, animal_nom, prix
+FROM Adoption_non_payee;";
+  $req( $sql, $pdo );
+
+
+  ?>
   <?php
   echo str_repeat( '<br>', 28 ); // 28
   ?>
