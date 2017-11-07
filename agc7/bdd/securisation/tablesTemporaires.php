@@ -44,7 +44,7 @@ ADD COLUMN date_naissance DATETIME;";
   $req( $sql, $pdo );
   ?>
 
-  
+
   <h3>Rôles principaux</h3>
 
   <p>Copie conforme de la structure :</p>
@@ -60,13 +60,72 @@ LIKE Espece;";
 SELECT * FROM Espece
 WHERE prix < 100;";
   affLign( $sql );
+  //  $pdo->query( $sql );
 
 
   $sql = "SELECT id, nom_courant, prix
 FROM Espece_copy;";
   $req( $sql, $pdo );
+  ?>
+
+  <p>Attention cependant aux clés étrangères, en cas d'<code>UPDATE</code>, qui ne sont pas
+    reproduites dans la table temporaire...</p>
 
 
+  <h3>Création à partir de données sélectionnées</h3>
+
+  <?php
+
+
+  $sql = "CREATE TEMPORARY TABLE Animal_copy
+SELECT *
+FROM Animal
+WHERE espece_id = 5;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "DESCRIBE Animal";
+  $req( $sql, $pdo );
+
+  $sql = "DESCRIBE Animal_copy";
+  $req( $sql, $pdo );
+
+  ?>
+
+
+
+  <h3>Avec redéfinition de TYPE et re-création d'index (Et copie des data)</h3>
+
+  <?php
+
+  $sql = "DROP TABLE Animal_copy;
+
+CREATE TEMPORARY TABLE Animal_copy (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    sexe CHAR(1),
+    date_naissance DATETIME,
+    nom VARCHAR(100),
+    commentaires TEXT,
+    espece_id INT NOT NULL,
+    race_id INT,
+    mere_id INT,
+    pere_id INT,
+    disponible BOOLEAN DEFAULT TRUE,
+    INDEX (nom(10))
+) ENGINE=InnoDB
+SELECT *
+FROM Animal
+WHERE espece_id = 5;
+
+DESCRIBE Animal_copy;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "DESCRIBE Animal";
+  $req( $sql, $pdo );
+  ?>
+
+  <?php
   echo str_repeat( '<br>', 28 ); // 28
   ?>
 
