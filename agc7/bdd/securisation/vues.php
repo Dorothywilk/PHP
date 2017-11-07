@@ -4,7 +4,7 @@ namespace GC7;
 <div class="jumbotron">
   <h3 class="meaDo pb10">Vues</h3>
 
-  <p class="lead">Requêtes de selection nommée.</p>
+  <p class="lead">Requêtes de selection nommée et stockée (Pas ses rédsultats).</p>
 
   <p class="lead">Attention: Restrictions :</p>
   <ul>
@@ -13,9 +13,13 @@ namespace GC7;
     <li>Les tables mentionnées doivent exister, au moins lors de la création de la vue.</li>
   </ul>
   <p class="lead">Mais peut utiliser une autre vue, comme une requête.</p>
-  <> <p class="lead">NB: La vue n'est générée qu'au moment de sa création... En cas de changement
+
+  <p class="lead">NB: La vue n'est générée qu'au moment de sa création... En cas de changement
     ultérieur de la table, la vue ne sera pas modifiée (Sauf si re-création avec <code>OR&nbsp;REPLACE</code>
     ou <code>DROP</code> / <code>CREATE</code>.</p>
+
+  <P class="lead">Permet par exemple de créer une interface entre applis et la BdD ou encore de
+    limiter la vue de certaines colonnes à certains utilisateurs</P>
 </></div>
 
 <div class="maingc7">
@@ -87,6 +91,16 @@ WHERE race_id IS NOT NULL;";
   $sql = 'SELECT * FROM V_Chien_race limit 3';
   $req( $sql );
 
+  ?>
+  <h3>Une vue s'utilise comme une table</h3>
+  <?php
+
+  $sql = "SELECT Race.nom, COUNT(V_Chien_race.id)
+FROM Race
+  INNER JOIN V_Chien_race ON Race.id = V_Chien_race.race_id
+GROUP BY Race.nom;";
+  $req( $sql );
+
 
   echo '<h3>Vue avec chaîne</h3>';
   $sql = "CREATE OR REPLACE VIEW V_Espece_dollars
@@ -101,7 +115,8 @@ FROM Espece;";
   $req( $sql );
 
 
-  echo '<h3>Vue avec tris</h3>';
+  echo '<h3>Vue avec tri</h3>
+<p>Fonctionne bien sauf pour les <code>LIMIT</code> dont le comportement est indéfini</p>';
   $sql = "CREATE OR REPLACE VIEW V_Race
 AS SELECT Race.id, nom, Espece.nom_courant AS espece
 FROM Race
@@ -121,6 +136,111 @@ FROM V_Race
 ORDER BY espece;
 -- Sélection avec ORDER BY, c'est celui-là qui sera pris en compte";
   $req( $sql );
+
+
+  echo '<h3>Usage pour simplifier lecture si requête complexe</h3>
+<p>Exemple: Connaître les espèces qui rapportent le plus, années après années</p>';
+  $sql = "CREATE OR REPLACE VIEW V_Revenus_annee_espece
+AS SELECT YEAR(date_reservation) AS annee,
+   Espece.id AS espece_id,
+   SUM(Adoption.prix) AS somme, COUNT(Adoption.animal_id) AS nb
+FROM Adoption
+  INNER JOIN Animal ON Animal.id = Adoption.animal_id
+  INNER JOIN Espece ON Animal.espece_id = Espece.id
+GROUP BY annee, Espece.id;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SELECT * FROM V_Revenus_annee_espece";
+  $req( $sql );
+
+  echo 'Avec une requête simple maintenant :';
+
+  $sql = "SELECT annee, SUM(somme) AS total
+FROM V_Revenus_annee_espece
+GROUP BY annee;";
+  $req( $sql );
+
+  echo 'Ou pour chaque espèce :';
+  $sql = "SELECT Espece.nom_courant AS espece, SUM(somme) AS total
+FROM V_Revenus_annee_espece
+INNER JOIN Espece ON V_Revenus_annee_espece.espece_id = Espece.id
+GROUP BY espece;";
+  $req( $sql );
+
+  echo 'Ou encore, la moyenne que rapporte la vente d\'un individu pour chaque espèce :';
+  $sql = "SELECT Espece.nom_courant AS espece, SUM(somme)/SUM(nb) AS moyenne
+FROM V_Revenus_annee_espece
+INNER JOIN Espece ON V_Revenus_annee_espece.espece_id = Espece.id
+GROUP BY espece;";
+  $req( $sql );
+
+  ?>
+
+  <h3>Algorythmes</h3>
+  <ul>
+    <li><code>UNDEFINED</code> (Défaut qui laisse MySQL choisir son algoryhtme)</li>
+    <li><code>MERGE</code> Fusionne les résultats des requêtes sous-jacente, pas toujours possible,
+      notemment s'il y a des fonctions d'agrégation par exemple, ou autres (<code>DISTINCT</code>,
+      <code>LIMIT</code>, <code>HAVING</code>, <code>UNION</code>, ou sous-requête dans la clause
+      <code>SELECT</code>.
+    </li>
+    <li><code>TEMPTABLE</code> Créée une table intermédiaire temporaire (Moins performant)</li>
+  </ul>
+
+  <p>Exemple avec <code>MERGE</code> = Fusion<br>(Comportement choisi par MySQL par défaut quand
+    cela est possible)</p>
+  <?php
+
+
+  $sql = "SELECT nom, date_naissance, pere_id
+FROM V_Chien
+WHERE pere_id IS NOT NULL;";
+  $req( $sql );
+
+  echo '<h3><=></h3>';
+
+  $sql = "SELECT nom, date_naissance, pere_id
+FROM Animal
+WHERE espece_id = 1
+AND pere_id IS NOT NULL;";
+  $req( $sql );
+
+  ?>
+
+  <h4>Conditions pour qu'une vue permette de modifier des données (Requêtes <code>UPDATE</code>), d'en insérer (<code>INSERT</code>) ou d'en effacer (<code>DELETE</code>)</h4>
+  <ul>
+    <li>Ne doit modifier qu'une seule table</li>
+    <li>Doit avoir utilisé l'algorythme MERGE (Choisi par MySQL ou l'utilisateur)</li>
+    <li>Si la vue est elle-même définie à partir d'une autre vue qui ne permet pas la modification
+    </li>
+    <li>Si la clause <code>WHERE</code> de la vue contient une sous-requête faisant référence à une
+      des tables de la clause <code>FROM</code>.
+    </li>
+    <li>Pour INSERT:
+      <ul>
+        <li>les colonnes n'ayant pas de valeur par défaut (et non NULL) doivent ête référencées par
+          la vue.
+        </li>
+        <li>Si jointure, elles ne peuvent être qu'internes, et l'insertion sur une seule table</li>
+      </ul>
+    </li>
+  </ul>
+  Options de la vue: <code>WITH [LOCAL | CASCADED] CHECK OPTION</code> :<br>
+  Modifications et insertions doivent répondre aux conditions de la vue définies par sa clause <code>WHERE</code>
+  <h3>Exemple:</h3>
+  <code>
+  CREATE OR REPLACE VIEW V_Animal_stagiaire<br>
+  AS SELECT id, nom, sexe, date_naissance, espece_id, race_id, mere_id, pere_id, disponible<br>
+  FROM Animal<br>
+  WHERE espece_id = 2<br>
+  WITH CHECK OPTION;</code>
+  n'acceptera que des opérations (<code>UPDATE</code> ou <code>INSERT</code>) avec espece_id = 2<br>
+  <ul>
+    <li><code>LOCAL</code>Seules les conditions de la vue sont vérifiées</li>
+    <li><code>CASCADED</code>Les conditions des vues sous-jacentes éventuelles sont également vérifiées. C'est l'option par défaut.</li>
+  </ul>
+  <?php
 
 
   echo str_repeat( '<br>', 28 ); // 28
