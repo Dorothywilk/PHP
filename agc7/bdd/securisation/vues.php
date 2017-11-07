@@ -4,7 +4,7 @@ namespace GC7;
 <div class="jumbotron">
   <h3 class="meaDo pb10">Vues</h3>
 
-  <p class="lead">...</p>
+  <p class="lead">Requête de selection nommée.</p>
 
 </div>
 
