@@ -11,7 +11,7 @@ namespace GC7;
   <?php
 
   $pdo = pdo();
-  $sql = "select 1";
+  $sql = "select 123";
   //  affLign( $sql );
   //  $pdo->query( $sql );
   $req( $sql );

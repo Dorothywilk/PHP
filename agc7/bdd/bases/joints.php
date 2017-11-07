@@ -69,3 +69,5 @@ from users where id in (1,15,16)';
     ?>
   </div>
 </div>
+
+//TODOLI  https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/index-1 Finir index et jointures
