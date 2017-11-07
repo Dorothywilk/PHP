@@ -15,7 +15,10 @@ $nf=function($n){return (($n>10)?number_format($n, 2, ',', ' '):$n);};
 //include ('cours/variablesChiffres.php');
 
 
-include ('cours/variablesTableau.php');
+//include 'cours/variablesTableau.php';
+include 'cours/array.php';
+
+
 
 
 //include ('cours/operateurs.php');
