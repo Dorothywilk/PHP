@@ -219,7 +219,7 @@ FROM Adoption_non_payee;";
 
   ?>
   <?php
-  echo str_repeat( '<br>', 28 ); // 28
+  echo str_repeat( '<br>', 25 ); // 25
   ?>
 
 </div>
