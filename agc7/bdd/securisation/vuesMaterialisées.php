@@ -197,8 +197,16 @@ DELIMITER ;";
 
   <h3>Gain de performance</h3>
   <hr>
-  <p>Test avec 3 façons de réponse à :<br>
-  Quelle est l'année ayant rapporté le plus en termes d'adoption de chats ? </p>
+  <p>Test avec des procédures utilisant 3 façons pour réponse à :<br>
+    Quelle est l'année ayant rapporté le plus en termes d'adoption de chats ? </p>
+  <ul>
+    <li>L'une fera la requête directement sur les tables</li>
+    <li>L'autre fera la requête sur la vue</li>
+    <li>La dernière utilisera la vue matérialisée.</lia>
+  </ul>
+
+  <p><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/vues-materialisees" target="_blank">Voir test en ligne</a></p>
+  <p>=> Bila,n 0.05 s pour la vue matérialisée contre env. 0.27 s pour table et vue.</p>
   <?php
   echo str_repeat( '<br>', 28 ); // 28
   ?>
