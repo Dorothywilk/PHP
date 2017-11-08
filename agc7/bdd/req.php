@@ -58,9 +58,10 @@ namespace GC7;
 //include( 'securisation/triggers.php' );
 //include( 'securisation/vues.php' );
 //include( 'securisation/tablesTemporaires.php' );
-include( 'securisation/vuesMaterialisées.php' );
+//include( 'securisation/vuesMaterialisées.php' );
 
 //include( 'tests.php' );
+include( 'securisation/test.php' );
 
 
 //$maReq = new Requete( (Array) $req );

@@ -5,6 +5,7 @@ namespace GC7;
   <h3 class="meaDo pb10">Vues</h3>
 
   <p class="lead">Requêtes de selection nommée et stockée (Pas ses rédsultats).</p>
+  <p class="lead">Les requête d'insertion, etc... sont réalisées sur les tables référencées par la vue.</p>
 
   <p class="lead">Attention: Restrictions :</p>
   <ul>
@@ -116,7 +117,7 @@ FROM Espece;";
 
 
   echo '<h3>Vue avec tri</h3>
-<p>Fonctionne bien sauf pour les <code>LIMIT</code> dont le comportement est indéfini</p>';
+<p>Fonctionne bien sauf pour les <code>LIMIT</code>dont le comportement est indéfini</p>';
   $sql = "CREATE OR REPLACE VIEW V_Race
 AS SELECT Race.id, nom, Espece.nom_courant AS espece
 FROM Race
@@ -134,7 +135,8 @@ FROM V_Race;
   $sql = "SELECT *
 FROM V_Race
 ORDER BY espece;
--- Sélection avec ORDER BY, c'est celui-là qui sera pris en compte";
+-- Sélection avec ORDER BY,
+-- c'est celui-là qui sera pris en compte";
   $req( $sql );
 
 
@@ -164,14 +166,17 @@ GROUP BY annee;";
   echo 'Ou pour chaque espèce :';
   $sql = "SELECT Espece.nom_courant AS espece, SUM(somme) AS total
 FROM V_Revenus_annee_espece
-INNER JOIN Espece ON V_Revenus_annee_espece.espece_id = Espece.id
+  INNER JOIN Espece
+  ON V_Revenus_annee_espece.espece_id = Espece.id
 GROUP BY espece;";
   $req( $sql );
 
   echo 'Ou encore, la moyenne que rapporte la vente d\'un individu pour chaque espèce :';
-  $sql = "SELECT Espece.nom_courant AS espece, SUM(somme)/SUM(nb) AS moyenne
+  $sql = "SELECT Espece.nom_courant AS espece,
+       SUM(somme)/SUM(nb) AS moyenne
 FROM V_Revenus_annee_espece
-INNER JOIN Espece ON V_Revenus_annee_espece.espece_id = Espece.id
+  INNER JOIN Espece
+  ON V_Revenus_annee_espece.espece_id = Espece.id
 GROUP BY espece;";
   $req( $sql );
 

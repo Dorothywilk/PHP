@@ -30,7 +30,6 @@ namespace GC7;
   // affLign( $sql );
   // $pdo->query( $sql );
 
-  
   $req( $sql, $pdo );
 
   ?>
