@@ -78,35 +78,128 @@ END;
 
   ?>
   Mise à jour automatique<br>
-  La même requête que celle de l'instanciation.
+  Dans le cas de VM_Revenus_annee_espece, la vue matérialisée doit être mise à jour en cas de
+  modification de la table Adoption.<br>
+  <ul>
+    <li>Une insertion provoquera la mise à jour de la ligne correspondant à l'année et à l'espèce de
+      l'adoption insérée (majoration du total des prix et du nombre d'adoptions), ou insérera une
+      nouvelle ligne si elle n'existe pas encore.
+    </li>
+    <li>Une suppression provoquera la mise à jour de la ligne correspondant à l'année et à l'espèce
+      de l'adoption supprimée, ou la suppression de celle-ci s'il s'agissait de la seule adoption
+      correspondante.
+    </li>
+    <li>Une modification sera un mix de la suppression et de l'insertion.</li>
+  </ul>
+
+  <p>En ce qui concerne la colonne espece_id de la vue matérialisée, il vaut mieux lui ajouter une
+    clé étrangère, avec l'option <code>ON DELETE CASCADE</code>. En principe, Espece.id ne devrait
+    jamais être modifiée, mais en mettant cette clé étrangère, on s'assure que la correspondance
+    entre les tables existera toujours.</p>
+
+  <p>On va également ajouter une clé primaire : (annee, espece_id), afin de simplifier nos triggers.
+    Ça permettra d'utiliser la commande <code>INSERT INTO ... ON DUPLICATE KEY UPDATE</code>.</p>
   <?php
 
-  $sql = "DROP PROCEDURE IF EXISTS maj_vm_revenus;
--- DELIMITER |
-CREATE PROCEDURE maj_vm_revenus()
+  $sql = "ALTER TABLEVM_Revenus_annee_espece
+  ADD CONSTRAINT fk_vm_revenu_espece_id FOREIGN KEY (espece_id)
+      REFERENCES Espece (id) ON DELETE CASCADE,
+  ADD PRIMARY KEY (annee, espece_id);";
+  affLign( $sql );
+  //  $pdo->query( $sql );
+
+  ?>
+
+  <p>Trigger :</p>
+
+
+  <?php
+
+
+  $sql = "-- DELIMITER |
+
+DROP TRIGGER after_insert_adoption;
+CREATE TRIGGER after_insert_adoption AFTER INSERT
+ON Adoption FOR EACH ROW
 BEGIN
-    TRUNCATE VM_Revenus_annee_espece;
+    UPDATE Animal
+    SET disponible = FALSE
+    WHERE id = NEW.animal_id;
 
     INSERT INTO VM_Revenus_annee_espece
-    SELECT YEAR(date_reservation) AS annee,
-           Espece.id AS espece_id, SUM(Adoption.prix) AS somme,
-           COUNT(Adoption.animal_id) AS nb
-    FROM Adoption
-    INNER JOIN Animal ON Animal.id = Adoption.animal_id
-    INNER JOIN Espece ON Animal.espece_id = Espece.id
-    GROUP BY annee, Espece.id;
+      (espece_id, annee, somme, nb)
+    SELECT espece_id, YEAR(NEW.date_reservation), NEW.prix, 1
+    FROM Animal
+    WHERE id = NEW.animal_id
+    ON DUPLICATE KEY UPDATE somme = somme + NEW.prix,
+                                    nb = nb + 1;
 END;
 -- END |
--- DELIMITER ;";
-  affLign( $sql );
-  $pdo->query( $sql );
 
-  $sql = "CALL maj_vm_revenus();";
+DROP TRIGGER after_update_adoption:
+CREATE TRIGGER after_update_adoption AFTER UPDATE
+ON Adoption FOR EACH ROW
+BEGIN
+    IF OLD.animal_id <> NEW.animal_id THEN
+        UPDATE Animal
+        SET disponible = TRUE
+        WHERE id = OLD.animal_id;
+
+        UPDATE Animal
+        SET disponible = FALSE
+        WHERE id = NEW.animal_id;
+    END IF;
+
+    INSERT INTO VM_Revenus_annee_espece
+      (espece_id, annee, somme, nb)
+    SELECT espece_id, YEAR(NEW.date_reservation), NEW.prix, 1
+    FROM Animal
+    WHERE id = NEW.animal_id
+    ON DUPLICATE KEY UPDATE somme = somme + NEW.prix,
+                                    nb = nb + 1;
+
+    UPDATE VM_Revenus_annee_espece
+    SET somme = somme - OLD.prix, nb = nb - 1
+        WHERE annee = YEAR(OLD.date_reservation)
+    AND espece_id = (SELECT espece_id FROM Animal
+        WHERE id = OLD.animal_id);
+
+    DELETE FROM VM_Revenus_annee_espece
+    WHERE nb = 0;
+END;
+-- END |
+
+DROP TRIGGER after_delete_adoption;
+CREATE TRIGGER after_delete_adoption AFTER DELETE
+ON Adoption FOR EACH ROW
+BEGIN
+    UPDATE Animal
+    SET disponible = TRUE
+    WHERE id = OLD.animal_id;
+
+    UPDATE VM_Revenus_annee_espece
+    SET somme = somme - OLD.prix, nb = nb - 1
+    WHERE annee = YEAR(OLD.date_reservation)
+    AND espece_id =
+      (SELECT espece_id FROM Animal WHERE id = OLD.animal_id);
+
+    DELETE FROM VM_Revenus_annee_espece
+    WHERE nb = 0;
+END;
+-- END |
+
+DELIMITER ;";
   affLign( $sql );
   $pdo->query( $sql );
   //$req( $sql );
 
+  ?>
 
+  <h3>Gain de performance</h3>
+  <hr>
+  <p>Test avec 3 façons de réponse à :<br>
+  Quelle est l'année ayant rapporté le plus en termes d'adoption de chats ? </p>
+  <?php
   echo str_repeat( '<br>', 28 ); // 28
   ?>
 
