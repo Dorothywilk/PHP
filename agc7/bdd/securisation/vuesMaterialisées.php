@@ -206,7 +206,17 @@ DELIMITER ;";
   </ul>
 
   <p><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/vues-materialisees" target="_blank">Voir test en ligne</a></p>
-  <p>=> Bila,n 0.05 s pour la vue matérialisée contre env. 0.27 s pour table et vue.</p>
+  <p>=> Bilan : 0.05 s pour la vue matérialisée contre env. 0.27 s pour table et vue.</p>
+
+  <hr>
+
+  <h3>Conclusion</h3>
+  <ul>
+    <li>Les vues ne permettent pas de gagner en performance. Elle fournissent juste une interface, qui peut permettre de gérer les accès des utilisateurs ou de simplifier les requêtes par exemple.</li>
+    <li>Les tables temporaires servent lorsque, ponctuellement, on doit faire un traitement sur un set de données particulier, pour faire des tests ou des statistiques par exemple.</li>
+    <li>Les vues matérialisées permettent de stocker des données sélectionnées ou calculées à partir d'autres tables. Elles permettent de gagner en performance dans le cas où ces données nécessitent de longs calculs, mais ne changent pas trop souvent (attention à l'équilibre coût du calcul sans la vue matérialisée et coût de la mise à jour de la vue matérialisée).</li>
+  </ul>
+
   <?php
   echo str_repeat( '<br>', 28 ); // 28
   ?>
