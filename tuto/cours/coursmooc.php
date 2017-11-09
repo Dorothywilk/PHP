@@ -109,13 +109,109 @@ $nombre = 17897 % 3; // $nombre prend la valeur 1 car il reste 1
 echo $nombre . '<hr>';
 
 
+$age = 8;
+
+if ($age <= 12)
+{
+    echo "Salut gamin ! <hr>";
+}
+
+
+$age = 12;
+ 
+if ($age <= 12) // SI l'âge est inférieur ou égal à 12
+{
+    echo "Salut gamin ! Bienvenue sur mon site !<br />";
+    $autorisation_entrer = "Oui";
+}
+else // SINON
+{
+    echo "Ceci est un site pour enfants, vous êtes trop vieux pour pouvoir  entrer. Au revoir !<br />";
+    $autorisation_entrer = "Non";
+}
+ 
+//$autorisation_entrer = "oki";
+
+echo "Avez-vous l'autorisation d'entrer ? La réponse est : $autorisation_entrer<br><br>";
+
+
+if ($autorisation_entrer == "Oui") // SI on a l'autorisation d'entrer
+{
+  echo 'C\'est oui !';
+    // instructions à exécuter quand on est autorisé à entrer
+}
+elseif ($autorisation_entrer == "Non") // SINON SI on n'a pas l'autorisation d'entrer
+{
+  echo 'C\'est non !';
+    // instructions à exécuter quand on n'est pas autorisé à entrer
+}
+else // SINON (la variable ne contient ni Oui ni Non, on ne peut pas agir)
+{
+    echo "Euh, je ne connais pas ton âge, tu peux me le rappeler s'il te plaît ?";
+}
+
+echo '<hr>';
 
 
 
+// Exemple d'un questionnaire où l'on peut répondre:
+echo '<h2>Aimez-vous les épinards ?</h2>';
+// Oui / Non / Sans avis
 
 
+$reponse = 'oui'; // Commenter/décommenter cette réponse
+$reponse = 'non'; // Commenter/décommenter cette réponse
+$reponse = 'je sais pas'; // Commenter/décommenter cette réponse
+$reponse = 'bof'; // Commenter/décommenter cette réponse
 
 
+echo '- ' . $reponse . '<br>';
+
+if ($reponse == 'oui')
+{
+    echo "- G deviné... Vous êtes Popeye :<br />";
+}
+elseif ($reponse == 'non') // SINON SI
+{
+    echo '- Ah... Vous, vous êtes sans doute Olive, alors...?<br>';
+}
+elseif ($reponse == 'je sais pas') // SINON SI 
+{ 
+  echo '- Comme cela vous ne savez pas ?!?<br>';
+}
+
+else { // SINON
+    echo '- Ah ?!?<br>';
+}
 
 
-  echo str_repeat('<br>', 20);
+echo '<hr>';
+//On met un chiffre dans une variable
+$nombre = 18; //Changer ce chiffre 
+
+//Sinon votre chiffre est zéro
+if( $nombre==0 ) {
+  echo 'Votre nombre est zéro';
+}
+
+//Si ce chiffre est pair on dit votre chiffre 4 est pair
+elseif ( $nombre % 2 )
+{
+  echo 'Votre nombre ('. $nombre .') est impair';
+}
+
+//Si ce chiffre est impair on dit votre chiffre 7 est impair
+else
+{
+  echo 'Votre nombre ('. $nombre .') est pair';
+}
+echo '<hr>';
+
+$premier='a';
+// Lire que ce qu'il y a entre prarenthèses avec un ? à la fin de la phrase
+if (  $premier == 'a'  )
+   echo 'Oui';
+else echo 'Non';
+
+
+echo str_repeat('<br>', 20);
