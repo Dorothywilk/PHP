@@ -61,7 +61,7 @@ namespace GC7;
 //include( 'securisation/vuesMaterialisées.php' );
 
 //include( 'tests.php' );
-include( 'securisation/test.php' );
+include( 'securisation/exo6.php' );
 
 
 //$maReq = new Requete( (Array) $req );
