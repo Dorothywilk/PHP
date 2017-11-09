@@ -172,9 +172,8 @@ else  {
 
 
 
-
-
-
+//TodoDo https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/fonctionnement-d-un-site-ecrit-en-php
+//https://openclaswww
 
 
 echo str_repeat( '<br>', 28 ); // 28
