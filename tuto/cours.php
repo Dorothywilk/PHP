@@ -16,8 +16,10 @@ $nf=function($n){return (($n>10)?number_format($n, 2, ',', ' '):$n);};
 
 
 //include 'cours/variablesTableau.php';
-include 'cours/array.php';
 
+//include 'cours/array.php';
+
+include 'cours/coursmooc.php';
 
 
 
