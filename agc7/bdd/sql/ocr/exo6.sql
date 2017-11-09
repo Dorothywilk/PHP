@@ -34,7 +34,7 @@ CREATE PROCEDURE addColumn(
     SELECT (
       if(
           @columnExists,
-          concat('select ', @respExists, ' as Résultat'),
+          concat('SELECT ', @respExists, ' as Résultat'),
           CONCAT(
               'ALTER TABLE ', @theTable,
               ' ADD COLUMN ', @theColumn,
@@ -47,4 +47,49 @@ CREATE PROCEDURE addColumn(
     EXECUTE st;
     SELECT p_addColumn AS qqq;
   END|
+DELIMITER ;
+
 CALL addColumn('n00850b_commentaires', 'article', @p_addColumn);
+
+
+USE ocr2;
+
+-- DROP COLUMN (si elle existe)
+DROP PROCEDURE IF EXISTS dropColumn;
+DELIMITER |
+CREATE PROCEDURE dropColumn(
+  IN  theColumn    VARCHAR(255),
+  IN  theTable     VARCHAR(255),
+  OUT p_dropColumn VARCHAR(255)
+)
+  BEGIN
+    CALL columnExists(theColumn, theTable, @columnExists);
+    SET @theColumn = theColumn;
+    SET @theTable = theTable;
+    SET @respDontExists =
+    concat('\"Suppression Colonne ', @theColumn,
+           ' impossible: N\'existe pas dans la table ',
+           @theTable, '\"');
+    SELECT (
+      if(
+          @columnExists,
+          CONCAT(
+              'ALTER TABLE ', @theTable,
+              ' DROP COLUMN ', @theColumn),
+          concat('SELECT ', @respDontExists)
+      )
+    )
+    INTO p_dropColumn;
+    SET @query = p_dropColumn;
+    PREPARE st FROM @query;
+    EXECUTE st;
+  END|
+DELIMITER ;
+-- END;
+
+
+CALL addColumn('nb_commentaires', 'article', @addColumn);
+CALL dropColumn('nb_commentaires', 'article', @dropColumn);
+CALL addColumn('nb_commentaires', 'article', @addColumn);
+
+
