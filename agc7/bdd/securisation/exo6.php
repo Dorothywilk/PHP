@@ -22,12 +22,21 @@ namespace GC7;
   <p class="jumbotron lead pt10">1/ Page Accueil: Nb de commentaires (Stocké et automatiquement mise
     à jour)</p>
 
+  <ul class="fa-ul">Outil pour ajouter/supprimer une colonne quelle soit présente ou pas :
+    <li class="lead"><i class="fa fa-check-square-o"></i> Création procédure perso pour savoir si
+      une
+      colonne existe<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>columnExists(colonne, table, reponse)</code>
+    </li>
+    <li class="lead"><i class="fa fa-check-square-o"></i> Création procédure perso pour ajouter une
+      colonne<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>
+        <g>addColumn</g>
+        (colonne, table, reponse)</code></li>
+    <li class="lead"><i class="fa fa-check-square-o"></i> Création procédure perso pour supprimer
+      une colonne<br>&nbsp;&nbsp;&nbsp;&nbsp;<code>
+        <g>dropColumn</g>
+        (colonne, table, reponse)</code></li>
+  </ul>
 
-  <p class="lead"><i class="fa fa-check-square-o"></i> Création procédure perso pour savoir si une
-    colonne existe</p>
-
-
-  <h3>Recherche solution pour tester présence d'une colonne</h3>
   <?php
 
   $pdo = pdo( 'ocr2' );
@@ -49,16 +58,19 @@ BEGIN
   where table_name =theTable and column_name=theColumn;
 END;
 --END |";
-  //  affLign( $sql );
-  //  $pdo->query( $sql );
+  //    affLign( $sql );
+  //    $pdo->query( $sql );
   //
   //  $sql = "call columnExists('nb_commentaires', 'article', @columnExists);";
   //  affLign( $sql );
   //  $pdo->query( $sql );
-
+  //
+  //  $sql = "SELECT @columnExists";
+  //  $req( $sql, $pdo );
 
   $sql = "-- ADD COLUMN si elle n'existe pas déjà
 DROP PROCEDURE IF EXISTS addColumn;
+
 -- DELIMITER |
 CREATE PROCEDURE addColumn(
   IN  theColumn   VARCHAR(255),
@@ -73,9 +85,11 @@ CREATE PROCEDURE addColumn(
     SELECT (
       if(
           @columnExists,
-          concat('select ', concat('\"Ajout Colonne ', @theColumn,
-           ' impossible: Déjà présente dans la table ',
-           @theTable, '\"')),
+
+          CONCAT('select ', concat('\"Ajout Colonne ', @theColumn,
+                 ' impossible: Déjà présente dans la table ',
+                 @theTable, '\"')),
+
           CONCAT(
               'ALTER TABLE ', @theTable,
               ' ADD COLUMN ', @theColumn,
@@ -88,14 +102,15 @@ CREATE PROCEDURE addColumn(
     EXECUTE st;
   -- END|
   END;";
-  affLign( $sql );
-  $pdo->query( $sql );
-
-  $sql = "call addColumn('nb123_commentaires', 'article', @p_addColumn);";
-  $pdo->query( $sql );
-
-  $sql = "select @p_addColumn as Résultat;";
-  $req( $sql, $pdo );
+  //  affLign( $sql );
+  //  $pdo->query( $sql );
+  //
+  //  $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
+  //  affLign( $sql );
+  //  $pdo->query( $sql );
+  //
+  //  $sql = "select @p_addColumn as Résultat;";
+  //  $req( $sql, $pdo );
 
 
   $sql = "select if(
@@ -106,7 +121,7 @@ CREATE PROCEDURE addColumn(
   //  @columnExists,'La colonne existe',  -- En bleu
   //  'La colonne n\'existe pas'          -- En rouge
   //) as columnExists" );
-  $req( $sql, $pdo, 0 );
+  //  $req( $sql, $pdo, 0 );
 
 
   // Effacement
@@ -126,12 +141,13 @@ CREATE PROCEDURE dropColumn(
     SELECT (
       if(
           @columnExists,
-          CONCAT(
-              'ALTER TABLE ', @theTable,
-              ' DROP COLUMN ', @theColumn),
-          concat('SELECT ', concat('\"Suppression Colonne ', @theColumn,
-           \" impossible: N'existe pas dans la table \",
-           @theTable, '\"'))
+
+          CONCAT('ALTER TABLE ', @theTable,
+                 ' DROP COLUMN ', @theColumn),
+
+          CONCAT('SELECT ', concat('\"Suppression Colonne ',
+                @theColumn, \" impossible: N'existe pas dans
+                la table \",@theTable, '\"'))
       )
     )
     INTO p_dropColumn;
@@ -144,109 +160,44 @@ DELIMITER ;";
   //  affLign( $sql );
   //  $pdo->query( $sql );
   //
-  $sql = "CALL dropColumn('nb_commentaires', 'article', @p_dropColumn);";
-  affLign( $sql );
-  $pdo->query( $sql );
-  //
-  $sql = "select @p_dropColumn as Résultat;";
-  $req( $sql, $pdo );
-
-  // Ajout colonne
-  $sql = "SET @query = (select if
-(
-  @columnExists,
-
-  'select \"Colonne déjà présentee\"',
-
-  CONCAT(
-    'ALTER TABLE article
-     ADD COLUMN nb_commentaires
-         INT UNSIGNED NULL AFTER date_publication'
-  )
-));";
-  affLign( $sql );
+  //  $sql = "CALL dropColumn('nbuuu_commentaires', 'article', @doro);";
+  //  affLign( $sql );
   //  $pdo->query( $sql );
-
-  $sql = "SELECT @query";
+  //  //
+  //  $sql = "select @doro as Résultat;";
   //  $req( $sql, $pdo );
-
-  $sql = "PREPARE st FROM @query;";
-  affLign( $sql );
-  //  $pdo->query( $sql );
-
-  $sql = "EXECUTE st;";
-  //    $req( $sql, $pdo );
-
-
-  //  $pod = pdo();
 
   //  $sql = "show columns from article";
   $sql = "SELECT column_name, column_type from information_schema.columns
 where table_schema='ocr2'
   and table_name='article'
   and column_name like '%comment%'";
-  $req( $sql );
+  //  $req( $sql );
   // ALTER TABLE `article`
   //	DROP COLUMN `nb_commentaires`;
-  /*
-  ?>
-      <h3>Procédure d'ajout de la colonne directement</h3>
-
-      <?php
 
 
-    $sql = "SET @query =
-  (SELECT
-    IF(
 
-       (
-         SELECT COUNT(1)
-         FROM INFORMATION_SCHEMA.COLUMNS
-
-         WHERE
-          TABLE_SCHEMA=database()
-          AND TABLE_NAME = 'article'
-          AND COLUMN_NAME = 'nb_commentaires'
-       ) = 0,
-
-       CONCAT(
-           'ALTER TABLE article ADD COLUMN nb_commentaires varchar(255)'
-             ),
-
-       'SELECT \'ALREADY EXISTS\''
-      )
-    );";
-    affLign( $sql );
-    $pdo->query( $sql );
-
-    $sql = "SELECT @query";
-    $req( $sql, $pdo );
-
-    $sql = "PREPARE st FROM @query;";
-    affLign( $sql );
-    $pdo->query( $sql );
-
-    $sql = "EXECUTE st;";
-    $req( $sql, $pdo );
-
-  */
-  //  $req($sql, $pdo);
-
-
-  echo str_repeat( '<br>', 28 ); // 28
 
   ?>
-  <p class="lead">=> Ajout d'une colonne dans article, liée à un trigger</p>
+  <h3 class="pt10">=> Ajout d'une colonne dans article</h3>
   <?php
 
-  $pdo = pdo( 'ocr2' );
+//  $pdo = pdo( 'ocr2' );
 
-  $sql = "ALTER TABLE `article`
-ADD COLUMN `nb_commentaires` INT(11) UNSIGNED NULL
-    AFTER `date_publication`;";
-  affLign( $sql );
-  //  $pdo->query( $sql );
-  //  $req( $sql, $pdo );
+    $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
+    affLign( $sql );
+    $pdo->query( $sql );
+
+  ?>
+  <h3 class="pt10">=> Liaison à un trigger pour automatisation</h3>
+  <?php
+
+//  $pdo = pdo( 'ocr2' );
+
+    $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
+    affLign( $sql );
+    $pdo->query( $sql );
 
   ?>
 

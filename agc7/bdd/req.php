@@ -63,6 +63,7 @@ namespace GC7;
 //include( 'tests.php' );
 include( 'securisation/exo6.php' );
 
+include( 'securisation/triggers.php' ); // copie
 
 //$maReq = new Requete( (Array) $req );
 

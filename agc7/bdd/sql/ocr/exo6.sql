@@ -87,9 +87,14 @@ CREATE PROCEDURE dropColumn(
 DELIMITER ;
 -- END;
 
-
 CALL addColumn('nb_commentaires', 'article', @addColumn);
 CALL dropColumn('nb_commentaires', 'article', @dropColumn);
 CALL addColumn('nb_commentaires', 'article', @addColumn);
 
 
+-- Ajout addColum pour nb_commentaires....
+
+CALL addColumn('nb_commentaires', 'article', @p_addColumn);
+
+
+-- Trigger
