@@ -202,6 +202,10 @@ hr {
     background-color: #000;
 }
 
+.pt0 {
+    padding-top: 0;
+}
+
 .mt20 {
     margin-top: 20px;
 }
@@ -248,4 +252,13 @@ h5 {
 
 div.lead > ul {
     margin-top: -25px;
+}
+
+.pt10 {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
 }
