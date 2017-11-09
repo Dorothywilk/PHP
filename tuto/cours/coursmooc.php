@@ -47,6 +47,75 @@ echo ' ans.<br>';
 
 
 $age_du_visiteur = 17; 
-echo 'Le visiteur a <strong class="fdRougeDo">' . $age_du_visiteur . '</strong> ans.';
+echo 'Le visiteur a <strong class="fdRougeDo">' . $age_du_visiteur . '</strong> ans. <hr>';
 
-  ?>
+
+$nombre = 2 + 4; // $nombre prend la valeur 6
+echo 'L\'addition sera ';
+echo $nombre;
+$nombre = 5 - 1; // $nombre prend la valeur 4
+echo '<br>La soustraction sera ';
+echo $nombre;
+$nombre = 3 * 5; // $nombre prend la valeur 15
+echo '<br>La multiplication sera ';
+echo $nombre;
+$nombre = 10 / 2; // $nombre prend la valeur 5
+echo '<br>La division sera ';
+echo $nombre;
+
+// Allez on rajoute un peu de difficulté
+$nombre = 3 * 5 + 1; // $nombre prend la valeur 16
+echo '<br>La multiplication sera ';
+echo $nombre;
+
+$nombre = (1 + 2) * 2; // $nombre prend la valeur 6
+echo '<br>La multiplication sera ';
+echo $nombre;
+
+echo '<hr>';
+
+$nombre = 2 + 4; // $nombre prend la valeur 6
+echo 'L\'addition sera ' .  $nombre ;
+
+$nombre = 5 - 1; // $nombre prend la valeur 4
+echo '<br>La soustraction sera ' .  $nombre;
+
+$nombre = 3 * 5; // $nombre prend la valeur 15
+echo '<br>La multiplication sera ' .  $nombre;
+
+$nombre = 10 / 2; // $nombre prend la valeur 5
+echo '<br>La division sera  ' .  $nombre;
+
+
+// Allez on rajoute un peu de difficulté
+$nombre = 3 * 5 + 1; // $nombre prend la valeur 16
+echo '<br>La multiplication sera ';
+echo $nombre;
+
+$nombre = (1 + 2) * 2; // $nombre prend la valeur 6
+echo '<br>La multiplication sera ';
+echo $nombre . '<hr>';
+
+
+$nombre = 10;
+$resultat = ($nombre + 5) * $nombre; // $resultat prend la valeur 150
+
+echo $resultat . '<hr>';
+
+$nombre = 10 % 5;
+echo $nombre;
+// $nombre prend la valeur 0 car la division tombe juste
+$nombre = 17897 % 3; // $nombre prend la valeur 1 car il reste 1
+echo $nombre . '<hr>';
+
+
+
+
+
+
+
+
+
+
+
+  echo str_repeat('<br>', 20);
