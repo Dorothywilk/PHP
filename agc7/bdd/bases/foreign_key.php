@@ -2,7 +2,9 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo pb10">Clés étrangères</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/options-des-cles-etrangeres"
+      target="_blank">Clés étrangères</a></h1>
 
   <p class="lead mt10">
     Pour automatiser cohérences des opérations <code>INSERT</code>, <code>UPDATE</code> et <code>DELETE</code>
@@ -39,27 +41,10 @@ namespace GC7;
   //$sql='insert into clients (id, nom, prenom, date_naissance) values (1, "CÔTE", "Lionel", "1965-03-23")';
   //$req($sql);
 
-  $sql = 'select * from pets limit 3';
+  $sql = 'select * from animal limit 3';
   $req( $sql );
 
-
   ?>
-  <div class="jumbotron jumbotronRef">
-    <p class="h3-responsive text-center">Les tables de référence</p>
-    <?php
-    $sql = 'SELECT id, clt_id, nom, espece, sexe, date_naissance
-FROM pets LIMIT 4';
-    aff( 'Pets (Les 4 premiers /' . $nbr( 'pets' ) . ')' );
-    $req( $sql );
 
-    aff( 'Clients (Les 3 premiers /' . $nbr( 'clients' ) . ')' );
-    $sql = 'SELECT id, nom, prenom, date_naissance FROM clients';
-    $req( $sql );
-
-    aff( 'Users (Les 3 premiers /' . $nbr( 'users' ) . ')' );
-    $sql = 'SELECT id, name AS pseudo, email, role
-FROM users WHERE id IN (1,15,16)';
-    $req( $sql );
-    ?>
-  </div>
+</div>
 </div>

@@ -2,10 +2,13 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo pb10">Jointure et sous-requêtes</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/jointures-et-sous-requetes-modification-de-donnees"
+      target="_blank">Jointure et sous-requêtes</a></h1>
 
   <p class="lead">
-    <i class="fa fa-edit"></i> Pour mises à jour (<code>UPDATE</code>) & insertions (<code>INSERT INTO</code>)
+    <i class="fa fa-edit"></i> Pour mises à jour (<code>UPDATE</code>) & insertions (<code>INSERT
+      INTO</code>)
   </p>
 </div>
 <div class="maingc7">
@@ -31,41 +34,47 @@ namespace GC7;
   echo 'Animaux: ' . $nbr( 'animaux' ) . '<br>'; // Aff 64
   */
   //    echo '<p>Ok</p>';
-  $sql = 'UPDATE animaux SET commentaires = "" WHERE id=39';
-  $req( $sql, null, 1 );
+  $pdo = pdo( 'ocr' );
+
+  $sql = 'UPDATE animal SET commentaires = "" WHERE id=10';
+  affLign( $sql );
+  //  $pdo->query( $sql );
+
+  $sql = 'SELECT id, nom, espece_id, sexe, commentaires
+FROM animal ORDER BY id DESC limit 20, 3';
+  $req( $sql, $pdo );
 
 
-  $sql = 'SELECT id, nom, espece, sexe, commentaires
-FROM animaux ORDER BY id DESC limit 20, 3';
-  $req( $sql );
+  $sql = 'UPDATE animal SET commentaires = "Très maligne" WHERE id=39';
+  affLign( $sql );
+  //  $pdo->query( $sql );
 
-
-  $sql = 'UPDATE animaux SET commentaires = "Très maligne" WHERE id=39';
-  $req( $sql );
-
-  $sql = 'SELECT id, nom, espece, sexe, commentaires
-FROM animaux ORDER BY id DESC limit 20, 3';
-  $req( $sql );
+  $sql = 'SELECT id, nom, espece_id, sexe, commentaires
+FROM animal ORDER BY id DESC limit 20, 3';
+  $req( $sql, $pdo );
 
 
   ?>
   <div class="jumbotron jumbotronRef">
     <h3 class="h3-responsive text-center">Les tables de référence</h3>
     <?php
-    aff( 'Pets (Les 4 premiers /' . $nbr( 'pets' ) . ')' );
-    $sql = 'select id, clt_id, nom, espece, sexe
-from pets limit 4';
-    $req( $sql );
+    echo 'Animal (Les 4 premiers /' . $nbr( 'animal' ) . ')';
+    $sql = 'select id, nom, espece_id, sexe
+from animal limit 4';
+    $req( $sql, $pdo );
 
-    aff( 'Animaux (Les 3 premiers /' . $nbr( 'animaux' ) . ' qui ont un propriétaire)' );
-    $sql = 'select id, clt_id, nom, espece, sexe, commentaires
-from animaux where clt_id > "" limit 3';
-    $req( $sql );
+    echo( 'Animal (Les 3 premiers /' . $nbr( 'animal' ) . ' qui ont un propriétaire)' );
+    $sql = 'SELECT id, client_id, a.nom, espece_id, sexe, commentaires
+FROM animal a
+  LEFT OUTER JOIN adoption
+  on adoption.animal_id = a.id
+LIMIT 3';
+    $req( $sql, $pdo );
 
-    aff( 'Users (Les 3 premiers /' . $nbr( 'users' ) . ')' );
-    $sql = 'select id, name as pseudo, email, role
-from users where id in (1,15,16)';
-    $req( $sql );
+    echo 'Client (Les 3 premiers id /' . $nbr( 'client' ) . ')';
+    $sql = 'select client.id, nom as pseudo, email, ville
+from client where id in (1,2,3)';
+    $req( $sql, $pdo );
     ?>
   </div>
 </div>

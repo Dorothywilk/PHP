@@ -51,7 +51,7 @@ $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 };
 
 $nbr = function ( $table ) {
-  $cnx = pdogc7();
+  $cnx = pdo();
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
