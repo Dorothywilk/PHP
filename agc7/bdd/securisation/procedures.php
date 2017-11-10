@@ -1,11 +1,12 @@
 <?php
-
 namespace GC7;
-
 ?>
+
 <div class="jumbotron">
 
-  <h3 class="meaDo pb10">Procédures</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/procedures-stockees"
+      target="_blank">Procédures stockée</a></h1>
 
   <p class="lead">Ensemble d'instructions MySQl nommé.</p>
   <ul class="lead mt10">
@@ -193,7 +194,7 @@ DELIMITER ;";
 
   Voir <a
     href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/structurer-ses-instructions"
-    target="_blank">Portée des varaibles</a>
+    target="_blank">Portée des variables</a>
 
   <?php
 

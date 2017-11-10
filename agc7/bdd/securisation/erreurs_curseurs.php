@@ -2,7 +2,9 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo pb10">Gestion des erreurs</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/gestionnaires-d-erreurs-curseurs-et-utilisation-avancee"
+      target="_blank">Gestion des erreurs</a></h1>
 
   <p class="lead">Permettent de gérer les cas où une erreur se produirait pendant l'exécution d'une
     série d'instructions;</p>

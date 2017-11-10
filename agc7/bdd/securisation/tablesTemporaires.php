@@ -2,7 +2,9 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo pb10">Tables temporaires</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/tables-temporaires"
+      target="_blank">Tables temporaires</a></h1>
 
   <p class="lead">Valables que pour la cession en cours</p>
 

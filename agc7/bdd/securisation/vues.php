@@ -2,10 +2,14 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo pb10">Vues</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/vues"
+      target="_blank">Vues</a></h1>
 
   <p class="lead">Requêtes de selection nommée et stockée (Pas ses rédsultats).</p>
-  <p class="lead">Les requête d'insertion, etc... sont réalisées sur les tables référencées par la vue.</p>
+
+  <p class="lead">Les requête d'insertion, etc... sont réalisées sur les tables référencées par la
+    vue.</p>
 
   <p class="lead">Attention: Restrictions :</p>
   <ul>
@@ -213,7 +217,8 @@ AND pere_id IS NOT NULL;";
 
   ?>
 
-  <h4>Conditions pour qu'une vue permette de modifier des données (Requêtes <code>UPDATE</code>), d'en insérer (<code>INSERT</code>) ou d'en effacer (<code>DELETE</code>)</h4>
+  <h4>Conditions pour qu'une vue permette de modifier des données (Requêtes <code>UPDATE</code>),
+    d'en insérer (<code>INSERT</code>) ou d'en effacer (<code>DELETE</code>)</h4>
   <ul>
     <li>Ne doit modifier qu'une seule table</li>
     <li>Doit avoir utilisé l'algorythme MERGE (Choisi par MySQL ou l'utilisateur)</li>
@@ -232,18 +237,22 @@ AND pere_id IS NOT NULL;";
     </li>
   </ul>
   Options de la vue: <code>WITH [LOCAL | CASCADED] CHECK OPTION</code> :<br>
-  Modifications et insertions doivent répondre aux conditions de la vue définies par sa clause <code>WHERE</code>
+  Modifications et insertions doivent répondre aux conditions de la vue définies par sa clause
+  <code>WHERE</code>
+
   <h3>Exemple:</h3>
   <code>
-  CREATE OR REPLACE VIEW V_Animal_stagiaire<br>
-  AS SELECT id, nom, sexe, date_naissance, espece_id, race_id, mere_id, pere_id, disponible<br>
-  FROM Animal<br>
-  WHERE espece_id = 2<br>
-  WITH CHECK OPTION;</code>
+    CREATE OR REPLACE VIEW V_Animal_stagiaire<br>
+    AS SELECT id, nom, sexe, date_naissance, espece_id, race_id, mere_id, pere_id, disponible<br>
+    FROM Animal<br>
+    WHERE espece_id = 2<br>
+    WITH CHECK OPTION;</code>
   n'acceptera que des opérations (<code>UPDATE</code> ou <code>INSERT</code>) avec espece_id = 2<br>
   <ul>
     <li><code>LOCAL</code>Seules les conditions de la vue sont vérifiées</li>
-    <li><code>CASCADED</code>Les conditions des vues sous-jacentes éventuelles sont également vérifiées. C'est l'option par défaut.</li>
+    <li><code>CASCADED</code>Les conditions des vues sous-jacentes éventuelles sont également
+      vérifiées. C'est l'option par défaut.
+    </li>
   </ul>
   <?php
 

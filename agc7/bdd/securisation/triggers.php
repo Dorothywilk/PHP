@@ -2,7 +2,11 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo pb10"><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/triggers" target="_blank">Triggers</a></h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/triggers"
+      target="_blank"><a
+        href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/triggers"
+        target="_blank">Triggers (Déclencheurs)</a></h1>
 
   <p class="lead">Permettent de déclencher des actions qd une table est modifiée, et celles-ci,
     avant ou après le déclencheur.</p>

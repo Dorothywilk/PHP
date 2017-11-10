@@ -5,7 +5,9 @@ namespace GC7;
 ?>
 <div class="jumbotron">
 
-  <h3 class="meaDo pb10">Requêtes préparées</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/requetes-preparees"
+      target="_blank">Requêtes préparées</a></h1>
 
   <p class="lead">Modèle de requête nommée qui empêchent les injections SQL, et améliorent la
     performance si une même requête au moins est exécutée plusieurs fois par la même session.</p>
@@ -18,11 +20,10 @@ namespace GC7;
     </li>
   </ul>
 
-
-  <p class="lead">Syntaxe:</p>
-  <code>SET nom_req_preparee</code><br>
-  <code>PREPARE '</code>(sql)<code>'</code>
-  <br>Puis<code>EXECUTE</code>...
+  <p class="lead">Syntaxe:
+    <code>SET nom_req_preparee</code><br>
+    <code>PREPARE '</code>(sql)<code>'</code>
+    <br>Puis<code>EXECUTE</code>...</p>
 </div>
 
 <div class="maingc7">

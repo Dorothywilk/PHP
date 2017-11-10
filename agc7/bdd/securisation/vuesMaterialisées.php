@@ -2,7 +2,9 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo pb10">Vues matérialisées</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/vues-materialisees"
+      target="_blank">Vues matérialisées</a></h1>
 
   <p class="lead">Vue (Requête <code>SELECT</code>) à laquelle on donne un nom, avec données
     stockées.</p>

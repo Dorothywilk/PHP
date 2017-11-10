@@ -6,7 +6,9 @@ namespace GC7;
 ?>
 <div class="jumbotron" xmlns="http://www.w3.org/1999/html">
 
-  <h3 class="meaDo pb10">Exo final (6)</h3>
+  <h1 class="meaDo pb10"><a
+      href="http://exercices.openclassrooms.com/assessment/223?login=441267&tk=31e3340fac83f036e28bc0016e777dc0&sbd=2016-02-01&sbdtk=fa78d6dd3126b956265a25af9b322d55"
+      target="_blank">Exo final (6)</a></h1>
 
   <p class="lead"><a
       href="http://exercices.openclassrooms.com/assessment/223?login=441267&tk=31e3340fac83f036e28bc0016e777dc0&sbd=2016-02-01&sbdtk=fa78d6dd3126b956265a25af9b322d55"
@@ -105,12 +107,12 @@ CREATE PROCEDURE addColumn(
   //  affLign( $sql );
   //  $pdo->query( $sql );
   //
-    $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
-    affLign( $sql );
-    $pdo->query( $sql );
+  $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
+  affLign( $sql );
+  $pdo->query( $sql );
 
-    $sql = "select @p_addColumn as Résultat;";
-    $req( $sql, $pdo );
+  $sql = "select @p_addColumn as Résultat;";
+  $req( $sql, $pdo );
 
 
   $sql = "select if(
@@ -189,7 +191,7 @@ where table_schema='ocr2'
 
   ?>
   <h3>=> Liaison à un trigger pour misa à jour automatique<br>
-de la colonne nb_commentaires dans Article</h3>
+    de la colonne nb_commentaires dans Article</h3>
   <?php
 
   //  $pdo = pdo( 'ocr2' );
@@ -212,14 +214,17 @@ END
   $pdo->query( $sql );
   //  $req( $sql );
 
-?>
+  ?>
 
-<h2>Cf. <g>exo6.sql</g> pour détail du code complet.</h2>
-<hr>
+  <h2>Cf.
+    <g>exo6.sql</g>
+    pour détail du code complet.
+  </h2>
+  <hr>
 
-    <?php
+  <?php
 
-    echo NULL + 1;
+  echo NULL + 1;
 
 
   echo str_repeat( '<br>', 28 ); // 28

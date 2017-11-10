@@ -3,7 +3,9 @@ namespace GC7;
 ?>
 <div class="jumbotron">
 
-  <h3 class="meaDo pb10">Conditions</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/structurer-ses-instructions"
+      target="_blank">Conditions</a></h1>
 
 </div>
 <div class="maingc7">
@@ -31,9 +33,9 @@ namespace GC7;
   AffLign( $sql );
   $pdo->query( $sql );
 
-//  $sql = "DELIMITER |";
-//  AffLign( $sql );
-//  $pdo->query( $sql );
+  //  $sql = "DELIMITER |";
+  //  AffLign( $sql );
+  //  $pdo->query( $sql );
 
   $sql = "CREATE PROCEDURE est_adopte(IN p_animal_id INT)
 BEGIN
@@ -56,9 +58,9 @@ END ;";
   AffLign( $sql );
   $pdo->query( $sql );
 
-//  $sql = "DELIMITER ;";
-//  affLign( $sql );
-//  $pdo->query( $sql );
+  //  $sql = "DELIMITER ;";
+  //  affLign( $sql );
+  //  $pdo->query( $sql );
 
 
   $sql = "CALL est_adopte(3);";
