@@ -2,17 +2,19 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h1 class="meaDo pb10">Sous-requêtes</h1>
+  <h1 class="meaDo pb10"><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/sous-requetes" target="_blank">Sous-requêtes</a></h1>
 </div>
 <div class="maingc7">
   <?php
+
+  $pdo=pdo('laravel');
   echo '<h5>Factures avec pseudos (Sous-requête dans SELECT)</h5>';
   $sql = 'SELECT id AS num, clt_id,
   (SELECT name FROM users WHERE users.id=factures.clt_id) AS pseudo,
    date, total
 FROM factures
 LIMIT 3';
-  $req( $sql );
+  $req( $sql, $pdo );
 
   echo '<h5>Facture de GrCOTE7 (Sous-requête dans WHERE)</h5>';
   $sql = 'select concat("00",id) as num, clt_id, date, total

@@ -262,3 +262,14 @@ div.lead > ul {
 .mt20 {
     margin-top: 20px;
 }
+
+h1.meaDo > a {
+    color: cornsilk;
+}
+
+h1.meaDo > a:hover {
+    color: red;
+    text-decoration: none;
+    text-shadow: 0 0 10px #880000;
+    text-shadow: -1px 2px 3px orange, -2px 3px 5px #ff1813, -3px 4px 10px #000;
+}

@@ -25,45 +25,46 @@ namespace GC7;
 //
 //";
 
+
 // Bases
 
 // Requêtes et sous-requêtes
-//include ('bases/subReq.php');
+include ('bases/subReq.php');
 
 // Jointures et sous-requêtes
-//include( 'bases/joints.php' );
+include( 'bases/joints.php' );
 
 // UNION de plusieurs requêtes
-//include( 'bases/union.php' );
+include( 'bases/union.php' );
 
 // Clés étrangèes (Foreign Keys)
-//include ('bases/foreign_key.php');
+include ('bases/foreign_key.php');
+
 
 // Fonctions natives MySQL
-// include ('bases/functions.php');
-// include( 'bases/functionsAgregation.php' );
-// include ('bases/regroupement.php');
+ include ('bases/functions.php');
+ include( 'bases/functionsAgregation.php' );
+ include ('bases/regroupement.php');
  include ('bases/date.php');
-// include ('bases/calculsDate.php');
+ include ('bases/calculsDate.php');
 
 
 // Sécurisation
 
-//include( 'securisation/transactions.php' );
-//include( 'securisation/verrous.php' );
-//include( 'securisation/requetesPreparees.php' );
-//include( 'securisation/procedures.php' );
-//include( 'securisation/conditions.php' );
-//include( 'securisation/erreurs_curseurs.php' );
-//include( 'securisation/triggers.php' );
-//include( 'securisation/vues.php' );
-//include( 'securisation/tablesTemporaires.php' );
-//include( 'securisation/vuesMaterialisées.php' );
+include( 'securisation/transactions.php' );
+include( 'securisation/verrous.php' );
+include( 'securisation/requetesPreparees.php' );
+include( 'securisation/procedures.php' );
+include( 'securisation/conditions.php' );
+include( 'securisation/erreurs_curseurs.php' );
+include( 'securisation/triggers.php' );
+include( 'securisation/vues.php' );
+include( 'securisation/tablesTemporaires.php' );
+include( 'securisation/vuesMaterialisées.php' );
 
 //include( 'tests.php' );
 include( 'securisation/exo6.php' );
 
-include( 'securisation/triggers.php' ); // copie
 
 //$maReq = new Requete( (Array) $req );
 
