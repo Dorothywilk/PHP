@@ -202,6 +202,7 @@ CREATE TRIGGER `before_update_commentaire` BEFORE UPDATE ON `commentaire` FOR EA
     END IF;
   END;
 
+# 5555555555555555555555555555555555555555555555555555555555555
 # -------------------------------------------------------------
 # Affichage article avec 150 caractères
 DROP VIEW IF EXISTS v_article_resume;
@@ -235,3 +236,53 @@ SELECT
   )
 FROM article;
 
+# 666666666666666666666666666666666666666666666666666666666666666
+
+-- 3 / Stats
+
+-- Requête qui servira pour seed de la Vue Matérialisée
+
+SELECT
+  u.id,
+  pseudo,
+  count(*)                 AS nb_articles,
+  (SELECT max(date_publication)
+   FROM article
+   WHERE auteur_id = u.id) AS date_dernier_article,
+  sum(nb_commentaires)     AS nb_commentaires,
+  (SELECT coalesce(max(date_commentaire), 'Néant')
+   FROM commentaire
+   WHERE auteur_id = u.id) AS date_dernier_commentaire
+
+FROM utilisateur u
+
+  LEFT JOIN article a
+    ON a.auteur_id = u.id
+
+
+GROUP BY u.id;
+
+
+# 777777777777777777777777777777777777777777777777777777777777777
+
+-- Trigger pour Mise à jour sur demande de la VM ci-dessus
+
+SELECT
+  u.id,
+  pseudo,
+  count(*)                 AS nb_articles,
+  (SELECT max(date_publication)
+   FROM article
+   WHERE auteur_id = u.id) AS date_dernier_article,
+  sum(nb_commentaires)     AS nb_commentaires,
+  (SELECT coalesce(max(date_commentaire), 'Néant')
+   FROM commentaire
+   WHERE auteur_id = u.id) AS date_dernier_commentaire
+
+FROM utilisateur u
+
+  LEFT JOIN article a
+    ON a.auteur_id = u.id
+
+
+GROUP BY u.id;
