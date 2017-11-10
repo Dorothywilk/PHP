@@ -2,7 +2,7 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h3 class="meaDo mt10">Fonctions natives MySQL</h3>
+  <h1 class="meaDo mt10 pb10"><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/fonctions-scalaires" target="_blank">Fonctions natives MySQL</a></h1>
 
   <p>
   <ul>
@@ -11,7 +11,7 @@ namespace GC7;
   </ul>
   </p>
 
-  <p class="lead">
+  <p class="lead pt10">
     Mathématiques, chaînes, etc...
   </p>
 </div>

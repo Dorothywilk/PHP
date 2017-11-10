@@ -3,7 +3,9 @@ namespace GC7;
 ?>
 <div class="jumbotron">
 
-  <h3 class="meaDo mt10 pb10">Regroupement</h3>
+  <h1 class="meaDo mt10 pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/regroupement"
+      target="_blank">Regroupement</a></h1>
 
   <p class="lead mt10">
     Regroupement de lignes en fonction d'un critère, voire de plusieurs

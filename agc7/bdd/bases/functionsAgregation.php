@@ -3,7 +3,7 @@ namespace GC7;
 ?>
 <div class="jumbotron">
 
-  <h3 class="meaDo mt10 pb10">Fonctions d'agrégation</h3>
+  <h1 class="meaDo mt10 pb10"><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/fonctions-d-agregation" target="_blank">Fonctions d'agrégation</a></h1>
 
   <p class="lead mv0">
     Principalement pour stats

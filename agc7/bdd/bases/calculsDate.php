@@ -3,7 +3,9 @@ namespace GC7;
 ?>
 <div class="jumbotron">
 
-  <h3 class="meaDo mt10 pb10">Calculs de dates</h3>
+  <h1 class="meaDo mt10 pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/calculs-sur-les-donnees-temporelles"
+      target="_blank">Calculs de dates</a></h1>
 
   <ul class="lead">
     <li>DATEDIFF(): Donne un résultat en nombre de jours;</li>

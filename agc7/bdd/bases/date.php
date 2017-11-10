@@ -3,7 +3,9 @@ namespace GC7;
 ?>
 <div class="jumbotron">
 
-  <h3 class="meaDo">Date / Heure</h3>
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/obtenir-la-date-l-heure-actuelle"
+      target="_blank">Date / Heure</a></h1>
 
   <p class="lead">Fonctions temporelles</p>
 
@@ -37,8 +39,10 @@ namespace GC7;
 
 
   $sql = "SELECT *, unix_timestamp() FROM testDate";
-  echo '<h4>';aff($sql);echo '</h4>';
-//  $req( $sql );
+  echo '<h4>';
+  aff( $sql );
+  echo '</h4>';
+  //  $req( $sql );
 
 
   echo '<h3>Formater une date</h3>';
@@ -97,9 +101,18 @@ FROM Animal
 WHERE espece_id = 4 limit 3';
   $req( $sql );
 
+  $pdo = pdo();
+
+  ?>
+
+  <h3>Date en français</h3>
+
+  <?php
 
   $sql = 'SET lc_time_names = "fr_FR"';
-  $pdo = $req( $sql, null );
+  $pdo->query( $sql );
+
+
   $sql = 'SELECT nom, date_naissance,
        DATE_FORMAT(date_naissance, "Anzin, le %W %e %M %Y") AS date
 FROM Animal
