@@ -105,12 +105,12 @@ CREATE PROCEDURE addColumn(
   //  affLign( $sql );
   //  $pdo->query( $sql );
   //
-  //  $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
-  //  affLign( $sql );
-  //  $pdo->query( $sql );
-  //
-  //  $sql = "select @p_addColumn as Résultat;";
-  //  $req( $sql, $pdo );
+    $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
+    affLign( $sql );
+    $pdo->query( $sql );
+
+    $sql = "select @p_addColumn as Résultat;";
+    $req( $sql, $pdo );
 
 
   $sql = "select if(
@@ -177,27 +177,44 @@ where table_schema='ocr2'
   //	DROP COLUMN `nb_commentaires`;
 
 
-
-
   ?>
-  <h3 class="pt10">=> Ajout d'une colonne dans article</h3>
+  <h3>=> Ajout d'une colonne dans article</h3>
   <?php
 
-//  $pdo = pdo( 'ocr2' );
+  //  $pdo = pdo( 'ocr2' );
 
-    $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
-    affLign( $sql );
-    $pdo->query( $sql );
+  $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
+  affLign( $sql );
+  $pdo->query( $sql );
 
   ?>
-  <h3 class="pt10">=> Liaison à un trigger pour automatisation</h3>
+  <h3>=> Liaison à un trigger pour misa à jour automatique<br>
+de la colonne nb_commentaires dans Article</h3>
   <?php
 
-//  $pdo = pdo( 'ocr2' );
+  //  $pdo = pdo( 'ocr2' );
 
-    $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
-    affLign( $sql );
-    $pdo->query( $sql );
+  $sql = "DROP TRIGGER IF EXISTS after_insert_commentaire;
+-- Actualise nombre de commentaire par article
+
+CREATE TRIGGER `after_insert_commentaire` AFTER INSERT
+       ON `commentaire` FOR EACH ROW
+BEGIN
+  UPDATE article
+  SET nb_commentaires =
+  (SELECT count(*)
+   FROM commentaire
+   WHERE article_id = article.id
+   GROUP BY article_id);
+END
+";
+  affLign( $sql );
+  $pdo->query( $sql );
+  //  $req( $sql );
+
+
+  echo str_repeat( '<br>', 28 ); // 28
+
 
   ?>
 

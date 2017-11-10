@@ -97,4 +97,57 @@ CALL addColumn('nb_commentaires', 'article', @addColumn);
 CALL addColumn('nb_commentaires', 'article', @p_addColumn);
 
 
--- Trigger
+-- Triggers
+
+-- 11111111111111111111111111111
+DROP PROCEDURE IF EXISTS maj_nb_commentaires;
+
+DELIMITER |
+CREATE PROCEDURE `maj_nb_commentaires`()
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+  SQL SECURITY DEFINER
+  COMMENT ''
+  BEGIN
+
+    UPDATE article
+    SET nb_commentaires =
+    (SELECT count(*)
+     FROM commentaire
+     WHERE article_id = article.id
+     GROUP BY article_id
+    );
+
+  END |
+
+
+# 222222222222222222222222222222222222222222222222222222222222
+DROP TRIGGER IF EXISTS after_insert_commentaire;
+
+CREATE TRIGGER `after_insert_commentaire` AFTER INSERT ON `commentaire` FOR EACH ROW
+  BEGIN
+    UPDATE article
+    SET nb_commentaires = nb_commentaires + 1
+    WHERE commentaire.article_id = NEW.id;
+  END;
+
+
+# 33333333333333333333333333333333333333333333333333333333
+DELETE FROM `ocr2`.`commentaire`
+WHERE commentaire.id IN (SELECT max(id)
+                         FROM (SELECT id
+                               FROM commentaire) AS tmp);
+
+
+DROP TRIGGER IF EXISTS after_delete_commentaire;
+
+CREATE TRIGGER `after_delete_commentaire`
+AFTER DELETE ON `commentaire` FOR EACH ROW
+  BEGIN
+    UPDATE article
+    SET nb_commentaires = nb_commentaires - 1
+    WHERE article.id = OLD.article_id;
+  END;
+
+# 44444444444444444444444444444444444444444444444444444444444
