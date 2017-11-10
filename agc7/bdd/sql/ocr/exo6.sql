@@ -151,3 +151,21 @@ AFTER DELETE ON `commentaire` FOR EACH ROW
   END;
 
 # 44444444444444444444444444444444444444444444444444444444444
+
+-- Pour UPDATE
+DROP TRIGGER IF EXISTS after_update_commentaire;
+
+CREATE TRIGGER `after_update_commentaire` AFTER UPDATE ON `commentaire` FOR EACH ROW
+  BEGIN
+    IF NEW.article_id <> OLD.article_id
+    THEN
+      UPDATE article
+      SET nb_commentaires = nb_commentaires - 1
+      WHERE id = OLD.article_id;
+
+      UPDATE article
+      SET nb_commentaires = nb_commentaires + 1
+      WHERE id = NEW.article_id;
+
+    END IF;
+  END;
