@@ -240,7 +240,7 @@ FROM article;
 
 -- 3 / Stats
 
--- Requête qui servira pour seed de la Vue Matérialisée
+-- Requête qui servira pour création et seed de la Vue Matérialisée
 
 CREATE TABLE IF NOT EXISTS VM_Auteurs_Editions_Commentaires
   ENGINE = InnoDB
@@ -264,7 +264,7 @@ CREATE TABLE IF NOT EXISTS VM_Auteurs_Editions_Commentaires
 
 # 777777777777777777777777777777777777777777777777777777777777777
 
--- Trigger pour Mise à jour sur demande de la VM ci-dessus
+-- Procédure pour Mises à jour sur demande de la VM ci-dessus
 
 SELECT
   u.id,
