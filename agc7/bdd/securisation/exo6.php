@@ -212,6 +212,15 @@ END
   $pdo->query( $sql );
   //  $req( $sql );
 
+?>
+
+<h2>Cf. <g>exo6.sql</g> pour détail du code complet.</h2>
+<hr>
+
+    <?php
+
+    echo NULL + 1;
+
 
   echo str_repeat( '<br>', 28 ); // 28
 

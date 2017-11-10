@@ -43,7 +43,7 @@ namespace GC7;
 // include ('bases/functions.php');
 // include( 'bases/functionsAgregation.php' );
 // include ('bases/regroupement.php');
-// include ('bases/date.php');
+ include ('bases/date.php');
 // include ('bases/calculsDate.php');
 
 
