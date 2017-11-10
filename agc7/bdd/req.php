@@ -51,7 +51,7 @@ namespace GC7;
 //include( 'securisation/procedures.php' );
 //include( 'securisation/conditions.php' );
 //include( 'securisation/erreurs_curseurs.php' );
-//include( 'securisation/triggers.php' );
+include( 'securisation/triggers.php' );
 //include( 'securisation/vues.php' );
 //include( 'securisation/tablesTemporaires.php' );
 //include( 'securisation/vuesMaterialisées.php' );
@@ -61,7 +61,7 @@ namespace GC7;
 //
 include( 'securisation/exo6.php' );
 //
-include( 'securisation/vuesMaterialisées.php' );
+//include( 'securisation/vuesMaterialisées.php' );
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //include( '../class/Req.php' );
