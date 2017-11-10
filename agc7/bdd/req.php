@@ -28,8 +28,7 @@ namespace GC7;
 
 // Bases
 
-//include ('bases/subReq.php');
-
+//include( 'bases/subReq.php' );
 //include( 'bases/joints.php' );
 //include( 'bases/union.php' );
 //include( 'bases/foreign_key.php' );
@@ -56,12 +55,12 @@ namespace GC7;
 //include( 'securisation/vues.php' );
 //include( 'securisation/tablesTemporaires.php' );
 //include( 'securisation/vuesMaterialisées.php' );
-
+//
 //include( 'tests.php' );
-
-
+//
+//
 include( 'securisation/exo6.php' );
-
+//
 include( 'securisation/vuesMaterialisées.php' );
 
 //////////////////////////////////////////////////////////////////////////////////////////

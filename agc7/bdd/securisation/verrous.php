@@ -97,9 +97,12 @@ namespace GC7;
       <li>Cas avec un verrou partagé</li>
 
       <?php
-      $sql = 'delete from adoption where client_id=1 and animal_id=8';
+      //      $sql = 'delete from adoption where client_id=1 and animal_id=8';
       //    $req( $sql, null, 1 );
 
+      unset( $pdo );
+      unset( $pdo1 );
+      unset( $pdo2 );
 
       $sql = 'select "Consultation de la liste de tous les chats" as "1)
         Action pour le premier client"';
@@ -318,7 +321,7 @@ LOCK IN SHARE MODE
 
 -- Session 2";
       affLign( $sql );
-      $pdo2->query( $sql );
+      //      $pdo2->query( $sql );
       //      $req( $sql, null, 1 ); // session 2
 
       //  $sql = "commit";
