@@ -1,4 +1,12 @@
+-- Utiliser les tables remplies de p2pInsertion1.sql
+
+-- Adapter ce nom de nase de données
 USE ocr2;
+
+-- NB: Ce script peut être éxécuté plusieurs fois
+-- Posé en dépôt GitHub:
+-- 
+
 
 -- -----------------------------------------------------------------------------------
 
@@ -30,6 +38,7 @@ CREATE PROCEDURE `columnExists`(
   END |
 DELIMITER ;
 
+
 -- 2 / ADD COLUMN si elle n'existe pas déjà
 DROP PROCEDURE IF EXISTS addColumn;
 
@@ -54,6 +63,7 @@ CREATE PROCEDURE addColumn(
           CONCAT(
               'ALTER TABLE ', @theTable,
               ' ADD COLUMN ', @theColumn,
+              -- ToDoLi: Mettre ci-dessous en param
               ' INT UNSIGNED NULL')
       )
     )
@@ -147,7 +157,11 @@ DELIMITER ;
 CALL maj_nb_commentaires;
 
 -- Résultat intermédiaire (Compte initial des commentaires)
-SELECT * FROM article;
+SELECT
+  id,
+  titre,
+  nb_commentaires
+FROM article;
 
 
 --                                   MISSION 1
@@ -161,9 +175,13 @@ CREATE TRIGGER `after_insert_commentaire` AFTER INSERT ON `commentaire` FOR EACH
   BEGIN
     UPDATE article
     SET nb_commentaires = nb_commentaires + 1
-    WHERE commentaire.article_id = NEW.id;
+    WHERE id = NEW.article_id;
   END;
+|
 DELIMITER ;
+
+INSERT INTO commentaire (`article_id`, `auteur_id`, `contenu`, `date_commentaire`)
+VALUES ('1', '1', 'Tatati...UNIQ CONTENT COMMENT gf,gndfgd@12dsg', NOW());
 
 --                                   MISSION 1
 -- Partie 3333333333333333333333333333333333333333333333333333333333333333333333333333
@@ -175,10 +193,19 @@ DELIMITER |
 CREATE TRIGGER `after_delete_commentaire`
 AFTER DELETE ON `commentaire` FOR EACH ROW
   BEGIN
+
     UPDATE article
     SET nb_commentaires = nb_commentaires - 1
     WHERE article.id = OLD.article_id;
-  END|
+
+    -- Je veux NULL par défaut si pas de commentaire
+    -- Donc si nb = 0 => NULL y est mis
+    UPDATE article
+    SET nb_commentaires = NULL
+    WHERE nb_commentaires = 0
+          AND article.id = OLD.article_id;
+
+  END |
 DELIMITER ;
 
 
@@ -214,19 +241,38 @@ CREATE TRIGGER `before_update_commentaire` BEFORE UPDATE ON `commentaire` FOR EA
          OR (SELECT count(*)
              FROM commentaire
 
+             -- On vérifie qu'il n'y a pas de commentaires
+             -- suivant quelque soit l'utilisateur
              WHERE article_id = OLD.article_id
                    AND id > OLD.id
-            ) > 0
+         )
+
+         OR (SELECT count(*)
+             FROM commentaire
+
+             -- On vérifie qu'il n'y a pas de commentaires
+             -- qui suivraient déjà ce commentaire déplacé
+             WHERE article_id = NEW.article_id
+                   AND id > NEW.id
+            )
+
+            > 0
       THEN
         UPDATE article
         SET NEW.article_id = OLD.article_id
         WHERE id = OLD.article_id;
       ELSE
-        -- On vérifie qu'il n'y a pas eût de commentaires suivant par un autre utilisateur
 
         UPDATE article
         SET nb_commentaires = nb_commentaires - 1
         WHERE id = OLD.article_id;
+
+        -- Je veux NULL par défaut si pas de commentaire
+        -- Donc si nb = 0 => NULL y est mis
+        UPDATE article
+        SET nb_commentaires = NULL
+        WHERE nb_commentaires = 0
+              AND article.id = OLD.article_id;
 
         UPDATE article
         --  Si nb_commentaire est null, on prend 0 comme valeur initiale
@@ -239,27 +285,75 @@ DELIMITER ;
 
 -- Résultat
 
+-- Pour tester création d'un vue pour juste les articles avec leurs nb_commentaires respectifs
 
--- 1 / 3 - Test en cas d'inster
+DROP VIEW IF EXISTS V_Articles_Commentaires;
+
+CREATE VIEW V_Articles_Commentaires
+AS
+  SELECT
+    id,
+    titre,
+    nb_commentaires
+  FROM article;
+
+
+-- 1 / 3 - Test en cas d'INSERT
+
+-- Situation actuelle des infos
+SELECT *
+FROM v_articles_commentaires;
 
 -- Ajout d'une commentaire pour l'article 1
 INSERT INTO commentaire (`article_id`, `auteur_id`, `contenu`, `date_commentaire`)
-VALUES ('1', '1', 'Tatati...', NOW());
+VALUES ('1', '1', 'Tatati...UNIQ CONTENT COMMENT gf,gndfgd@12dsg', NOW());
 
 -- Résultat INSERT (À comparer avec l'onglet précédent, issu du compte initial des commentaires)
-SELECT * FROM article;
+SELECT *
+FROM v_articles_commentaires;
 
 -- Effaçage du commentaire ajouté justepour tester efficacité des triggers
-DELETE FROM commentaire WHERE contenu = 'Tatati...';
+DELETE FROM commentaire
+WHERE contenu = 'Tatati...UNIQ CONTENT COMMENT gf,gndfgd@12dsg';
 
 
--- 2 / 3 - Test en cas de delete
+-- 2 / 3 - Test en cas de DELETE
 
 -- Résultat DELETE (À comparer avec l'onglet précédent, ou encore, doit être identique à la première selection)
-SELECT * FROM article;
+SELECT *
+FROM v_articles_commentaires;
 
 
--- 3 / 3 - Test en cas d'update
+-- 3 / 3 - Test en cas d'UPDATE
+
+-- Commande non exécutée car du coup, il y aurait déjà un commentaire qui suivrait celui-ci
+UPDATE commentaire
+SET article_id = 8
+WHERE id = 2;
+
+-- on choisit donc un commentaire que l'on peut déplacer
+-- En l'occurence, onpique un commentaire de l'article 5
+-- pour le donner à l'article 1
+UPDATE commentaire
+SET article_id = 1
+WHERE id = 10;
+
+SELECT *
+FROM v_articles_commentaires;
+
+-- on remet dans l'état initial
+UPDATE commentaire
+SET article_id = 5
+WHERE id = 10;
+
+
+UPDATE commentaire
+SET article_id = 1
+WHERE id = 2;
+
+
+SELECT *
+FROM v_articles_commentaires;
 
 
 -- -----------------------------------------------------------------------------------
@@ -287,7 +381,21 @@ AS
 SELECT *
 FROM v_article_resume;
 
+-- Test:
 
+INSERT INTO article (titre, resume, contenu, auteur_id, date_publication) VALUES
+  ('Long contenu', '',
+   '(realizing) That''s eighty dollars! Look, if your horse threw his shoe, bring him back and I''ll re-shoe him! I done shot that horse! Well that''s your problem, Tannen! Wrong. That''s yours. So from now on, you better be lookin'' behind you when you walk. ''Cause one day you gonna get a bullet in your back. Let''s go!',
+   1, '2017-11-11 17:20:07'),
+  ('No Résumé', '', 'Lorem ipsum', 1, '2017-11-11 17:20:07');
+
+-- La même vue avec 2 article (id 9 et 10) qui utilise pleinement les fonctions de cette vue
+SELECT *
+FROM v_article_resume;
+
+-- Remise en état
+DELETE FROM `ocr2`.`article`
+WHERE `id` = 10 OR id = 9;
 -- -----------------------------------------------------------------------------------
 
 -- MISSION 3 - 2 parties - Stocker des infos pour statistiques dont mise à jour sera sur demande
@@ -348,4 +456,5 @@ DELIMITER ;
 CALL maj_Auteurs_Editions_Commentaires();
 
 -- Résultat final:
-SELECT * FROM vm_Auteurs_Editions_Commentaires;
+SELECT *
+FROM vm_Auteurs_Editions_Commentaires;
