@@ -1,7 +1,14 @@
+-- Consignes d'utilisation :
+
 -- Utiliser les tables remplies de p2pInsertion1.sql
 
--- Adapter ce nom de nase de données
-USE ocr2;
+--  Adapter ce nom de base de données
+-- USE ocr2;
+-- Recommandé: PhpMyAdmin ( Copier / coller tout le fichier dans la case requête SQL) qui permettra d'avoir à la suite, les directives et leurs sorties
+
+-- HeidiSQL: ATTENTION: augmenter le nombre de sorties (Outils / Préférences / SQL/ Jeux de résultat maximum) à 20 par exemple pour avoir la totalité des sorties qui s'affichent (NB: Non bloquant, cette restriction native de HeidiSQL n'empêche pas le script de s'executer complètement)
+
+
 
 -- NB: Ce script peut être éxécuté plusieurs fois
 
@@ -375,8 +382,8 @@ AS
         if(trim(resume) = '', NULL, trim(resume)),
         if(length(contenu) < 148,
            trim(contenu),
-           concat(left(contenu, 147), '...'))
-    ) AS 'contenu'
+           concat(trim(left(contenu, 147)), '...'))
+    ) AS 'résumé ou si absent, extrait du contenu'
   FROM article;
 
 -- Requete pour appeler la Vue
@@ -386,18 +393,28 @@ FROM v_article_resume;
 -- Test:
 
 INSERT INTO article (titre, resume, contenu, auteur_id, date_publication) VALUES
-  ('Long contenu', '',
-   '(realizing) That''s eighty dollars! Look, if your horse threw his shoe, bring him back and I''ll re-shoe him! I done shot that horse! Well that''s your problem, Tannen! Wrong. That''s yours. So from now on, you better be lookin'' behind you when you walk. ''Cause one day you gonna get a bullet in your back. Let''s go!',
-   1, '2017-11-11 17:20:07'),
+  ('Long contenu', '', '(realizing) That\'s eighty dollars! Look, if your horse threw his shoe, bring him back and I\'ll re-shoe him! I done shot that
+   horse! Well that\'s your problem, Tannen! Wrong. That\'s yours. So from now on, you better be lookin\' behind you when you walk. \'Cause one day you gonna get a bullet 
+	in your back. Let\'s go!', 1, '2017-11-11 17:20:07'),
+
   ('No Résumé', '', 'Lorem ipsum', 1, '2017-11-11 17:20:07');
 
 -- La même vue avec 2 article (id 9 et 10) qui utilise pleinement les fonctions de cette vue
+SELECT
+  id,
+  titre,
+  resume,
+  contenu
+FROM article
+WHERE id > 7;
+
 SELECT *
-FROM v_article_resume;
+FROM v_article_resume
+WHERE id > 7;
 
 -- Remise en état
-DELETE FROM `ocr2`.`article`
-WHERE `id` = 10 OR id = 9;
+DELETE FROM article
+WHERE `id` > 8;
 -- -----------------------------------------------------------------------------------
 
 -- MISSION 3 - 2 parties - Stocker des infos pour statistiques dont mise à jour sera sur demande
