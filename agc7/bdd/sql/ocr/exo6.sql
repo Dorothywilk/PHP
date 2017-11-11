@@ -4,8 +4,9 @@
 USE ocr2;
 
 -- NB: Ce script peut être éxécuté plusieurs fois
--- Posé en dépôt GitHub:
--- 
+
+-- Dépôt GitHub :
+-- https://github.com/c57fr/Do/blob/master/agc7/bdd/sql/ocr/exo6.sql
 
 
 -- -----------------------------------------------------------------------------------
@@ -64,6 +65,7 @@ CREATE PROCEDURE addColumn(
               'ALTER TABLE ', @theTable,
               ' ADD COLUMN ', @theColumn,
               -- ToDoLi: Mettre ci-dessous en param
+              -- pour définir TYPE et options à la volée
               ' INT UNSIGNED NULL')
       )
     )
