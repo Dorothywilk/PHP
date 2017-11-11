@@ -1,0 +1,13 @@
+<ion-view>
+    <ion-content overflow-scroll="false" class="weather-home container">
+        <button class="button button-full button-calm" ng-click="loadWeather()">Lancer la recherche</button>
+        <div ng-if="state" class="forecast">
+            <img src="{{weatherData.icon}}" class="icon"/>
+            <label class="bigText">{{weatherData.main}}</label>
+            <div class="mainText">Ville : {{weatherData.city}}</div>
+            <div class="mainText">Conditions courantes : {{weatherData.description}}</div>
+            <div class="mainText">Coordonnées géographiques : {{weatherData.position.lat}} , {{weatherData.position.lng}}</div>
+            <div class="bigText">{{weatherData.temp}} °C</div>
+        </div>
+    </ion-content>
+</ion-view>

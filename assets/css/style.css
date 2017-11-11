@@ -17,7 +17,9 @@
 
 body,
 html {
-    background: #fff8dc
+/*    background: #fff8dc;*/
+/*    background: red;*/
+  background: linear-gradient(to left bottom, orange, yellow 50%, red);
 }
 
 body {
