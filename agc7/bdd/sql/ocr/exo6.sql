@@ -1,6 +1,19 @@
 USE ocr2;
 
--- Retourne 1 si la colonne existe ou 0 sinon
+-- -----------------------------------------------------------------------------------
+
+-- Préambule : 3 procédures ci-dessous pour, respectivement :
+
+-- -----------------------------------------------------------------------------------
+
+-- 1 / Vérifier si une colonne existe ou pas (Utilisée par les 2 procédures suivantes)
+
+-- 2 / Ajouter une colonne à une table (Sans s'inquiéter de savoir si elle y est déjà ou pas)
+
+-- 3 / Supprimer une colonne d'une table (Sans s'inquiéter de savoir si elle y existait ou pas)
+
+
+-- 1 / Retourne 1 si la colonne existe ou 0 sinon
 DROP PROCEDURE IF EXISTS `columnExists`;
 
 DELIMITER |
@@ -15,8 +28,9 @@ CREATE PROCEDURE `columnExists`(
     FROM information_schema.columns
     WHERE table_name = theTable AND column_name = theColumn;
   END |
+DELIMITER ;
 
--- ADD COLUMN si elle n'existe pas déjà
+-- 2 / ADD COLUMN si elle n'existe pas déjà
 DROP PROCEDURE IF EXISTS addColumn;
 
 DELIMITER |
@@ -47,16 +61,12 @@ CREATE PROCEDURE addColumn(
     SET @query = p_addColumn;
     PREPARE st FROM @query;
     EXECUTE st;
-    SELECT p_addColumn AS qqq;
+    SELECT p_addColumn AS SuiviProcess;
   END|
 DELIMITER ;
 
-CALL addColumn('nb_commentaires', 'article', @p_addColumn);
 
-
-USE ocr2;
-
--- DROP COLUMN (si elle existe)
+-- 3 / DROP COLUMN (si elle existe)
 DROP PROCEDURE IF EXISTS dropColumn;
 
 DELIMITER |
@@ -88,21 +98,30 @@ CREATE PROCEDURE dropColumn(
     EXECUTE st;
   END|
 DELIMITER ;
--- END;
 
+
+-- Juste pour tester/utiliser ces procédures, sans nuire à l'exercice
 CALL addColumn('nb_commentaires', 'article', @addColumn);
 CALL dropColumn('nb_commentaires', 'article', @dropColumn);
+
+
+-- -----------------------------------------------------------------------------------
+
+-- MISSION 1 - Afficher le nombre de commentaires de chaque article
+
+--  -----------------------------------------------------------------------------------
+
+
+--                                   MISSION 1
+-- Partie 1111111111111111111111111111111111111111111111111111111111111111111111111111
+-- / 4
+
+-- Ajout colonne nb_commentaires pour chaque Article (En utilisant la procédure 'maison' addColumn())
 CALL addColumn('nb_commentaires', 'article', @addColumn);
 
 
--- Ajout addColum pour nb_commentaires....
+-- Procédure pour initier les bonnes valeurs pour chaque articles
 
-CALL addColumn('nb_commentaires', 'article', @p_addColumn);
-
-
--- Triggers
-
--- 11111111111111111111111111111
 DROP PROCEDURE IF EXISTS maj_nb_commentaires;
 
 DELIMITER |
@@ -123,37 +142,51 @@ CONTAINS SQL
     );
 
   END |
+DELIMITER ;
+
+CALL maj_nb_commentaires;
+
+-- Résultat intermédiaire (Compte initial des commentaires)
+SELECT * FROM article;
 
 
-# 222222222222222222222222222222222222222222222222222222222222
+--                                   MISSION 1
+-- Partie 2222222222222222222222222222222222222222222222222222222222222222222222222222
+-- / 4
+
 DROP TRIGGER IF EXISTS after_insert_commentaire;
 
+DELIMITER |
 CREATE TRIGGER `after_insert_commentaire` AFTER INSERT ON `commentaire` FOR EACH ROW
   BEGIN
     UPDATE article
     SET nb_commentaires = nb_commentaires + 1
     WHERE commentaire.article_id = NEW.id;
   END;
+DELIMITER ;
 
-
-# 33333333333333333333333333333333333333333333333333333333
-# DELETE FROM `ocr2`.`commentaire`
-# WHERE commentaire.id IN (SELECT max(id)
-#                          FROM (SELECT id
-#                                FROM commentaire) AS tmp);
-
+--                                   MISSION 1
+-- Partie 3333333333333333333333333333333333333333333333333333333333333333333333333333
+-- / 4
 
 DROP TRIGGER IF EXISTS after_delete_commentaire;
 
+DELIMITER |
 CREATE TRIGGER `after_delete_commentaire`
 AFTER DELETE ON `commentaire` FOR EACH ROW
   BEGIN
     UPDATE article
     SET nb_commentaires = nb_commentaires - 1
     WHERE article.id = OLD.article_id;
-  END;
+  END|
+DELIMITER ;
 
-# 44444444444444444444444444444444444444444444444444444444444
+
+-- -----------------------------------------------------------------------------------
+--                                   MISSION 1
+-- Partie 4444444444444444444444444444444444444444444444444444444444444444444444444444
+-- / 4
+
 
 -- Pour UPDATE
 
@@ -167,6 +200,7 @@ AFTER DELETE ON `commentaire` FOR EACH ROW
 
 DROP TRIGGER IF EXISTS before_update_commentaire;
 
+DELIMITER |
 CREATE TRIGGER `before_update_commentaire` BEFORE UPDATE ON `commentaire` FOR EACH ROW
   BEGIN
 
@@ -200,11 +234,40 @@ CREATE TRIGGER `before_update_commentaire` BEFORE UPDATE ON `commentaire` FOR EA
         WHERE id = NEW.article_id;
       END IF;
     END IF;
-  END;
+  END|
+DELIMITER ;
 
-# 5555555555555555555555555555555555555555555555555555555555555
-# -------------------------------------------------------------
-# Affichage article avec 150 caractères
+-- Résultat
+
+
+-- 1 / 3 - Test en cas d'inster
+
+-- Ajout d'une commentaire pour l'article 1
+INSERT INTO commentaire (`article_id`, `auteur_id`, `contenu`, `date_commentaire`)
+VALUES ('1', '1', 'Tatati...', NOW());
+
+-- Résultat INSERT (À comparer avec l'onglet précédent, issu du compte initial des commentaires)
+SELECT * FROM article;
+
+-- Effaçage du commentaire ajouté justepour tester efficacité des triggers
+DELETE FROM commentaire WHERE contenu = 'Tatati...';
+
+
+-- 2 / 3 - Test en cas de delete
+
+-- Résultat DELETE (À comparer avec l'onglet précédent, ou encore, doit être identique à la première selection)
+SELECT * FROM article;
+
+
+-- 3 / 3 - Test en cas d'update
+
+
+-- -----------------------------------------------------------------------------------
+
+-- MISSION 2 - 1 partie - Affichage article avec 150 caractères
+
+--  -----------------------------------------------------------------------------------
+
 DROP VIEW IF EXISTS v_article_resume;
 
 CREATE VIEW V_Article_resume
@@ -220,27 +283,18 @@ AS
     ) AS 'contenu'
   FROM article;
 
--- Requete our appeler la Vue
+-- Requete pour appeler la Vue
 SELECT *
 FROM v_article_resume;
 
 
-SELECT
-  id,
-  titre,
-  coalesce(
-      if(trim(resume) = '', NULL, trim(resume)),
-      if(length(contenu) < 148,
-         trim(contenu),
-         concat(left(contenu, 147), '...'))
-  )
-FROM article;
+-- -----------------------------------------------------------------------------------
 
-# 666666666666666666666666666666666666666666666666666666666666666
+-- MISSION 3 - 2 parties - Stocker des infos pour statistiques dont mise à jour sera sur demande
 
--- 3 / Stats
+--  -----------------------------------------------------------------------------------
 
--- Requête qui servira pour création et seed de la Vue Matérialisée
+-- Partie 1 : Requête pour création et seed de la Vue Matérialisée pour stats
 
 CREATE TABLE IF NOT EXISTS VM_Auteurs_Editions_Commentaires
   ENGINE = InnoDB
@@ -262,26 +316,36 @@ CREATE TABLE IF NOT EXISTS VM_Auteurs_Editions_Commentaires
     GROUP BY u.id;
 
 
-# 777777777777777777777777777777777777777777777777777777777777777
+-- Partie 2 - Procédure pour Mises à jour sur demande de la VM pour stats ci-dessus
 
--- Procédure pour Mises à jour sur demande de la VM ci-dessus
+DROP PROCEDURE IF EXISTS maj_Auteurs_Editions_Commentaires;
+DELIMITER |
+CREATE PROCEDURE maj_Auteurs_Editions_Commentaires()
+  BEGIN
+    TRUNCATE VM_Auteurs_Editions_Commentaires;
 
-SELECT
-  u.id,
-  pseudo,
-  count(*)                 AS nb_articles,
-  (SELECT max(date_publication)
-   FROM article
-   WHERE auteur_id = u.id) AS date_dernier_article,
-  sum(nb_commentaires)     AS nb_commentaires,
-  (SELECT coalesce(max(date_commentaire), 'Néant')
-   FROM commentaire
-   WHERE auteur_id = u.id) AS date_dernier_commentaire
+    INSERT INTO VM_Auteurs_Editions_Commentaires
+      SELECT
+        u.id,
+        pseudo,
+        count(*)                 AS nb_articles,
+        (SELECT max(date_publication)
+         FROM article
+         WHERE auteur_id = u.id) AS date_dernier_article,
+        sum(nb_commentaires)     AS nb_commentaires,
+        (SELECT coalesce(max(date_commentaire), 'Néant')
+         FROM commentaire
+         WHERE auteur_id = u.id) AS date_dernier_commentaire
 
-FROM utilisateur u
+      FROM utilisateur u
+        LEFT JOIN article a
+          ON a.auteur_id = u.id
+      GROUP BY u.id;
+  END |
+DELIMITER ;
 
-  LEFT JOIN article a
-    ON a.auteur_id = u.id
+-- Pour demander une mise à jour
+CALL maj_Auteurs_Editions_Commentaires();
 
-
-GROUP BY u.id;
+-- Résultat final:
+SELECT * FROM vm_Auteurs_Editions_Commentaires;
