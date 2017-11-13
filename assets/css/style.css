@@ -221,3 +221,15 @@ h3 {
 h4 {
   font-style: italic;
 }
+#lineFile {
+    cursor: auto;
+    color: rgba(111, 89, 63, 0.5) !important;
+    padding: 3px 5px 2px;
+    font-size: 2em;
+    line-height: 1;
+    margin-top: 3px;
+}
+
+.float-left {
+    width: 85%;
+}

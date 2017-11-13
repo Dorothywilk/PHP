@@ -4,6 +4,21 @@
   Cette page contient du code HTML avec des balises PHP.<br />
   <?php/* Insérer du code PHP ici */ ?> Voici quelques petits tests :
 </p>
+
+<?php
+$sql='oki';
+$back=0;
+  $lign = debug_backtrace()[ $back ][ 'line' ];
+  $file = debug_backtrace()[ $back ][ 'file' ];
+//  aff( debug_backtrace() );
+?>
+  <div class="clearfix sameLine" style="margin: 5px; width: 100%; margin-left: 0;">
+    <pre class="float-left"><?= $sql ?></pre>
+    <button class="btn float-right numLign" type="button" data-toggle="tooltipNum"
+            data-placement="left" title="<?= $file ?>" id="lineFile"><?= $lign ?></button>
+  </div
+
+
 <hr>
 
 <ul>
