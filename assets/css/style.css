@@ -20,6 +20,8 @@ html {
 /*    background: #fff8dc;*/
 /*    background: red;*/
   background: linear-gradient(to left bottom, orange, yellow 50%, red);
+/*  background: linear-gradient(to left, red, white 50%, cyan);*/
+   
 }
 
 body {
