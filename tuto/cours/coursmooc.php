@@ -1,7 +1,6 @@
 <h3>
   <div class='titreCoursDo actionManShaded'>
-    <a href="https://openclassrooms.com/courses/concevez-votre-site-web-avec-<p>You can use the mark tag to <mark>highlight</mark> text.</p>
-hp-et-mysql" target="_blank" title="Lien direct su tuto d'OOC">
+    <a href="https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql" target="_blank" title="Lien direct su tuto d'OOC">
    Pages Test
   </a>
   </div>
@@ -41,7 +40,10 @@ hp-et-mysql" target="_blank" title="Lien direct su tuto d'OOC">
   date('d/m/Y à H:i:s', mktime(13,05,00,7,7,1990));
   ?>.</p>
 <hr>
+<h1>Les variables</h1>
+
 <?php
+
         /* Encore du PHP
         Toujours du PHP */
 echo 'Ceci est du texte PHP <br />';
@@ -162,7 +164,7 @@ echo '<hr>';
 
 
 // Exemple d'un questionnaire où l'on peut répondre:
-echo '<h2>Aimez-vous les épinards ?</h2>';
+echo '<h2>Aimez-vous les épinards ? Ceci est déjà un exercice de conditions</h2>';
 // Oui / Non / Sans avis
 
 
@@ -219,6 +221,164 @@ $premier='a';
 if (  $premier == 'a'  )
    echo 'Oui';
 else echo 'Non';
+
+echo'<hr>';
+echo'<h1>Les conditions</h1>';
+
+
+//Ci-dessous, si l'âge est inférieur à 12
+
+$age = 8;
+
+if ($age <= 12)
+{
+    echo "Salut gamin !";
+}
+
+$age = 12;
+
+echo '<hr>';
+
+//Ci-dessous et ci-dessus pour que le résultat apparaisse il faut que la condition soit vraie.
+
+if ($age == 12)
+{
+    echo "Salut fillette !";
+}
+
+echo '<hr>';
+
+//Ci-dessous la condition n'est pas vraie donc cela me renvoie le deuxième résultat.
+
+$age = 13;
+
+if ($age <= 12)
+{
+    echo "Salut gamin !";
+}
+
+else
+
+{
+  echo 'Bonjour cher adulte !';
+}
+
+echo '<hr>';
+//---------------
+$age = 8;
+
+if ($age <= 12)
+{
+    echo "Salut gamin !";
+}
+
+elseif ($age == 14)
+  
+{
+  echo 'Tu as 14 ans !';
+}
+
+else
+  
+{
+  echo 'Bonjour cher monsieur !';
+}
+
+
+echo '<hr>';
+
+$age = 50;
+
+if ($age <= 12)
+{
+    echo "Salut gamin !";
+}
+
+elseif ($age == 14)
+  
+{
+  echo 'Tu as 14 ans !';
+}
+
+else
+  
+{
+  echo 'Bonjour Monsieur !';
+}
+
+echo '<hr>';
+
+echo'<h1>Les conditions booléennes</h1>';
+
+$autorisation_entrer = true;
+
+if ($autorisation_entrer == true)
+{
+    echo "Bienvenue petit nouveau. :o)";
+}
+elseif ($autorisation_entrer == false)
+{
+    echo "T'as pas le droit d'entrer !";
+}
+
+echo '<hr>';
+
+$autorisation_entrer = true;
+
+if ($autorisation_entrer)
+{
+    echo "Bienvenue petit nouveau. :o)";
+}
+else
+{
+    echo "T'as pas le droit d'entrer !";
+}
+
+echo '<hr>';
+
+$autorisation_entrer = true;
+
+if (! $autorisation_entrer)
+{
+echo "T'as pas le droit d'entrer !";
+}
+
+$age = 8;
+$langue = "anglais";
+
+
+if ($age <= 12 AND $langue == "français")
+{
+    echo "Bienvenue sur mon site !";
+}
+elseif ($age <= 12 AND $langue == "anglais")
+{
+    echo "Welcome to my website!";
+}
+
+echo '<hr>';
+
+$pays = "France";
+
+if ($pays == "France" OR $pays == "Belgique")
+{
+    echo "Bienvenue sur notre site !";
+}
+else
+{
+    echo "Désolés, notre service n'est pas encore disponible dans votre pays !";
+}
+
+echo '<hr>';
+
+$variable = 23;
+
+if ($variable == 23)
+{
+    echo '<strong>Bravo !</strong> Vous avez trouvé le nombre mystère !';
+}
+
+echo '<hr>';
 
 
 echo str_repeat('<br>', 20);
