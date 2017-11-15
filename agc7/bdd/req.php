@@ -48,7 +48,7 @@ namespace GC7;
 //include( 'securisation/transactions.php' );
 //include( 'securisation/verrous.php' );
 //include( 'securisation/requetesPreparees.php' );
-include( 'securisation/procedures.php' );
+//include( 'securisation/procedures.php' );
 //include( 'securisation/conditions.php' );
 //include( 'securisation/erreurs_curseurs.php' );
 //include( 'securisation/triggers.php' );
@@ -60,6 +60,7 @@ include( 'securisation/procedures.php' );
 //
 //
 //include( 'securisation/exo6.php' );
+include( 'admin/utilisateurs.php' );
 //
 
 //////////////////////////////////////////////////////////////////////////////////////////
