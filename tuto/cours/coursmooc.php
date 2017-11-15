@@ -308,7 +308,10 @@ else
 
 echo '<hr>';
 
+//--------------
+
 echo'<h1>Les conditions booléennes</h1>';
+
 
 $autorisation_entrer = true;
 
@@ -336,7 +339,7 @@ else
 
 echo '<hr>';
 
-$autorisation_entrer = true;
+$autorisation_entrer = false;
 
 if (! $autorisation_entrer)
 {
@@ -379,6 +382,33 @@ if ($variable == 23)
 }
 
 echo '<hr>';
+?>
+  Si pas de laisser passer:
+  <?php 
+  $ilPossedeUnLaisserPasser = false; 
+
+if ($ilPossedeUnLaisserPasser )
+{ echo 'Il passe'; } else { echo 'Il passe pas !'; } 
+
+
+echo '<hr>';
+
+// Le point d'exclamation affiche l'inverse de la condition dans un sens ou dans l'autre.
+
+echo !0;
+
+echo '<hr>';
+
+
+
+
+
+
+
+
+
+
+
 
 
 echo str_repeat('<br>', 20);
