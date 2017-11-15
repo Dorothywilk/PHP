@@ -17,17 +17,16 @@ namespace GC7;
 
 <div class="maingc7">
 
-
   <?php
 
-  $pdo = pdo( 'ocr2' );
+  $pdo = pdo( 'mysql' );
 
-  $sql = "Select 1";
+  $sql = "select * from user";
   //    affLign( $sql );
   //    $pdo->query( $sql );
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
-  echo str_repeat( '<br>', 28 ); // 28
+  echo str_repeat( '<br>', 25 ); // 28
   ?>
 </div>
