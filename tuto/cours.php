@@ -19,7 +19,7 @@ $nf=function($n){return (($n>10)?number_format($n, 2, ',', ' '):$n);};
 
 //include 'cours/array.php';
 
-include ('cours/coursmooc.php';)
+include 'cours/coursmooc.php';
 
 
 //include ('cours/operateurs.php');
