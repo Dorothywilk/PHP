@@ -22,9 +22,9 @@
     <a href="https://www.apprendre-php.com/" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a> |
     <a href=" agc7 ">Techs GC7</a>
   </header>
-
+  <!--  <div class='body, html' </div>-->
   <article>
-    <div class="main ">
+    <div class="main">
 
       <?php
       
@@ -33,12 +33,14 @@
       // ToDoDo https://www.codecademy.com/courses/learn-html-elements/lessons/intro-to-html/exercises/doctype-html?action=lesson_resume&course_redirect=learn-html
       
     include './tuto/cours.php';
+//      include ('cours/coursmooc.php');
     ?>
   </article>
 
   <footer class="footerDo ">
-    <p>Do 's website | <a href="https://github.com/Dorothywilk/PHP/tree/dev " target="_blank ">Dépôt
-    GitHub</a></p>
+    <p>Do 's website | <a href="https://github.com/Dorothywilk/PHP/tree/dev " target="_blank ">Dépôt GitHub
+    </a>
+    </p>
   </footer>
   </div>
 </body>

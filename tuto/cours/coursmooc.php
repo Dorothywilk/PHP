@@ -286,6 +286,7 @@ else
 
 
 echo '<hr>';
+//----------
 
 $age = 50;
 
@@ -326,8 +327,10 @@ elseif ($autorisation_entrer == false)
 
 echo '<hr>';
 
-$autorisation_entrer = true;
+//----------
 
+$autorisation_entrer = true;
+  
 if ($autorisation_entrer)
 {
     echo "Bienvenue petit nouveau. :o)";
@@ -338,13 +341,15 @@ else
 }
 
 echo '<hr>';
-
+//----------
 $autorisation_entrer = false;
 
 if (! $autorisation_entrer)
 {
 echo "T'as pas le droit d'entrer !";
 }
+
+echo '<hr>';
 
 $age = 8;
 $langue = "anglais";
@@ -361,6 +366,8 @@ elseif ($age <= 12 AND $langue == "anglais")
 
 echo '<hr>';
 
+//--------
+
 $pays = "France";
 
 if ($pays == "France" OR $pays == "Belgique")
@@ -374,6 +381,7 @@ else
 
 echo '<hr>';
 
+//----------
 $variable = 23;
 
 if ($variable == 23)
@@ -399,8 +407,38 @@ echo !0;
 
 echo '<hr>';
 
+$pays = "France";
 
+if ($pays == "France" OR $pays == "Belgique")
+{
+    echo "Bienvenue sur notre site !";
+}
+else
+{
+    echo "Désolés, notre service n'est pas encore disponible dans votre pays !";
+}
 
+echo '<hr>';
+
+$variable = 23;
+
+//Ci-dessous les 2 exemples sont diiférents mais le résultat eset le même.
+
+if ($variable == 23)
+{
+    echo '<strong>Bravo !</strong> Vous avez trouvé le nombre mystère !';
+}
+
+echo '<hr>';
+
+$variable = 23;
+
+if ($variable == 23)
+{
+?>
+  <strong>Bravo !</strong> Vous avez trouvé le nombre mystère !
+  <?php
+}
 
 
 
