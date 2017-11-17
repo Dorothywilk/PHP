@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>carriercompare</name>
+	<displayName><![CDATA[Estimation des livraisons]]></displayName>
+	<version><![CDATA[2.2.1]]></version>
+	<description><![CDATA[Module permettant de faire une estimation des co&ucirc;ts de livraison avant d&#039;entrer dans le processus de commande]]></description>
+	<author><![CDATA[PrestaShop]]></author>
+	<tab><![CDATA[shipping_logistics]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

@@ -1,0 +1,11 @@
+  <?php xml version="1.0"?>
+  <schema version="0.3">
+  <table name="bootswatch_theme">
+    <field name="cID" type="I" size="11">
+      <KEY/>
+      <AUTOINCREMENT/>
+    </field>
+    <field name="template_name" type="C" size="255"></field>
+    <field name="template_typography" type="I2"></field>
+  </table>
+  </schema>

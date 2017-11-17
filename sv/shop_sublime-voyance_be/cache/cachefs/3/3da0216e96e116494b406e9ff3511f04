@@ -1,0 +1,1 @@
+a:1:{s:44:"SUM(IF(IFNULL(stock.quantity, 0) > 0, 0, 1))";s:1:"6";}

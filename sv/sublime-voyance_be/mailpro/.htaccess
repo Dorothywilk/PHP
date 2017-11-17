@@ -1,0 +1,5 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^sublime-voyance\.be\/mailpro\/$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sublime-voyance\.be\/mailpro\/$
+RewriteRule ^/?$ "http\:\/\/sg1\.sublime-voyance\.be\/etc\/apps\/webmail" [R=301,L]

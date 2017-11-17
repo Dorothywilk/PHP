@@ -1,0 +1,56 @@
+
+
+/* Top Elements */
+
+body{
+	/* customize_body */font:12px Arial, Helvetica, sans-serif; /* customize_body */
+	/* customize_body */color:#010000; /* customize_body */
+	background:#e7eef6 url(images/body_bg.gif) repeat-x 0 0
+	margin:0px;
+}
+
+/* Links */
+a, a:active, a:link {
+	text-decoration: none;
+	/* customize_link */ color:#4c8698; /* customize_link */		
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	/* customize_link_hover */ color:#003465; /* customize_link_hover */
+}
+.clear{clear:both}
+
+/* headers */
+
+h1 {
+	font:24px Georgia, "Times New Roman", Times, serif; 
+	color:#221E21; 
+	font-style:italic; 
+	padding:18px 0 14px 0; 
+	margin:0}
+	
+h2 {
+	font:bold 15px Arial, Helvetica, sans-serif;	
+	color:#221E21; 
+	padding:5px;	
+	border-bottom:1px dotted #d8d6ba;
+	margin:0px 0px 10px 0px;}
+	
+h3 {
+	font:bold 13px Arial, Helvetica, sans-serif;	
+	color:#221E21; 
+	padding:5px 0px 5px 0px;	
+	margin:0px;}
+
+h4 {
+	font:14px Georgia, "Times New Roman", Times, serif;
+	color:#221E21; 
+	padding:5px 0px 2px 0px;
+	margin:0px;}
+
+/* Special Cases */
+.logo_box a{font:48px "Gill Sans MT", Arial, Helvatica; Color:#ffffff; text-decoration:none}
+img.left-img{float:left; margin-right:10px; margin-bottom:10px;}
+.project-img{float:right; margin-left:20px; border: 6px solid #ccc;}

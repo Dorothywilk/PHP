@@ -1,0 +1,1245 @@
+a:39:{i:0;a:5:{s:12:"id_ps_advice";s:2:"26";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:976:"<div id="wrap_id_advice_26" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="26" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="ogone" href="{link}AdminModules{/link}&install=ogone&module_name=ogone&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/ogone.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/26.png"/ class="hide">
+				<p class="advice-description">Accélérez vos ventes à l’international en offrant les moyens de paiement locaux<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:1;a:5:{s:12:"id_ps_advice";s:2:"27";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:957:"<div id="wrap_id_advice_27" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="27" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="paypal" href="{link}AdminModules{/link}&install=paypal&module_name=paypal&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/paypal.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/27.png"/ class="hide">
+				<p class="advice-description">Commencez à accepter vos premiers paiements dès aujourd'hui<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:2;a:5:{s:12:"id_ps_advice";s:2:"28";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:987:"<div id="wrap_id_advice_28" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="28" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="socolissimo" href="{link}AdminModules{/link}&install=socolissimo&module_name=socolissimo&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/socolissimo.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/28.png"/ class="hide">
+				<p class="advice-description">Utilisez So Colissimo et proposez 4 methodes de livraison a vos clients<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"0";}i:3;a:5:{s:12:"id_ps_advice";s:3:"354";s:8:"selector";s:6:"addons";s:8:"location";s:6:"before";s:4:"html";s:1352:"<div id="wrap_id_advice_354" ><style>
+#wrap_id_advice_354 .panel.panel-advice { position: relative; padding: 10px !important; min-height: 75px; }
+#wrap_id_advice_354 .panel.panel-advice a.preactivationLink { display: table; margin: 0; text-decoration: none; }
+#wrap_id_advice_354 .panel.panel-advice a.preactivationLink p, .panel.panel-advice a.preactivationLink img { display: table-cell; vertical-align: middle; }
+#wrap_id_advice_354 .panel.panel-advice a.preactivationLink p { padding: 0 20px; }
+#wrap_id_advice_354 .panel.panel-advice .gamification-close-confirmation { position: absolute; top: 4px; right: 5px; background: #FFF; padding: 5px 3px;}
+#wrap_id_advice_354 .panel.panel-advice .gamification_premium_close i { color: #00aff0; }
+#wrap_id_advice_354 .panel.panel-advice:hover .gamification_premium_close { display: block; }
+</style>
+<div class="col-lg-6">
+	<section id="" class="panel panel-advice">
+		<a class="preactivationLink row" rel="ebay" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=321&url=http%3A%2F%2Faddons.prestashop.com">
+			<img src="https://gamification.prestashop.com/api/getAdviceImg/354.png" class="advice-img img-thumbnail">
+			<p class="advice-description">Plus de 3 500 modules et thèmes PrestaShop pour mieux vendre dès aujourd'hui !</p>
+		</a>
+	</section>
+</div>
+</div>";s:6:"weight";s:1:"1";}i:4;a:5:{s:12:"id_ps_advice";s:3:"356";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:6:"before";s:4:"html";s:945:"<div id="wrap_id_advice_356" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="356" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="shopgate" href="{link}AdminModules{/link}&install=shopgate&module_name=shopgate&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/shopgate.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/356.png"/ class="hide">
+				<p class="advice-description">Devenez mobile et augmentez vos ventes<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:5;a:5:{s:12:"id_ps_advice";s:3:"362";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:994:"<div id="wrap_id_advice_362" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="362" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="ecopresto" href="{link}AdminModules{/link}&install=ecopresto&module_name=ecopresto&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/ecopresto.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/362.png"/ class="hide">
+				<p class="advice-description">Commencez le dropshipping: Vendez dès maintenant et payez vos fournisseurs ensuite<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:6;a:5:{s:12:"id_ps_advice";s:3:"511";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:2483:"<div id="wrap_id_advice_511" >
+		<section id="0_envoimoinscher" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-envoimoinscher.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/511.png"/>
+				<p><b>Augmentez votre conversion en offrant plusieurs transporteurs à prix négociés.</b></p>
+				<p>90% des acheteurs en ligne déplorent le manque de choix de solution de livraison. Avec EnvoiMoinsCher, branchez sur votre site 15 transporteurs et bénéficiez de tarifs négociés jusqu’à -75% !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=511&url=http%3A%2F%2Fecommerce.envoimoinscher.com%2Flanding%2Fprestashop%2F%3Futm_source%3Dprestashop%26utm_medium%3Dpartner%26utm_campaign%3D201409_landing">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_envoimoinscher" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-envoimoinscher.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/511.png"/>
+				<p><b>55% des abandons d’achat sont dûs aux frais de port trop élevés.</b></p>
+				<p>Augmentez votre conversion avec EnvoiMoinsCher et branchez 15 transporteurs sans contrat. Notre Service vous permet de réduire vos frais de port jusqu’à -75%.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=511&url=http%3A%2F%2Fecommerce.envoimoinscher.com%2Flanding%2Fprestashop%2F%3Futm_source%3Dprestashop%26utm_medium%3Dpartner%26utm_campaign%3D201409_landing">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(1)+'_envoimoinscher').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:7;a:5:{s:12:"id_ps_advice";s:3:"515";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1407:"<div id="wrap_id_advice_515" >
+		<section id="0_ogone" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-ogone.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/515.png"/>
+				<p><b>Accélérez vos ventes au-delà de vos frontières !</b></p>
+				<p>Des moyens de paiement locaux sont la clé de votre conversion à l’international: 30 à 70% des consommateurs en utilisent pour leurs achats en ligne. Ingenico vous permet de proposer 150 solutions à vos clients en un seul contrat !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=515&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1798-ogone.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dogone">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_ogone').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:8;a:5:{s:12:"id_ps_advice";s:3:"516";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:3109:"<div id="wrap_id_advice_516" >
+		<section id="0_ovh" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-ovh.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/516.png"/>
+				<p><b>Boostez les performances de votre boutique avec les VPS OVH !</b></p>
+				<p>Dès 4,99€ HT/mois sur 12 mois, obtenez votre serveur privé virtuel optimisé et recommandé par PrestaShop !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=516&url=http%3A%2F%2Fwww.ovh.com%2Ffr%2Fsolutions%2Fprestashop%2F%3Fpk_campaign%3DTipPrestaShop%26pk_kwd%3DPSVps">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_ovh" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-ovh.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/516.png"/>
+				<p><b>Votre site est trop lent ?</b></p>
+				<p>Hébergez-le sur les serveurs d'OVH directement optimisés avec l'équipe PrestaShop pour obtenir de meilleures performances !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=516&url=http%3A%2F%2Fwww.ovh.com%2Ffr%2Fsolutions%2Fprestashop%2F%3Fpk_campaign%3DTipPrestaShop%26pk_kwd%3DPSVps">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="2_ovh" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-ovh.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/516.png"/>
+				<p><b>Votre site n'est pas encore en ligne ?</b></p>
+				<p>Avec l'hébergement OVH pré-installé, publiez votre site PrestaShop sur Internet en seulement quelques clics !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=516&url=http%3A%2F%2Fwww.ovh.com%2Ffr%2Fsolutions%2Fprestashop%2F%3Fpk_campaign%3DTipPrestaShop%26pk_kwd%3DPSVps">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(2)+'_ovh').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:9;a:5:{s:12:"id_ps_advice";s:3:"517";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:2455:"<div id="wrap_id_advice_517" >
+		<section id="0_paymill" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paymill.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/517.png"/>
+				<p><b>Simplifiez le processus de paiement pour mieux convertir.</b></p>
+				<p>25 % des clients ne valident pas leur panier car la navigation est compliquée. Avec Paymill, acceptez les paiements directement depuis votre back-office.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=517&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F17640-pigmbhpaymill.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaymill">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_paymill" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paymill.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/517.png"/>
+				<p><b>Le temps nécessaire à la finalisation d'un achat est crucial.</b></p>
+				<p>Au-delà de 3s d'attente, 57% d'acheteurs quitteront votre site.  Boostez ventes et fidélité client grâce au paiement en un clic!</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=517&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F17640-pigmbhpaymill.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaymill">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(1)+'_paymill').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:10;a:5:{s:12:"id_ps_advice";s:3:"518";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:13347:"<div id="wrap_id_advice_518" >
+		<section id="9_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Mettez vos moyens de paiement en avant</b></p>
+				<p>Vos clients doivent savoir qu'ils peuvent utiliser le moyen de paiement qui leur convient dès la home page.<p align="center"><img src="https://api.prestashop.com/partner/tipsoftheday/img/paypal-advise-picto1.png" style="max-width: 100%; padding: 5px 0px 5px 0px;"></p></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="10_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Proposez un maximum de moyens de paiement</b></p>
+				<p>Plus vous proposez de moyens de paiement, plus vous faites de ventes. Avec PayPal, proposez 7 moyens de paiement en installant un seul module.<p align="center"><img src="https://api.prestashop.com/partner/tipsoftheday/img/paypal-advise-picto1.png" style="max-width: 100%; padding: 5px 0px 5px 0px;"></p></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="2_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Suivez l'évolution de votre activité en direct</b></p>
+				<p>PayPal vous envoie une notification par email pour chaque transaction réalisée sur votre site.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="3_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Proposez des moyens de paiement gratuits* à vos clients</b></p>
+				<p>N'imposez pas de frais supplémentaires à  vos acheteurs. Avec le module PayPal, ils bénéficient de toutes les garanties de sécurité sans surcoût*.<br /><br />*En Euros, dans l'Espace Economique Européen</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="4_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Offrez à vos clients la garantie Livré ou remboursé*</b></p>
+				<p>Avec PayPal, vos acheteurs sont livrés ou remboursés*. N'hésitez pas à en faire un argument commercial pour votre site.<br /><p align="center"><img src="https://api.prestashop.com/partner/tipsoftheday/img/paypal-advise-picto4.png" /></p><br />*voir conditions et exceptions <a href="https://cms.paypal.com/fr/cgi-bin/?cmd=_render-content&content_ID=security_fr/paypal_purchase_protection" target="_blank">ici</a></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="5_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Attirez de nouveaux clients</b></p>
+				<p>En France, 1 cyber acheteur sur 3 possède un compte PayPal*. Ne passez pas à côté de ces clients potentiels.<br /><br /><small>Source : Etude réalisée par Northstar en mars 2013 auprès de 1914 acheteurs PayPal en France</small></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="6_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Ne faites pas l'impasse sur la carte bancaire</b></p>
+				<p>79%* des internautes paient avec une carte bancaire. Avec PayPal, acceptez les paiements par carte Visa ou Mastercard.<br /><br /><small>*Journal Du Net, Mars 2013</small></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="7_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Développez votre activité à l'international</b></p>
+				<p>Avec PayPal vous êtes déjà présent dans 190 pays et vous pouvez accepter des paiements dans 24 devises différentes !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="8_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Ne limitez pas votre activité au marché français, pensez à vos voisins...</b></p>
+				<p>Vendre en Italie, en Espagne, en Belgique... C'est aussi simple que de vendre en France avec PayPal.<br /><br /><small>*Journal Du Net, Mars 2013</small></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="0_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Ne passez pas à côté de l’opportunité du mobile</b></p>
+				<p>+267% de progression du m-commerce en 2 ans ! PayPal et PrestaShop vous proposent ce <a href="http://addons.prestashop.com/fr/mobile/6165-prestashop-theme-mobile-14.html?utm_source=back-office&utm_medium=tipoftheday&utm_campaign=partenariats&utm_content=paypal" target="_blank">thème gratuit optimisé</a> pour le paiement via mobile.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_paypal" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-paypal.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/518.png"/>
+				<p><b>Adoptez une approche multi-canal</b></p>
+				<p>Votre boutique est accessible à n’importe quel moment et vous vous adaptez donc aux contraintes de vos clients : découvrez <a href="http://addons.prestashop.com/fr/mobile/6165-prestashop-theme-mobile-14.html?utm_source=back-office&utm_medium=tipoftheday&utm_campaign=partenariats&utm_content=paypal" target="_blank">le thème mobile gratuit optimisé</a> pour PrestaShop.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=518&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1748-paypal.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dpaypal">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(10)+'_paypal').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:11;a:5:{s:12:"id_ps_advice";s:3:"520";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1367:"<div id="wrap_id_advice_520" >
+		<section id="0_sendinblue" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-sendinblue.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/520.png"/>
+				<p><b>La fidélisation d’un client coûte 5 fois moins que son acquisition !</b></p>
+				<p>L'emailing et le SMS constituent une solution efficace pour fidéliser vos clients. Démarrez gratuitement avec Sendinblue dès maintenant !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=520&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fpublicite-marketing-newsletter-modules%2F8300-sendinblue.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dsendinblue">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_sendinblue').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:12;a:5:{s:12:"id_ps_advice";s:3:"521";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:5396:"<div id="wrap_id_advice_521" >
+		<section id="0_shopgate" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-shopgate.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/521.png"/>
+				<p><b>Besoin de fidéliser vos clients ?</b></p>
+				<p>Via les notifications push de Shopgate, touchez vos clients où qu’ils se trouvent à n’importe quel moment. </p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=521&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmobile%2F8936-shopgate.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dshopgate">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_shopgate" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-shopgate.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/521.png"/>
+				<p><b>Envie de plus de chiffre d’affaires ?</b></p>
+				<p>Jusqu’à 10x plus de revenus par visite mobile avec une application mobile Shopgate grâce aux outils marketing intégrés.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=521&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmobile%2F8936-shopgate.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dshopgate">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="2_shopgate" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-shopgate.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/521.png"/>
+				<p><b>Panier moyen trop faible ?</b></p>
+				<p>Doublez votre panier moyen avec une application native Shopgate qui permet de cibler vos actions promotionnelles.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=521&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmobile%2F8936-shopgate.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dshopgate">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="3_shopgate" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-shopgate.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/521.png"/>
+				<p><b>Taux de conversion trop faible ?</b></p>
+				<p>Avec Shopgate, triplez votre taux de conversion avec un site mobile optimisé ; les clients achètent en deux clics !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=521&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmobile%2F8936-shopgate.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dshopgate">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="4_shopgate" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-shopgate.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/521.png"/>
+				<p><b>Clients volatiles ?</b></p>
+				<p>20% des clients réguliers représentent 40% du CA, fidélisez les avec les applications natives de Shopgate.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=521&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmobile%2F8936-shopgate.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dshopgate">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(4)+'_shopgate').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:13;a:5:{s:12:"id_ps_advice";s:3:"522";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:7135:"<div id="wrap_id_advice_522" >
+		<section id="0_socolissimo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-socolissimo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/522.png"/>
+				<p><b>Rassurez vos clients</b></p>
+				<p>Lors d'une première expérience client, la mise en avant d'une marque de livraison reconnue est un gage de qualité et de confiance.</p></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=522&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F1745-so-colissimo.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dsocolissimo">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_socolissimo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-socolissimo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/522.png"/>
+				<p><b>Importance de la livraison</b></p>
+				<p>66% des e-acheteurs considèrent que les conditions de livraison constituent un élément déterminant dans le choix du site marchand.<br /><br/ ><small>Baromètre FEVAD- Médiamétrie/NetRatings, juin 2007</small></p></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=522&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F1745-so-colissimo.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dsocolissimo">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="2_socolissimo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-socolissimo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/522.png"/>
+				<p><b>Soyez transparent</b></p>
+				<p>93% des e-acheteurs français veulent être informés de façon détaillée par e-mail ou SMS de l'état d'avancement de leur commande.<br /><br/ ><small>Source IFOP pour L4-Epsilon Logistics Systems, octobre 2009</small></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=522&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F1745-so-colissimo.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dsocolissimo">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="3_socolissimo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-socolissimo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/522.png"/>
+				<p><b>Affichez So Colissimo</b></p>
+				<p>Renforcez la confiance de vos clients e-acheteurs en votre site web en vous appuyant sur une marque reconnue et appréciée, visible dès la home page.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=522&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F1745-so-colissimo.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dsocolissimo">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="4_socolissimo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-socolissimo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/522.png"/>
+				<p><b>Donnez le choix à vos clients</b></p>
+				<p>93% des e-acheteurs jugent utiles, et 41% indispensable, d'avoir le choix entre plusieurs modes de livraison.<br /><br/ ><small>Etude omnibus IFOP – novembre 2010</small></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=522&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F1745-so-colissimo.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dsocolissimo">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="5_socolissimo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-socolissimo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/522.png"/>
+				<p><b>Des destinataires colis convaincus</b></p>
+				<p>52 % utiliseraient systématiquement So Colissimo dès lors que l'offre serait proposée.<br /><br /><small>Etude post-test de la campagne So Colissimo menée par Omnicom Media Groupe</small></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=522&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F1745-so-colissimo.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dsocolissimo">Envie d'en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(5)+'_socolissimo').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:14;a:5:{s:12:"id_ps_advice";s:3:"537";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:5006:"<div id="wrap_id_advice_537" >
+		<section id="0_googleadwords" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-googleadwords.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/537.png"/>
+				<p><b>Améliorez facilement votre référencement sans vous ruiner!</b></p>
+				<p>En choisissant les annonces au coût par clic (CPC), vous prédéfinissez votre budget et payez seulement quand vous avez des visites ! Lancez une campagne avec <b>75€ offerts pour 25€ dépensés !</b></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=537&url=http%3A%2F%2Fwww.google.com%2Fintl%2Ffr%2Fads%2Fget%2Fprestashop75%2Findex.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dgoogleadwords">Commencez maintenant !</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_googleadwords" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-googleadwords.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/537.png"/>
+				<p><b>Que recherchent vos clients dans Google pour vous trouver?</b></p>
+				<p>Répondez à cette question et choisissez des mots clé spécifiques pour vos annonces : touchez des visiteurs hautement qualifiés ! Profitez de <b>75€ avec ce code promo*</b>: <div id="totd_gadword_code" style="font-size: 15px;"></div></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=537&url=http%3A%2F%2Fwww.google.com%2Fintl%2Ffr%2Fads%2Fget%2Fprestashop75%2Findex.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dgoogleadwords">Commencez maintenant !</a>
+				</span>
+			</div>
+		</section>
+		<section id="2_googleadwords" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-googleadwords.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/537.png"/>
+				<p><b>Lancez-vous dans le SEM!</b></p>
+				<p>Augmentez votre visibilité sur Google en lançant une campagne AdWords et attirez des clients potentiels qualifiés vers votre boutique. Profitez de <b>75€ offerts pour 25€ dépensés !</b></p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=537&url=http%3A%2F%2Fwww.google.com%2Fintl%2Ffr%2Fads%2Fget%2Fprestashop75%2Findex.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dgoogleadwords">Commencez maintenant !</a>
+				</span>
+			</div>
+		</section>
+			<script>
+				$(document).ready( function () {
+					var rand_section = rand(2);
+
+					if (typeof country_iso_code != 'undefined' && typeof _PS_VERSION_ != 'undefined' && rand_section == 1)
+								{
+									var totd_hostname = window.location.hostname;
+									var test_hostanme_patt = new RegExp(/^172\.16\.|^192\.168\.|^10\.|^127\.|^localhost|\.local$/);
+									if (test_hostanme_patt.test(totd_hostname) === false)
+									{
+										$.get('https://gamification.prestashop.com/get_campaign.php', {iso_country: country_iso_code, campaign: 'gadwords', ps_version: _PS_VERSION_, host: totd_hostname}, function(response){
+											try {
+												var error = response.error;
+											    var code = response.code;
+											    if (!error){
+											    	$('#totd_gadword_code').text(code);
+											    	$('#'+rand_section+'_googleadwords').show();
+											    }
+											    else
+											   		$('#0_googleadwords').show();
+											}
+											catch(err) {
+											   $('#0_googleadwords').show();
+											}
+
+										}).fail(function(){
+											$('#0_googleadwords').show();
+										});
+									}
+									else
+										$('#0_googleadwords').show();
+								}
+								else if (rand_section == 1)
+									$('#0_googleadwords').show();
+								else
+									$('#'+rand_section+'_googleadwords').show();
+				});
+
+				function rand(nbr){
+				   return Math.floor(Math.random()*(nbr+1));
+				}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:15;a:5:{s:12:"id_ps_advice";s:3:"544";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:2604:"<div id="wrap_id_advice_544" >
+		<section id="0_ebay2" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-ebay2.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/544.png"/>
+				<p><b>En 2016, 64% des acheteurs européens seront situés hors UK et Allemagne</b></p>
+				<p>Augmentez et ciblez votre activité en vendant sur les places de marché : adaptez vos annonces à des pays spécifiques ! Bénéficiez de 90 jours d’abonnement offert en créant votre boutique eBay*</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=544&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fplaces-de-marche-affiliation-modules-prestashop%2F2742-ebay.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Debay">Commencer maintenant</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_ebay2" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-ebay2.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/544.png"/>
+				<p><b>3 conseils pour cibler un pays spécifique via une place de marché</b></p>
+				<p>1.Créer une description attractive de l'objet, optimisée pour la recherche locale<br />2.Vérifier les listes locales pour définir le prix<br />3.Offrir des conditions de retour en accord avec les exigences locales.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=544&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fplaces-de-marche-affiliation-modules-prestashop%2F2742-ebay.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Debay">Commencer maintenant</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(1)+'_ebay2').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:16;a:5:{s:12:"id_ps_advice";s:3:"556";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1387:"<div id="wrap_id_advice_556" >
+		<section id="0_nosto" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-nosto.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/556.png"/>
+				<p><b>Saviez-vous que 30% des ventes d'Amazon découlent de recommandations ?</b></p>
+				<p>Améliorez vos ventes en convertissant : personnalisez votre boutique et ciblez individuellement vos clients en proposant des produits les intéressant à chaque étape du processus d'achat.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=556&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fpublicite-marketing-newsletter-modules%2F18349-nostotagging.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dnosto">C'est parti!</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_nosto').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:17;a:5:{s:12:"id_ps_advice";s:3:"557";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:2400:"<div id="wrap_id_advice_557" >
+		<section id="0_stickngo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-stickngo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/557.png"/>
+				<p><b>Gagnez 30 min/jour dans la préparation de commande.</b></p>
+				<p>Imprimez vos factures sur les feuilles StickN’Go qui contiennent une étiquette détachable à l’emplacement de l’adresse du destinataire.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=557&url=http%3A%2F%2Fwww.boutique-avery.fr%2Fstickngo-lp-presta%2Cfr%2C8%2C47.cfm%3Futm_source%3D%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3DPartenariat-SNG">Commencez maintenant !</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_stickngo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-stickngo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/557.png"/>
+				<p><b>Finie la corvée de la préparation de commandes!</b></p>
+				<p>Gagnez en efficacité avec les étiquettes intégrées StickN’Go, en ayant l’adresse de livraison du client sur une étiquette qui se détache de la facture.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=557&url=http%3A%2F%2Fwww.boutique-avery.fr%2Fstickngo-lp-presta%2Cfr%2C8%2C47.cfm%3Futm_source%3D%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3DPartenariat-SNG">Commencez maintenant !</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(1)+'_stickngo').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:18;a:5:{s:12:"id_ps_advice";s:3:"559";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:976:"<div id="wrap_id_advice_559" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="559" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="gadwords" href="{link}AdminModules{/link}&install=gadwords&module_name=gadwords&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/googleadwords.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/559.png"/ class="hide">
+				<p class="advice-description">Soyez visibles sur Google : démarrez avec un budget de 75€ !*<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:19;a:5:{s:12:"id_ps_advice";s:3:"562";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:1001:"<div id="wrap_id_advice_562" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="562" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="envoimoinscher" href="{link}AdminModules{/link}&install=envoimoinscher&module_name=envoimoinscher&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/envoimoinscher.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/562.png"/ class="hide">
+				<p class="advice-description">Économisez jusqu'à 75% sur vos frais de port et augmentez vos ventes<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:20;a:5:{s:12:"id_ps_advice";s:3:"565";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:972:"<div id="wrap_id_advice_565" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="565" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="powatag" href="{link}AdminModules{/link}&install=powatag&module_name=powatag&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/powatag.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/565.png"/ class="hide">
+				<p class="advice-description">Permettez aux aux utilisateurs mobiles d'acheter en un clic seulement<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:21;a:5:{s:12:"id_ps_advice";s:3:"569";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:2456:"<div id="wrap_id_advice_569" >
+		<section id="0_hipay2" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-hipay2.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/569.png"/>
+				<p><b>Variez les solutions de paiement pour attirer des clients !</b></p>
+				<p>Finalisez vos ventes en proposant la bonne solution de paiement : assurez-vous de proposer de solutions de paiement différentes pour répondre aux besoins de tous vos clients.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=569&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1746-hipay.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dhipay">Envie d’en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_hipay2" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-hipay2.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/569.png"/>
+				<p><b>Saviez-vous que plus vous vendez, plus vos frais de paiement peuvent diminuer ?</b></p>
+				<p>Choisissez une solution de paiement qui propose des commissions décroissantes quand votre volume de vente augmente.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=569&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fmodules-paiement-prestashop%2F1746-hipay.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dhipay">Envie d’en savoir plus ?</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(1)+'_hipay2').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:22;a:5:{s:12:"id_ps_advice";s:3:"570";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:4905:"<div id="wrap_id_advice_570" >
+		<section id="0_storemanager" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-storemanager.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/570.png"/>
+				<p><b>Trouver le bon produit est la première étape avant de passer à l'achat</b></p>
+				<p>Aidez les clients à trouver vos produits et assurez-vous qu'ils sont rattachés à la bonne catégorie en modifiant plusieurs attributs par lot grâce à Store Manager.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=570&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Foutils-administration-modules-prestashop%2F2937-store-manager-pour-prestashop.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dstoremanager">Commencez maintenant!</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_storemanager" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-storemanager.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/570.png"/>
+				<p><b>Travaillez une heure, gagnez une journée!</b></p>
+				<p>Mettez à jour les produits, catégories et images par lot pour gagner des heures de travail dans votre journée. Passez moins de temps à gérer votre activité et plus de temps à vendre.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=570&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Foutils-administration-modules-prestashop%2F2937-store-manager-pour-prestashop.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dstoremanager">Commencez maintenant!</a>
+				</span>
+			</div>
+		</section>
+		<section id="2_storemanager" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-storemanager.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/570.png"/>
+				<p><b>Organiser correctement vos finances est la clé du succès</b></p>
+				<p>Intégrez les solutions comptables pour synchroniser les factures, dépenses et autres données financières grâce à Store Manager.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=570&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Foutils-administration-modules-prestashop%2F2937-store-manager-pour-prestashop.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dstoremanager">Commencez maintenant!</a>
+				</span>
+			</div>
+		</section>
+		<section id="3_storemanager" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-storemanager.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/570.png"/>
+				<p><b>Utilisez des prix psychologiques comme 9,99 pour augmenter les conversions</b></p>
+				<p>Modifiez les prix des produits par lot en toute simplicité pour les soldes et promotions, sans y passer une journée entière.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=570&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Foutils-administration-modules-prestashop%2F2937-store-manager-pour-prestashop.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dstoremanager">Commencez maintenant!</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(3)+'_storemanager').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:23;a:5:{s:12:"id_ps_advice";s:3:"592";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1388:"<div id="wrap_id_advice_592" >
+		<section id="0_mailjet" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-mailjet.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/592.png"/>
+				<p><b>Envoyez le bon message à la bonne personne au bon moment!</b></p>
+				<p>L'envoi d'emails ciblés peut augmenter vos revenus de plus de 30%. Mailjet vous permet d'automatiser l'envoi d'emails personnalisés à vos clients et de suivre leur retour sur investissement.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=592&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Fpublicite-marketing-newsletter-modules%2F3644-mailjet.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dmailjet">Commencez maintenant!</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_mailjet').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:24;a:5:{s:12:"id_ps_advice";s:3:"606";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:948:"<div id="wrap_id_advice_606" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="606" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="chronopost" href="{link}AdminModules{/link}&install=chronopost&module_name=chronopost&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/chronopost.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/606.png"/ class="hide">
+				<p class="advice-description">La livraison express en 12 à 24h<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:25;a:5:{s:12:"id_ps_advice";s:3:"607";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:984:"<div id="wrap_id_advice_607" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="607" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="dpdfrance" href="{link}AdminModules{/link}&install=dpdfrance&module_name=dpdfrance&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/dpdfrance.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/607.png"/ class="hide">
+				<p class="advice-description">Livrez vos produits en 24 à 48h avec suivi détaillé des colis en ligne<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:26;a:5:{s:12:"id_ps_advice";s:3:"614";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1387:"<div id="wrap_id_advice_614" >
+		<section id="0_dpdfrance" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-dpdfrance.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/614.png"/>
+				<p><b>55% des clients ayant vécu une mauvaise expérience de livraison ne reviennent pas</b></p>
+				<p>Offrez à vos clients la possibilité de choisir par SMS quand ils souhaitent être livrés : de quoi satisfaire les demandes les plus pointues !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=614&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F19414-dpdfrance.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Ddpdfrance">Commencez maintenant!</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_dpdfrance').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:27;a:5:{s:12:"id_ps_advice";s:3:"615";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1421:"<div id="wrap_id_advice_615" >
+		<section id="0_chronopost" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-chronopost.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/615.png"/>
+				<p><b>Livraison le jour même : 3/4 des clients veulent être livrés 4h max après la commande</b></p>
+				<p>Proposez un éventail de solutions selon le degré d'urgence de vos clients, livraison Express avant 13h ou livraison avant 18h avec une couverture sur toute la France.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=615&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ftransport-logistique-livraison-modules-prestashop%2F19561-chronopost.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dchronopost">Commencez maintenant!</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_chronopost').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:28;a:5:{s:12:"id_ps_advice";s:3:"619";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:981:"<div id="wrap_id_advice_619" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="619" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="netreviews" href="{link}AdminModules{/link}&install=netreviews&module_name=netreviews&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/netreviewsfr.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/619.png"/ class="hide">
+				<p class="advice-description">Recueillez les avis de vos clients pour convaincre vos prospects<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:29;a:5:{s:12:"id_ps_advice";s:3:"620";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1281:"<div id="wrap_id_advice_620" >
+		<section id="0_training" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-training.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/620.png"/>
+				<p><b>Besoin d'aide ? Profitez du savoir-faire de nos formateurs !</b></p>
+				<p>Découvrez comment faire de votre boutique un succès grâce aux formations PrestaShop, quel que soit votre niveau de compétences.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=620&url=https%3A%2F%2Fwww.prestashop.com%2Ffr%2Fformation-prestashop%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dtraining%26utm_content%3Dtraining">Contactez-nous</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_training').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:30;a:5:{s:12:"id_ps_advice";s:3:"621";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1303:"<div id="wrap_id_advice_621" >
+		<section id="0_trainingseo" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-trainingseo.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/621.png"/>
+				<p><b>Pas assez de trafic ? Pensez à notre formation SEO Référencement !</b></p>
+				<p>Apprenez toutes les astuces pour augmenter votre visibilté tout en attirant une clientèle ciblée.</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=621&url=https%3A%2F%2Fwww.prestashop.com%2Ffr%2Fformation-referencement-naturel-prestashop%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dtraining%26utm_content%3Dtrainingseo">Je veux plus de trafic !</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_trainingseo').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:31;a:5:{s:12:"id_ps_advice";s:3:"622";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:2557:"<div id="wrap_id_advice_622" >
+		<section id="0_trustedshops2" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-trustedshops2.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/622.png"/>
+				<p><b>Rassurez vos visiteurs en affichant de nombreux avis clients !</b></p>
+				<p>Récoltez un maximum d’avis : proposez  à vos clients d’évaluer leurs achats à plusieurs endroits  emplacements et au bon moment !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=622&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ffonctionnalites-front-office-modules-prestashop%2F1751-trusted-shops.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dtrustedshops">Installer</a>
+				</span>
+			</div>
+		</section>
+		<section id="1_trustedshops2" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-trustedshops2.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/622.png"/>
+				<p><b>Soyez à l'écoute de ce que vos clients ont à dire pour toujours vous améliorer !</b></p>
+				<p>De mauvais avis ? Utilisez-les ! La clef pour optimiser votre site réside dans l’analyse des retours de vos clients. Répondez aux critiques - vos clients seront satisfaits !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=622&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Ffonctionnalites-front-office-modules-prestashop%2F1751-trusted-shops.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Dtrustedshops">Installer</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(1)+'_trustedshops2').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:32;a:5:{s:12:"id_ps_advice";s:3:"623";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:1007:"<div id="wrap_id_advice_623" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="623" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="expressmailing" href="{link}AdminModules{/link}&install=expressmailing&module_name=expressmailing&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/expressmailing.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/623.png"/ class="hide">
+				<p class="advice-description">Communiquez avec vos clients: Emailing /Fax /Sms. 400 emails/jour gratuits !<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:33;a:5:{s:12:"id_ps_advice";s:3:"627";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1320:"<div id="wrap_id_advice_627" >
+		<section id="0_illicopresta2" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-illicopresta2.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/627.png"/>
+				<p><b>La gestion des commandes clients vous prend trop de temps ?</b></p>
+				<p>Gérez en masse vos changements de statuts, impressions de facture et bons de livraison !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=627&url=http%3A%2F%2Faddons.prestashop.com%2Ffr%2Foutils-administration-modules-prestashop%2F18033-erpillicopresta.html%3Futm_source%3Dback-office%26utm_medium%3Dtipoftheday%26utm_campaign%3Dpartenariats%26utm_content%3Derpillicopresta">Tester gratuitement</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_illicopresta2').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}i:34;a:5:{s:12:"id_ps_advice";s:3:"641";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:962:"<div id="wrap_id_advice_641" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="641" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="ebay" href="{link}AdminModules{/link}&install=ebay&module_name=ebay&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/ebay.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/641.png"/ class="hide">
+				<p class="advice-description">Lancez votre boutique eBay : profitez de 90 jours d'abonnement gratuits<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:35;a:5:{s:12:"id_ps_advice";s:3:"642";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:965:"<div id="wrap_id_advice_642" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="642" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="twenga" href="{link}AdminModules{/link}&install=twenga&module_name=twenga&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/twenga2.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/642.png"/ class="hide">
+				<p class="advice-description">30 millions de visiteurs par mois et autant de clients potentiels<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:36;a:5:{s:12:"id_ps_advice";s:3:"651";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:1043:"<div id="wrap_id_advice_651" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="651" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="yousticeresolutionsystem" href="{link}AdminModules{/link}&install=yousticeresolutionsystem&module_name=yousticeresolutionsystem&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/youstice.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/651.png"/ class="hide">
+				<p class="advice-description">Gérez les plaintes de vos clients comme un pro. Essayez le module Youstice gratuitement<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:37;a:5:{s:12:"id_ps_advice";s:3:"657";s:8:"selector";s:11:"#dashtrends";s:8:"location";s:5:"after";s:4:"html";s:1011:"<div id="wrap_id_advice_657" >
+	<div class="col-lg-6">
+		<section id="" class="panel panel-advice">
+			<a href="#" id="657" class="close_link gamification_premium_close">
+				<i class="icon-remove"></i>
+			</a>
+			<span class="gamification-close-confirmation hide">
+				Etes vous sur ?
+				<button class="btn btn-default btn-sm" data-advice="delete"><i class="icon-trash"></i> Supprimer</button>
+				<button class="btn btn-default btn-sm" data-advice="cancel">Annuler</button>
+			</span>
+			<a class="preactivationLink row" rel="reforestaction" href="{link}AdminModules{/link}&install=reforestaction&module_name=reforestaction&redirectconfig">
+				<img src="https://api.prestashop.com/partner/premium/images/reforestaction.png" class="advice-img img-thumbnail">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/657.png"/ class="hide">
+				<p class="advice-description">Vous avez la fibre écologique ? Proposez à vos clients de planter des arbres !<br/></p>
+			</a>
+		</section>
+	</div></div>";s:6:"weight";s:1:"1";}i:38;a:5:{s:12:"id_ps_advice";s:3:"667";s:8:"selector";s:10:".dash_news";s:8:"location";s:5:"after";s:4:"html";s:1145:"<div id="wrap_id_advice_667" >
+		<section id="0_securityupdate" class="panel " style="display:none">
+			<header class="panel-heading">
+				<span class="icon-lightbulb"></span> Conseil du jour</header>
+			<div class="panel-body" style="padding:0">
+				<img class="img-responsive" src="https://api.prestashop.com/partner/tipsoftheday/img/logo-securityupdate.png" style="float:right; margin-left: 5px;">
+				<img src="https://gamification.prestashop.com/api/getAdviceImg/667.png"/>
+				<p><b>Une mise à jour de sécurité PrestaShop est disponible</b></p>
+				<p>Protégez votre boutique en appliquant notre correctif de sécurité !</p>
+				<span class="text-right" style="float:right">
+					<a class="btn btn-default" target="_blank" href="https://gamification.prestashop.com/get_advice_link.php?id_advice=667&url=https%3A%2F%2Fwww.prestashop.com%2Fblog%2Ffr%2Fmise-jour-securite-prestashop">En savoir plus</a>
+				</span>
+			</div>
+		</section>
+			<script>
+			$(document).ready( function () {
+				$('#'+rand(0)+'_securityupdate').show();
+			});
+
+			function rand(nbr){
+			   return Math.floor(Math.random()*(nbr+1));
+			}
+			</script>
+			</div>";s:6:"weight";s:1:"1";}}

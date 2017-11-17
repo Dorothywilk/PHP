@@ -1,0 +1,13 @@
+.bgcolor_black {
+    background-color: #000000;
+}
+#slider-thumbs {
+   margin-top: 20px
+}
+
+.thumbnails .active {
+    border-width: 2px;
+}
+#carousel-text {
+    color:#ffffff;
+}

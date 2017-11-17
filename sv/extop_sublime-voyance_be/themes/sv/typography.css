@@ -1,0 +1,222 @@
+html, body, .slide div, .slide span, .slide applet, .slide object, .slide iframe,
+.slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6, .slide p, .slide blockquote, .slide pre,
+.slide a, .slide abbr, .slide acronym, .slide address, .slide big, .slide cite, .slide code,
+.slide del, .slide dfn, .slide em, .slide font, .slide img, .slide ins, .slide kbd, .slide q, .slide s, .slide samp,
+.slide small, .slide strike, .slide strong, .slide sub, .slide sup, .slide tt, .slide var,
+.slide dl, .slide dt, .slide dd, .slide ol, .slide ul, .slide li,
+.slide fieldset, .slide form, .slide label, .slide legend,
+.slide table, .slide caption, .slide tbody, .slide tfoot, .slide thead, .slide tr, .slide th, .slide td  {
+  font-size:15px;
+  font-size:1.5rem;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  transition: all 7s ease-in-out;
+}
+a:hover {
+  color:#f00;
+  text-decoration: none;
+  text-shadow: 0 0 3px orange;
+  transition: all 1s ease-in-out;
+}
+.slide a {
+  /* customize_link */ color: #08c; /* customize_link */
+  text-decoration: none;
+}
+
+.slide a:hover {
+  /* customize_link_hover */ color: #08c; /* customize_link_hover */
+  text-decoration: underline;
+}
+
+.btn, .btn-primary, .btn-info, .btn-success, .btn-warning, .btn-danger, .btn-inverse {}
+
+.slide .btn-primary, .slide .btn-info, .slide .btn-success, .slide .btn-warning, .slide .btn-danger, .slide .btn-inverse {
+  color:#fff;
+}
+.slide .btn-primary:hover, .slide .btn-info:hover, .slide .btn-success:hover, .slide .btn-warning:hover, .slide .btn-danger:hover, .slide .btn-inverse:hover {
+  color:#fff;
+  text-decoration: none;
+}
+
+.slide h1 {
+  font-size: 84px;
+  font-size: 8.4rem;
+}
+
+.slide h2 {
+  font-size: 72px;
+  font-size: 7.2rem;
+}
+
+.slide h3 {
+  font-size: 60px;
+  font-size: 6rem;
+}
+
+.slide h4 {
+  font-size: 48px;
+  font-size: 4.8rem;
+}
+
+.slide h5 {
+  font-size: 42px;
+  font-size: 4.2rem;
+}
+
+.slide h6 {
+  font-size: 36px;
+  font-size: 3.6rem;
+}
+
+#footer, #footer p {
+  font-size: 12px;
+  font-size: 1.2rem;
+  color:#64717D;
+}
+
+#footer a {
+  color: #64717D;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #ddf;
+  text-shadow: 0 0 3px yellow;
+}
+
+#footer p {
+  margin-bottom:0;
+  display: inline;
+}
+
+.blue {
+  color:#3a87ad;
+}
+.blue-inverse {
+  color:#fff;
+  background: #3a87ad;
+}
+.green {
+  color:#468847;
+}
+.green-inverse {
+  color:#fff;
+  background: #468847;
+}
+.orange {
+  color:#f89406;
+}
+.orange-inverse {
+  color:#fff;
+  background: #f89406;
+}
+.red {
+  color:#b94a48;
+}
+.red-inverse {
+  color:#fff;
+  background: #b94a48;
+}
+
+.img-rounded, .img-rounded img {
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+.img-circle, .img-circle img {
+  -webkit-border-radius: 500px;
+  -moz-border-radius: 500px;
+  border-radius: 500px;
+}
+
+.img-polaroid {
+  padding: 0; background: transparent; border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+img.img-polaroid, .img-polaroid img, .framed {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/*------------------------  BASE-REM SIZING  */
+
+@media (min-width: 1401px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1400px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* target screen width  */
+@media (max-width: 1280px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1160px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1040px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 920px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 680px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 440px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+/* customize_miscellaneous */ /* customize_miscellaneous */

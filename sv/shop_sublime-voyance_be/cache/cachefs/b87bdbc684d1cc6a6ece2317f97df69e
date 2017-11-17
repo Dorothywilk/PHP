@@ -1,0 +1,22 @@
+a:2:{i:0;a:3:{s:7:"id_info";s:1:"1";s:7:"id_shop";s:1:"1";s:4:"text";s:606:"<ul>
+<li><em class="icon-truck" id="icon-truck"></em>
+<div class="type-text">
+<h3>Lorem Ipsum</h3>
+<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>
+</div>
+</li>
+<li><em class="icon-phone" id="icon-phone"></em>
+<div class="type-text">
+<h3>Dolor Sit Amet</h3>
+<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>
+</div>
+</li>
+<li><em class="icon-credit-card" id="icon-credit-card"></em>
+<div class="type-text">
+<h3>Ctetur Voluptate</h3>
+<p>Lorem ipsum dolor sit amet conse ctetur voluptate velit esse cillum dolore eu</p>
+</div>
+</li>
+</ul>";}i:1;a:3:{s:7:"id_info";s:1:"2";s:7:"id_shop";s:1:"1";s:4:"text";s:359:"<h3>Custom Block</h3>
+<p><strong class="dark">Lorem ipsum dolor sit amet conse ctetu</strong></p>
+<p>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>";}}

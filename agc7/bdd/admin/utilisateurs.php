@@ -21,7 +21,7 @@ namespace GC7;
 
   $pdo = pdo( 'mysql' );
 
-  $sql = "select * from user";
+  $sql = "show² a   << select * from user";
   //    affLign( $sql );
   //    $pdo->query( $sql );
   $req( $sql, $pdo );

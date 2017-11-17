@@ -1,0 +1,130 @@
+body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; background:#e7eef6 url(images/body_bg.gif) repeat-x 0 0}
+img{border:none}
+.clear{clear:both}
+
+#layout{width:950px; margin:0 auto;}
+/* Start Header Content */
+#header{float:left; width:950px}
+#logo{float:left}
+.logo_box{float:left; width:auto; font:48px "Gill Sans MT", Arial, Helvetica; color:#fffff; padding:27px 0 0 33px; margin:0}
+.logo_box a{font:48px "Gill Sans MT", Arial, Helvatica; Color:#ffffff; text-decoration:none}
+.logo_box a:hover{font:48px "Gill Sans MT", Arial, Helvatica; Color:#FFFFFF; text-decoration:underline}
+
+.search_container{float:right; width:299px; padding:17px 30px 0 10px; }
+.search_container .search_box{float:left; padding:15px 20px 0 16px; width:280px; height:60px; background:url(images/member_login_1.gif) no-repeat 0 0}
+.search_container .search_box .column_1{float:left; width:70px; padding:26px 0 0 11px; margin:0}
+/* End Header Content */
+
+#body_container{float:left; width:884px; margin:0; padding:17px 33px 0 33px}
+#body_container_inner{float:left; width:884px; margin:0; background:#fff}
+/* Start Menu */
+#menu{
+	float:left;
+	width:884px;
+	height:37px;
+	text-align:center;
+	margin:0;
+	background:url(images/menu_bg.gif) no-repeat 0 0;
+	padding: 0 0 8px 0;
+}
+#menu ul{float:left; width:864px; margin:0; padding:0 0 0 20px; list-style:none}
+#menu li{float:left; width:auto; font:20px/22px Arial, Helvetica, sans-serif; color:#fff; background:url(images/menu_border.gif) no-repeat 0 4px; padding:7px 0 3px 0;}
+#menu li a{
+	width:auto;
+	color:#fff;
+	text-decoration:none;
+	display:block;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-top: 0;
+	padding-right: 24px;
+	padding-bottom: 5px;
+	padding-left: 24px;
+}
+
+#menu li a:hover{color:#003465; width:auto; text-decoration:none;}
+#menu li a.current{color:#003465; }
+#menu li.first{background:none; padding:7px 0 3px 0}
+/* End Menu */
+
+.banner{float:left; width:884px;}
+.banner img{float:left; width:auto; padding:0 0 5px 10px}
+
+.feature{float:left; width:884px; height:109px; background:url(images/bg.gif) no-repeat 10px 0}
+.feature p{float:left; width:844px; font:"Gill Sans MT", Arial, Helvetica; color:#4c8698; padding:30px 0 30px 40px; margin:0}
+
+/* Start Home Page CSS */
+.container_row{float:left; width:884px}
+
+.container_row .column_left{float:left; width:276px; padding:0 0 0 9px; margin:10px 0 0 0}
+.container_row .column_left p{margin:0px; padding:0px}
+.container_row .column_left .title{float:left; width:276px; background:url(images/top_curve.gif) no-repeat 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:14px 0 0; color:#fff; margin:0}
+.container_row .column_left .left_detail{float:left; width:256px; padding:10px; background:url(images/column_border.gif) repeat-y 0 0}
+.container_row .column_left .bottom_curve{float:left; width:276px; height:31px; background:url(images/bottom_curve.gif) no-repeat 0 0}
+.container_row .column_left .bottom_curve p{float:left; width:256px; font-weight:bold; margin:0; padding:8px 10px 11px 10px; color:#fff}
+.container_row .column_left .bottom_curve p a{color:#fff; text-decoration:none}
+.container_row .column_left .bottom_curve p a:hover{color:#fff; text-decoration:underline} 
+
+.container_row .column_center{float:left; width:276px; padding:0 0 0 19px; margin:10px 0 0 0}
+.container_row .column_center p{margin:0px; padding:0px}
+.container_row .column_center .title{float:left; width:276px; background:url(images/top_curve.gif) no-repeat 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:14px 0 0; color:#fff; margin:0}
+.container_row .column_center .center_detail{float:left; width:256px; padding:10px; background:url(images/column_border.gif) repeat-y 0 0}
+.container_row .column_center .bottom_curve{float:left; width:276px; height:31px; background:url(images/bottom_curve.gif) no-repeat 0 0}
+.container_row .column_center .bottom_curve p{float:left; width:256px; font-weight:bold; margin:0; padding:8px 10px 11px 10px; color:#fff}
+.container_row .column_center .bottom_curve p a{color:#fff; text-decoration:none}
+.container_row .column_center .bottom_curve p a:hover{color:#fff; text-decoration:underline} 
+
+.container_row .column_right{float:left; width:276px; padding:0 0 0 19px; margin:10px 0 0 0}
+.container_row .column_right p{margin:0px; padding:0px}
+.container_row .column_right .title{float:left; width:276px; background:url(images/top_curve.gif) no-repeat 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:14px 0 0; color:#fff; margin:0}
+.container_row .column_right .right_detail{float:left; width:256px; padding:10px; background:url(images/column_border.gif) repeat-y 0 0}
+.container_row .column_right .bottom_curve{float:left; width:276px; height:31px; background:url(images/bottom_curve.gif) no-repeat 0 0}
+.container_row .column_right .bottom_curve p{float:left; width:256px; font-weight:bold; margin:0; padding:8px 10px 11px 10px; color:#fff}
+.container_row .column_right .bottom_curve p a{color:#fff; text-decoration:none}
+.container_row .column_right .bottom_curve p a:hover{color:#fff; text-decoration:underline}
+/* End Home Page CSS */
+
+#footer{float:left; width:884px; background:url(images/footer_bg.gif) repeat-x 0 0; margin-top:20px}
+#footer .footer_link{float:left; width:884px; padding:10px 0 0 0; text-align:center}
+#footer .footer_link p{margin:0px; font:11px Arial, Helvetica, sans-serif; padding:5px; color:#ffffff; text-align:center}
+#footer .footer_link p a{color:#FFFFFF; text-decoration:underline}
+#footer .footer_link p a:hover{color:#003465; text-decoration:underline;}
+/* Footer Menu */
+#footer .footer_link ul{width:884px; color:#FFFFFF; text-align:center; list-style:none; margin:0; padding:5px 0 5px 0}
+#footer .footer_link li{width:884px;color:#ffffff; background:url(images/footer_menu_border.gif) no-repeat 0 2px; display:inline; padding:0 12px 0 12px}
+#footer .footer_link li.first{background:none; padding:0 12px 0 12px}
+#footer .footer_link li a{color:#d4dee8; text-decoration:none}
+#footer .footer_link li a:hover{color:#003465; text-decoration:underline}
+#footer .footer_link li a.current{color:#003465; text-decoration:underline}
+/* End Footer Menu */
+/* inner page css starts */
+
+#left_sidebar{width:220px; padding:20px 10px 0 10px; float:left}
+#right_main{width:600px; padding:20px 0 0 20px; float:left}
+ 
+#left_main{width:600px; padding:20px 10px 0 10px; float:left}
+#right_sidebar{width:220px; padding:20px 0 0 20px; float:left}
+
+
+a{color:#4c8698; text-decoration:none;}
+a:hover{color:#003465}
+
+.mainzone{padding:30px 40px 25px 40px;}
+
+img.left-img{float:left; margin-right:10px; margin-bottom:10px;}
+.project-img{float:right; margin-left:20px; border: 6px solid #ccc;}
+.row2{padding:10px 40px 40px 40px;}
+.box1{width:45%; float:left; padding:5px;}
+.about-img{float:left; margin-right:20px;}
+p{line-height:15px; text-align:justify}
+.box2{width:45%; float:left;padding:5px;margin-left:5%}
+/* inner page css ends */
+/* Text Styles Start Here */
+h1{font:24px/26px Georgia, "Times New Roman", Times, serif; color:#221E21; font-style:italic; padding:18px 0 14px 0; margin:0}
+h1 span{color:#221E21}
+h1.inner{font:24px/26px Georgia, "Times New Roman", Times, serif; color:#221E21; font-style:italic; padding:0; margin:0}
+
+h2{font:bold 15px Arial, Helvetica, sans-serif;	color:#221E21; padding:5px 0px 5px 0px;	border-bottom:1px dotted #d8d6ba;margin:0px 0px 10px 0px;}
+h3{font:bold 13px Arial, Helvetica, sans-serif;	color:#221E21; padding:5px 0px 5px 0px;	margin:0px;}
+/* Text Styles End Here */

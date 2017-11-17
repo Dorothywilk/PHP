@@ -1,0 +1,50 @@
+/* 
+    Created: 30-juin-2014, 10:23:38
+    Author : Lionel
+*/
+
+html, body{
+  padding: 0;
+  margin: 0;
+  z-index: 0;
+}
+
+html{
+  background: url("../img/ciel4.gif") repeat fixed; 
+}
+body{
+  color: #0ee;
+}
+.rayons{
+  position:fixed;
+  opacity: 0.2;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 50%;
+  z-index: 0;
+}
+.monBloc{
+  color: black;
+  padding: 0 10px;
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 7px;
+  background-color:  rgba(255,255,255,0.8);
+  border: 2px solid tomato;
+  text-align: justify;
+  box-shadow: 3px 3px 0px #777;
+}
+.cadre{
+  color: #000;
+  border: 2px solid tomato;
+  border-radius: 7px;
+  width: 90%;
+  padding: 0 10px;
+  margin: 10px auto;
+  background-color: #fff;
+  text-align: justify;
+  opacity: 1;
+  box-shadow: 3px 3px 0px #777;
+  z-index: 10;
+}

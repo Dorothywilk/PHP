@@ -1,0 +1,5 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^sublime-voyance\.be$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sublime-voyance\.be$
+RewriteRule ^/?$ "http\:\/\/top\.sublime-voyance\.be\/" [R=301,L]

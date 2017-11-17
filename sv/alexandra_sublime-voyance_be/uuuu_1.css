@@ -1,0 +1,294 @@
+/* 
+    Created on : 01-juil.-2014, 11:25:58
+    Author     : dorothy
+*/
+/*@font-face {
+  font-family: ‘Comic Sans Ms’,
+   url(‘../wp-content/themes/font_family/comic.ttf’) 
+  src: url(‘polices/don_quixote-webfont.eot?#iefix’) format(‘embedded-opentype’),
+    url(‘policesw
+    /don_quixote-webfont.woff’) format(‘woff’),
+    url(‘polices/don_quixote-webfont.ttf’),
+    url(‘polices/don_quixote-webfont.svg#DonQuixoteRegular’) format(‘svg’);
+  font-weight: normal;
+  font-style: normal;
+
+}*/
+
+
+/* -----------------Params généraux ---------------------------*/
+
+html{
+  width: 100%;
+  background: url("img/ciel4.gif") repeat fixed ; 
+}
+
+p,h1,h2,h3{
+  padding: 0; 
+  margin: 0;
+}
+
+a {
+  /*text-decoration: none;*/
+  transition: all 5s ease-in-out;
+  color:goldenrod;
+
+}
+a:hover {
+  color:#f00;
+  text-decoration: none;
+  text-shadow: 0 0 3px orange;
+  transition: all 3s ease-in-out;
+}
+
+body{
+  padding: 0;
+  background-color: rgba(0,0,0,.1);
+  /*font-family: "Comic Sans MS";*/
+  margin:  0 auto;
+  width: 70%;
+  border: 1px solid ;
+  z-index: -1;
+  font-size: 20px;
+}
+
+.planete{
+  position: absolute;
+  background-size: 100%;
+  opacity: .6;
+  width: 70%;
+  z-index: -1000;
+}
+
+/* ----------------- PageAlexandra ---------------------------*/
+
+.descriptionAlexandra{
+  font-family: "Comic Sans Ms";
+  font-size: 2rem;
+  position: relative;
+  text-align: justify;
+  letter-spacing: 0.1em;
+  /*  border:  10px solid fuchsia;*/
+  padding: 10px;
+  width: 60%;
+  border-radius: 10px;
+  margin: 10px auto;
+  margin-top: 25px;
+  color:wheat;
+
+}
+.photo_alexandra {
+  /*border:  4px solid green;*/
+  position: relative;
+  display: inline-block;
+  width:200px;
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+  opacity: 1;
+  z-index:1;
+  border-radius: 10px;
+}
+.mail{
+  /*border:solid red 3px;*/
+  margin: 20px;
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding: 5px;
+  text-align: center;
+  transition: all 3s ease-in-out;
+  background-color: rgba(0,0,0,.1);
+  box-shadow: 0 0 25px 0px wheat;
+  border-radius: 10px 10px 10px 10px;
+  color:goldenrod;
+}
+.mail:hover{
+  box-shadow: 0 0 50px 0px wheat;
+  transition: all 1s ease-in-out;
+
+}
+
+
+.lettrine p{
+  position: relative;
+  color: goldenrod;
+  font-weight: 800;
+  display: inline-block;
+  width:50%;
+  /*border:5px solid black;*/
+  font-family:"Comic Sans Ms",Arial, Helvetica, sans-serif;
+  font-size:3rem;
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  margin-left: 20px;
+}
+
+.lettrine ::first-letter {
+  position:relative;
+  margin-left: -40px;
+  font-family:"Comic Sans Ms",Times New Roman, Times, serif;
+  font-size:5rem;
+  font-weight: normal;
+  color:wheat;
+  /*border: 3px solid white;*/
+  line-height: 1;
+  color: goldenrod;
+}
+
+
+/* ----------------- Pays ---------------------------*/
+
+.pays {
+  /*border: 3px #000 solid;*/
+  border-radius:10px; 
+  box-shadow: 0 0 50px 0px wheat;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 10px;
+  color:wheat;
+}
+
+.tab-pane{
+  font-size: 4rem;
+  color: #d8580f;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 0px 0px 10px 10px;
+  /*border: solid #000 5px;*/
+}
+
+
+.prix{
+  font-size: 2rem;
+  font-style: italic;
+  color:red;
+  /*transition: all 3s ease-in-out;*/
+}
+
+.tab-pane:hover{
+  color:#f2571a ;
+  background-color: rgba(255,255,255,.1);
+  box-shadow: 0px 3px 20px 6px goldenrod;
+  border-radius: 0px 0px 10px 10px;
+  transition: all 3s ease-in-out;
+  border: 2px solid yellow;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover
+/*,.nav-tabs > li.active > a:focus*/
+,ddd{
+  color: red;
+  background-color: rgba(0,0,0,.5);
+  /*border: solid red 3px;*/
+}
+.couleurBe{
+  color: wheat;
+}
+.couleurBe:hover{
+  box-shadow: 0px 3px 20px 6px goldenrod;
+  transition: all 1s ease-in-out;
+}
+.couleurLu{
+  color:wheat;
+}
+.couleurLu:hover{
+  box-shadow: 0px 3px 20px 6px goldenrod;
+  transition: all 3s ease-in-out;
+}
+.imgBe{
+  /*border: solid blue 3px;*/
+  border-radius: 15px;
+  margin-right: 15px;
+}
+.imgLu{
+  /*border: solid blue 3px;*/
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+
+/* ----------------- Horaires ---------------------------*/
+
+.horaires{
+  /*border: solid 3px fuchsia;*/
+  width: 75%;
+  border-radius:10px; 
+  position: relative;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-left:  112px;
+  background-color: black;
+  color: wheat;
+  opacity: .7;
+  z-index: 0
+}
+.horaires {
+  font-size: 25px;
+}
+.absence{
+  /*border: 3px solid blue;*/
+  color: #d8580f;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+
+/* ----------------- Footer ---------------------------*/
+
+footer {
+  color:white;
+  /*border: 2px solid yellow;*/
+  background-color: rgba(255,255,255,.3);
+  opacity: .9;
+  /*color:#333;*/
+  padding: 0 50px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*réglage pour tablette*/
+@media all and (max-width:1040px){
+  body{height: auto;
+       color:green;
+       width: 96%;
+  }
+
+  .descriptionAlexandra{
+    width: 96%;
+  }
+  .html{width: 100%;}
+}
+/*réglage pour gsm*/
+@media all and (max-width:500px){
+  .lettrine{
+    color: blue;
+  }
+  .descriptionAlexandra{
+  }
+  .photo_alexandra{
+    width:100px;
+  }
+
+}
+
+
+.centered{
+    text-align: center;
+}

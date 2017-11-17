@@ -1,0 +1,6 @@
+1.0 - 03/03/2013 - Initial Release
+1.0.1 - 03/04/2013 - Fixed bug with resolutions over 1400 px wide
+1.0.2 - 14/04/2013 - Fixed bug with update not working
+1.0.3 - 12/07/2013 - Fixed bug with navigation on iphone/ipad
+1.0.4 - 15/01/2014 - "Add your CSS" option
+1.0.5 - 04/07/2014 - Added "Site Name" stack

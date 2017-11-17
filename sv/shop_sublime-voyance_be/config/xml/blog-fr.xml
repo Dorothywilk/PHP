@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>FR - Blog ecommerce par PrestaShop</title>
+	<atom:link href="http://www.prestashop.com/blog/fr/feed/" rel="self" type="application/rss+xml" />
+	<link>https://www.prestashop.com/blog/fr</link>
+	<description></description>
+	<lastBuildDate>Fri, 07 Aug 2015 09:59:32 +0000</lastBuildDate>
+	<language>fr-FR</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.8.1</generator>
+	<item>
+		<title>Success story e-commerce : 1 boutique PrestaShop, 3 pays</title>
+		<link>https://www.prestashop.com/blog/fr/success-story-e-commerce-1-boutique-prestashop-3-pays/</link>
+		<comments>https://www.prestashop.com/blog/fr/success-story-e-commerce-1-boutique-prestashop-3-pays/#comments</comments>
+		<pubDate>Thu, 06 Aug 2015 16:06:14 +0000</pubDate>
+		<dc:creator><![CDATA[Julie Liu]]></dc:creator>
+				<category><![CDATA[Success Story]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19209</guid>
+		<description><![CDATA[<p>Dans cette success story PrestaShop, nous nous intéressons à une boutique ayant une approche unique de l’internationalisation. Découvrez comment Güsewell vestidos de novia une boutique en ligne de robes de mariée, a développé son activité en Allemagne, en Argentine et en Chine. À la découverte d’une passion Notre histoire débute dans la province argentine de [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/success-story-e-commerce-1-boutique-prestashop-3-pays/">Success story e-commerce : 1 boutique PrestaShop, 3 pays</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Dans cette success story PrestaShop, nous nous intéressons à une boutique ayant une approche unique de l’internationalisation. Découvrez comment <a href="http://gusvestidosdenovia.com/" target="_blank">Güsewell vestidos de novia</a> une boutique en ligne de robes de mariée, a développé son activité en Allemagne, en Argentine et en Chine.<br />
+<span id="more-19209"></span> </p>
+<h2 style="color:#27204a">À la découverte d’une passion</h2>
+<p>Notre histoire débute dans la province argentine de San Juan, aux côtés d’une développeuse Web de 24 ans qui se prénomme Jorgelina Jorda Güsewell, la future fondatrice de l’une des principales boutiques en ligne de robes de mariée d’Amérique latine. Pendant sa formation de développeuse Web, elle a étudié le PHP, la technologie sur laquelle s’appuie PrestaShop, ainsi que les meilleures pratiques en matière de sites Web, comme le référencement. Jorgelina était assez satisfaite de créer des sites Web&#8230; jusqu’à ce qu’elle rencontre un jeune Allemand prénommé Ferdinand Güsewell. </p>
+<p>Après une idylle passionnée, Jorgelina et Ferdinand se fiancent et commencent à préparer leur mariage. C’est à l’occasion de ces préparatifs que Jorgelina connaît ses premières désillusions, comme lorsqu’elle doit se démener pour trouver la robe parfaite. </p>
+<p>Jorgelina ne trouve pas la robe de ses rêves, elle décide donc de faire appel à une couturière. Courageuse future mariée, elle commande sa robe sur le site d’une couturière en Chine. Il existait des risques, mais cela en valait la peine. Lorsque la robe est arrivée, tout était conforme à ce qu’elle espérait. </p>
+<p>La robe lui allait si bien, que des mariées en devenir demandèrent l’aide de Jorgelina pour commander leur propre robe. Après avoir rendu service à plusieurs personnes, Jorgelina a vu sa clientèle se développer et s’étendre par simple bouche-à-oreille. Jorgelina avait trouvé le business plan parfait de son prochain projet, mais tout ne s’est pas passé comme prévu. </p>
+<p><img class="aligncenter size-full wp-image-20461" alt="Ecommerce Success Story: 1 PrestaShop Store, 3 Countries " src="https://www.prestashop.com/blog/fr/files/2015/08/vestido-de-novia.jpg" width="570" height="586" /></p>
+<h2 style="color:#27204a">Place au changement</h2>
+<p>Jorgelina a pris la difficile décision de déménager à 12 000 kilomètres de sa clientèle pour vivre en Allemagne avec son mari. Sa clientèle ne serait plus au coin de la rue, mais bien à des milliers de kilomètres. Au début, tout était spontanéité, intuition et planification minimale. À présent, cette spécialiste de la robe de mariée devait retravailler son business plan pour s’assurer une réussite sur le long terme. Elle décida ainsi qu’elle pourrait toujours assister les futures mariées dans leur quête de la robe parfaite en ouvrant une boutique en ligne depuis son domicile en Allemagne, qui proposerait des robes sur mesure réalisées par une couturière en Chine à ses clientes latino-américaines.</p>
+<p>Après la naissance de son premier enfant, Jorgelina a consacré du temps à la recherche de la meilleure plate-forme d’e-commerce qui l’accompagnerait dans sa prochaine aventure. Elle confie : « J’ai choisi d’utiliser PrestaShop, car il s’agit d’une plate-forme gratuite disponible en Amérique latine dont la <a href="https://www.prestashop.com/forums/index.php?setlanguage=1&amp;cal_id=&amp;langid=3">communauté</a> comptait de nombreux membres. Je ne connais pas d’autre logiciel dont la communauté m’a répondu en moins de 24 h, avec des solutions concrètes aux problèmes que j’ai rencontrés ». </p>
+<p><a href="http://gusvestidosdenovia.com/" target="_blank">Güsewell vestidos de novia</a> est le premier distributeur de robes de mariée sur mesure proposées à un prix abordable dans la région. La véritable clé de sa réussite ? Son service client personnalisé, disponible en espagnol ! L’entreprise s’adapte également à sa clientèle cible en offrant plusieurs options de communication : les clientes peuvent directement contacter l’équipe commerciale via <a href="http://addons.prestashop.com/es/buscar?search_query=zopim" target="_blank">Zopim Chat</a>, WhatsApp et Skype, ou en envoyant un simple e-mail. La possibilité pour les acheteuses de parler avec le service client dans leur langue renforce leur confiance, même si la robe est cousue à des milliers de kilomètres.</p>
+<p>Après le lancement de son site Web en 2014, Jorgelina s’est consacrée à l’amélioration du référencement de sa boutique. Elle a utilisé le module de blog intelligent pour créer un contenu engageant destiné à ses nouvelles clientes. Certains articles présentaient des témoignages d’expérience client très positifs. </p>
+<p>En figurant dans <a href="https://www.prestashop.com/blog/fr/comment-trouver-les-bons-mots-cles-pour-le-seo-de-votre-site-ecommerce-partie-12/">les premiers résultats de recherche</a>, Jorgelina s’assurait de ne jamais manquer de nouvelles clientes. La formulation parfaite a pris du temps, mais, en janvier 2015, ses efforts ont été récompensés par une hausse soudaine du trafic enregistré sur son site Web. Dans le mois, le nombre de visites moyennes mensuelles passait de 200 à plus de 10 000 ! Jorgelina a étendu ses activités au-delà des frontières de l’Argentine, dans le reste de l’Amérique latine.</p>
+<h2 style="color:#27204a">Le bon équilibre</h2>
+<p>La hausse de la demande n’a pas facilité la tâche de Jorgelina : il fallait trouver le bon équilibre entre carrière, enfant et vie personnelle. Jorgelina commente : « C’est difficile, mais lorsqu’une femme est aussi passionnée par son travail qu’elle l’est par sa famille, elle peut tout donner, et bien plus encore, pour réussir sur les deux plans. J’ai de la chance, la plupart des visites en provenance d’Amérique latine ont lieu entre 21 h et 8 h en Allemagne. Après avoir couché mon bébé, je peux rester en contact avec mes clientes jusqu’à ce que j’aille dormir. Pendant sa sieste de l’après-midi, j’ai encore du temps pour faire mes études de marché, mettre mon site Web à jour et rédiger du contenu intéressant sur mon <a href="http://addons.prestashop.com/fr/recherche?search_query=blog">blog</a> pour fidéliser mes clientes. Mon mari est à la maison le week-end, ce qui me donne tout le temps dont j’ai besoin pour m’atteler à la programmation et au développement de mon site Web ». </p>
+<p>Elle poursuit : « Je dois beaucoup de mon succès à PrestaShop. Le logiciel est non seulement gratuit, mais il inclut également des fonctionnalités essentielles, notamment le responsive design et des fonctionnalités de référencement efficaces. Mes investissements ? L’hébergement et le <a href="https://www.prestashop.com/blog/fr/comment-trouver-le-meilleur-nom-de-domaine-pour-votre-boutique-en-ligne/">nom de domaine</a>, c’est tout ! Tout le reste, j’ai pu le concevoir à partir du logiciel par défaut ». </p>
+<hr style="width:20%;text-align:center" />
+Rédigez votre <a href="https://www.prestashop.com/blog/fr/creer-sa-boutique-en-ligne-10-etapes-pour-confectionner-son-business-plan/">business plan</a> et créez votre boutique en ligne grâce au <a href="https://www.prestashop.com/fr">logiciel e-commerce gratuit</a> de PrestaShop. Trouvez encore plus d’inspiration en lisant les <a href="https://www.prestashop.com/blog/fr/category/success-story/">success stories</a> de nos marchands du monde entier.</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/success-story-e-commerce-1-boutique-prestashop-3-pays/">Success story e-commerce : 1 boutique PrestaShop, 3 pays</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/success-story-e-commerce-1-boutique-prestashop-3-pays/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Thèmes vs développement sur-mesure : 5 points clés à connaître à propos du sur-mesure</title>
+		<link>https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-5-points-cles-connaitre-propos-du-mesure/</link>
+		<comments>https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-5-points-cles-connaitre-propos-du-mesure/#comments</comments>
+		<pubDate>Wed, 05 Aug 2015 08:27:34 +0000</pubDate>
+		<dc:creator><![CDATA[Julie Liu]]></dc:creator>
+				<category><![CDATA[Conseils E-commerce]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19203</guid>
+		<description><![CDATA[<p>Dans cette deuxième partie de notre série Thèmes vs développement sur mesure, nous donnons la parole à l&#8217;une des agences partenaires officielles de PrestaShop, Chetu. Collaborant avec PrestaShop depuis 2011, l&#8217;entreprise est devenue une référence du développement Web. Seth Burger, chargé des relations publiques et des partenariats chez Chetu, vous explique les bénéfices du développement [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-5-points-cles-connaitre-propos-du-mesure/">Thèmes vs développement sur-mesure : 5 points clés à connaître à propos du sur-mesure</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Dans cette deuxième partie de notre série Thèmes vs développement sur mesure, nous donnons la parole à l&rsquo;une des agences partenaires officielles de PrestaShop, Chetu. Collaborant avec PrestaShop depuis 2011, l&rsquo;entreprise est devenue une référence du développement Web. Seth Burger, chargé des relations publiques et des partenariats chez Chetu, vous explique les bénéfices du développement Web personnalisé pour l&rsquo;e-commerce. Découvrez les raisons pour lesquelles il préfère le sur-mesure aux thèmes.<br />
+<span id="more-19203"></span></p>
+<p>La création d&rsquo;un site e-commerce peut être onéreuse et fastidieuse. Il est donc naturel de se tourner vers des solutions grand public (COTS, Commercial-off-the-Shelf) proposant des <a href="http://www.prestashop.com/blog/fr">modèles et thèmes génériques</a> prêts à l&rsquo;emploi, pour réduire les coûts et accélérer l&rsquo;implémentation. Toutefois, selon votre projet, il est parfois plus approprié de faire appel à une agence web pour créer votre site Web sur mesure.</p>
+<h2 style="color:#aa7e41">5 points clés à connaitre sur le sur-mesure</h2>
+<h4 style="color:#e2a650">1) Interface utilisateur (UI) et expérience utilisateur (UX) dynamiques</h4>
+<p>Inconsciemment, les consommateurs tiennent compte de facteurs comme les couleurs, les formes, l&rsquo;équilibre global du site et sa performance. Il est donc essentiel de disposer d&rsquo;un site parfaitement fonctionnel et facilement navigable pour offrir la meilleure expérience client possible. Vous pourrez ainsi mieux faire connaître votre marque, tout en boostant les ventes potentielles et la fidélisation. </p>
+<p>Les thèmes proposent des présentations simples et génériques, dotées de fonctionnalités parfois limitées. Si vous avez des besoins spécifiques et souhaitez une boutique vraiment personnalisée, le développement sur-mesure par une agence web peut être plus adapté à votre projet. Cela vous aidera à obtenir :</p>
+<ul style="padding-left:30px">
+<li>Un site attrayant mettant l&rsquo;accent sur vos priorités</li>
+<li>Une navigation intuitive</li>
+<li>Des informations affichées de manière logique</li>
+<li>Une optimisation du contenu pour un temps de chargement réduit</li>
+<li>Une expérience interactive et immersive grâce à de nombreuses fonctionnalités</li>
+</ul>
+<h4 style="color:#e2a650">2) Fonctionnalités uniques</h4>
+<p>Les développements personnalisés sont particulièrement adaptés aux commerçants ayant besoin de fonctionnalités uniques. Seul un développement spécifique peut garantir le résultat souhaité. </p>
+<h4 style="color:#e2a650">3) Intégrations personnalisées</h4>
+<p>Certains e-commerçants ont parfois besoin d&rsquo;intégrer des systèmes métier à leur site Web. Les thèmes peuvent proposer des fonctionnalités d&rsquo;intégration aux plateformes les plus populaires, mais elles sont difficilement personnalisables. Les sites Web sur mesure permettent de garantir une intégration optimale entre votre site et votre système métier. En personnalisant un site, vous pouvez intégrer des applications tierces directement grâce aux API (Application Program Interface) de leurs plateformes, pour ainsi bénéficier de toutes les fonctionnalités. Nous vous conseillons d&rsquo;intégrer les systèmes métier suivants :</p>
+<ul style="padding-left:30px">
+<li>Progiciels de gestion intégrée (ERP)</li>
+<li>Gestion de la relation client (CRM)</li>
+<li>Systèmes de gestion des stocks</li>
+<li>Systèmes de gestion d&rsquo;entrepôts (WMS)</li>
+<li>Gestion de la chaîne d&rsquo;approvisionnement (SCM)</li>
+</ul>
+<h4 style="color:#e2a650">4) Marketing et référencement</h4>
+<p>Le référencement (SEO) est une approche marketing visant à accroître le trafic d&rsquo;un site et la visibilité d&rsquo;une marque sur les moteurs de recherche. Il est difficile d&rsquo;adopter cette méthode avec les thèmes. Certes, il est possible d&rsquo;optimiser un site en ajoutant des fonctionnalités SEO, mais il est plus efficace d&rsquo;intégrer ces composants à l&rsquo;intérieur même de l&rsquo;architecture du site. Les agences Web peuvent améliorer votre référencement, notamment en utilisant des URL réécrites, des métadonnées descriptives, des plans de sites détaillés et du contenu optimisé. Votre boutique sera ainsi mieux positionnée dans les résultats de recherche.</p>
+<h4 style="color:#e2a650">5) Coûts attendus</h4>
+<p>Les thèmes vous permettent de lancer votre site rapidement et à moindre coût, alors que les solutions personnalisées sont initialement plus onéreuses. En revanche, le coût total d&rsquo;un thème peut augmenter au fil du temps, car les fonctionnalités en option que vous y ajoutez sont souvent payantes (soit à l&rsquo;utilisation, soit via une licence).<br />
+Avec un site personnalisé, on observe la tendance inverse : les dépenses initiales sont certes plus élevées, mais les coûts diminuent progressivement, car vous avez déjà réglé les frais d&rsquo;utilisation ou de licence liés au développement. Cela concerne particulièrement les sites e-commerce, car le prestataire renonce au code source et à ses droits de propriété intellectuelle à la fin du contrat. </p>
+<p>Il est difficile de se faire une idée du prix sans consulter d&rsquo;agence : tout dépend de l&rsquo;ampleur du projet. Les tarifs proposés sont variables, généralement entre 17 et 100 dollars par heure et par développeur.</p>
+<h2 style="color:#aa7e41">Développement sur mesure : ce qu&rsquo;il faut savoir</h2>
+<p>Il est difficile de connaître précisément les délais de développement d&rsquo;un site e-commerce, car chaque boutique est unique. Comptez 4 à 12 mois pour la personnalisation de votre site, en fonction de sa <span style="font-style:italic">taille</span> et du <span style="font-style:italic">nombre de fonctionnalités sur mesure</span>. </p>
+<p>En choisissant Chetu, vous bénéficiez d&rsquo;un échéancier adapté à vos attentes. Après un premier rendez-vous avec l&rsquo;un de nos collaborateurs, un chef de projet spécialiste se charge de votre demande. Ensemble, vous déterminez l&rsquo;ampleur de votre projet e-commerce. </p>
+<p>Une fois les composants présentés et choisis, votre chef de projet vous explique le déroulement complet du projet. Cela permet de délimiter et de regrouper les différentes tâches, ainsi que de spécifier leurs dates de début, leur durée et la date de livraison du projet. Si vous souhaitez accélérer le rythme du projet, il est facile de faire intervenir de nouveaux développeurs pour réduire le délai de développement. Une fois l&rsquo;échéancier établi, les clients se font une idée plus claire des coûts prévus. Si l&rsquo;on détaille les heures de travail pour le développement d&rsquo;un site Web e-commerce sur mesure, le coût total s&rsquo;élève en moyenne à 25 dollars de l&rsquo;heure par développeur.</p>
+<h2 style="color:#aa7e41">À propos de Chetu :</h2>
+<p><a href="http://chetu.com/" target="_blank">Chetu</a> est l&rsquo;une des agences partenaires officielles de PrestaShop depuis 2011. En matière de solutions technologiques, il n&rsquo;existe pas de solution universelle. Chetu l&rsquo;a bien compris, et propose des offres sur mesure en fonction de votre budget, de vos besoins et de vos attentes. </p>
+<p>Chetu adopte une approche proactive et vous suggère des améliorations ou de nouveaux outils et technologies qui vous aident à réduire vos coûts tout en facilitant le développement. Ces solutions tiennent compte des besoins des entreprises individuelles et des avantages apportés aux clients sur le long terme, tout en respectant le budget établi. Chetu travaille avec de nombreux commerçants pour créer des sites Web sur mesure comme celui de <a href="https://www.candybarsydney.com.au/" target="_blank">Candy Bars Sydney</a>. </p>
+<hr style="width:20%;text-align:left" />
+<p>Vous pensez que le développement sur mesure est l&rsquo;option qui vous convient le mieux ? Pour en savoir plus <a href="https://www.prestashop.com/fr/agences-web-partenaires/bronze/chetu#partners_form">rendez-vous sur le site de Chetu</a>. Vous cherchez des agences près de chez vous ? Consultez notre <a href="https://www.prestashop.com/fr/agences-web-partenaires/">liste complète d&rsquo;agences partenaires</a>. </p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-5-points-cles-connaitre-propos-du-mesure/">Thèmes vs développement sur-mesure : 5 points clés à connaître à propos du sur-mesure</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-5-points-cles-connaitre-propos-du-mesure/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Quelle est la différence entre un attribut de produit et une caractéristique produit ?</title>
+		<link>https://www.prestashop.com/blog/fr/quelle-difference-attribut-produit-caracteristique-produit/</link>
+		<comments>https://www.prestashop.com/blog/fr/quelle-difference-attribut-produit-caracteristique-produit/#comments</comments>
+		<pubDate>Mon, 03 Aug 2015 15:48:07 +0000</pubDate>
+		<dc:creator><![CDATA[Julie Liu]]></dc:creator>
+				<category><![CDATA[Conseils E-commerce]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19193</guid>
+		<description><![CDATA[<p>Si vous avez du mal à comprendre la différence entre les attributs de produit et les caractéristiques produit, pas de panique : vous n&#8217;êtes pas seul ! Dans cet article, nous expliquerons la différence entre les attributs de produit et les caractéristiques produit, puis nous vous présenterons quelques exemples édifiants tirés de boutiques PrestaShop, sans [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/quelle-difference-attribut-produit-caracteristique-produit/">Quelle est la différence entre un attribut de produit et une caractéristique produit ?</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Si vous avez du mal à comprendre la différence entre les attributs de produit et les caractéristiques produit, pas de panique : vous n&rsquo;êtes pas seul ! </p>
+<p>Dans cet article, nous expliquerons la différence entre les attributs de produit et les caractéristiques produit, puis nous vous présenterons quelques exemples édifiants tirés de boutiques PrestaShop, sans oublier de vous montrer comment configurer les deux sur votre site e-commerce. </p>
+<p><span id="more-19193"></span></p>
+<h2 style="color:#247789">Attributs et caractéristiques produit</h2>
+<p>La première chose à savoir au sujet des attributs et des caractéristiques est qu&rsquo;ils servent tous deux à décrire votre produit en détail à vos clients. Cependant, contrairement à une description de produit, les attributs de produit et les caractéristiques produit ne présentent pas votre produit dans sa globalité, ils mettent plutôt en avant une courte liste des principales spécificités susceptibles d&rsquo;intéresser vos clients.</p>
+<h2 style="color:#247789">Caractéristique produit vs attribut de produit</h2>
+<p>Il n&rsquo;est pas conseillé de copier les caractéristiques produit et attributs de produit directement à partir d&rsquo;un autre site. Vous risquez non seulement de créer des contenus dupliqués, mais aussi, selon votre gamme, les caractéristiques produit de votre concurrent peuvent correspondre à vos propres attributs de produit. </p>
+<p>Pour déterminer si une description de produit est un attribut ou une caractéristique, le meilleur moyen est de vous poser cette question : </p>
+<p style="font-style:italic;text-align:center">« Puis-je le vendre comme un produit distinct ? »</p>
+<p>Si vous <strong>pouvez</strong> le vendre comme un produit distinct, alors il s&rsquo;agit d&rsquo;un <strong>attribut</strong> de produit.<br />
+Si vous <strong>ne pouvez pas</strong> le vendre comme un produit distinct, alors il s&rsquo;agit d&rsquo;une <strong>caractéristique</strong> produit. </p>
+<p>Prenez la bague vendue par Macintyres ci-dessous : si elle est disponible dans d&rsquo;autres matériaux, comme l&rsquo;or ou l&rsquo;argent, chacune d&rsquo;entre elles peut être ajoutée comme un attribut de produit, offrant ainsi la possibilité aux clients de personnaliser l&rsquo;allure de leur bague. Au contraire, si elle est disponible dans un seul métal, il vous faut l&rsquo;ajouter parmi les caractéristiques, comme dans l&rsquo;exemple. </p>
+<h2 style="color:#247789">Exemples de caractéristiques et attributs produit</h2>
+<p>Avant de vous lancer dans la création d&rsquo;une page produit réussie, penchez-vous sur quelques exemples édifiants. Voici 3 boutiques différentes qui ont bien configuré les attributs de produit et caractéristiques produit : </p>
+<h4><a href="http://www.macintyres.co.uk/diamond-solitaire-rings/5906-platinum-princess-cut-diamond-solitaire-ring-pc-070-d-020.html" target="_blank">Macintyres</a></h4>
+<p>Contrairement aux exemples suivants, Macintyres présente d&rsquo;abord les caractéristiques produit. Pour cette bague, vous découvrirez ainsi la catégorie de poids, la taille, le sertissage et le métal utilisé. En bas de la page produit, les clients peuvent sélectionner l&rsquo;attribut, dans ce cas la taille, de leur choix. </p>
+<p><img class="aligncenter size-full wp-image-20448" alt="macintyres" src="https://www.prestashop.com/blog/fr/files/2015/08/macintyres.png" width="994" height="928" /></p>
+<h4><a href="http://www.bimbaylola.com/shoponline/product.php?id_product=12000&amp;id_category=846&amp;sav=1" target="_blank">Bimba Y Lola</a></h4>
+<p>Voici la page produit pour un « pantalon décontracté avec bordure ». Sous le nom et le prix du produit, vous trouverez ses différents attributs, à savoir les couleurs et tailles. Plus bas dans la même colonne, vous trouverez les caractéristiques produit : coupe décontractée, pantalon de style sport, bordure en coton sur les côtés et poches avec grandes fermetures plastiques. </p>
+<p><img src="https://www.prestashop.com/blog/fr/files/2015/08/bimbaylola-1024x747.png" alt="bimbaylola" width="700" height="510" class="aligncenter size-large wp-image-20446" /></p>
+<h4><a href="http://www.guitarfromspain.com/en/premium-flamenco-guitars/97-alhambra-10fc-flamenco-guitar.html#/right_left_handed-left_handed/electronics-e2_fishman_prefix_pr" target="_blank">Guitar from Spain</a></h4>
+<p>Cette guitare flamenco Alhambra 10FC proposée par Guitar from Spain dispose de plusieurs attributs que vous pouvez choisir : le type d&rsquo;électrification inclus, ainsi que le jeu droitier ou gaucher. Si vous naviguez plus bas sur la page, vous découvrirez les caractéristiques du produit, comme le type de matériau utilisé pour la table, le corps, le manche, la touche et les mécaniques. </p>
+<p><img src="https://www.prestashop.com/blog/fr/files/2015/08/guitarfromspain.png" alt="guitarfromspain" width="783" height="741" class="aligncenter size-full wp-image-20447" /></p>
+<h2 style="color:#247789">Ajouter des attributs de produit sur PrestaShop</h2>
+<p>Maintenant que vous savez à quoi correspondent les caractéristiques produit et les attributs de produit, il est temps de les ajouter sur votre site. Prenons l&rsquo;exemple de la bague vendue par Macintyres. </p>
+<p>Dans votre back-office PrestaShop, passez le curseur sur « Catalogue », puis cliquez sur « Attributs des produits ». Si l&rsquo;attribut n&rsquo;existe pas déjà, cliquez sur « Ajouter un nouvel attribut », donnez un nom à celui-ci (qui, dans ce cas, est le métal de la bague), renseignez les informations relatives au SEO et sélectionnez le type d&rsquo;attribut. Après avoir cliqué sur « Enregistrer», l&rsquo;attribut de produit devrait apparaître dans la liste. </p>
+<p>Pour ajouter des valeurs au sein de l&rsquo;attribut de produit, cliquez sur « Ajouter une valeur ». Sélectionnez « Métal », le nouveau groupe d&rsquo;attributs que nous avons créé, dans la liste et entrez la première valeur, « Or », puis renseignez les informations relatives au SEO et choisissez une couleur ou téléchargez une texture. Une fois que vous avez terminé, cliquez sur « Enregistrer puis ajouter une nouvelle valeur », puis répétez ce processus pour le métal « Argent ». </p>
+<p>Et voilà, vous venez d&rsquo;ajouter votre premier groupe d&rsquo;attributs de produits ! </p>
+<h2 style="color:#247789">Ajouter des caractéristiques produit sur PrestaShop</h2>
+<p>Le processus permettant d&rsquo;ajouter des caractéristiques produit est exactement le même que pour les attributs de produit. </p>
+<p>Tout d&rsquo;abord, créez de nouvelles caractéristiques, puis ajoutez de nouvelles valeurs au sein de chaque caractéristique. N&rsquo;oubliez pas que vous avez la possibilité d&rsquo;ajouter des valeurs de caractéristiques directement lorsque vous créez un produit. Il vous suffit de les saisir pour les ajouter comme une nouvelle caractéristique de produit. </p>
+<hr style="width:20%;text-align:center">
+<p>Nous espérons que vous comprenez mieux la différence entre une caractéristique et un attribut de produit. Vous avez d&rsquo;autres questions ? Dites-le-nous dans les commentaires ci-dessous. </p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/quelle-difference-attribut-produit-caracteristique-produit/">Quelle est la différence entre un attribut de produit et une caractéristique produit ?</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/quelle-difference-attribut-produit-caracteristique-produit/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Mise à jour de sécurité pour PrestaShop</title>
+		<link>https://www.prestashop.com/blog/fr/mise-jour-securite-prestashop/</link>
+		<comments>https://www.prestashop.com/blog/fr/mise-jour-securite-prestashop/#comments</comments>
+		<pubDate>Thu, 30 Jul 2015 09:54:37 +0000</pubDate>
+		<dc:creator><![CDATA[Xavier Borderie]]></dc:creator>
+				<category><![CDATA[Actualités PrestaShop]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19176</guid>
+		<description><![CDATA[<p>En raison d’un problème de sécurité dont nous avons été avertis, nous diffusons aujourd’hui plusieurs manières de sécuriser une boutique pour nos utilisateurs et partenaires : Une nouvelle version de PrestaShop 1.4.x et 1.5.x. La version 1.6.1.0 est déjà sécurisée. Des fichiers de correctifs pour les dernières versions de chaque branche &#8212; 1.4.11.0, 1.5.6.2 et [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/mise-jour-securite-prestashop/">Mise à jour de sécurité pour PrestaShop</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>En raison d’un problème de sécurité dont nous avons été avertis, nous diffusons aujourd’hui plusieurs manières de sécuriser une boutique pour nos utilisateurs et partenaires :</p>
+<ul>
+<li>Une nouvelle version de PrestaShop 1.4.x et 1.5.x. La version 1.6.1.0 est déjà sécurisée.</li>
+<li>Des fichiers de correctifs pour les dernières versions de chaque branche &#8212; 1.4.11.0, 1.5.6.2 et 1.6.0.14.</li>
+<li>Le module Security Patch, qui applique les correctifs ci-dessus, beaucoup plus
+<div>facile à utiliser qu&rsquo;en les appliquant à la main.</div>
+</li>
+<li>Des archives Zip contenant les fichiers modifiés pour les branches 1.4, 1.5 et 1.6.</li>
+</ul>
+<p><span id="more-19176"></span></p>
+<p>(<a href="https://www.prestashop.com/blog/en/prestashop-security-release/">article in English </a>- <a href="https://www.prestashop.com/blog/es/actualizacion-de-seguridad-por-prestashop/">artículo en Español</a> &#8211; <a href="https://www.prestashop.com/blog/de/prestashop-sicherheitsmeldung/">artikel auf Deutsch</a> &#8211; <a href="https://www.prestashop.com/blog/it/nuova-versione-sicurezza-prestashop/">articolo in Italiano</a>)</p>
+<p>Nous vous conseillons fortement de mettre à jour votre boutique vers la dernière version de votre branche actuelle que nous venons de sortir (1.5.6.3 et 1.4.11.1), ou d’appliquer les correctifs que nous vous fournissons (voir les liens ci-dessous).</p>
+<p>La version 1.5.6.3 corrige également 17 autres problèmes : <a href="https://github.com/PrestaShop/PrestaShop-1.5/releases/tag/1.5.6.3">voir le changelog ici</a>.<br />
+La version 1.4.11.1 corrige également 7 autres problèmes : <a href="https://github.com/PrestaShop/PrestaShop-1.4/releases/tag/1.4.11.1">voir le changelog ici</a>.</p>
+<p>Veuillez lire cet article intégralement et attentivement. Merci.</p>
+<p><em>[mise à jour : le <a href="https://gist.github.com/xBorderie/15c48651e5c91ba0141f/revisions">guide technique d'application du correctif</a> est maintenant disponible en français]</em></p>
+<h2>Quelles versions sont affectées ?</h2>
+<p>Le problème de sécurité qui a été découvert affecte toutes les versions de PrestaShop, sauf la version 1.6.1.0 et PrestaShop Cloud.</p>
+<p>Ainsi, il affecte les branches 1.4, 1.5 et 1.6 jusqu’à la version 1.6.0.14.</p>
+<p>En résumé, si vous n’avez pas fait la mise à jour version PrestaShop 1.6.1.0, il y a des chances pour que votre boutique soit vulnérable à ce problème.</p>
+<p>Les thèmes et modules ne sont pas affectés, et devraient fonctionner normalement une fois le correctif en place.</p>
+<h2>Comment puis-je corriger ma boutique / les boutiques de mes clients ?</h2>
+<p>Pour ceux qui ne sont pas encore passés à PrestaShop 1.6.1.0, nous vous fournissons plusieurs manières de corriger le problème :</p>
+<ul>
+<li>Pour les utilisateurs non techniques, nous avons créé le <a href="http://addons.prestashop.com/fr/natif/20255-securitypatch.html">module Security Patch</a>, qui appliquera pour vous le correctif pour les dernières versions des branches 1.4, 1.5 et 1.6. Cela signifie qu’il marchera parfaitement avec PrestaShop 1.4.11.0, 1.5.6.2 et 1.6.0.15.<br />
+Le module fonctionne pour les trois branches: installez-le, activez-le, et il appliquera le correctif !</li>
+<li>Pour les utilisateurs techniques, ou ceux pour qui le module n&rsquo;arrive pas à appliquer le correctif, vous pouvez obtenir un patch pour les dernières versions de chaque branche (1.4, 1.5, 1.6) directement sur Github (<a href="https://gist.github.com/xBorderie/15c48651e5c91ba0141f/revisions">cliquez ici pour les liens</a>).<br />
+Tout comme le module, ces patches ne fonctionnent que sur la dernière version de chaque branche, à savoir les 1.4.11.0, 1.5.6.2 et 1.6.0.14, et aucune autre &#8212; pas sans adaptation, en tout cas.<br />
+Si votre boutique n’est pas à jour sur au moins la dernière branche (1.6), nous vous recommandons de mettre à jour vers la dernière version de votre branche (1.4, 1.5) avant d’appliquer le patch.<br />
+Si vous ne pouvez pas faire de mise à jour, il vous revient d’adapter le patch à votre situation propre.</li>
+<li>Par ailleurs, vous pouvez télécharger les fichiers mis à jour pour les branches 1.4, 1.5 et 1.6. Ils ne contiennent que les fichiers qui ont été changés depuis la dernière version de chaque branche. <a href="https://gist.github.com/xBorderie/15c48651e5c91ba0141f/revisions">Cliquez ici pour les liens</a>.<br />
+Si vous n’avez pas fait de modification à ces fichiers vous-mêmes, vous pouvez juste remplacer vos anciens fichiers par les nouveaux.</li>
+</ul>
+<p>Enfin, les branches 1.5.x et 1.4.x ont été mises à jour. Dès aujourd’hui, vous pouvez télécharger PrestaShop 1.5.6.3 et 1.4.11.1 depuis la <a href="https://www.prestashop.com/fr/versions-developpeurs#previous-version">page de téléchargement des versions précédentes</a>.</p>
+<p>Étant donné que la version 1.6.1.0 comprend le correctif pour la branche 1.6, nous n&rsquo;avons pas prévu de diffuser une version 1.6.0.15.</p>
+<p>Dans les faits, le module applique les correctifs de chaque branche, qui sont conçus pour fonctionner sur les dernières versions : 1.6.0.14, 1.5.6.2, 1.4.11.0. Il ne marchera donc pas forcément pour les versions plus anciennes. Si vous êtes dans cette situation, nous avons préparé un <a href="https://gist.github.com/xBorderie/15c48651e5c91ba0141f/revisions">petit guide pour vous aider à appliquer le correctif manuellement</a>.</p>
+<p>Dans tous les cas, nous suggérons de toujours garder votre boutique à jour vers la dernière version, la plus sécurisée : au mieux, la 1.6.1.0 ; au pire, la dernière version de la branche 1.4 ou 1.5.</p>
+<p>Pour ceux qui ont fortement personnalisé les fichiers Core, veuillez prendre toutes les précautions possibles avant d’installer le module, avant d’appliquer les patches, ou avant de mettre en ligne les fichiers modifiés ! Vous pourriez avoir à <a href="https://gist.github.com/xBorderie/15c48651e5c91ba0141f/revisions">adapter le correctif à votre installation spécifique</a>.</p>
+<p>Veuillez noter que le module ne fonctionnera pas sur toutes les configurations de serveur Windows, et certaines configuration Linux limitées. Dans ce cas, il vous revient d&rsquo;adapter le patch à votre installation spécifique. Vous trouverez des instructions <a href="https://gist.github.com/xBorderie/15c48651e5c91ba0141f/revisions">dans ce fichier texte</a>.</p>
+<h2>J’utilise une ancienne version de PrestaShop, que puis-je faire ?</h2>
+<p>Le module fonctionne pour les versions récentes des branches 1.4, 1.5 et 1.6. Les versions plus anciennes de ces branches devraient également fonctionner, bien que les plus anciennes peuvent poser problème.</p>
+<p>Le module ne fonctionnera pas pour PrestaShop 1.0, 1.1, 1.2 ni 1.3.</p>
+<p>Si vous avez une ancienne version de PrestaShop, notre meilleur conseil reste le même : mettez à jour votre boutique. Vous devriez au moins être en version 1.4 de PrestaShop, étant donné que les versions plus anciennes ne vont plus recevoir de mise à jour &#8212; la branche 1.3, par exemple, n’a pas été mise à jour depuis le mois de mars 2011, il y a plus de 4 ans.</p>
+<p>Nous comprenons que certains d’entre vous peuvent être bloqués sur une vieille version. C’est pour cela que nous avons récemment publié une article listant <a href="https://www.prestashop.com/blog/fr/renforcez-securite-boutique-prestashop-tres-facilement/">4 manières de renforcer la sécurité de votre boutique très facilement</a>.</p>
+<p>En résumé, ces 4 manières sont :</p>
+<ul>
+<li>Faire en sorte que votre boutique soit bien à jour, ainsi que vos modules ;</li>
+<li>Protéger votre back-office avec un mot de passe .htaccess ;</li>
+<li>Utiliser un nom inhabituel pour le dossier de votre back-office (par exemple, quelque chose de plus unique que /admin1234) ;</li>
+<li>Utiliser des mots de passe plus complexes, ou même une phrase de passe qui serait propre à votre boutique.</li>
+</ul>
+<p>Veuillez lire l’<a href="https://www.prestashop.com/blog/fr/renforcez-securite-boutique-prestashop-tres-facilement/">article entier</a> dès que possible !<br />
+Vous trouverez plus de conseils faciles à appliquer sur la page de documentation “<a href="http://doc.prestashop.com/pages/viewpage.action?pageId=39125024">Rendre votre installation de PrestaShop plus sûre</a>”.</p>
+<p>Si vous voulez tenter d&rsquo;appliquer le correctif, essayez en suivant notre <a href="https://gist.github.com/xBorderie/15c48651e5c91ba0141f/revisions">petit guide pour vous aider à appliquer le correctif manuellement</a>.</p>
+<h2>Quel est le problème ?</h2>
+<p>Le problème qui a été découvert tient dans la gestion du hasard par notre algorithme des génération de mots de passe. Cela pouvait amener une personne mal intentionnée à accéder à votre back-office.</p>
+<p>L’attaque potentielle n’est pas évidente, mais nous préférons sécuriser votre boutique dès que possible.</p>
+<h2>Comment le problème a-t-il été découvert ?</h2>
+<p>Le problème a été découvert par le consultant en sécurité <a href="https://twitter.com/us3r777">Vincent Herbulot (@us3r777)</a>, qui nous a contacté directement à l’adresse <a href="mailto:security@prestashop.com">security@prestashop.com</a> sous le modèle de “divulgation responsable”. Merci Vincent !</p>
+<p>Le problème a été corrigé par notre propre équipe sécurité, avec l’aide de Vincent. Le module a été créé par nos développeurs Coeur.</p>
+<h2>Qu’est-ce que la divulgation responsable ?</h2>
+<p>La divulgation responsable (et privée) est une pratique standard lorsque quelqu’un découvre un problème de sécurité : avant de le rendre public, le découvreur informe l’équipe Coeur sur le sujet, afin qu’un correctif puisse être préparé, et donc que les dommages potentiels soient minimisés.</p>
+<p>L’équipe PrestaShop s’efforce d’être très proactive quand il s’agit de problèmes de sécurité. Quand bien même, des problèmes critiques peuvent surgir sans prévenir.</p>
+<p>C’est pourquoi nous avons mis en place l’adresse security@prestashop.com : n’importe qui peut nous contacter en privé, et nous donner des détails sur les problèmes de sécurité qui peuvent affecter les marchands utilisant PrestaShop ou leurs clients. Notre équipe de sécurité vous répondra, et discutera avec vous des délais pour votre publication des détails.</p>
+<p>Pour comprendre un problème de sécurité, il faut savoir comment un attaquant s’est introduit dans le système et a hacké le site. Si vous avez ces détails, alors contactez-nous en privé (et merci de ne pas rendre les détails publics). Si vous ne connaissez pas la manière dont un hacker s’est introduit sur votre site, alors c’est sur le forum de support qu’il vous faudra demander de l’aide.</p>
+<h2>Quelle est la procédure suivie par PrestaShop en cas de problème de sécurité ?</h2>
+<p>Nous avons depuis peu adopté un <a href="http://build.prestashop.com/news/a-more-semantic-versioning-scheme/">nouveau système pour numéroter les versions</a> de PrestaShop (“Semantic versioning”). Couplé aux améliorations du module Mise à jour en Un Clic, ce nouveau fonctionnement nous permet de garantir une mise à jour facile vers les prochaines versions de correction (“patch”), et ce pour tous nos utilisateurs. Les versions de correction concernent les problèmes dont la résolution maintient la rétrocompatibilité, et les correctifs de sécurité dès qu’ils sont en place.</p>
+<p>Avec un protocole de sécurité interne renforcé, nous avons l’assurance de pouvoir réagir très rapidement si un nouveau problème devait surgir, en sortant une version plus rapidement, et d’une manière qui permettre de faire une mise à jour sans le moindre risque.</p>
+<p>L’équipe de PrestaShop s’assure au quotidien de la sécurité de vos boutiques et vos clients, et nous prenons la sécurité très au sérieux. Merci pour votre compréhension face au problème qui fait surface aujourd’hui &#8212; et merci de faire une mise à jour rapide de toutes les boutiques dont vous avez la responsabilité.</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/mise-jour-securite-prestashop/">Mise à jour de sécurité pour PrestaShop</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/mise-jour-securite-prestashop/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>Renforcez la sécurité de votre boutique PrestaShop très facilement</title>
+		<link>https://www.prestashop.com/blog/fr/renforcez-securite-boutique-prestashop-tres-facilement/</link>
+		<comments>https://www.prestashop.com/blog/fr/renforcez-securite-boutique-prestashop-tres-facilement/#comments</comments>
+		<pubDate>Fri, 24 Jul 2015 15:03:39 +0000</pubDate>
+		<dc:creator><![CDATA[Quentin Audrain]]></dc:creator>
+				<category><![CDATA[Actualités PrestaShop]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19170</guid>
+		<description><![CDATA[<p>PrestaShop évolue sans relâche au quotidien avec pour ambition de toujours mettre le marchand au centre de nos décisions. Que ce soit sur le développement de nouvelles fonctionnalités, la mise en place d’une nouvelle expérience utilisateur ou la sécurité, ce travail est en permanence effectué avec la Communauté. C’est pourquoi nous souhaitons aujourd’hui vous parler [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/renforcez-securite-boutique-prestashop-tres-facilement/">Renforcez la sécurité de votre boutique PrestaShop très facilement</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>PrestaShop évolue sans relâche au quotidien avec pour ambition de toujours mettre le marchand au centre de nos décisions. Que ce soit sur le développement de nouvelles fonctionnalités, la mise en place d’une nouvelle expérience utilisateur ou la sécurité, ce travail est en permanence effectué avec la Communauté.</p>
+<p>C’est pourquoi nous souhaitons aujourd’hui vous parler de sécurité et nous vous recommandons de lire attentivement toutes ces informations pour les mettre en place sur votre boutique.<br />
+En plus d’être des bonnes pratiques à suivre, ces astuces simples à appliquer rendrons vos boutiques plus sûres et plus aptes à recevoir la mise à jour de sécurité que nous annoncerons bientôt.<br />
+<span id="more-19170"></span><br />
+<strong>METTEZ VOTRE BOUTIQUE A JOUR</strong><br />
+Cela peut vous sembler une évidence mais c&rsquo;est un rappel important ! De quand date votre dernière mise à jour ? En effet, il est important de souligner qu&rsquo;une nouvelle version de PrestaShop peut apporter des mises à jour de sécurité en plus de corrections et de nouvelles fonctionnalités.</p>
+<p><strong>AJOUTEZ UN SECOND MOT DE PASSE AVEC UN FICHIER .HTACCESS</strong><br />
+En plus de votre page de connexion actuelle, vous pouvez ajouter un deuxième niveau de sécurité pour accéder à votre back office, en mettant en place un mot de passe via le fichier .htaccess. Cette double sécurité vous permet de définir un second identifiant et mot de passe, connus de vous seul, à renseigner avant même d’arriver sur la page de connexion.<br />
+Pour cela rien de plus simple, suivez les étapes telles qu&rsquo;elles sont expliquées <a href="http://doc.prestashop.com/pages/viewpage.action?pageId=39125024" target="_blank">dans notre documentation</a>.</p>
+<p><strong>UTILISEZ DES MOTS DE PASSE COMPLEXES</strong><br />
+Évitez bien entendu les mots de passes trop simples, comme le nom de votre animal de compagnie ou la date de naissance de votre premier enfant. Il vous faut un mot de passe vraiment unique et propre à votre boutique. Le plus sécurisé est bien entendu d’utiliser une suite de lettres, chiffres et caractères spéciaux ou une <a href="http://www.fourmilab.ch/javascrypt/pass_phrase.html" target="_blank">passphrase</a> (Par exemple : D37htyoB4!17 ou Oh!That’saVERYniceboat! ou même “Je n’en ai aucune idée.”).</p>
+<p><strong>MODIFIEZ LE NOM DU DOSSIER ADMIN</strong><br />
+Lorsque vous installez PrestaShop, vous gérez votre boutique via votre back-office. Ce back-office est lui-même accessible via une adresse définie par un dossier sur votre serveur. De base, celui-ci est renommé en « admin + un nombre », par exemple admin42. Prenez le temps de changer le nom de votre dossier avec un terme qui vous est propre ou encore mieux, une suite aléatoire de chiffres et lettres. Votre back-office sera alors accessible à une adresse composée de la manière suivante : maboutique.com/5Ghtsf4k</p>
+<p>Voilà, votre boutique est déjà plus sécurisée et ce après seulement quelques minutes de travail de votre part ! N’hésitez donc pas, partagez ces quelques conseils avec vos amis marchands ! </p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/renforcez-securite-boutique-prestashop-tres-facilement/">Renforcez la sécurité de votre boutique PrestaShop très facilement</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/renforcez-securite-boutique-prestashop-tres-facilement/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>8 astuces pour écrire un bon article de blog</title>
+		<link>https://www.prestashop.com/blog/fr/8-astuces-ecrire-bon-article-blog/</link>
+		<comments>https://www.prestashop.com/blog/fr/8-astuces-ecrire-bon-article-blog/#comments</comments>
+		<pubDate>Mon, 20 Jul 2015 08:30:50 +0000</pubDate>
+		<dc:creator><![CDATA[Kate Robinson]]></dc:creator>
+				<category><![CDATA[Conseils E-commerce]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19155</guid>
+		<description><![CDATA[<p>Environ 53,6 millions nouveaux articles sont publiés chaque mois rien que sur WordPress. Alors, pourquoi se donner le mal de lancer un blog si la concurrence est aussi rude ? Tout simplement parce qu&#8217;un blog professionnel pour votre boutique en ligne est un excellent moyen de nouer des relations avec les clients dans un contexte [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/8-astuces-ecrire-bon-article-blog/">8 astuces pour écrire un bon article de blog</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Environ <strong>53,6 millions nouveaux articles</strong> sont publiés chaque mois rien que sur WordPress. Alors, pourquoi se donner le mal de lancer un blog si la concurrence est aussi rude ?</p>
+<p>Tout simplement parce qu&rsquo;un blog professionnel pour votre boutique en ligne est un excellent moyen de nouer des relations avec les clients dans un contexte non commercial. De bons articles de blog attirent l&rsquo;attention en résolvant des problèmes et en informant les lecteurs. Votre activité répond à un besoin unique des clients et votre blog se doit de mettre en avant cette spécificité. Si vous y parvenez, et si vous suivez les conseils ci-dessous, vous augmenterez vos chances de vous démarquer des 53 599 000 autres articles publiés ce mois-ci, et vous pourriez bien conquérir quelques nouveaux clients par la même occasion.<br />
+<span id="more-19155"></span></p>
+<h2 style="color: #29bad7">1 Apprenez à connaître votre public</h2>
+<p>Avant de commencer à écrire quoi que ce soit, posez-vous ces deux questions :</p>
+<p><span style="font-style: italic">Pourquoi est-ce que j&rsquo;écris cet article ?</span><br />
+Votre objectif commercial est peut-être d&rsquo;augmenter les ventes, mais le principal objectif de votre blog est d&rsquo;informer vos lecteurs et de leur donner des conseils afin de résoudre un problème. De cette façon, vous pouvez utiliser votre blog pour vous faire connaître et gagner leur confiance, ce qui est indispensable pour attirer et fidéliser des clients.</p>
+<p><span style="font-style: italic">Qui est mon public ?</span><br />
+Vous avez sûrement créé des <a href="https://www.prestashop.com/blog/fr/comment-elaborer-des-personas-pour-le-marketing-e-commerce-b2c/">profils d&rsquo;acheteurs types</a> lorsque vous avez lancé votre activité. Ressortez-les et gardez-les à l&rsquo;esprit quand vous écrivez. Cela vous aidera à mieux cerner votre client idéal et à écrire <span style="font-style: italic">POUR</span> lui : qu&rsquo;est-ce qui l&rsquo;intéresse ? Quels sont ses problèmes ? Quel genre de ton préfère-t-il : très technique ou plutôt cool et décontracté ?</p>
+<h2 style="color: #29bad7">2 Engagez une conversation</h2>
+<p>Une fois que vous savez à quel public vous vous adressez, réfléchissez à la manière dont vous allez lui parler. Un blog doit être à la fois convivial et attrayant, pratique et intuitif en termes de navigation.</p>
+<p>- <span style="font-style: italic">Allez au but :</span> vos lecteurs sont des gens occupés, donc allez droit au but et prouvez-leur qu&rsquo;ils ne perdent pas leur temps. Privilégiez la voix active et soyez concis : n&rsquo;employez pas dix mots quand cinq suffisent.</p>
+<p>- <span style="font-style: italic">Restez simple :</span> vous êtes là pour simplifier la vie de vos clients en leur donnant des conseils d&rsquo;expert, et non en leur exposant la richesse de votre vocabulaire. Évitez tout jargon technique, de même que les longues introductions digressives et autres notes en marge.</p>
+<h2 style="color: #29bad7">3 Informez au lieu de vendre</h2>
+<p>Les internautes croulent sous les messages commerciaux à longueur de journée, dès leur réveil jusqu&rsquo;à leur coucher. Il est fort probable qu&rsquo;ils ne se rendent pas sur votre site pour lire un énième argumentaire de vente. Ils vont se demander : « Qu&rsquo;est-ce que cela va m&rsquo;apporter ? », donc assurez-vous d&rsquo;avoir une réponse convaincante. Rédigez des articles de blog qui apportent quelque chose à vos lecteurs : la réponse à une question, la solution à un problème, ou encore une information qu&rsquo;ils ignoraient.</p>
+<h2 style="color: #29bad7">4 Imaginez des titres accrocheurs et « tweettables »</h2>
+<p>Les titres et sous-titres ont un double rôle : attirer les lecteurs curieux et classer votre blog dans les premiers résultats des moteurs de recherche. Des titres brefs et concis sont faciles à partager sur les réseaux sociaux, où vous pouvez lancer des conversations concernant votre blog et fidéliser les visiteurs.</p>
+<p>Pensez à employer des termes évocateurs et spécifiques ou à intégrer des questions qui piquent la curiosité. Certes, il est connu que les chiffres génèrent des clics, mais ils ont été massivement utilisés au point de devenir agaçants. Par conséquent, utilisez-les avec modération, toujours dans le cadre d&rsquo;un thème intéressant en lien avec votre activité, par ex. « 7 astuces pour une bonne nuit de sommeil » si vous vendez de la literie.</p>
+<p>Voici une source externe comprenant une liste de sites Web qui proposent d&rsquo;excellents générateurs de titres : <a href="http://smallbiztrends.com/2014/11/generate-article-titles-work.html" target="_blank">http://smallbiztrends.com/2014/11/generate-article-titles-work.html</a></p>
+<h2 style="color: #29bad7">5 Structurez vos idées</h2>
+<p>Personne n&rsquo;aime devoir trier les informations décousues contenues dans un texte en ligne. Faites en sorte que vos lecteurs puissent facilement suivre votre raisonnement et choisissez les informations dont ils ont besoin. Essayez ces astuces :</p>
+<ul style="padding-left: 30px">
+<li>utilisez des sous-titres pour organiser vos idées</li>
+<li>divisez le corps du texte en paragraphes digestes</li>
+<li>créez des listes à puces facilement consultables</li>
+</ul>
+<p>Et surtout, n&rsquo;oubliez pas de TOUJOURS vérifier la grammaire et l&rsquo;orthographe. Non seulement cela fera ressortir votre style d&rsquo;écriture, mais cela rassurera également vos lecteurs sur votre professionnalisme.</p>
+<p>Intégrez des images pertinentes pour séparer les différents paragraphes de texte et ajoutez des éléments visuels attrayants. N&rsquo;hésitez pas non plus à insérer des photos, croquis et schémas afin d&rsquo;expliciter les idées complexes.</p>
+<h2 style="color: #29bad7">6 Utilisez des mots-clés</h2>
+<p>Avant de commencer à écrire, <a href="https://www.prestashop.com/blog/fr/comment-trouver-les-bons-mots-cles-pour-le-seo-de-votre-site-ecommerce-partie-12/">faites une liste de mots-clés</a> en lien avec votre activité et le sujet que vous abordez. Gardez-les à l&rsquo;esprit pendant que vous écrivez et essayez de les intégrer judicieusement à votre texte, en particulier dans les titres et sous-titres. Avec le temps, et associés aux commentaires et autres avis des lecteurs sur les réseaux sociaux, les mots-clés vous aideront à améliorer votre classement dans les moteurs de recherche.</p>
+<p>Néanmoins, faites attention à ne pas utiliser trop de mots-clés : vous écrivez pour des êtres humains, et non des moteurs de recherche. Et surtout, ne copiez-collez jamais du texte provenant de votre propre blog ou d&rsquo;autres sites. Si vous dupliquez des contenus, vous risquez d&rsquo;<a href="https://www.prestashop.com/blog/fr/affronter-google-panda-meilleures-pratiques-referencement-prestashop/" target="_blank">avoir de gros problèmes avec Google</a>.</p>
+<h2 style="color: #29bad7">7 Terminez en beauté</h2>
+<p>Avant de conclure, récapitulez les principales idées à retenir pour vos lecteurs et ajoutez une incitation à l&rsquo;action. C&rsquo;est à cet endroit-là que vous pouvez glisser quelque chose en lien avec votre objectif commercial, par exemple en invitant les lecteurs à s&rsquo;abonner à votre newsletter ou à consulter une page produit associée.</p>
+<p>Voici quelques suggestions d&rsquo;incitations à l&rsquo;action :</p>
+<ul style="padding-left: 30px">
+<li>Posez une question aux lecteurs afin de les inciter à commenter et partager votre publication.</li>
+<li>Insérez des textes intéressants qui posent des questions.</li>
+<li>Indiquez clairement ce que vous attendez de vos lecteurs.</li>
+<li>Créez un sentiment d&rsquo;urgence.</li>
+<li>Mettez l&rsquo;accent sur les avantages.</li>
+<li>Intégrez l&rsquo;incitation à l&rsquo;action à un lien. Vous pouvez faire preuve de créativité si c&rsquo;est clair et approprié.</li>
+</ul>
+<p>…et surtout…</p>
+<h2 style="color: #29bad7">8 Soyez cohérent</h2>
+<p>Créer et animer un blog professionnel nécessite beaucoup de temps et d&rsquo;énergie, mais vous n&rsquo;êtes pas obligé de vous engager à écrire un article chaque jour dès le début. Mettez au point un blog solide en postant régulièrement des articles, même si ce n&rsquo;est qu&rsquo;une fois par semaine. Vous pouvez utiliser les newsletters et les réseaux sociaux pour informer votre communauté des nouvelles publications. Mais n&rsquo;oubliez pas, une fois que vous lancez un blog, vous devez le tenir à jour !</p>
+<p><a href="https://www.prestashop.com/blog/fr/complete-introduction-au-blogging-e-commerce/">https://www.prestashop.com/blog/fr/complete-introduction-au-blogging-e-commerce/</a></p>
+<p>Voici un ancien article de blog qui contient davantage d&rsquo;informations sur la création d&rsquo;un calendrier éditorial, pour plus de cohérence <img src="https://www.prestashop.com/blog/fr/wp-includes/images/smilies/icon_biggrin.gif" alt=":D" class="wp-smiley" /> </p>
+<h2 style="color: #29bad7">Pour résumer</h2>
+<ul style="padding-left: 30px">
+<li>Publiez régulièrement des articles</li>
+<li>Adaptez le contenu et le ton à votre public</li>
+<li>Écrivez des articles qui apportent une valeur ajoutée à vos lecteurs</li>
+<li>Structurez les contenus pour améliorer la lisibilité</li>
+<li>Passez le correcteur orthographique !</li>
+<li>Terminez avec une incitation à l&rsquo;action</li>
+</ul>
+<p>Avez-vous un blog professionnel ? Qu&rsquo;est-ce qui fonctionne ou non pour vous ?<br />
+Vous n&rsquo;avez pas encore de blog ? Créez-en un dès aujourd&rsquo;hui grâce à ce module : <a href="http://addons.prestashop.com/fr/gestion-de-contenu/4731-blog-professionnel.html" target="_blank">http://addons.prestashop.com/fr/gestion-de-contenu/4731-blog-professionnel.html</a></p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/8-astuces-ecrire-bon-article-blog/">8 astuces pour écrire un bon article de blog</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/8-astuces-ecrire-bon-article-blog/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Thèmes vs développement sur mesure : pourquoi les thèmes sont si populaires</title>
+		<link>https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-les-themes-populaires/</link>
+		<comments>https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-les-themes-populaires/#comments</comments>
+		<pubDate>Fri, 17 Jul 2015 07:31:20 +0000</pubDate>
+		<dc:creator><![CDATA[Julie Liu]]></dc:creator>
+				<category><![CDATA[Conseils E-commerce]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19149</guid>
+		<description><![CDATA[<p>Il existe de nombreux moyens pour personnaliser l’apparence de votre boutique en ligne. Vous pouvez par exemple utiliser le thème par défaut inclus avec le logiciel, acheter un thème sur PrestaShop Addons ou engager un développeur web pour vous créer un site sur mesure. Bien que chacune de ces options soit parfaite pour personnaliser votre [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-les-themes-populaires/">Thèmes vs développement sur mesure : pourquoi les thèmes sont si populaires</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Il existe de nombreux moyens pour personnaliser l’apparence de votre boutique en ligne. Vous pouvez par exemple utiliser le <a href="https://www.prestashop.com/blog/fr/modules-prestashop-personnalisez-page-daccueil/">thème par défaut</a> inclus avec le logiciel, acheter un thème sur <a href="http://addons.prestashop.com/fr/">PrestaShop Addons</a> ou <a href="https://www.prestashop.com/fr/agences-web-partenaires">engager un développeur web</a> pour vous créer un site sur mesure. Bien que chacune de ces options soit parfaite pour personnaliser votre boutique en ligne, toutes ont leurs avantages et leurs inconvénients.</p>
+<p>Afin de présenter les avantages de chaque option, nous avons interrogé les personnes les mieux renseignées. Aujourd’hui, nous discutons avec Maxim Kiryanov du principal concepteur de thèmes sur PrestaShop Addons, Template Monster.<br />
+<span id="more-19149"></span></p>
+<h2 style="color: #d39c4c">1. Les thèmes font gagner du temps</h2>
+<p>Vous connaissez sûrement le proverbe : « le temps, c’est de l’argent ». Eh bien, c’est précisément ce que font les thèmes en vous aidant à personnaliser votre boutique à la vitesse de l’éclair. Selon le niveau de personnalisation que vous souhaitez, vous pouvez modifier l’apparence et l’ergonomie de votre site en moins d’une heure.</p>
+<p>C’est la première fois que vous installez un thème ? Pas de panique si ce processus ne vous est pas familier. Même sans compétences en matière de codage, de conception et de développement de sites web, vous pouvez donner à votre boutique l’allure de votre choix en l’espace d’une semaine. Template Monster propose de nombreux <a href="http://www.templatemonster.com/help/prestashop-1-6-x-how-to-install-the-template-to-prestashop-cloud-hosting.html" target="_blank">manuels et tutoriels</a> qui vous guident tout au long du processus d’installation de votre premier thème.</p>
+<h2 style="color: #d39c4c">2. Les thèmes sont peu coûteux</h2>
+<p>Le thème moyen coûte environ 144,99 $ (hors taxes). En plus du thème, vous recevrez également le fichier .psd d’origine et d’autres fichiers d’images qui peuvent être personnalisés pour s’adapter à votre site. Ces images vous aideront à lancer plus rapidement votre boutique et pourront ultérieurement servir de modèle pour des images futures.</p>
+<p>Avec Template Monster vous avez également accès à une assistance professionnelle 24h/24, 7j/7. « Nous travaillons même le 31 décembre ». Maxim Kiryanov ajoute : « Et ce n’est pas une blague ». Les équipes de Template Monster savent que les chefs d’entreprise ne prennent pas de vacances, donc elles non plus ! Elles sont toujours disponibles pour vous aider à personnaliser votre boutique en fonction de votre stratégie de marque.</p>
+<h2 style="color: #d39c4c">3. Les thèmes offrent des designs professionnels</h2>
+<p>Le principal avantage lorsque vous achetez un module est le design. Les thèmes les plus populaires de Template Monster sont développés conformément aux exigences de PrestaShop. Par ailleurs, ils suivent <a href="https://www.prestashop.com/blog/fr/design-e-commerce-5-tendances-2015/">les dernières tendances en matière de design</a>, comme le défilement parallaxe, les arrière-plans animés et les grandes images.</p>
+<p>Dans la mesure où Template Monster a conçu plus de 50 000 thèmes PrestaShop, ses équipes ont l’habitude de créer des designs à la fois beaux et modernes qui correspondent à chaque type de produit de niche. Il existe une multitude de thèmes conçus par des professionnels pour toutes sortes de projets. Des <a href="http://addons.prestashop.com/fr/themes-deco-design/18247-kitchen-supplies-store.html" target="_blank">ustensiles de cuisine</a> aux <a href="http://addons.prestashop.com/fr/themes-gastronomie-alimentation/18355-cigar-smoking.html" target="_blank">cigares électroniques</a>, vous trouverez forcément le modèle adapté à votre secteur, quel que soit le type de boutique que vous prévoyez d’ouvrir.</p>
+<div class="row">
+<div class="col-sm-6"><img class="aligncenter size-large wp-image-20378" alt="ecigarettes" src="https://www.prestashop.com/blog/fr/files/2015/07/ecigarettes-546x1024.jpg" width="546" height="1024" /></div>
+<div class="col-sm-6"><img class="aligncenter size-large wp-image-20377" alt="kitchen" src="https://www.prestashop.com/blog/fr/files/2015/07/kitchen-323x1024.jpg" width="323" height="1024" /></div>
+</div>
+<h2 style="color: #d39c4c">4. Les thèmes simplifient le lancement de boutiques</h2>
+<p>Créer une boutique en ligne n’est pas chose facile. L’utilisation d’un thème simplifie le processus de lancement de votre site e-commerce. Vous n’avez pas besoin d’effectuer vos propres recherches sur l’optimisation des pages produits et de destination. Tous ces éléments sont déjà intégrés au thème que vous achetez.<br />
+Même si vous décidez de personnaliser le thème, vous pouvez accélérer le processus en disposant d’un design optimisé. Contrairement au développement sur mesure, il n’y a aucun temps d’arrêt. Chaque thème a d’ores et déjà été testé. Vous n’avez plus qu’à choisir le bon pour votre boutique.</p>
+<h2 style="color: #d39c4c">Ce qu’il faut retenir</h2>
+<p>Les principales raisons d’acheter un thème sont le temps et l’argent. Comparé au développement sur mesure ou à un design bricolé, vous obtiendrez une jolie boutique en un rien de temps. Outre ces deux avantages, les thèmes sont créés conformément aux meilleures pratiques du développement afin d’optimiser les conversions sur votre site.<br />
+Vous n’êtes pas convaincu(e) que les thèmes sont la bonne solution pour votre boutique en ligne ? Restez à l’écoute pour découvrir notre prochain article dans lequel nous interviewerons un développeur web. Il nous donnera son avis sur ce débat. Vous utilisez déjà un thème sur votre site ? Dites-nous pourquoi vous avez choisi d’opter pour un thème dans les commentaires ci-dessous !</p>
+<p><a href="http://addons.prestashop.com/fr/36_template-monster" target="_blank">À propos de Template Monster :</a><br />
+Template Monster est l’une des plus anciennes entreprises du secteur spécialisées dans la création de thèmes. Depuis le début de ses activités en 2002, ses équipes ont conçu plus de 50 000 modèles différents. Depuis 2010, elle a mis en vente plus de <a href="http://addons.prestashop.com/fr/36_template-monster" target="_blank">1 000 thèmes </a>pour PrestaShop.</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-les-themes-populaires/">Thèmes vs développement sur mesure : pourquoi les thèmes sont si populaires</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/themes-vs-developpement-mesure-les-themes-populaires/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>20 fonctionnalités PrestaShop à découvrir</title>
+		<link>https://www.prestashop.com/blog/fr/20-fonctionnalites-prestashop-decouvrir/</link>
+		<comments>https://www.prestashop.com/blog/fr/20-fonctionnalites-prestashop-decouvrir/#comments</comments>
+		<pubDate>Thu, 16 Jul 2015 09:34:26 +0000</pubDate>
+		<dc:creator><![CDATA[Julie Liu]]></dc:creator>
+				<category><![CDATA[Conseils E-commerce]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19144</guid>
+		<description><![CDATA[<p>Savez-vous que le logiciel PrestaShop propose plus de 300 fonctionnalités natives? Pour aider les utilisateurs de longue date et nouveaux e-commerçants à exploiter tout le potentiel de notre logiciel, nous vous présentons 20 fonctionnalités PrestaShop que vous ne connaissez (probablement) pas. Découvrez-les dans la suite de cet article ! Les fonctionnalités PrestaShop aident les e-commerçants [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/20-fonctionnalites-prestashop-decouvrir/">20 fonctionnalités PrestaShop à découvrir</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Savez-vous que le logiciel PrestaShop propose plus de 300 fonctionnalités natives? Pour aider les utilisateurs de longue date et nouveaux e-commerçants à exploiter tout le potentiel de notre logiciel, nous vous présentons 20 fonctionnalités PrestaShop que vous ne connaissez (probablement) pas. Découvrez-les dans la suite de cet article !<br />
+<span id="more-19144"></span><br />
+Les fonctionnalités PrestaShop aident les e-commerçants à booster leurs ventes et à optimiser la gestion de leur activité. Nous vous présentons aujourd&rsquo;hui des fonctionnalités peu connues, classées selon les catégories suivantes : opérations, marketing et engagement client, fonctionnalités front office et optimisation de la boutique. Nous vous montrerons aussi comment les configurer. N&rsquo;oubliez pas que ces fonctionnalités ne sont disponibles qu&rsquo;à partir de la version 1.6.0.14 de PrestaShop.</p>
+<h2 style="color:#345c64">Opérations</h2>
+<p>Les opérations sont au cœur même de la boutique en ligne. Ces fonctionnalités vous aident à optimiser l&rsquo;interface de votre panneau d&rsquo;administration et vous permettent de choisir les notifications que vous recevez, pour gagner en efficacité. </p>
+<h4 style="color:#589ca9">1. Recevez une notification par e-mail pour toute nouvelle commande. </h4>
+<p style="font-style: italic">MODULES &gt; Modules &gt; Administration &gt; Email Alerts &gt; (Installer &gt;) Configurer &gt; Nouvelle commande : Oui &gt; Adresse e-mail : nom@votreboutique.com &gt; Sauvegarder</p>
+<h4 style="color:#589ca9">2. Changez le thème et la couleur de votre panneau d&rsquo;administration.</h4>
+<p style="font-style: italic">ADMINISTRATION &gt; Employés &gt; Nom de l&rsquo;employé &gt; Thème<br />
+Ou : Sélectionnez votre nom en haut à droite &gt; Mes préférences</p>
+<p>Choisir parmi :</p>
+<ol>
+<li>Par défaut : vert et gris</li>
+<li>Blue : bleu clair et bleu foncé</li>
+<li>Contrast : bleu clair et gris</li>
+<li>Flex : turquoise et gris</li>
+<li>Fruit : bleu foncé et gris</li>
+<li>Prune : violet et bleu foncé</li>
+</ol>
+<h4 style="color:#589ca9">3. Accédez rapidement à n&rsquo;importe quelle page Web depuis la barre de notifications.</h4>
+<p style="font-style: italic">Allez sur la page que vous souhaitez enregistrer &gt; Dans le menu Accès rapide à droite des notifications, cliquez sur « + Ajouter cette page à l&rsquo;Accès Rapide » &gt; Message de confirmation « Mise à jour réussie ». </p>
+<p>Vous pouvez maintenant accéder rapidement à cette page depuis le menu déroulant Accès rapide.</p>
+<h4 style="color:#589ca9">4. Déplacez votre menu en haut de votre site Web.</h4>
+<p style="font-style: italic">ADMINISTRATION &gt; Employés &gt; Cliquez sur le nom de l&rsquo;employé &gt; Orientation du menu principal du back-office : Vertical</p>
+<h4 style="color:#589ca9">5. Modifiez le format de la date et de l&rsquo;heure</h4>
+<p style="font-style: italic">LOCALISATION &gt; Langues &gt; Sélectionnez la langue à éditer &gt; Format de date et Format de date (complet) &gt; Suivez les instructions pour modifier le format de la date.</p>
+<h4 style="color:#589ca9">6. Accélérez les téléchargements groupés grâce à nos CSV d&rsquo;exemple.</h4>
+<p style="font-style: italic">PARAMÈTRES AVANCÉS &gt; Import CSV &gt; Télécharger des fichiers CSV d&rsquo;exemple</p>
+<p>Astuce : ces fichiers CSV sont délimités par des points-virgules.</p>
+<h4 style="color:#589ca9">7. Désactivez les notifications pour les nouvelles commandes à tout moment. </h4>
+<p>Vous en avez assez du compteur de nouvelles commandes qui s&rsquo;affiche sur votre tableau de bord ? Vous pouvez le désactiver à tout moment. </p>
+<p style="font-style: italic">ADMINISTRATION &gt; Préférences &gt; Notification &gt; Afficher les notifications pour les nouvelles commandes, clients, ou messages : Non.</p>
+<h4 style="color:#589ca9">8. Facilitez les renouvellements de commandes grâce aux listes de produits en rupture de stock ou bientôt épuisés.</h4>
+<p style="font-style: italic">STATISTIQUES &gt; Statistiques &gt; Évaluation du catalogue</p>
+<h2 style="color:#345c64">Fonctionnalités front office</h2>
+<h4 style="color:#589ca9">9. Protégez <a href="https://www.prestashop.com/blog/fr/guide-do-it-yourself-de-le-commerce-pour-de-parfaites-photos-de-produit/">les photos de vos produits</a> grâce à des filigranes.</h4>
+<p style="font-style: italic">MODULES &gt; Modules &gt; Administration &gt; Image Watermark &gt;</p>
+<p>Téléchargez votre filigrane au format GIF.<br />
+Définissez l&rsquo;opacité.<br />
+Indiquez son positionnement.<br />
+Sélectionnez les images auxquelles vous souhaitez appliquer le filigrane.</p>
+<h4 style="color:#589ca9">10. Téléchargez une image personnalisée pour un produit sans photo.</h4>
+<p style="font-style: italic">LOCALISATION &gt; Langues &gt; Sélectionnez la langue &gt; Image &laquo;&nbsp;Aucune Image&nbsp;&raquo; </p>
+<h4 style="color:#589ca9">11. Téléchargez des échantillons de couleur personnalisés pour montrer des détails ou des motifs. </h4>
+<p style="font-style: italic">CATALOGUE &gt; Attributs des produits &gt; Color &gt; Ajouter une valeur &gt; Nommez et téléchargez votre couleur personnalisée.</p>
+<h4 style="color:#589ca9">12.	Téléchargez une image personnalisée pour l&rsquo;emplacement de votre boutique sur la carte.</h4>
+<p style="font-style: italic">PRÉFÉRENCES &gt; Thèmes &gt; Thème actuel &gt; Icônes &gt; Téléchargez une nouvelle icône.</p>
+<p>Dimensions recommandées : 30 x 30 pixels<br />
+	Format de fichier : GIF</p>
+<h2 style="color:#345c64">Marketing et engagement client</h2>
+<h4 style="color:#589ca9">13. Modifiez votre <a href="https://www.prestashop.com/blog/fr/6-exemples-de-mail-marketing-qui-convertissent/">modèle d&rsquo;e-mail</a> de confirmation (et bien d&rsquo;autres encore !)</h4>
+<p style="font-style: italic">LOCALISATION &gt; Traductions &gt; Type de traduction : Traductions des modèles d&rsquo;e-mails &gt; Sélectionnez votre thème &gt; Choisissez votre langue</p>
+<h4 style="color:#589ca9">14. Adaptez vos communications à votre <a href="https://www.prestashop.com/blog/fr/6-exemples-de-mail-marketing-qui-convertissent/">public cible</a>. </h4>
+<p style="font-style: italic">LOCALISATION &gt; Traductions &gt; Type de traduction : Traductions du front office &gt; Sélectionnez votre thème &gt; Choisissez votre langue.</p>
+<h4 style="color:#589ca9">15. Récompensez l&rsquo;inscription à votre <a href="https://www.prestashop.com/blog/fr/8-conseils-pour-une-campagne-de-mailing-reussie/">newsletter</a> avec un bon de réduction. </h4>
+<p style="font-style: italic">MODULES &gt; Modules &gt; Fonctionnalités Front Office &gt; Bloc newsletter &gt; (Installer &gt;) Configurer &gt; Réduction de bienvenue : Nom du code promo</p>
+<p>Pour terminer l&rsquo;installation, vous devez d&rsquo;abord créer et activer le nouveau code de réduction. Assurez-vous que le code soit identique à celui qui figure dans les e-mails. </p>
+<p style="font-style: italic">PROMOTIONS &gt; Règles panier &gt; Ajouter une règle &gt; Suivez les instructions à l&rsquo;écran.</p>
+<h4 style="color:#589ca9">16. Modifiez les <a href="https://www.prestashop.com/blog/fr/comment-trouver-les-bons-mots-cles-pour-le-seo-de-votre-site-ecommerce-partie-12/">méta-informations de votre page d&rsquo;accueil pour améliorer votre SEO</a>. </h4>
+<p style="font-style: italic">PRÉFÉRENCES &gt; SEO &amp; URLs &gt; Index</p>
+<p>Ajoutez les méta-informations et le titre de la page pour améliorer votre SEO avec ces mots clés.</p>
+<h2 style="color:#345c64">Optimisation de la boutique</h2>
+<h4 style="color:#589ca9">17. Visionnez la liste des <a href="https://www.prestashop.com/blog/fr/4-astuces-essentielles-pour-ameliorer-le-moteur-de-recherche-de-votre-site/">recherches effectuées sur votre site</a> par vos clients.</h4>
+<p style="font-style: italic">STATISTIQUES &gt; Statistiques&gt; Recherches de la boutique</p>
+<h4 style="color:#589ca9">18.	Accédez au contenu des <a href="https://www.prestashop.com/blog/fr/6-solutions-simples-pour-reduire-le-taux-de-paniers-abandonnes/">paniers abandonnés</a>.</h4>
+<p style="font-style: italic">CLIENTS &gt; Paniers &gt; Cliquez sur n&rsquo;importe quel panier pour plus d&rsquo;informations.</p>
+<h4 style="color:#589ca9">19. Prévoyez les ventes directement depuis le tableau de bord.</h4>
+<p style="font-style: italic">TABLEAU DE BORD &gt; Prévisions &gt; Cliquez sur l&rsquo;icône de configuration.</p>
+<p>Renseignez vos prévisions de ventes. Le graphique sera mis à jour automatiquement après chaque vente et montrera votre performance par rapport à vos prévisions.</p>
+<h4 style="color:#589ca9">20. <a href="https://www.prestashop.com/blog/fr/comment-embaucher-votre-premier-employe/">Vous travaillez à plusieurs</a> ? Attribuez un identifiant unique à chaque membre de votre équipe.</h4>
+<p>Assurez-vous que chaque nouvel employé puisse accéder aux fonctionnalités qui lui seront utiles : nous avons par exemple préconfiguré des permissions pour les nouveaux arrivants en ventes, en traduction et en expédition. </p>
+<p style="font-style: italic">ADMINISTRATION &gt; Employés &gt; Ajouter un employé &gt; Renseignez les informations et définissez un profil de permission.</p>
+<p>Quelles fonctionnalités avez-vous découvertes ? En connaissiez-vous déjà quelques-unes ? Quelles autres fonctionnalités secrètes ne figurent pas dans ce Top 20 ? Dites-le-nous dans les commentaires ci-dessous. Vous ne connaissez pas PrestaShop ? Découvrez toutes les <a href="https://www.prestashop.com/fr/templates-ecommerce">fonctionnalités de PrestaShop</a>. </p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/20-fonctionnalites-prestashop-decouvrir/">20 fonctionnalités PrestaShop à découvrir</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/20-fonctionnalites-prestashop-decouvrir/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Comment se lancer dans l’A/B testing avec un trafic faible ?</title>
+		<link>https://www.prestashop.com/blog/fr/comment-se-lancer-lab-testing-trafic-faible/</link>
+		<comments>https://www.prestashop.com/blog/fr/comment-se-lancer-lab-testing-trafic-faible/#comments</comments>
+		<pubDate>Thu, 09 Jul 2015 13:54:46 +0000</pubDate>
+		<dc:creator><![CDATA[Kate Robinson]]></dc:creator>
+				<category><![CDATA[Conseils E-commerce]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19131</guid>
+		<description><![CDATA[<p>Aujourd’hui nous sommes heureux de présenter un article signé Alix de Sagazan, cofondatrice d&#8217;AB Tasty, le leader de l&#8217;A/B Testing et de la personnalisation. Elle nous explique comment les sites affichant un trafic faible peuvent tirer profit de l’A/B testingIl paraît impensable aujourd’hui d’optimiser son taux de conversion sur son site sans avoir recours à [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/comment-se-lancer-lab-testing-trafic-faible/">Comment se lancer dans l’A/B testing avec un trafic faible ?</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Aujourd’hui nous sommes heureux de présenter un article signé Alix de Sagazan, cofondatrice d&rsquo;AB Tasty, le leader de l&rsquo;A/B Testing et de la personnalisation. Elle nous explique comment les sites affichant un trafic faible peuvent tirer profit de l’A/B testingIl paraît impensable aujourd’hui d’optimiser son taux de conversion sur son site sans avoir recours à l’A/B testing.</p>
+<p>Pourtant, les conditions requises dans les bonnes pratiques pour lancer une campagne de tests efficace peuvent parfois laisser penser que seuls les sites à fort trafic sont concernés. En effet, si le nombre de visiteurs et de conversions restent des indicateurs déterminants, faut-il alors en déduire qu’avoir recours à l’A/B Testing s’avèrera inopportun si votre trafic est trop bas ?<br />
+<span id="more-19131"></span><br />
+Heureusement non ! Il est possible de tirer le meilleur parti d’une campagne d’A/B Tests même avec un faible trafic. Seule contrainte pour ce type de site : la fiabilité statistique. Pour qu’un test soit reconnu comme fiable, l’indice de fiabilité statistique doit dépasser les 95%. En deçà de ce niveau, la fiabilité des données n’est pas avérée et toute conclusion hâtive qui en découlerait serait alors risquée. La seule contrainte existante est donc d’atteindre ce seuil. Le temps nécessaire pour l’atteindre peut varier en fonction du trafic sur le site, du nombre de pages testées, du taux de conversion initial de l’objectif testé et de l’impact des modifications apportées. Seule certitude : plus le trafic est faible, plus l’attente sera longue !</p>
+<p>Quelques méthodes existent cependant pour que l’attente vous paraisse moins douloureuse.</p>
+<h2 style="color: #498edc">Tirez parti de l’existant !</h2>
+<p>On considère qu’un test devient pertinent à partir de 5000 visiteurs uniques et de 100 conversions enregistrées par variation. Focalisez-vous donc dans un premier temps sur les pages présentant le trafic le plus élevé et n’hésitez pas à développer ce trafic en adressant par exemple une campagne emailing ciblée à vos visiteurs les incitant à se rendre sur ces pages. Autre moyen complémentaire d’améliorer votre trafic sur ces mêmes pages, avoir recours à la publicité basée sur un modèle à la performance (liens sponsorisées Google Adwords, Facebook et Twitter Ads, news sponsorisées linkedin), un investissement financier certes mais la certitude de générer du trafic rapidement et un excellent moyen d’obtenir des résultats statistiques fiables en moins de temps. Mais, n’attendez pas pour autant que votre trafic soit conséquent pour agir ! Accompagnez d’ores et déjà vos visiteurs dans le tunnel de conversion en leur adressant des messages marketing ciblés et personnalisés (messages promotionnel, compte à rebours, pop in de rétention, réactivation utilisateur, élément fixe au scroll…).</p>
+<h4 style="color: #498edc">Pousser les internautes à agir rapidement !</h4>
+<p><img class="aligncenter size-large wp-image-20349" alt="compteur" src="https://www.prestashop.com/blog/fr/files/2015/07/compteur-1024x514.jpg" width="700" height="351" /></p>
+<p>La perspective de rater une bonne affaire est un levier puissant pour favoriser le passage à l’acte. La mise en place d’un compte à rebours promotionnel dynamique crée ce sentiment d’urgence et de rareté.</p>
+<h2 style="color: #498edc">Ne vous dispersez pas !</h2>
+<p>Plus vous définissez de variations, plus vous segmentez votre trafic et plus le temps imparti pour obtenir un échantillon fiable sur chaque variation augmente. Une règle d’or s’impose : pas plus de deux variations par rapport à l’original. Commencez par tester une variation. Si cette dernière surperforme, lancez un second test et comparez ses performances par rapport à la première variation. Mais attention à ne pas céder à la tentation des tests multivariés (MVT). Votre trafic ne s’y prête pas.</p>
+<h4 style="color: #498edc">Favorisez l’engagement dans le tunnel de conversion en reformulant les call-to-action.</h4>
+<p><img class="aligncenter size-full wp-image-20352" alt="wording" src="https://www.prestashop.com/blog/fr/files/2015/07/wording.png" width="668" height="231" /></p>
+<p>Le remplacement d’un verbe très impliquant, et intervenant de manière trop précoce, par un libellé moins directif incite à passer à l’étape suivante.</p>
+<p>Résultat de l’exemple : augmentation du taux de clics de 92% et un impact mécanique sur le taux de conversion globale de 13%.</p>
+<h2 style="color: #498edc">Repensez vos priorités !</h2>
+<p>L’objectif d’un test A/B se résume souvent à l’augmentation du nombre de conversions. Mais comment définir une conversion ? S’agit-il nécessairement d’une vente ? Dans le cadre d’un test réalisé avec peu de trafic, définissez plutôt un critère lié directement à votre critère principal mais survenant plus souvent. Aussi, plutôt que de focaliser sur une vente, ciblez par exemple le taux d’ajout au panier ou le nombre de vues sur une fiche produit. Ces critères de conversions sont toujours reliés directement à votre critère principal (ici la vente), mais sont susceptibles de survenir plus souvent, ce qui vous apportera des résultats plus rapidement.</p>
+<h4 style="color: #498edc">Augmentez le taux d’accès aux pages produits</h4>
+<p><img class="aligncenter size-full wp-image-20351" alt="image-product" src="https://www.prestashop.com/blog/fr/files/2015/07/image-product.png" width="732" height="229" /></p>
+<p>La mise en situation du produit dans son contexte incite les internautes à découvrir les différents produits associés et favorise le cross-selling</p>
+<p>Résultat de l’exemple : amélioration de la consultation des pages produits de 10% et des ventes de 15%</p>
+<h2 style="color: #498edc">Voyez grand !</h2>
+<p>Même avec peu de trafic, soyez ambitieux ! Testez des changements susceptibles d’impacter fortement les conversions, plutôt que de vous focaliser sur des détails à la recherche d’une augmentation non significative au regard de votre faible trafic. N’hésitez pas à tester deux versions de votre page complètement différentes. Avec une solution d’A/B Testing, vous changez la position des éléments, modifiez des intitulés de rubrique, et créez ainsi une page au design entièrement différent pour vous en servir comme variation. Les internautes seront redirigés vers cette page de façon transparente. Votre outil d’A/B Test se chargera de gérer la répartition du trafic et de collecter des statistiques pour chaque version, selon les paramètres que vous avez spécifiés, comme pour un test classique.</p>
+<h4 style="color: #498edc">Captez l’attention des visiteurs dès l’arrivée sur le site !</h4>
+<p><img class="aligncenter size-full wp-image-20350" alt="form" src="https://www.prestashop.com/blog/fr/files/2015/07/form.png" width="886" height="273" /></p>
+<p>La réduction de la quantité d’informations affichées ainsi que des éléments visuels plus accrocheurs valorisent le call-to-action menant au formulaire d’inscription.</p>
+<p>Résultat de l’exemple : augmentation de 14% du taux d’inscription des nouveaux visiteurs et de 3,2% du taux de conversion global du site</p>
+<h2 style="color: #498edc">Conclusion</h2>
+<p>Avoir peu de trafic sur votre site ne vous condamne donc pas à abandonner l’AB Testing. Bien au contraire, mettre en place une campagne d’AB Test vous imposera d’adopter une démarche pragmatique et structurée pour tirer le meilleur parti de votre trafic actuel.</p>
+<h4 style="color: #498edc">A propos d&rsquo;AB Tasty</h4>
+<p>AB Tasty est la solution européenne leader en optimisation des conversions on-site et in-app permettant, à tout un chacun, de tester l’efficacité de ses idées d’optimisation et de délivrer des expériences personnalisées à ses utilisateurs pour favoriser la conversion. Proposée en mode SaaS (software as a service), la solution rend autonomes les équipes marketing qui appliquent, elles-mêmes, leurs idées d’optimisation sur leur site web, sites mobiles et applications natives, et en mesurent les gains, sans avoir à mobiliser de ressources techniques.</p>
+<p>Créé il y a 5 ans, AB Tasty compte 40 collaborateurs et accompagne aujourd&rsquo;hui plus de 200 clients grands comptes (sites ecommerce, sites media, sites de génération de leads).</p>
+<p>AB Tasty fait partie des 27 entreprises les plus innovantes,en hyper croissance, récompensées par le Pass French Tech.</p>
+<p><a href="http://www.abtasty.com/" target="_blank">www.abtasty.com</a></p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/comment-se-lancer-lab-testing-trafic-faible/">Comment se lancer dans l’A/B testing avec un trafic faible ?</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/comment-se-lancer-lab-testing-trafic-faible/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Tailles et formats d&#8217;images pour le thème par défaut de PrestaShop</title>
+		<link>https://www.prestashop.com/blog/fr/tailles-formats-dimages-theme-defaut-prestashop/</link>
+		<comments>https://www.prestashop.com/blog/fr/tailles-formats-dimages-theme-defaut-prestashop/#comments</comments>
+		<pubDate>Tue, 07 Jul 2015 16:13:53 +0000</pubDate>
+		<dc:creator><![CDATA[Julie Liu]]></dc:creator>
+				<category><![CDATA[Conseils E-commerce]]></category>
+
+		<guid isPermaLink="false">https://www.prestashop.com/blog/fr/?p=19111</guid>
+		<description><![CDATA[<p>Notre premier réflexe lorsque nous utilisons pour la première fois, un smartphone, une tablette ou un ordinateur est bien souvent de les personnaliser, que ce soit en ajoutant notre propre fond d&#8217;écran, ou en modifiant les icônes sur la page d&#8217;accueil. Nous avons le même réflexe au moment de lancer et de concevoir une boutique [...]</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/tailles-formats-dimages-theme-defaut-prestashop/">Tailles et formats d&rsquo;images pour le thème par défaut de PrestaShop</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></description>
+				<content:encoded><![CDATA[<p>Notre premier réflexe lorsque nous utilisons pour la première fois, un smartphone, une tablette ou un ordinateur est bien souvent de les personnaliser, que ce soit en ajoutant notre propre fond d&rsquo;écran, ou en modifiant les icônes sur la page d&rsquo;accueil. Nous avons le même réflexe au moment de lancer et de concevoir une <a href="http://www.prestashop.com/fr">boutique en ligne</a>. Qu&rsquo;il s&rsquo;agisse de télécharger un logo ou des visuels produits, la première chose que nous rêvons de faire est de nous l&rsquo;approprier entièrement. Afin de vous aider à élaborer plus rapidement votre page d&rsquo;accueil, l&rsquo;article d&rsquo;aujourd&rsquo;hui décrit les tailles et formats d&rsquo;images dont vous avez besoin pour personnaliser le thème par défaut de PrestaShop.<br />
+<span id="more-19111"></span></p>
+<p>La plupart des photos que vous téléchargez dans le back-office doivent être enregistrées au format .jpeg ou .png. Si votre logiciel de traitement d&rsquo;image ne vous permet pas de sauvegarder l&rsquo;image dans l&rsquo;un de ces formats, essayez de l&rsquo;<span style="font-style: italic">exporter</span> dans l&rsquo;un d&rsquo;eux.</p>
+<h2 style="color: #48819f">Bloc bannière</h2>
+<p><img class="aligncenter size-large wp-image-20332" alt="banner" src="https://www.prestashop.com/blog/fr/files/2015/07/banner-1024x56.png" width="700" height="38" /></p>
+<p>Le bloc bannière est l&rsquo;un des premiers éléments que vous découvrez sur votre nouvelle boutique en ligne. Il se trouve en haut de chaque page de votre site et bénéficie donc d&rsquo;une excellente visibilité. Utilisez cette zone pour annoncer une promotion attrayante que les clients ne peuvent pas laisser passer !</p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 1 170 x 65 pixels</div>
+<h2 style="color: #48819f">Logo</h2>
+<p><img class="aligncenter size-full wp-image-20324" alt="logo" src="https://www.prestashop.com/blog/fr/files/2015/07/logo.jpg" width="350" height="99" /></p>
+<p>L&rsquo;image la plus importante sur votre site Web est votre logo. La taille de cette image peut varier légèrement en fonction du design du logo. La largeur maximale autorisée par le thème par défaut de PrestaShop est 370 pixels. La hauteur conseillée pour cette zone est 52 pixels, mais le thème peut s&rsquo;adapter à une hauteur maximale de 65 pixels. Les images, dont la hauteur est supérieure à 65 pixels, ne seront pas mises à l&rsquo;échelle, ce qui risque de déformer le thème par défaut.</p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : &lt; 370 x 99 pixels</div>
+<h2 style="color: #48819f">Diaporama pour votre page d&rsquo;accueil</h2>
+<p><img class="aligncenter size-full wp-image-20326" alt="slider" src="https://www.prestashop.com/blog/fr/files/2015/07/slider.jpg" width="779" height="448" /></p>
+<p>Le diaporama de la page d&rsquo;accueil est probablement le deuxième élément que vous avez remarqué sur votre site. Ces grandes images ne sont pas seulement attrayantes, mais elles défilent, ce qui attire l&rsquo;attention du visiteur. Le slideshow contient 3 images par défaut ; nous recommandons d&rsquo;utiliser entre 3 et 5 images en moyenne, et pas plus de 7.</p>
+<p>Astuce SEO : vous pouvez ajouter du texte directement sur l&rsquo;image, mais les moteurs de recherche n&rsquo;arriveront pas à le lire. Pour améliorer votre SEO, nous vous conseillons d&rsquo;utiliser la fonctionnalité intégrée de superposition de texte. (Par ailleurs, si vous souhaitez continuer à utiliser du texte blanc, assurez-vous que votre image est assez sombre pour que le texte soit facilement lisible.)</p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 779 x 448 pixels</div>
+<h2 style="color: #48819f">Configurateur de thème</h2>
+<p>Le configurateur de thème vous permet d&rsquo;ajouter des images sur l&rsquo;ensemble de votre page d&rsquo;accueil. Nous vous conseillons d&rsquo;utiliser celles en haut de la page (version 1) pour annoncer les soldes en cours, car elles sont visibles même lorsque le diaporama défile. Quant aux images en bas de la page (versions 2, 3 et 4), nous suggérons de les utiliser pour présenter les différentes catégories de produits de votre boutique. Utilisez des images appropriées qui incitent les visiteurs à cliquer et à découvrir ces gammes de produits.</p>
+<p><span style="text-decoration: underline">Version 1</span></p>
+<p><img class="size-full wp-image-20328" alt="theme1" src="https://www.prestashop.com/blog/fr/files/2015/07/theme1.jpg" width="381" height="219" /></p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 381 x 219 pixels</div>
+<p><span style="text-decoration: underline">Version 2</span></p>
+<p><img class="size-full wp-image-20328" alt="theme1" src="https://www.prestashop.com/blog/en/files/2015/07/banner-img1.jpg" width="381" height="219" /></p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 383 x 267 pixels</div>
+<p><span style="text-decoration: underline">Version 3</span></p>
+<p><img class="size-full wp-image-20329" alt="theme2" src="https://www.prestashop.com/blog/fr/files/2015/07/theme2.jpg" width="383" height="142" /></p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 383 x 142 pixels</div>
+<p><span style="text-decoration: underline">Version 4</span></p>
+<p><img class="size-full wp-image-20330" alt="theme3" src="https://www.prestashop.com/blog/fr/files/2015/07/theme3.jpg" width="777" height="142" /></p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 777 x 142 pixels</div>
+<h2 style="color: #48819f">Photo produit</h2>
+<p><img class="aligncenter size-full wp-image-20325" alt="product" src="https://www.prestashop.com/blog/fr/files/2015/07/product.jpg" width="458" height="458" /></p>
+<p>Le visuel produit par défaut sera utilisé sur l&rsquo;ensemble de votre boutique en ligne dans différentes tailles. Par exemple, les photos produits figurant sur la page produit seront plus grandes pour mettre en valeur celui-ci, mais plus petites lors du paiement, quand elles servent uniquement de référence. Mais pas d&rsquo;inquiétude : vous n&rsquo;avez besoin de télécharger l&rsquo;image qu&rsquo;une seule fois au moment de configurer le produit. Le logiciel PrestaShop redimensionnera automatiquement les images afin de les adapter au thème par défaut.</p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 800 x 800 pixels</div>
+<h2 style="color: #48819f">Filigrane</h2>
+<p><img class="size-full wp-image-20331" alt="watermark" src="https://www.prestashop.com/blog/fr/files/2015/07/watermark.gif" width="75" height="74" /></p>
+<p>Ajoutez automatiquement votre logo sur vos photos produits pour éviter qu&rsquo;elles ne soient utilisées sans vous être attribuées. Contrairement à toutes les autres images dont nous avons parlé jusqu&rsquo;à présent, vous devrez enregistrer celle-ci au format .gif. Vous pouvez choisir la taille de votre filigrane, mais assurez-vous tout de même qu&rsquo;il ne prenne pas le pas sur vos produits. Le petit puffin sur l&rsquo;image produit affichée ci-dessus fait 74 x 74 pixels.</p>
+<p>Astuce : vous préférez un filigrane moins visible ? Configurez l&rsquo;opacité directement dans le module intégré. Vous pourrez également choisir l&rsquo;emplacement du filigrane.</p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : aucune<br />
+Format recommandé : .gif<br />
+Modules &gt; Modules Front Office &gt; Filigrane</div>
+<h2 style="color: #48819f">Favicon</h2>
+<p><img class="size-full wp-image-20322" alt="favicon" src="https://www.prestashop.com/blog/fr/files/2015/07/favicon.png" width="16" height="16" /></p>
+<p>Si cette icône vous dit quelque chose, c&rsquo;est probablement parce que vous n&rsquo;avez pas encore mis à jour votre favicon pour personnaliser votre site e-commerce. Il se trouve à gauche du titre de votre page Web et apparaît avant chaque page de votre boutique en ligne. Il existe de nombreux générateurs de favicons qui peuvent vous aider à transformer votre logo en favicon. N&rsquo;oubliez pas de sauvegarder l&rsquo;image définitive au format .ico. Si vous possédez un logo très complexe, réfléchissez à une autre image pour représenter votre boutique en ligne.</p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 16 x 16 pixels<br />
+Format recommandé : .ico<br />
+Mettez à jour cette fonctionnalité dans l&rsquo;onglet Préférences &gt; Thèmes &gt; Icônes &gt; Favicon</div>
+<h2 style="color: #48819f">Icône pour les magasins</h2>
+<p><img class="aligncenter size-full wp-image-20327" alt="store-icon" src="https://www.prestashop.com/blog/fr/files/2015/07/store-icon.png" width="312" height="536" /></p>
+<p>Si vous disposez de points de vente physiques ou travaillez avec des revendeurs possédant des boutiques physiques, vous pouvez les indiquer sur une carte de localisation des magasins. Cette fonctionnalité est particulièrement utile si vous vendez un produit que les clients aimeraient d&rsquo;abord voir en personne. La carte montre aux clients s&rsquo;il existe une boutique à proximité dans laquelle ils pourraient se rendre. Personnalisez cette page en remplaçant l&rsquo;icône du puffin par la vôtre.</p>
+<div style="padding-left: 60px;font-style: italic">Taille recommandée : 30 x 30 pixels<br />
+Format recommandé : .gif<br />
+Mettez à jour cette fonctionnalité dans l&rsquo;onglet Préférences &gt; Thèmes &gt; Icônes &gt; Icônes de magasins</div>
+<h2 style="color: #48819f">Ce qu&rsquo;il faut retenir</h2>
+<p>Une fois que vous connaissez les différentes images dont vous avez besoin pour votre boutique en ligne, utilisez cet aide-mémoire afin de vous aider à les redimensionner.</p>
+<p><a href="https://www.prestashop.com/blog/fr/files/2015/07/fr-image-size.png"><img class="alignleft size-full wp-image-19161" alt="fr-image-size" src="https://www.prestashop.com/blog/fr/files/2015/07/fr-image-size.png" width="640" height="409" /></a></p>
+<p>Vous vous demandez si PrestaShop est le bon logiciel e-commerce pour vous ? Découvrez les <a href="https://www.prestashop.com/fr/solution-e-commerce">fonctionnalités de notre logiciel</a>.</p>
+<p>Cet article <a rel="nofollow" href="https://www.prestashop.com/blog/fr/tailles-formats-dimages-theme-defaut-prestashop/">Tailles et formats d&rsquo;images pour le thème par défaut de PrestaShop</a> est apparu en premier sur <a rel="nofollow" href="https://www.prestashop.com/blog/fr">FR - Blog ecommerce par PrestaShop</a>.</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.prestashop.com/blog/fr/tailles-formats-dimages-theme-defaut-prestashop/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

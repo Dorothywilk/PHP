@@ -1,0 +1,22 @@
+Credits:
+
+Scrolldeck.js & Scrollorama by John Polacek
+http://johnpolacek.github.com/scrolldeck.js/
+http://johnpolacek.github.com/scrollorama
+License: Dual licensed under the MIT license and GPL license
+
+Bootstrap by Twitter
+http://twitter.github.com/bootstrap/
+License: http://www.apache.org/licenses/LICENSE-2.0.html
+
+jQuery ScrollTo by Ariel Flesler
+http://demos.flesler.com/jquery/scrollTo/
+License: Dual licensed under MIT and GPL
+
+jQuery Easing by George McGinley Smith
+http://gsgd.co.uk/sandbox/jquery/easing/
+License: Open source under the BSD License
+
+jQuery throttle / debounce
+http://benalman.com/projects/jquery-throttle-debounce-plugin/
+Dual licensed under the MIT and GPL licenses
