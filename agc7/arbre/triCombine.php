@@ -24,6 +24,7 @@
   //  affLign( $sql ); // Pour requête sans affichage de réponse
   //  $pdo->query( $sql );
 
+  // TODoLi Appliquer cet exemple
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>

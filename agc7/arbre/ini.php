@@ -3,9 +3,17 @@
 
 <div class="jumbotron">
 
-  <h1 class="meaDo pb10"><a href="#" target="_blank">Arbre</a></h1>
+  <h1 class="meaDo pb10"><a href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Gestion
+      d'arbres par représentation intervallaire</a>
+  </h1>
 
-  <p class="lead">Méthode des bornes</p>
+  <p class="lead">Méthodes</p>
+  <ul>
+    <ol>
+      <li>Auto-jointure</li>
+      <li>Représentation intervallaire</li>
+    </ol>
+  </ul>
 
 </div>
 
@@ -16,12 +24,13 @@
 
   $pdo = pdo();
 
-  //  affLign( $sql );
+  //  $sql = "SELECT 1";
+  //  $req( $sql, $pdo );
+
+  //  affLign( $sql ); // Pour requête sans affichage de réponse
   //  $pdo->query( $sql );
 
-  $sql = "SELECT 1";
-  $req( $sql, $pdo );
-
+  // TODoLi Étudier ce tuto
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>
