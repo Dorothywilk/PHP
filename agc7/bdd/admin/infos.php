@@ -76,6 +76,15 @@ WHERE ROUTINE_NAME = 'maj_vm_revenus';";
   $req( $sql, $pdo );
 
 
+  $sql = "EXPLAIN SELECT Animal.nom, Espece.nom_courant AS espece,
+  Race.nom AS race
+FROM Animal
+INNER JOIN Espece ON Animal.espece_id = Espece.id
+LEFT JOIN Race ON Animal.race_id = Race.id
+WHERE Animal.id = 37;";
+  $req( $sql, $pdo );
+
+
   echo str_repeat( '<br>', 25 ); // 28
   ?>
 </div>
