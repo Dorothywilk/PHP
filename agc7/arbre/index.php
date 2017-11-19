@@ -21,7 +21,7 @@
 
 include '../bdd/inc/fctns.php';
 
-include 'ini.php';
+include 'sqlpro/ini.php';
 // TodoLi https://forum.phpfrance.com/modelisation-securite/arbre-intervallaire-gestion-deplacement-sous-arbres-t266966.html
 //include 'triCombine.php'; // Autre exemple
 // TodoLi Reprise du tuto Laravel http://laravel.sillo.org/cours-laravel-5-5-les-donnees-gerer-un-arbre/
