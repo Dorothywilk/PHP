@@ -48,15 +48,17 @@ WHERE FAM_ID = (SELECT FAM_PERE
 DROP PROCEDURE IF EXISTS `RecherchePeres`;
 
 DELIMITER |
-CREATE PROCEDURE RecherchePeres(
-  IN    id      INT,
-  INOUT reponse VARCHAR(255)
+CREATE FUNCTION recherchePeres(
+  id      INT,
+  reponse VARCHAR(255)
 )
+  RETURNS VARCHAR(255) DETERMINISTIC
   BEGIN
     SET reponse = reponse + ', ' + (SELECT FAM_LIB
                                     FROM FAMILLE
                                     WHERE FAM_ID = ID);
-    IF id > 0
+    IF id < 0
+      RETURN
     THEN
       SET id = (SELECT FAM_PERE
                 FROM FAMILLE
@@ -67,3 +69,13 @@ DELIMITER ;
 
 
 CALL RecherchePeres(12, @reponse);
+
+select @reponse;
+
+
+CREATE FUNCTION hello (s CHAR(20))
+RETURNS CHAR(50) DETERMINISTIC
+RETURN CONCAT('Hello, ',s,'!');
+
+
+SELECT hello('world');
