@@ -23,7 +23,7 @@
         <?php
         
         $cours= 'Mathématiques';
-        $cours='Conjugaisons'; // Commenter/Décommenter
+        // $cours='Conjugaisons'; // Commenter/Décommenter
 
         switch($cours) {
           case 'Mathématiques':
