@@ -62,6 +62,20 @@ WHERE TRIGGER_SCHEMA='ocr' AND trigger_name like '%adoption';
   $req( $sql, $pdo );
 
 
+  $sql = "SELECT CONSTRAINT_SCHEMA, CONSTRAINT_NAME,
+TABLE_NAME, CONSTRAINT_TYPE
+FROM information_schema.TABLE_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'ocr' AND TABLE_NAME = 'Animal';";
+  $req( $sql, $pdo );
+
+
+  $sql = "SELECT ROUTINE_NAME, ROUTINE_SCHEMA,
+ROUTINE_TYPE, ROUTINE_DEFINITION, DEFINER, SECURITY_TYPE
+FROM information_schema.ROUTINES
+WHERE ROUTINE_NAME = 'maj_vm_revenus';";
+  $req( $sql, $pdo );
+
+
   echo str_repeat( '<br>', 25 ); // 28
   ?>
 </div>
