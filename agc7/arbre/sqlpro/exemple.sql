@@ -42,4 +42,28 @@ SELECT *
 FROM FAMILLE
 WHERE FAM_ID = (SELECT FAM_PERE
                 FROM FAMILLE
-                WHERE FAM_ID = 12)
+                WHERE FAM_ID = 12);
+
+-- Recherche récursive de tous les ascendants
+DROP PROCEDURE IF EXISTS `RecherchePeres`;
+
+DELIMITER |
+CREATE PROCEDURE RecherchePeres(
+  IN    id      INT,
+  INOUT reponse VARCHAR(255)
+)
+  BEGIN
+    SET reponse = reponse + ', ' + (SELECT FAM_LIB
+                                    FROM FAMILLE
+                                    WHERE FAM_ID = ID);
+    IF id > 0
+    THEN
+      SET id = (SELECT FAM_PERE
+                FROM FAMILLE
+                WHERE FAM_ID = ID);
+    END IF;
+  END |
+DELIMITER ;
+
+
+CALL RecherchePeres(12, @reponse);
