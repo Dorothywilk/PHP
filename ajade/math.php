@@ -13,7 +13,9 @@ Page à Puce<br> (
 
 <p>Image 2 (Corrigée)</p>
 <IMG src="maths/wagon2.jpg" width=100%>
-<?php echo str_repeat( '<br>', 20); ?>
+
+
+
 
 
 
