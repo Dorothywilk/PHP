@@ -1,4 +1,0 @@
-<?php exit; ?>
-1470777523
-595
-a:9:{s:32:"e6ef6dadf9d6a68a8cb109316517fc41";a:0:{}s:32:"c88f6c50b216141ef5ad053b7d80b27e";a:0:{}s:32:"b9fc4c9c575110b8f76e7ea4e35954f1";a:0:{}s:32:"cf3f8bc73d4fdde4c814fa80023ce6ef";a:0:{}s:32:"1b47208d392d24ffabcb8b9f35cc35ad";a:0:{}s:32:"787ebc2ae6b2b8a2e08b014427dd673f";a:0:{}s:32:"7e3332bd4c8b17dacdff344a65732b6f";a:0:{}s:32:"1f7bd8a97a0764fa9ba98ef0b10e1c8b";a:1:{i:0;a:4:{s:10:"named_path";s:37:"language/fr/acp/permissions_phpbb.php";s:8:"ext_name";s:1:"/";s:4:"path";s:16:"language/fr/acp/";s:8:"filename";s:21:"permissions_phpbb.php";}}s:32:"faf112e1e0f1df9cfb5325bb12d99389";a:0:{}}
