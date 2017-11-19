@@ -114,7 +114,27 @@ FROM Animal
 WHERE date_reservation >= '2012-05-01'";
   $req( $sql, $pdo );
 
-  
+  ?>
+
+  <div class="jumbotron pt10">
+    <h3>Exemple de comparaison du plan d'execution d'une requête</h3>
+
+    <p><i>(La colonne somme possède un index)</i></p>
+  </div>
+  <?php
+
+
+  $sql = "EXPLAIN SELECT *
+FROM VM_Revenus_annee_espece
+WHERE somme/2 > 1000;";
+  $req( $sql, $pdo );
+
+  $sql = "EXPLAIN SELECT *
+FROM VM_Revenus_annee_espece
+WHERE somme > 2000;";
+  $req( $sql, $pdo );
+
+
   echo str_repeat( '<br>', 25 ); // 28
   ?>
 </div>
