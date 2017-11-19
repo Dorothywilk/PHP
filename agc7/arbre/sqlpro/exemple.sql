@@ -54,6 +54,7 @@ SELECT
   @reponses;
 
 DROP PROCEDURE IF EXISTS `getUpline`;
+SET @@max_sp_recursion_depth = 255;
 DELIMITER |
 CREATE PROCEDURE getUpline(
   IN    ori      INT,
@@ -61,7 +62,7 @@ CREATE PROCEDURE getUpline(
   INOUT reponses VARCHAR(255)
 )
   BEGIN
-    SELECT fam_pere
+      SELECT fam_pere
     INTO pere
     FROM FAMILLE
     WHERE FAM_ID = ori;
@@ -122,5 +123,4 @@ CREATE FUNCTION hello(s CHAR(20))
 SELECT hello('world');
 
 
-SET @@max_sp_recursion_depth = 255;
 
