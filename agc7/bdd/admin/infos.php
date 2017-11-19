@@ -42,7 +42,15 @@ WHERE Description LIKE '%arab%';";
   $req( $sql, $pdo );
 
 
-  $sql = "SHOW CREATE TABLE Espece";
+  $sql = "SHOW CREATE TABLE Espece;
+-- NB: l'option \G en fin de commande dans mySQL
+-- génèrera un résultat multiligne";
+  $req( $sql, $pdo );
+
+
+  $sql = "SHOW triggers;
+-- NB: l'option \G en fin de commande dans mySQL
+-- génèrera un résultat multiligne";
   $req( $sql, $pdo );
 
 
