@@ -24,9 +24,27 @@ namespace GC7;
   //  affLign( $sql );
   //  $pdo->query( $sql );
 
-
-  $sql = "select 'Yes' as 'Ready ?'";
+  $sql = "SHOW columns
+FROM adoption LIKE '%date%'";
   $req( $sql, $pdo );
+
+
+  $sql = "SHOW CHARACTER SET
+WHERE Description LIKE '%arab%';";
+  $req( $sql, $pdo );
+
+
+  $sql = "SHOW columns from Espece";
+  $req( $sql, $pdo );
+
+
+  $sql = "DESCRIBE Espece";
+  $req( $sql, $pdo );
+
+
+  $sql = "SHOW CREATE TABLE Espece";
+  $req( $sql, $pdo );
+
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>

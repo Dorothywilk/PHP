@@ -60,7 +60,7 @@ namespace GC7;
 //
 //
 //include( 'securisation/exo6.php' );
-include( 'admin/utilisateurs.php' );
+include( 'admin/infos.php' );
 //
 
 //////////////////////////////////////////////////////////////////////////////////////////
