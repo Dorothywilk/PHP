@@ -17,9 +17,9 @@
  * @return null|PDO
  */
 
-function pdo($bdd='ocr')
+function pdo( $bdd = 'ocr' )
 {
-  return new \PDO( 'mysql:host=localhost;dbname='.$bdd.';charset=utf8', 'root', '', array ( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ) );
+  return new \PDO( 'mysql:host=localhost;dbname=' . $bdd . ';charset=utf8', 'root', '', array ( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ) );
 }
 
 $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
