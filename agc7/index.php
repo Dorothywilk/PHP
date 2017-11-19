@@ -20,7 +20,8 @@
   <a href="/agc7/exemples">SemanticUI</a> |
   <a href="mdb.php">MDB</a> |
   <a href="bdd/index.php">BdD</a> |
-  <a href="poo/index.php">POO</a>
+  <a href="poo/index.php">POO</a> |
+  <a href="arbre/index.php">Arbre</a>
 </div>
 
 <div class="maingc7">
