@@ -44,7 +44,8 @@ BEGIN
   -- Ne peut être affichée que via MySQL CLi
 
   select concat(
-         'Var loc = ', v_var, ' - Résultat du IF(v_var = 7) = ',
+         'Var loc = ', v_var,
+         ' - Résultat du IF(v_var = 7) = ',
          IF(v_var=7, 777, 333)) into p_var;
 
 -- END|
@@ -123,8 +124,8 @@ CREATE PROCEDURE calculer_prix (IN p_animal_id INT,
 BEGIN
     SELECT p_prix + COALESCE(Race.prix, Espece.prix) INTO p_prix
     FROM Animal
-    INNER JOIN Espece ON Espece.id = Animal.espece_id
-    LEFT JOIN Race ON Race.id = Animal.race_id
+      INNER JOIN Espece ON Espece.id = Animal.espece_id
+      LEFT JOIN Race ON Race.id = Animal.race_id
     WHERE Animal.id = p_animal_id;
 END |
 
@@ -169,7 +170,8 @@ DELIMITER ;";
 
   $pdo = pdo();
 
-  $sql = "DELIMITER |
+  $sql = "-- DELIMITER |
+DROP PROCEDURE IF EXISTS aujourdhui_demain;
 CREATE PROCEDURE aujourdhui_demain ()
 BEGIN
     DECLARE v_date DATE DEFAULT CURRENT_DATE();
@@ -184,10 +186,12 @@ BEGIN
 
     SELECT DATE_FORMAT(@today, '%W %e %M %Y') AS Aujourdhui,
            DATE_FORMAT(v_date, '%W %e %M %Y') AS Demain;
-END|
-DELIMITER ;";
+END;
+-- END|
+-- DELIMITER ;";
   affLign( $sql );
-  //    $pdo->query( $sql );
+  $pdo->query( $sql );
+
   $sql = "CALL aujourdhui_demain();";
   $pdo = $req( $sql, $pdo );
   ?>

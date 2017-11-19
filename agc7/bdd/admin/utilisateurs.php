@@ -19,13 +19,14 @@ namespace GC7;
 
   <?php
 
-  $pdo = pdo( 'mysql' );
+  $pdo = pdo();
 
-  $sql = "show² a   << select * from user";
-  //    affLign( $sql );
-  //    $pdo->query( $sql );
+  //  affLign( $sql );
+  //  $pdo->query( $sql );
+
+
+  $sql = "select 'Yes' as 'Ready ?'";
   $req( $sql, $pdo );
-
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>
