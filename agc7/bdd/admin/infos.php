@@ -84,7 +84,37 @@ LEFT JOIN Race ON Animal.race_id = Race.id
 WHERE Animal.id = 37;";
   $req( $sql, $pdo );
 
+  ?>
 
+  <h3 class="jumbotron pt10">Exemple de requête optimisable</h3>
+
+  <?php
+
+  $sql = "DROP INDEX ind_date_reservation ON adoption;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "EXPLAIN SELECT Animal.nom,
+Adoption.prix, Adoption.date_reservation
+FROM Animal
+  INNER JOIN Adoption ON Adoption.animal_id = Animal.id
+WHERE date_reservation >= '2012-05-01'";
+  $req( $sql, $pdo );
+
+
+  $sql = "ALTER TABLE Adoption
+ADD INDEX ind_date_reservation (date_reservation);";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "EXPLAIN SELECT Animal.nom,
+Adoption.prix, Adoption.date_reservation
+FROM Animal
+  INNER JOIN Adoption ON Adoption.animal_id = Animal.id
+WHERE date_reservation >= '2012-05-01'";
+  $req( $sql, $pdo );
+
+  
   echo str_repeat( '<br>', 25 ); // 28
   ?>
 </div>
