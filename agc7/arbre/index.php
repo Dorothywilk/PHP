@@ -21,9 +21,9 @@
 
 include '../bdd/inc/fctns.php';
 
-include 'ini.php';
+//include 'ini.php';
 
-// TODOLI Réc Fonts dont hardLight (Dossier prêt), LCD_Pixel7, Radioland, Wedgie (HD 500) - Écrire CSS d'import (@font) + une page avec 1 exemple de chaque (stipulant le nom de la font)
+include 'triCombine.php'; //
 
 ?>
 <footer>
