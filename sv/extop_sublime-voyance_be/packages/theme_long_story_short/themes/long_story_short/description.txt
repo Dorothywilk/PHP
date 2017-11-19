@@ -1,2 +1,0 @@
-Long Story Short
-A simple, basic theme for single-page websites and presentations.

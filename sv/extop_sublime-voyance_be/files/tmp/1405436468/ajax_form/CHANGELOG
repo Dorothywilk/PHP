@@ -1,7 +1,0 @@
-1.3 - Concrete 5.5 compatibility; added label tags around radio list and checkbox list items
-1.2.2 - Fixed bug that caused CAPTCHA to fail after a prior failed form submission
-1.2.1 - Concrete 5.4.2 compatibility fix
-1.2 - Fixed problem with captchas not reloading (and hence not validating) properly.
-1.1.1 - Removed insertion of titles into textboxes and textareas because it served no purpose (in-field-label javascript doesn't work because jquery.form.js gathers field values before submit event triggers the clearing of the labels).
-1.1 - Fixed labels so they work (select corresponding field when clicked) and pass W3C validation. Also include question text in textbox and textarea titles so labelify js can be applied.
-1.0 - Initial Version
