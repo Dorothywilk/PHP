@@ -35,3 +35,11 @@ ALTER TABLE arbre.famille ADD PRIMARY KEY (FAM_ID);
 
 SELECT *
 FROM FAMILLE;
+
+
+-- Recherche du 'père' du parachute (id = 12)
+SELECT *
+FROM FAMILLE
+WHERE FAM_ID = (SELECT FAM_PERE
+                FROM FAMILLE
+                WHERE FAM_ID = 12)
