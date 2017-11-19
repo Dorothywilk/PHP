@@ -45,37 +45,77 @@ WHERE FAM_ID = (SELECT FAM_PERE
                 WHERE FAM_ID = 12);
 
 -- Recherche récursive de tous les ascendants
-DROP PROCEDURE IF EXISTS `RecherchePeres`;
 
+SET @reponses='12';
+CALL RecherchePeres(@ori, @id, @reponses, 12);
+
+DROP PROCEDURE IF EXISTS `RecherchePeres`;
 DELIMITER |
-CREATE FUNCTION recherchePeres(
-  id      INT,
-  reponse VARCHAR(255)
+CREATE PROCEDURE recherchePeres(
+  INOUT ori      INT,
+  INOUT pere       INT,
+  INOUT reponses VARCHAR(255),
+  IN    orii     INT
 )
-  RETURNS VARCHAR(255) DETERMINISTIC
   BEGIN
-    SET reponse = reponse + ', ' + (SELECT FAM_LIB
-                                    FROM FAMILLE
-                                    WHERE FAM_ID = ID);
-    IF id < 0
-      RETURN
+    SELECT fam_pere
+    INTO pere
+    FROM FAMILLE
+    WHERE FAM_ID = orii;
+
+    IF pere IS NULL
     THEN
-      SET id = (SELECT FAM_PERE
-                FROM FAMILLE
-                WHERE FAM_ID = ID);
+      SELECT reponses AS Upline;
+    ELSE
+      SET reponses = concat(reponses, ', ', pere);
+      SET orii = pere;
+      CALL RecherchePeres(ori, pere, reponses, pere);
+    END IF;
+  END |
+DELIMITER ;
+
+CREATE PROCEDURE recherchePeresV1(
+  INOUT ori      INT,
+  INOUT id       INT,
+  INOUT reponses VARCHAR(255),
+  IN    orii     INT
+  --  INOUT reponses VARCHAR(255)
+)
+  BEGIN
+    SET ori = orii;
+    SELECT fam_pere
+    INTO id
+    FROM FAMILLE
+    WHERE FAM_ID = ori;
+
+    IF id IS NULL
+    THEN
+      SELECT reponses AS Upline;
+    ELSE
+      SET reponses = concat(reponses, ', ', id);
+      SET orii = id;
+      CALL RecherchePeres(ori, id, reponses, id);
     END IF;
   END |
 DELIMITER ;
 
 
-CALL RecherchePeres(12, @reponse);
-
-select @reponse;
+SELECT @reponses;
 
 
-CREATE FUNCTION hello (s CHAR(20))
-RETURNS CHAR(50) DETERMINISTIC
-RETURN CONCAT('Hello, ',s,'!');
+SELECT fam_id
+FROM FAMILLE
+WHERE FAM_ID = (SELECT FAM_PERE
+                FROM FAMILLE
+                WHERE FAM_ID = 12);
 
+
+CREATE FUNCTION hello(s CHAR(20))
+  RETURNS CHAR(50) DETERMINISTIC
+  RETURN CONCAT('Hello, ', s, '!');
 
 SELECT hello('world');
+
+
+SET @@max_sp_recursion_depth = 255;
+
