@@ -54,6 +54,14 @@ WHERE Description LIKE '%arab%';";
   $req( $sql, $pdo );
 
 
+  $sql = "SELECT TRIGGER_SCHEMA, trigger_name, ACTION_STATEMENT
+FROM information_schema.TRIGGERS
+WHERE TRIGGER_SCHEMA='ocr' AND trigger_name like '%adoption';
+-- Liste des triggers concernant la table Adoption
+-- Rappel option \G pour affichage lisible dans console MySQL";
+  $req( $sql, $pdo );
+
+
   echo str_repeat( '<br>', 25 ); // 28
   ?>
 </div>
