@@ -47,18 +47,18 @@ WHERE FAM_ID = (SELECT FAM_PERE
 -- Recherche récursive de tous les ascendants
 
 SET @reponses = '12';
-CALL RecherchePeres(@id, @reponses, 12);
+CALL getUpline(12, @id, @reponses);
 
 SELECT
-  @id,
+  @pere,
   @reponses;
 
 DROP PROCEDURE IF EXISTS `getUpline`;
 DELIMITER |
 CREATE PROCEDURE getUpline(
+  IN    ori      INT,
   INOUT pere     INT,
-  INOUT reponses VARCHAR(255),
-  IN    ori      INT
+  INOUT reponses VARCHAR(255)
 )
   BEGIN
     SELECT fam_pere
@@ -72,10 +72,12 @@ CREATE PROCEDURE getUpline(
     ELSE
       SET reponses = concat(reponses, ', ', pere);
       SET ori = pere;
-      CALL getUpline(pere, reponses, pere);
+      CALL getUpline(pere, pere, reponses);
     END IF;
   END |
 DELIMITER ;
+
+
 
 CREATE PROCEDURE recherchePeresV1(
   INOUT ori      INT,
