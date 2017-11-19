@@ -15,6 +15,8 @@
     </ol>
   </ul>
 
+  <p class="lead">Cf. <g>exemple.sql</g> pour les diverses requêtes.</p>
+
 </div>
 
 
