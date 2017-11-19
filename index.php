@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/agc7assets/css/bulma.css">
   <link rel="stylesheet" href="/agc7/assets/css/semantic.min.css">
-  
-    <link rel="stylesheet" href="/assets/css/mdb.min.css">
+
+  <link rel="stylesheet" href="/assets/css/mdb.min.css">
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
@@ -19,10 +19,10 @@
     <a href="ajade">Jade</a> |
     <a href="sv">SV</a> |
     <a href="/assets/bulma">Bulma</a> |
-    <a href="https://apprendre-php.com/tutoriels.html" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a> |
-    <a href="agc7">Techs GC7</a>
+    <a href="https://www.apprendre-php.com/" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a> |
+    <a href=" agc7 ">Techs GC7</a>
   </header>
-
+  <!--  <div class='body, html' </div>-->
   <article>
     <div class="main">
 
@@ -33,12 +33,14 @@
       // ToDoDo https://www.codecademy.com/courses/learn-html-elements/lessons/intro-to-html/exercises/doctype-html?action=lesson_resume&course_redirect=learn-html
       
     include './tuto/cours.php';
+//      include ('cours/coursmooc.php');
     ?>
   </article>
 
-  <footer class="footerDo">
-    <p>Do 's website | <a href="https://github.com/Dorothywilk/PHP/tree/dev" target="_blank">Dépôt
-    GitHub</a></p>
+  <footer class="footerDo ">
+    <p>Do 's website | <a href="https://github.com/Dorothywilk/PHP/tree/dev " target="_blank ">Dépôt GitHub
+    </a>
+    </p>
   </footer>
   </div>
 </body>
