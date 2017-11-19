@@ -6,4 +6,18 @@
   <span class="policeGc7 blancDo sz05">a</span>_
   <span class="policeGc7 blancDo sz05">d</span>_
   <span class="policeGc7 blancDo sz05">e </span> )
-  </p
+</p>
+<p IMG src="../do/ajade/wagon.jpgp" </p>
+
+
+
+
+
+
+
+
+
+
+  <?php
+  echo str_repeat( '<br>', 20); 
+?>
