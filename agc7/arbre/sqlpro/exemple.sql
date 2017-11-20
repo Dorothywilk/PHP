@@ -201,3 +201,12 @@ SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG >= 22
       AND NFM_BD <= 35;
+
+
+-- Tous les éléments indépendants d'un élément de référence
+-- (complément au sous arbre)
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG < 22
+      OR NFM_BD > 35;
+
