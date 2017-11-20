@@ -56,4 +56,4 @@ echo '</pre></td></tr></table>';
 // pour améliorer la présentation de ce tableau
 
 //10) Même tableau, mais avec foreach
-// (Prendre exemple sur le .PDF vu ensemble)
+// (Prendre exemple sur le slide 25 du .PDF vu ensemble)
