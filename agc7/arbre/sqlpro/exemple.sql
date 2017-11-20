@@ -236,3 +236,10 @@ SELECT *
 FROM NEW_FAMILLE
 WHERE (NFM_BD - NFM_BG + 1) / 2 = (SELECT COUNT(*)
                                    FROM NEW_FAMILLE);
+
+-- Ou alors, recherche de l'élément
+-- qui a la plus grande longueur d'intervalle (17ms)
+SELECT *
+FROM NEW_FAMILLE
+WHERE (NFM_BD - NFM_BG) = (SELECT MAX(NFM_BD - NFM_BG)
+                           FROM NEW_FAMILLE);
