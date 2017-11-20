@@ -5,7 +5,7 @@
 
   <h1 class="meaDo pb10"><a
       href="https://openclassrooms.com/courses/la-representation-intervallaire" target="_blank">Gestion
-      d'arbres par représentation intervallaire</a>
+      d'arbres par représentation intervallaire (RI)</a>
   </h1>
 
   <p class="lead">Méthodes</p>
@@ -14,8 +14,15 @@
       <li>Auto-jointure</li>
       <li><a href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Représentation
           intervallaire</a>
-
         <p>(Compris représentation XML & lien pour transfo récursive en bornes)</p></li>
+      <ul>
+        <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire" target="_blank">Tuto OOC</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
     </ol>
   </ul>
 
@@ -39,7 +46,7 @@
   //  affLign( $sql ); // Pour requête sans affichage de réponse
   //  $pdo->query( $sql );
 
-  // TODoLi Étudier ce tuto OOC
+  // TODoLi Étudier ce tuto OOC - En cours
 
 
   //todoli C:\laragon\www\do\agc7\arbre\sqlpro\SLIDES_3013.ppt
@@ -58,7 +65,6 @@
   // ToDoLi Go dev pour xu: Ecriture des proc + triggers pour nest_left, nest_right et nestè_depht (Exemple: rainlab_blog_categories et rainlab_forum_channels)
 
   // Si besoin: Revenir sur tuto SQLPro pour procs diverses // arbre
-
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>
