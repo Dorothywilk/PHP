@@ -210,8 +210,15 @@ FROM NEW_FAMILLE
 WHERE NFM_BG < 22
       OR NFM_BD > 35;
 
--- En inversant les bornes, on obtient les groupes frères (10ms !)!
+-- En inversant les bornes, on obtient les groupes frères (23ms !)!
 SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG > 35
       OR NFM_BD < 22;
+
+-- Tous les pères d'un élément de référence (La Upline 32ms !)
+-- Ici Upline du Side-car
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG < 30
+      AND NFM_BD > 31
