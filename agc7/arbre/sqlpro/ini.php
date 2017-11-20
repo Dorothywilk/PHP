@@ -50,6 +50,13 @@
   //todoli C:\laragon\www\do\agc7\arbre\exemple_proc.sql
 
 
+  // todoli https://octobercms.com/forum/post/how-to-use-showtree-option-in-list-page
+  // Et
+  // Nested Tree
+  // https://octobercms.com/docs/database/traits
+
+  // ToDoLi Go dev pour xu: Ecriture des proc + triggers pour nest_left, nest_right et nestè_depht (Exemple: rainlab_blog_categories et rainlab_forum_channels)
+
   // Si besoin: Revenir sur tuto SQLPro pour procs diverses // arbre
 
 
