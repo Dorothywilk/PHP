@@ -222,3 +222,17 @@ SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG < 30
       AND NFM_BD > 31
+
+
+-- La racine du groupe global (22ms)
+-- Si les insertions sont toujours faites par la droite
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG = 1;
+
+-- Recherche par la 'largeur' (48ms)
+-- En cas d'insertion des 2 côtés
+SELECT *
+FROM NEW_FAMILLE
+WHERE (NFM_BD - NFM_BG + 1) / 2 = (SELECT COUNT(*)
+                                   FROM NEW_FAMILLE);
