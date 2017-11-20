@@ -305,4 +305,15 @@ WHERE NFM_BD >= 22;
 
 UPDATE NEW_FAMILLE
 SET NFM_BG = NFM_BG - 14
-WHERE NFM_BG > 22
+WHERE NFM_BG > 22;
+
+USE www_boos2013;
+SELECT
+  uid,
+  uname,
+  lv,
+  typ,
+  lva,
+  lvp,
+  parr
+FROM xoops_users;
