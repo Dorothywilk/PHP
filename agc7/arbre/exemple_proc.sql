@@ -35,22 +35,22 @@ CREATE TABLE IF NOT EXISTS `parent`
   ENGINE = InnoDB
   DEFAULT CHARSET = `latin1`
   COLLATE = `latin1_general_ci`
-  ROW_FORMAT = COMPRESSED
+  ROW_FORMAT = COMPRESSED;
 
-  INSERT INTO `parent` (`lien`, `nom`) VALUES
-(NULL, ''),           ( 1, 'grand-père 1'), ( 1, 'grand-père 2'),  ( 1, 'grand-père 3'),
-( 2, 'père 1-1'),   ( 2, 'père 1-2'),     ( 2, 'père 1-3'),
-( 3, 'père 2-1'),   ( 3, 'père 2-2'),     ( 3, 'père 2-3'),
-( 4, 'père 3-1'),   ( 4, 'père 3-2'),     ( 4, 'père 3-3'),
-( 5, 'fils 1-1-1'), ( 5, 'fils 1-1-2'),
-( 6, 'fils 1-2-1'), ( 6, 'fils 1-2-2'),   ( 6, 'fils 1-2-3'),
-( 7, 'fils 1-3-1'), ( 7, 'fils 1-3-2'),   ( 7, 'fils 1-3-3'),
-( 8, 'fils 2-1-1'), ( 8, 'fils 2-1-2'),
-( 9, 'fils 2-2-1'), ( 9, 'fils 2-2-2'),   ( 9, 'fils 2-2-3'),
-(10, 'fils 2-3-1'), (10, 'fils 2-3-2'),   (10, 'fils 1-3-3'),
-(11, 'fils 3-1-1'), (11, 'fils 3-1-2'),   (12, 'fils 3-2-1'),
-(12, 'fils 3-2-2'), (12, 'fils 3-2-3'),
-  (13, 'fils 3-3-1'), (13, 'fils 3-3-2'),   (13, 'fils 3-3-3');
+INSERT INTO `parent` (`lien`, `nom`) VALUES
+  (NULL, ''), (1, 'grand-père 1'), (1, 'grand-père 2'), (1, 'grand-père 3'),
+  (2, 'père 1-1'), (2, 'père 1-2'), (2, 'père 1-3'),
+  (3, 'père 2-1'), (3, 'père 2-2'), (3, 'père 2-3'),
+  (4, 'père 3-1'), (4, 'père 3-2'), (4, 'père 3-3'),
+  (5, 'fils 1-1-1'), (5, 'fils 1-1-2'),
+  (6, 'fils 1-2-1'), (6, 'fils 1-2-2'), (6, 'fils 1-2-3'),
+  (7, 'fils 1-3-1'), (7, 'fils 1-3-2'), (7, 'fils 1-3-3'),
+  (8, 'fils 2-1-1'), (8, 'fils 2-1-2'),
+  (9, 'fils 2-2-1'), (9, 'fils 2-2-2'), (9, 'fils 2-2-3'),
+  (10, 'fils 2-3-1'), (10, 'fils 2-3-2'), (10, 'fils 1-3-3'),
+  (11, 'fils 3-1-1'), (11, 'fils 3-1-2'), (12, 'fils 3-2-1'),
+  (12, 'fils 3-2-2'), (12, 'fils 3-2-3'),
+  (13, 'fils 3-3-1'), (13, 'fils 3-3-2'), (13, 'fils 3-3-3');
 /* --------------
 
  --------------*/

@@ -16,7 +16,7 @@
           intervallaire</a>
         <p>(Compris représentation XML & lien pour transfo récursive en bornes)</p></li>
       <ul>
-        <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire" target="_blank">Tuto OOC</a></li>
+        <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire" target="_blank">Tuto OOC</a> - Fichier MySQL: C:\laragon\www\do\agc7\arbre\ooc.sql</li>
         <li></li>
         <li></li>
         <li></li>
