@@ -20,8 +20,8 @@
   </ul>
 
   <p class="lead">Cf.
-    <g>exemple.sql</g>
-    pour les diverses requêtes.
+    <g>bases_representation_intervallaire.sql</g>
+    pour les diverses requêtes de base.
   </p>
 
 </div>
@@ -39,7 +39,19 @@
   //  affLign( $sql ); // Pour requête sans affichage de réponse
   //  $pdo->query( $sql );
 
-  // TODoLi Étudier ce tuto
+  // TODoLi Étudier ce tuto OOC
+
+
+  //todoli C:\laragon\www\do\agc7\arbre\sqlpro\SLIDES_3013.ppt
+
+
+  //todoli https://www.developpez.net/forums/d1609579/bases-donnees/mysql/requetes/representation-intervallaire-affichage/
+  // Base ci-dessous
+  //todoli C:\laragon\www\do\agc7\arbre\exemple_proc.sql
+
+
+  // Si besoin: Revenir sur tuto SQLPro pour procs diverses // arbre
+
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>

@@ -1,3 +1,5 @@
+use arbre;
+
 SHOW TABLES;
 
 CREATE TABLE FAMILLE
@@ -221,7 +223,20 @@ WHERE NFM_BG > 35
 SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG < 30
-      AND NFM_BD > 31;
+      AND NFM_BD > 31
+-- Avel l'élément de référence
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG <= 30
+      AND NFM_BD >= 31
+
+-- Le parrain
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG < 30
+      AND NFM_BD > 31
+order by NFM_BG desc
+limit 1;
 
 
 -- La racine du groupe global (22ms)
