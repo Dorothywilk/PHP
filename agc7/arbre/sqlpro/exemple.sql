@@ -243,3 +243,10 @@ SELECT *
 FROM NEW_FAMILLE
 WHERE (NFM_BD - NFM_BG) = (SELECT MAX(NFM_BD - NFM_BG)
                            FROM NEW_FAMILLE);
+
+
+-- Compter les feuilles
+-- Astuce: Utilisation de l'index de la colonne BG
+SELECT COUNT(*) AS FEUILLES
+FROM NEW_FAMILLE
+WHERE NFM_BG = NFM_BD - 1
