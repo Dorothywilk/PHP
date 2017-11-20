@@ -196,7 +196,7 @@ WHERE NFM_BG > 22
 
 -- Idem, inclus l'élément de référence
 -- qui devient alors racine du sous-arbre
--- (Ajout d'index sur les colonnes BG-BD --> 182ms => 15ms)
+-- (Ajout d'index sur les colonnes BG-BD --> 260ms => 26ms)
 SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG >= 22
