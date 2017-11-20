@@ -249,4 +249,9 @@ WHERE (NFM_BD - NFM_BG) = (SELECT MAX(NFM_BD - NFM_BG)
 -- Astuce: Utilisation de l'index de la colonne BG
 SELECT COUNT(*) AS FEUILLES
 FROM NEW_FAMILLE
-WHERE NFM_BG = NFM_BD - 1
+WHERE NFM_BG = NFM_BD - 1;
+
+-- Compter les noeuds
+SELECT COUNT(*) AS NOEUDS
+FROM NEW_FAMILLE
+WHERE NFM_BG <> NFM_BD - 1;
