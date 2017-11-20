@@ -78,7 +78,7 @@ CREATE PROCEDURE getUpline(
   END |
 DELIMITER ;
 
-
+DELIMITER |
 CREATE PROCEDURE recherchePeresV1(
   INOUT ori      INT,
   INOUT id       INT,
@@ -102,7 +102,7 @@ CREATE PROCEDURE recherchePeresV1(
       CALL RecherchePeres(ori, id, reponses, id);
     END IF;
   END |
-    DELIMITER;
+DELIMITER ;
 
 
 SELECT @reponses;
@@ -160,9 +160,28 @@ INSERT INTO NEW_FAMILLE (NFM_BG, NFM_BD, NFM_LIB) VALUES (41, 42, 'Voilier');
 -- Recherche de toutes les feuilles
 SELECT *
 FROM NEW_FAMILLE
-WHERE NFM_BD - NFM_BG = 1
+WHERE NFM_BD - NFM_BG = 1;
 
--- Rappel de la Famille + voir .gif
+-- Rappel de la Famille + voir .gif (tree3)
 SELECT *
 FROM FAMILLE;
 
+-- Toutes les feuilles sous un élément de référence
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BD - NFM_BG = 1
+      AND NFM_BG > 22
+      AND NFM_BD < 35;
+
+
+-- Recherche de tous les noeuds
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BD - NFM_BG > 1;
+
+-- Recherche de tous les noeuds sous un élément de référence
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BD - NFM_BG > 1
+      AND NFM_BG > 2
+      AND NFM_BD < 21
