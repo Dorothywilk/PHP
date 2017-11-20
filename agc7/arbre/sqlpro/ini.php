@@ -14,9 +14,12 @@
       <li>Auto-jointure</li>
       <li><a href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Représentation
           intervallaire</a>
+
         <p>(Compris représentation XML & lien pour transfo récursive en bornes)</p></li>
       <ul>
-        <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire" target="_blank">Tuto OOC</a> - Fichier MySQL: C:\laragon\www\do\agc7\arbre\ooc.sql</li>
+        <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire"
+               target="_blank">Tuto OOC</a> - Fichier MySQL: C:\laragon\www\do\agc7\arbre\ooc.sql
+        </li>
         <li></li>
         <li></li>
         <li></li>
@@ -53,6 +56,8 @@
 
 
   //todoli https://www.developpez.net/forums/d1609579/bases-donnees/mysql/requetes/representation-intervallaire-affichage/
+
+
   // Base ci-dessous
   //todoli C:\laragon\www\do\agc7\arbre\exemple_proc.sql
 

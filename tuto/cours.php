@@ -1,5 +1,5 @@
 <?php
-$nf=function($n){return (($n>10)?number_format($n, 2, ',', ' '):$n);};
+$nf = function ( $n ) { return ( ( $n > 10 ) ? number_format( $n, 2, ',', ' ' ) : $n ); };
 
 
 //include 'div/testsCss.php';
@@ -19,7 +19,9 @@ $nf=function($n){return (($n>10)?number_format($n, 2, ',', ' '):$n);};
 
 //include 'cours/array.php';
 
-include 'cours/coursmooc.php';
+// include 'cours/coursmooc.php'; // TodoDo Expliquer à la Puce
+
+include 'cours/ri/famille.php';
 
 
 //include ('cours/operateurs.php');
@@ -35,21 +37,7 @@ include 'cours/coursmooc.php';
 // }
 
 
-
-
-
-
-
 //include 'cours/poo/index.php';
-
-
-
-
-
-
-
-
-
 
 
 // include('initiation/tableau.php');
