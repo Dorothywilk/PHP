@@ -51,6 +51,7 @@
 
   // TODoLi Étudier ce tuto OOC - En cours
 
+  // TodoDo & Li Observer vieille requête groupe
 
   //todoli C:\laragon\www\do\agc7\arbre\sqlpro\SLIDES_3013.ppt
 
@@ -70,6 +71,7 @@
   // ToDoLi Go dev pour xu: Ecriture des proc + triggers pour nest_left, nest_right et nestè_depht (Exemple: rainlab_blog_categories et rainlab_forum_channels)
 
   // Si besoin: Revenir sur tuto SQLPro pour procs diverses // arbre
+
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>
