@@ -3,7 +3,8 @@
 
 <div class="jumbotron">
 
-  <h1 class="meaDo pb10"><a href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Gestion
+  <h1 class="meaDo pb10"><a
+      href="https://openclassrooms.com/courses/la-representation-intervallaire" target="_blank">Gestion
       d'arbres par représentation intervallaire</a>
   </h1>
 
@@ -11,11 +12,17 @@
   <ul>
     <ol>
       <li>Auto-jointure</li>
-      <li>Représentation intervallaire</li>
+      <li><a href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Représentation
+          intervallaire</a>
+
+        <p>(Compris représentation XML & lien pour transfo récursive en bornes)</p></li>
     </ol>
   </ul>
 
-  <p class="lead">Cf. <g>exemple.sql</g> pour les diverses requêtes.</p>
+  <p class="lead">Cf.
+    <g>exemple.sql</g>
+    pour les diverses requêtes.
+  </p>
 
 </div>
 
