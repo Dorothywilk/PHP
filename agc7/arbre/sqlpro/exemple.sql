@@ -316,4 +316,5 @@ SELECT
   lva,
   lvp,
   parr
-FROM xoops_users;
+FROM xoops_users
+ORDER BY uid DESC;
