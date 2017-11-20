@@ -255,3 +255,26 @@ WHERE NFM_BG = NFM_BD - 1;
 SELECT COUNT(*) AS NOEUDS
 FROM NEW_FAMILLE
 WHERE NFM_BG <> NFM_BD - 1;
+
+
+-- Insertion d'un élément (Par la droite)
+-- Exemple: Roller sous Terrestre
+-- Prod: Dans transaction
+UPDATE NEW_FAMILLE
+SET NFM_BD = NFM_BD + 2
+WHERE NFM_BD >= 35;
+
+UPDATE NEW_FAMILLE
+SET NFM_BG = NFM_BG + 2
+WHERE NFM_BG >= 35;
+
+INSERT INTO NEW_FAMILLE (NFM_BG, NFM_BD, NFM_LIB)
+VALUES (35, 36, 'Roller');
+
+-- Sa upline
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG < 35
+      AND NFM_BD > 36;
+
+-- Suppression 
