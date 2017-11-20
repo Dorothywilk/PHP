@@ -9,8 +9,8 @@
 // Dans un tableau, stocker la famille
 // [id][profondeur, bg, bd, nom] // NB: Les id comencent par 0
 $f = [
-  [ 'prof' => 0, 'bg' => 1, 'bd' => 4, nom => 'Doro' ],
-  [ 'prof' => 1, 'bg' => 2, 'bd' => 3, nom => 'Jade' ]
+  [ 'prof' => 0, 'bg' => 1, 'bd' => 4, 'nom' => 'Doro' ],
+  [ 'prof' => 1, 'bg' => 2, 'bd' => 3, 'nom' => 'Jade' ]
 ];
 
 echo '<table  border="1" style ="padding:10px;"><tr><td border="1"><pre>';
