@@ -210,3 +210,8 @@ FROM NEW_FAMILLE
 WHERE NFM_BG < 22
       OR NFM_BD > 35;
 
+-- En inversant les bornes, on obtient les groupes frères !
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG > 35
+      OR NFM_BD < 22;
