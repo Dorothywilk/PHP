@@ -226,7 +226,10 @@ DELIMITER ;
 
 -- Pour UPDATE
 
--- Choix est fait d'accepter le fait de pouvoir changer un l'article_id d'un commentaire (Exemple, en cas d'erreur de l'utilisateur qui croyait l'avoir posé à un endroit, au lieu d'un autre...: On peut ainsi lui offrir la possibilité de simplement le déplacer. Bien-sûr, interdit s'il y a eût des commentaires par la suite, surtout si autre que par lui-même.
+-- Choix est fait d'accepter le fait de pouvoir changer un l'article_id d'un commentaire
+-- (Exemple, en cas d'erreur de l'utilisateur qui croyait l'avoir posé à un endroit, 
+-- au lieu d'un autre...: On peut ainsi lui offrir la possibilité de simplement le déplacer. 
+-- Bien-sûr, interdit s'il y a eût des commentaires par la suite, surtout si autre que par lui-même.
 
 -- Vérification si article_id a changé
 -- Si oui, on vérifie qu'il correspond bien à un article
@@ -270,6 +273,9 @@ CREATE TRIGGER `before_update_commentaire` BEFORE UPDATE ON `commentaire` FOR EA
         UPDATE article
         SET NEW.article_id = OLD.article_id
         WHERE id = OLD.article_id;
+        
+        -- Prod: Add 1 msg dans la table jobs_sys 
+        
       ELSE
 
         UPDATE article
@@ -292,7 +298,7 @@ CREATE TRIGGER `before_update_commentaire` BEFORE UPDATE ON `commentaire` FOR EA
   END|
 DELIMITER ;
 
--- Résultat
+-- Résultats
 
 -- Pour tester création d'un vue pour juste les articles avec leurs nb_commentaires respectifs
 
