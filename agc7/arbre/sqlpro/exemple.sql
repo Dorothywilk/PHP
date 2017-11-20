@@ -277,4 +277,16 @@ FROM NEW_FAMILLE
 WHERE NFM_BG < 35
       AND NFM_BD > 36;
 
--- Suppression 
+-- Suppression d'un élément
+-- Exemple: Suppr d'ULM
+-- NB: À faire dans l'ordre
+DELETE FROM NEW_FAMILLE
+WHERE NFM_BG = 11
+
+UPDATE NEW_FAMILLE
+SET    NFM_BG = NFM_BG - 2
+WHERE  NFM_BG >= 11
+
+UPDATE NEW_FAMILLE
+SET    NFM_BD = NFM_BD - 2
+WHERE  NFM_BD >= 11
