@@ -221,7 +221,7 @@ WHERE NFM_BG > 35
 SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG < 30
-      AND NFM_BD > 31
+      AND NFM_BD > 31;
 
 
 -- La racine du groupe global (22ms)
@@ -281,12 +281,28 @@ WHERE NFM_BG < 35
 -- Exemple: Suppr d'ULM
 -- NB: À faire dans l'ordre
 DELETE FROM NEW_FAMILLE
-WHERE NFM_BG = 11
+WHERE NFM_BG = 11;
 
 UPDATE NEW_FAMILLE
-SET    NFM_BG = NFM_BG - 2
-WHERE  NFM_BG >= 11
+SET NFM_BG = NFM_BG - 2
+WHERE NFM_BG >= 11;
 
 UPDATE NEW_FAMILLE
-SET    NFM_BD = NFM_BD - 2
-WHERE  NFM_BD >= 11
+SET NFM_BD = NFM_BD - 2
+WHERE NFM_BD >= 11;
+
+
+-- Suppression d'un sous arbre
+-- Exemple: Terrestre
+DELETE FROM NEW_FAMILLE
+WHERE NFM_BG >= 22
+      AND NFM_BD <= 35;
+
+-- Renumérotons alors les bornes situées à droite du sous arbre supprimé, avec un décalage de : 35 - 22 + 1, soit 14
+UPDATE NEW_FAMILLE
+SET NFM_BD = NFM_BD - 14
+WHERE NFM_BD >= 22;
+
+UPDATE NEW_FAMILLE
+SET NFM_BG = NFM_BG - 14
+WHERE NFM_BG > 22
