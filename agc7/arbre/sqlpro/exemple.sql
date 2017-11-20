@@ -184,4 +184,20 @@ SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BD - NFM_BG > 1
       AND NFM_BG > 2
-      AND NFM_BD < 21
+      AND NFM_BD < 21;
+
+
+-- Recherche de tous les éléments sous un élément de référence
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG > 22
+      AND NFM_BD < 35;
+
+
+-- Idem, inclus l'élément de référence
+-- qui devient alors racine du sous-arbre
+-- (Ajout d'index sur les colonnes BG-BD --> 182ms => 15ms)
+SELECT *
+FROM NEW_FAMILLE
+WHERE NFM_BG >= 22
+      AND NFM_BD <= 35;
