@@ -159,3 +159,17 @@ VALUES
   (3, 52, 53, '2.1.4.1'),
   (4, 54, 55, '2.1.4.2');
 
+
+-- Suppr d'un noeud
+DELETE
+FROM tuto_ri
+WHERE forum_gauche > 39
+      AND forum_droite < 58;
+
+UPDATE tuto_ri
+SET forum_gauche = forum_gauche - 18
+WHERE forum_gauche > 39;
+
+UPDATE tuto_ri
+SET forum_droite = forum_droite - 18
+WHERE forum_droite >= 58;

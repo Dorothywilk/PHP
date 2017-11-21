@@ -49,11 +49,9 @@
   //  affLign( $sql ); // Pour requête sans affichage de réponse
   //  $pdo->query( $sql );
 
-  // TODoLi Étudier ce tuto OOC - En cours
-
   // TodoDo & Li Observer vieille requête groupe
 
-  //todoli C:\laragon\www\do\agc7\arbre\sqlpro\SLIDES_3013.ppt
+  //todoli SLIDES_3013.ppt
 
 
   //todoli https://www.developpez.net/forums/d1609579/bases-donnees/mysql/requetes/representation-intervallaire-affichage/
