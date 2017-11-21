@@ -79,3 +79,60 @@ FROM tuto_ri
 WHERE forum_gauche < 7
       AND forum_droite > 8
 ORDER BY forum_gauche DESC;
+
+
+-- nb enfants
+SELECT count(*)
+FROM tuto_ri
+WHERE forum_gauche > 3
+      AND forum_droite < 24;
+
+
+--  nb upline
+SELECT count(*)
+FROM tuto_ri
+WHERE forum_gauche < 3
+      AND forum_droite > 24;
+
+
+-- nb enfants feuilles
+SELECT count(*)
+FROM tuto_ri
+WHERE forum_droite - forum_gauche = 1
+      AND forum_gauche > 3
+      AND forum_droite < 24;
+
+
+-- nb enfants noeuds
+SELECT count(*)
+FROM tuto_ri
+WHERE forum_droite - forum_gauche <> 1
+      AND forum_gauche > 3
+      AND forum_droite < 24;
+
+
+-- Ajout d'un enfant
+UPDATE tuto_ri
+SET forum_droite = forum_droite + 2
+WHERE forum_droite >= 22;
+
+UPDATE tuto_ri
+SET forum_gauche = forum_gauche + 2
+WHERE forum_gauche >= 22;
+
+INSERT INTO tuto_ri (forum_level, forum_gauche, forum_droite, forum_name)
+VALUES (5, 22, 23, '1.1.1.1.3.1');
+
+
+-- Suppr d'un noeud
+DELETE
+FROM tuto_ri
+WHERE forum_gauche = 22;
+
+UPDATE tuto_ri
+SET forum_gauche = forum_gauche - 2
+WHERE forum_gauche >= 22;
+
+UPDATE tuto_ri
+SET forum_droite = forum_droite - 2
+WHERE forum_droite >= 22;
