@@ -173,3 +173,45 @@ WHERE forum_gauche > 39;
 UPDATE tuto_ri
 SET forum_droite = forum_droite - 18
 WHERE forum_droite >= 58;
+
+-- MAJ des Niveaux
+DROP PROCEDURE IF EXISTS maj_Prof;
+
+CREATE PROCEDURE `maj_Prof`()
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+  SQL SECURITY DEFINER
+  COMMENT ''
+  BEGIN
+    DROP TABLE IF EXISTS fff;
+
+    CREATE TABLE IF NOT EXISTS fff
+        SELECT
+          bg,
+          bd,
+          nom,
+          (SELECT count(*) AS p
+           FROM fam ff
+           WHERE
+             ff.bg < f.bg
+             AND ff.bd > f.bd
+          ) AS niv
+        FROM fam f;
+
+    UPDATE fam
+      JOIN fff
+        ON fff.bg = fam.bg
+    SET fam.niv = fff.niv;
+  END;
+
+CALL maj_prof;
+
+UPDATE fam
+SET niv = 777
+WHERE 1;
+
+-- Représentation graphique
+SELECT concat(repeat(' ', niv * 7), nom) 'Type de transport'
+FROM fam
+ORDER BY bg;
