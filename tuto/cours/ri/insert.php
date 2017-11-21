@@ -19,7 +19,8 @@ VALUES (35, 36, 'Roller');
 */
 function insert($nom, $idParrain, $f) {
   
-  $ref= $f[$idParrain]['bd']; // Référence
+  $ref = $f[$idParrain]['bd']; // Référence
+  $profp = $f[$idParrain]['prof']; // Prof du parrain
   
   // if ($nom=='Jeny') echo $ref;
   
@@ -57,7 +58,12 @@ function insert($nom, $idParrain, $f) {
 
 // 3)Insertion du membre avec bg =bd er (élément de référence, là, qui reçoit), 
 // bd=bg +1
-array_push($f, [ 'prof' => 1111, 'bg' => $f[$idParrain]['bd']-2, 'bd' => $f[$idParrain]['bd']-1, 'nom' => $nom ]);
+array_push($f, [ 
+  'bg' => $f[$idParrain]['bd']-2,
+  'bd' => $f[$idParrain]['bd']-1,
+  'prof' => $profp +1,
+  'nom' => $nom 
+]);
   
   //$f[2]['ok'];
  

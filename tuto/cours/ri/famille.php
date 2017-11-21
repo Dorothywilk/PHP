@@ -9,10 +9,12 @@
 // Dans un tableau, stocker la famille
 // [id][profondeur, bg, bd, nom] // NB: Les id comencent par 0
 $f = [
-  [ 'prof' => 0, 'bg' => 1, 'bd' => 4, 'nom' => 'Doro' ],
-  [ 'prof' => 1, 'bg' => 2, 'bd' => 3, 'nom' => 'Jade' ]
+  [ 'bg' => 1, 'bd' => 4, 'prof' => 0, 'nom' => 'Doro' ],
+  [ 'bg' => 2, 'bd' => 3, 'prof' => 1, 'nom' => 'Jade' ]
 ];
-  // [ 'prof' => 1, 'bg' => 4, 'bd' => 5, 'nom' => 'Rom1' ]
+  // [ 'prof' => 2, 'bg' => 3, 'bd' => 4, 'nom' => 'Jeny' ]
+  // [ 'prof' => 1, 'bg' => 6, 'bd' => 7, 'nom' => 'Rom1' ]
+  // [ 'prof' => 1, 'bg' => 8, 'bd' => 9, 'nom' => 'mimi' ]
 
 
 // include 'tuto/cours/ri/functions.php';
@@ -56,7 +58,7 @@ echo 'Parrain de Jeny : ';
 echo '<hr>';
 
 
-getUpline('jeNy', $f);
+getUpline('jeNY', $f);
 
 
 /**
@@ -65,6 +67,8 @@ getUpline('jeNy', $f);
 function getUpline($nom, $f){
   
 // La upline d'un membre
+  
+// On récupère les bornes du sujet pour qui on veut la Upline
 foreach($f as $m){
   if ( strtolower($m['nom'])==strtolower($nom) ) {
     $bg = $m['bg'];
@@ -73,27 +77,34 @@ foreach($f as $m){
 }
 echo $bg.' '.$bd.'<hr>';
 
+  // On va chercher les membres de la Upline
   foreach($f as $m){
       if ($m['bg']<=$bg and $m['bd']>$bd)
-    echo $m['nom'].'<br>';
+    echo $m['nom'].' ('.$m['prof'].')<br>';
   }
 }
 
 echo '<table border="1" style ="padding:10px;"><tr><td>';
 
 
-//sort($f);
+sort($f);
+
+
+
 foreach($f as $m){
-  echo $m['nom'].'<br>' . $m['bg'].' - ' . $m['bd'].'<hr>';
+  echo $m['nom'].'<br>' . $m['bg'].' - ' . $m['bd'].' ('.$m['prof'].')<hr>';
 }
 echo '</td></tr></table>';
+
+echo str_repeat('<br>', 25);
 
 //
 // x 8) Dessiner fam3.jpg et congitmer
 // x qu'on a bien ce qu'on voit dans le tableau
 
-// 9) Dès que c'est le cas, utilliser bulma
+//ToDoDo 9) Dès que c'est le cas, utilliser bulma
 // pour améliorer la présentation de ce tableau
 
-//10) Même tableau, mais avec foreach
-// (Prendre exemple sur le slide 25 du .PDF vu ensemble)
+// x 10) Même tableau, mais avec foreach
+// x (Prendre exemple sur le slide 25 du .PDF vu ensemble)
+// x 11)Mettre dans l'ordrede 'lecture du ver de terre'
