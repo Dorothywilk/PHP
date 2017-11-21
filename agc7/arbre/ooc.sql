@@ -136,3 +136,26 @@ WHERE forum_gauche >= 22;
 UPDATE tuto_ri
 SET forum_droite = forum_droite - 2
 WHERE forum_droite >= 22;
+
+
+-- Insertion d'un noeud
+UPDATE tuto_ri
+SET forum_droite = forum_droite + 18
+WHERE forum_droite >= 39;
+
+UPDATE tuto_ri
+SET forum_gauche = forum_gauche + 18
+WHERE forum_gauche > 39;
+
+INSERT INTO tuto_ri (forum_level, forum_gauche, forum_droite, forum_name)
+VALUES
+  (1, 40, 57, '2.1'),
+  (2, 41, 46, '2.1.1'),
+  (2, 47, 48, '2.1.2'),
+  (2, 49, 50, '2.1.3'),
+  (2, 51, 56, '2.1.4'),
+  (3, 42, 43, '2.1.1.1'),
+  (3, 44, 45, '2.1.1.2'),
+  (3, 52, 53, '2.1.4.1'),
+  (4, 54, 55, '2.1.4.2');
+
