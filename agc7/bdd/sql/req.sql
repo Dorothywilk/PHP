@@ -1,4 +1,4 @@
-use ocr;
+USE ocr;
 
 SELECT
   id,

@@ -5,6 +5,6 @@ SELECT
   nom,
   espece,
   MATCH(nom)
-    AGAINST ('bubulle') AS tx
+  AGAINST('bubulle') AS tx
 FROM animal
 ORDER BY tx DESC
