@@ -23,8 +23,8 @@ function insert($nom, $bgParrain, $f) {
     if ($m['bg'] == $bgParrain){
     $ref = $m['bd']; // Référence
     $profp = $m['prof']; // Prof du parrain
-    }
   }
+}
   
   // if ($nom=='Jeny') echo $ref;
   
@@ -73,3 +73,55 @@ array_push($f, [
  
    return $f;
 };
+
+function affMembre($m){
+    echo '&nbsp;'. str_repeat('&nbsp;', $m['prof']*5).$m['nom'].' ( '. $m['bg'].' - ' . $m['bd'].' )&nbsp;<br>';
+}
+
+
+function affGroupe(Array $f){
+        
+sort($f);
+echo '<table style ="padding:10px;"><tr><td>';
+foreach($f as $m){
+  affMembre($m);
+}
+echo '</td></tr></table>';
+
+}
+
+function affVd ($var){
+   echo '<table style="padding:10px;">
+  <tr>
+    <td><pre>'; 
+   print_r($var);
+   echo '</pre></td>
+  </tr>
+</table>'; 
+}
+
+function getGroupe($bgRef, $f){
+  
+  // affMembre($f[2]);
+  
+  $ref = unserialize(getRensM($bgRef, $f));
+  $bdRef=$ref['bdRef'];
+  
+  $gr = []; 
+  foreach($f as $m) { // BG > BgRef && BD < BdRef
+    if ($m[ 'bg'] > $bgRef && $m['bd'] < $bdRef)
+      array_push($gr, $m); 
+  }
+  return $gr;
+}
+
+function getRensM($bg, $f){
+    foreach($f as $m) {
+      if ($m['bg'] == $bg) {
+        return serialize([
+                            'bdRef'   => $m['bd'],  // Référence 
+                            'profRef' => $m['prof'] // Prof du parrain
+                          ]);
+      }
+    } 
+}

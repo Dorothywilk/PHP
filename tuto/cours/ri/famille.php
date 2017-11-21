@@ -85,27 +85,43 @@ foreach($f as $m){
   */
 }
 
-
-
 // Ajout d'un cops à Rom1
 $f = insert('Nico', 6,  $f);
 $f = insert('Félicien', 7,  $f);
 $f = insert('Quentin', 6,  $f);
 $f = insert('Pina', 1,  $f);
-$f = insert('Mère de Nico', 7,  $f);
+
+?>
+
+  <table border="1" style="padding:10px">
+    <th style="text-align:center"> Avant </th>
+    <th style="text-align:center"> Après </th>
+    <tr>
+      <td>
+        <?php
+          affGroupe($f);
+        ?>
+      </td>
+      <td>
+        <?php
+        
+          $f = insert('Mère de Nico', 7,  $f);
+        
+          affGroupe($f);
+  ?>
+      </td>
+    </tr>
+  </table>
+  <hr>
+
+  <?php
+  
+$gr= getGroupe(7, $f);
 
 
+affGroupe($gr);
 
-sort($f);
-
-echo '<table border="1" style ="padding:10px;"><tr><td>';
-
-
-foreach($f as $m){
-  echo '&nbsp;'. str_repeat('&nbsp;', $m['prof']*5).$m['nom'].' ( '. $m['bg'].' - ' . $m['bd'].' )&nbsp;<br>';
-}
-
-echo '</td></tr></table>';
+// affVd($gr);
 
 echo str_repeat('<br>', 25);
 
@@ -119,3 +135,6 @@ echo str_repeat('<br>', 25);
 // x 10) Même tableau, mais avec foreach
 // x (Prendre exemple sur le slide 25 du .PDF vu ensemble)
 // x 11)Mettre dans l'ordrede 'lecture du ver de terre'
+//
+// Suppr demembres
+//
