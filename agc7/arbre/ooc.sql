@@ -184,9 +184,9 @@ CONTAINS SQL
   SQL SECURITY DEFINER
   COMMENT ''
   BEGIN
-    DROP TABLE IF EXISTS fff;
+    -- DROP TABLE IF EXISTS fff;
 
-    CREATE TABLE IF NOT EXISTS fff
+    CREATE TEMPORARY TABLE IF NOT EXISTS fff
         SELECT
           bg,
           bd,
@@ -208,7 +208,7 @@ CONTAINS SQL
 CALL maj_prof;
 
 UPDATE fam
-SET niv = 777
+SET niv = 7
 WHERE 1;
 
 -- Représentation graphique
