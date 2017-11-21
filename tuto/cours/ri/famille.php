@@ -12,9 +12,9 @@ $f = [
   [ 'bg' => 1, 'bd' => 4, 'prof' => 0, 'nom' => 'Doro' ],
   [ 'bg' => 2, 'bd' => 3, 'prof' => 1, 'nom' => 'Jade' ]
 ];
-  // [ 'prof' => 2, 'bg' => 3, 'bd' => 4, 'nom' => 'Jeny' ]
-  // [ 'prof' => 1, 'bg' => 6, 'bd' => 7, 'nom' => 'Rom1' ]
-  // [ 'prof' => 1, 'bg' => 8, 'bd' => 9, 'nom' => 'mimi' ]
+// [ 'prof' => 2, 'bg' => 3, 'bd' => 4, 'nom' => 'Jeny' ]
+// [ 'prof' => 1, 'bg' => 6, 'bd' => 7, 'nom' => 'Rom1' ]
+// [ 'prof' => 1, 'bg' => 8, 'bd' => 9, 'nom' => 'mimi' ]
 
 
 // include 'tuto/cours/ri/functions.php';
@@ -45,35 +45,35 @@ $f = [
 // x Donc, sera appelée par:
 
 // x Code qui sera activé alors :
- include 'insert.php';
- $f = insert('Romain', 1, $f); // 1 est la BG de Doro)
- $f = insert('Mimi', 1, $f); // 1 est la BG de Doro)
+include 'insert.php';
+$f = insert( 'Romain', 1, $f ); // 1 est la BG de Doro)
+$f = insert( 'Mimi', 1, $f ); // 1 est la BG de Doro)
 
 
-
- $f = insert('Jeny', 2,  $f); // 2 est la BG de Jade)
+$f = insert( 'Jeny', 2, $f ); // 2 est la BG de Jade)
 
 // echo 'Parrain de Jeny : ';
 // echo '<hr>';
 
 
-getUpline('jeNY', $f);
+getUpline( 'jeNY', $f );
 
 
 /**
-* Retourne la Upline d'un membre
-*/
-function getUpline($nom, $f){
-  
+ * Retourne la Upline d'un membre
+ */
+function getUpline( $nom, $f )
+{
+
 // La upline d'un membre
-  
+
 // On récupère les bornes du sujet pour qui on veut la Upline
-foreach($f as $m){
-  if ( strtolower($m['nom'])==strtolower($nom) ) {
-    $bg = $m['bg'];
-    $bd = $m['bd'];
+  foreach ( $f as $m ) {
+    if ( strtolower( $m[ 'nom' ] ) == strtolower( $nom ) ) {
+      $bg = $m[ 'bg' ];
+      $bd = $m[ 'bd' ];
+    }
   }
-}
 // echo $bg.' '.$bd.'<hr>';
 
   // On va chercher les membres de la Upline
@@ -86,44 +86,44 @@ foreach($f as $m){
 }
 
 // Ajout d'un cops à Rom1
-$f = insert('Nico', 6,  $f);
-$f = insert('Félicien', 7,  $f);
-$f = insert('Quentin', 6,  $f);
-$f = insert('Pina', 1,  $f);
+$f = insert( 'Nico', 6, $f );
+$f = insert( 'Félicien', 7, $f );
+$f = insert( 'Quentin', 6, $f );
+$f = insert( 'Pina', 1, $f );
 
 ?>
 
   <table border="1" style="padding:10px">
-    <th style="text-align:center"> Avant </th>
-    <th style="text-align:center"> Après </th>
+    <th style="text-align:center"> Avant</th>
+    <th style="text-align:center"> Après</th>
     <tr>
       <td>
         <?php
-          affGroupe($f);
+        affGroupe( $f );
         ?>
       </td>
       <td>
         <?php
-        
-          $f = insert('Mère de Nico', 7,  $f);
-        
-          affGroupe($f);
-  ?>
+
+        $f = insert( 'Mère de Nico', 7, $f );
+
+        affGroupe( $f );
+        ?>
       </td>
     </tr>
   </table>
   <hr>
 
-  <?php
-  
-$gr= getGroupe(7, $f);
+<?php
 
+$gr = getGroupe( 2, $f );
 
-affGroupe($gr);
+echo 'Groupe de';
+affGroupe( $gr );
 
 // affVd($gr);
 
-echo str_repeat('<br>', 25);
+echo str_repeat( '<br>', 25 );
 
 //
 // x 8) Dessiner fam3.jpg et congitmer
