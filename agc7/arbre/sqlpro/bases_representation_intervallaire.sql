@@ -325,11 +325,18 @@ WHERE NFM_BG > 22;
 -- Pour représentation graphique, ajout champs niveau
 ALTER TABLE arbre.new_famille ADD NFM_NIVEAU INT NOT NULL;
 
+
+-- Calcul des niveaux pour chaque élément
+UPDATE NEW_FAMILLE
+SET NFM_NIVEAU = (
+  SELECT count(*)
+  FROM NEW_FAMILLE
+  WHERE NFM_BG < 7
+        AND NFM_BD > 8
+)
+WHERE nfm_bg = 1;
 SELECT *
 FROM new_famille;
-
--- Calcul des iveau pour chaque élément
-
 
 
 -- Travaux sur xu
