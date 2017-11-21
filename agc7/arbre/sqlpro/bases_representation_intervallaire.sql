@@ -1,4 +1,4 @@
-use arbre;
+USE arbre;
 
 SHOW TABLES;
 
@@ -235,8 +235,8 @@ SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG < 30
       AND NFM_BD > 31
-order by NFM_BG desc
-limit 1;
+ORDER BY NFM_BG DESC
+LIMIT 1;
 
 
 -- La racine du groupe global (22ms)
@@ -322,6 +322,17 @@ UPDATE NEW_FAMILLE
 SET NFM_BG = NFM_BG - 14
 WHERE NFM_BG > 22;
 
+-- Pour représentation graphique, ajout champs niveau
+ALTER TABLE arbre.new_famille ADD NFM_NIVEAU INT NOT NULL;
+
+SELECT *
+FROM new_famille;
+
+-- Calcul des iveau pour chaque élément
+
+
+
+-- Travaux sur xu
 USE www_boos2013;
 SELECT
   uid,
