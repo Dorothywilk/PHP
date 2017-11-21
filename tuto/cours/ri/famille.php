@@ -46,16 +46,15 @@ $f = [
 
 // x Code qui sera activé alors :
  include 'insert.php';
- $f = insert('Rom1', 0, $f); // 0 est l' id de Doro)
- $f = insert('Mimi', 0, $f); // 0 est l' id de Doro)
+ $f = insert('Rom1', 1, $f); // 1 est la BG de Doro)
+ $f = insert('Mimi', 1, $f); // 1 est la BG de Doro)
 
 
 
- $f = insert('Jeny', 1,  $f); // 1 est l'id de Jade)
+ $f = insert('Jeny', 2,  $f); // 2 est la BG de Jade)
 
-echo 'Parrain de Jeny : ';
-
-echo '<hr>';
+// echo 'Parrain de Jeny : ';
+// echo '<hr>';
 
 
 getUpline('jeNY', $f);
@@ -75,25 +74,37 @@ foreach($f as $m){
     $bd = $m['bd'];
   }
 }
-echo $bg.' '.$bd.'<hr>';
+// echo $bg.' '.$bd.'<hr>';
 
   // On va chercher les membres de la Upline
+  /*
   foreach($f as $m){
       if ($m['bg']<=$bg and $m['bd']>$bd)
     echo $m['nom'].' ('.$m['prof'].')<br>';
   }
+  */
 }
 
-echo '<table border="1" style ="padding:10px;"><tr><td>';
+
+
+// Ajout d'un cops à Rom1
+$f = insert('Nico', 6,  $f);
+$f = insert('Félicien', 7,  $f);
+$f = insert('Quentin', 6,  $f);
+$f = insert('Pina', 1,  $f);
+$f = insert('Mère à Nico', 7,  $f);
+
 
 
 sort($f);
 
+echo '<table border="1" style ="padding:10px;"><tr><td>';
 
 
 foreach($f as $m){
-  echo $m['nom'].'<br>' . $m['bg'].' - ' . $m['bd'].' ('.$m['prof'].')<hr>';
+  echo '&nbsp;'. str_repeat('&nbsp;', $m['prof']*5).$m['nom'].' ( '. $m['bg'].' - ' . $m['bd'].' )&nbsp;<br>';
 }
+
 echo '</td></tr></table>';
 
 echo str_repeat('<br>', 25);
