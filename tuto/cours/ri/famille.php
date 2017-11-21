@@ -46,7 +46,7 @@ $f = [
 
 // x Code qui sera activé alors :
  include 'insert.php';
- $f = insert('Rom1', 1, $f); // 1 est la BG de Doro)
+ $f = insert('Romain', 1, $f); // 1 est la BG de Doro)
  $f = insert('Mimi', 1, $f); // 1 est la BG de Doro)
 
 
@@ -81,7 +81,7 @@ foreach($f as $m){
   foreach($f as $m){
       if ($m['bg']<=$bg and $m['bd']>$bd)
     echo $m['nom'].' ('.$m['prof'].')<br>';
-  }
+  }-+
   */
 }
 
@@ -92,7 +92,7 @@ $f = insert('Nico', 6,  $f);
 $f = insert('Félicien', 7,  $f);
 $f = insert('Quentin', 6,  $f);
 $f = insert('Pina', 1,  $f);
-$f = insert('Mère à Nico', 7,  $f);
+$f = insert('Mère de Nico', 7,  $f);
 
 
 
