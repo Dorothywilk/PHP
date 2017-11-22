@@ -13,15 +13,22 @@
 
 <body>
 <div class="navLi">
-  <a href="/" class="hoverable lkdo">Do</a> | Arbre - But: Gestion optimale de l'arborescence du
-  Réseau
+  <a href="/" class="hoverable lkdo">Do</a> |
+  <a href="/agc7/exemples">SemanticUI</a> |
+  <a href="../mdb.php">MDB</a> |
+  <a href="../bdd/index.php">BdD</a> |
+  <a href="../poo/index.php">POO</a> |
+  <a href="../arbre/index.php">Arbre</a> |
+  XU - Application RI
 </div>
 
 <?php
 
 include '../bdd/inc/fctns.php';
 
-include 'sqlpro/ini.php';
+include 'ri/ini.php';
+
+
 
 ?>
 <footer>

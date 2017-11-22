@@ -20,7 +20,8 @@
     <a href="sv">SV</a> |
     <a href="/assets/bulma">Bulma</a> |
     <a href="https://www.apprendre-php.com/" target="_blank" title="Lien du tutoriel d'Emacs">Tutoriel</a> |
-    <a href=" agc7 ">Techs GC7</a>
+    <a href="agc7 ">Techs GC7</a> |
+    <a href="agc7/xu ">XU</a>
   </header>
   <!--  <div class='body, html' </div>-->
   <article>

@@ -19,7 +19,9 @@
           Fichier
           <g>exemple_pro.sql</g>
           <br>
-          Procédures Groupe (Sur structure non standard).
+          Procédures Groupe avec
+          <g>LOOP</g>
+          (Sur structure non standard).
         </p>
       </li>
       <ul>
@@ -62,14 +64,23 @@
   // Fichier exemple_pro.sql - Comporte porcédure Groupe
 
 
-  // todoli https://octobercms.com/forum/post/how-to-use-showtree-option-in-list-page - En cours
+  // https://octobercms.com/forum/post/how-to-use-showtree-option-in-list-page
   // Et
   // Nested Tree
   // https://octobercms.com/docs/database/traits
 
-  // ToDoli Voir fin du tuto 2 (Représentation intervallaire
+
+  // Voir fin du tuto 2 (Représentation intervallaire
   // (Compris représentation XML & lien pour transfo récursive en bornes)
   // Procédures types de base.
+
+
+  // TodoLi https://forum.phpfrance.com/modelisation-securite/arbre-intervallaire-gestion-deplacement-sous-arbres-t266966.html
+  //include 'triCombine.php'; // Autre exemple
+
+
+  // TodoLi Reprise du tuto Laravel http://laravel.sillo.org/cours-laravel-5-5-les-donnees-gerer-un-arbre/
+
 
   // ToDoLi Go dev pour xu: Ecriture des proc + triggers pour nest_left, nest_right et nestè_depht (Exemple: rainlab_blog_categories et rainlab_forum_channels)
 
