@@ -16,7 +16,12 @@
           intervallaire</a>
 
         <p>(Compris représentation XML & lien pour transfo récursive en bornes)<br>
-          Procédures types de base.</p></li>
+          Fichier
+          <g>exemple_pro.sql</g>
+          <br>
+          Procédures Groupe (Sur structure non standard).
+        </p>
+      </li>
       <ul>
         <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire"
                target="_blank">Tuto OOC</a> - Fichier MySQL: C:\laragon\www\do\agc7\arbre\ooc.sql
@@ -53,15 +58,11 @@
   // TodoDo & Li Observer vieille requête groupe
 
 
-  //todoli https://www.developpez.net/forums/d1609579/bases-donnees/mysql/requetes/representation-intervallaire-affichage/
-  // Fichier exemple_pro.sql - En cours
+  //https://www.developpez.net/forums/d1609579/bases-donnees/mysql/requetes/representation-intervallaire-affichage/
+  // Fichier exemple_pro.sql - Comporte porcédure Groupe
 
 
-  // Base ci-dessous
-  //todoli C:\laragon\www\do\agc7\arbre\exemple_proc.sql
-
-
-  // todoli https://octobercms.com/forum/post/how-to-use-showtree-option-in-list-page
+  // todoli https://octobercms.com/forum/post/how-to-use-showtree-option-in-list-page - En cours
   // Et
   // Nested Tree
   // https://octobercms.com/docs/database/traits
