@@ -82,14 +82,12 @@ function affMembre( $m )
 
 function affGroupe( Array $f )
 {
-
   sort( $f );
   echo '<table style ="padding:10px;"><tr><td>';
   foreach ( $f as $m ) {
     affMembre( $m );
   }
   echo '</td></tr></table>';
-
 }
 
 function affVd( $var )

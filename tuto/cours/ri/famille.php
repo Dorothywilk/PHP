@@ -116,7 +116,7 @@ $f = insert( 'Pina', 1, $f );
 
 <?php
 
-$gr = getGroupe( 2, $f );
+$gr = getGroupe( 1, $f );
 
 echo 'Groupe de';
 affGroupe( $gr );

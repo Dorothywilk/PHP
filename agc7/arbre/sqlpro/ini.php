@@ -15,7 +15,8 @@
       <li><a href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Représentation
           intervallaire</a>
 
-        <p>(Compris représentation XML & lien pour transfo récursive en bornes)</p></li>
+        <p>(Compris représentation XML & lien pour transfo récursive en bornes)<br>
+          Procédures types de base.</p></li>
       <ul>
         <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire"
                target="_blank">Tuto OOC</a> - Fichier MySQL: C:\laragon\www\do\agc7\arbre\ooc.sql
@@ -51,10 +52,9 @@
 
   // TodoDo & Li Observer vieille requête groupe
 
-  //todoli SLIDES_3013.ppt
-
 
   //todoli https://www.developpez.net/forums/d1609579/bases-donnees/mysql/requetes/representation-intervallaire-affichage/
+  // Fichier exemple_pro.sql - En cours
 
 
   // Base ci-dessous
@@ -66,11 +66,16 @@
   // Nested Tree
   // https://octobercms.com/docs/database/traits
 
+  // ToDoli Voir fin du tuto 2 (Représentation intervallaire
+  // (Compris représentation XML & lien pour transfo récursive en bornes)
+  // Procédures types de base.
+
   // ToDoLi Go dev pour xu: Ecriture des proc + triggers pour nest_left, nest_right et nestè_depht (Exemple: rainlab_blog_categories et rainlab_forum_channels)
 
   // Si besoin: Revenir sur tuto SQLPro pour procs diverses // arbre
 
 
   echo str_repeat( '<br>', 25 ); // 28
+  // Rappel doc SLIDES_3013.ppt (Chapitre / optimisations)
   ?>
 </div>
