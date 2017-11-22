@@ -19,9 +19,8 @@ $nf = function ( $n ) { return ( ( $n > 10 ) ? number_format( $n, 2, ',', ' ' ) 
 
 //include 'cours/array.php';
 
+ include 'cours/conditions.php'; // TodoDo Expliquer à la Puce
 // include 'cours/coursmooc.php'; // TodoDo Expliquer à la Puce
-
-include 'cours/ri/famille.php';
 
 
 //include ('cours/operateurs.php');
@@ -43,4 +42,5 @@ include 'cours/ri/famille.php';
 // include('initiation/tableau.php');
 //include ('initiation/tableauIndexe.php');
 
+//include 'cours/ri/famille.php';
 //include('cours/objets.php');
