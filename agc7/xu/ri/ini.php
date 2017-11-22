@@ -6,7 +6,7 @@
       (RI)</a>
   </h1>
 
-  <p class="lead">ToDo</p>
+  <p class="lead">ToDoLi</p>
   <ul>
     <ol>
       <li>New Table simplifiée (www_boos2013 => xu)<br>
@@ -23,7 +23,7 @@
           (Avec migration + seeder)
         </li>
       </ul>
-
+      <li>VM PHP4 pour refaire marcher ancien système complètement</li>
     </ol>
   </ul>
 
