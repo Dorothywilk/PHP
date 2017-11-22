@@ -19,11 +19,12 @@
         </li>
         <li>Boucle (LOOP)</li>
         <li>Tests</li>
-        <li>Appliquer dsans P100 (OCMS)<br>
+        <li>Appliquer dans P100 (OCMS)<br>
           (Avec migration + seeder)
         </li>
       </ul>
       <li>VM PHP4 pour refaire marcher ancien système complètement</li>
+      <li>Appliquer B dans P100</li>
     </ol>
   </ul>
 
