@@ -93,7 +93,7 @@ $f = insert( 'Pina', 1, $f );
 
 ?>
 
-  <table border="1" style="padding:10px">
+  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
     <th style="text-align:center"> Avant</th>
     <th style="text-align:center"> Après</th>
     <tr>
@@ -114,7 +114,7 @@ $f = insert( 'Pina', 1, $f );
   </table>
   <hr>
 
-<?php
+  <?php
 
 $gr = getGroupe( 1, $f );
 

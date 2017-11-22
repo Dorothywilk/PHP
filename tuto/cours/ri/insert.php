@@ -83,7 +83,7 @@ function affMembre( $m )
 function affGroupe( Array $f )
 {
   sort( $f );
-  echo '<table style ="padding:10px;"><tr><td>';
+  echo '  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">';
   foreach ( $f as $m ) {
     affMembre( $m );
   }
