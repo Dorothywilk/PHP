@@ -1,12 +1,16 @@
+-- use arbre;
+
 SET AUTOCOMMIT = 0;
+SET @@max_sp_recursion_depth = 255;
 
 START TRANSACTION;
 
 DROP DATABASE IF EXISTS `base`;
-
 CREATE DATABASE `base`
   DEFAULT CHARACTER SET `latin1`
   DEFAULT COLLATE `latin1_general_ci`;
+USE base;
+
 
 DROP TABLE IF EXISTS `travail`;
 
@@ -105,6 +109,8 @@ DROP PROCEDURE IF EXISTS `arbre`;
 /*--------------
 
 --------------*/
+-- Exemple de procédure avec boucle
+-- Génère ici l'azrbre, le groupe
 CREATE PROCEDURE `arbre`(IN _noeud INTEGER UNSIGNED,
                          IN _pref  CHAR(20))
 DETERMINISTIC
