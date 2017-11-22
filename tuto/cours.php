@@ -1,7 +1,6 @@
 <?php
 $nf = function ( $n ) { return ( ( $n > 10 ) ? number_format( $n, 2, ',', ' ' ) : $n ); };
 
-
 //include 'div/testsCss.php';
 //include 'div/zzz_testsCss.php';
 
@@ -19,8 +18,8 @@ $nf = function ( $n ) { return ( ( $n > 10 ) ? number_format( $n, 2, ',', ' ' ) 
 
 //include 'cours/array.php';
 
-//include 'cours/conditions.php';
-  include 'cours/formulaire.php';
+include 'cours/conditions.php';
+//  include 'cours/formulaire.php';
 // TodoDo Expliquer à la Puce
 // include 'cours/coursmooc.php'; // TodoDo Expliquer à la Puce
 
