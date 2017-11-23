@@ -1,0 +1,10 @@
+.sidebar .jstree-brackets li a,
+.sidebar .jstree-brackets li a:hover,
+#outline-list li{
+	font-size: 16px;
+}
+
+.working-set-header {
+    padding: 3px 0 9px 12px;
+    color:cyan;
+}
