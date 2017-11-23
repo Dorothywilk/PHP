@@ -49,7 +49,7 @@ namespace GC7;
 //include( 'securisation/verrous.php' );
 //include( 'securisation/requetesPreparees.php' );
 //include( 'securisation/procedures.php' );
-//include( 'securisation/conditions.php' );
+include( 'securisation/conditions.php' );
 //include( 'securisation/erreurs_curseurs.php' );
 //include( 'securisation/triggers.php' );
 //include( 'securisation/vues.php' );
