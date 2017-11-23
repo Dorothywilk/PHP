@@ -26,7 +26,7 @@ CREATE TABLE xu
     FROM www_boos2013.xoops_users;
 
 
-SELECT *
+SELECT count(*)
 FROM xu;
 
 
