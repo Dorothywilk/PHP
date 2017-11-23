@@ -15,6 +15,7 @@ USE aaxu;
 DROP TABLE IF EXISTS xu;
 
 CREATE TABLE xu
+-- colonnes
     SELECT
       uid,
       uname,
@@ -27,9 +28,9 @@ CREATE TABLE xu
 
 
 SELECT count(*)
-FROM xu;
+FROM xu; -- 25 038 lignes
 
-
+-- 3 mn
 DROP PROCEDURE IF EXISTS `getUpline`;
 SET @@max_sp_recursion_depth = 255;
 DELIMITER |

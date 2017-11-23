@@ -1,5 +1,10 @@
 <?php
 
+
+
+
+echo 'aaa<hr>bbb<hr>';
+
 $age=12;
 
 // Si l'âge est inférieur ou égal à 12
