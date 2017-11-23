@@ -1,9 +1,31 @@
+<div style="font-size:100px"><br>Je suis en<br><br><br><br>ligne skype !!!</div><br><br><br>
 <?php
+echo '<h1>Une alternative pratique: Le switch</h1>';
+
+$age = 16;
+
+switch ($age) {
+  case 4:
+       echo  'Tu as 4 ans';
+  break;
+    
+  case 16:
+    echo 'Tu es un peu plus agé, tu as 16 ans';
+  break;
+    
+  case 18:
+     echo 'Tu es majeur';
+  break;
+    
+  Default:
+    echo 'ok';
+}
+
+echo '<hr>';
 
 
 
-
-echo 'aaa<hr>bbb<hr>';
+echo '<hr>';
 
 $age=12;
 
@@ -377,21 +399,6 @@ if ($variable == 23)
   <?php
 
 echo '<hr>';
-
-echo '<h1>Une alternative pratique: Le switch </h1>';
-
-$age = 10;
-
-switch ($age)
-{
-  case 4:
-       echo  'Tu as 4 ans';
-    break;
-  case 16:
-    echo '';
-    
-    
-}
 
 
 

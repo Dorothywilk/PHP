@@ -1,23 +1,21 @@
 <?php
 namespace GC7;
 ?>
-<div class="jumbotron">
+  <div class="jumbotron">
 
-  <h1 class="meaDo pb10"><a
-      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/obtenir-la-date-l-heure-actuelle"
-      target="_blank">Date / Heure</a></h1>
+    <h1 class="meaDo pb10"><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/obtenir-la-date-l-heure-actuelle" target="_blank">Date / Heure</a></h1>
 
-  <p class="lead">Fonctions temporelles</p>
+    <p class="lead">Fonctions temporelles</p>
 
-  <p class="lead pv0 ml10"><code>DATE</code>, <code>TIME</code>, <code>DATETIME</code>, <code>TIMESTAMP</code>,
-    <code>YEAR</code>,
-    etc...</p>
+    <p class="lead pv0 ml10"><code>DATE</code>, <code>TIME</code>, <code>DATETIME</code>, <code>TIMESTAMP</code>,
+      <code>YEAR</code>, etc...
+    </p>
 
-</div>
+  </div>
 
-<div class="maingc7">
+  <div class="maingc7">
 
-  <?php
+    <?php
 
   echo '<h3>Bases</h3>';
 
@@ -105,9 +103,9 @@ WHERE espece_id = 4 limit 3';
 
   ?>
 
-  <h3>Date en français</h3>
+      <h3>Date en français</h3>
 
-  <?php
+      <?php
 
   $sql = 'SET lc_time_names = "fr_FR"';
   $pdo->query( $sql );
@@ -135,9 +133,9 @@ STR_TO_DATE("20111027133056", GET_FORMAT(TIMESTAMP, "INTERNAL"))
 
 
   ?>
-  <div class="jumbotron jumbotronRef">
-    <p class="h3-responsive text-center">Les tables de référence</p>
-    <?php
+        <div class="jumbotron jumbotronRef">
+          <p class="h3-responsive text-center">Les tables de référence</p>
+          <?php
     $sql = 'select Id, Sexe, Nom, Commentaires, Espece_id, Race_id
 from animal limit 3';
     aff( 'Animal (Les 3 premiers /' . $nbr( 'animal' ) . ')' );
@@ -158,5 +156,5 @@ from espece limit 3";
     $req( $sql );
     ?>
 
+        </div>
   </div>
-</div>
