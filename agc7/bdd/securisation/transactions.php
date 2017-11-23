@@ -60,10 +60,10 @@ namespace GC7;
   $pdo->query( $sql );
 
   $sql = 'COMMIT'; // Change lignes 74 & 75 simultanément
-//  $sql = 'ROLLBACK';
-  affLign($sql);
-  $pdo->query($sql);
-//  $req( $sql, $pdo );
+  //  $sql = 'ROLLBACK';
+  affLign( $sql );
+  $pdo->query( $sql );
+  //  $req( $sql, $pdo );
 
 
   echo '<hr>Valeurs réelles 2';

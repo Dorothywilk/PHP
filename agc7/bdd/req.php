@@ -45,7 +45,8 @@ namespace GC7;
 
 // Sécurisation
 
-//include( 'securisation/transactions.php' );
+include( 'securisation/transactions.php' );
+die( 'Oki 21' );
 //include( 'securisation/verrous.php' );
 //include( 'securisation/requetesPreparees.php' );
 //include( 'securisation/procedures.php' );
