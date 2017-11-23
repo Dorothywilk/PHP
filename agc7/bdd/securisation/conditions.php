@@ -17,17 +17,16 @@ namespace GC7;
   $pdo = $req( $sql );
 
   ?>
-  <h3>Simple <code>IF(cond, 1, 0)</code></h3>
+  <h3>Simple <code>IF(cond, 1, 0)</code> ou <code>IF ... THEN ...</code></h3>
   <?php
-
   $sql = "SELECT IF(1=1,'oui','non') as '1 = 1 ?'";
-  $pdo = $req( $sql );
   ?>
 
   <h3>IF() dans une procédure (est_adopté)</h3>
 
 
   <?php
+  $pdo = $req( $sql );
   $pdo = pdo();
   $sql = "DROP PROCEDURE IF EXISTS est_adopte;";
   AffLign( $sql );
@@ -93,11 +92,18 @@ END ;";
   affLign( $sql );
   //    $pdo->query( $sql );
 
+  // Indique quelle datbase est utilisée
+  $sql = 'select database();';
+  $req( $sql, $pdo );
+
+  $pdo = pdo( 'ocr2' );
+
+  $sql = 'select database();';
+  $req( $sql, $pdo );
 
   $sql = "CALL message_sexe(8);   -- Mâle";
   $req( $sql, $pdo );
-
-
+  
   $sql = "CALL message_sexe(6);   -- Femelle";
   $req( $sql, $pdo );
 

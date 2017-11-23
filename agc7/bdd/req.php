@@ -45,23 +45,23 @@ namespace GC7;
 
 // Sécurisation
 
-//include( 'securisation/transactions.php' );
-//include( 'securisation/verrous.php' );
-//include( 'securisation/requetesPreparees.php' );
-//include( 'securisation/procedures.php' );
-//include( 'securisation/conditions.php' );
-//include( 'securisation/erreurs_curseurs.php' );
-//include( 'securisation/triggers.php' );
-//include( 'securisation/vues.php' );
-//include( 'securisation/tablesTemporaires.php' );
-//include( 'securisation/vuesMaterialisées.php' );
+include( 'securisation/transactions.php' );
+include( 'securisation/verrous.php' );
+include( 'securisation/requetesPreparees.php' );
+include( 'securisation/procedures.php' );
+include( 'securisation/conditions.php' );
+include( 'securisation/erreurs_curseurs.php' );
+include( 'securisation/triggers.php' );
+include( 'securisation/vues.php' );
+include( 'securisation/tablesTemporaires.php' );
+include( 'securisation/vuesMaterialisées.php' );
 //
 //include( 'tests.php' );
 //
 //
 //include( 'securisation/exo6.php' );
 //include( 'admin/infos.php' );
-include( 'admin/config.php' );
+//include( 'admin/config.php' );
 //
 
 //////////////////////////////////////////////////////////////////////////////////////////

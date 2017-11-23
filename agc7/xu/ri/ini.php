@@ -9,8 +9,8 @@
   <p class="lead">ToDoLi</p>
   <ul>
     <ol>
-      <li>New Table simplifiée (www_boos2013 => xu)<br>
-        En cours
+      <li>X Création new database de travail ("aaxu")</li>
+      <li>X New Table simplifiée (www_boos2013 => xu)
       </li>
       <li>Boucle pour rejouer insertion du premier au dernier</li>
       <ul>
