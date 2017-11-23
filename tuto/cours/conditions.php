@@ -376,6 +376,23 @@ if ($variable == 23)
   <strong>Bravo !</strong> Vous avez trouvé le nombre mystère !
   <?php
 
+echo '<hr>';
+
+echo '<h1>Une alternative pratique: Le switch </h1>';
+
+$age = 10;
+
+switch ($age)
+{
+  case 4:
+       echo  'Tu as 4 ans';
+    break;
+  case 16:
+    echo '';
+    
+    
+}
+
 
 
 
