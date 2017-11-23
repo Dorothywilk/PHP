@@ -21,17 +21,21 @@ switch ($age) {
     echo 'ok';
 }
 
+<<<<<<< Updated upstream
 echo '<hr>';
 
 
 
 echo '<hr>';
+=======
+echo 'aaa<hr>bbb<hr>';
+>>>>>>> Stashed changes
 
 $age=12;
 
 // Si l'âge est inférieur ou égal à 12
 
-if ($age <=12) 
+if ($age <= 12) 
 
 { 
     echo "Salut gamin ! Bienvenue sur mon site !<br>";
@@ -62,7 +66,7 @@ if ($autorisation_entrer == "Oui")
   // instructions à exécuter quand on est autorisé à entrer 
 } 
 
-elseif ($autorisation_entrer=="Non" ) 
+elseif ($autorisation_entrer == "Non" ) 
   
   // SINON SI on n 'a pas l'autorisation d 'entrer
 {

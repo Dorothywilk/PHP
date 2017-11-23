@@ -3,8 +3,6 @@
 
 <?php
 
-
-
 // Les 5 Opérateurs arithmétiques
 $a = 10;
 $b = 2;

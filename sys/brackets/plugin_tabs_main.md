@@ -1,0 +1,17 @@
+# Réglages des tabs 
+
+1. Plugin **dnbard document-toolbar**
+2. **main.css**
+
+.ext-documents .document{
+
+    padding-left: 5px; /* 10 */
+    padding-right: 15px; /* 5 */
+    padding-top: 0; /* 6 */
+    padding-bottom: 4px; /* 4 */
+
+Soit:
+
+    padding: 0 15px 4px 5px;
+
+}
