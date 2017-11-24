@@ -9,19 +9,17 @@
   <p class="lead">ToDoLi</p>
   <ul>
     <ol>
-      <li>X Création new database de travail ("aaxu")</li>
-      <li>X New Table simplifiée (www_boos2013 => xu)
+      <li><i class="fa fa-check-square-o"></i> Création new database de travail ("aaxu") en ligne de commande
       </li>
+      <li><i class="fa fa-check-square-o"></i> New Table simplifiée (www_boos2013 => xu)</li>
       <li>Boucle pour rejouer insertion du premier au dernier</li>
       <ul>
-        <li><i class="fa fa-check-square-o"></i> Prépa table xu<br>
-          Vue -> xu (uid, uname, lv, typ, lva, lvp, parr) en ajoutant bg, bd, pf
-        </li>
+        <li><i class="fa fa-check-square-o"></i> Prépa table xu</li>
+        <li>Vue -> xu (uid, uname, lv, typ, lva, lvp, parr) en ajoutant bg, bd, pf + indexes</li>
         <li>Boucle (LOOP)</li>
         <li>Tests</li>
         <li>Appliquer dans P100 (OCMS)<br>
-          (Avec migration + seeder)
-        </li>
+          (Avec migration + seeder)</li>
       </ul>
       <li>VM PHP4 pour refaire marcher ancien système complètement</li>
       <li>Appliquer B dans P100</li>
