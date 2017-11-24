@@ -9,7 +9,8 @@
   <p class="lead">ToDoLi</p>
   <ul>
     <ol>
-      <li><i class="fa fa-check-square-o"></i> Création new database de travail ("aaxu") en ligne de commande
+      <li><i class="fa fa-check-square-o"></i> Création new database de travail ("aaxu") en ligne de
+        commande
       </li>
       <li><i class="fa fa-check-square-o"></i> New Table simplifiée (www_boos2013 => xu)</li>
       <li>Boucle pour rejouer insertion du premier au dernier</li>
@@ -19,7 +20,8 @@
         <li>Boucle (LOOP)</li>
         <li>Tests</li>
         <li>Appliquer dans P100 (OCMS)<br>
-          (Avec migration + seeder)</li>
+          (Avec migration + seeder)
+        </li>
       </ul>
       <li>VM PHP4 pour refaire marcher ancien système complètement</li>
       <li>Appliquer B dans P100</li>
@@ -34,6 +36,9 @@
 <div class="maingc7">
   Ready.
   <?php
+
+  // Todoli quintescence => meilleur
+  // TodoLi Ralentir slide // thierry
 
   $pdo = pdo();
 
