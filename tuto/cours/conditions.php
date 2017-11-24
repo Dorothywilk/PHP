@@ -1,15 +1,41 @@
+<div style="font-size:100px"><br>Je suis en<br><br><br><br>ligne skype !!!</div><br><br><br>
 <?php
+echo '<h1>Une alternative pratique: Le switch</h1>';
+
+$age = 16;
+
+switch ($age) {
+  case 4:
+       echo  'Tu as 4 ans';
+  break;
+    
+  case 16:
+    echo 'Tu es un peu plus agé, tu as 16 ans';
+  break;
+    
+  case 18:
+     echo 'Tu es majeur';
+  break;
+    
+  Default:
+    echo 'ok';
+}
+
+<<<<<<< Updated upstream
+echo '<hr>';
 
 
 
-
+echo '<hr>';
+=======
 echo 'aaa<hr>bbb<hr>';
+>>>>>>> Stashed changes
 
 $age=12;
 
 // Si l'âge est inférieur ou égal à 12
 
-if ($age <=12) 
+if ($age <= 12) 
 
 { 
     echo "Salut gamin ! Bienvenue sur mon site !<br>";
@@ -40,7 +66,7 @@ if ($autorisation_entrer == "Oui")
   // instructions à exécuter quand on est autorisé à entrer 
 } 
 
-elseif ($autorisation_entrer=="Non" ) 
+elseif ($autorisation_entrer == "Non" ) 
   
   // SINON SI on n 'a pas l'autorisation d 'entrer
 {
@@ -375,6 +401,8 @@ if ($variable == 23)
 ?>
   <strong>Bravo !</strong> Vous avez trouvé le nombre mystère !
   <?php
+
+echo '<hr>';
 
 
 
