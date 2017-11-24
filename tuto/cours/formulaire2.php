@@ -34,18 +34,6 @@
      ?>
 </form>    
   
-   <input type="color" value"#ff0000" /> 
-<?php
-colorPicker.addEventListener("input", updateFirst, false);
-colorPicker.addEventListener("change", watchColorPicker, false);
-
-function watchColorPicker(event) 
-{
-  document.querySelectorAll("p").forEach(function(p) {
-    p.style.color = event.target.value;
-  });
-}
-  ?>   
    <form method="post" action="traitement.php">
    <p>
        <label for="pays">Dans quel pays habitez-vous ?</label><br />
