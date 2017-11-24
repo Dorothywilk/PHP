@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <div class="navLi mtnav">
-    <a href="/">Do</a> | P.O.O.
-  </div>
-  <hr>
-  <div class="maingc7 mainPoo">
+<div class="navLi mtnav">
+  <a href="/">Do</a> | P.O.O.
+</div>
+<hr>
+<div class="maingc7 mainPoo">
 
-    <?php
+  <?php
 
   // Simple classe
   // include 'personne.php';
@@ -50,8 +50,8 @@
   echo str_repeat( '<br>&nbsp;', 50 );
 
   ?>
-      oOo
-  </div>
+  oOo
+</div>
 </body>
 
 </html>

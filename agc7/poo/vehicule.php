@@ -1,4 +1,4 @@
-<?php
+<?php namespace Gc7;
 
 include '../class/vehicule.php';
 include '../class/voiture.php';
