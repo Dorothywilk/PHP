@@ -28,11 +28,8 @@
            <option value="japon">Japon</option>
        </select>
    </p>
-<<<<<<< HEAD
    
-     Lol
-=======
->>>>>>> Formulaire
+     Lol ahahah
 </form>    
   
      
