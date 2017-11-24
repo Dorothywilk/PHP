@@ -28,7 +28,7 @@ namespace GC7;
 
 // Bases
 
-//include( 'bases/subReq.php' );
+include( 'bases/subReq.php' );
 //include( 'bases/joints.php' );
 //include( 'bases/union.php' );
 //include( 'bases/foreign_key.php' );
