@@ -17,6 +17,7 @@ namespace GC7;
   <p class="lead"><code>CREATE TRIGGER nom_trigger moment_trigger evenement_trigger<br>
       ON nom_table FOR EACH ROW<br>
       corps_trigger;</code></p>
+  <h3 class="lead">NB: Installer .ocr/ocr2.sql</h3>
 </div>
 
 <div class="maingc7">

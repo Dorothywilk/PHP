@@ -1,9 +1,4 @@
-<?php
-
-namespace GC7;
-
-//ToDoLi: Msg: Améliorer ce code... Lien GHub...
-?>
+<?php namespace GC7; ?>
 <div class="jumbotron">
 
   <h1 class="meaDo pb10"><a
@@ -19,7 +14,7 @@ namespace GC7;
 
   <?php
 
-  $pdo = pdo();
+  $pdo = pdo( 'ocr2' );
 
   //  affLign( $sql );
   //  $pdo->query( $sql );
@@ -88,33 +83,63 @@ WHERE Animal.id = 37;";
 
   <h3 class="jumbotron pt10">Exemple de requête optimisable</h3>
 
+  <p>Suppression d'un index s'il existe</p>
   <?php
 
-  $sql = "DROP INDEX ind_date_reservation ON adoption;";
+
+  $sql = "SELECT if(
+exists(
+  SELECT DISTINCT INDEX_NAME
+  FROM information_schema.statistics
+  WHERE TABLE_SCHEMA = 'ocr2'
+    AND TABLE_NAME = 'Adoption'
+    AND INDEX_NAME LIKE 'date_reservation'
+  ),
+  'drop index date_reservation on Adoption',
+  'select
+    ''Pas de date_reservation comme index à supprimer'' Résultat;'
+)
+INTO @a;
+-- Sortie si pas d'index à supprimer uniquement en MySQL
+PREPARE stmt1 FROM @a;
+EXECUTE stmt1;
+DEALLOCATE PREPARE stmt1;";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "EXPLAIN SELECT Animal.nom,
+
+  $sqlTest = "EXPLAIN SELECT Animal.nom,
 Adoption.prix, Adoption.date_reservation
 FROM Animal
   INNER JOIN Adoption ON Adoption.animal_id = Animal.id
 WHERE date_reservation >= '2012-05-01'";
-  $req( $sql, $pdo );
+  $req( $sqlTest, $pdo );
 
 
-  $sql = "ALTER TABLE Adoption
-ADD INDEX ind_date_reservation (date_reservation);";
+  // ALTER TABLE table ADD INDEX index_name
+  //  $sql = "ALTER TABLE Adoption ADD INDEX date_reservation( date_reservation );";
+
+  echo '<p>Ajout d\'un index s\'il n\'existe pas déjà</p>';
+  $sql = "SELECT if (
+exists(
+  SELECT DISTINCT INDEX_NAME
+        FROM information_schema . statistics
+        WHERE table_schema = 'ocr2'
+AND table_name = 'Adoption' AND INDEX_NAME LIKE 'date_reservation'
+    )
+    , 'select ''index date_reservation exists'' _______;'
+    , 'create index date_reservation on Adoption(date_reservation)')
+INTO @a;
+-- ______  en guise d'alias
+PREPARE stmt1 FROM @a;
+EXECUTE stmt1;
+DEALLOCATE PREPARE stmt1;";
   affLign( $sql );
   $pdo->query( $sql );
-
-  $sql = "EXPLAIN SELECT Animal.nom,
-Adoption.prix, Adoption.date_reservation
-FROM Animal
-  INNER JOIN Adoption ON Adoption.animal_id = Animal.id
-WHERE date_reservation >= '2012-05-01'";
-  $req( $sql, $pdo );
+  $req( $sqlTest, $pdo );
 
   ?>
+  <p>=> Observer le nombre de rangs</p>
 
   <div class="jumbotron pt10">
     <h3>Exemple de comparaison du plan d'execution d'une requête</h3>
@@ -122,11 +147,27 @@ WHERE date_reservation >= '2012-05-01'";
     <p><i>(La colonne somme possède un index)</i></p>
   </div>
   <?php
-
+  $sql = "SELECT if (
+exists(
+  SELECT DISTINCT INDEX_NAME
+        FROM information_schema . statistics
+        WHERE table_schema = 'ocr2'
+AND table_name = 'VM_Revenus_annee_espece' AND INDEX_NAME LIKE 'somme'
+    )
+    , 'select ''index somme exists'' _______;'
+    , 'create index somme on VM_Revenus_annee_espece(VM_Revenus_annee_espece)')
+INTO @a;
+-- ______  en guise d'alias
+PREPARE stmt1 FROM @a;
+EXECUTE stmt1;
+DEALLOCATE PREPARE stmt1;";
+  affLign( $sql );
+  $pdo->query( $sql );
+  $req( $sqlTest, $pdo );
 
   $sql = "EXPLAIN SELECT *
 FROM VM_Revenus_annee_espece
-WHERE somme/2 > 1000;";
+WHERE somme / 2 > 1000;";
   $req( $sql, $pdo );
 
   $sql = "EXPLAIN SELECT *

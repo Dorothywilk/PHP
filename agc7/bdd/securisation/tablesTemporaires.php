@@ -23,7 +23,8 @@ namespace GC7;
 <div class="maingc7">
   <?php
 
-  $pdo = pdo();
+  $pdo = pdo('ocr2');
+
   $sql = "CREATE TEMPORARY TABLE TMP_Animal (
     id INT UNSIGNED PRIMARY KEY,
     nom VARCHAR(30),
@@ -50,14 +51,20 @@ ADD COLUMN date_naissance DATETIME;";
   <h3>Rôles principaux</h3>
 
   <p>Copie conforme de la structure :</p>
+
   <?php
+
   $sql = "CREATE TABLE IF NOT EXISTS Espece_copy
 LIKE Espece;";
   affLign( $sql );
   $pdo->query( $sql );
+
   ?>
+
   <p>Copie des données que l'on veut</p>
+
   <?php
+
   $sql = "INSERT INTO Espece_copy
 SELECT * FROM Espece
 WHERE prix < 100;";
@@ -78,7 +85,6 @@ FROM Espece_copy;";
 
   <?php
 
-
   $sql = "CREATE TEMPORARY TABLE Animal_copy
 SELECT *
 FROM Animal
@@ -93,7 +99,6 @@ WHERE espece_id = 5;";
   $req( $sql, $pdo );
 
   ?>
-
 
   <h3>Avec redéfinition de TYPE et re-création d'index (Et copie des data)</h3>
 
@@ -125,9 +130,7 @@ DESCRIBE Animal_copy;";
   $sql = "DESCRIBE Animal";
   $req( $sql, $pdo );
 
-
   ?>
-
 
   <h3>Utilité</h3>
 
@@ -135,8 +138,8 @@ DESCRIBE Animal_copy;";
     complexes</p>
 
   <P>Exemple : Faire une série de statistiques sur les adoptions de chiens</P>
-  <?php
 
+  <?php
 
   $sql = "CREATE TEMPORARY TABLE TMP_Adoption_chien
 SELECT Animal.id AS animal_id, Animal.nom AS animal_nom,
@@ -181,7 +184,6 @@ WHERE Animal.espece_id = 1;";
 
   <?php
 
-  $pdo = pdo();
   $sql = "-- DELIMITER |
 DROP    PROCEDURE IF EXISTS table_adoption_non_payee;
 CREATE  PROCEDURE table_adoption_non_payee()

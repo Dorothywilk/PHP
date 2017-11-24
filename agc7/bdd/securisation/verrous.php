@@ -130,6 +130,8 @@ namespace GC7;
     -- Session 1";
       //      $req( $sql ); // session 1
 
+      $pdo1 = pdo( 'ocr2' );
+
       $sql = "START TRANSACTION;" . $sql;
       // . $sql, null, 1 ); // session 1
       affLign( $sql );
@@ -146,7 +148,7 @@ namespace GC7;
       <p>On consulte donc la liste correspondante.</p>
       <?php
       $sql = 'select "Consultation de la liste des chats de la race \"Main Coon\"" as "1) Action pour le second client"';
-      $req( $sql, null, 1 );
+      $req( $sql, $pdo1, 1 );
 
       $sql = "SELECT Animal.id, Animal.nom, Animal.date_naissance,
            Race.nom as race, COALESCE(Race.prix, Espece.prix) as prix
@@ -163,7 +165,7 @@ namespace GC7;
 
     -- Session 2 (Normalement aussi avec un verrou exclusif (FOR UPDATE)";
 
-      $pdo2 = pdo();
+      $pdo2 = pdo( 'ocr2' );
 
       ?>
       <p>À son tour, il réfléchit un peu, mais a déjà un petit faible pour Bagherra...</p>
@@ -203,7 +205,7 @@ WHERE email = 'jean.dupont@email.com'
           -- ... qui n'ont pas encore été adoptés";
 
 
-      $req( $sql ); // session 2
+      $req( $sql, $pdo2 ); // session 2
 
       $sql = "INSERT INTO Client (nom, prenom, email)
     VALUES ('Durant', 'Philippe', 'phidu@email.com');
@@ -262,7 +264,7 @@ AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
       //  $pdo1 = $req( "START TRANSACTION;" . $sqlini . "
       //   FOR UPDATE;", null, 1 ); // session 1
 
-      $pdo1 = pdo();
+      $pdo1 = pdo( 'ocr2' );
 
       $sql = "START TRANSACTION;
 " . $sqlini . "FOR UPDATE;";
@@ -295,16 +297,31 @@ AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
 
     -- Session 1";
       affLign( $sqlins );
-      //      $pdo1->query( $sqlins );
+      //      $pdo1->query( $sqlins, $pdo1 );
 
       //      $pdo1 = $req( $sqlins, $pdo1, 1 ); // session 1
 
-      $pdo2 = pdo();
+      $pdo2 = pdo( 'ocr2' );
 
       $sql = 'select "Consultation de la liste des chats de la race \"Main Coon\"" as "1) Action pour le second client"';
       $req( $sql, $pdo2, 1 );
 
+      $simuSql = "SELECT Animal.id, Animal.nom, Animal.date_naissance,
+       Race.nom as race, COALESCE(Race.prix, Espece.prix) as prix
+FROM Animal
+  INNER JOIN Espece
+  ON Animal.espece_id = Espece.id
+  INNER JOIN Race
+  ON Animal.race_id = Race.id
+     -- Jointure interne cette fois
+WHERE Race.nom = 'Maine Coon'
+      -- Uniquement les Maine Coon...
+AND   Animal.id NOT IN (SELECT animal_id FROM Adoption)
+      -- ... qui n'ont pas encore été adoptés
+AND Animal.id <> 8
+      -- Pour simuler effet visible par \$pdo2
 
+--  Session 2";
       $sql = "SELECT Animal.id, Animal.nom, Animal.date_naissance,
        Race.nom as race, COALESCE(Race.prix, Espece.prix) as prix
 FROM Animal
@@ -321,44 +338,52 @@ LOCK IN SHARE MODE
 
 -- Session 2";
       affLign( $sql );
+      $req( $simuSql, $pdo2, 1 ); // session 2
       //      $pdo2->query( $sql );
-      //      $req( $sql, null, 1 ); // session 2
-
-      //  $sql = "commit";
-      //  $req( $sql, $pdo2 ); // session 1
 
       ?>
 
       <p class="green-text">Et cette fois, il ne peut plus y avoir de choix sur Bagherra, puisque
         plus dans le listing <i class="fa fa-like icon"></i></p>
 
-      <p>Pourtant, la requête d'adoption du client 1 n'est pas réellement encore faite... Procédons
+      <p>Pourtant, la requête d'adoption du client 1 n'est pas réellement encore faite...
+
+        <?php
+        affLign( $sql . ' => session 1' );
+        $req( $sql, $pdo2, 1 ); // session 2
+        ?>
+
+
+        Procédons
         maintenant !</p>
 
       <?php
 
       aff( $sqlins );
 
-      $sql = "commit
+      $sql = "commit;
 -- session 1";
       affLign( $sql );
-      //      $req( $sql, $pdo1 ); // session 1
+      // $req( $sql, $pdo1 ); // session 1
       $pdo1->query( $sql );
 
-      $sql = "rollback
+      $sql = "rollback;
 -- session 2";
       affLign( $sql );
       $pdo2->query( $sql );
 
       $sql = 'delete from adoption where client_id=1 and animal_id=8';
-      //  $req( $sql, null, 1 );
-      $sql = "select * from Adoption where animal_id=8";
-      $req( $sql ); // session 1
+      // $pdo1->query( $sql );
 
-      // Attention: Comme les transactions mettent en attente certaines répponse aux requêtes, le script PHP s'en trouve bloqué... Aussi, l'ordre des requêtes ci-dessous a été adapté pour similer le réel comportement, mais en réel, l'affichage des chats Maine Coon pour le client 2 se fait avant l'adoption de Baghérra par le premier client
+      $sql = "select * from Adoption where animal_id=8";
+      $req( $sql, $pdo1 ); // session 1
+
+      // Attention: Comme les transactions mettent en attente certaines réponse aux requêtes, le script PHP s'en trouve bloqué... Aussi, l'ordre des requêtes ci-dessous a été adapté pour similer le réel comportement, mais en réel, l'affichage des chats Maine Coon pour le client 2 se fait avant l'adoption de Baghérra par le premier client
 
 
       ?>
+      <h3>Niveaux d'Isolation</h3>
+
       <p>Repeatable read signifie "lecture répétable", c'est-à-dire que si l'on fait plusieurs
         requêtes de sélection (non-verrouillantes) de suite, elles donneront toujours le même
         résultat, quels que soient les changements effectués par d'autres sessions.</p>

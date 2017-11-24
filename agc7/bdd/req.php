@@ -36,6 +36,7 @@ namespace GC7;
 
 // Fonctions natives MySQL
 
+// Avec ocr1.sql
 //include( 'bases/functions.php' );
 //include( 'bases/functionsAgregation.php' );
 //include( 'bases/regroupement.php' );
@@ -45,21 +46,21 @@ namespace GC7;
 
 // Sécurisation
 
-include( 'securisation/transactions.php' );
-die( 'Oki 21' );
+//include( 'securisation/transactions.php' );
+// Avec ocr1.sql
 //include( 'securisation/verrous.php' );
 //include( 'securisation/requetesPreparees.php' );
 //include( 'securisation/procedures.php' );
-include( 'securisation/conditions.php' );
+//include( 'securisation/conditions.php' );
 //include( 'securisation/erreurs_curseurs.php' );
 //include( 'securisation/triggers.php' );
+
+
 //include( 'securisation/vues.php' );
 //include( 'securisation/tablesTemporaires.php' );
 //include( 'securisation/vuesMaterialisées.php' );
-//
-//include( 'tests.php' );
-//
-//
+
+
 //include( 'securisation/exo6.php' );
 //include( 'admin/infos.php' );
 //include( 'admin/config.php' );

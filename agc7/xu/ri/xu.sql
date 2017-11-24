@@ -14,8 +14,9 @@ USE aaxu;
 
 DROP TABLE IF EXISTS xu;
 
+-- #################################################################
 CREATE TABLE xu
--- colonnes
+  -- colonnes
     SELECT
       uid,
       uname,
@@ -28,8 +29,10 @@ CREATE TABLE xu
 
 
 SELECT count(*)
-FROM xu; -- 25 038 lignes
+FROM xu;
+-- 25 038 lignes
 
+-- #################################################################
 -- 3 mn
 DROP PROCEDURE IF EXISTS `getUpline`;
 SET @@max_sp_recursion_depth = 255;
@@ -57,3 +60,16 @@ CREATE PROCEDURE getUpline(
 DELIMITER ;
 
 SET AUTOCOMMIT = 1;
+
+-- #################################################################
+/*
+// Exemple requête père
+//$req = [
+//  'sql' => 'getPere1',
+//  'item' => 'Transport'
+//  //  'item' => 'Marin'
+//];
+//$maReq = new Requete( (Array) $req );
+//aff('Recherche Père');
+//affR( $maReq );
+*/

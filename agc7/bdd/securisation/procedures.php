@@ -26,7 +26,7 @@ namespace GC7;
   <h3>Exemple basique</h3>
   <?php
 
-  $pdo = pdo();
+  $pdo = pdo( 'ocr2' );
 
   $sql = "DROP PROCEDURE IF EXISTS uuu;
 
@@ -35,7 +35,6 @@ namespace GC7;
 CREATE PROCEDURE uuu(OUT p_var VARCHAR(255))
 
 BEGIN
-
   declare v_var INT default 0;
 
   set v_var = 7;
@@ -47,7 +46,6 @@ BEGIN
          'Var loc = ', v_var,
          ' - Résultat du IF(v_var = 7) = ',
          IF(v_var=7, 777, 333)) into p_var;
-
 -- END|
 -- DELIMITER ;
 
@@ -60,9 +58,6 @@ call uuu(@une_var);";
 
   $sql = "select @une_var";
   $req( $sql, $pdo );
-
-
-  $pdo = pdo();
 
   $sql = "-- Poser un DELIMITER uniquement avec MySQL Cli,
 -- pas en PHP
@@ -89,8 +84,6 @@ END;
   $req( $sql, $pdo );
 
 
-  $pdo = pdo();
-
   $sql = "DELIMITER | -- On change le délimiteur
 CREATE PROCEDURE afficher_races()
     -- Pas de paramètres, toujours des parenthèses
@@ -115,9 +108,9 @@ DELIMITER ;
 
   <?php
 
-  $pdo = pdo();
+  $sql = "DROP PROCEDURE IF EXISTS calculer_prix;
 
-  $sql = "DELIMITER |
+-- DELIMITER |
 
 CREATE PROCEDURE calculer_prix (IN p_animal_id INT,
                                 INOUT p_prix DECIMAL(7,2))
@@ -127,12 +120,11 @@ BEGIN
       INNER JOIN Espece ON Espece.id = Animal.espece_id
       LEFT JOIN Race ON Race.id = Animal.race_id
     WHERE Animal.id = p_animal_id;
-END |
-
-DELIMITER ;";
-
+-- END |
+END;
+-- DELIMITER ;";
   affLign( $sql );
-  //$pdo->query($sql);
+  $pdo->query( $sql );
 
   $sql = "SET @prix = 0;
 -- On initialise @prix à 0";
@@ -143,18 +135,18 @@ DELIMITER ;";
 -- Achat de Rouquine";
   affLign( $sql );
   $pdo->query( $sql );
+
   $sql = "SELECT @prix AS prix_intermediaire_1;";
   affLign( $sql );
   $pdo = $req( $sql, $pdo );
-  //  $pdo = $req( $sql );
 
   $sql = "CALL calculer_prix (24, @prix);  -- Achat de Cartouche";
   affLign( $sql );
   $pdo->query( $sql );
+
   $sql = "SELECT @prix AS prix_intermediaire_2;";
   affLign( $sql );
   $pdo = $req( $sql, $pdo );
-
 
   $sql = "CALL calculer_prix (42, @prix);
 -- Achat de Bilba";
@@ -165,13 +157,9 @@ DELIMITER ;";
   $pdo = $req( $sql, $pdo );
 
 
-  //  $pdo->query($sql);
+  $sql = "DROP PROCEDURE IF EXISTS aujourdhui_demain;
 
-
-  $pdo = pdo();
-
-  $sql = "-- DELIMITER |
-DROP PROCEDURE IF EXISTS aujourdhui_demain;
+-- DELIMITER |
 CREATE PROCEDURE aujourdhui_demain ()
 BEGIN
     DECLARE v_date DATE DEFAULT CURRENT_DATE();

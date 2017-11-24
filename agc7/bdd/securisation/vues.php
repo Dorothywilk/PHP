@@ -31,7 +31,9 @@ namespace GC7;
 
   <?php
 
-  $pdo = pdo();
+  $pdo = pdo( 'ocr2' );
+
+
   $sql = "-- DROP VIEW IF EXISTS V_Animal_details;
 -- Inutile avec OR REPLACE
 
@@ -44,20 +46,19 @@ namespace GC7;
            FROM Animal
                INNER JOIN Espece ON Animal.espece_id = Espece.id
                LEFT JOIN Race ON Animal.race_id = Race.id;";
-
   affLign( $sql );
-  //  $pdo->query( $sql );
+  $pdo->query( $sql );
 
   $sql = 'SELECT nom, espece_nom, race_nom FROM V_Animal_details limit 5';
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   $sql = 'SHOW TABLES;';
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   $sql = 'DESCRIBE V_Animal_details;';
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   echo '<h3>Vue avec agrégation</h3>';
@@ -66,12 +67,11 @@ AS SELECT Espece.id, nom_courant, COUNT(Animal.id) AS nb
 FROM Espece
 LEFT JOIN Animal ON Animal.espece_id = Espece.id
 GROUP BY Espece.id;";
-
   affLign( $sql );
   $pdo->query( $sql );
 
   $sql = 'SELECT * FROM V_Nombre_espece';
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   echo '<h3>Vue sur une vue</h3>';
@@ -80,31 +80,42 @@ AS SELECT id, sexe, date_naissance, nom, commentaires,
           espece_id, race_id, mere_id, pere_id, disponible
 FROM Animal
 WHERE espece_id = 1;";
-
   affLign( $sql );
   $pdo->query( $sql );
+
 
   $sql = "CREATE OR REPLACE VIEW V_Chien_race
 AS SELECT id, sexe, date_naissance, nom, commentaires,
           espece_id, race_id, mere_id, pere_id, disponible
 FROM V_Chien
 WHERE race_id IS NOT NULL;";
-
   affLign( $sql );
   $pdo->query( $sql );
 
+
   $sql = 'SELECT * FROM V_Chien_race limit 3';
-  $req( $sql );
+  affLign( $sql );
+//  $req( $sql, $pdo );
+
+    $sql = 'SELECT id, sexe, date_naissance, nom, commentaires
+FROM V_Chien_race limit 3';
+    $req( $sql, $pdo, 1 );
+
+    $sql = 'SELECT id, espece_id, race_id, mere_id, pere_id, disponible
+FROM V_Chien_race limit 3';
+    $req( $sql, $pdo, 1 );
 
   ?>
+
   <h3>Une vue s'utilise comme une table</h3>
+
   <?php
 
   $sql = "SELECT Race.nom, COUNT(V_Chien_race.id)
 FROM Race
   INNER JOIN V_Chien_race ON Race.id = V_Chien_race.race_id
 GROUP BY Race.nom;";
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   echo '<h3>Vue avec chaîne</h3>';
@@ -117,7 +128,7 @@ FROM Espece;";
   $pdo->query( $sql );
 
   $sql = 'SELECT * FROM V_Espece_dollars';
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   echo '<h3>Vue avec tri</h3>
@@ -134,14 +145,14 @@ ORDER BY nom;";
   $sql = "SELECT *
 FROM V_Race;
 -- Sélection sans ORDER BY, on prend l'ORDER BY de la définition";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   $sql = "SELECT *
 FROM V_Race
 ORDER BY espece;
 -- Sélection avec ORDER BY,
 -- c'est celui-là qui sera pris en compte";
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   echo '<h3>Usage pour simplifier lecture si requête complexe</h3>
@@ -158,14 +169,14 @@ GROUP BY annee, Espece.id;";
   $pdo->query( $sql );
 
   $sql = "SELECT * FROM V_Revenus_annee_espece";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   echo 'Avec une requête simple maintenant :';
 
   $sql = "SELECT annee, SUM(somme) AS total
 FROM V_Revenus_annee_espece
 GROUP BY annee;";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   echo 'Ou pour chaque espèce :';
   $sql = "SELECT Espece.nom_courant AS espece, SUM(somme) AS total
@@ -173,7 +184,7 @@ FROM V_Revenus_annee_espece
   INNER JOIN Espece
   ON V_Revenus_annee_espece.espece_id = Espece.id
 GROUP BY espece;";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   echo 'Ou encore, la moyenne que rapporte la vente d\'un individu pour chaque espèce :';
   $sql = "SELECT Espece.nom_courant AS espece,
@@ -182,7 +193,7 @@ FROM V_Revenus_annee_espece
   INNER JOIN Espece
   ON V_Revenus_annee_espece.espece_id = Espece.id
 GROUP BY espece;";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   ?>
 
@@ -205,7 +216,7 @@ GROUP BY espece;";
   $sql = "SELECT nom, date_naissance, pere_id
 FROM V_Chien
 WHERE pere_id IS NOT NULL;";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   echo '<h3><=></h3>';
 
@@ -213,7 +224,7 @@ WHERE pere_id IS NOT NULL;";
 FROM Animal
 WHERE espece_id = 1
 AND pere_id IS NOT NULL;";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   ?>
 

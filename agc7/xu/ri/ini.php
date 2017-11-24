@@ -14,7 +14,7 @@
       </li>
       <li>Boucle pour rejouer insertion du premier au dernier</li>
       <ul>
-        <li>Prépa table xu<br>
+        <li><i class="fa fa-check-square-o"></i> Prépa table xu<br>
           Vue -> xu (uid, uname, lv, typ, lva, lvp, parr) en ajoutant bg, bd, pf
         </li>
         <li>Boucle (LOOP)</li>
@@ -25,6 +25,9 @@
       </ul>
       <li>VM PHP4 pour refaire marcher ancien système complètement</li>
       <li>Appliquer B dans P100</li>
+      <h3 class="lead">Installer
+        <g>xu.sql</g>
+      </h3>
     </ol>
   </ul>
 

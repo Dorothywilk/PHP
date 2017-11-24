@@ -86,7 +86,7 @@ FROM Race;";
 
   <?php
 
-  $pdo = pdo();
+  $pdo = pdo('ocr2');
 
   $sql = 'SET @uid := 1, @aid=8';
   affLign( $sql );

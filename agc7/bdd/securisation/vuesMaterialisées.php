@@ -19,7 +19,8 @@ namespace GC7;
 <div class="maingc7">
   <?php
 
-  $pdo = pdo();
+  $pdo = pdo('ocr2');
+
   $sql = "CREATE TABLE IF NOT EXISTS VM_Revenus_annee_espece
 ENGINE = InnoDB
 SELECT YEAR(date_reservation) AS annee, Espece.id AS espece_id,
@@ -33,7 +34,7 @@ GROUP BY annee, Espece.id;";
   $pdo->query( $sql );
 
   $sql = "SELECT * FROM VM_Revenus_annee_espece limit 7";
-  $req( $sql );
+  $req( $sql, $pdo );
 
   ?>
   <p class="load">Au passage, on peut alors faire aisément :</p>
@@ -44,7 +45,7 @@ GROUP BY annee, Espece.id;";
        sum(somme) 'total:'
 from vm_revenus_annee_espece
 group by annee with rollup";
-  $req( $sql );
+  $req( $sql, $pdo );
 
 
   ?>

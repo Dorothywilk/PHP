@@ -46,8 +46,9 @@ namespace GC7;
 <div class="maingc7">
   <h3 class="lead">Exemple avec plusieurs gestionnaires : </h3>
   <?php
-  $pdo = pdo();
-  $sql = "DROP PROCEDURE ajouter_adoption_exit;
+  $pdo = pdo('ocr2');
+
+  $sql = "DROP PROCEDURE IF EXISTS ajouter_adoption_exit;
 -- DELIMITER |
 CREATE PROCEDURE ajouter_adoption_exit(IN p_client_id INT,
     IN p_animal_id INT, IN p_date DATE, IN p_paye TINYINT)
@@ -83,7 +84,7 @@ END;
   //  $pdo = $req( $sql );
   $sql = "CALL ajouter_adoption_exit(12, 3, @date_adoption, 1);
 -- Violation unicité (animal 3 est déjà adopté)";
-  $req( $sql );
+  $req( $sql, $pdo );
   ?>
   <h4 class="text-danger">Attention: Plusieurs sorties... (Une seule affichée ici)</h4>
 </div>

@@ -3,7 +3,7 @@
 -- Utiliser les tables remplies de p2pInsertion1.sql
 
 --  Adapter ce nom de base de données
--- USE ocr2;
+USE ocr3;
 -- Recommandé: PhpMyAdmin ( Copier / coller tout le fichier dans la case requête SQL) qui permettra d'avoir à la suite, les directives et leurs sorties
 
 -- HeidiSQL: ATTENTION: augmenter le nombre de sorties (Outils / Préférences / SQL/ Jeux de résultat maximum) à 20 par exemple pour avoir la totalité des sorties qui s'affichent (NB: Non bloquant, cette restriction native de HeidiSQL n'empêche pas le script de s'executer complètement)
@@ -273,9 +273,9 @@ CREATE TRIGGER `before_update_commentaire` BEFORE UPDATE ON `commentaire` FOR EA
         UPDATE article
         SET NEW.article_id = OLD.article_id
         WHERE id = OLD.article_id;
-        
-        -- Prod: Add 1 msg dans la table jobs_sys 
-        
+
+      -- Prod: Add 1 msg dans la table jobs_sys
+
       ELSE
 
         UPDATE article

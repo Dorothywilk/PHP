@@ -2,7 +2,9 @@
 namespace GC7;
 ?>
 <div class="jumbotron">
-  <h1 class="meaDo mt10 pb10"><a href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/fonctions-scalaires" target="_blank">Fonctions natives MySQL</a></h1>
+  <h1 class="meaDo mt10 pb10"><a
+      href="https://openclassrooms.com/courses/administrez-vos-bases-de-donnees-avec-mysql/fonctions-scalaires"
+      target="_blank">Fonctions natives MySQL</a></h1>
 
   <p>
   <ul>
@@ -14,6 +16,10 @@ namespace GC7;
   <p class="lead pt10">
     Mathématiques, chaînes, etc...
   </p>
+
+  <h3 class="lead">NB: Installer
+    <g>ocr1.sql</g>
+  </h3>
 </div>
 
 <div class="maingc7">
@@ -134,7 +140,6 @@ SELECT  CHAR_LENGTH("    abc "), CHAR_LENGTH(TRIM( "    abc "))';
 -- trouvée parmi les arguments, 0 est renvoyé.";
   $req( $sql );
 
-
   $sql = "SELECT nom_courant, nom_latin, FIELD(nom_courant, 'Rat brun', 'Chat',
 'Tortue d''Hermann', 'Chien', 'Perroquet amazone') AS resultat_field
 FROM Espece
@@ -188,6 +193,6 @@ limit 3";
     $sql = 'select id, name as pseudo, email, role from users where id in (1,15,16)';
     $req( $sql );
   */
-  
+
   ?>
 </div>

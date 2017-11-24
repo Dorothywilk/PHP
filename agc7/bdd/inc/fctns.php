@@ -24,7 +24,7 @@ function pdo( $bdd = 'ocr' )
 
 $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 //  aff( $pdo );
-  if ( ! isset( $inv ) ) affLign( $sql, 1 );
+  if ( !isset( $inv ) ) affLign( $sql, 1 );
   if ( null === $pdo ) {
 //    echo '<h1>Instanciation PDO</h1>';
     $pdo = pdo();

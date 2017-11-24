@@ -1,3 +1,5 @@
+use ocr3;
+
 -- Tables
 CREATE TABLE Article (
 	id INT UNSIGNED AUTO_INCREMENT,
@@ -8,13 +10,7 @@ CREATE TABLE Article (
 	date_publication DATETIME NOT NULL,
 	PRIMARY KEY(id)
 );
-CREATE PROCEDURE afficher_nombre_commentaire() 
-    -- pas de paramètres dans les parenthèses
-SELECT  date_publication,commentaire.id,	date_commentaire  FROM Article;
 
-CREATE PROCEDURE ecrire_resumé() 
-    -- pas de paramètres dans les parenthèses
-SELECT Article.resume FROM Article;
 
 CREATE TABLE Utilisateur (
 	id INT UNSIGNED AUTO_INCREMENT,

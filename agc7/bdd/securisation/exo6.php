@@ -10,11 +10,11 @@ namespace GC7;
       href="http://exercices.openclassrooms.com/assessment/223?login=441267&tk=31e3340fac83f036e28bc0016e777dc0&sbd=2016-02-01&sbdtk=fa78d6dd3126b956265a25af9b322d55"
       target="_blank">Exo final (6)</a></h1>
 
-  <p class="lead"><a
-      href="http://exercices.openclassrooms.com/assessment/223?login=441267&tk=31e3340fac83f036e28bc0016e777dc0&sbd=2016-02-01&sbdtk=fa78d6dd3126b956265a25af9b322d55"
-      target="_blank">Mission</a></p>
+  <p class="lead">(8/11/2017 - Env. 10 jours pour corr)</p>
 
-  <p class="lead">(8/11/2017 - Env. 5 jours pour corr)</p>
+  <h3 class="lead">NB: Installer
+    <g>exo6_data.sql</g>
+  </h3>
 
 </div>
 
@@ -41,7 +41,7 @@ namespace GC7;
 
   <?php
 
-  $pdo = pdo( 'ocr2' );
+  $pdo = pdo( 'ocr3' );
 
   $sql = "-- Retourne 1 si la colonne existe ou 0 sinon
 
@@ -59,9 +59,9 @@ BEGIN
   SELECT count(*) into p_exists from information_schema.columns
   where table_name =theTable and column_name=theColumn;
 END;
---END |";
-  //    affLign( $sql );
-  //    $pdo->query( $sql );
+-- END|";
+  affLign( $sql );
+  $pdo->query( $sql );
   //
   //  $sql = "call columnExists('nb_commentaires', 'article', @columnExists);";
   //  affLign( $sql );
@@ -70,15 +70,22 @@ END;
   //  $sql = "SELECT @columnExists";
   //  $req( $sql, $pdo );
 
-  $sql = "-- ADD COLUMN si elle n'existe pas déjà
-DROP PROCEDURE IF EXISTS addColumn;
 
--- DELIMITER |
-CREATE PROCEDURE addColumn(
-  IN  theColumn   VARCHAR(255),
-  IN  theTable    VARCHAR(255),
-  OUT p_addColumn VARCHAR(255)
-)
+  echo 'Éxécution de la procédure addColumn()';
+
+
+  $sql = "-- ADD COLUMN si elle n'existe pas déjà
+
+  DROP PROCEDURE IF EXISTS addColumn;
+
+  -- DELIMITER |
+
+  CREATE PROCEDURE addColumn(
+    IN  theColumn   VARCHAR(255),
+    IN  theTable    VARCHAR(255),
+    OUT p_addColumn VARCHAR(255)
+  )
+
   BEGIN
     CALL columnExists(theColumn, theTable, @columnExists);
     SET @theColumn = theColumn;
@@ -95,18 +102,19 @@ CREATE PROCEDURE addColumn(
           CONCAT(
               'ALTER TABLE ', @theTable,
               ' ADD COLUMN ', @theColumn,
-              ' INT UNSIGNED NULL')
+              ' INT UNSIGNED NULL') -- ToDoLi: Paramétrer ces options
       )
     )
     INTO p_addColumn;
     SET @query = p_addColumn;
     PREPARE st FROM @query;
     EXECUTE st;
-  -- END|
-  END;";
-  //  affLign( $sql );
-  //  $pdo->query( $sql );
-  //
+    -- END |
+    END;";
+
+  affLign( $sql );
+  $pdo->query( $sql );
+
   $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
   affLign( $sql );
   $pdo->query( $sql );
@@ -119,11 +127,11 @@ CREATE PROCEDURE addColumn(
   @columnExists,'<p class=\"fdBleuDo\">La colonne existe</p>',
   '<p class=\"fdRougeDo\">La colonne n\'existe pas</p>'
 ) as columnExists";
-  //  affLign( "select if(
-  //  @columnExists,'La colonne existe',  -- En bleu
-  //  'La colonne n\'existe pas'          -- En rouge
-  //) as columnExists" );
-  //  $req( $sql, $pdo, 0 );
+  affLign( "select if(
+    @columnExists,'La colonne existe',  -- En bleu
+    'La colonne n\'existe pas'          -- En rouge
+  ) as columnExists" );
+  $req( $sql, $pdo, 0 );
 
 
   // Effacement
@@ -159,44 +167,54 @@ CREATE PROCEDURE dropColumn(
   -- END|
   END;
 DELIMITER ;";
-  //  affLign( $sql );
-  //  $pdo->query( $sql );
-  //
-  //  $sql = "CALL dropColumn('nbuuu_commentaires', 'article', @doro);";
-  //  affLign( $sql );
-  //  $pdo->query( $sql );
-  //  //
-  //  $sql = "select @doro as Résultat;";
-  //  $req( $sql, $pdo );
+  affLign( $sql );
+  $pdo->query( $sql );
 
-  //  $sql = "show columns from article";
-  $sql = "SELECT column_name, column_type from information_schema.columns
-where table_schema='ocr2'
-  and table_name='article'
-  and column_name like '%comment%'";
-  //  $req( $sql );
-  // ALTER TABLE `article`
-  //	DROP COLUMN `nb_commentaires`;
+  $sql = "CALL dropColumn('nb_commentaires', 'article', @doro);";
+  affLign( $sql );
+  $pdo->query( $sql );
 
+  $sql = "select @doro as Résultat;";
+  $req( $sql, $pdo );
+  ?>
+
+  <h3>Relance même process</h3>
+
+  <?php
+  $sql = "CALL dropColumn('nb_commentaires', 'article', @doro);";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "select @doro as Résultat;";
+  $req( $sql, $pdo );
 
   ?>
-  <h3>=> Ajout d'une colonne dans article</h3>
-  <?php
 
-  //  $pdo = pdo( 'ocr2' );
+  <h3>=> Ajout d'une colonne dans articles</h3>
+
+  <?php
 
   $sql = "call addColumn('nb_commentaires', 'article', @p_addColumn);";
   affLign( $sql );
   $pdo->query( $sql );
 
+
+  //  $sql = "show columns from article";
+  $sql = "SELECT column_name, column_type from information_schema.columns
+where table_schema='ocr3'
+  and table_name='article'
+  and column_name like '%comment%'";
+  $req( $sql, $pdo );
+
   ?>
+
   <h3>=> Liaison à un trigger pour misa à jour automatique<br>
     de la colonne nb_commentaires dans Article</h3>
+
   <?php
 
-  //  $pdo = pdo( 'ocr2' );
-
   $sql = "DROP TRIGGER IF EXISTS after_insert_commentaire;
+
 -- Actualise nombre de commentaire par article
 
 CREATE TRIGGER `after_insert_commentaire` AFTER INSERT
@@ -208,11 +226,10 @@ BEGIN
    FROM commentaire
    WHERE article_id = article.id
    GROUP BY article_id);
-END
-";
+END;";
   affLign( $sql );
   $pdo->query( $sql );
-  //  $req( $sql );
+  //  $req( $sql, $pdo );
 
   ?>
 
@@ -227,7 +244,7 @@ END
   echo NULL + 1;
 
 
-  echo str_repeat( '<br>', 28 ); // 28
+  echo str_repeat( '<br>', 3 ); // 28
 
 
   ?>
@@ -245,7 +262,6 @@ END
 
   ?>
 
-
   <p class="jumbotron lead pt10">3/ Mise en place de stats stockées dont la maj se fera à la demande
     :
   <ul>
@@ -255,7 +271,6 @@ END
     <li>Et la date du dernier commentaire.</li>
   </ul>
   </p>
-
 
   <!--
 // $pdo = pdo( 'ocr2' );
@@ -268,6 +283,6 @@ END
 -->
 
   <?php
-  echo str_repeat( '<br>', 28 ); // 28
+  echo str_repeat( '<br>', 3 ); // 28
   ?>
 </div>

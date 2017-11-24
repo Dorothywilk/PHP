@@ -4,6 +4,10 @@ body {
     font-size: 1em;
 }
 
+hr {
+    line-height: 1;
+}
+
 .maingc7 {
     font-family: roboto, "Arial", sans-serif;
     font-size: 1.2em;

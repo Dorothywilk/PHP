@@ -17,26 +17,22 @@ namespace GC7;
   $pdo = $req( $sql );
 
   ?>
+
   <h3>Simple <code>IF(cond, 1, 0)</code> ou <code>IF ... THEN ...</code></h3>
+
   <?php
-  $sql = "SELECT IF(1=1,'oui','non') as '1 = 1 ?'";
+  $sql = "SELECT IF(1=1,'Oui','Non') as '1 = 1 ?'";
+  $pdo = $req( $sql );
   ?>
 
   <h3>IF() dans une procédure (est_adopté)</h3>
 
-
   <?php
-  $pdo = $req( $sql );
-  $pdo = pdo();
-  $sql = "DROP PROCEDURE IF EXISTS est_adopte;";
-  AffLign( $sql );
-  $pdo->query( $sql );
+  $pdo = pdo( 'ocr2' );
 
-  //  $sql = "DELIMITER |";
-  //  AffLign( $sql );
-  //  $pdo->query( $sql );
+  $sql = "DROP PROCEDURE IF EXISTS est_adopte;
 
-  $sql = "CREATE PROCEDURE est_adopte(IN p_animal_id INT)
+CREATE PROCEDURE est_adopte(IN p_animal_id INT)
 BEGIN
     DECLARE v_nb INT DEFAULT 0;
     -- On crée une variable locale
@@ -53,57 +49,58 @@ BEGIN
         SELECT \"J'ai déjà été adopté !\" 'Adopté ?';
     END IF;
     -- Et on n'oublie surtout pas le END IF et le ; final
-END ;";
+END;";
+
   AffLign( $sql );
   $pdo->query( $sql );
-
-  //  $sql = "DELIMITER ;";
-  //  affLign( $sql );
-  //  $pdo->query( $sql );
-
 
   $sql = "CALL est_adopte(3);";
   $req( $sql, $pdo );
 
   ?>
+
   <h3>IF ELSE</h3>
+
   <?php
 
-  $sql = "DELIMITER |
+  $sql = "DROP PROCEDURE IF EXISTS message_sexe;
+
+  -- DELIMITER |
   CREATE PROCEDURE message_sexe(IN p_animal_id INT)
   BEGIN
-  DECLARE v_sexe VARCHAR(10);
+    DECLARE v_sexe VARCHAR(10);
 
-  SELECT sexe INTO v_sexe
-  FROM Animal
-  WHERE id = p_animal_id;
+    SELECT sexe INTO v_sexe
+    FROM Animal
+    WHERE id = p_animal_id;
 
-  IF (v_sexe = 'F') THEN      -- Première possibilité
-    SELECT 'Je suis une femelle !' AS sexe;
-  ELSEIF (v_sexe = 'M') THEN  -- Deuxième possibilité
-    SELECT 'Je suis un mâle !' AS sexe;
-  ELSE                        -- Défaut
-    SELECT 'Je suis en plein questionnement existentiel...'
-           AS sexe;
-  END IF;
-  END|
-  DELIMITER ;";
+    IF (v_sexe = 'F') THEN      -- Première possibilité
+      SELECT 'Je suis une femelle !' AS sexe;
+    ELSEIF (v_sexe = 'M') THEN  -- Deuxième possibilité
+      SELECT 'Je suis un mâle !' AS sexe;
+    ELSE                        -- Défaut
+      SELECT 'Je suis en plein questionnement existentiel...'
+             AS sexe;
+    END IF;
+  -- END|
+  END ;
+  -- DELIMITER ;";
 
   affLign( $sql );
-  //    $pdo->query( $sql );
+  $pdo->query( $sql );
 
   // Indique quelle datbase est utilisée
   $sql = 'select database();';
   $req( $sql, $pdo );
 
-  $pdo = pdo( 'ocr2' );
+  //  $pdo = pdo( 'ocr2' );
 
-  $sql = 'select database();';
-  $req( $sql, $pdo );
+  //  $sql = 'select database();';
+  //  $req( $sql, $pdo );
 
   $sql = "CALL message_sexe(8);   -- Mâle";
   $req( $sql, $pdo );
-  
+
   $sql = "CALL message_sexe(6);   -- Femelle";
   $req( $sql, $pdo );
 
@@ -111,14 +108,25 @@ END ;";
   $sql = "CALL message_sexe(9);   -- Ni l'un ni l'autre";
   $req( $sql, $pdo );
 
-
   ?>
+
   <h3>CASE</h3>
+
   <?php
 
-  $sql = "DELIMITER |
-CREATE PROCEDURE message_sexe2(IN p_animal_id INT)
-BEGIN
+  $sql = 'select database();';
+  $req( $sql, $pdo );
+
+  $pdo = pdo( 'ocr' );
+
+  $sql = 'select database();';
+  $req( $sql, $pdo );
+
+  $sql = "DROP PROCEDURE IF EXISTS message_sexe2;
+
+  -- DELIMITER |
+  CREATE PROCEDURE message_sexe2(IN p_animal_id INT)
+  BEGIN
    DECLARE v_sexe VARCHAR(10);
 
    SELECT sexe INTO v_sexe
@@ -134,16 +142,18 @@ BEGIN
          SELECT 'Je suis en plein questionnement existentiel...'
          AS sexe2;
    END CASE;
-END|
-DELIMITER ;";
+  -- END |
+  END ;
+  -- DELIMITER;";
 
   affLign( $sql );
-  //  $pdo->query( $sql );
+  $pdo->query( $sql );
 
 
   $sql = "CALL message_sexe2(8);   -- Mâle";
-  $req( $sql, $pdo );
-
+  //  $req( $sql, $pdo );
+  //echo 'ok';
+  //  exit;
 
   $sql = "CALL message_sexe2(6);   -- Femelle";
   $req( $sql, $pdo );
