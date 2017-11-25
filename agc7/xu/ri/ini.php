@@ -39,12 +39,12 @@
   Ready.
   <?php
 
-  // Todoli quintescence => meilleur
-  // TodoLi Ralentir slide // thierry
+  // Todoli quintescence => meilleur ds P100
+  // TodoLi Ralentir slide // thierry ds P100
 
   $pdo = pdo( 'aaxu' );
 
-  $sql = "SELECT * from xu limit 20";
+  $sql = "SELECT * from xu limit 21";
   $req( $sql, $pdo );
 
   //  affLign( $sql ); // Pour requête sans affichage de réponse
