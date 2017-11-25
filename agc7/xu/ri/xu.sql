@@ -27,6 +27,7 @@ CREATE TABLE xu
       parr
     FROM www_boos2013.xoops_users;
 
+use aaxu;
 
 SELECT count(*)
 FROM xu;
@@ -73,3 +74,7 @@ SET AUTOCOMMIT = 1;
 //aff('Recherche Père');
 //affR( $maReq );
 */
+
+
+select prenom from www_boos2013.xoops_users
+where uname = '%aad%';

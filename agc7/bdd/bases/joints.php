@@ -34,7 +34,7 @@ namespace GC7;
   echo 'Animaux: ' . $nbr( 'animaux' ) . '<br>'; // Aff 64
   */
   //    echo '<p>Ok</p>';
-  $pdo = pdo( 'ocr' );
+  $pdo = pdo( 'ocr2' );
 
   $sql = 'UPDATE animal SET commentaires = "" WHERE id=10';
   affLign( $sql );

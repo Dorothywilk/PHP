@@ -27,8 +27,8 @@ namespace GC7;
 
 
 // Bases
-
-include( 'bases/subReq.php' );
+//todoli controler ok les 4 suivants
+//include( 'bases/subReq.php' );
 //include( 'bases/joints.php' );
 //include( 'bases/union.php' );
 //include( 'bases/foreign_key.php' );
@@ -37,7 +37,7 @@ include( 'bases/subReq.php' );
 // Fonctions natives MySQL
 
 // Avec ocr1.sql
-//include( 'bases/functions.php' );
+include( 'bases/functions.php' );
 //include( 'bases/functionsAgregation.php' );
 //include( 'bases/regroupement.php' );
 //include( 'bases/date.php' );
@@ -46,8 +46,8 @@ include( 'bases/subReq.php' );
 
 // Sécurisation
 
-//include( 'securisation/transactions.php' );
 // Avec ocr1.sql
+//include( 'securisation/transactions.php' );
 //include( 'securisation/verrous.php' );
 //include( 'securisation/requetesPreparees.php' );
 //include( 'securisation/procedures.php' );
