@@ -19,7 +19,7 @@
         <li><i class="fa fa-check-square-o"></i> Vue -> xu (uid, uname, lv, typ, lva, lvp, parr) en
           ajoutant bg, bd, pf + indexes
         </li>
-        <li>Boucle (LOOP) pour update de bg, bd et pf/li>
+        <li>Boucle (LOOP) pour update de bg, bd et pf</li>
         <li>Tests</li>
         <li>Appliquer dans P100 (OCMS)<br>
           (Avec migration + seeder)
