@@ -90,31 +90,34 @@ $f = insert( 'Nico', 6, $f );
 $f = insert( 'Félicien', 7, $f );
 $f = insert( 'Quentin', 6, $f );
 $f = insert( 'Pina', 1, $f );
+$f = insert( 'Thierry', 1, $f );
+$f = insert( 'Christophe', 1, $f );
+
 
 ?>
 
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-        <th style="text-align:center"> Avant</th>
-        <th style="text-align:center"> Après</th>
-        <tr>
-            <td>
-                <?php
+  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <th style="text-align:center"> Avant</th>
+    <th style="text-align:center"> Après</th>
+    <tr>
+      <td>
+        <?php
         affGroupe( $f );
         ?>
-            </td>
-            <td>
-                <?php
+      </td>
+      <td>
+        <?php
 
         $f = insert( 'Mère de Nico', 7, $f );
 
         affGroupe( $f );
         ?>
-            </td>
-        </tr>
-    </table>
-    <hr>
+      </td>
+    </tr>
+  </table>
+  <hr>
 
-    <?php
+<?php
 
 $gr = getGroupe( 1, $f );
 
