@@ -19,7 +19,7 @@ $nf = function ( $n ) { return ( ( $n > 10 ) ? number_format( $n, 2, ',', ' ' ) 
 //include 'cours/array.php';
 
 //include 'cours/conditions.php';
-
+//include 'cours/formulaire.php';
 include 'cours/formulaire2.php';
 // TodoDo Expliquer à la Puce
 // include 'cours/coursmooc.php'; // TodoDo Expliquer à la Puce
