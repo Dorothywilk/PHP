@@ -12,14 +12,25 @@ CREATE DATABASE `aaxu`
 USE aaxu;
 
 
-DROP TABLE IF EXISTS xu;
-
 -- #################################################################
-CREATE TABLE xu
-  -- colonnes
+DROP TABLE IF EXISTS xu;
+CREATE TABLE `xu` (
+  `id`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  `pseudo` VARCHAR(25)      NULL,
+  `lv`     TINYINT(2)       NOT NULL DEFAULT '0',
+  `typ`    CHAR(2)          NOT NULL DEFAULT '',
+  `lva`    TINYINT(5)       NOT NULL DEFAULT '0',
+  `lvp`    TINYINT(5)       NOT NULL DEFAULT '0',
+  `parr`   VARCHAR(50)      NOT NULL DEFAULT '0',
+  `bg`     TINYINT(5)       NOT NULL DEFAULT '0',
+  `bd`     TINYINT(5)       NOT NULL DEFAULT '0',
+  `pf`     TINYINT(5)       NOT NULL DEFAULT '0'
+)
+  COLLATE = 'latin1_general_ci'
+  ENGINE = InnoDB
     SELECT
-      uid,
-      uname,
+      uid as id,
+      uname as pseudo,
       lv,
       typ,
       lva,
@@ -27,11 +38,8 @@ CREATE TABLE xu
       parr
     FROM www_boos2013.xoops_users;
 
-use aaxu;
-
-SELECT count(*)
+SELECT *
 FROM xu;
--- 25 038 lignes
 
 -- #################################################################
 -- 3 mn
@@ -74,7 +82,3 @@ SET AUTOCOMMIT = 1;
 //aff('Recherche Père');
 //affR( $maReq );
 */
-
-
-select prenom from www_boos2013.xoops_users
-where uname = '%aad%';

@@ -16,7 +16,9 @@
       <li>Boucle pour rejouer insertion du premier au dernier</li>
       <ul>
         <li><i class="fa fa-check-square-o"></i> Prépa table xu</li>
-        <li>Vue -> xu (uid, uname, lv, typ, lva, lvp, parr) en ajoutant bg, bd, pf + indexes</li>
+        <li><i class="fa fa-check-square-o"></i> Vue -> xu (uid, uname, lv, typ, lva, lvp, parr) en
+          ajoutant bg, bd, pf + indexes
+        </li>
         <li>Boucle (LOOP)</li>
         <li>Tests</li>
         <li>Appliquer dans P100 (OCMS)<br>
@@ -40,10 +42,10 @@
   // Todoli quintescence => meilleur
   // TodoLi Ralentir slide // thierry
 
-  $pdo = pdo();
+  $pdo = pdo( 'aaxu' );
 
-  //  $sql = "SELECT 1";
-  //  $req( $sql, $pdo );
+  $sql = "SELECT * from xu limit 20";
+  $req( $sql, $pdo );
 
   //  affLign( $sql ); // Pour requête sans affichage de réponse
   //  $pdo->query( $sql );
