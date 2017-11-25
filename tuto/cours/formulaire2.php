@@ -29,9 +29,13 @@
        </select>
    </p>
      <?php
+      echo '<hr>';
    
-   echo '<hr>';
-     ?>
+   // ToDoDo Ajouter bouton pour valider le choix et aller dans traitement
+   
+   ?>
+     
+   
 </form>    
   
    <form method="post" action="traitement.php">

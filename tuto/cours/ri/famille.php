@@ -110,7 +110,7 @@ $f = insert( 'Pina', 1, $f );
         $f = insert( 'Thierry', 8, $f );
         $f = insert( 'Christophe', 9, $f );
         $f = insert( 'Christian', 8, $f );
-        
+
         affGroupe( $f );
 
         ?>
