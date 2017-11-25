@@ -90,8 +90,6 @@ $f = insert( 'Nico', 6, $f );
 $f = insert( 'Félicien', 7, $f );
 $f = insert( 'Quentin', 6, $f );
 $f = insert( 'Pina', 1, $f );
-$f = insert( 'Thierry', 1, $f );
-$f = insert( 'Christophe', 1, $f );
 
 
 ?>
@@ -109,8 +107,12 @@ $f = insert( 'Christophe', 1, $f );
         <?php
 
         $f = insert( 'Mère de Nico', 7, $f );
-
+        $f = insert( 'Thierry', 8, $f );
+        $f = insert( 'Christophe', 9, $f );
+        $f = insert( 'Christian', 8, $f );
+        
         affGroupe( $f );
+
         ?>
       </td>
     </tr>
