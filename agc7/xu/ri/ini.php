@@ -16,7 +16,7 @@
       <li>Boucle pour rejouer insertion du premier au dernier</li>
       <ul>
         <li><i class="fa fa-check-square-o"></i> Prépa table xu</li>
-        <li><i class="fa fa-check-square-o"></i> Vue -> xu (uid, uname, lv, typ, lva, lvp, parr) en
+        <li><i class="fa fa-check-square-o"></i> Table -> xu (uid, uname, lv, typ, lva, lvp, parr) en
           ajoutant bg, bd, pf + indexes
         </li>
         <li>Boucle (LOOP) pour update de bg, bd et pf</li>
