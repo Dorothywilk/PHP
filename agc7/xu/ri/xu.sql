@@ -1,3 +1,6 @@
+USE aaxu;
+
+
 SET AUTOCOMMIT = 0;
 SET @@max_sp_recursion_depth = 255;
 
@@ -9,7 +12,6 @@ DROP DATABASE IF EXISTS `aaxu`;
 CREATE DATABASE `aaxu`
   DEFAULT CHARACTER SET `latin1`
   DEFAULT COLLATE `latin1_general_ci`;
-USE aaxu;
 
 
 -- #################################################################
@@ -45,31 +47,34 @@ FROM xu;
 -- 3 mn
 DROP PROCEDURE IF EXISTS `getUpline`;
 SET @@max_sp_recursion_depth = 255;
+
 DELIMITER |
 CREATE PROCEDURE getUpline(
   IN    ori      INT,
-  INOUT pere     INT,
+  INOUT parrain     INT,
   INOUT reponses VARCHAR(255)
 )
   BEGIN
-    SELECT xu
-    INTO pere
-    FROM FAMILLE
-    WHERE FAM_ID = ori;
+    SELECT pseudo
+    INTO parrain
+    FROM xu
+    WHERE pseudo = ori;
 
-    IF pere IS NULL
+    IF parrain IS NULL
     THEN
       SELECT reponses AS Upline;
     ELSE
-      SET reponses = concat(reponses, ', ', pere);
-      SET ori = pere;
-      CALL getUpline(pere, pere, reponses);
+      SET reponses = concat(reponses, ', ', parrain);
+      SET ori = parrain;
+      CALL getUpline(parrain, parrain, reponses);
     END IF;
   END |
 DELIMITER ;
 
 SET AUTOCOMMIT = 1;
 
+
+call  getUpline(6,@parrain, @reponse);
 -- #################################################################
 /*
 // Exemple requête père
