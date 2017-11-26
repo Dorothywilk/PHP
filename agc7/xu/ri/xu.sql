@@ -17,27 +17,31 @@ CREATE DATABASE `aaxu`
 -- #################################################################
 DROP TABLE IF EXISTS xu;
 CREATE TABLE `xu` (
-  `id`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
-  `pseudo` VARCHAR(25)      NULL,
-  `lv`     TINYINT(2)       NOT NULL DEFAULT '0',
-  `typ`    CHAR(2)          NOT NULL DEFAULT '',
-  `lva`    TINYINT(5)       NOT NULL DEFAULT '0',
-  `lvp`    TINYINT(5)       NOT NULL DEFAULT '0',
-  `parr`   VARCHAR(50)      NOT NULL DEFAULT '0',
-  `bg`     TINYINT(5)       NOT NULL DEFAULT '0',
-  `bd`     TINYINT(5)       NOT NULL DEFAULT '0',
-  `pf`     TINYINT(5)       NOT NULL DEFAULT '0'
+  `id`      INT(11) UNSIGNED NOT NULL DEFAULT '0',
+  `pseudo`  VARCHAR(25)      NULL,
+  `lv`      TINYINT(2)       NOT NULL DEFAULT '0',
+  `typ`     CHAR(2)          NOT NULL DEFAULT '',
+  `lva`     TINYINT(5)       NOT NULL DEFAULT '0',
+  `lvp`     TINYINT(5)       NOT NULL DEFAULT '0',
+  `parrain` VARCHAR(50)      NOT NULL DEFAULT '0',
+  `parr`    INT(11)          NULL     DEFAULT '0',
+  `bg`      TINYINT(5)       NOT NULL DEFAULT '0',
+  `bd`      TINYINT(5)       NOT NULL DEFAULT '0',
+  `pf`      TINYINT(5)       NOT NULL DEFAULT '0'
 )
   COLLATE = 'latin1_general_ci'
   ENGINE = InnoDB
     SELECT
-      uid as id,
-      uname as pseudo,
+      uid                     AS id,
+      uname                   AS pseudo,
       lv,
       typ,
       lva,
       lvp,
-      parr
+      parr                    AS parrain,
+      (SELECT uid
+       FROM www_boos2013.xoops_users
+       WHERE uname = parrain) AS parr
     FROM www_boos2013.xoops_users;
 
 SELECT *
@@ -51,30 +55,37 @@ SET @@max_sp_recursion_depth = 255;
 DELIMITER |
 CREATE PROCEDURE getUpline(
   IN    ori      INT,
-  INOUT parrain     INT,
+  INOUT parr     INT,
   INOUT reponses VARCHAR(255)
 )
   BEGIN
-    SELECT pseudo
-    INTO parrain
+    SELECT parr
+    INTO parr
     FROM xu
-    WHERE pseudo = ori;
+    WHERE id = ori;
 
-    IF parrain IS NULL
+    IF parr IS NULL
     THEN
       SELECT reponses AS Upline;
     ELSE
-      SET reponses = concat(reponses, ', ', parrain);
-      SET ori = parrain;
-      CALL getUpline(parrain, parrain, reponses);
+      SET reponses = concat(reponses, ', ', parr);
+      SET ori = parr;
+      CALL getUpline(parr, parr, reponses);
     END IF;
   END |
 DELIMITER ;
 
-SET AUTOCOMMIT = 1;
+
+use aaxu;
+set @reponses='cathi';
+
+CALL getUpline(6, @parr, @reponses);
 
 
-call  getUpline(6,@parrain, @reponse);
+SELECT parr
+FROM xu
+WHERE id = 6;
+
 -- #################################################################
 /*
 // Exemple requête père
@@ -87,3 +98,18 @@ call  getUpline(6,@parrain, @reponse);
 //aff('Recherche Père');
 //affR( $maReq );
 */
+
+SELECT (SELECT id
+        FROM xu
+        WHERE parr = 'cathi')
+FROM xu
+WHERE id = 6;
+
+SELECT id
+FROM xu
+WHERE id = (SELECT id
+            FROM xu
+            WHERE parr = 'cathi');
+
+SET AUTOCOMMIT = 1;
+

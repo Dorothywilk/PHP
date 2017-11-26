@@ -340,7 +340,6 @@ FROM new_famille;
 
 
 -- Travaux sur xu
-USE www_boos2013;
 SELECT
   uid,
   uname,
@@ -349,6 +348,6 @@ SELECT
   lva,
   lvp,
   parr
-FROM xoops_users
+FROM www_boos2013.xoops_users
 ORDER BY uid DESC;
 
