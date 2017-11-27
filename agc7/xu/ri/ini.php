@@ -73,47 +73,70 @@ WHERE id =' . $id;
   }
 
 
-  getParr( 141 );
-  getParr( 81 );
-  getParr( 46 );
-  getParr( 6357 );
-  getParr( 6347 );
-  getParr( 6158 );
-  getParr( 6013 );
-  getParr( 5901 );
-  getParr( 3163 );
-  getParr( 2644 );
-  getParr( 2510 );
-  getParr( 2221 );
-  getParr( 2172 );
-  getParr( 18503 );
-  getParr( 17941 );
-  getParr( 2970 );
-  getParr( 203 );
-  getParr( 58 );
-  getParr( 12 );
-  getParr( 5 );
-  getParr( 2 );
-  getParr( 1 );
-  getParr( 15 );
+  //  getParr( 141 );
+  //  getParr( 81 );
+  //  getParr( 46 );
+  //  getParr( 6357 );
+  //  getParr( 6347 );
+  //  getParr( 6158 );
+  //  getParr( 6013 );
+  //  getParr( 5901 );
+  //  getParr( 3163 );
+  //  getParr( 2644 );
+  //  getParr( 2510 );
+  //  getParr( 2221 );
+  //  getParr( 2172 );
+  //  getParr( 18503 );
+  //  getParr( 17941 );
+  //  getParr( 2970 );
+  //  getParr( 203 );
+  //  getParr( 58 );
+  //  getParr( 12 );
+  //  getParr( 5 );
+  //  getParr( 2 );
+  //  getParr( 1 );
+  //  getParr( 15 );
 
 
+  function getParrId( $id )
+  {
+    global $req, $pdo;
 
+//    echo '<h3>XU</h3>';
+    $sql = 'SELECT parr
+FROM aaxu.xu
+WHERE id =' . $id;
+//    $req( $sql, $pdo, 1 );
+    $cnx = $pdo->query( $sql );
+    $rep = $cnx->fetch()[ 0 ];
+    return $rep;
+  }
 
+  function getUpline( $parr )
+  {
+    while ( $parr != 15 ) {
+//$parr++;
+      echo $parr . ' ';
+      $parr = getParrId( $parr );
 
+    }
+  }
 
+  getUpline( 3 );
 
-
+  echo getParrId( 3 ) . ' ';
+  echo getParrId( 2 ) . ' ';
+  echo getParrId( 1 ) . ' ';
 
 
   echo str_repeat( '<br>', 25 ); // 28
 
 
-  getParr( 10 );
-  getParr( 3 );
-  getParr( 2 );
-  getParr( 1 );
-  getParr( 15 );
+  //  getParr( 10 );
+  //  getParr( 3 );
+  //  getParr( 2 );
+  //  getParr( 1 );
+  //  getParr( 15 );
 
 
   // Rappel doc SLIDES_3013.ppt (Chapitre / optimisations)

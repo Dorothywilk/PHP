@@ -77,14 +77,13 @@ CREATE PROCEDURE getUpline(
   END |
 DELIMITER ;
 
-SET @@max_sp_recursion_depth = 255;
 use aaxu;
-SET @@max_sp_recursion_depth = 255;
+SET max_sp_recursion_depth = 255;
 SET @reponses = '141';
 CALL getUpline(141, @id, @reponses);
 
-SET @reponses = '10';
-CALL getUpline(10, @id, @reponses);
+SET @reponses = '50';
+CALL getUpline(50, @id, @reponses);
 
 
 USE aaxu;
