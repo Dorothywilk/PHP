@@ -108,6 +108,7 @@ FROM aaxu.xu
 WHERE id =' . $id;
 //    $req( $sql, $pdo, 1 );
     $cnx = $pdo->query( $sql );
+//    echo '<pre>'; var_dump( $cnx ); echo '</pre>';
     $rep = $cnx->fetch()[ 0 ];
     return $rep;
   }
@@ -116,29 +117,30 @@ WHERE id =' . $id;
   {
     while ( $parr != 15 ) {
 //$parr++;
-      echo $parr . ' ';
       $parr = getParrId( $parr );
+      echo ' ' . $parr;
 
     }
   }
 
-  getUpline( 3 );
+  //  getUpline( 13 );
+  echo getParrId( 12 );
+  echo '<hr>';
 
-  echo getParrId( 3 ) . ' ';
-  echo getParrId( 2 ) . ' ';
-  echo getParrId( 1 ) . ' ';
+  //  echo getParrId( 3 ) . ' ';
+  //  echo getParrId( 2 ) . ' ';
+  //  echo getParrId( 13 ) . ' ';
 
+
+  for ( $i = 1; $i < 30000; $i++ ) {
+    if ( getParrId( $i ) ) {
+
+      echo $i . ' : ';
+      getUpline( $i );
+      echo '<hr>';
+    }
+  }
 
   echo str_repeat( '<br>', 25 ); // 28
-
-
-  //  getParr( 10 );
-  //  getParr( 3 );
-  //  getParr( 2 );
-  //  getParr( 1 );
-  //  getParr( 15 );
-
-
-  // Rappel doc SLIDES_3013.ppt (Chapitre / optimisations)
   ?>
 </div>
