@@ -223,12 +223,13 @@ WHERE NFM_BG > 35
 SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG < 30
-      AND NFM_BD > 31
--- Avel l'élément de référence
+      AND NFM_BD > 31;
+
+-- Avec l'élément de référence
 SELECT *
 FROM NEW_FAMILLE
 WHERE NFM_BG <= 30
-      AND NFM_BD >= 31
+      AND NFM_BD >= 31;
 
 -- Le parrain
 SELECT *
@@ -273,7 +274,7 @@ WHERE NFM_BG <> NFM_BD - 1;
 
 
 -- Insertion d'un élément (Par la droite)
--- Exemple: Roller sous Terrestre
+-- Exemple: Roller sous Terrestre (2,35)
 -- Prod: Dans transaction
 UPDATE NEW_FAMILLE
 SET NFM_BD = NFM_BD + 2
