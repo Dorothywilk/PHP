@@ -46,9 +46,70 @@
 
   $pdo = pdo( 'aaxu' );
 
-  $sql = "SELECT * from xu limit 3";
-  $req( $sql, $pdo );
+  $sql = "SELECT * from xu limit 21";
+  //  $req( $sql, $pdo );
 
+
+  //    global $req;
+
+  function getParr( $id )
+  {
+    global $req, $pdo;
+    echo '<h3>B</h3>';
+    $sql = 'SELECT uid, uname,
+(SELECT uid
+FROM www_boos2013.xoops_users
+WHERE uname = xu.parr) as parrId, parr
+FROM www_boos2013.xoops_users xu
+WHERE uid =' . $id;
+    $req( $sql, $pdo, 1 );
+
+    echo '<h3>XU</h3>';
+    $sql = 'SELECT id, pseudo, parr, parrain
+FROM aaxu.xu
+WHERE id =' . $id;
+    $req( $sql, $pdo, 1 );
+    echo '<hr>';
+  }
+
+
+  function getParrId( $id )
+  {
+    global $req, $pdo;
+
+//    echo '<h3>XU</h3>';
+    $sql = 'SELECT parr
+FROM aaxu.xu
+WHERE id =' . $id;
+//    $req( $sql, $pdo, 1 );
+    $cnx = $pdo->query( $sql );
+//    echo '<pre>'; var_dump( $cnx ); echo '</pre>';
+    $rep = $cnx->fetch()[ 0 ];
+    return $rep;
+  }
+
+  function getUpline( $parr )
+  {
+    while ( $parr != 15 ) {
+//$parr++;
+      $parr = getParrId( $parr );
+      echo ' < ' . $parr;
+
+    }
+  }
+
+  echo getParrId( 12 );
+  echo '<hr>';
+
+
+  for ( $i = 1; $i < 30000; $i++ ) {
+    if ( getParrId( $i ) ) {
+
+      echo $i . ' : ';
+      getUpline( $i );
+      echo '<hr>';
+    }
+  }
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>

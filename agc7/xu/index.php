@@ -26,6 +26,7 @@
 
 include '../bdd/inc/fctns.php';
 
+//include 'ri/toutLeReseau.php';
 include 'ri/ini.php';
 
 
