@@ -17,8 +17,9 @@
    </fieldset>
    <p>
        <label for="pays">Choisissez votre option</label><br />
-       <select name="pays" id="pays">
-           <option value="france">Acceuil</option>
+       <select name="choix" id="choix">
+           <option value="#">Choisir</option>
+           <option value="variablesChaines">Chaînes</option>
            <option value="espagne">Jade</option>
            <option value="italie">SV</option>
            <option value="royaume-uni">Bulma</option>
@@ -79,4 +80,3 @@ echo str_repeat(' <br>', 10);
     
      
     
-     

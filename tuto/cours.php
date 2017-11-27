@@ -44,5 +44,5 @@ include 'cours/formulaire2.php';
 // include('initiation/tableau.php');
 //include ('initiation/tableauIndexe.php');
 
-include 'cours/ri/famille.php';
+include 'cours/ri/famille.php'; // RI = Représentation Intervallaire
 //include('cours/objets.php');

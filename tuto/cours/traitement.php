@@ -11,3 +11,8 @@ if(strtolower($prenom) == strtolower('Jade'))
   echo 'Salut ma puce';
 else
   echo 'Bonjour toi';
+
+
+// If ($choix == 'variablesChaines')
+// include ('cours/variablesChaines.php');
+
