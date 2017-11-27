@@ -38,7 +38,7 @@
 </div>
 
 <div class="maingc7">
-  Ready.
+  Membres ayant au moins un parrain.<hr>
   <?php
 
   // Todoli quintescence => meilleur ds P100
@@ -77,11 +77,9 @@ WHERE id =' . $id;
   {
     global $req, $pdo;
 
-//    echo '<h3>XU</h3>';
     $sql = 'SELECT parr
 FROM aaxu.xu
 WHERE id =' . $id;
-//    $req( $sql, $pdo, 1 );
     $cnx = $pdo->query( $sql );
 //    echo '<pre>'; var_dump( $cnx ); echo '</pre>';
     $rep = $cnx->fetch()[ 0 ];
@@ -91,15 +89,11 @@ WHERE id =' . $id;
   function getUpline( $parr )
   {
     while ( $parr != 15 ) {
-//$parr++;
       $parr = getParrId( $parr );
       echo ' < ' . $parr;
 
     }
   }
-
-  echo getParrId( 12 );
-  echo '<hr>';
 
 
   for ( $i = 1; $i < 30000; $i++ ) {
