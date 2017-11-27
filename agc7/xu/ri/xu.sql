@@ -49,53 +49,78 @@ ALTER TABLE aaxu.xu ADD PRIMARY KEY (id);
 SELECT *
 FROM xu;
 
--- #################################################################
--- 3 mn
-USE aaxu;
-DROP PROCEDURE IF EXISTS `getUpline`;
-SET @@max_sp_recursion_depth = 255;
-DELIMITER |
-CREATE PROCEDURE getUpline(
-  IN    ori      INT,
-  INOUT parrid   INT,
-  INOUT reponses VARCHAR(255)
-)
-  BEGIN
-    SELECT parr
-    INTO parrid
-    FROM xu
-    WHERE id = ori;
 
-    IF parrid IS NULL
-    THEN
-      SELECT reponses AS Upline;
-    ELSE
-      SET reponses = concat(reponses, ', ', parrid);
-      SET ori = parrid;
-      CALL getUpline(ori, parrid, reponses);
+CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition`(IN `p_ville` VARCHAR(100)) BEGIN
+  DECLARE v_nom, v_prenom VARCHAR(100);
+
+  DECLARE curs_clients CURSOR
+  FOR SELECT
+        nom,
+        prenom
+      FROM Client
+      WHERE ville = p_ville;
+
+  OPEN curs_clients;
+
+  LOOP
+    FETCH curs_clients
+    INTO v_nom, v_prenom;
+    SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
+  END LOOP;
+
+  CLOSE curs_clients;
+  END$$
+
+CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition2`(IN `p_ville` VARCHAR(100)) BEGIN
+  DECLARE v_nom, v_prenom VARCHAR(100);
+
+  -- On déclare fin comme un BOOLEAN, avec FALSE pour défaut
+  DECLARE fin BOOLEAN DEFAULT FALSE;
+
+  DECLARE curs_clients CURSOR
+  FOR SELECT
+        nom,
+        prenom
+      FROM Client
+      WHERE ville = p_ville;
+
+  -- On utilise TRUE au lieu de 1
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
+
+  OPEN curs_clients;
+
+  loop_curseur: LOOP
+    FETCH curs_clients
+    INTO v_nom, v_prenom;
+
+    IF fin
+    THEN -- Plus besoin de "= 1"
+      LEAVE loop_curseur;
     END IF;
-  END |
-DELIMITER ;
 
-use aaxu;
-SET max_sp_recursion_depth = 255;
-SET @reponses = '141';
-CALL getUpline(141, @id, @reponses);
+    SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
+  END LOOP;
 
-SET @reponses = '50';
-CALL getUpline(50, @id, @reponses);
+  CLOSE curs_clients;
+  END$$
 
+CREATE DEFINER =`root`@`localhost` PROCEDURE `test_iterate`() BEGIN
+  DECLARE v_i INT DEFAULT 0;
 
-USE aaxu;
--- SET @reponses = 'cathi';
+  boucle_while: WHILE v_i < 3 DO
+    SET v_i = v_i + 1;
+    SELECT
+      v_i,
+      'Avant IF' AS message;
 
-SELECT
-  id,
-  pseudo,
-  parrain
-FROM aaxu.xu;
+    IF v_i = 2
+    THEN
+      ITERATE boucle_while;
+    END IF;
 
-SELECT uid, uname, parr
-from www_boos2013.xoops_users;
-
-SHOW VARIABLES LIKE '%thread_stack%';
+    SELECT
+      v_i,
+      'Après IF' AS message;
+    -- Ne sera pas exécuté pour v_i = 2
+  END WHILE;
+  END$$
