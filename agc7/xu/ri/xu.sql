@@ -4,20 +4,27 @@ CREATE DATABASE `aaxu`
   DEFAULT COLLATE `latin1_general_ci`;
 
 USE aaxu;
--- #################################################################
+
+-- #################################################################################################
+--
+--                                       CRÉATION TABLE XU
+--
+-- #################################################################################################
 DROP TABLE IF EXISTS xu;
+
 CREATE TABLE `xu` (
-  `id`      INT(11) UNSIGNED NOT NULL DEFAULT '0',
-  `pseudo`  VARCHAR(25)      NULL     DEFAULT NULL COLLATE 'latin1_general_ci',
-  `lv`      TINYINT(2)       NOT NULL DEFAULT '0',
-  `typ`     CHAR(2)          NOT NULL DEFAULT '' COLLATE 'latin1_general_ci',
-  `lva`     TINYINT(5)       NOT NULL DEFAULT '0',
-  `lvp`     TINYINT(5)       NOT NULL DEFAULT '0',
-  `parrain` VARCHAR(50)      NOT NULL DEFAULT '0' COLLATE 'latin1_general_ci',
-  `parr`    INT(11)          NULL     DEFAULT '0',
-  `bg`      TINYINT(5)       NOT NULL DEFAULT '0',
-  `bd`      TINYINT(5)       NOT NULL DEFAULT '0',
-  `pf`      TINYINT(5)       NOT NULL DEFAULT '0',
+  `id`      INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
+  `pseudo`  VARCHAR(255)        NOT NULL
+  COLLATE 'latin1_general_ci',
+  `lv`      TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `typ`     CHAR(1)             NOT NULL DEFAULT 'A' COLLATE 'latin1_general_ci',
+  `lva`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `lvp`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `parrain` VARCHAR(255)        NULL     DEFAULT NULL COLLATE 'latin1_general_ci',
+  `parr`    INT(11) UNSIGNED    NULL     DEFAULT NULL,
+  `bg`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  `bd`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  `pf`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   INDEX `lv` (`lv`),
   INDEX `typ` (`typ`),
@@ -27,6 +34,7 @@ CREATE TABLE `xu` (
 )
   COLLATE = 'latin1_general_ci'
   ENGINE = InnoDB
+  AUTO_INCREMENT = 1
     SELECT
       uid                     AS id,
       uname                   AS pseudo,
@@ -39,27 +47,34 @@ CREATE TABLE `xu` (
        FROM www_boos2013.xoops_users
        WHERE uname = xu.parr) AS parr,
       '0'                     AS bg,
+      +
       '0'                     AS bd,
       '0'                     AS pf
     FROM www_boos2013.xoops_users xu;
 
-ALTER TABLE aaxu.xu ADD PRIMARY KEY (id);
+-- ALTER TABLE aaxu.xu ADD PRIMARY KEY (id);
 
 SELECT *
 FROM xu;
--- xut pour test d'insertion (Départ avec Aadminli uniquement)
+
+-- #################################################################################################
+--
+--             CRÉATION TABLE xut pour test d'insertion (Départ avec Aadminli uniquement)
+--
+-- #################################################################################################
 CREATE TABLE `aaxu`.`xut` (
-  `id`      INT(11) UNSIGNED NOT NULL DEFAULT '0',
-  `pseudo`  VARCHAR(25)      NULL     DEFAULT NULL COLLATE 'latin1_general_ci',
-  `lv`      TINYINT(2)       NOT NULL DEFAULT '0',
-  `typ`     CHAR(2)          NOT NULL DEFAULT '' COLLATE 'latin1_general_ci',
-  `lva`     TINYINT(5)       NOT NULL DEFAULT '0',
-  `lvp`     TINYINT(5)       NOT NULL DEFAULT '0',
-  `parrain` VARCHAR(50)      NOT NULL DEFAULT '0' COLLATE 'latin1_general_ci',
-  `parr`    INT(11)          NULL     DEFAULT '0',
-  `bg`      TINYINT(5)       NOT NULL DEFAULT '0',
-  `bd`      TINYINT(5)       NOT NULL DEFAULT '0',
-  `pf`      TINYINT(5)       NOT NULL DEFAULT '0',
+  `id`      INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
+  `pseudo`  VARCHAR(255)        NOT NULL
+  COLLATE 'latin1_general_ci',
+  `lv`      TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `typ`     CHAR(1)             NOT NULL DEFAULT 'A' COLLATE 'latin1_general_ci',
+  `lva`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `lvp`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `parrain` VARCHAR(255)        NULL     DEFAULT NULL COLLATE 'latin1_general_ci',
+  `parr`    INT(11) UNSIGNED    NULL     DEFAULT NULL,
+  `bg`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  `bd`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  `pf`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   INDEX `lv` (`lv`),
   INDEX `typ` (`typ`),
@@ -69,25 +84,42 @@ CREATE TABLE `aaxu`.`xut` (
 )
   COLLATE 'latin1_general_ci'
   ENGINE = InnoDB
-  ROW_FORMAT = DYNAMIC;
-INSERT INTO `aaxu`.`xu_copy` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, `parr`, `bg`, `bd`, `pf`) SELECT
-                                                                                                                `id`,
-                                                                                                                `pseudo`,
-                                                                                                                `lv`,
-                                                                                                                `typ`,
-                                                                                                                `lva`,
-                                                                                                                `lvp`,
-                                                                                                                `parrain`,
-                                                                                                                `parr`,
-                                                                                                                `bg`,
-                                                                                                                `bd`,
-                                                                                                                `pf`
-                                                                                                              FROM
-                                                                                                                `xu`
-                                                                                                              WHERE
-                                                                                                                id
-                                                                                                                <
-                                                                                                                2;
+  ROW_FORMAT = DYNAMIC
+  AUTO_INCREMENT = 27208;
+
+-- Insertion (par copie) de Aadminli
+INSERT INTO `aaxu`.`xut` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, `parr`, `bg`, `bd`, `pf`)
+  SELECT
+    `id`,
+    `pseudo`,
+    `lv`,
+    `typ`,
+    `lva`,
+    `lvp`,
+    `parrain`,
+    `parr`,
+    `bg`,
+    `bd`,
+    `pf`
+  FROM `xu`
+  WHERE id < 2;
+
+-- Initialisation Aadminli : Parrain et parr null, bornes G et D (Et pf)
+UPDATE aaxu.xut
+SET parrain = NULL, parr = NULL, bg = 1, bd = 2, pf = 0;
+
+SELECT *
+FROM xut;
+
+-- #################################################################################################
+--
+--            PROCÉDURE pour INSERTION et calcul des bornes et profondeur (pf)
+--
+-- #################################################################################################
+
+
+
+
 
 
 USE aaxu;
