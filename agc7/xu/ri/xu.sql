@@ -108,6 +108,10 @@ INSERT INTO `aaxu`.`xut` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, 
 UPDATE aaxu.xut
 SET parrain = NULL, parr = NULL, bg = 1, bd = 2, pf = 0;
 
+-- Re-initialise Aadminli pour départ tests
+TRUNCATE aaxu.xut;
+INSERT INTO `aaxu`.`xut` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, `parr`, `bg`, `bd`, `pf`)
+VALUES (1, 'Aadminli', 1, 'P', 0, 0, NULL, NULL, 1, 2, 0);
 SELECT *
 FROM xut;
 
@@ -116,10 +120,68 @@ FROM xut;
 --            PROCÉDURE pour INSERTION et calcul des bornes et profondeur (pf)
 --
 -- #################################################################################################
+-- ToDoLi ajout lock Table qd Opé + activer transaction (Cf. arbre/exemple_proc.sql)
+-- ToDoLi Cf. arbre/exemple_proc.sql pour proc avec boucle
+
+CALL insertXu('GrCOTE7', 1);
+SELECT *
+FROM xut;
+SELECT
+  @pseudoParr,
+  @idParr;
+
+CALL insertXu('Doro', 2);
+CALL insertXu('Jade', 3);
+SELECT *
+FROM xut;
 
 
+DROP PROCEDURE insertXu;
+DELIMITER |
+CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
+  IN `pseudoXu` VARCHAR(255),
+  IN `idRef`    INT
+)
+  BEGIN
+    -- START TRANSACTION;
 
+    DECLARE pseudoRef VARCHAR(255);
+    DECLARE bgRef, bdRef, pfRef INT(11);
 
+    -- Réc valeur du parr
+    SELECT
+      pseudo,
+      bg,
+      bd,
+      pf
+    INTO pseudoRef, bgRef, bdRef, pfRef
+    FROM xut
+    WHERE id = idRef;
+
+    -- SET @pseudoParr = pseudoRef;
+
+    UPDATE xut
+    SET bd = bd + 2
+    WHERE bd >= bdRef;
+
+    UPDATE xut
+    SET bg = bg + 2
+    WHERE bg >= bdRef;
+
+    INSERT INTO xut (pseudo, parrain, parr, bg, bd, pf)
+    VALUES (pseudoXu, pseudoRef, idRef, bdRef, (bdRef + 1), (pfRef + 1));
+
+    -- COMMIT;
+  END |
+DELIMITER ;
+
+SELECT
+  pseudo AS pseudoRef,
+  bg     AS bgRef,
+  bd     AS bdRef,
+  pf     AS pfRef
+FROM xut
+WHERE id = 1;
 
 
 USE aaxu;
@@ -149,6 +211,7 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `test_boucle`(IN `p_id` INT)
   END|
 
 CALL test_boucle(10);
+
 /*
 CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition`(IN `p_ville` VARCHAR(100)) BEGIN
   DECLARE v_nom, v_prenom VARCHAR(100);
