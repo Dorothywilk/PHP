@@ -211,6 +211,7 @@ UPDATE fam
 SET niv = 7
 WHERE 1;
 
+use arbre;
 -- Représentation graphique
 SELECT concat(repeat(' ', niv * 7), nom) 'Type de transport'
 FROM fam

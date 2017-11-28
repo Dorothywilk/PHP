@@ -56,6 +56,7 @@ CREATE TABLE `xu` (
 SELECT *
 FROM xu;
 
+DROP TABLE aaxu.xut;
 -- #################################################################################################
 --
 --             CRÉATION TABLE xut pour test d'insertion (Départ avec Aadminli uniquement)
@@ -84,7 +85,7 @@ CREATE TABLE `aaxu`.`xut` (
   COLLATE 'latin1_general_ci'
   ENGINE = InnoDB
   ROW_FORMAT = DYNAMIC
-  AUTO_INCREMENT = 27208;
+  AUTO_INCREMENT = 1;
 
 -- Insertion (par copie) de Aadminli
 INSERT INTO `aaxu`.`xut` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, `parr`, `bg`, `bd`, `pf`)
@@ -125,14 +126,34 @@ FROM xut;
 CALL insertXu('GrCOTE7', 1);
 SELECT *
 FROM xut;
-SELECT
-  @pseudoParr,
-  @idParr;
 
 CALL insertXu('Doro', 2);
 CALL insertXu('Jade', 3);
 SELECT *
 FROM xut;
+
+
+USE aaxu;
+CALL insertXu('Mimi', 3);
+CALL insertXu('Jeny', 4);
+CALL insertXu('Micky', 6);
+
+
+SELECT concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'XUs'
+FROM aaxu.xut
+
+ORDER BY bg;
+
+
+SELECT
+  concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'Membre',
+  lv,
+  typ
+FROM aaxu.xut
+WHERE bg >= 1
+      AND bd <= 120
+
+ORDER BY bg;
 
 
 DROP PROCEDURE insertXu;

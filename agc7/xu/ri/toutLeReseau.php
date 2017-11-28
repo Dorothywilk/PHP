@@ -38,7 +38,8 @@
 </div>
 
 <div class="maingc7">
-  Membres ayant au moins un parrain.<hr>
+  Membres ayant au moins un parrain.
+  <hr>
   <?php
 
   // Todoli quintescence => meilleur ds P100
@@ -95,8 +96,9 @@ WHERE id =' . $id;
     }
   }
 
+  // getUpline(141);
 
-  for ( $i = 1; $i < 30000; $i++ ) {
+  for ( $i = 1; $i < 3e4; $i++ ) {
     if ( getParrId( $i ) ) {
 
       echo $i . ' : ';
