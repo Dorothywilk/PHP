@@ -1,4 +1,4 @@
-<?php
+<i class="fa fa-check-square-o"></i> <?php
 $nf = function ( $n ) { return ( ( $n > 10 ) ? number_format( $n, 2, ',', ' ' ) : $n ); };
 
 //include 'div/testsCss.php';
