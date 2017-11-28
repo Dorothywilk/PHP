@@ -48,23 +48,48 @@
   $pdo = pdo( 'aaxu' );
 
 
-  $sql = "DROP PROCEDURE IF EXISTS `arbreXuB`;";
-  affLign( $sql );
-  $pdo->query( $sql );
-
-
-  $sql = "CREATE PROCEDURE `arbreXuB`(IN _uid  INTEGER UNSIGNED,
-                            IN _parr CHAR(20))
-DETERMINISTIC
-NO SQL
+  $sql = "DROP PROCEDURE IF EXISTS uuu;
+CREATE PROCEDURE uuu(OUT p_var VARCHAR(255))
 BEGIN
-  DECLARE _uid, _parr INT;
-  SELECT 'ok';
-END;";
+  declare v_var INT default 0;
+  set v_var = 7;
+  -- select 1 as Valeur, v_var;
+  -- Ne peut être affichée que via MySQL CLi
+  select concat(
+         'Var loc = ', v_var,
+         ' - Résultat du IF(v_var = 7) = ',
+         IF(v_var=7, 777, 333)) into p_var;
+END;
+call uuu(@var);";
+
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = 'SELECT 1';
+  $sql = "SELECT @var;";
+  $req( $sql, $pdo );
+
+
+  $sql = "DROP PROCEDURE IF EXISTS arbrexub;
+CREATE PROCEDURE arbrexub(OUT p_rep INT)
+BEGIN
+  DECLARE v_uid, v_parr INT;
+  DECLARE v_uname VARCHAR(255);
+
+  SELECT(1+2) into p_rep;
+
+END;
+
+CALL arbreXuB(@rep);";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+
+  $sql = 'SELECT @rep;';
+  $req( $sql, $pdo );
+
+  $sql = 'SELECT uid, uname, parr
+FROM www_boos2013.xoops_users
+LIMIT 3';
   $req( $sql, $pdo );
 
 
