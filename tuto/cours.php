@@ -25,7 +25,7 @@ include 'cours/formulaire2.php';
 // include 'cours/coursmooc.php'; // TodoDo Expliquer à la Puce
 
 
-//include ('cours/operateurs.php');
+//include 'cours/operateurs.php';
 
 
 // Les IFs
@@ -41,8 +41,8 @@ include 'cours/formulaire2.php';
 //include 'cours/poo/index.php';
 
 
-// include('initiation/tableau.php');
-//include ('initiation/tableauIndexe.php');
+// include'initiation/tableau.php';
+//include 'initiation/tableauIndexe.php';
 
-include 'cours/ri/famille.php'; // RI = Représentation Intervallaire
-//include('cours/objets.php');
+//include 'cours/ri/famille.php'; // RI = Représentation Intervallaire
+//include'cours/objets.php';

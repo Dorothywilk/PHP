@@ -11,22 +11,41 @@
     <input type="text" name="prenom" id="prenom"/><br>
 
     <label for="email">Quel est votre e-mail ?<br></label>
-    <input type="email" name="email" id="email"/>
+    <input type="email" name="email" id="email"/><br><br>
+    <input type="date" name="email" id="email"/>
+		
   </fieldset>
 
    
     <p>
     <label for="pays">Choisissez votre option</label><br/>
     <select name="choix" id="choix">
-      <option value="#">Choisir</option>
+      
       <option value="variablesChaines">Chaînes</option>
-      <option value="espagne">Jade</option>
-      <option value="italie">SV</option>
-      <option value="royaume-uni">Bulma</option>
-      <option value="canada">Tutoriel</option>
-      <option value="etats-unis">Tech GC7</option>
-      <option value="chine">XU</option>
-      <option value="japon">C57</option>
+      <option value="include 'cours/array.php';
+">Array</option>
+      <option value="include 'cours/conditions.php';
+">Condition</option>
+      <option value="include 'cours/formulaire.php';
+">Formulaire</option>
+      <option value="include 'cours/formulaire2.php';
+">Formulaire2</option>
+      <option value=" include 'cours/coursmooc.php'; // TodoDo Expliquer à la Puce
+">Cours mooc</option>
+      <option value="include 'cours/operateurs.php';
+">Opérateur</option>
+      <option value="include 'cours/poo/index.php';
+">Cours Poo</option>
+        <option value=" include'initiation/tableau.php';
+">Initiation Tableau</option>
+        <option value="include 'initiation/tableauIndexe.php';
+">Initiation Tableau Indexé</option>
+        <option value="include 'cours/ri/famille.php';>Représentation Intervallaire">Représentation Intervallaire</option>
+        <option value="include'cours/objets.php';
+">Cours Objet</option>
+				
+        
+        
     </select>
   </p>
     
