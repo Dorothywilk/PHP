@@ -12,9 +12,10 @@
 
     <label for="email">Quel est votre e-mail ?<br></label>
     <input type="email" name="email" id="email"/>
-
   </fieldset>
-  <p>
+
+   
+    <p>
     <label for="pays">Choisissez votre option</label><br/>
     <select name="choix" id="choix">
       <option value="#">Choisir</option>
@@ -28,14 +29,12 @@
       <option value="japon">C57</option>
     </select>
   </p>
+    
   <?php
   echo '<hr>';
-
   // ToDoDo Ajouter bouton pour valider le choix et aller dans traitement
-
   ?>
-
-
+      
 </form>
 
 <form method="post" action="traitement.php">
@@ -60,11 +59,6 @@
   </p>
 </form>
 
-
 <?php
 echo str_repeat( ' <br>', 10 );
-
 ?>
-    
-     
-    
