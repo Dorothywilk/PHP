@@ -44,9 +44,27 @@
   // Todoli quintescence => meilleur ds P100
   // TodoLi Ralentir slide // thierry ds P100
 
+
   $pdo = pdo( 'aaxu' );
 
-  $sql = "SELECT * from xu limit 3";
+
+  $sql = "DROP PROCEDURE IF EXISTS `arbreXuB`;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+
+  $sql = "CREATE PROCEDURE `arbreXuB`(IN _uid  INTEGER UNSIGNED,
+                            IN _parr CHAR(20))
+DETERMINISTIC
+NO SQL
+BEGIN
+  DECLARE _uid, _parr INT;
+  SELECT 'ok';
+END;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = 'SELECT 1';
   $req( $sql, $pdo );
 
 
