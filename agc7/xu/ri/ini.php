@@ -59,8 +59,9 @@ CREATE TEMPORARY TABLE t_xus
 select uid, uname, parr
   FROM www_boos2013.xoops_users limit 1;
 
-insert into t_xus (uid, uname, parr) from (SELECT uid, uname, parr FROM www_boos2013.xoops_users limit 2, 3);
-
+-- todioli fix
+-- insert into t_xus select (uid, uname, parr) from www_boos2013.xoops_users where uid = 3;
+-- https://www.google.fr/search?q=mysql+boucle&rlz=1C1MDNF_frFR484FR484&oq=mysql+boucle&aqs=chrome..69i57j0l5.3208j0j7&sourceid=chrome&ie=UTF-8
 
 insert into t_xus (uid, uname, parr) values (77, 'kkk', 'opop');
 
