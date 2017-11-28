@@ -5,18 +5,23 @@
     <!-- Titre du fieldset -->
 
     <label for="nom">Quel est votre nom ?<br></label>
-    <input type="text" name="nom" id="nom"/><br>
+    <input type="text" name="nom" id="nom" autofocus required/><br>
 
     <label for="prenom">Quel est votre prénom ?<br></label>
     <input type="text" name="prenom" id="prenom"/><br>
 
-    <label for="email">Quel est votre e-mail ?<br></label>
+    <label for="email">Quel est votre email ?<br></label>
     <input type="email" name="email" id="email"/><br><br>
-    <input type="date" name="email" id="email"/>
+    <label for="email">Choisissez la date <br></label>
+    <input type="date" name="calendrier" id="calendrier"/><br><br>
+   
+    <input type="submit" value="Envoyer" id="calendrier"/><br>   
 		
+<!--		Case à cocher--> Juste un essai
+		<input type="checkbox" checked/> 							 
   </fieldset>
 
-   
+   <h3>Je trie le linge avec Jérémy</h3>
     <p>
     <label for="pays">Choisissez votre option</label><br/>
     <select name="choix" id="choix">
