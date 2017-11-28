@@ -38,7 +38,6 @@
 </div>
 
 <div class="maingc7">
-  Ready.
   <?php
 
   // Todoli quintescence => meilleur ds P100
@@ -48,43 +47,26 @@
   $pdo = pdo( 'aaxu' );
 
 
-  $sql = "DROP PROCEDURE IF EXISTS uuu;
-CREATE PROCEDURE uuu(OUT p_var VARCHAR(255))
-BEGIN
-  declare v_var INT default 0;
-  set v_var = 7;
-  -- select 1 as Valeur, v_var;
-  -- Ne peut être affichée que via MySQL CLi
-  select concat(
-         'Var loc = ', v_var,
-         ' - Résultat du IF(v_var = 7) = ',
-         IF(v_var=7, 777, 333)) into p_var;
-END;
-call uuu(@var);";
-
-  affLign( $sql );
-  $pdo->query( $sql );
-
-  $sql = "SELECT @var;";
-  $req( $sql, $pdo );
-
-
-  $sql = "DROP PROCEDURE IF EXISTS arbrexub;
-CREATE PROCEDURE arbrexub(OUT p_rep INT)
+  $sql = "DROP PROCEDURE IF EXISTS arbreXuB;
+CREATE PROCEDURE arbreXuB()
 BEGIN
   DECLARE v_uid, v_parr INT;
   DECLARE v_uname VARCHAR(255);
 
-  SELECT(1+2) into p_rep;
+  DROP TEMPORARY TABLE IF EXISTS t_xus;
+
+CREATE TEMPORARY TABLE t_xus
+  SELECT uid, uname
+  FROM www_boos2013.xoops_users limit 3;
 
 END;
 
-CALL arbreXuB(@rep);";
+CALL arbreXuB();";
   affLign( $sql );
   $pdo->query( $sql );
 
 
-  $sql = 'SELECT @rep;';
+  $sql = 'SELECT uid, uname from t_xus;';
   $req( $sql, $pdo );
 
   $sql = 'SELECT uid, uname, parr
@@ -93,6 +75,6 @@ LIMIT 3';
   $req( $sql, $pdo );
 
 
-  echo str_repeat( '<br>', 25 ); // 28
+  echo str_repeat( '<br>', 3 ); // 28
   ?>
 </div>
