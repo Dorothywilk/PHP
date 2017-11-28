@@ -338,17 +338,3 @@ SET NFM_NIVEAU = (
 WHERE nfm_bg = 1;
 SELECT *
 FROM new_famille;
-
-
--- Travaux sur xu
-SELECT
-  uid,
-  uname,
-  lv,
-  typ,
-  lva,
-  lvp,
-  parr
-FROM www_boos2013.xoops_users
-ORDER BY uid DESC;
-
