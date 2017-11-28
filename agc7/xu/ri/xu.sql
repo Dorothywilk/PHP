@@ -141,7 +141,6 @@ CALL insertXu('Micky', 6);
 
 SELECT concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'XUs'
 FROM aaxu.xut
-
 ORDER BY bg;
 
 
@@ -152,7 +151,6 @@ SELECT
 FROM aaxu.xut
 WHERE bg >= 1
       AND bd <= 120
-
 ORDER BY bg;
 
 
