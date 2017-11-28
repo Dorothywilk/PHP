@@ -47,7 +47,6 @@ CREATE TABLE `xu` (
        FROM www_boos2013.xoops_users
        WHERE uname = xu.parr) AS parr,
       '0'                     AS bg,
-      +
       '0'                     AS bd,
       '0'                     AS pf
     FROM www_boos2013.xoops_users xu;
