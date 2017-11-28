@@ -56,8 +56,13 @@ BEGIN
   DROP TEMPORARY TABLE IF EXISTS t_xus;
 
 CREATE TEMPORARY TABLE t_xus
-  SELECT uid, uname
-  FROM www_boos2013.xoops_users limit 3;
+select uid, uname, parr
+  FROM www_boos2013.xoops_users limit 1;
+
+-- insert into t_xus (uid, uname, parr) values (SELECT uid, uname, parr FROM www_boos2013.xoops_users limit 2, 3);
+
+
+insert into t_xus (uid, uname, parr) values (77, 'kkk', 'opop');
 
 END;
 
@@ -66,7 +71,7 @@ CALL arbreXuB();";
   $pdo->query( $sql );
 
 
-  $sql = 'SELECT uid, uname from t_xus;';
+  $sql = 'SELECT * from t_xus;';
   $req( $sql, $pdo );
 
   $sql = 'SELECT uid, uname, parr
