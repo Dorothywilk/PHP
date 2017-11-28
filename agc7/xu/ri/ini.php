@@ -59,7 +59,7 @@ CREATE TEMPORARY TABLE t_xus
 select uid, uname, parr
   FROM www_boos2013.xoops_users limit 1;
 
--- insert into t_xus (uid, uname, parr) values (SELECT uid, uname, parr FROM www_boos2013.xoops_users limit 2, 3);
+insert into t_xus (uid, uname, parr) from (SELECT uid, uname, parr FROM www_boos2013.xoops_users limit 2, 3);
 
 
 insert into t_xus (uid, uname, parr) values (77, 'kkk', 'opop');
