@@ -64,7 +64,7 @@ DROP TABLE aaxu.xut;
 -- #################################################################################################
 CREATE TABLE `aaxu`.`xut` (
   `id`      INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
-  `pseudo`  VARCHAR(255)        NOT NULL
+  `pseudo`  VARCHAR(255)        NOT NULL UNIQUE
   COLLATE 'latin1_general_ci',
   `lv`      TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
   `typ`     CHAR(1)             NOT NULL DEFAULT 'A' COLLATE 'latin1_general_ci',
@@ -103,7 +103,9 @@ INSERT INTO `aaxu`.`xut` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, 
     `pf`
   FROM `xu`
   WHERE id < 2;
-
+-- Suppr Kl
+DELETE FROM `aaxu`.`xu`
+WHERE `id` = 15;
 -- Initialisation Aadminli : Parrain et parr null, bornes G et D (Et pf)
 UPDATE aaxu.xut
 SET parrain = NULL, parr = NULL, bg = 1, bd = 2, pf = 0;
@@ -133,7 +135,6 @@ SELECT *
 FROM xut;
 
 
-USE aaxu;
 CALL insertXu('Mimi', 3);
 CALL insertXu('Jeny', 4);
 CALL insertXu('Micky', 6);
