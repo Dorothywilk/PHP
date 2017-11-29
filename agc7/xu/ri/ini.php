@@ -61,6 +61,7 @@ CREATE TABLE b
     LIMIT 0, 1;
 
 /*
+-- Insertion de lignes en provenance d'une autre table
 INSERT INTO b (uid, uname, parr)
 SELECT
   uid,
@@ -79,12 +80,14 @@ VALUES
   (4, 'Jade', 3),
   (5, 'Micky', 1),
   (6, 'Jeny', 4),
-  (7, 'Mimi', 2)
+  (7, 'Mimi', 3)
 ;
 
 ALTER TABLE `b`
-	CHANGE COLUMN `uid` `id` INT(10) UNSIGNED NOT NULL DEFAULT '0' FIRST,
-	CHANGE COLUMN `uname` `pseudo` VARCHAR(25) NOT NULL DEFAULT '' COLLATE 'latin1_swedish_ci' AFTER `id`,
+	CHANGE COLUMN `uid` `id` INT(10) UNSIGNED
+	    NOT NULL AUTO_INCREMENT FIRST,
+	CHANGE COLUMN `uname` `pseudo` VARCHAR(25)
+	    NOT NULL DEFAULT '' COLLATE 'latin1_swedish_ci',
 	ADD PRIMARY KEY (`id`),
 	ADD UNIQUE INDEX `pseudo` (`pseudo`);
 update b set parr=null where id=1;
@@ -100,7 +103,42 @@ update b set parr=null where id=1;
   $sql = 'EXPLAIN b;';
   $req( $sql, $pdo );
 
-  
+
+  $sql = "DROP PROCEDURE IF EXISTS aaxu.getUplineRecursif;
+SET @@max_sp_recursion_depth = 255;
+CREATE PROCEDURE `getUplineRecursif`(
+  IN    ori      INT,
+  INOUT pere     INT,
+  INOUT reponses VARCHAR(255)
+)
+BEGIN
+  SELECT parr
+  INTO pere
+  FROM b
+  WHERE id = ori;
+
+  IF pere IS NULL
+    THEN
+      SET @upline=reponses;
+    ELSE
+      SET reponses = concat(reponses, ', ', pere);
+      SET ori = pere;
+      CALL getUplineRecursif(pere, pere, reponses);
+  END IF;
+END;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = 'SET @reponses = \'7\';
+CALL getUplineRecursif(7, @id, @reponses);';
+  affLign( $sql );
+  $pdo->query( $sql );
+
+
+  $sql = 'SELECT @upline as upline, @reponses;';
+  $req( $sql, $pdo );
+
+
   $sql = 'SELECT uid, uname, parr
 FROM www_boos2013.xoops_users
 LIMIT 3';
