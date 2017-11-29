@@ -398,7 +398,7 @@ DELIMITER ;
   CLOSE _tab;
 */
 
-
+/*
 BEGIN
 DECLARE v_diff INT;
 SELECT FLOOR(TIMESTAMPDIFF(MINUTE, MAX(`t_stamp`), NOW()) / 10) - 1
@@ -421,3 +421,6 @@ FROM calendar_bis;
 DROP TABLE calendar_bis;
 END
 
+*/
+
+SELECT 1;

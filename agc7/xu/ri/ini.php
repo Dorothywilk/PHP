@@ -47,41 +47,36 @@
   $pdo = pdo( 'aaxu' );
 
 
-  $sql = "DROP PROCEDURE IF EXISTS arbreXuB;
-CREATE PROCEDURE arbreXuB()
-BEGIN
-  DECLARE v_uid, v_parr INT;
-  DECLARE v_uname VARCHAR(255);
+  $sql = "USE aaxu;
 
-DROP TABLE IF EXISTS t_xus;
+DROP temporary TABLE IF EXISTS xus;
+CREATE temporary TABLE xus
+    SELECT
+      uid,
+      uname,
+      (SELECT uid
+       FROM www_boos2013.xoops_users xxu
+       WHERE xxu.uname = xu.parr) AS parr
+    FROM www_boos2013.xoops_users xu
+    LIMIT 12, 1;
 
-CREATE TABLE aaxu.t_xus
-select uid, uname, parr
-  FROM www_boos2013.xoops_users limit 1;
+INSERT INTO xus (uid, uname, parr)
+SELECT
+  uid,
+  uname,
+  (SELECT uid
+   FROM www_boos2013.xoops_users xxu
+   WHERE xxu.uname = xu.parr) AS parr
+FROM www_boos2013.xoops_users xu
+LIMIT 0, 3;
 
-select uid, uname, parr
-into aaxu.t_xus
-from www_boos2013.xoops_users limit 3,1;
-
--- todioli fix
-/*
-insert into t_xus
-select (uid, uname, parr)
-from www_boos2013.xoops_users
-where uid = 3;
-*/
--- https://www.google.fr/search?q=mysql+boucle&rlz=1C1MDNF_frFR484FR484&oq=mysql+boucle&aqs=chrome..69i57j0l5.3208j0j7&sourceid=chrome&ie=UTF-8
-
-insert into t_xus (uid, uname, parr) values (77, 'kkk', 'opop');
-
-END;
-
-CALL arbreXuB();";
+INSERT INTO xus (uid, uname, parr) VALUES (77, 'gg', 1);
+";
   affLign( $sql );
   $pdo->query( $sql );
 
 
-  $sql = 'SELECT * from aaxu.t_xus;';
+  $sql = 'SELECT * from xus;';
   $req( $sql, $pdo );
 
   $sql = 'SELECT uid, uname, parr
