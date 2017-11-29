@@ -112,10 +112,18 @@ CREATE PROCEDURE `getUplineRecursif`(
   INOUT reponses VARCHAR(255)
 )
 BEGIN
+
+  SELECT (select uid FROM www_boos2013.xoops_users where uname = xu.parr)
+  INTO pere
+  FROM www_boos2013.xoops_users xu
+  WHERE uid = ori;
+
+/*
   SELECT parr
   INTO pere
   FROM b
   WHERE id = ori;
+*/
 
   IF pere IS NULL
     THEN
@@ -125,17 +133,27 @@ BEGIN
       SET ori = pere;
       CALL getUplineRecursif(pere, pere, reponses);
   END IF;
+
 END;";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = 'SET @reponses = \'7\';
-CALL getUplineRecursif(7, @id, @reponses);';
+
+  $uid = 140;
+  $sql = 'SET @reponses = ' . $uid . ';
+CALL getUplineRecursif(' . $uid . ', @id, @reponses);';
   affLign( $sql );
   $pdo->query( $sql );
 
 
-  $sql = 'SELECT @upline as upline, @reponses;';
+  $uid = 141;
+  $sql = 'SET @reponses = ' . $uid . ';
+CALL getUplineRecursif(' . $uid . ', @id, @reponses);';
+  affLign( $sql );
+  $pdo->query( $sql );
+
+
+  $sql = "SELECT @upline as 'upline de 140', @reponses as 'upline de 141';";
   $req( $sql, $pdo );
 
 
