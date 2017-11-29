@@ -15,13 +15,19 @@
     <label for="email">Choisissez la date <br></label>
     <input type="date" name="calendrier" id="calendrier"/><br><br>
    
-    <input type="submit" value="Envoyer" id="calendrier"/><br>   
+    <input type="submit" value="Envoyer" id="submit"/><br>   
 		
 <!--		Case à cocher--> Juste un essai
 		<input type="checkbox" checked/> 							 
   </fieldset>
-
-   <h3>Je trie le linge avec Jérémy</h3>
+<form action="cible_envoi.php" method="post" enctype="multipart/form-data">
+        <p>
+                Formulaire d'envoi de fichier :<br />
+                <input type="file" name="monfichier" /><br />
+                <input type="submit" value="Envoyer le fichier" />
+        </p>
+</form>
+   
     <p>
     <label for="pays">Choisissez votre option</label><br/>
     <select name="choix" id="choix">
