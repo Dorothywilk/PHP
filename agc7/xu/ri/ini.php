@@ -96,6 +96,11 @@ update b set parr=null where id=1;
   $sql = 'SELECT * from b;';
   $req( $sql, $pdo );
 
+
+  $sql = 'EXPLAIN b;';
+  $req( $sql, $pdo );
+
+  
   $sql = 'SELECT uid, uname, parr
 FROM www_boos2013.xoops_users
 LIMIT 3';
