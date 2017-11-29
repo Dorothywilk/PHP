@@ -5,13 +5,15 @@ CREATE PROCEDURE aaxu.boucleX(INOUT reponses VARCHAR(255))
     SET i = 7;
     SET reponses = '';
     WHILE i > 0 DO
-      SELECT trim(concat(i, ' ', reponses))
+      SELECT trim(concat(i, ' ', '(', (SELECT getCarre(i)), ') ', reponses))
       INTO reponses;
       SET i = i - 1;
     END WHILE;
   END;
 CALL boucleX(@reponses);
-SELECT @reponses, length(@reponses);
+SELECT
+  @reponses,
+  length(@reponses) as 'Longueur de la chaîne';
 
 DROP PROCEDURE IF EXISTS aaxu.boucleB;
 CREATE PROCEDURE aaxu.boucleB()
