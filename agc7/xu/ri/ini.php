@@ -49,8 +49,8 @@
 
   $sql = "USE aaxu;
 
-DROP temporary TABLE IF EXISTS xus;
-CREATE temporary TABLE xus
+DROP TABLE IF EXISTS b;
+CREATE TABLE b
     SELECT
       uid,
       uname,
@@ -58,9 +58,9 @@ CREATE temporary TABLE xus
        FROM www_boos2013.xoops_users xxu
        WHERE xxu.uname = xu.parr) AS parr
     FROM www_boos2013.xoops_users xu
-    LIMIT 12, 1;
+    LIMIT 0, 1;
 
-INSERT INTO xus (uid, uname, parr)
+INSERT INTO b (uid, uname, parr)
 SELECT
   uid,
   uname,
@@ -68,15 +68,21 @@ SELECT
    FROM www_boos2013.xoops_users xxu
    WHERE xxu.uname = xu.parr) AS parr
 FROM www_boos2013.xoops_users xu
-LIMIT 0, 3;
+LIMIT 1, 2;
 
-INSERT INTO xus (uid, uname, parr) VALUES (77, 'gg', 1);
+INSERT INTO b (uid, uname, parr) VALUES (77, 'Gg', 1);
+
+ALTER TABLE `b`
+	CHANGE COLUMN `uid` `id` INT(10) UNSIGNED NOT NULL DEFAULT '0' FIRST,
+	CHANGE COLUMN `uname` `pseudo` VARCHAR(25) NOT NULL DEFAULT '' COLLATE 'latin1_swedish_ci' AFTER `id`;
+
+update b set parr=null where id=1;
 ";
   affLign( $sql );
   $pdo->query( $sql );
 
 
-  $sql = 'SELECT * from xus;';
+  $sql = 'SELECT * from b;';
   $req( $sql, $pdo );
 
   $sql = 'SELECT uid, uname, parr
