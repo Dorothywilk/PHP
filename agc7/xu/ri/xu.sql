@@ -351,15 +351,14 @@ NO SQL
 */
 
 
-CALL arbreXu;
+CALL arbreXuB;
 -- Simul récursivité / wwwbos2013_xoops_users
 DROP PROCEDURE IF EXISTS `arbreXuB`;
 
 -- Exemple de procédure avec boucle
 -- Génère ici l'arbre, le groupe
 DELIMITER |
-CREATE PROCEDURE `arbreXuB`(IN _uid  INTEGER UNSIGNED,
-                            IN _parr CHAR(20))
+CREATE PROCEDURE `arbreXuB`()
 DETERMINISTIC
 NO SQL
   BEGIN
