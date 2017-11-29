@@ -420,3 +420,4 @@ SELECT *
 FROM calendar_bis;
 DROP TABLE calendar_bis;
 END
+

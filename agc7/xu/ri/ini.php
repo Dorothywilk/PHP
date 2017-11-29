@@ -53,14 +53,23 @@ BEGIN
   DECLARE v_uid, v_parr INT;
   DECLARE v_uname VARCHAR(255);
 
-  DROP TEMPORARY TABLE IF EXISTS t_xus;
+DROP TABLE IF EXISTS t_xus;
 
-CREATE TEMPORARY TABLE t_xus
+CREATE TABLE aaxu.t_xus
 select uid, uname, parr
   FROM www_boos2013.xoops_users limit 1;
 
+select uid, uname, parr
+into aaxu.t_xus
+from www_boos2013.xoops_users limit 3,1;
+
 -- todioli fix
--- insert into t_xus select (uid, uname, parr) from www_boos2013.xoops_users where uid = 3;
+/*
+insert into t_xus
+select (uid, uname, parr)
+from www_boos2013.xoops_users
+where uid = 3;
+*/
 -- https://www.google.fr/search?q=mysql+boucle&rlz=1C1MDNF_frFR484FR484&oq=mysql+boucle&aqs=chrome..69i57j0l5.3208j0j7&sourceid=chrome&ie=UTF-8
 
 insert into t_xus (uid, uname, parr) values (77, 'kkk', 'opop');
@@ -72,7 +81,7 @@ CALL arbreXuB();";
   $pdo->query( $sql );
 
 
-  $sql = 'SELECT * from t_xus;';
+  $sql = 'SELECT * from aaxu.t_xus;';
   $req( $sql, $pdo );
 
   $sql = 'SELECT uid, uname, parr
