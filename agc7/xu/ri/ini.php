@@ -38,18 +38,49 @@
 </div>
 
 <div class="maingc7">
-  Ready.
   <?php
 
   // Todoli quintescence => meilleur ds P100
   // TodoLi Ralentir slide // thierry ds P100
 
+
   $pdo = pdo( 'aaxu' );
 
-  $sql = "SELECT * from xu limit 3";
+
+  $sql = "DROP PROCEDURE IF EXISTS arbreXuB;
+CREATE PROCEDURE arbreXuB()
+BEGIN
+  DECLARE v_uid, v_parr INT;
+  DECLARE v_uname VARCHAR(255);
+
+  DROP TEMPORARY TABLE IF EXISTS t_xus;
+
+CREATE TEMPORARY TABLE t_xus
+select uid, uname, parr
+  FROM www_boos2013.xoops_users limit 1;
+
+-- todioli fix
+-- insert into t_xus select (uid, uname, parr) from www_boos2013.xoops_users where uid = 3;
+-- https://www.google.fr/search?q=mysql+boucle&rlz=1C1MDNF_frFR484FR484&oq=mysql+boucle&aqs=chrome..69i57j0l5.3208j0j7&sourceid=chrome&ie=UTF-8
+
+insert into t_xus (uid, uname, parr) values (77, 'kkk', 'opop');
+
+END;
+
+CALL arbreXuB();";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+
+  $sql = 'SELECT * from t_xus;';
+  $req( $sql, $pdo );
+
+  $sql = 'SELECT uid, uname, parr
+FROM www_boos2013.xoops_users
+LIMIT 3';
   $req( $sql, $pdo );
 
 
-  echo str_repeat( '<br>', 25 ); // 28
+  echo str_repeat( '<br>', 3 ); // 28
   ?>
 </div>

@@ -311,7 +311,7 @@ DROP PROCEDURE IF EXISTS `arbre`;
 /*--------------
 -- ------------
 -- Exemple de procédure avec boucle
--- Génère ici l'azrbre, le groupe
+-- Génère ici l'arbre, le groupe
 CREATE PROCEDURE `arbre`(IN _noeud INTEGER UNSIGNED,
                          IN _pref  CHAR(20))
 DETERMINISTIC
@@ -348,3 +348,75 @@ NO SQL
   END;
 -- ------------
 */
+
+
+CALL arbreXu;
+-- Simul récursivité / wwwbos2013_xoops_users
+DROP PROCEDURE IF EXISTS `arbreXuB`;
+
+-- Exemple de procédure avec boucle
+-- Génère ici l'arbre, le groupe
+DELIMITER |
+CREATE PROCEDURE `arbreXuB`(IN _uid  INTEGER UNSIGNED,
+                            IN _parr CHAR(20))
+DETERMINISTIC
+NO SQL
+  BEGIN
+    DECLARE _uid, _parr INT;
+    SELECT 'OK';
+  END|
+DELIMITER ;
+/*
+  DECLARE _pseudo VARCHAR(255);
+
+  DECLARE _fin INTEGER DEFAULT 1;
+  DECLARE _tab CURSOR FOR SELECT
+                            id,
+                            pseudo,
+                            parr
+                          FROM www_boos2013.xoops_users
+                          WHERE uname = parr
+                                AND uid < 20;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET _fin = 0;
+
+  OPEN _tab;
+  FETCH _tab
+  INTO _uid, _lien, _pseudo;
+
+  WHILE (_fin)
+  DO
+    SELECT
+      uid,
+      uname;
+
+    CALL arbreXuB(_uid, concat('..', _pref));
+
+    FETCH _tab
+    INTO _id, _lien, _nom;
+  END WHILE;
+
+  CLOSE _tab;
+*/
+
+
+BEGIN
+DECLARE v_diff INT;
+SELECT FLOOR(TIMESTAMPDIFF(MINUTE, MAX(`t_stamp`), NOW()) / 10) - 1
+INTO v_diff
+FROM `test`.`calendar`;
+
+CREATE TEMPORARY TABLE calendar_bis (
+  t_date  DATE,
+  t_stamp DATETIME
+);
+
+
+WHILE v_diff >0 DO
+INSERT INTO calendar_bis (`t_date`, t_stamp) VALUES (DATE(round10min(now())- INTERVAL v_diff*10 MINUTE), round10min(now())- INTERVAL v_diff*10 MINUTE);
+
+SET v_diff = v_diff - 1;
+END WHILE;
+SELECT *
+FROM calendar_bis;
+DROP TABLE calendar_bis;
+END
