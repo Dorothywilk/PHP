@@ -60,6 +60,7 @@ CREATE TABLE b
     FROM www_boos2013.xoops_users xu
     LIMIT 0, 1;
 
+/*
 INSERT INTO b (uid, uname, parr)
 SELECT
   uid,
@@ -68,14 +69,24 @@ SELECT
    FROM www_boos2013.xoops_users xxu
    WHERE xxu.uname = xu.parr) AS parr
 FROM www_boos2013.xoops_users xu
-LIMIT 1, 2;
+LIMIT 0, 1;
+*/
 
-INSERT INTO b (uid, uname, parr) VALUES (77, 'Gg', 1);
+INSERT INTO b (uid, uname, parr)
+VALUES
+  (2, 'Grcote7', 1),
+  (3, 'Doro', 2),
+  (4, 'Jade', 3),
+  (5, 'Micky', 1),
+  (6, 'Jeny', 4),
+  (7, 'Mimi', 2)
+;
 
 ALTER TABLE `b`
 	CHANGE COLUMN `uid` `id` INT(10) UNSIGNED NOT NULL DEFAULT '0' FIRST,
-	CHANGE COLUMN `uname` `pseudo` VARCHAR(25) NOT NULL DEFAULT '' COLLATE 'latin1_swedish_ci' AFTER `id`;
-
+	CHANGE COLUMN `uname` `pseudo` VARCHAR(25) NOT NULL DEFAULT '' COLLATE 'latin1_swedish_ci' AFTER `id`,
+	ADD PRIMARY KEY (`id`),
+	ADD UNIQUE INDEX `pseudo` (`pseudo`);
 update b set parr=null where id=1;
 ";
   affLign( $sql );

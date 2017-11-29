@@ -1,4 +1,4 @@
-select * from xu limit 3;
+select * from b limit 3;
 CALL boucleXus;
 -- Simul récursivité / wwwbos2013_xoops_users
 DROP PROCEDURE IF EXISTS `boucleXus`;
