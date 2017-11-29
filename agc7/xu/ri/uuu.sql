@@ -1,16 +1,17 @@
 DROP PROCEDURE IF EXISTS aaxu.boucleX;
-CREATE PROCEDURE aaxu.boucleX()
+CREATE PROCEDURE aaxu.boucleX(INOUT reponses VARCHAR(255))
   BEGIN
     DECLARE i INT;
     SET i = 7;
+    SET reponses = '';
     WHILE i > 0 DO
-      SELECT i;
+      SELECT trim(concat(i, ' ', reponses))
+      INTO reponses;
       SET i = i - 1;
     END WHILE;
   END;
-
-CALL boucleX();
-
+CALL boucleX(@reponses);
+SELECT @reponses, length(@reponses);
 
 DROP PROCEDURE IF EXISTS aaxu.boucleB;
 CREATE PROCEDURE aaxu.boucleB()
