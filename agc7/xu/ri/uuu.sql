@@ -1,3 +1,17 @@
+DROP PROCEDURE IF EXISTS aaxu.boucleX;
+CREATE PROCEDURE aaxu.boucleX()
+  BEGIN
+    DECLARE i INT;
+    SET i = 7;
+    WHILE i > 0 DO
+      SELECT i;
+      SET i = i - 1;
+    END WHILE;
+  END;
+
+CALL boucleX();
+
+
 DROP PROCEDURE IF EXISTS aaxu.boucleB;
 CREATE PROCEDURE aaxu.boucleB()
 NO SQL
@@ -28,7 +42,8 @@ CREATE FUNCTION getParr(idu INT)
 DETERMINISTIC
 READS SQL DATA
   BEGIN
-    SELECT parr into @i
+    SELECT parr
+    INTO @i
     FROM b
     WHERE id = idu;
     RETURN @i;
