@@ -233,6 +233,49 @@ CALL boucleI();";
 FROM t_rep;";
   $req( $sql, $pdo );
 
+  ?>
+
+  <h3>Utilisation de
+    <g>ITERATE</g>
+  </h3>
+  <p>Noter le label /
+    <g>WHILE</g>
+  </p>
+
+  <?php
+
+  $sql = "DROP PROCEDURE IF EXISTS test_iterate;
+CREATE PROCEDURE `test_iterate`() BEGIN
+  DECLARE v_i INT DEFAULT 0;
+
+  DROP TEMPORARY TABLE IF EXISTS t_iter;
+  CREATE TEMPORARY TABLE t_iter (
+    i   INT,
+    msg VARCHAR(50)
+  );
+
+  boucle_while: WHILE v_i < 3 DO
+    SET v_i = v_i + 1;
+    INSERT INTO t_iter (i, msg) VALUE (v_i, 'Avant IF');
+
+    IF v_i = 2
+    THEN
+      ITERATE boucle_while;
+    END IF;
+    INSERT INTO t_iter (i, msg) VALUE (v_i, 'Après IF');
+    -- Ne sera pas exécuté pour v_i = 2
+  END WHILE;
+
+  SELECT * FROM t_iter;
+END;
+CALL test_iterate();";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SELECT *
+FROM t_iter;";
+  $req( $sql, $pdo );
+
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>
