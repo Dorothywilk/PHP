@@ -193,7 +193,7 @@ CALL simuRecursivite(@reponses);";
   $sql = "DROP PROCEDURE IF EXISTS simuRecursivite;
 CREATE PROCEDURE simuRecursivite(IN i INT)
   BEGIN
-    declare rep varchar(255) default '';
+    DECLARE rep varchar(255) default '';
     WHILE i > 0 DO
       SET rep =
       trim(concat(i, ' (', (SELECT getParr(i)), ') ', rep));
@@ -209,6 +209,29 @@ CREATE PROCEDURE simuRecursivite(IN i INT)
   $sql = "CALL simuRecursivite(4);";
   $req( $sql, $pdo );
 
+
+  $sql = "DROP PROCEDURE IF EXISTS boucleI;
+CREATE PROCEDURE boucleI()
+  BEGIN
+    DECLARE i INT DEFAULT 1;
+    DROP TEMPORARY TABLE IF EXISTS t_rep;
+    CREATE TEMPORARY TABLE t_rep (
+      n     INT(11),
+      carre INT(255),
+      PRIMARY KEY (n)
+    );
+    WHILE i < 4 DO
+      INSERT INTO t_rep (n, carre) VALUES (i, (SELECT getCarre(i)));
+      SET i = i + 1;
+    END WHILE;
+  END;
+CALL boucleI();";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SELECT *
+FROM t_rep;";
+  $req( $sql, $pdo );
 
 
   echo str_repeat( '<br>', 25 ); // 28
