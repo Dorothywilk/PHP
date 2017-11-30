@@ -220,10 +220,12 @@ CREATE PROCEDURE boucleI()
       carre INT(255),
       PRIMARY KEY (n)
     );
+    START TRANSACTION;
     WHILE i < 4 DO
       INSERT INTO t_rep (n, carre) VALUES (i, (SELECT getCarre(i)));
       SET i = i + 1;
     END WHILE;
+    COMMIT;
   END;
 CALL boucleI();";
   affLign( $sql );
