@@ -9,6 +9,15 @@
 <div class="maingc7">
 
   <?php
+  $pdo = pdo();
+
+  $sql = "DROP DATABASE IF EXISTS `aazt`;
+CREATE DATABASE `aazt`
+  DEFAULT CHARACTER SET `latin1`
+  DEFAULT COLLATE `latin1_general_ci`;";
+    affLign( $sql );
+  $pdo->query( $sql );
+
   $pdo = pdo( 'aazt' ); // BdD de tests
 
 

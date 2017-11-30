@@ -56,7 +56,7 @@ CREATE TABLE `xu` (
 SELECT *
 FROM xu;
 
-DROP TABLE aaxu.xut;
+DROP TABLE IF EXISTS aaxu.xut;
 -- #################################################################################################
 --
 --             CRÉATION TABLE xut pour test d'insertion (Départ avec Aadminli uniquement)
