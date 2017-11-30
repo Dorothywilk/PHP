@@ -46,7 +46,9 @@ ORDER BY bg;";
   </ul>
   <p class="load">NB:
   <ol>
-    <li>La table b2 a les colonnes id, pseudo, parr, uid, parrain<br>(Les 2 dernières étant vouées à disparaître à terme)</li>
+    <li>La table b2 a les colonnes id, pseudo, parr, uid, parrain<br>(Les 2 dernières étant vouées à
+      disparaître à terme)
+    </li>
     <li>Le membre racine (Aadminli) n'est pas géré dans la procédure<br>
       (Supprimé de b1 et inséré dans b2 'à la main').
     </li>
@@ -99,22 +101,25 @@ VALUES (1, 'Aadminli')";
 
   <?php
 
-  $sql = "DROP PROCEDURE IF EXISTS test_boucle_b;
-CREATE PROCEDURE `test_boucle_b`(IN `p_id` INT)
+  $sql = "DROP PROCEDURE IF EXISTS boucle_b1;
+CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id INT;
+    DECLARE v_id, v_stop INT;
     DECLARE v_pseudo, v_parr VARCHAR(255);
+
 
     DECLARE b_cursor CURSOR FOR
       SELECT
         uid,
         uname,
         parr
-      FROM b
-      WHERE uid < p_id;
+      FROM b1;
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+-- Var pour stopper la boucle à la volée
+    SET v_stop = 0;
 
     DROP TEMPORARY TABLE IF EXISTS t_b;
     CREATE TEMPORARY TABLE t_b (
@@ -129,10 +134,12 @@ CREATE PROCEDURE `test_boucle_b`(IN `p_id` INT)
       FETCH b_cursor
       INTO v_id, v_pseudo, v_parr;
 
-      IF done
+      IF done or v_stop=2
       THEN
         LEAVE b_loop;
       END IF;
+
+      SET v_stop = v_stop + 1;
 
       INSERT INTO t_b (id, pseudo, parr) VALUES
         (v_id,
@@ -149,7 +156,11 @@ END;";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "call test_boucle_b(100);";
+  $sql = "call boucle_b1();";
+  $req( $sql, $pdo );
+
+
+  $sql = "select * from b2";
   $req( $sql, $pdo );
 
 

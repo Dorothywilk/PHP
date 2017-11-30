@@ -212,44 +212,56 @@ USE aazt;
 SELECT *
 FROM b;
 
-
-DROP PROCEDURE IF EXISTS test_boucle_b;
-DELIMITER |
-
-CREATE PROCEDURE `test_boucle_b`(IN `p_id` INT)
+DROP PROCEDURE IF EXISTS boucle_b1;
+CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id INT;
-    DECLARE v_pseudo VARCHAR(255);
+    DECLARE v_id, v_stop INT;
+    DECLARE v_pseudo, v_parr VARCHAR(255);
+
 
     DECLARE b_cursor CURSOR FOR
       SELECT
         uid,
-        uname
-      FROM b
-      WHERE uid < p_id;
+        uname,
+        parr
+      FROM b1;
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+    -- Var pour stopper la boucle à la volée
+    SET v_stop = 0;
+    DROP TEMPORARY TABLE IF EXISTS t_b;
+    CREATE TEMPORARY TABLE t_b (
+      id     INT,
+      pseudo VARCHAR(255),
+      parr VARCHAR (255)
+    );
 
     OPEN b_cursor;
 
     b_loop: LOOP
       FETCH b_cursor
-      INTO v_id, v_pseudo;
+      INTO v_id, v_pseudo, v_parr;
 
-      IF done
+      IF done or v_stop
       THEN
         LEAVE b_loop;
       END IF;
 
-      SELECT
-        v_id,
-        v_pseudo;
+      SET v_stop = v_stop + 1;
+
+      INSERT INTO t_b (id, pseudo, parr) VALUES
+        (v_id,
+         v_pseudo,
+         v_parr);
     END LOOP;
 
     CLOSE b_cursor;
-  END|
-DELIMITER ;
 
+    SELECT *
+    FROM t_b;
 
-CALL test_boucle_b(99999);
+  END;
+
+CALL test_boucle_b();
