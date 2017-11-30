@@ -1,19 +1,20 @@
-DROP PROCEDURE IF EXISTS aaxu.simuRecursivite;
-CREATE PROCEDURE aaxu.simuRecursivite(INOUT reponses VARCHAR(255))
+use aazt;
+DROP PROCEDURE IF EXISTS simuRecursivite;
+CREATE PROCEDURE simuRecursivite(INOUT reponses VARCHAR(255))
   BEGIN
     DECLARE i INT;
     SET i = 3;
     SET reponses = '';
     WHILE i > 0 DO
-      SELECT trim(concat(i, ' (', (SELECT getParr(i)), ') ', reponses))
-      INTO reponses;
+      SET reponses = trim(concat(i, ' (', (SELECT getParr(i)), ') ', reponses));
       SET i = i - 1;
     END WHILE;
+    SET @reponses = reponses;
+    SELECT
+      @reponses,
+      length(@reponses) AS 'Longueur de la chaîne';
   END;
-CALL aaxu.simuRecursivite(@reponses);
-SELECT
-  @reponses,
-  length(@reponses) AS 'Longueur de la chaîne';
+CALL simuRecursivite(@reponses);
 
 
 DROP PROCEDURE IF EXISTS aaxu.boucleX;

@@ -168,18 +168,54 @@ DETERMINISTIC
   $req( $sql, $pdo );
 
 
-  $sql = "SELECT 1";
-  $req( $sql, $pdo );
-
-  $sql = "SELECT 1";
+  $sql = "DROP PROCEDURE IF EXISTS simuRecursivite;
+CREATE PROCEDURE simuRecursivite(INOUT rep VARCHAR(255))
+  BEGIN
+    DECLARE i INT;
+    SET i = 4;
+    SET rep = '';
+    WHILE i > 0 DO
+      SET rep =
+          trim(concat(i, ' (', (SELECT getParr(i)), ') ', rep));
+      SET i = i - 1;
+    END WHILE;
+     -- SET @reponses = rep;
+      -- , length(reponses) AS 'Longueur de la chaîne';
+  END;
+CALL simuRecursivite(@reponses);";
   affLign( $sql );
   $pdo->query( $sql );
 
+  $sql = "SELECT @reponses, length(@reponses) AS 'Longueur de la chaîne';";
+  $req( $sql, $pdo );;
 
-  $sql = "SELECT @@datadir
--- Une variable système définie dans my.ini
--- Dans ce fichier ; ou # pour les commentaires";
+
+  $sql = "SELECT 1";
   $req( $sql, $pdo );
+
+
+  $sql = "DROP PROCEDURE IF EXISTS simuRecursivite;
+CREATE PROCEDURE simuRecursivite(INOUT rep VARCHAR(255))
+  BEGIN
+    DECLARE i INT;
+    SET i = 4;
+    SET rep = '';
+    WHILE i > 0 DO
+      SET rep =
+          trim(concat(i, ' (', (SELECT getParr(i)), ') ', rep));
+      SET i = i - 1;
+    END WHILE;
+     -- SET @reponses = rep;
+      -- , length(reponses) AS 'Longueur de la chaîne';
+  END;
+CALL simuRecursivite(@reponses);";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+  $sql = "SELECT @reponses, length(@reponses) AS 'Longueur de la chaîne';";
+  $req( $sql, $pdo );;
+
+
 
   echo str_repeat( '<br>', 25 ); // 28
   ?>
