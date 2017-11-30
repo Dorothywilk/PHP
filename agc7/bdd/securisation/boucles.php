@@ -4,13 +4,13 @@
       href="https://stackoverflow.com/questions/5125096/for-loop-example-in-mysql"
       target="_blank">Boucles</a></h1>
 
-  <p class="lead">Exemples divers</p>
+  <h3 class="lead">Exemples divers</h3>
+  <p class="lead">Nécessite la BdD `<strong>aazt</strong>` (Initiée dans page FonctionsUtilisateurs)</p>
 </div>
 <div class="maingc7">
 
   <?php
   $pdo = pdo( 'aazt' ); // BdD de tests
-
 
   $sql = "DROP TABLE IF EXISTS aazt.xut;
 CREATE TABLE aazt.xut
@@ -19,6 +19,10 @@ CREATE TABLE aazt.xut
 ";
   affLign( $sql );
   $pdo->query( $sql );
+
+  $sql = "select * from aaxu.xut;";
+  $req( $sql, $pdo );
+
 
   ?>
   <h3>For (
