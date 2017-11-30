@@ -190,30 +190,24 @@ CALL simuRecursivite(@reponses);";
   $req( $sql, $pdo );;
 
 
-  $sql = "SELECT 1";
-  $req( $sql, $pdo );
-
-
   $sql = "DROP PROCEDURE IF EXISTS simuRecursivite;
-CREATE PROCEDURE simuRecursivite(INOUT rep VARCHAR(255))
+CREATE PROCEDURE simuRecursivite(IN i INT)
   BEGIN
-    DECLARE i INT;
-    SET i = 4;
-    SET rep = '';
+    declare rep varchar(255) default '';
     WHILE i > 0 DO
       SET rep =
-          trim(concat(i, ' (', (SELECT getParr(i)), ') ', rep));
+      trim(concat(i, ' (', (SELECT getParr(i)), ') ', rep));
       SET i = i - 1;
     END WHILE;
-     -- SET @reponses = rep;
-      -- , length(reponses) AS 'Longueur de la chaîne';
-  END;
-CALL simuRecursivite(@reponses);";
+    SELECT
+      rep,
+      length(rep) AS 'Longueur de la chaîne';
+  END;";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "SELECT @reponses, length(@reponses) AS 'Longueur de la chaîne';";
-  $req( $sql, $pdo );;
+  $sql = "CALL simuRecursivite(4);";
+  $req( $sql, $pdo );
 
 
 
