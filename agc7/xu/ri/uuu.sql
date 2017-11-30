@@ -253,3 +253,135 @@ DELIMITER ;
 
 
 CALL test_boucle_b(99999);
+
+/*
+CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition2`(IN `p_ville` VARCHAR(100)) BEGIN
+  DECLARE v_nom, v_prenom VARCHAR(100);
+
+  -- On déclare fin comme un BOOLEAN, avec FALSE pour défaut
+  DECLARE fin BOOLEAN DEFAULT FALSE;
+
+  DECLARE curs_clients CURSOR
+  FOR SELECT
+        nom,
+        prenom
+      FROM Client
+      WHERE ville = p_ville;
+
+  -- On utilise TRUE au lieu de 1
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
+
+  OPEN curs_clients;
+
+  loop_curseur: LOOP
+    FETCH curs_clients
+    INTO v_nom, v_prenom;
+
+    IF fin
+    THEN -- Plus besoin de "= 1"
+      LEAVE loop_curseur;
+    END IF;
+
+    SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
+  END LOOP;
+
+  CLOSE curs_clients;
+  END$$
+
+CREATE DEFINER =`root`@`localhost` PROCEDURE `test_iterate`() BEGIN
+  DECLARE v_i INT DEFAULT 0;
+
+  boucle_while: WHILE v_i < 3 DO
+    SET v_i = v_i + 1;
+    SELECT
+      v_i,
+      'Avant IF' AS message;
+
+    IF v_i = 2
+    THEN
+      ITERATE boucle_while;
+    END IF;
+
+    SELECT
+      v_i,
+      'Après IF' AS message;
+    -- Ne sera pas exécuté pour v_i = 2
+  END WHILE;
+  END$$
+
+
+DROP PROCEDURE IF EXISTS `arbre`;
+/*--------------
+-- ------------
+-- Exemple de procédure avec boucle
+-- Génère ici l'arbre, le groupe
+CREATE PROCEDURE `arbre`(IN _noeud INTEGER UNSIGNED,
+                         IN _pref  CHAR(20))
+DETERMINISTIC
+NO SQL
+  BEGIN
+    DECLARE _id INTEGER DEFAULT 0;
+    DECLARE _lien INTEGER DEFAULT 0;
+    DECLARE _nom VARCHAR(255) DEFAULT '';
+
+    DECLARE _fin INTEGER DEFAULT 1;
+    DECLARE _tab CURSOR FOR SELECT
+                              id,
+                              lien,
+                              nom
+                            FROM `parent`
+                            WHERE lien = _noeud;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET _fin = 0;
+
+    OPEN _tab;
+    FETCH _tab
+    INTO _id, _lien, _nom;
+
+    WHILE (_fin)
+    DO
+      INSERT INTO `travail` (`lib`) VALUES (concat(_pref, '... ', _nom));
+
+      CALL arbre(_id, concat('..', _pref));
+
+      FETCH _tab
+      INTO _id, _lien, _nom;
+    END WHILE;
+
+    CLOSE _tab;
+  END;
+-- ------------
+*/
+
+
+
+/*
+  DECLARE _pseudo VARCHAR(255);
+
+  DECLARE _fin INTEGER DEFAULT 1;
+  DECLARE _tab CURSOR FOR SELECT
+                            id,
+                            pseudo,
+                            parr
+                          FROM www_boos2013.xoops_users
+                          WHERE uname = parr
+                                AND uid < 20;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET _fin = 0;
+
+  OPEN _tab;
+  FETCH _tab
+  INTO _uid, _lien, _pseudo;
+
+  WHILE (_fin)
+  DO
+    SELECT
+      uid,
+      uname;
+
+    CALL arbreXuB(_uid, concat('..', _pref));
+
+    FETCH _tab
+    INTO _id, _lien, _nom;
+  END WHILE;
+
+  CLOSE _tab;
+*/
