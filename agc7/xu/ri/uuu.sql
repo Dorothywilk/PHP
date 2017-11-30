@@ -81,3 +81,7 @@ CREATE PROCEDURE `boucleB`()
     FROM t_b;
 
   END;
+
+
+INSERT INTO b2 (uid, uname, parr)
+VALUES (1, 'Aadminli', null)

@@ -62,9 +62,8 @@ VALUES
   (1, 'Grcote7', 'Aadminli'),
   (2, 'Doro', 'Grcote7'),
   (3, 'Jade', 'Doro'),
-  (4, 'Jeny', 'Jade'),
-  (5, 'Aadminli', 'Root'),
-  (6, 'Micky', 'Jeny'),
+  (4, 'Micky', 'Jeny'),
+  (6, 'Jeny', 'Jade'),
   (7, 'Mimi', 'Doro');";
   affLign( $sql );
   $pdo->query( $sql );

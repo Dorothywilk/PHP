@@ -51,7 +51,7 @@ namespace GC7;
 //include( 'securisation/requetesPreparees.php' );
 //include( 'securisation/procedures.php' );
 //include( 'securisation/conditions.php' );
-//include( 'securisation/fonctionsUtilisateur.php' );
+include( 'securisation/fonctionsUtilisateur.php' );
 include( 'securisation/boucles.php' );
 //include( 'securisation/erreurs_curseurs.php' );
 //include( 'securisation/triggers.php' );
@@ -66,6 +66,7 @@ include( 'securisation/boucles.php' );
 //include( 'admin/infos.php' );
 //include( 'admin/config.php' );
 //
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 //include( '../class/Req.php' );
