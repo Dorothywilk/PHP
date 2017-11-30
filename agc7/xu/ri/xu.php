@@ -156,9 +156,15 @@ END;";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "call boucle_b1();";
-  $req( $sql, $pdo );
+  $sql = "call boucle_b1();
 
+-- Table temporaire t_b :";
+  $req( $sql, $pdo );
+?>
+
+<h3>Création des données</h3>
+
+  <?php
 
   $sql = "select * from b2";
   $req( $sql, $pdo );
