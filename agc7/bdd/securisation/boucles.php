@@ -14,15 +14,20 @@
   <?php
   $pdo = pdo( 'aazt' ); // BdD de tests
 
-  $sql = "DROP TABLE IF EXISTS aazt.xut;
-CREATE TABLE aazt.xut
+  $sql = "DROP TABLE IF EXISTS xut;
+CREATE TABLE xut
     SELECT *
-    FROM aaxu.xut;
-";
+    FROM aaxu.xut;";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "select * from aaxu.xut;";
+  $sql = "select * from xut;";
+  $req( $sql, $pdo );
+
+  $sql = "-- Représentation graphique
+SELECT concat(repeat('&nbsp; ', pf * 5), pseudo) 'Type de transport'
+FROM xut
+ORDER BY bg;";
   $req( $sql, $pdo );
 
 
