@@ -3,11 +3,14 @@ USE aazt;
 SELECT *
 FROM b;
 
-create table xutB
-SELECT *
-FROM xut;
+DROP TABLE xutB;
 
-truncate xutB
+CREATE TABLE xutB
+    SELECT *
+    FROM xut;
+
+TRUNCATE xutB;
+
 SELECT *
 FROM xutb;
 
