@@ -1,4 +1,4 @@
-<form method="post" action="formulaire3.php">
+<form method="post" action="./tuto/cours/formulaire3.php">
 
   <fieldset>
     <legend>Vos coordonnées</legend>
@@ -30,12 +30,12 @@
        
 <!--	<form action="formulaire3.php" method="post" enctype="multipart/form-data">-->
         <p>
-                Formulaire d'envoi de fichier :<br />
-                <input type="file" name="monfichier" /><br /><br />
-                <input type="submit" value="Envoyer le fichier" />
+					Formulaire d'envoi de fichier :<br />
+			<input type="file" name="monfichier" /><br /><br />
+			<input type="submit" value="Envoyer le fichier" />
         </p>
 </form>
-   
+<!-- --------------  -->
     <p>
     <label for="pays">Choisissez votre option</label><br/>
     <select name="choix" id="choix">
