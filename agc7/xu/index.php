@@ -24,12 +24,13 @@
 
 <?php
 
-    
+
 include '../bdd/inc/fctns.php';
 
-    //include 'ri/toutLeReseau.php'; // Nécessite table wwwboos2013_xoopsusers
-include 'ri/ini.php';
-
+//include 'ri/toutLeReseau.php'; // Nécessite table wwwboos2013_xoopsusers
+//include 'ri/ini.php'; // Contient ToDo List
+//include 'ri/toutLeReseau.php';
+include 'ri/xu.php';
 
 
 ?>

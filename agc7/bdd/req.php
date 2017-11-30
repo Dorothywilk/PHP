@@ -67,6 +67,7 @@ include( 'securisation/boucles.php' );
 //include( 'admin/config.php' );
 //
 
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //include( '../class/Req.php' );
 // Exemple requête simple

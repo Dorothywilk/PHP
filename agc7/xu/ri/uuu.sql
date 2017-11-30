@@ -1,61 +1,87 @@
-DROP PROCEDURE IF EXISTS aaxu.simuRecursivite;
-CREATE PROCEDURE aaxu.simuRecursivite(INOUT reponses VARCHAR(255))
-  BEGIN
-    DECLARE i INT;
-    SET i = 3;
-    SET reponses = '';
-    WHILE i > 0 DO
-      SELECT trim(concat(i, ' (', (SELECT getParr(i)), ') ', reponses))
-      INTO reponses;
-      SET i = i - 1;
-    END WHILE;
-  END;
-CALL aaxu.simuRecursivite(@reponses);
-SELECT
-  @reponses,
-  length(@reponses) AS 'Longueur de la chaîne';
+USE aazt;
 
-
-DROP PROCEDURE IF EXISTS aaxu.boucleX;
-CREATE PROCEDURE aaxu.boucleX(INOUT reponses VARCHAR(65500))
-  BEGIN
-    DECLARE i INT;
-    SET i = 3000;
-    SET reponses = '';
-    WHILE i > 0 DO
-      SELECT trim(concat(i, ' (', (SELECT getCarre(i)), ') ', reponses))
-      INTO reponses;
-      SET i = i - 1;
-    END WHILE;
-  END;
-CALL boucleX(@reponses);
-SELECT
-  @reponses,
-  length(@reponses) AS 'Longueur de la chaîne';
-
-
-DROP PROCEDURE IF EXISTS aaxu.boucleI;
-CREATE PROCEDURE aaxu.boucleI()
-  BEGIN
-    DECLARE i INT;
-    SET i = 1;
-    DROP TEMPORARY TABLE IF EXISTS t_rep;
-    CREATE TEMPORARY TABLE t_rep (
-      n     INT(11),
-      carre INT(255),
-      PRIMARY KEY (n)
-    );
-    WHILE i < 101 DO
-      INSERT INTO t_rep (n, carre) VALUES (i, (SELECT getCarre(i)));
-      SET i = i + 1;
-    END WHILE;
-  END;
-CALL boucleI();
 SELECT *
-FROM t_rep;
+FROM b;
+
+-- b1 pour copie de b et suppression progressive des fiche
+CREATE TABLE b1
+    SELECT *
+    FROM b;
+
+SELECT *
+FROM b1;
+
+CREATE TABLE b2
+    SELECT *
+    FROM b;
+
+truncate b2;
+
+SELECT *
+FROM b2;
 
 
-SELECT
-  @reponses,
-  length(@reponses) AS 'Longueur de la chaîne';
+DROP TABLE xutB;
 
+-- Table à compléter (BUT)
+CREATE TABLE xutB
+    SELECT *
+    FROM xut;
+
+TRUNCATE xutB;
+
+SELECT *
+FROM xutb;
+
+CALL boucleB();
+
+DROP PROCEDURE IF EXISTS boucleB;
+CREATE PROCEDURE `boucleB`()
+  BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE v_id INT;
+    DECLARE v_pseudo, v_parr VARCHAR(255);
+
+    DECLARE b_cursor CURSOR FOR
+      SELECT
+        uid,
+        uname,
+        parr
+      FROM b;
+
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+    DROP TEMPORARY TABLE IF EXISTS t_b;
+    CREATE TEMPORARY TABLE t_b (
+      id     INT,
+      pseudo VARCHAR(255),
+      parr   VARCHAR(255)
+    );
+
+    OPEN b_cursor;
+
+    b_loop: LOOP
+      FETCH b_cursor
+      INTO v_id, v_pseudo, v_parr;
+
+      IF done
+      THEN
+        LEAVE b_loop;
+      END IF;
+
+      INSERT INTO t_b (id, pseudo, parr) VALUES
+        (v_id,
+         v_pseudo,
+         v_parr);
+    END LOOP;
+
+    CLOSE b_cursor;
+
+    SELECT *
+    FROM t_b;
+
+  END;
+
+
+INSERT INTO b2 (uid, uname, parr)
+VALUES (1, 'Aadminli', null)

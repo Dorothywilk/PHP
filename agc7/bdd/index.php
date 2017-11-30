@@ -13,7 +13,7 @@
 
 <body>
 <div class="navLi">
-  <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Procédures MySQL
+  <a href="/" class="hoverable lkdo">Do</a> | BdD - But: Représentation Intervallaire / B
 </div>
 
 <?php

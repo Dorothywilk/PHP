@@ -1,5 +1,6 @@
 USE arbre;
 
+DROP TABLE IF EXISTS tuto_herit;
 CREATE TABLE tuto_herit (
   forum_id        MEDIUMINT(8) NOT NULL AUTO_INCREMENT,
   forum_parent_id MEDIUMINT(8)          DEFAULT NULL,
@@ -34,6 +35,7 @@ VALUES
   (20, NULL, '2')/*,[...]*/;
 
 
+DROP TABLE IF EXISTS tuto_ri;
 CREATE TABLE tuto_ri (
   forum_id     MEDIUMINT(8) NOT NULL AUTO_INCREMENT,
   forum_level  MEDIUMINT(8) NOT NULL DEFAULT 0,
@@ -205,13 +207,13 @@ CONTAINS SQL
     SET fam.niv = fff.niv;
   END;
 
-CALL maj_prof;
-
 UPDATE fam
 SET niv = 7
 WHERE 1;
 
-use arbre;
+CALL maj_prof;
+
+USE arbre;
 -- Représentation graphique
 SELECT concat(repeat(' ', niv * 7), nom) 'Type de transport'
 FROM fam

@@ -1,3 +1,5 @@
+-- Réservé Gc7
+
 DROP DATABASE IF EXISTS `aaxu`;
 CREATE DATABASE `aaxu`
   DEFAULT CHARACTER SET `latin1`
@@ -56,7 +58,7 @@ CREATE TABLE `xu` (
 SELECT *
 FROM xu;
 
-DROP TABLE aaxu.xut;
+DROP TABLE IF EXISTS aaxu.xut;
 -- #################################################################################################
 --
 --             CRÉATION TABLE xut pour test d'insertion (Départ avec Aadminli uniquement)
@@ -125,37 +127,8 @@ FROM xut;
 -- ToDoLi ajout lock Table qd Opé + activer transaction (Cf. arbre/exemple_proc.sql)
 -- ToDoLi Cf. arbre/exemple_proc.sql pour proc avec boucle
 
-CALL insertXu('GrCOTE7', 1);
-SELECT *
-FROM xut;
 
-CALL insertXu('Doro', 2);
-CALL insertXu('Jade', 3);
-SELECT *
-FROM xut;
-
-
-CALL insertXu('Mimi', 3);
-CALL insertXu('Jeny', 4);
-CALL insertXu('Micky', 6);
-
-
-SELECT concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'XUs'
-FROM aaxu.xut
-ORDER BY bg;
-
-
-SELECT
-  concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'Membre',
-  lv,
-  typ
-FROM aaxu.xut
-WHERE bg >= 1
-      AND bd <= 120
-ORDER BY bg;
-
-
-DROP PROCEDURE insertXu;
+DROP PROCEDURE IF EXISTS insertXu;
 DELIMITER |
 CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
   IN `pseudoXu` VARCHAR(255),
@@ -194,6 +167,37 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
   END |
 DELIMITER ;
 
+
+CALL insertXu('GrCOTE7', 1);
+SELECT *
+FROM xut;
+
+CALL insertXu('Doro', 2);
+CALL insertXu('Jade', 3);
+SELECT *
+FROM xut;
+
+
+CALL insertXu('Mimi', 3);
+CALL insertXu('Jeny', 4);
+CALL insertXu('Micky', 6);
+
+
+SELECT concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'XUs'
+FROM aaxu.xut
+ORDER BY bg;
+
+
+SELECT
+  concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'Membre',
+  lv,
+  typ
+FROM aaxu.xut
+WHERE bg >= 1
+      AND bd <= 120
+ORDER BY bg;
+
+
 SELECT
   pseudo AS pseudoRef,
   bg     AS bgRef,
@@ -203,299 +207,61 @@ FROM xut
 WHERE id = 1;
 
 
-USE aaxu;
+USE aazt;
 
-CALL test_boucle_xus(21);
+SELECT *
+FROM b;
 
-DROP PROCEDURE IF EXISTS test_boucle_xus;
-DELIMITER |
-
-CREATE PROCEDURE `test_boucle_xus`(IN `p_id` INT)
+DROP PROCEDURE IF EXISTS boucle_b1;
+CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id INT;
-    DECLARE v_pseudo VARCHAR(255);
+    DECLARE v_id, v_stop INT;
+    DECLARE v_pseudo, v_parr VARCHAR(255);
 
-    DECLARE xus_cursor CURSOR FOR
+
+    DECLARE b_cursor CURSOR FOR
       SELECT
         uid,
-        uname
-      FROM aaxu.xus
-      WHERE uid < p_id;
+        uname,
+        parr
+      FROM b1;
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
-    OPEN xus_cursor;
+    -- Var pour stopper la boucle à la volée
+    SET v_stop = 0;
+    DROP TEMPORARY TABLE IF EXISTS t_b;
+    CREATE TEMPORARY TABLE t_b (
+      id     INT,
+      pseudo VARCHAR(255),
+      parr VARCHAR (255)
+    );
 
-    xus_loop: LOOP
-      FETCH xus_cursor
-      INTO v_id, v_pseudo;
+    OPEN b_cursor;
 
-      IF done
+    b_loop: LOOP
+      FETCH b_cursor
+      INTO v_id, v_pseudo, v_parr;
+
+      IF done or v_stop
       THEN
-        LEAVE xus_loop;
+        LEAVE b_loop;
       END IF;
 
-      SELECT
-        v_id,
-        v_pseudo;
+      SET v_stop = v_stop + 1;
+
+      INSERT INTO t_b (id, pseudo, parr) VALUES
+        (v_id,
+         v_pseudo,
+         v_parr);
     END LOOP;
 
-    CLOSE xus_cursor;
-  END|
-DELIMITER ;
+    CLOSE b_cursor;
 
+    SELECT *
+    FROM t_b;
 
-CALL curdemo();
-
-CREATE PROCEDURE curdemo()
-  BEGIN
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE a CHAR(16);
-    DECLARE b, c INT;
-    DECLARE cur1 CURSOR FOR SELECT
-                              id,
-                              data
-                            FROM test.t1;
-    DECLARE cur2 CURSOR FOR SELECT i
-                            FROM test.t2;
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-
-    OPEN cur1;
-    OPEN cur2;
-
-    read_loop: LOOP
-      FETCH cur1
-      INTO a, b;
-      FETCH cur2
-      INTO c;
-      IF done
-      THEN
-        LEAVE read_loop;
-      END IF;
-      IF b < c
-      THEN
-        INSERT INTO test.t3 VALUES (a, b);
-      ELSE
-        INSERT INTO test.t3 VALUES (a, c);
-      END IF;
-    END LOOP;
-
-    CLOSE cur1;
-    CLOSE cur2;
   END;
 
-/*
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition`(IN `p_ville` VARCHAR(100)) BEGIN
-  DECLARE v_nom, v_prenom VARCHAR(100);
-
-  DECLARE curs_clients CURSOR
-  FOR SELECT
-        nom,
-        prenom
-      FROM Client
-      WHERE ville = p_ville;
-
-  OPEN curs_clients;
-
-  LOOP
-    FETCH curs_clients
-    INTO v_nom, v_prenom;
-    SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
-  END LOOP;
-
-  CLOSE curs_clients;
-  END$$
-
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition2`(IN `p_ville` VARCHAR(100)) BEGIN
-  DECLARE v_nom, v_prenom VARCHAR(100);
-
-  -- On déclare fin comme un BOOLEAN, avec FALSE pour défaut
-  DECLARE fin BOOLEAN DEFAULT FALSE;
-
-  DECLARE curs_clients CURSOR
-  FOR SELECT
-        nom,
-        prenom
-      FROM Client
-      WHERE ville = p_ville;
-
-  -- On utilise TRUE au lieu de 1
-  DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
-
-  OPEN curs_clients;
-
-  loop_curseur: LOOP
-    FETCH curs_clients
-    INTO v_nom, v_prenom;
-
-    IF fin
-    THEN -- Plus besoin de "= 1"
-      LEAVE loop_curseur;
-    END IF;
-
-    SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
-  END LOOP;
-
-  CLOSE curs_clients;
-  END$$
-
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_iterate`() BEGIN
-  DECLARE v_i INT DEFAULT 0;
-
-  boucle_while: WHILE v_i < 3 DO
-    SET v_i = v_i + 1;
-    SELECT
-      v_i,
-      'Avant IF' AS message;
-
-    IF v_i = 2
-    THEN
-      ITERATE boucle_while;
-    END IF;
-
-    SELECT
-      v_i,
-      'Après IF' AS message;
-    -- Ne sera pas exécuté pour v_i = 2
-  END WHILE;
-  END$$
-
-
-DROP PROCEDURE IF EXISTS `arbre`;
-/*--------------
--- ------------
--- Exemple de procédure avec boucle
--- Génère ici l'arbre, le groupe
-CREATE PROCEDURE `arbre`(IN _noeud INTEGER UNSIGNED,
-                         IN _pref  CHAR(20))
-DETERMINISTIC
-NO SQL
-  BEGIN
-    DECLARE _id INTEGER DEFAULT 0;
-    DECLARE _lien INTEGER DEFAULT 0;
-    DECLARE _nom VARCHAR(255) DEFAULT '';
-
-    DECLARE _fin INTEGER DEFAULT 1;
-    DECLARE _tab CURSOR FOR SELECT
-                              id,
-                              lien,
-                              nom
-                            FROM `parent`
-                            WHERE lien = _noeud;
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET _fin = 0;
-
-    OPEN _tab;
-    FETCH _tab
-    INTO _id, _lien, _nom;
-
-    WHILE (_fin)
-    DO
-      INSERT INTO `travail` (`lib`) VALUES (concat(_pref, '... ', _nom));
-
-      CALL arbre(_id, concat('..', _pref));
-
-      FETCH _tab
-      INTO _id, _lien, _nom;
-    END WHILE;
-
-    CLOSE _tab;
-  END;
--- ------------
-*/
-
-
-CALL arbreXuB;
--- Simul récursivité / wwwbos2013_xoops_users
-DROP PROCEDURE IF EXISTS `arbreXuB`;
-
--- Exemple de procédure avec boucle
--- Génère ici l'arbre, le groupe
-DELIMITER |
-CREATE PROCEDURE `arbreXuB`()
-DETERMINISTIC
-NO SQL
-  BEGIN
-    DECLARE _uid, _parr INT;
-    SELECT 'OK';
-  END|
-DELIMITER ;
-/*
-  DECLARE _pseudo VARCHAR(255);
-
-  DECLARE _fin INTEGER DEFAULT 1;
-  DECLARE _tab CURSOR FOR SELECT
-                            id,
-                            pseudo,
-                            parr
-                          FROM www_boos2013.xoops_users
-                          WHERE uname = parr
-                                AND uid < 20;
-  DECLARE CONTINUE HANDLER FOR NOT FOUND SET _fin = 0;
-
-  OPEN _tab;
-  FETCH _tab
-  INTO _uid, _lien, _pseudo;
-
-  WHILE (_fin)
-  DO
-    SELECT
-      uid,
-      uname;
-
-    CALL arbreXuB(_uid, concat('..', _pref));
-
-    FETCH _tab
-    INTO _id, _lien, _nom;
-  END WHILE;
-
-  CLOSE _tab;
-*/
-
-/*
-BEGIN
-DECLARE v_diff INT;
-SELECT FLOOR(TIMESTAMPDIFF(MINUTE, MAX(`t_stamp`), NOW()) / 10) - 1
-INTO v_diff
-FROM `test`.`calendar`;
-
-CREATE TEMPORARY TABLE calendar_bis (
-  t_date  DATE,
-  t_stamp DATETIME
-);
-
-
-WHILE v_diff >0 DO
-INSERT INTO calendar_bis (`t_date`, t_stamp) VALUES (DATE(round10min(now())- INTERVAL v_diff*10 MINUTE), round10min(now())- INTERVAL v_diff*10 MINUTE);
-
-SET v_diff = v_diff - 1;
-END WHILE;
-SELECT *
-FROM calendar_bis;
-DROP TABLE calendar_bis;
-END
-
-*/
-
-DROP PROCEDURE IF EXISTS for_loop_example;
-DELIMITER |
-CREATE PROCEDURE for_loop_example()
-    wholeblock: BEGIN
-    DECLARE x INT;
-    DECLARE str VARCHAR(255);
-    SET x = -5;
-    SET str = '';
-    loop_label: LOOP
-      IF x > 0
-      THEN
-        LEAVE loop_label;
-      END IF;
-      SET str = CONCAT(str, x, ', ');
-      SET x = x + 1;
-      ITERATE loop_label;
-    END LOOP;
-    SELECT str;
-  END |
-DELIMITER ;
-CALL for_loop_example();
-
+CALL test_boucle_b();
