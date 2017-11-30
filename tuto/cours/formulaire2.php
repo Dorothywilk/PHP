@@ -1,4 +1,4 @@
-<form method="post" action="traitement.php">
+<form method="post" action="formulaire3.php">
 
   <fieldset>
     <legend>Vos coordonnées</legend>
@@ -12,18 +12,26 @@
 
     <label for="email">Quel est votre email ?<br></label>
     <input type="email" name="email" id="email"/><br><br>
+    
+		
     <label for="email">Choisissez la date <br></label>
     <input type="date" name="calendrier" id="calendrier"/><br><br>
+    
+<!--		<p><label>Prénom : <input type='text' name='prenom/>'</label></p>-->
    
     <input type="submit" value="Envoyer" id="submit"/><br>   
 		
 <!--		Case à cocher--> Juste un essai
 		<input type="checkbox" checked/> 							 
   </fieldset>
-<form action="cible_envoi.php" method="post" enctype="multipart/form-data">
+  
+	
+<form action="formulaire3.php" method="post">
+       
+<!--	<form action="formulaire3.php" method="post" enctype="multipart/form-data">-->
         <p>
                 Formulaire d'envoi de fichier :<br />
-                <input type="file" name="monfichier" /><br />
+                <input type="file" name="monfichier" /><br /><br />
                 <input type="submit" value="Envoyer le fichier" />
         </p>
 </form>
