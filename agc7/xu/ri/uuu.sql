@@ -1,11 +1,29 @@
-DROP PROCEDURE IF EXISTS aaxu.boucleX;
-CREATE PROCEDURE aaxu.boucleX(INOUT reponses VARCHAR(255))
+DROP PROCEDURE IF EXISTS aaxu.simuRecursivite;
+CREATE PROCEDURE aaxu.simuRecursivite(INOUT reponses VARCHAR(255))
   BEGIN
     DECLARE i INT;
-    SET i = 7;
+    SET i = 3;
     SET reponses = '';
     WHILE i > 0 DO
-      SELECT trim(concat(i, ' ', '(', (SELECT getCarre(i)), ') ', reponses))
+      SELECT trim(concat(i, ' (', (SELECT getParr(i)), ') ', reponses))
+      INTO reponses;
+      SET i = i - 1;
+    END WHILE;
+  END;
+CALL aaxu.simuRecursivite(@reponses);
+SELECT
+  @reponses,
+  length(@reponses) AS 'Longueur de la chaîne';
+
+
+DROP PROCEDURE IF EXISTS aaxu.boucleX;
+CREATE PROCEDURE aaxu.boucleX(INOUT reponses VARCHAR(65500))
+  BEGIN
+    DECLARE i INT;
+    SET i = 3000;
+    SET reponses = '';
+    WHILE i > 0 DO
+      SELECT trim(concat(i, ' (', (SELECT getCarre(i)), ') ', reponses))
       INTO reponses;
       SET i = i - 1;
     END WHILE;
@@ -13,58 +31,31 @@ CREATE PROCEDURE aaxu.boucleX(INOUT reponses VARCHAR(255))
 CALL boucleX(@reponses);
 SELECT
   @reponses,
-  length(@reponses) as 'Longueur de la chaîne';
+  length(@reponses) AS 'Longueur de la chaîne';
 
-DROP PROCEDURE IF EXISTS aaxu.boucleB;
-CREATE PROCEDURE aaxu.boucleB()
-NO SQL
-DETERMINISTIC
+
+DROP PROCEDURE IF EXISTS aaxu.boucleI;
+CREATE PROCEDURE aaxu.boucleI()
   BEGIN
-    DECLARE _uid, _parr INT;
-    SELECT *
-    FROM b;
+    DECLARE i INT;
+    SET i = 1;
+    DROP TEMPORARY TABLE IF EXISTS t_rep;
+    CREATE TEMPORARY TABLE t_rep (
+      n     INT(11),
+      carre INT(255),
+      PRIMARY KEY (n)
+    );
+    WHILE i < 101 DO
+      INSERT INTO t_rep (n, carre) VALUES (i, (SELECT getCarre(i)));
+      SET i = i + 1;
+    END WHILE;
   END;
+CALL boucleI();
+SELECT *
+FROM t_rep;
 
-CALL boucleB();
 
-
-DROP PROCEDURE IF EXISTS aaxu.msg;
-CREATE PROCEDURE aaxu.msg()
-NO SQL
-DETERMINISTIC
-  BEGIN
-    SELECT 'Ok';
-
-  END;
-
-CALL aaxu.msg();
-
-DROP FUNCTION IF EXISTS getParr;
-CREATE FUNCTION getParr(idu INT)
-  RETURNS INT
-DETERMINISTIC
-READS SQL DATA
-  BEGIN
-    SELECT parr
-    INTO @i
-    FROM b
-    WHERE id = idu;
-    RETURN @i;
-  END;
-
-SELECT getParr(3) AS IdParr;
-
-DROP FUNCTION IF EXISTS getCarre;
-CREATE FUNCTION getCarre(id INT)
-  RETURNS INT
-DETERMINISTIC
-READS SQL DATA
-  BEGIN
-    -- select id asIdParr from b where parr = id;
-    RETURN id * id;
-  END;
-
-SET @i = 25;
 SELECT
-  @i,
-  getParr(@i) AS IdParr;
+  @reponses,
+  length(@reponses) AS 'Longueur de la chaîne';
+

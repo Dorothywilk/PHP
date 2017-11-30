@@ -205,31 +205,85 @@ WHERE id = 1;
 
 USE aaxu;
 
-DROP PROCEDURE test_boucle;
+CALL test_boucle_xus(21);
+
+DROP PROCEDURE IF EXISTS test_boucle_xus;
 DELIMITER |
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_boucle`(IN `p_id` INT)
+
+CREATE PROCEDURE `test_boucle_xus`(IN `p_id` INT)
   BEGIN
-    DECLARE v_pseudoId VARCHAR(255);
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE v_id INT;
+    DECLARE v_pseudo VARCHAR(255);
 
-    DECLARE curs_xus CURSOR
-    FOR SELECT
-          id,
-          pseudo
-        FROM aaxu.xu
-        WHERE id < p_id;
+    DECLARE xus_cursor CURSOR FOR
+      SELECT
+        uid,
+        uname
+      FROM aaxu.xus
+      WHERE uid < p_id;
 
-    OPEN curs_xus;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
-    LOOP
-      FETCH curs_xus
-      INTO v_pseudoId;
-      SELECT CONCAT(v_pseudoId, ' ', id) AS 'Xu';
+    OPEN xus_cursor;
+
+    xus_loop: LOOP
+      FETCH xus_cursor
+      INTO v_id, v_pseudo;
+
+      IF done
+      THEN
+        LEAVE xus_loop;
+      END IF;
+
+      SELECT
+        v_id,
+        v_pseudo;
     END LOOP;
 
-    CLOSE curs_xus;
+    CLOSE xus_cursor;
   END|
+DELIMITER ;
 
-CALL test_boucle(10);
+
+CALL curdemo();
+
+CREATE PROCEDURE curdemo()
+  BEGIN
+    DECLARE done INT DEFAULT FALSE;
+    DECLARE a CHAR(16);
+    DECLARE b, c INT;
+    DECLARE cur1 CURSOR FOR SELECT
+                              id,
+                              data
+                            FROM test.t1;
+    DECLARE cur2 CURSOR FOR SELECT i
+                            FROM test.t2;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+
+    OPEN cur1;
+    OPEN cur2;
+
+    read_loop: LOOP
+      FETCH cur1
+      INTO a, b;
+      FETCH cur2
+      INTO c;
+      IF done
+      THEN
+        LEAVE read_loop;
+      END IF;
+      IF b < c
+      THEN
+        INSERT INTO test.t3 VALUES (a, b);
+      ELSE
+        INSERT INTO test.t3 VALUES (a, c);
+      END IF;
+    END LOOP;
+
+    CLOSE cur1;
+    CLOSE cur2;
+  END;
 
 /*
 CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition`(IN `p_ville` VARCHAR(100)) BEGIN
@@ -423,4 +477,25 @@ END
 
 */
 
-SELECT 1;
+DROP PROCEDURE IF EXISTS for_loop_example;
+DELIMITER |
+CREATE PROCEDURE for_loop_example()
+    wholeblock: BEGIN
+    DECLARE x INT;
+    DECLARE str VARCHAR(255);
+    SET x = -5;
+    SET str = '';
+    loop_label: LOOP
+      IF x > 0
+      THEN
+        LEAVE loop_label;
+      END IF;
+      SET str = CONCAT(str, x, ', ');
+      SET x = x + 1;
+      ITERATE loop_label;
+    END LOOP;
+    SELECT str;
+  END |
+DELIMITER ;
+CALL for_loop_example();
+

@@ -228,18 +228,18 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `test_condition` (IN `p_ville` VARCH
     DECLARE v_nom, v_prenom VARCHAR(100);
 
     DECLARE curs_clients CURSOR
-        FOR SELECT nom, prenom
+    FOR SELECT nom, prenom
         FROM Client
         WHERE ville = p_ville;
 
-    OPEN curs_clients;                                    
+    OPEN curs_clients;
 
-    LOOP                                                  
-        FETCH curs_clients INTO v_nom, v_prenom;                   
+    LOOP
+        FETCH curs_clients INTO v_nom, v_prenom;
         SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
     END LOOP;
 
-    CLOSE curs_clients; 
+    CLOSE curs_clients;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `test_condition2` (IN `p_ville` VARCHAR(100))  BEGIN

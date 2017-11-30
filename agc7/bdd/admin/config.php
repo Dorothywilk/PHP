@@ -52,7 +52,7 @@ namespace GC7;
   $req( $sql, $pdo );
 
   $sql = "SET @@GLOBAL.autocommit=0
--- Snas précision de GLOBAL, c'est au niveau session";
+-- Sans précision de GLOBAL, c'est au niveau session";
   affLign( $sql );
   $pdo->query( $sql );
 
