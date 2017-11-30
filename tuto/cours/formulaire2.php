@@ -26,7 +26,7 @@
   </fieldset>
   
 	
-<form action="formulaire3.php" method="post">
+<form action="./tuto/cours/formulaire3.php" method="post">
        
 <!--	<form action="formulaire3.php" method="post" enctype="multipart/form-data">-->
         <p>
