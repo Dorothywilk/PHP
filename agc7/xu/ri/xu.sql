@@ -1,3 +1,5 @@
+-- Réservé Gc7
+
 DROP DATABASE IF EXISTS `aaxu`;
 CREATE DATABASE `aaxu`
   DEFAULT CHARACTER SET `latin1`
@@ -125,37 +127,8 @@ FROM xut;
 -- ToDoLi ajout lock Table qd Opé + activer transaction (Cf. arbre/exemple_proc.sql)
 -- ToDoLi Cf. arbre/exemple_proc.sql pour proc avec boucle
 
-CALL insertXu('GrCOTE7', 1);
-SELECT *
-FROM xut;
 
-CALL insertXu('Doro', 2);
-CALL insertXu('Jade', 3);
-SELECT *
-FROM xut;
-
-
-CALL insertXu('Mimi', 3);
-CALL insertXu('Jeny', 4);
-CALL insertXu('Micky', 6);
-
-
-SELECT concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'XUs'
-FROM aaxu.xut
-ORDER BY bg;
-
-
-SELECT
-  concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'Membre',
-  lv,
-  typ
-FROM aaxu.xut
-WHERE bg >= 1
-      AND bd <= 120
-ORDER BY bg;
-
-
-DROP PROCEDURE insertXu;
+DROP PROCEDURE IF EXISTS insertXu;
 DELIMITER |
 CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
   IN `pseudoXu` VARCHAR(255),
@@ -194,6 +167,37 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
   END |
 DELIMITER ;
 
+
+CALL insertXu('GrCOTE7', 1);
+SELECT *
+FROM xut;
+
+CALL insertXu('Doro', 2);
+CALL insertXu('Jade', 3);
+SELECT *
+FROM xut;
+
+
+CALL insertXu('Mimi', 3);
+CALL insertXu('Jeny', 4);
+CALL insertXu('Micky', 6);
+
+
+SELECT concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'XUs'
+FROM aaxu.xut
+ORDER BY bg;
+
+
+SELECT
+  concat(id, repeat(' ', (pf + .25) * 4), pseudo, ' (', bg, '-', bd, ')') 'Membre',
+  lv,
+  typ
+FROM aaxu.xut
+WHERE bg >= 1
+      AND bd <= 120
+ORDER BY bg;
+
+
 SELECT
   pseudo AS pseudoRef,
   bg     AS bgRef,
@@ -203,37 +207,39 @@ FROM xut
 WHERE id = 1;
 
 
-USE aaxu;
+USE aazt;
 
-CALL test_boucle_xus(21);
+SELECT *
+FROM b;
 
-DROP PROCEDURE IF EXISTS test_boucle_xus;
+
+DROP PROCEDURE IF EXISTS test_boucle_b;
 DELIMITER |
 
-CREATE PROCEDURE `test_boucle_xus`(IN `p_id` INT)
+CREATE PROCEDURE `test_boucle_b`(IN `p_id` INT)
   BEGIN
     DECLARE done INT DEFAULT FALSE;
     DECLARE v_id INT;
     DECLARE v_pseudo VARCHAR(255);
 
-    DECLARE xus_cursor CURSOR FOR
+    DECLARE b_cursor CURSOR FOR
       SELECT
         uid,
         uname
-      FROM aaxu.xus
+      FROM b
       WHERE uid < p_id;
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
-    OPEN xus_cursor;
+    OPEN b_cursor;
 
-    xus_loop: LOOP
-      FETCH xus_cursor
+    b_loop: LOOP
+      FETCH b_cursor
       INTO v_id, v_pseudo;
 
       IF done
       THEN
-        LEAVE xus_loop;
+        LEAVE b_loop;
       END IF;
 
       SELECT
@@ -241,49 +247,12 @@ CREATE PROCEDURE `test_boucle_xus`(IN `p_id` INT)
         v_pseudo;
     END LOOP;
 
-    CLOSE xus_cursor;
+    CLOSE b_cursor;
   END|
 DELIMITER ;
 
 
-CALL curdemo();
-
-CREATE PROCEDURE curdemo()
-  BEGIN
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE a CHAR(16);
-    DECLARE b, c INT;
-    DECLARE cur1 CURSOR FOR SELECT
-                              id,
-                              data
-                            FROM test.t1;
-    DECLARE cur2 CURSOR FOR SELECT i
-                            FROM test.t2;
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
-
-    OPEN cur1;
-    OPEN cur2;
-
-    read_loop: LOOP
-      FETCH cur1
-      INTO a, b;
-      FETCH cur2
-      INTO c;
-      IF done
-      THEN
-        LEAVE read_loop;
-      END IF;
-      IF b < c
-      THEN
-        INSERT INTO test.t3 VALUES (a, b);
-      ELSE
-        INSERT INTO test.t3 VALUES (a, c);
-      END IF;
-    END LOOP;
-
-    CLOSE cur1;
-    CLOSE cur2;
-  END;
+CALL test_boucle_b(21);
 
 /*
 CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition`(IN `p_ville` VARCHAR(100)) BEGIN
@@ -405,21 +374,7 @@ NO SQL
 */
 
 
-CALL arbreXuB;
--- Simul récursivité / wwwbos2013_xoops_users
-DROP PROCEDURE IF EXISTS `arbreXuB`;
 
--- Exemple de procédure avec boucle
--- Génère ici l'arbre, le groupe
-DELIMITER |
-CREATE PROCEDURE `arbreXuB`()
-DETERMINISTIC
-NO SQL
-  BEGIN
-    DECLARE _uid, _parr INT;
-    SELECT 'OK';
-  END|
-DELIMITER ;
 /*
   DECLARE _pseudo VARCHAR(255);
 

@@ -4,7 +4,9 @@
       href="https://stackoverflow.com/questions/5125096/for-loop-example-in-mysql"
       target="_blank">Fonctions utilisateur</a></h1>
 
-  <p class="lead">Exemples divers</p>
+  <p class="lead">Nécessite d'exécuter
+    <g>xu.sql</g>
+  </p>
 </div>
 <div class="maingc7">
 
@@ -15,7 +17,7 @@
 CREATE DATABASE `aazt`
   DEFAULT CHARACTER SET `latin1`
   DEFAULT COLLATE `latin1_general_ci`;";
-    affLign( $sql );
+  affLign( $sql );
   $pdo->query( $sql );
 
   $pdo = pdo( 'aazt' ); // BdD de tests
@@ -57,7 +59,7 @@ AUTO_INCREMENT=1;";
 
   $sql = "INSERT INTO b (uid, uname, parr)
 VALUES
-  (1, 'Grcote7', '5'),
+  (1, 'Grcote7', 'Aadminli'),
   (2, 'Doro', 'Grcote7'),
   (3, 'Jade', 'Doro'),
   (4, 'Jeny', 'Jade'),

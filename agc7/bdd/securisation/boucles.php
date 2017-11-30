@@ -5,7 +5,9 @@
       target="_blank">Boucles</a></h1>
 
   <h3 class="lead">Exemples divers</h3>
-  <p class="lead">Nécessite la BdD `<strong>aazt</strong>` (Initiée dans page FonctionsUtilisateurs)</p>
+
+  <p class="lead">Nécessite la BdD `<strong>aazt</strong>` (Initiée dans page FonctionsUtilisateurs)
+  </p>
 </div>
 <div class="maingc7">
 
@@ -79,7 +81,12 @@ CREATE PROCEDURE compte()
   $req( $sql, $pdo );
 
 
-  $sql = "select * from aaxu.xus;";
+  $sql = "USE aazt;";
+  affLign( $sql );
+  $pdo->query( $sql );
+
+
+  $sql = "select * from b;";
   $req( $sql, $pdo );
 
   ?>
@@ -87,53 +94,57 @@ CREATE PROCEDURE compte()
 
   <p>Équivalent de foreach()</p>
   <?php
-  $sql = "DROP PROCEDURE IF EXISTS test_boucle_xus;
-CREATE PROCEDURE `test_boucle_xus`(IN `p_id` INT)
+  $sql = "DROP PROCEDURE IF EXISTS test_boucle_b;
+CREATE PROCEDURE `test_boucle_b`(IN `p_id` INT)
   BEGIN
     DECLARE done INT DEFAULT FALSE;
     DECLARE v_id INT;
-    DECLARE v_pseudo VARCHAR(255);
+    DECLARE v_pseudo, v_parr VARCHAR(255);
 
-    DECLARE xus_cursor CURSOR FOR
+    DECLARE b_cursor CURSOR FOR
       SELECT
         uid,
-        uname
-      FROM aaxu.xus
+        uname,
+        parr
+      FROM b
       WHERE uid < p_id;
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
-    DROP TEMPORARY TABLE IF EXISTS t_xus;
-    CREATE TEMPORARY TABLE t_xus (
+    DROP TEMPORARY TABLE IF EXISTS t_b;
+    CREATE TEMPORARY TABLE t_b (
       id     INT,
-      pseudo VARCHAR(255)
+      pseudo VARCHAR(255),
+      parr VARCHAR (255)
     );
 
-    OPEN xus_cursor;
+    OPEN b_cursor;
 
-    xus_loop: LOOP
-      FETCH xus_cursor
-      INTO v_id, v_pseudo;
+    b_loop: LOOP
+      FETCH b_cursor
+      INTO v_id, v_pseudo, v_parr;
 
       IF done
       THEN
-        LEAVE xus_loop;
+        LEAVE b_loop;
       END IF;
 
-      INSERT INTO t_xus (id, pseudo) VALUES
+      INSERT INTO t_b (id, pseudo, parr) VALUES
         (v_id,
-         v_pseudo);
+         v_pseudo,
+         v_parr);
     END LOOP;
 
-    CLOSE xus_cursor;
+    CLOSE b_cursor;
 
 SELECT *
-FROM t_xus;
-  END;";
+FROM t_b;
+
+END;";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "call test_boucle_xus(100);";
+  $sql = "call test_boucle_b(100);";
   $req( $sql, $pdo );
 
 
@@ -155,7 +166,6 @@ DETERMINISTIC
 
   $sql = "SELECT getCarre(25);";
   $req( $sql, $pdo );
-
 
 
   $sql = "SELECT 1";
