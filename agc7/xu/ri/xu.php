@@ -48,7 +48,7 @@ ORDER BY bg;";
   <ol>
     <li>La table b2 a les colonnes id, pseudo, parr, uid, parrain<br>(Les 2 dernières étant vouées à disparaître à terme)</li>
     <li>Le membre racine (Aadminli) n'est pas géré dans la procédure<br>
-      (inséré dans b2 'à la main').
+      (Supprimé de b1 et inséré dans b2 'à la main').
     </li>
   </ol>
   </p>
