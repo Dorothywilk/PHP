@@ -62,7 +62,8 @@ ORDER BY bg;";
   $sql = "DROP TABLE IF EXISTS b1;
 CREATE TABLE b1
     SELECT *
-    FROM b;";
+    FROM b;
+DELETE FROM b1 where uid=1";
   affLign( $sql );
   $pdo->query( $sql );
 
@@ -105,9 +106,8 @@ VALUES (1, 'Aadminli')";
 CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id, v_stop INT;
-    DECLARE v_pseudo, v_parr VARCHAR(255);
-
+    DECLARE v_id, v_stop, v_parr INT;
+    DECLARE v_pseudo, v_parrain VARCHAR(255);
 
     DECLARE b_cursor CURSOR FOR
       SELECT
@@ -118,53 +118,74 @@ CREATE PROCEDURE boucle_b1()
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
--- Var pour stopper la boucle à la volée
+    -- Var pour stopper la boucle à la volée
     SET v_stop = 0;
-
-    DROP TEMPORARY TABLE IF EXISTS t_b;
-    CREATE TEMPORARY TABLE t_b (
-      id     INT,
-      pseudo VARCHAR(255),
-      parr VARCHAR (255)
-    );
+    SET v_parr = 0;
 
     OPEN b_cursor;
 
     b_loop: LOOP
       FETCH b_cursor
-      INTO v_id, v_pseudo, v_parr;
+      INTO v_id, v_pseudo, v_parrain;
 
-      IF done or v_stop=2
+      SELECT
+        v_id,
+        v_pseudo,
+        v_parrain;
+
+      SELECT id
+      INTO v_parr
+      FROM b2
+      WHERE PSEUDO = v_parrain;
+
+      SELECT id
+      FROM b2
+      WHERE PSEUDO = v_parrain;
+
+-- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID);
+
+      IF done OR v_stop = 111 OR v_parr = 0
       THEN
         LEAVE b_loop;
       END IF;
 
       SET v_stop = v_stop + 1;
 
-      INSERT INTO t_b (id, pseudo, parr) VALUES
-        (v_id,
-         v_pseudo,
-         v_parr);
+      IF v_parr <> 0
+      THEN
+        INSERT INTO b2 (pseudo, parr, uid, parrain) VALUES
+          (
+            v_pseudo,
+            v_parr,
+            v_id,
+            v_parrain
+          );
+
+-- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID());
+-- update b2 set Parrain = v_parrain where pseudo = v_pseudo;
+
+      DELETE FROM b1 where uid = LAST_INSERT_ID();
+
+      END IF;
     END LOOP;
 
     CLOSE b_cursor;
 
-SELECT *
-FROM t_b;
-
-END;";
-  affLign( $sql );
+  END;";
+  //  affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "call boucle_b1();
+  $sql = "call boucle_b1();";
+  $pdo->query( $sql );
 
--- Table temporaire t_b :";
-  $req( $sql, $pdo );
-?>
+  ?>
 
-<h3>Création des données</h3>
+  <h3>Création des données</h3>
 
   <?php
+
+  $sql = "select * from b1";
+  $req( $sql, $pdo );
 
   $sql = "select * from b2";
   $req( $sql, $pdo );

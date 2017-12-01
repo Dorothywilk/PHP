@@ -1,87 +1,74 @@
 USE aazt;
 
-SELECT *
-FROM b;
-
--- b1 pour copie de b et suppression progressive des fiche
-CREATE TABLE b1
-    SELECT *
-    FROM b;
-
-SELECT *
-FROM b1;
-
-CREATE TABLE b2
-    SELECT *
-    FROM b;
-
-truncate b2;
-
-SELECT *
-FROM b2;
-
-
-DROP TABLE xutB;
-
--- Table à compléter (BUT)
-CREATE TABLE xutB
-    SELECT *
-    FROM xut;
-
-TRUNCATE xutB;
-
-SELECT *
-FROM xutb;
-
-CALL boucleB();
-
-DROP PROCEDURE IF EXISTS boucleB;
-CREATE PROCEDURE `boucleB`()
+DROP PROCEDURE IF EXISTS boucle_b1;
+CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id INT;
-    DECLARE v_pseudo, v_parr VARCHAR(255);
+    DECLARE v_id, v_stop, v_parr INT;
+    DECLARE v_pseudo, v_parrain VARCHAR(255);
 
     DECLARE b_cursor CURSOR FOR
       SELECT
         uid,
         uname,
         parr
-      FROM b;
+      FROM b1;
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
-    DROP TEMPORARY TABLE IF EXISTS t_b;
-    CREATE TEMPORARY TABLE t_b (
-      id     INT,
-      pseudo VARCHAR(255),
-      parr   VARCHAR(255)
-    );
+    -- Var pour stopper la boucle à la volée
+    SET v_stop = 0;
+    SET v_parr = 0;
 
     OPEN b_cursor;
 
     b_loop: LOOP
       FETCH b_cursor
-      INTO v_id, v_pseudo, v_parr;
+      INTO v_id, v_pseudo, v_parrain;
 
-      IF done
+      SELECT
+        v_id,
+        v_pseudo,
+        v_parrain;
+
+      SELECT id
+      INTO v_parr
+      FROM b2
+      WHERE PSEUDO = v_parrain;
+
+      SELECT id
+      FROM b2
+      WHERE PSEUDO = v_parrain;
+
+      SET v_parrain = concat(v_parrain, ' ', v_parr);
+
+      IF done OR v_stop = 111 OR v_parr = 0
       THEN
         LEAVE b_loop;
       END IF;
 
-      INSERT INTO t_b (id, pseudo, parr) VALUES
-        (v_id,
-         v_pseudo,
-         v_parr);
+      SET v_stop = v_stop + 1;
+
+      IF v_parr <> 0
+      THEN
+        INSERT INTO b2 (pseudo, parr, uid, parrain) VALUES
+          (
+            v_pseudo,
+            v_parr,
+            v_id,
+            v_parrain
+          );
+      END IF;
     END LOOP;
 
     CLOSE b_cursor;
 
     SELECT *
-    FROM t_b;
+    FROM b1;
 
   END;
 
+CALL boucle_b1();
+SELECT *
+FROM b2;
 
-INSERT INTO b2 (uid, uname, parr)
-VALUES (1, 'Aadminli', null)

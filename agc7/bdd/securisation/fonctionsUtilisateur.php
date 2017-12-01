@@ -59,12 +59,13 @@ AUTO_INCREMENT=1;";
 
   $sql = "INSERT INTO b (uid, uname, parr)
 VALUES
-  (1, 'Grcote7', 'Aadminli'),
-  (2, 'Doro', 'Grcote7'),
-  (3, 'Jade', 'Doro'),
-  (4, 'Micky', 'Jeny'),
-  (6, 'Jeny', 'Jade'),
-  (7, 'Mimi', 'Doro');";
+  (1, 'Aadminli', NULL),
+  (2, 'Grcote7', 'Aadminli'),
+  (3, 'Doro', 'Grcote7'),
+  (4, 'Jade', 'Doro'),
+  (5, 'Micky', 'Jeny'),
+  (7, 'Jeny', 'Jade'),
+  (8, 'Mimi', 'Doro');";
   affLign( $sql );
   $pdo->query( $sql );
 

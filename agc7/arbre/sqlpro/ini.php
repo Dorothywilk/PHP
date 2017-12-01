@@ -11,28 +11,26 @@
   <p class="lead">Méthodes</p>
   <ul>
     <ol>
-      <li>Auto-jointure</li>
-      <li><a href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Représentation
+      <li><i class="fa fa-check-square-o"></i> Auto-jointure</li>
+      <li><i class="fa fa-check-square-o"></i> <a
+          href="http://sqlpro.developpez.com/cours/arborescence/" target="_blank">Représentation
           intervallaire</a>
 
         <p>(Compris représentation XML & lien pour transfo récursive en bornes)<br>
           Fichier
           <g>exemple_pro.sql</g>
-          <br>
-          Procédures Groupe avec
+          <br> Procédures Groupe avec
           <g>LOOP</g>
           (Sur structure non standard).
         </p>
       </li>
-      <ul>
-        <li><a href="https://openclassrooms.com/courses/la-representation-intervallaire"
-               target="_blank">Tuto OOC</a> - Fichier MySQL: C:\laragon\www\do\agc7\arbre\ooc.sql
-        </li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <li><i class="fa fa-check-square-o"></i> <a
+          href="https://openclassrooms.com/courses/la-representation-intervallaire"
+          target="_blank">Tuto OOC</a> - Fichier MySQL: ~\agc7\arbre\ooc.sql
+      </li>
+      <li><a href="http://laravel.sillo.org/cours-laravel-5-5-les-donnees-gerer-un-arbre/">Laravel
+          Sillo</a></li>
+      <li></li>
 
     </ol>
   </ul>
