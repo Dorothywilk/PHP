@@ -106,7 +106,7 @@ VALUES (1, 'Aadminli')";
 CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id, v_stop, v_parr INT;
+    DECLARE v_id, v_stop, v_parr, v_parrainRecherche INT;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
     DECLARE b_cursor CURSOR FOR
@@ -128,28 +128,25 @@ CREATE PROCEDURE boucle_b1()
       FETCH b_cursor
       INTO v_id, v_pseudo, v_parrain;
 
-      SELECT
-        v_id,
-        v_pseudo,
-        v_parrain;
-
       SELECT id
       INTO v_parr
       FROM b2
       WHERE PSEUDO = v_parrain;
 
-      SELECT id
-      FROM b2
-      WHERE PSEUDO = v_parrain;
+      -- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID);
 
--- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID);
-
-      IF done OR v_stop = 111 OR v_parr = 0
+      IF done OR v_stop = 111
       THEN
+        SET v_parrainRecherche = (v_id + 1);
         LEAVE b_loop;
       END IF;
 
-      SET v_stop = v_stop + 1;
+--      if v_parr = 0
+--      THEN
+-- SET tour = TRUE;
+--      END IF;
+
+      -- SET v_stop = v_stop + 1;
 
       IF v_parr <> 0
       THEN
@@ -161,10 +158,11 @@ CREATE PROCEDURE boucle_b1()
             v_parrain
           );
 
--- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID());
--- update b2 set Parrain = v_parrain where pseudo = v_pseudo;
+        -- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID());
+        -- update b2 set Parrain = v_parrain where pseudo = v_pseudo;
 
-      DELETE FROM b1 where uid = LAST_INSERT_ID();
+        DELETE FROM b1
+        WHERE uid = LAST_INSERT_ID();
 
       END IF;
     END LOOP;

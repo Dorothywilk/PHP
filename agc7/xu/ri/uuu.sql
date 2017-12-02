@@ -16,6 +16,7 @@ CREATE PROCEDURE boucle_b1()
 
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
 
+
     -- Var pour stopper la boucle à la volée
     SET v_stop = 0;
     SET v_parr = 0;
@@ -27,24 +28,34 @@ CREATE PROCEDURE boucle_b1()
       INTO v_id, v_pseudo, v_parrain;
 
       SELECT
+        'ligne 29',
         v_id,
         v_pseudo,
         v_parrain;
 
-      SELECT id
+      SELECT count(*)
       INTO v_parr
       FROM b2
       WHERE PSEUDO = v_parrain;
 
-      SELECT id
-      FROM b2
-      WHERE PSEUDO = v_parrain;
+      SELECT
+        v_parr,
+        done,
+        v_stop;
 
-      SET v_parrain = concat(v_parrain, ' ', v_parr);
+      -- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID);
 
-      IF done OR v_stop = 111 OR v_parr = 0
+      IF done
       THEN
+        SELECT 'Je quitte';
         LEAVE b_loop;
+      END IF;
+
+      SELECT v_parr;
+
+      IF v_parr = 0
+      THEN
+        ITERATE b_loop;
       END IF;
 
       SET v_stop = v_stop + 1;
@@ -58,17 +69,38 @@ CREATE PROCEDURE boucle_b1()
             v_id,
             v_parrain
           );
+
+        -- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID());
+        -- update b2 set Parrain = v_parrain where pseudo = v_pseudo;
+
+        DELETE FROM b1
+        WHERE uid = LAST_INSERT_ID();
+
       END IF;
     END LOOP;
 
     CLOSE b_cursor;
 
-    SELECT *
-    FROM b1;
-
   END;
 
-CALL boucle_b1();
+USE aazt;
+
+SELECT *
+FROM b1;
+
 SELECT *
 FROM b2;
 
+CALL boucle_b1();
+
+SELECT *
+FROM b1;
+
+SELECT *
+FROM b2;
+
+
+SELECT uid
+FROM aazt.b1
+WHERE parr IN (SELECT pseudo
+                   FROM aazt.b2 limit 1)
