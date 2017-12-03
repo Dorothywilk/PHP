@@ -102,75 +102,130 @@ VALUES (1, 'Aadminli')";
 
   <?php
 
-  $sql = "DROP PROCEDURE IF EXISTS boucle_b1;
+  $sql = "USE aazt;
+
+-- #################### Préparation des tables ##################
+TRUNCATE aazt.b1;
+TRUNCATE aazt.b2;
+
+INSERT INTO aazt.b1 (uid, uname, parr)
+VALUES
+  (2, 'Grcote7', 'Aadminli'),
+  (3, 'Doro', 'Grcote7'),
+  (4, 'Jade', 'Doro'),
+  (5, 'Micky', 'Jeny'),
+  (7, 'Mimi', 'Doro'),
+  (8, 'Jeny', 'Jade'),
+  (9, 'Julien', 'Rom1'),
+  (10, 'Jonathan', 'Doro'),
+  (11, 'Félicien', 'Rom1'),
+  (12, 'rom1', 'Doro'),
+  (13, 'Greg', 'Jonathan'),
+  (14, 'Fanny', 'Jonathan');
+
+INSERT INTO aazt.b2 (uid, pseudo, parr)
+VALUES
+  (1, 'Aadminli', NULL);
+
+DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id, v_stop, v_parr, v_parrainRecherche INT;
+    DECLARE v_stop, derId, v_id, v_parr, v_paUid, uidea, i INT DEFAULT 0;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
-    DECLARE b_cursor CURSOR FOR
+    -- Table temporaire des arrivants en attentre
+    DROP TEMPORARY TABLE IF EXISTS t_b;
+    CREATE TEMPORARY TABLE t_b (
+      uid     INT,
+      uname   VARCHAR(255),
+      parrId  INT,
+      parrain VARCHAR(255)
+    );
+
+    SELECT max(uid)
+    INTO derId
+    FROM b1;
+
+    SET i = 1;
+
+    WHILE i <= derId DO
+
       SELECT
         uid,
         uname,
         parr
-      FROM b1;
+      INTO v_id, v_pseudo, v_parrain
+      FROM b1
+      WHERE uid = i;
 
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+      SET v_stop = v_stop + 1;
 
-    -- Var pour stopper la boucle à la volée
-    SET v_stop = 0;
-    SET v_parr = 0;
-
-    OPEN b_cursor;
-
-    b_loop: LOOP
-      FETCH b_cursor
-      INTO v_id, v_pseudo, v_parrain;
-
-      SELECT id
-      INTO v_parr
-      FROM b2
-      WHERE PSEUDO = v_parrain;
-
-      -- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID);
-
-      IF done OR v_stop = 111
+      IF v_id
       THEN
-        SET v_parrainRecherche = (v_id + 1);
-        LEAVE b_loop;
-      END IF;
-
---      if v_parr = 0
---      THEN
--- SET tour = TRUE;
---      END IF;
-
-      -- SET v_stop = v_stop + 1;
-
-      IF v_parr <> 0
-      THEN
-        INSERT INTO b2 (pseudo, parr, uid, parrain) VALUES
-          (
-            v_pseudo,
-            v_parr,
-            v_id,
-            v_parrain
-          );
-
-        -- SET v_parrain = concat(v_parrain, ' ', LAST_INSERT_ID());
-        -- update b2 set Parrain = v_parrain where pseudo = v_pseudo;
 
         DELETE FROM b1
-        WHERE uid = LAST_INSERT_ID();
+        WHERE uid = v_id;
+
+        SELECT id
+        INTO v_parr
+        FROM b2
+        WHERE PSEUDO = v_parrain;
+
+
+        IF v_parr
+        THEN
+
+          INSERT INTO b2 (pseudo, parr, uid, parrain) VALUES
+            (
+              v_pseudo,
+              v_parr,
+              v_id,
+              v_parrain
+            );
+
+
+          IF v_pseudo IN (SELECT parrain
+                          FROM t_b)
+          THEN
+
+            INSERT INTO b2 (pseudo, parr, uid, parrain)
+              SELECT
+                uname,
+                i,
+                uid,
+                parrain
+              FROM t_b
+              WHERE parrain = v_pseudo;
+
+
+
+          END IF;
+
+        ELSE
+
+          INSERT INTO t_b (uid, uname, parrain) VALUES (v_id, v_pseudo, v_parrain);
+
+        END IF;
 
       END IF;
-    END LOOP;
 
-    CLOSE b_cursor;
+      SET i = i + 1;
 
-  END;";
-  //  affLign( $sql );
+      SET v_id = 0;
+      SET v_parr = 0;
+      SET v_pseudo = '';
+      SET v_parrain = '';
+
+
+    END WHILE;
+
+    SELECT *
+    FROM aazt.b2;
+
+  END;
+
+CALL boucle_b1()";
+  affLign( $sql );
   $pdo->query( $sql );
 
   $sql = "call boucle_b1();";
