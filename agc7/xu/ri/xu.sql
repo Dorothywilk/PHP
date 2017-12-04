@@ -20,11 +20,10 @@ VALUES
   (1, 'Aadminli', NULL);
 
 
--- On attaque la pile !
 DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
-    DECLARE v_stop, derId, v_id, v_parr, v_paUid, uidea, i INT DEFAULT 0;
+    DECLARE v_stop, derId, v_id, v_parr, i INT DEFAULT 0;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
     -- Table temporaire des arrivants en attentre
@@ -32,7 +31,6 @@ CREATE PROCEDURE boucle_b1()
     CREATE TEMPORARY TABLE t_b (
       uid     INT,
       uname   VARCHAR(255),
-      parrId  INT,
       parrain VARCHAR(255)
     );
 
@@ -84,11 +82,10 @@ CREATE PROCEDURE boucle_b1()
                           FROM t_b)
           THEN
 
-            INSERT INTO b2 (pseudo, parr, uid, parrain)
+            INSERT INTO b1 (uid, uname, parr)
               SELECT
-                uname,
-                parrId,
                 uid,
+                uname,
                 parrain
               FROM t_b
               WHERE parrain = v_pseudo;
@@ -96,15 +93,13 @@ CREATE PROCEDURE boucle_b1()
             DELETE FROM t_b
             WHERE parrain = v_pseudo;
 
+            SET i = v_id - 1;
+
           END IF;
 
         ELSE
 
-          INSERT INTO t_b (uid, uname, parrId, parrain) VALUES (v_id, v_pseudo, (SELECT uid
-                                                                                 FROM b1
-                                                                                 WHERE uname =
-                                                                                       v_parrain),
-                                                                v_parrain);
+          INSERT INTO t_b (uid, uname, parrain) VALUES (v_id, v_pseudo, v_parrain);
 
         END IF;
 
@@ -143,7 +138,8 @@ FROM aazt.b2;
 SELECT count(*)
 FROM aazt.b2;
 
-
+/*
 SELECT *
 FROM aazt.b2
 WHERE parrain = 'gl06';
+*/

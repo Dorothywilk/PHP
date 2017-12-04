@@ -56,11 +56,11 @@
     echo '<h3>B</h3>';
     $sql = 'SELECT uid, uname,
 (SELECT uid
-FROM www_boos2013.xoops_users
+FROM aazt.boosteur
 WHERE uname = xu.parr) as parrId, parr
-FROM www_boos2013.xoops_users xu
+FROM aazt.boosteur xu
 WHERE uid =' . $id;
-    $req( $sql, $pdo, 1 );
+        $req( $sql, $pdo, 1 );
 
     echo '<h3>XU</h3>';
     $sql = 'SELECT id, pseudo, parr, parrain
