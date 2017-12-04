@@ -45,7 +45,7 @@ $sql = "select count(*) from aazt.b2";
 $sql = "select count(*) from aazt.b1";
     $req( $sql, $pdo );
 
-  $sql = "select * from aazt.b2 order by id desc";
+  $sql = "select * from aazt.b1 order by id asc";
     $req( $sql, $pdo );
 
 

@@ -3,14 +3,14 @@ USE aazt;
 -- #################### Préparation des tables ##################
 TRUNCATE aazt.b1;
 TRUNCATE aazt.b2;
-/*
+
 INSERT INTO aazt.b1 (id, pseudo, parrain)
   SELECT
     uid,
     uname,
     parr
   FROM aazt.boosteur;
-*/
+
 DELETE FROM b1
 WHERE id = 1 OR id = 15;
 
@@ -18,7 +18,7 @@ INSERT INTO aazt.b2 (uid, pseudo)
 VALUES
   (1, 'Aadminli');
 
-
+/*
 INSERT INTO aazt.b1 (id, pseudo, parrain)
 VALUES
   (2, 'Grcote7', 'Aadminli'),
@@ -34,7 +34,7 @@ VALUES
   (13, 'rom1', 'Doro'),
   (14, 'Greg', 'Jonathan'),
   (15, 'Fanny', 'Jonathan');
-
+*/
 
 DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
@@ -48,7 +48,7 @@ CREATE PROCEDURE boucle_b1()
 
     SET i = 1;
 
-    WHILE i <= derIdb1 DO
+    WHILE i <= derIdb1 DO -- and v_stop<100
 
       SELECT
         id,
@@ -77,17 +77,16 @@ CREATE PROCEDURE boucle_b1()
             v_parrain
           );
 
-
-        SELECT id
+        SELECT min(id)
         INTO idEnAtt
         FROM b1
         WHERE parrain = v_pseudo
               AND id <= i;
-
-        SELECT
-          i,
-          idEnAtt;
-
+        /*
+                SELECT
+                  i,
+                  idEnAtt;
+        */
 
         IF idEnAtt
         THEN
