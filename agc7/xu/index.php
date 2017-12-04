@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <META http-equiv="refresh" content="5; URL='/agc7/xu/'">
+  <!--  <META http-equiv="refresh" content="5; URL='/agc7/xu/'">-->
   <meta charset="UTF-8">
   <title>BdD</title>
   <link rel="stylesheet" href="../assets/css/mdb.min.css">
@@ -29,10 +29,10 @@
 
 include '../bdd/inc/fctns.php';
 
-include 'ri/toutLeReseau.php'; // Nécessite table wwwboos2013_xoopsusers
+//include 'ri/toutLeReseau.php'; // Nécessite table wwwboos2013_xoopsusers
 //include 'ri/ini.php'; // Contient ToDo List
 //include 'ri/xu.php';
-//include 'ri/b.php';
+include 'ri/b.php';
 
 
 ?>

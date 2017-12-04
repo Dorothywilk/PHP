@@ -1,22 +1,48 @@
 USE aazt;
 
 -- #################### Préparation des tables ##################
-TRUNCATE aazt.b1;
-TRUNCATE aazt.b2;
 
-INSERT INTO aazt.b1 (id, pseudo, parrain)
-  SELECT
-    uid,
-    uname,
-    parr
-  FROM aazt.boosteur;
+
+DROP TABLE IF EXISTS aazt.b1;
+CREATE TABLE aazt.b1
+    SELECT
+      uid   AS id,
+      uname AS pseudo,
+      parr  AS parrain
+    FROM aazt.boosteurori;
+
+-- ALTER TABLE `b1` COLLATE = 'utf8_unicode_ci';
+ALTER TABLE `b1`
+CHANGE COLUMN `pseudo` `pseudo` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'latin1_general_ci'
+AFTER `id`;
+ALTER TABLE `b1`
+CHANGE COLUMN `parrain` `parrain` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'latin1_general_ci'
+AFTER `pseudo`;
+
 
 DELETE FROM b1
 WHERE id = 1 OR id = 15;
 
+
+DROP TABLE IF EXISTS aazt.b2;
+CREATE TABLE `b2` (
+  `id`      INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `pseudo`  VARCHAR(250)     NOT NULL DEFAULT '' COLLATE 'latin1_general_ci',
+  `parrain` VARCHAR(250)     NULL     DEFAULT '0' COLLATE 'latin1_general_ci',
+  `uid`     INT(10) UNSIGNED NULL     DEFAULT '0',
+  `parr`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+)
+  COLLATE = 'latin1_general_ci'
+  ENGINE = InnoDB
+  AUTO_INCREMENT = 1;
+
+- ALTER TABLE `b2` COLLATE = 'utf8_unicode_ci';
+
 INSERT INTO aazt.b2 (uid, pseudo)
 VALUES
   (1, 'Aadminli');
+
 
 /*
 INSERT INTO aazt.b1 (id, pseudo, parrain)
@@ -35,7 +61,15 @@ VALUES
   (14, 'Greg', 'Jonathan'),
   (15, 'Fanny', 'Jonathan');
 */
+/*
+SELECT length(parrain), parrain
+FROM aazt.b1
+WHERE pseudo = 'jlb11';
 
+SELECT length(parr), parr
+FROM aazt.boosteurori
+WHERE uname = 'jlb11';
+*/
 DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
@@ -126,31 +160,6 @@ CREATE PROCEDURE boucle_b1()
 
 CALL boucle_b1();
 
-
-CREATE TABLE aazt.boosteurori
-    SELECT *
-    FROM www_boos2013.xoops_users
-
-
-SELECT
-  uid,
-  uname,
-  parr
-FROM www_boos2013.xoops_users_savprob
-WHERE uid = 5149;
-
-SELECT
-  uid,
-  uname,
-  parr
-FROM aazt.boosteurori
-WHERE uid = 27130;
-
-SELECT
-  uid,
-  uname,
-  parr
-FROM aazt.boosteurori
-WHERE uname like 'farida';
-
-
+create table xuB2
+  SELECT *
+  FROM b2;
