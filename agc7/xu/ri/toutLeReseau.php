@@ -63,8 +63,8 @@ WHERE uid =' . $id;
         $req( $sql, $pdo, 1 );
 
     echo '<h3>XU</h3>';
-    $sql = 'SELECT id, pseudo, parr, parrain
-FROM aaxu.xu
+    $sql = 'SELECT uid, uname, parr
+FROM aazt.boosteurori
 WHERE id =' . $id;
     $req( $sql, $pdo, 1 );
     echo '<hr>';
@@ -76,8 +76,8 @@ WHERE id =' . $id;
     global $req, $pdo;
 
     $sql = 'SELECT parr
-FROM aaxu.xu
-WHERE id =' . $id;
+FROM aazt.boosteurori
+WHERE uid =' . $id;
     $cnx = $pdo->query( $sql );
 //    echo '<pre>'; var_dump( $cnx ); echo '</pre>';
     $rep = $cnx->fetch()[ 0 ];
@@ -95,11 +95,13 @@ WHERE id =' . $id;
 
   // getUpline(141);
 
+
+
   for ( $i = 1; $i < 3e4; $i++ ) {
-    if ( getParrId( $i ) ) {
+    if ( !getParrId( $i ) ) {
 
       echo $i . ' : ';
-      getUpline( $i );
+      // getUpline( $i );
       echo '<hr>';
     }
   }

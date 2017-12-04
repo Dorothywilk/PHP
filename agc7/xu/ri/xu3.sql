@@ -4,21 +4,15 @@ USE aazt;
 TRUNCATE aazt.b1;
 TRUNCATE aazt.b2;
 
-INSERT INTO aazt.b1 (id, pseudo, parrain)
-  SELECT
-    uid,
-    uname,
-    parr
-  FROM aazt.boosteur;
-
-DELETE FROM b1
-WHERE id = 1 OR id = 15;
-
-INSERT INTO aazt.b2 (uid, pseudo)
-VALUES
-  (1, 'Aadminli');
-
 /*
+ALTER TABLE `b1`
+ALTER `uname` DROP DEFAULT;
+ALTER TABLE `b1`
+CHANGE COLUMN `uid` `id` INT(11) UNSIGNED NOT NULL DEFAULT '0' FIRST,
+CHANGE COLUMN `uname` `pseudo` VARCHAR(255) NOT NULL COLLATE 'latin1_general_ci' AFTER `id`,
+CHANGE COLUMN `parr` `parrain` VARCHAR(255) NULL DEFAULT NULL COLLATE 'latin1_general_ci' AFTER `pseudo`;
+*/
+
 INSERT INTO aazt.b1 (id, pseudo, parrain)
 VALUES
   (2, 'Grcote7', 'Aadminli'),
@@ -34,7 +28,10 @@ VALUES
   (13, 'rom1', 'Doro'),
   (14, 'Greg', 'Jonathan'),
   (15, 'Fanny', 'Jonathan');
-*/
+
+INSERT INTO aazt.b2 (id, pseudo, parr, uid)
+VALUES
+  (1, 'Aadminli', NULL, 1);
 
 DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
@@ -48,7 +45,7 @@ CREATE PROCEDURE boucle_b1()
 
     SET i = 1;
 
-    WHILE i <= derIdb1 DO -- and v_stop<100
+    WHILE i <= derIdb1 AND v_stop < 1115 DO
 
       SELECT
         id,
@@ -77,28 +74,21 @@ CREATE PROCEDURE boucle_b1()
             v_parrain
           );
 
-        SELECT min(id)
+
+        SELECT id
         INTO idEnAtt
         FROM b1
         WHERE parrain = v_pseudo
               AND id <= i;
-        /*
-                SELECT
-                  i,
-                  idEnAtt;
-        */
 
         IF idEnAtt
         THEN
 
           SELECT (min(id) - 1)
           INTO i
-          FROM b1
-          WHERE parrain = v_pseudo;
+          FROM b1;
 
         END IF;
-
-        SET idEnAtt = 0;
 
       END IF;
 
@@ -112,45 +102,9 @@ CREATE PROCEDURE boucle_b1()
 
     END WHILE;
 
-    SELECT
-      i,
-      v_stop;
-
-    SELECT *
-    FROM aazt.b1;
-
     SELECT *
     FROM aazt.b2;
 
   END;
 
 CALL boucle_b1();
-
-
-CREATE TABLE aazt.boosteurori
-    SELECT *
-    FROM www_boos2013.xoops_users
-
-
-SELECT
-  uid,
-  uname,
-  parr
-FROM www_boos2013.xoops_users_savprob
-WHERE uid = 5149;
-
-SELECT
-  uid,
-  uname,
-  parr
-FROM aazt.boosteurori
-WHERE uid = 27130;
-
-SELECT
-  uid,
-  uname,
-  parr
-FROM aazt.boosteurori
-WHERE uname like 'farida';
-
-
