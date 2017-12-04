@@ -3,105 +3,103 @@ USE aazt;
 -- #################### Préparation des tables ##################
 TRUNCATE aazt.b1;
 TRUNCATE aazt.b2;
-
-INSERT INTO aazt.b1 (uid, uname, parr)
+/*
+INSERT INTO aazt.b1 (id, pseudo, parrain)
   SELECT
     uid,
     uname,
     parr
   FROM aazt.boosteur;
-
-
+*/
 DELETE FROM b1
-WHERE uid = 1 OR uid = 15;
+WHERE id = 1 OR id = 15;
 
-INSERT INTO aazt.b2 (uid, pseudo, parr)
+INSERT INTO aazt.b2 (uid, pseudo)
 VALUES
-  (1, 'Aadminli', NULL);
+  (1, 'Aadminli');
+
+
+INSERT INTO aazt.b1 (id, pseudo, parrain)
+VALUES
+  (2, 'Grcote7', 'Aadminli'),
+  (3, 'Doro', 'Grcote7'),
+  (4, 'Jade', 'Doro'),
+  (5, 'Micky', 'Jeny'),
+  (7, 'Arnaud', 'Félicien'),
+  (8, 'Mimi', 'Doro'),
+  (9, 'Jeny', 'Jade'),
+  (10, 'Julien', 'Rom1'),
+  (11, 'Jonathan', 'Doro'),
+  (12, 'Félicien', 'Julien'),
+  (13, 'rom1', 'Doro'),
+  (14, 'Greg', 'Jonathan'),
+  (15, 'Fanny', 'Jonathan');
 
 
 DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
-    DECLARE v_stop, derId, v_id, v_parr, i INT DEFAULT 0;
+    DECLARE v_stop, derIdb1, v_id, v_parr, idEnAtt, i INT DEFAULT 0;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
-    -- Table temporaire des arrivants en attentre
-    DROP TEMPORARY TABLE IF EXISTS t_b;
-    CREATE TEMPORARY TABLE t_b (
-      uid     INT,
-      uname   VARCHAR(255),
-      parrain VARCHAR(255)
-    );
-
-    SELECT max(uid)
-    INTO derId
+    SELECT max(id)
+    INTO derIdb1
     FROM b1;
 
-    SET i = 2;
+    SET i = 1;
 
-    WHILE i <= derId AND i < 3e4 DO
+    WHILE i <= derIdb1 DO
 
       SELECT
-        uid,
-        uname,
-        parr
-      INTO v_id, v_pseudo, v_parrain
+        id,
+        pseudo,
+        parrain,
+        (SELECT id
+         FROM b2
+         WHERE pseudo = b1.parrain)
+      INTO v_id, v_pseudo, v_parrain, v_parr
       FROM b1
-      WHERE uid = i;
-
-      -- select i, v_id, v_pseudo,v_parrain;
+      WHERE id = i;
 
       SET v_stop = v_stop + 1;
 
-      IF v_id
+      IF v_id AND v_parr
       THEN
 
         DELETE FROM b1
-        WHERE uid = v_id;
+        WHERE id = v_id;
+
+        INSERT INTO b2 (pseudo, parr, uid, parrain) VALUES
+          (
+            v_pseudo,
+            v_parr,
+            v_id,
+            v_parrain
+          );
+
 
         SELECT id
-        INTO v_parr
-        FROM b2
-        WHERE PSEUDO = v_parrain;
+        INTO idEnAtt
+        FROM b1
+        WHERE parrain = v_pseudo
+              AND id <= i;
+
+        SELECT
+          i,
+          idEnAtt;
 
 
-        IF v_parr
+        IF idEnAtt
         THEN
 
-          INSERT INTO b2 (pseudo, parr, uid, parrain) VALUES
-            (
-              v_pseudo,
-              v_parr,
-              v_id,
-              v_parrain
-            );
-
-
-          IF v_pseudo IN (SELECT parrain
-                          FROM t_b)
-          THEN
-
-            INSERT INTO b1 (uid, uname, parr)
-              SELECT
-                uid,
-                uname,
-                parrain
-              FROM t_b
-              WHERE parrain = v_pseudo;
-
-            DELETE FROM t_b
-            WHERE parrain = v_pseudo;
-
-            SET i = v_id - 1;
-
-          END IF;
-
-        ELSE
-
-          INSERT INTO t_b (uid, uname, parrain) VALUES (v_id, v_pseudo, v_parrain);
+          SELECT (min(id) - 1)
+          INTO i
+          FROM b1
+          WHERE parrain = v_pseudo;
 
         END IF;
+
+        SET idEnAtt = 0;
 
       END IF;
 
@@ -115,31 +113,16 @@ CREATE PROCEDURE boucle_b1()
 
     END WHILE;
 
+    SELECT
+      i,
+      v_stop;
+
+    SELECT *
+    FROM aazt.b1;
+
+    SELECT *
+    FROM aazt.b2;
+
   END;
 
 CALL boucle_b1();
-
-
-SELECT *
-FROM aazt.b1;
-
-SELECT count(*)
-FROM aazt.b1;
-
-SELECT *
-FROM aazt.t_b;
-
-SELECT count(*)
-FROM aazt.t_b;
-
-SELECT *
-FROM aazt.b2;
-
-SELECT count(*)
-FROM aazt.b2;
-
-/*
-SELECT *
-FROM aazt.b2
-WHERE parrain = 'gl06';
-*/
