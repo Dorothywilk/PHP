@@ -144,10 +144,10 @@ CREATE PROCEDURE boucle_b1()
     END WHILE;
 
     SELECT
-      debut,
+      debut                                                AS Début,
       i,
       v_stop,
-      SYSDATE(),
+      SYSDATE()                                            AS Fin,
       SEC_TO_TIME(TIMESTAMPDIFF(SECOND, debut, SYSDATE())) AS Chrono;
 
     SELECT *

@@ -24,6 +24,8 @@ ALTER TABLE `b1`
 CHANGE COLUMN `parrain` `parrain` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'latin1_general_ci'
 AFTER `pseudo`;
 
+DELETE FROM b1
+WHERE id = 1 OR id = 15;
 
 INSERT INTO aazt.b1 (id, pseudo, parrain)
 VALUES
@@ -40,11 +42,6 @@ VALUES
   (13, 'rom1', 'Doro'),
   (14, 'Greg', 'Jonathan'),
   (15, 'Fanny', 'Jonathan');
-*/
-
-
-DELETE FROM b1
-WHERE id = 1 OR id = 15;
 
 
 DROP TABLE IF EXISTS aazt.b2;
@@ -70,9 +67,9 @@ VALUES
 DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
-    DECLARE flag_Sub BOOLEAN DEFAULT FALSE;
+    DECLARE rechFilleuls BOOLEAN DEFAULT FALSE;
     DECLARE debut DATETIME DEFAULT SYSDATE();
-    DECLARE v_stop, derIdb1, v_id, v_parr, idEnAtt, i, cursori INT DEFAULT 0;
+    DECLARE v_stop, v_fin, derIdb1, v_id, v_parr, idEnAtt, i, cursori INT DEFAULT 0;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
     SELECT max(id)
@@ -81,7 +78,13 @@ CREATE PROCEDURE boucle_b1()
 
     SET i = 1;
 
-    WHILE i <= derIdb1 AND v_stop < 100 DO -- and v_stop<100
+    SET v_fin = 912;
+
+    WHILE i <= derIdb1 AND v_stop < v_fin DO -- and v_stop<100 -- 10 gère micky
+
+     -- if (i=9) then select i; end if;
+
+      SET v_stop = v_stop + 1;
 
       SELECT
         id,
@@ -94,11 +97,22 @@ CREATE PROCEDURE boucle_b1()
       FROM b1
       WHERE id = i;
 
-      SET v_stop = v_stop + 1;
 
       IF v_id AND v_parr
       THEN
-
+        /*
+                SELECT
+                  i,
+                  cursori,
+                  rechFilleuls,
+                  v_id,
+                  v_pseudo,
+                  v_parrain,
+                  v_parr,
+                  idEnAtt,
+                  cursori,
+                  v_stop;
+        */
         DELETE FROM b1
         WHERE id = v_id;
 
@@ -110,30 +124,50 @@ CREATE PROCEDURE boucle_b1()
             v_parrain
           );
 
+        IF cursori < i
+        THEN SET cursori = i;
+        END IF;
+
         SELECT min(id)
         INTO idEnAtt
         FROM b1
         WHERE parrain = v_pseudo
-              AND id <= i;
-        /*
-                SELECT
-                  i,
-                  idEnAtt;
-        */
+              AND id <= cursori;
+
 
         IF idEnAtt
         THEN
 
-          IF flag_Sub = FALSE
-          THEN
-            SET flag_sub = TRUE;
-            SET cursori = i;
-          END IF;
+          SET rechFilleuls = TRUE;
 
-          SELECT (min(id) - 1)
-          INTO i
-          FROM b1
-          WHERE parrain = v_pseudo;
+          SET cursori = i;
+          SET i = idEnAtt - 1;
+
+        /*
+        SELECT
+          'Recherche de filleuls',
+          i,
+          cursori,
+          idEnAtt,
+          rechFilleuls;
+*/
+        END IF;
+
+
+        -- SELECT idEnAtt;
+
+
+        IF rechFilleuls AND isnull(idEnAtt)
+        THEN
+          SET rechFilleuls = FALSE;
+          SET i = cursori;
+          SET cursori = 0;
+        /*
+                  SELECT
+                    'Fin de la chasse',
+                    i,
+                    cursori;
+        */
 
         END IF;
 
@@ -152,12 +186,12 @@ CREATE PROCEDURE boucle_b1()
     END WHILE;
 
     SELECT
-      debut,
+      debut                                                AS Début,
       i,
       cursori,
-      flag_sub,
+      rechFilleuls,
       v_stop,
-      SYSDATE(),
+      SYSDATE()                                            AS Fin,
       SEC_TO_TIME(TIMESTAMPDIFF(SECOND, debut, SYSDATE())) AS Chrono;
 
     SELECT *
@@ -176,12 +210,3 @@ CREATE TABLE xuB2
     FROM b2;
 */
 
-
-SET @d1 = '2017-12-05 10:31:30';
-SET @d2 = '2017-12-05 12:35:45';
-SELECT
-  @d1,
-  @d2,
-  datediff(@d1, @d2),
-  TIMESTAMPDIFF(SECOND, @d1, @d2),
-  sec_to_time(TIMESTAMPDIFF(SECOND, @d1, @d2));
