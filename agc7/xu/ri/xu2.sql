@@ -1,4 +1,7 @@
 USE aazt;
+-- Script sans double-curseur
+-- (Reprend la pile depuis le début dès que idEnAtt)
+
 
 -- #################### Préparation des tables ##################
 
@@ -66,7 +69,7 @@ DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE flag_Sub BOOLEAN DEFAULT FALSE;
-    DECLARE debut DATETIME DEFAULT now();
+    DECLARE debut DATETIME DEFAULT SYSDATE();
     DECLARE v_stop, derIdb1, v_id, v_parr, idEnAtt, i INT DEFAULT 0;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
@@ -144,7 +147,8 @@ CREATE PROCEDURE boucle_b1()
       debut,
       i,
       v_stop,
-      now();
+      SYSDATE(),
+      SEC_TO_TIME(TIMESTAMPDIFF(SECOND, debut, SYSDATE())) AS Chrono;
 
     SELECT *
     FROM aazt.b1;

@@ -1,4 +1,8 @@
 USE aazt;
+-- Script avec double-curseur
+-- (Reprend la pile depuis le début que qd idEnAtt d'un membre,
+-- sinon, reprend script principal là où il en était avant de rentrer dans cette procédure)
+
 
 -- #################### Préparation des tables ##################
 
@@ -67,8 +71,8 @@ DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
     DECLARE flag_Sub BOOLEAN DEFAULT FALSE;
-    DECLARE debut DATETIME DEFAULT now();
-    DECLARE v_stop, derIdb1, v_id, v_parr, idEnAtt, i INT DEFAULT 0;
+    DECLARE debut DATETIME DEFAULT SYSDATE();
+    DECLARE v_stop, derIdb1, v_id, v_parr, idEnAtt, i, cursori INT DEFAULT 0;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
     SELECT max(id)
@@ -123,6 +127,7 @@ CREATE PROCEDURE boucle_b1()
           IF flag_Sub = FALSE
           THEN
             SET flag_sub = TRUE;
+            SET cursori = i;
           END IF;
 
           SELECT (min(id) - 1)
@@ -149,9 +154,11 @@ CREATE PROCEDURE boucle_b1()
     SELECT
       debut,
       i,
-      v_stop,
+      cursori,
       flag_sub,
-      now();
+      v_stop,
+      SYSDATE(),
+      SEC_TO_TIME(TIMESTAMPDIFF(SECOND, debut, SYSDATE())) AS Chrono;
 
     SELECT *
     FROM aazt.b1;
@@ -168,3 +175,13 @@ CREATE TABLE xuB2
     SELECT *
     FROM b2;
 */
+
+
+SET @d1 = '2017-12-05 10:31:30';
+SET @d2 = '2017-12-05 12:35:45';
+SELECT
+  @d1,
+  @d2,
+  datediff(@d1, @d2),
+  TIMESTAMPDIFF(SECOND, @d1, @d2),
+  sec_to_time(TIMESTAMPDIFF(SECOND, @d1, @d2));
