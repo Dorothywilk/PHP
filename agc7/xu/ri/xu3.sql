@@ -1,17 +1,25 @@
 USE aazt;
 
 -- #################### Préparation des tables ##################
-TRUNCATE aazt.b1;
-TRUNCATE aazt.b2;
 
-/*
+
+DROP TABLE IF EXISTS aazt.b1;
+CREATE TABLE aazt.b1
+    SELECT
+      uid   AS id,
+      uname AS pseudo,
+      parr  AS parrain
+    FROM aazt.boosteurori
+    LIMIT 0;
+
+-- ALTER TABLE `b1` COLLATE = 'utf8_unicode_ci';
 ALTER TABLE `b1`
-ALTER `uname` DROP DEFAULT;
+CHANGE COLUMN `pseudo` `pseudo` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'latin1_general_ci'
+AFTER `id`;
 ALTER TABLE `b1`
-CHANGE COLUMN `uid` `id` INT(11) UNSIGNED NOT NULL DEFAULT '0' FIRST,
-CHANGE COLUMN `uname` `pseudo` VARCHAR(255) NOT NULL COLLATE 'latin1_general_ci' AFTER `id`,
-CHANGE COLUMN `parr` `parrain` VARCHAR(255) NULL DEFAULT NULL COLLATE 'latin1_general_ci' AFTER `pseudo`;
-*/
+CHANGE COLUMN `parrain` `parrain` VARCHAR(250) NOT NULL DEFAULT '' COLLATE 'latin1_general_ci'
+AFTER `pseudo`;
+
 
 INSERT INTO aazt.b1 (id, pseudo, parrain)
 VALUES
@@ -28,14 +36,38 @@ VALUES
   (13, 'rom1', 'Doro'),
   (14, 'Greg', 'Jonathan'),
   (15, 'Fanny', 'Jonathan');
+*/
 
-INSERT INTO aazt.b2 (id, pseudo, parr, uid)
+
+DELETE FROM b1
+WHERE id = 1 OR id = 15;
+
+
+DROP TABLE IF EXISTS aazt.b2;
+CREATE TABLE `b2` (
+  `id`      INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `pseudo`  VARCHAR(250)     NOT NULL DEFAULT '' COLLATE 'latin1_general_ci',
+  `parrain` VARCHAR(250)     NULL     DEFAULT '0' COLLATE 'latin1_general_ci',
+  `uid`     INT(10) UNSIGNED NULL     DEFAULT '0',
+  `parr`    INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+)
+  COLLATE = 'latin1_general_ci'
+  ENGINE = InnoDB
+  AUTO_INCREMENT = 1;
+
+-- ALTER TABLE `b2` COLLATE = 'utf8_unicode_ci';
+
+INSERT INTO aazt.b2 (uid, pseudo)
 VALUES
-  (1, 'Aadminli', NULL, 1);
+  (1, 'Aadminli');
+
 
 DROP PROCEDURE IF EXISTS boucle_b1;
 CREATE PROCEDURE boucle_b1()
   BEGIN
+    DECLARE flag_Sub BOOLEAN DEFAULT FALSE;
+    DECLARE debut DATETIME DEFAULT now();
     DECLARE v_stop, derIdb1, v_id, v_parr, idEnAtt, i INT DEFAULT 0;
     DECLARE v_pseudo, v_parrain VARCHAR(255);
 
@@ -45,7 +77,7 @@ CREATE PROCEDURE boucle_b1()
 
     SET i = 1;
 
-    WHILE i <= derIdb1 AND v_stop < 1115 DO
+    WHILE i <= derIdb1 AND v_stop < 100 DO -- and v_stop<100
 
       SELECT
         id,
@@ -74,21 +106,33 @@ CREATE PROCEDURE boucle_b1()
             v_parrain
           );
 
-
-        SELECT id
+        SELECT min(id)
         INTO idEnAtt
         FROM b1
         WHERE parrain = v_pseudo
               AND id <= i;
+        /*
+                SELECT
+                  i,
+                  idEnAtt;
+        */
 
         IF idEnAtt
         THEN
 
+          IF flag_Sub = FALSE
+          THEN
+            SET flag_sub = TRUE;
+          END IF;
+
           SELECT (min(id) - 1)
           INTO i
-          FROM b1;
+          FROM b1
+          WHERE parrain = v_pseudo;
 
         END IF;
+
+        SET idEnAtt = 0;
 
       END IF;
 
@@ -102,9 +146,25 @@ CREATE PROCEDURE boucle_b1()
 
     END WHILE;
 
+    SELECT
+      debut,
+      i,
+      v_stop,
+      flag_sub,
+      now();
+
+    SELECT *
+    FROM aazt.b1;
+
     SELECT *
     FROM aazt.b2;
 
   END;
 
 CALL boucle_b1();
+
+/*
+CREATE TABLE xuB2
+    SELECT *
+    FROM b2;
+*/
