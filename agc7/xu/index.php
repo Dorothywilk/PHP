@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-  <!--  <META http-equiv="refresh" content="5; URL='/agc7/xu/'">-->
+<!--  <META http-equiv="refresh" content="5; URL='/agc7/xu/'">-->
   <meta charset="UTF-8">
   <title>BdD</title>
   <link rel="stylesheet" href="../assets/css/mdb.min.css">

@@ -13,8 +13,8 @@ CREATE TABLE aazt.b1
       uid   AS id,
       uname AS pseudo,
       parr  AS parrain
-    FROM aazt.boosteurori
-    LIMIT 0;
+    FROM aazt.boosteurori;
+--    LIMIT 0;
 
 -- ALTER TABLE `b1` COLLATE = 'utf8_unicode_ci';
 ALTER TABLE `b1`
@@ -27,6 +27,7 @@ AFTER `pseudo`;
 DELETE FROM b1
 WHERE id = 1 OR id = 15;
 
+/*
 INSERT INTO aazt.b1 (id, pseudo, parrain)
 VALUES
   (2, 'Grcote7', 'Aadminli'),
@@ -42,7 +43,7 @@ VALUES
   (13, 'rom1', 'Doro'),
   (14, 'Greg', 'Jonathan'),
   (15, 'Fanny', 'Jonathan');
-
+*/
 
 DROP TABLE IF EXISTS aazt.b2;
 CREATE TABLE `b2` (
@@ -78,9 +79,9 @@ CREATE PROCEDURE boucle_b1()
 
     SET i = 1;
 
-    SET v_fin = 912;
+    SET v_fin = 1e3;
 
-    WHILE i <= derIdb1 AND v_stop < v_fin DO -- and v_stop<100 -- 10 gère micky
+    WHILE i <= derIdb1 AND v_stop < v_fin DO -- AND v_stop < v_fin
 
      -- if (i=9) then select i; end if;
 

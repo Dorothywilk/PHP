@@ -1,6 +1,7 @@
 USE aazt;
 -- Script sans double-curseur
 -- (Reprend la pile depuis le début dès que idEnAtt)
+-- ToFixLi bur / table réelle // ordre des 'idEnAtt'
 
 
 -- #################### Préparation des tables ##################
@@ -79,7 +80,7 @@ CREATE PROCEDURE boucle_b1()
 
     SET i = 1;
 
-    WHILE i <= derIdb1 AND v_stop < 100 DO -- and v_stop<100
+    WHILE i <= derIdb1 AND v_stop < 1000 DO -- and v_stop<100
 
       SELECT
         id,
