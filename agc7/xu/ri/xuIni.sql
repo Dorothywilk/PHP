@@ -1,4 +1,91 @@
+DROP DATABASE IF EXISTS `aaxu`;
+CREATE DATABASE `aaxu`
+  DEFAULT CHARACTER SET `latin1`
+  DEFAULT COLLATE `latin1_general_ci`;
+
 USE aaxu;
+
+CREATE TABLE aaxu.boosteurori
+    SELECT *
+    FROM aazt.boosteurori;
+
+DELETE FROM boosteurori
+WHERE uid = 15;
+
+UPDATE boosteurori
+SET parr = ''
+WHERE uid = 1;
+
+SELECT count(*) AS nbOri
+FROM aaxu.boosteurori;
+
+CREATE TABLE xub2
+    SELECT *
+    FROM aazt.xub2;
+
+
+-- #################################################################################################
+--
+--                                       CRÉATION TABLE XU
+--
+-- #################################################################################################
+DROP TABLE IF EXISTS aaxu.xu;
+
+CREATE TABLE `aaxu`.`xu` (
+  `id`      INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
+  `pseudo`  VARCHAR(255)        NOT NULL
+  COLLATE 'latin1_general_ci',
+  `lv`      TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `typ`     CHAR(1)             NOT NULL DEFAULT 'A' COLLATE 'latin1_general_ci',
+  `lva`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `lvp`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
+  `parrain` VARCHAR(255)        NULL     DEFAULT NULL COLLATE 'latin1_general_ci',
+  `parr`    INT(11) UNSIGNED    NULL     DEFAULT NULL,
+  `bg`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  `bd`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  `pf`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  `uid`     INT(11) UNSIGNED    NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  INDEX `lv` (`lv`),
+  INDEX `typ` (`typ`),
+  INDEX `bg` (`bg`),
+  INDEX `bd` (`bd`),
+  INDEX `pf` (`pf`)
+)
+  COLLATE 'latin1_general_ci'
+  ENGINE = InnoDB
+  ROW_FORMAT = DYNAMIC
+  AUTO_INCREMENT = 1;
+
+
+-- Initialisation Aadminli : Parrain et parr null, bornes G et D (Et pf)
+-- INSERT INTO `aaxu`.xu (`id`, `pseudo`, `lv`, `typ`, `parrain`, `parr`, `bg`, `bd`, `pf`) VALUES (1, 'Aadminli', 1, 'P', NULL, NULL, 1, 2, 0);
+
+-- SELECT * FROM xub2;
+
+SELECT *
+FROM xu;
+
+SELECT count(*) AS nbXuB2
+FROM xub2;
+
+
+INSERT INTO xu (pseudo, parrain, parr, uid) SELECT
+                                              pseudo,
+                                              parrain,
+                                              parr,
+                                              uid
+                                            FROM xub2
+                                            WHERE id = xub2.id;
+
+-- SELECT * FROM xu;
+
+DELETE FROM xu
+WHERE id > 1;
+
+UPDATE xu
+SET parrain = NULL, parr = NULL
+WHERE id = 1;
 
 SELECT *
 FROM xu;
