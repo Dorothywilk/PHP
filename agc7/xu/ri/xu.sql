@@ -5,64 +5,29 @@ CREATE DATABASE `aaxu`
 
 USE aaxu;
 
+CREATE TABLE aaxu.boosteurori
+    SELECT *
+    FROM aazt.boosteurori;
+
+DELETE FROM boosteurori
+WHERE uid = 15;
+
+UPDATE boosteurori
+SET parr = ''
+WHERE uid = 1;
+
+SELECT *
+FROM aaxu.boosteurori;
+
+
 -- #################################################################################################
 --
 --                                       CRÉATION TABLE XU
 --
 -- #################################################################################################
-DROP TABLE IF EXISTS xu;
+DROP TABLE IF EXISTS aaxu.xu;
 
-CREATE TABLE `xu` (
-  `id`      INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
-  `pseudo`  VARCHAR(255)        NOT NULL
-  COLLATE 'latin1_general_ci',
-  `lv`      TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
-  `typ`     CHAR(1)             NOT NULL DEFAULT 'A' COLLATE 'latin1_general_ci',
-  `lva`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
-  `lvp`     TINYINT(1) UNSIGNED NOT NULL DEFAULT '0',
-  `parrain` VARCHAR(255)        NULL     DEFAULT NULL COLLATE 'latin1_general_ci',
-  `parr`    INT(11) UNSIGNED    NULL     DEFAULT NULL,
-  `bg`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
-  `bd`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
-  `pf`      INT(11) UNSIGNED    NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  INDEX `lv` (`lv`),
-  INDEX `typ` (`typ`),
-  INDEX `bg` (`bg`),
-  INDEX `bd` (`bd`),
-  INDEX `pf` (`pf`)
-)
-  COLLATE = 'latin1_general_ci'
-  ENGINE = InnoDB
-  AUTO_INCREMENT = 1
-    SELECT
-      uid                     AS id,
-      uname                   AS pseudo,
-      lv,
-      typ,
-      lva,
-      lvp,
-      parr                    AS parrain,
-      (SELECT uid
-       FROM www_boos2013.xoops_users
-       WHERE uname = xu.parr) AS parr,
-      '0'                     AS bg,
-      +
-      '0'                     AS bd,
-      '0'                     AS pf
-    FROM www_boos2013.xoops_users xu;
-
--- ALTER TABLE aaxu.xu ADD PRIMARY KEY (id);
-
-SELECT *
-FROM xu;
-
--- #################################################################################################
---
---             CRÉATION TABLE xut pour test d'insertion (Départ avec Aadminli uniquement)
---
--- #################################################################################################
-CREATE TABLE `aaxu`.`xut` (
+CREATE TABLE `aaxu`.`xu` (
   `id`      INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
   `pseudo`  VARCHAR(255)        NOT NULL
   COLLATE 'latin1_general_ci',
@@ -85,35 +50,25 @@ CREATE TABLE `aaxu`.`xut` (
   COLLATE 'latin1_general_ci'
   ENGINE = InnoDB
   ROW_FORMAT = DYNAMIC
-  AUTO_INCREMENT = 27208;
+  AUTO_INCREMENT = 1;
 
--- Insertion (par copie) de Aadminli
-INSERT INTO `aaxu`.`xut` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, `parr`, `bg`, `bd`, `pf`)
-  SELECT
-    `id`,
-    `pseudo`,
-    `lv`,
-    `typ`,
-    `lva`,
-    `lvp`,
-    `parrain`,
-    `parr`,
-    `bg`,
-    `bd`,
-    `pf`
-  FROM `xu`
-  WHERE id < 2;
 
 -- Initialisation Aadminli : Parrain et parr null, bornes G et D (Et pf)
-UPDATE aaxu.xut
-SET parrain = NULL, parr = NULL, bg = 1, bd = 2, pf = 0;
+INSERT INTO `aaxu`.xu (`id`, `pseudo`, `lv`, `typ`, `parrain`, `parr`, `bg`, `bd`, `pf`)
+VALUES (1, 'Aadminli', 1, 'P', NULL, NULL, 1, 2, 0);
 
--- Re-initialise Aadminli pour départ tests
-TRUNCATE aaxu.xut;
-INSERT INTO `aaxu`.`xut` (`id`, `pseudo`, `lv`, `typ`, `lva`, `lvp`, `parrain`, `parr`, `bg`, `bd`, `pf`)
-VALUES (1, 'Aadminli', 1, 'P', 0, 0, NULL, NULL, 1, 2, 0);
 SELECT *
-FROM xut;
+FROM xu;
+
+SELECT count(*)
+FROM xu;
+
+
+/*
+-- Re-initialise Aadminli pour départ tests
+SELECT *
+FROM xu;
+*/
 
 -- #################################################################################################
 --
@@ -122,10 +77,10 @@ FROM xut;
 -- #################################################################################################
 -- ToDoLi ajout lock Table qd Opé + activer transaction (Cf. arbre/exemple_proc.sql)
 -- ToDoLi Cf. arbre/exemple_proc.sql pour proc avec boucle
-
+/*
 CALL insertXu('GrCOTE7', 1);
 SELECT *
-FROM xut;
+FROM xu;
 SELECT
   @pseudoParr,
   @idParr;
@@ -133,7 +88,7 @@ SELECT
 CALL insertXu('Doro', 2);
 CALL insertXu('Jade', 3);
 SELECT *
-FROM xut;
+FROM xu;
 
 
 DROP PROCEDURE insertXu;
@@ -155,20 +110,20 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
       bd,
       pf
     INTO pseudoRef, bgRef, bdRef, pfRef
-    FROM xut
+    FROM xu
     WHERE id = idRef;
 
     -- SET @pseudoParr = pseudoRef;
 
-    UPDATE xut
+    UPDATE xu
     SET bd = bd + 2
     WHERE bd >= bdRef;
 
-    UPDATE xut
+    UPDATE xu
     SET bg = bg + 2
     WHERE bg >= bdRef;
 
-    INSERT INTO xut (pseudo, parrain, parr, bg, bd, pf)
+    INSERT INTO xu (pseudo, parrain, parr, bg, bd, pf)
     VALUES (pseudoXu, pseudoRef, idRef, bdRef, (bdRef + 1), (pfRef + 1));
 
     -- COMMIT;
@@ -180,7 +135,7 @@ SELECT
   bg     AS bgRef,
   bd     AS bdRef,
   pf     AS pfRef
-FROM xut
+FROM xu
 WHERE id = 1;
 
 
@@ -212,7 +167,7 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `test_boucle`(IN `p_id` INT)
 
 CALL test_boucle(10);
 
-/*
+
 CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition`(IN `p_ville` VARCHAR(100)) BEGIN
   DECLARE v_nom, v_prenom VARCHAR(100);
 
