@@ -16,11 +16,8 @@
       <li>Boucle pour rejouer insertion du premier au dernier</li>
       <ul>
         <li><i class="fa fa-check-square-o"></i> Prépa table xu</li>
-        <li><i class="fa fa-check-square-o"></i> Table -> xu (uid, uname, lv, typ, lva, lvp, parr)
-        </li>
-        <li><i class="fa fa-check-square-o"></i> Table -> xu: Ajouter index sur id, lv, typ, bg, bd,
-          pf
-        </li>
+        <li><i class="fa fa-check-square-o"></i> Table -> xu (uid, uname, lv, typ, lva, lvp, parr)</li>
+        <li><i class="fa fa-check-square-o"></i> Table -> xu: Ajouter index sur id, lv, typ, bg, bd, pf</li>
         <li>Boucle (LOOP) pour update de bg, bd et pf</li>
         <li>Tests</li>
         <li>Appliquer dans P100 (OCMS)<br>
@@ -59,15 +56,15 @@
     echo '<h3>B</h3>';
     $sql = 'SELECT uid, uname,
 (SELECT uid
-FROM www_boos2013.xoops_users
+FROM aazt.boosteur
 WHERE uname = xu.parr) as parrId, parr
-FROM www_boos2013.xoops_users xu
+FROM aazt.boosteur xu
 WHERE uid =' . $id;
-    $req( $sql, $pdo, 1 );
+        $req( $sql, $pdo, 1 );
 
     echo '<h3>XU</h3>';
-    $sql = 'SELECT id, pseudo, parr, parrain
-FROM aaxu.xu
+    $sql = 'SELECT uid, uname, parr
+FROM aazt.boosteurori
 WHERE id =' . $id;
     $req( $sql, $pdo, 1 );
     echo '<hr>';
@@ -79,8 +76,8 @@ WHERE id =' . $id;
     global $req, $pdo;
 
     $sql = 'SELECT parr
-FROM aaxu.xu
-WHERE id =' . $id;
+FROM aazt.boosteurori
+WHERE uid =' . $id;
     $cnx = $pdo->query( $sql );
 //    echo '<pre>'; var_dump( $cnx ); echo '</pre>';
     $rep = $cnx->fetch()[ 0 ];
@@ -98,11 +95,13 @@ WHERE id =' . $id;
 
   // getUpline(141);
 
+
+
   for ( $i = 1; $i < 3e4; $i++ ) {
-    if ( getParrId( $i ) ) {
+    if ( !getParrId( $i ) ) {
 
       echo $i . ' : ';
-      getUpline( $i );
+      // getUpline( $i );
       echo '<hr>';
     }
   }
