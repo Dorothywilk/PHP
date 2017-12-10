@@ -1,15 +1,79 @@
 USE aaxu;
+/*
+SELECT *
+FROM xu;
+*/
+
+DELETE FROM xu
+WHERE id > 1;
+
+-- Ini bg de Aadminli
+UPDATE xu
+SET parr = 0, bd = 2
+WHERE id = 1;
+
+ALTER TABLE `xu`
+AUTO_INCREMENT = 1;
+
+DROP PROCEDURE IF EXISTS wboos2Xu;
+DELIMITER |
+CREATE DEFINER =`root`@`localhost` PROCEDURE `wboos2Xu`(IN `p_id` INT(11)) BEGIN
+  DECLARE debut DATETIME DEFAULT SYSDATE();
+  DECLARE v_id INT(11);
+  DECLARE v_pseudo, v_parr VARCHAR(255);
+
+  -- On déclare fin comme un BOOLEAN, avec FALSE pour défaut
+  DECLARE fin BOOLEAN DEFAULT FALSE;
+
+  DECLARE curs_xus CURSOR
+  FOR SELECT
+        id,
+        pseudo,
+        parr
+      FROM xub2
+      WHERE id > 1 AND id < p_id;
+
+
+  -- On utilise TRUE au lieu de 1
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
+
+  SET p_id = p_id + 1;
+
+  OPEN curs_xus;
+
+  loop_curseur: LOOP
+    FETCH curs_xus
+    INTO v_id, v_pseudo, v_parr;
+
+    IF fin
+    THEN
+      LEAVE loop_curseur;
+    END IF;
+
+    IF p_id < 7
+    THEN SELECT CONCAT((v_id - 1), ': ', v_pseudo, ', ', v_parr) AS 'Xu'; END IF;
+    CALL insertXu(v_pseudo, v_parr);
+  END LOOP;
+
+  CLOSE curs_xus;
+  SELECT
+            debut                                                AS Début,
+    (SELECT count(*)
+     FROM xu),
+            SYSDATE()                                            AS Fin,
+            SEC_TO_TIME(TIMESTAMPDIFF(SECOND, debut, SYSDATE())) AS Chrono;
+END|
+
+CALL wboos2Xu(1e3);
 
 SELECT *
 FROM xu;
-
-
 /*
 -- Re-initialise Aadminli pour départ tests
 SELECT *
 FROM xu;
 */
-
+/*
 -- #################################################################################################
 --
 --            PROCÉDURE pour INSERTION et calcul des bornes et profondeur (pf)
@@ -29,9 +93,9 @@ CALL insertXu('Doro', 2);
 CALL insertXu('Jade', 3);
 SELECT *
 FROM xu;
+*/
 
-
-DROP PROCEDURE insertXu;
+DROP PROCEDURE IF EXISTS insertXu;
 DELIMITER |
 CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
   IN `pseudoXu` VARCHAR(255),
@@ -53,8 +117,6 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
     FROM xu
     WHERE id = idRef;
 
-    -- SET @pseudoParr = pseudoRef;
-
     UPDATE xu
     SET bd = bd + 2
     WHERE bd >= bdRef;
@@ -69,117 +131,3 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXu`(
     -- COMMIT;
   END |
 DELIMITER ;
-
-SELECT
-  pseudo AS pseudoRef,
-  bg     AS bgRef,
-  bd     AS bdRef,
-  pf     AS pfRef
-FROM xu
-WHERE id = 1;
-
-
-USE aaxu;
-
-DROP PROCEDURE test_boucle;
-DELIMITER |
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_boucle`(IN `p_id` INT)
-  BEGIN
-    DECLARE v_pseudoId VARCHAR(255);
-
-    DECLARE curs_xus CURSOR
-    FOR SELECT
-          id,
-          pseudo
-        FROM aaxu.xu
-        WHERE id < p_id;
-
-    OPEN curs_xus;
-
-    LOOP
-      FETCH curs_xus
-      INTO v_pseudoId;
-      SELECT CONCAT(v_pseudoId, ' ', id) AS 'Xu';
-    END LOOP;
-
-    CLOSE curs_xus;
-  END|
-
-CALL test_boucle(10);
-
-
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition`(IN `p_ville` VARCHAR(100)) BEGIN
-  DECLARE v_nom, v_prenom VARCHAR(100);
-
-  DECLARE curs_clients CURSOR
-  FOR SELECT
-        nom,
-        prenom
-      FROM Client
-      WHERE ville = p_ville;
-
-  OPEN curs_clients;
-
-  LOOP
-    FETCH curs_clients
-    INTO v_nom, v_prenom;
-    SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
-  END LOOP;
-
-  CLOSE curs_clients;
-  END$$
-
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_condition2`(IN `p_ville` VARCHAR(100)) BEGIN
-  DECLARE v_nom, v_prenom VARCHAR(100);
-
-  -- On déclare fin comme un BOOLEAN, avec FALSE pour défaut
-  DECLARE fin BOOLEAN DEFAULT FALSE;
-
-  DECLARE curs_clients CURSOR
-  FOR SELECT
-        nom,
-        prenom
-      FROM Client
-      WHERE ville = p_ville;
-
-  -- On utilise TRUE au lieu de 1
-  DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = TRUE;
-
-  OPEN curs_clients;
-
-  loop_curseur: LOOP
-    FETCH curs_clients
-    INTO v_nom, v_prenom;
-
-    IF fin
-    THEN -- Plus besoin de "= 1"
-      LEAVE loop_curseur;
-    END IF;
-
-    SELECT CONCAT(v_prenom, ' ', v_nom) AS 'Client';
-  END LOOP;
-
-  CLOSE curs_clients;
-  END$$
-
-CREATE DEFINER =`root`@`localhost` PROCEDURE `test_iterate`() BEGIN
-  DECLARE v_i INT DEFAULT 0;
-
-  boucle_while: WHILE v_i < 3 DO
-    SET v_i = v_i + 1;
-    SELECT
-      v_i,
-      'Avant IF' AS message;
-
-    IF v_i = 2
-    THEN
-      ITERATE boucle_while;
-    END IF;
-
-    SELECT
-      v_i,
-      'Après IF' AS message;
-    -- Ne sera pas exécuté pour v_i = 2
-  END WHILE;
-  END$$
-*/
