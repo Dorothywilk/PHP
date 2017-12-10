@@ -21,7 +21,7 @@ CREATE TABLE xut
   //  affLign( $sql );
   //  $pdo->query( $sql );
 
-  $sql = "select * from xut;";
+  $sql = "select count(*) as cntXu from xu;";
   $req( $sql, $pdo );
 
   $sql = "-- Représentation graphique

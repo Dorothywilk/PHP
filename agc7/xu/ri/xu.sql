@@ -64,7 +64,7 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `wboos2Xu`(IN `p_id` INT(11)) BEGIN
             SEC_TO_TIME(TIMESTAMPDIFF(SECOND, debut, SYSDATE())) AS Chrono;
 END|
 
-CALL wboos2Xu(1e3);
+CALL wboos2Xu(26e3);
 
 SELECT *
 FROM xu;
