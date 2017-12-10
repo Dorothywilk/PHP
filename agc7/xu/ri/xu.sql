@@ -51,7 +51,9 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `wboos2Xu`(IN `p_id` INT(11)) BEGIN
     END IF;
 
     IF p_id < 7
-    THEN SELECT CONCAT((v_id - 1), ': ', v_pseudo, ', ', v_parr) AS 'Xu'; END IF;
+    THEN SELECT CONCAT((v_id - 1), ': ', v_pseudo, ', ', v_parr) AS 'Xu'; 
+		END IF;
+		
     CALL insertXu(v_pseudo, v_parr);
   END LOOP;
 
@@ -73,6 +75,7 @@ FROM xu;
 SELECT *
 FROM xu;
 */
+
 /*
 -- #################################################################################################
 --
@@ -81,7 +84,7 @@ FROM xu;
 -- #################################################################################################
 -- ToDoLi ajout lock Table qd Opé + activer transaction (Cf. arbre/exemple_proc.sql)
 -- ToDoLi Cf. arbre/exemple_proc.sql pour proc avec boucle
-/*
+
 CALL insertXu('GrCOTE7', 1);
 SELECT *
 FROM xu;
