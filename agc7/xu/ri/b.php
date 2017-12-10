@@ -12,56 +12,56 @@
   <?php
   $pdo = pdo( 'aazt' ); // BdD de tests
 
-    $sql = "select 1";
+  $sql = "select 1";
   //  affLign( $sql );
   //  $pdo->query( $sql );
 
-/*
-  $sql = "select * from xub2";
-  // $req( $sql, $pdo );
-  $cnx = $pdo->query( $sql );
-  $ta = $cnx->fetchAll();
-
-  $sql = "select * from xub3";
-  // $req( $sql, $pdo );
-  $cnx = $pdo->query( $sql );
-  $tb = $cnx->fetchAll();
-
-  echo '<table>';
-  $i = 0;
-  foreach ( $ta as $a ) {
-
-    $chaineA = '<td>' . $a[ 'id' ] . ' ' . $a[ 'pseudo' ] . ' ' . $a[ 'uid' ] . '</td>';
-    $b = $tb[ $i ];
-    $chaineB = '<td>' . $b[ 'id' ] . ' ' . $b[ 'pseudo' ] . ' ' . $b[ 'uid' ] . '</td>';
-
-    $diff = ( $chaineA == $chaineB ) ? 0 : 1;
-
-    if ( $diff ) {
-      echo '<tr>' . $chaineA . $chaineB;
-      echo '<td>' . $diff . '</td></tr>';
-    }
-    $i++;
-  }
-  echo '</table>';
   /*
-    echo '<pre>';
-    var_dump( $rep[0] );
-    echo '</pre>';
-  */
+    $sql = "select * from xub2";
+    // $req( $sql, $pdo );
+    $cnx = $pdo->query( $sql );
+    $ta = $cnx->fetchAll();
+
+    $sql = "select * from xub3";
+    // $req( $sql, $pdo );
+    $cnx = $pdo->query( $sql );
+    $tb = $cnx->fetchAll();
+
+    echo '<table>';
+    $i = 0;
+    foreach ( $ta as $a ) {
+
+      $chaineA = '<td>' . $a[ 'id' ] . ' ' . $a[ 'pseudo' ] . ' ' . $a[ 'uid' ] . '</td>';
+      $b = $tb[ $i ];
+      $chaineB = '<td>' . $b[ 'id' ] . ' ' . $b[ 'pseudo' ] . ' ' . $b[ 'uid' ] . '</td>';
+
+      $diff = ( $chaineA == $chaineB ) ? 0 : 1;
+
+      if ( $diff ) {
+        echo '<tr>' . $chaineA . $chaineB;
+        echo '<td>' . $diff . '</td></tr>';
+      }
+      $i++;
+    }
+    echo '</table>';
+    /*
+      echo '<pre>';
+      var_dump( $rep[0] );
+      echo '</pre>';
+    */
   //  $req( $sql, $pdo );
 
-  $sql = "select count(*) from www_boos2013.xoops_users";
+  $sql = "select count(*) from aaxu.xub2";
   $req( $sql, $pdo );
 
-  $sql = "select count(*) from aazt.xub2";
+  $sql = "select count(*) as cntXu from aaxu.xu";
   $req( $sql, $pdo );
 
   $sql = "explain aazt.xub2";
   $req( $sql, $pdo );
 
-//  $sql = "select * from aazt.b1 order by id asc";
-//  $req( $sql, $pdo );
+  //  $sql = "select * from aazt.b1 order by id asc";
+  //  $req( $sql, $pdo );
 
 
   echo str_repeat( '<br>', 25 ); // 28
