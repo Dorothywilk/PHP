@@ -51,7 +51,24 @@
     */
   //  $req( $sql, $pdo );
 
-  $sql = "select count(*) from aaxu.xub2";
+  /*
+   * Tout le Groupe
+  $sql = "SELECT concat(repeat('-', pf * 7), pseudo) 'Arborescence'
+FROM aaxu.xu
+ORDER BY bg;";
+   */
+
+
+  $sql = "SELECT concat(repeat('&nbsp;', pf * 5), id, ' ', pseudo, ' ', uid, ' (', bg, ' - ', bd, ')')
+'Arborescence'
+FROM aaxu.xu
+where bg>=331
+  and bd<=370
+ORDER BY bg;";
+
+
+
+
   $req( $sql, $pdo );
 
   $sql = "select count(*) as cntXu from aaxu.xu";
