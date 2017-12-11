@@ -11,18 +11,28 @@ FROM xu;
 
 -- Représentation graphique du Groupe global
 SELECT concat(repeat(' ', pf * 5), id, ' ', pseudo, ' ', uid, ' (', bg, ' - ', bd, ')')
-'Arborescence'
+  'Arborescence'
 FROM xu
 
-SELECT concat(repeat(' ', pf * 5), id, ' ', pseudo, ' ', uid, ' (', bg, ' - ', bd, ')')
-'Arborescence'
+SELECT concat(repeat(' ', (pf - 16) * 5), id, ' ', pseudo, ' ', uid, ' (', bg, ' - ', bd, ')')
+  'Arborescence'
 FROM xu
-where bg>=331
-  and bd<=370
+WHERE bg >= 283
+      AND bd <= 16404
 ORDER BY bg;
 
 
-select * from boosteurori;
+SELECT *
+FROM aaxu.xu
+WHERE pseudo = 'Angel45';
+
+SELECT *
+FROM aaxu.boosteurori
+WHERE parr = 'Djomo';
+
+
+SELECT *
+FROM boosteurori;
 
 
 -- Profondeur Max
@@ -30,3 +40,10 @@ SELECT *
 FROM xu
 WHERE pf = (SELECT max(pf)
             FROM xu);
+
+SELECT
+  concat(repeat(' ', pf * 5), id, ' ', pseudo, ' ', uid, ' (', bg, ' - ', bd, ')') AS 'Arborescence'
+FROM aaxu.xu
+WHERE bg <= 30509
+      AND bd >= 30510
+ORDER BY bg DESC;

@@ -28,8 +28,7 @@
           href="https://openclassrooms.com/courses/la-representation-intervallaire"
           target="_blank">Tuto OOC</a> - Fichier MySQL: ~\agc7\arbre\ooc.sql
       </li>
-      <li><a href="http://laravel.sillo.org/cours-laravel-5-5-les-donnees-gerer-un-arbre/">Laravel
-          Sillo</a></li>
+      <li><a href="http://laravel.sillo.org/cours-laravel-5-5-les-donnees-gerer-un-arbre/" target="_blank">Laravel Sillo</a></li>
       <li></li>
 
     </ol>

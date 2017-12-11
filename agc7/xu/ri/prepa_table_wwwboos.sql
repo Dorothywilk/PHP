@@ -1,4 +1,9 @@
 USE aazt;
+
+-- Préparation de la table wwwboos: Nouvelle numérotation des id (plus de trous) + membres insérés
+--  dans la table dans leur ordre d'arrivée dans le Groupe
+-- Nécessaire pour représentation intervallaire (xu)
+
 -- Script sans double-curseur
 -- (Reprend la pile depuis le début dès que idEnAtt)
 -- ToFixLi bur / table réelle // ordre des 'idEnAtt'

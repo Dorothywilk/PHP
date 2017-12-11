@@ -10,11 +10,12 @@
 </div>
 <div class="maingc7">
   <?php
-  $pdo = pdo( 'aazt' ); // BdD de tests
+  $pdo = pdo( 'aaxu' ); // BdD de tests
 
-  $sql = "select 1";
+  $sql = "select * from xu limit 20";
   //  affLign( $sql );
   //  $pdo->query( $sql );
+  $req( $sql, $pdo );
 
   /*
     $sql = "select * from xub2";
@@ -61,15 +62,12 @@ ORDER BY bg;";
 
   $sql = "SELECT concat(repeat('&nbsp;', pf * 5), id, ' ', pseudo, ' ', uid, ' (', bg, ' - ', bd, ')')
 'Arborescence'
-FROM aaxu.xu
+FROM xu
 where bg>=331
   and bd<=370
 ORDER BY bg;";
-
-
-
-
   $req( $sql, $pdo );
+
 
   $sql = "select count(*) as cntXu from aaxu.xu";
   $req( $sql, $pdo );

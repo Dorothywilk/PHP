@@ -13,8 +13,7 @@
 
 <body>
 <div class="navLi">
-  <a href="/" class="hoverable lkdo">Do</a> | Arbre - But: Gestion optimale de l'arborescence du
-  Réseau
+  <a href="/" class="hoverable lkdo">Do</a> | Arbre - But: Gestion optimale de l'arborescence du Réseau
 </div>
 
 <?php

@@ -1,8 +1,5 @@
 USE aaxu;
-/*
-SELECT *
-FROM xu;
-*/
+
 /*
 DELETE FROM xu
 WHERE id > 1;
@@ -20,7 +17,7 @@ DROP PROCEDURE IF EXISTS wboos2Xu;
 DELIMITER |
 CREATE DEFINER =`root`@`localhost` PROCEDURE `wboos2Xu`(IN `p_id` INT(11)) BEGIN
   DECLARE debut DATETIME DEFAULT SYSDATE();
-  DECLARE v_id INT(11);
+  DECLARE v_id, v_uid INT(11);
   DECLARE v_pseudo, v_parr VARCHAR(255);
 
   -- On déclare fin comme un BOOLEAN, avec FALSE pour défaut
@@ -30,7 +27,8 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `wboos2Xu`(IN `p_id` INT(11)) BEGIN
   FOR SELECT
         id,
         pseudo,
-        parr
+        parr,
+        uid
       FROM xub2
       WHERE id > 1 AND id < p_id;
 
@@ -44,18 +42,18 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `wboos2Xu`(IN `p_id` INT(11)) BEGIN
 
   loop_curseur: LOOP
     FETCH curs_xus
-    INTO v_id, v_pseudo, v_parr;
+    INTO v_id, v_pseudo, v_parr, v_uid;
 
     IF fin
     THEN
       LEAVE loop_curseur;
     END IF;
 
-    IF p_id < 7
-    THEN SELECT CONCAT((v_id - 1), ': ', v_pseudo, ', ', v_parr) AS 'Xu'; 
-		END IF;
-		
-    CALL insertXu(v_pseudo, v_parr);
+    IF p_id < 50
+    THEN SELECT CONCAT((v_id - 1), ': ', v_pseudo, ', ', v_parr) AS 'Xu';
+    END IF;
+
+    CALL insertXuAvecUid(v_pseudo, v_parr, v_uid);
   END LOOP;
 
   CLOSE curs_xus;
@@ -68,6 +66,7 @@ CREATE DEFINER =`root`@`localhost` PROCEDURE `wboos2Xu`(IN `p_id` INT(11)) BEGIN
 END|
 
 -- CALL wboos2Xu(26e3);
+# CALL wboos2Xu(77);
 
 SELECT *
 FROM xu;
@@ -75,7 +74,8 @@ FROM xu;
 -- Représentation graphique
 SELECT concat(repeat(' ', pf * 7), pseudo) 'Arborescence'
 FROM xu
-ORDER BY bg;
+ORDER BY bg
+limit 10;
 /*
 -- Re-initialise Aadminli pour départ tests
 SELECT *
@@ -103,6 +103,44 @@ CALL insertXu('Jade', 3);
 SELECT *
 FROM xu;
 */
+
+DROP PROCEDURE IF EXISTS insertXuAvecUid;
+DELIMITER |
+CREATE DEFINER =`root`@`localhost` PROCEDURE `insertXuAvecUid`(
+  IN `pseudoXu` VARCHAR(255),
+  IN `idRef`    INT,
+  IN `uidRef`   INT
+)
+  BEGIN
+    -- START TRANSACTION;
+
+    DECLARE pseudoRef VARCHAR(255);
+    DECLARE bgRef, bdRef, pfRef INT(11);
+
+    -- Réc valeur du parr
+    SELECT
+      pseudo,
+      bg,
+      bd,
+      pf
+    INTO pseudoRef, bgRef, bdRef, pfRef
+    FROM xu
+    WHERE id = idRef;
+
+    UPDATE xu
+    SET bd = bd + 2
+    WHERE bd >= bdRef;
+
+    UPDATE xu
+    SET bg = bg + 2
+    WHERE bg >= bdRef;
+
+    INSERT INTO xu (pseudo, parrain, parr, bg, bd, pf, uid)
+    VALUES (pseudoXu, pseudoRef, idRef, bdRef, (bdRef + 1), (pfRef + 1), uidRef);
+
+    -- COMMIT;
+  END |
+DELIMITER ;
 
 DROP PROCEDURE IF EXISTS insertXu;
 DELIMITER |
