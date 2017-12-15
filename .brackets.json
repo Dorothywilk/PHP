@@ -151,7 +151,5 @@
     "brackets-minifier.css-custom-path": "",
     "brackets-minifier.project-exclude": "",
     "brackets-minifier.concat-js-filename": "",
-    "brackets-minifier.concat-css-filename": "",
-    "brackets-minifier.js-mangle": true,
-    "brackets-minifier.js-compress": true
+    "brackets-minifier.concat-css-filename": ""
 }
