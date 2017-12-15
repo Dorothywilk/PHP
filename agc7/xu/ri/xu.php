@@ -21,7 +21,7 @@ CREATE TABLE xut
   //  affLign( $sql );
   //  $pdo->query( $sql );
 
-  $sql = "select * from xut;";
+  $sql = "select count(*) as cntXu from xu;";
   $req( $sql, $pdo );
 
   $sql = "-- Représentation graphique
@@ -46,7 +46,9 @@ ORDER BY bg;";
   </ul>
   <p class="load">NB:
   <ol>
-    <li>La table b2 a les colonnes id, pseudo, parr, uid, parrain<br>(Les 2 dernières étant vouées à disparaître à terme)</li>
+    <li>La table b2 a les colonnes id, pseudo, parr, uid, parrain<br>(Les 2 dernières étant vouées à
+      disparaître à terme)
+    </li>
     <li>Le membre racine (Aadminli) n'est pas géré dans la procédure<br>
       (Supprimé de b1 et inséré dans b2 'à la main').
     </li>
@@ -60,7 +62,8 @@ ORDER BY bg;";
   $sql = "DROP TABLE IF EXISTS b1;
 CREATE TABLE b1
     SELECT *
-    FROM b;";
+    FROM b;
+DELETE FROM b1 where uid=1";
   affLign( $sql );
   $pdo->query( $sql );
 
@@ -99,57 +102,145 @@ VALUES (1, 'Aadminli')";
 
   <?php
 
-  $sql = "DROP PROCEDURE IF EXISTS test_boucle_b;
-CREATE PROCEDURE `test_boucle_b`(IN `p_id` INT)
-  BEGIN
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE v_id INT;
-    DECLARE v_pseudo, v_parr VARCHAR(255);
+  $sql = "USE aazt;
 
-    DECLARE b_cursor CURSOR FOR
+-- #################### Préparation des tables ##################
+TRUNCATE aazt.b1;
+TRUNCATE aazt.b2;
+
+INSERT INTO aazt.b1 (uid, uname, parr)
+VALUES
+  (2, 'Grcote7', 'Aadminli'),
+  (3, 'Doro', 'Grcote7'),
+  (4, 'Jade', 'Doro'),
+  (5, 'Micky', 'Jeny'),
+  (7, 'Mimi', 'Doro'),
+  (8, 'Jeny', 'Jade'),
+  (9, 'Julien', 'Rom1'),
+  (10, 'Jonathan', 'Doro'),
+  (11, 'Félicien', 'Rom1'),
+  (12, 'rom1', 'Doro'),
+  (13, 'Greg', 'Jonathan'),
+  (14, 'Fanny', 'Jonathan');
+
+INSERT INTO aazt.b2 (uid, pseudo, parr)
+VALUES
+  (1, 'Aadminli', NULL);
+
+DROP PROCEDURE IF EXISTS boucle_b1;
+CREATE PROCEDURE boucle_b1()
+  BEGIN
+    DECLARE v_stop, derId, v_id, v_parr, v_paUid, uidea, i INT DEFAULT 0;
+    DECLARE v_pseudo, v_parrain VARCHAR(255);
+
+    -- Table temporaire des arrivants en attentre
+    DROP TEMPORARY TABLE IF EXISTS t_b;
+    CREATE TEMPORARY TABLE t_b (
+      uid     INT,
+      uname   VARCHAR(255),
+      parrId  INT,
+      parrain VARCHAR(255)
+    );
+
+    SELECT max(uid)
+    INTO derId
+    FROM b1;
+
+    SET i = 1;
+
+    WHILE i <= derId DO
+
       SELECT
         uid,
         uname,
         parr
-      FROM b
-      WHERE uid < p_id;
+      INTO v_id, v_pseudo, v_parrain
+      FROM b1
+      WHERE uid = i;
 
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+      SET v_stop = v_stop + 1;
 
-    DROP TEMPORARY TABLE IF EXISTS t_b;
-    CREATE TEMPORARY TABLE t_b (
-      id     INT,
-      pseudo VARCHAR(255),
-      parr VARCHAR (255)
-    );
-
-    OPEN b_cursor;
-
-    b_loop: LOOP
-      FETCH b_cursor
-      INTO v_id, v_pseudo, v_parr;
-
-      IF done
+      IF v_id
       THEN
-        LEAVE b_loop;
+
+        DELETE FROM b1
+        WHERE uid = v_id;
+
+        SELECT id
+        INTO v_parr
+        FROM b2
+        WHERE PSEUDO = v_parrain;
+
+
+        IF v_parr
+        THEN
+
+          INSERT INTO b2 (pseudo, parr, uid, parrain) VALUES
+            (
+              v_pseudo,
+              v_parr,
+              v_id,
+              v_parrain
+            );
+
+
+          IF v_pseudo IN (SELECT parrain
+                          FROM t_b)
+          THEN
+
+            INSERT INTO b2 (pseudo, parr, uid, parrain)
+              SELECT
+                uname,
+                i,
+                uid,
+                parrain
+              FROM t_b
+              WHERE parrain = v_pseudo;
+
+
+
+          END IF;
+
+        ELSE
+
+          INSERT INTO t_b (uid, uname, parrain) VALUES (v_id, v_pseudo, v_parrain);
+
+        END IF;
+
       END IF;
 
-      INSERT INTO t_b (id, pseudo, parr) VALUES
-        (v_id,
-         v_pseudo,
-         v_parr);
-    END LOOP;
+      SET i = i + 1;
 
-    CLOSE b_cursor;
+      SET v_id = 0;
+      SET v_parr = 0;
+      SET v_pseudo = '';
+      SET v_parrain = '';
 
-SELECT *
-FROM t_b;
 
-END;";
+    END WHILE;
+
+    SELECT *
+    FROM aazt.b2;
+
+  END;
+
+CALL boucle_b1()";
   affLign( $sql );
   $pdo->query( $sql );
 
-  $sql = "call test_boucle_b(100);";
+  $sql = "call boucle_b1();";
+  $pdo->query( $sql );
+
+  ?>
+
+  <h3>Création des données</h3>
+
+  <?php
+
+  $sql = "select * from b1";
+  $req( $sql, $pdo );
+
+  $sql = "select * from b2";
   $req( $sql, $pdo );
 
 

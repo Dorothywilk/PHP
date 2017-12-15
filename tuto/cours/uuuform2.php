@@ -1,4 +1,4 @@
-<form method="post" action="./tuto/cours/formulaire3.php">
+<form method="post" action="./tuto/cours/traitement2.php">
 
   <fieldset>
     <legend>Vos coordonnées</legend>
