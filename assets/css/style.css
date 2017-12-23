@@ -15,6 +15,11 @@
   src: url('/assets/fonts/RibbonsAndBanners.ttf');
 }
 
+@font-face {
+  font-family: gino;
+  src: url('/assets/fonts/gino.ttf');
+}
+
 body,
 html {
   background: #fff8dc;
@@ -237,4 +242,12 @@ h4 {
 
 .float-left {
   width: 85%;
+}
+
+.gino{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: gino;
+  line-height: 1em;
+  font-size: 7em;
 }
