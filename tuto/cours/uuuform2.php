@@ -1,4 +1,6 @@
-<div class="gino">Texte avant le formulaire</div>
+<div class="gino">Texte avant le formulaire éte</div>
+
+<div class="learning">Texte avant le formulaire Été</div>
 
 <form method="POST" action="./tuto/cours/uuutraitement2.php">
 

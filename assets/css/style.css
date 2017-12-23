@@ -1,253 +1,265 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900);
 
 @font-face {
-  font-family: actionManShaded;
-  src: url('/agc7/assets/fonts/actionManShaded/actionManShaded.ttf');
+    font-family: actionManShaded;
+    src: url('/agc7/assets/fonts/actionManShaded/actionManShaded.ttf');
 }
 
 @font-face {
-  font-family: hangedLetters;
-  src: url('/assets/fonts/hangedLetters.ttf');
+    font-family: hangedLetters;
+    src: url('/assets/fonts/hangedLetters.ttf');
 }
 
 @font-face {
-  font-family: RibbonsAndBanners;
-  src: url('/assets/fonts/RibbonsAndBanners.ttf');
+    font-family: RibbonsAndBanners;
+    src: url('/assets/fonts/RibbonsAndBanners.ttf');
 }
 
 @font-face {
-  font-family: gino;
-  src: url('/assets/fonts/gino.ttf');
+    font-family: gino;
+    src: url('/assets/fonts/gino.ttf');
+}
+
+@font-face {
+    font-family: learning;
+    src: url('/assets/fonts/learningCurve.ttf');
 }
 
 body,
 html {
-  background: #fff8dc;
-  /*    background: red;*/
-  /*background: linear-gradient(to left bottom, orange, yellow 50%, red);*/
-  /*  background: linear-gradient(to left, red, white 50%, cyan);*/
+    background: #fff8dc;
+    /*    background: red;*/
+    /*background: linear-gradient(to left bottom, orange, yellow 50%, red);*/
+    /*  background: linear-gradient(to left, red, white 50%, cyan);*/
 }
 
 body {
-  color: maroon;
-  font-family: Comic Sans MS, arial;
-  font-size: 1.2em;
-  margin: 0
+    color: maroon;
+    font-family: Comic Sans MS, arial;
+    font-size: 1.2em;
+    margin: 0
 }
 
 .footerDo,
 .navDo {
-  background-color: #ffdd90
+    background-color: #ffdd90
 }
 
 .footerDo p,
 .navDo a {
-  margin: 2px 5px
+    margin: 2px 5px
 }
 
 .main {
-  margin: 5px auto;
-  width: 97%;
+    margin: 5px auto;
+    width: 97%;
 }
 
 .titreCoursDo {
-  border-bottom: 2px solid #cccccc;
-  box-shadow: 0 1px 0 white;
-  font-family: actionManShaded, 'roboto', arial;
-  font-size: 1.5em;
-  padding-bottom: .2em;
-  margin-bottom: .3em;
+    border-bottom: 2px solid #cccccc;
+    box-shadow: 0 1px 0 white;
+    font-family: actionManShaded, 'roboto', arial;
+    font-size: 1.5em;
+    padding-bottom: .2em;
+    margin-bottom: .3em;
 }
 
 .titreCoursDo a {
-  color: maroon;
+    color: maroon;
 }
 
 .mt5 {
-  margin-top: 5px
+    margin-top: 5px
 }
 
 .mt10 {
-  margin-top: 10px
+    margin-top: 10px
 }
 
 a {
-  text-decoration: none
+    text-decoration: none
 }
 
 .cellDo {
-  background-color: #fff;
-  border: 1px solid red;
-  border-radius: 7px;
-  margin: 10px;
+    background-color: #fff;
+    border: 1px solid red;
+    border-radius: 7px;
+    margin: 10px;
 }
 
 .buttonDo {
-  border-radius: 7px
+    border-radius: 7px
 }
 
 .hrDo {
-  margin: 5px 0
+    margin: 5px 0
 }
 
 .meaDo {
-  background-color: #fff9f0;
-  border: 3px solid orange;
-  border-radius: 7px;
-  box-shadow: -7px 5px 5px #bdbdbd;
-  color: #fff9f0;
-  font-size: 1.4em;
-  margin: 10px 4em;
-  padding: 3px 5px;
-  text-align: center;
-  text-shadow: -1px 2px 3px orange, -2px 3px 5px #ff1813, -3px 4px 10px #000;
+    background-color: #fff9f0;
+    border: 3px solid orange;
+    border-radius: 7px;
+    box-shadow: -7px 5px 5px #bdbdbd;
+    color: #fff9f0;
+    font-size: 1.4em;
+    margin: 10px 4em;
+    padding: 3px 5px;
+    text-align: center;
+    text-shadow: -1px 2px 3px orange, -2px 3px 5px #ff1813, -3px 4px 10px #000;
 }
 
 .pb10 {
-  padding-bottom: 10px
+    padding-bottom: 10px
 }
 
 .bleuDo {
-  color: #0052ff
+    color: #0052ff
 }
 
 .fdJauneDo {
-  background-color: #ff0 padding: 1 px 7 px;
+    background-color: #ff0 padding : 1 px 7 px;
 }
 
 .fdRougeDo {
-  background-color: red;
-  border: 2px solid #000;
-  padding: 1px 7px;
+    background-color: red;
+    border: 2px solid #000;
+    padding: 1px 7px;
 }
 
 .fdBleuDo {
-  background-color: cyan;
-  border: 2px solid #000;
-  padding: 1px 7px;
+    background-color: cyan;
+    border: 2px solid #000;
+    padding: 1px 7px;
 }
 
 .fdNoireDo {
-  background-color: #000;
-  color: #fff;
-  padding: 1px 7px;
+    background-color: #000;
+    color: #fff;
+    padding: 1px 7px;
 }
 
 .espaceEntreCodePostalEtCommune {
-  margin-left: 10px
+    margin-left: 10px
 }
 
 .policeGc7 {
-  display: inline-block;
+    display: inline-block;
 
-  font-family: verdana;
-  font-size: 12em;
-  /* Seul paramètre à changer, les autres s'adaptent */
-  font-weight: 800;
-  color: cornsilk;
-  /*  color: red;*/
-  text-shadow: .01em -.01em 0 black,
-  .015em -.015em 0 black,
-  .02em -.02em 0 black,
-  .025em -.025em 0 black,
-  .03em -.03em 0 black,
-  .035em -.035em 0 black,
-  .04em -.04em 0 black,
-  .045em -.045em 0 black,
-  .05em -.05em 0 black,
-  .055em -.055em 0 black,
-  .055em -.06em 0 black,
-  .06em -.065em 0 black,
-  .06em -.07em 0 black;
+    font-family: verdana;
+    font-size: 12em;
+    /* Seul paramètre à changer, les autres s'adaptent */
+    font-weight: 800;
+    color: cornsilk;
+    /*  color: red;*/
+    text-shadow: .01em -.01em 0 black,
+    .015em -.015em 0 black,
+    .02em -.02em 0 black,
+    .025em -.025em 0 black,
+    .03em -.03em 0 black,
+    .035em -.035em 0 black,
+    .04em -.04em 0 black,
+    .045em -.045em 0 black,
+    .05em -.05em 0 black,
+    .055em -.055em 0 black,
+    .055em -.06em 0 black,
+    .06em -.065em 0 black,
+    .06em -.07em 0 black;
 }
 
 p.policeGc7::first-letter {
-  font-size: 130%;
-  text-shadow: .01em -.01em 0 black,
-  .015em -.015em 0 black,
-  .02em -.02em 0 black,
-  .025em -.025em 0 black,
-  .03em -.03em 0 black,
-  .035em -.035em 0 black,
-  .04em -.04em 0 black,
-  .045em -.045em 0 black,
-  .05em -.05em 0 black,
-  .055em -.055em 0 black,
-  .06em -.05em 0 black,
-  .065em -.06em 0 black,
-  .07em -.06em 0 black,
-  .072em -.062em 0 black,
-  .075em -.065em 0 black;
+    font-size: 130%;
+    text-shadow: .01em -.01em 0 black,
+    .015em -.015em 0 black,
+    .02em -.02em 0 black,
+    .025em -.025em 0 black,
+    .03em -.03em 0 black,
+    .035em -.035em 0 black,
+    .04em -.04em 0 black,
+    .045em -.045em 0 black,
+    .05em -.05em 0 black,
+    .055em -.055em 0 black,
+    .06em -.05em 0 black,
+    .065em -.06em 0 black,
+    .07em -.06em 0 black,
+    .072em -.062em 0 black,
+    .075em -.065em 0 black;
 }
 
 .sz05 {
-  letter-spacing: .001em;
-  font-size: .5em;
+    letter-spacing: .001em;
+    font-size: .5em;
 }
 
 .blancDo {
-  color: #fff;
+    color: #fff;
 }
 
 hr {
-  margin: .5em;
+    margin: .5em;
 }
 
 .policeDo1 {
-  font-size: 10em;
-  font-family: hangedLetters;
+    font-size: 10em;
+    font-family: hangedLetters;
 }
 
 .policeDo2 {
-  text-align: center;
-  padding-bottom: 50px;
-  padding-left: 80px;
-  margin: 30px auto;
-  background-color: #fff;
-  font-size: 10em;
-  font-family: RibbonsAndBanners;
-  border-radius: 15px;
-  border: 3px solid red
+    text-align: center;
+    padding-bottom: 50px;
+    padding-left: 80px;
+    margin: 30px auto;
+    background-color: #fff;
+    font-size: 10em;
+    font-family: RibbonsAndBanners;
+    border-radius: 15px;
+    border: 3px solid red
 }
 
-
 hr {
-  height: 2px;
+    height: 2px;
 }
 
 h1 {
-  font-size: 1.8em;
+    font-size: 1.8em;
 }
 
 h2 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 h3 {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 h4 {
-  font-style: italic;
+    font-style: italic;
 }
 
 #lineFile {
-  cursor: auto;
-  color: rgba(111, 89, 63, 0.5) !important;
-  padding: 3px 5px 2px;
-  font-size: 2em;
-  line-height: 1;
-  margin-top: 3px;
+    cursor: auto;
+    color: rgba(111, 89, 63, 0.5) !important;
+    padding: 3px 5px 2px;
+    font-size: 2em;
+    line-height: 1;
+    margin-top: 3px;
 }
 
 .float-left {
-  width: 85%;
+    width: 85%;
 }
 
-.gino{
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-family: gino;
-  line-height: 1em;
-  font-size: 7em;
+.gino {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-family: gino;
+    line-height: 1em;
+    font-size: 7em;
+}
+
+.learning {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-family: learning;
+    line-height: 1em;
+    font-size: 7em;
 }
