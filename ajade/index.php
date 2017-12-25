@@ -13,7 +13,9 @@
 
   <div class="navLi" style="font-size: 1.5rem;padding-left: 10px;border-bottom: 1px solid grey;padding-bottom: 7px;">
     <a href="/">Accueil</a> |
-    <a href="?cours=Mathématiques">Maths</a>
+    <a href="?cours=Maths">Maths</a> |
+    <a href="?cours=Conjugaison">Conjugaison</a> |
+    <a href="?cours=Tests">Tests</a>
     <!-- |-->
   </div>
   <!--			<a href="/" class="hoverable lkdo">Accueil</a> |-->
@@ -25,24 +27,16 @@
         <?php
 
       if ( !isset( $_GET['cours'] ) )
-        $cours = 'Conjugaisons';
+        $cours = 'Accueil';
       else $cours=$_GET['cours'];
 
-      switch ( $cours ) {
-        case 'Mathématiques':
-          $filePhp = 'maths/index';
-          break;
-        case 'Conjugaisons':
-          $filePhp = 'conjugaison';
-          break;
-      }
       ?>
           <div class='titreCoursDo actionManShaded'>
             <a href="#" title="Lien #">
               <?= $cours ?>
             </a>
           </div>
-          <?php include './' . $filePhp . '.php' ?>
+          <?php include './' . strtolower($cours) . '/index.php' ?>
       </div>
     </div>
   </article>
