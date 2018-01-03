@@ -18,10 +18,10 @@
   <?php
 
   // Simple classe
-  // include 'personne.php';
+   include 'personne.php';
 
   // Classe Mère & classe fille
-  include 'vehicule.php';
+//  include 'vehicule.php';
 
   // Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
   // include 'kid.php';

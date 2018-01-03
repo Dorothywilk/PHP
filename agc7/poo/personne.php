@@ -1,4 +1,6 @@
 <?php
+namespace gc7;
+
 
 include '../class/Personne.php';
 
@@ -13,6 +15,11 @@ $personne1->prenom = 'Hugo';
 $personne1->dateDeNaissance = '02-07-1987';
 $personne1->taille = '180';
 $personne1->sexe = 'M';
+
+$personne1->setMNom('Hamon Privé');
+
+echo $personne1->getMNom().'<hr>';
+
 
 // Définition des attributs de la personne 2
 $personne2->nom = 'Dubois';
