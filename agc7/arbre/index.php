@@ -7,22 +7,28 @@
   <link rel="stylesheet" href="../assets/css/mdb.min.css">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/gc7.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+
+  <link rel="stylesheet" href="assets/css/hv.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
 </head>
 
 <body>
-<div class="navLi">
-  <a href="/" class="hoverable lkdo">Do</a> | Arbre - But: Gestion optimale de l'arborescence du Réseau
-</div>
+<!--<div class="navLi">-->
+<!--  <a href="/" class="hoverable lkdo">Do</a> | Arbre - But: Gestion & représentation optimale de-->
+<!--  l'arborescence du Réseau-->
+<!--</div>-->
 
 <?php
-  
-  //todoLi https://medium.com/@sichisichi/hierarchy-view-component-with-pure-css-sass-1ff5add5cad7
+
+//todoLi https://medium.com/@sichisichi/hierarchy-view-component-with-pure-css-sass-1ff5add5cad7
 
 include '../bdd/inc/fctns.php';
 
-include 'sqlpro/ini.php';
+//include 'sqlpro/ini.php';
+include 'view.php';
 
 ?>
 <footer>
