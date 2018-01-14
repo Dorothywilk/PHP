@@ -18,58 +18,80 @@
       <div class="hv-item">
 
         <div class="hv-item-parent">
-          <p class="simple-card">
-            Aadminli <b>LV 3</b>
+          <p class="cardXu">
+            Aadminli<br><b>LV 3</b>
           </p>
         </div>
 
         <div class="hv-item-children">
 
-          <div class="hv-item-child">
 
+          <div class="hv-item-child">
             <div class="hv-item">
 
               <div class="hv-item-parent">
-                <p class="simple-card">
+                <p class="cardXu">
                   Radjaa<br>
                   <b>LV 2</b>
                 </p>
               </div>
 
               <div class="hv-item-children">
-                <div class="hv-item">
 
-                  <div class="hv-item-child">
-                    <p class="simple-card">
-                      Evelyne<br>
-                      <b>LV 1</b>
-                    </p>
-                  </div>
-
+                <div class="hv-item-child">
+                  <p class="cardXu">
+                    Hamid<br>
+                    <b>LV 1</b>
+                  </p>
                 </div>
+
               </div>
 
             </div>
-
           </div>
 
 
           <div class="hv-item-child">
-            <p class="simple-card">
-              Ginandree<br>
-              <b>LV 1</b>
-            </p>
+            <div class="hv-item">
+
+              <div class="hv-item-parent">
+                <p class="cardXu">
+                  Ginandree<br>
+                  <b>LV 1</b>
+                </p>
+              </div>
+
+              <div class="hv-item-children">
+
+                <div class="hv-item-child">
+                  <p class="cardXu">
+                    Agnès<br>
+                    <b>LV 1</b>
+                  </p>
+                </div>
+
+                <div class="hv-item-child">
+                  <p class="cardXu">
+                    Evelyne<br>
+                    <b>LV 1</b>
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
           </div>
 
+
           <div class="hv-item-child">
-            <p class="simple-card">
+            <p class="cardXu">
               Cathi<br>
               <b>LV 1</b>
             </p>
           </div>
 
           <div class="hv-item-child">
-            <p class="simple-card">
+            <p class="cardXu">
               Dan<br>
               <b>LV 1</b>
             </p>
@@ -78,10 +100,7 @@
         </div>
 
       </div>
-
     </div>
-
-    <br>&nbsp;
 
   </div>
 

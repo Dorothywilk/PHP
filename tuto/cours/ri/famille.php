@@ -123,12 +123,24 @@ $f = insert( 'Pina', 1, $f );
 
 $gr = getGroupe( 1, $f );
 
-echo 'Groupe de';
-affGroupe( $gr );
+sort( $f );
+//echo '  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">';
+foreach ( $f as $m ) {
+  echo '$gr[] = new Xu( \''.$m[ 'nom' ] . '\', ' . $m[ 'bg' ] . ', ' . $m[ 'bd' ] . ', ' . $m[ 'prof' ] .
+    ');<br>';
+}
+//echo '</td></tr></table>';
+
+//echo 'Groupe de';
+//affGroupe( $gr );
+//
+//echo '<pre>';
+//var_dump( $gr );
+//echo '</pre>';
 
 // affVd($gr);
 
-echo str_repeat( '<br>', 25 );
+//echo str_repeat( '<br>', 25 );
 
 //
 // x 8) Dessiner fam3.jpg et congitmer

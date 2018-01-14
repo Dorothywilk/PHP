@@ -28,8 +28,9 @@
 include '../bdd/inc/fctns.php';
 
 //include 'sqlpro/ini.php';
-include 'view2.php';
-include 'view1.php';
+//include 'view2.php'; // Simple minimal réseau boosteur
+include 'view3.php';
+//include 'view1.php';
 
 ?>
 <footer>

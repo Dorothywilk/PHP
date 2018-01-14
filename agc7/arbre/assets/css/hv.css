@@ -5,7 +5,12 @@
   .hv-wrapper .hv-item {
     display: flex;
     flex-direction: column;
-    margin: auto; }
+    margin: auto;
+    /*
+    border: 2px solid red;
+    padding: 2px;
+    border-radius: 10px;
+    */ }
     .hv-wrapper .hv-item .hv-item-parent {
       margin-bottom: 50px;
       position: relative;

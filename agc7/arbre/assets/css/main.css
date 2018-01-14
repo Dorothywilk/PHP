@@ -6,7 +6,6 @@ body {
   margin: 0; }
 
 section {
-  min-height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -16,7 +15,7 @@ section {
     position: absolute;
     top: 10px;
     right: 20px;
-    color: orange; }
+    color: #985f00; }
   section h1 {
     text-align: center;
     margin-bottom: 50px; }
@@ -33,6 +32,20 @@ section {
 .titre2eme {
   margin-top: 50px;
   color: yellow; }
+
+p.cardXu {
+  margin: 0;
+  background-color: #fff;
+  color: #de5454;
+  border-radius: 7px;
+  padding: 30px;
+  min-width: 100px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(204, 131, 103, 0.77); }
+  p.cardXu b {
+    font-weight: normal;
+    font-size: .8em; }
 
 p.simple-card {
   margin: 0;

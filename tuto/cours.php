@@ -17,8 +17,8 @@ $nf = function ( $n ) { return ( ( $n > 10 ) ? number_format( $n, 2, ',', ' ' ) 
 //include 'cours/variablesTableau.php';
 
 //include 'cours/array.php';
-include 'cours/uuutraitement2.php';
-include 'cours/uuuform2.php';
+//include 'cours/uuutraitement2.php';
+//include 'cours/uuuform2.php';
 //include 'cours/conditions.php';
 //include 'cours/formulaire.php';
 //include 'cours/formulaire2.php';
@@ -45,5 +45,5 @@ include 'cours/uuuform2.php';
 // include'initiation/tableau.php';
 //include 'initiation/tableauIndexe.php';
 
-//include 'cours/ri/famille.php'; // RI = Représentation Intervallaire
+include 'cours/ri/famille.php'; // RI = Représentation Intervallaire
 //include'cours/objets.php';

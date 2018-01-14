@@ -57,8 +57,7 @@ function insert( $nom, $bgParrain, $f )
     $i++;
   }
 
-
-// 3)Insertion du membre avec bg =bd er (élément de référence, là, qui reçoit), 
+// 3)Insertion du membre avec bg =bd er (élément de référence, là, qui reçoit),
 // bd=bg +1
   array_push( $f, [
     'bg' => $ref,
@@ -71,8 +70,6 @@ function insert( $nom, $bgParrain, $f )
 
   return $f;
 }
-
-;
 
 function affMembre( $m )
 {
