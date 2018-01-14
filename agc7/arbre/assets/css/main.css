@@ -41,11 +41,14 @@ p.simple-card {
   border-radius: 7px;
   padding: 30px;
   min-width: 100px;
+  font-weight: bold;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(204, 131, 103, 0.22); }
+  box-shadow: 0 3px 6px rgba(204, 131, 103, 0.77); }
+  p.simple-card b {
+    font-weight: normal;
+    font-size: .8em; }
 
 .hv-item-parent p {
-  font-weight: bold;
   color: #de5454; }
 
 .management-hierarchy {
@@ -65,12 +68,13 @@ p.simple-card {
       padding: 5px 10px;
       border-radius: 5px;
       font-size: 12px;
-      font-weight: normal;
-      color: #3baa9d;
+      font-weight: bold;
+      color: blue;
       margin: 0;
       position: relative; }
       .management-hierarchy .person > p.name b {
-        color: rgba(59, 170, 157, 0.5); }
+        color: rgba(255, 0, 0, 0.7);
+        font-weight: bold; }
       .management-hierarchy .person > p.name:before {
         content: '';
         position: absolute;
@@ -80,5 +84,7 @@ p.simple-card {
         left: 50%;
         top: 0;
         transform: translateY(-100%); }
+  .management-hierarchy .card_img {
+    width: 120px; }
 
 /*# sourceMappingURL=main.css.map */

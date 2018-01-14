@@ -1,11 +1,12 @@
 $bottom-margin: 50px;
 $line-width: 2px;
-$line-color: rgba(#fff, 0.7);
+$line-color: rgba(#000, .3);
 $bg_color: #efe6e2;
 
 .hv-wrapper {
   display: flex;
   justify-content: center;
+  zoom: .9;
 
   .hv-item {
     display: flex;
@@ -37,7 +38,7 @@ $bg_color: #efe6e2;
         padding: 0 15px;
         position: relative;
 
-        &:before, &:after {
+        &:before, &:not(:only-child):after {
           content: '';
           position: absolute;
           background-color: $line-color;
@@ -71,11 +72,10 @@ $bg_color: #efe6e2;
       }
     }
   }
-
 }
 
 .bloc1 {
-  zoom: 85%;
+  zoom: 1;
   color: yellow;
   //border: 0px solid rgba(255,0,0,.1);
   //border-radius: 7%;

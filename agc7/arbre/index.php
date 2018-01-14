@@ -28,7 +28,8 @@
 include '../bdd/inc/fctns.php';
 
 //include 'sqlpro/ini.php';
-include 'view.php';
+include 'view2.php';
+include 'view1.php';
 
 ?>
 <footer>

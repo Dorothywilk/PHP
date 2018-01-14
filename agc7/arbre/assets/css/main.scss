@@ -52,13 +52,17 @@ p.simple-card {
   border-radius: 7px;
   padding: 30px;
   min-width: 100px;
+  font-weight: bold;
   text-align: center;
-  box-shadow: 0 3px 6px rgba(#cc8367, 0.22);
+  box-shadow: 0 3px 6px rgba(#cc8367, 0.77);
+  b {
+    font-weight: normal;
+    font-size: .8em;
+  }
 }
 
 .hv-item-parent {
   p {
-    font-weight: bold;
     color: #de5454;
 
   }
@@ -83,12 +87,13 @@ p.simple-card {
       padding: 5px 10px;
       border-radius: 5px;
       font-size: 12px;
-      font-weight: normal;
-      color: #3baa9d;
+      font-weight: bold;
+      color: blue;
       margin: 0;
       position: relative;
       b {
-        color: rgba(#3baa9d, 0.5);
+        color: rgba(red, 0.7);
+        font-weight: bold;
 
       }
       &:before {
@@ -102,5 +107,8 @@ p.simple-card {
         transform: translateY(-100%);
       }
     }
+  }
+  .card_img {
+    width: 120px;
   }
 }
