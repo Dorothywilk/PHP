@@ -9,7 +9,9 @@
 class Rsx
 {
   public $membres;
-  public $bds = [ ]; // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour parents
+  public $bds = array (); // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour
+
+  // parents
 
   public function __construct( $famille )
   {
@@ -27,11 +29,12 @@ class Rsx
   {
     if ( $id + 1 > self::nbr() ) {
       return 'Pas de membre avec cet ID';
-    } else
+    } else {
       return 'Le membre dont l\'index est <strong>' . $id . '</strong> se nomme <strong>
 ' . $this->membres[ $id ]->nom . '</strong>.<br>
 (BG: ' . $this->membres[ $id ]->bg . ' - BD: ' . $this->membres[ $id ]->bd . ' | Prof: ' .
       $this->membres[ $id ]->pf . ')';
+    }
   }
 
   public function affVueHV()
@@ -47,10 +50,9 @@ class Rsx
       $v .= $this->affCardXu( $i );
 
     $v .= '  </div>
-      </div>
+        </div>
       </div>
 
-    </div>
   </div>
 </section>
 ';
@@ -62,33 +64,44 @@ class Rsx
   {
     $xu = $this->membres[ $id ];
 
-    $type = ( $xu->t == 'c' ) ? 'child' : 'parent';
     $node = $finnode = $finnodeprec = '';
-    if ( $xu->t == 'p' ) {
+    if ( $xu->t === 'p' ) {
+      $type = 'parent';
+      $coulItem = 'redLi';
       $node = '<div class="hv-item">
         <div class="hv-item-' . $type . '">';
       $finnode = '  <div class="hv-item-children">
-
     ';
-
       array_unshift( $this->bds, $xu->bd );
       //sort($this->bds);
-
+    } else {
+      $type = 'child';
+      $coulItem = 'blueLi';
     }
     $ssnode = ( $id > 0 ) ? '<div class="hv-item-child">' : '';
 
-//    $vt = serialize( $this->bds ); // valeur test
-    $vt =( isset($this->bds[ 0 ])) ?$this->bds[0] :'non';
+    $vt = serialize( $this->bds ); // valeur test
+//    $vt =( isset($this->bds[ 0 ])) ?($this->bds)) :'non';
 
-    if ( isset($this->bds[ 0 ]) && $xu->bd + 1 == $this->bds[ 0 ] ) {
-      $vt = '*';
+    if ( array_key_exists( 0, $this->bds ) && $xu->bd + 1 === $this->bds[ 0 ] ) {
+//      $vt = '*';
       array_shift( $this->bds );
-      $finnodeprec = '</div class="div1"></div></div class="div3">';
+      $finnodeprec = '<!-- ID = ' . $id . ' -->' . '
+            </div>
+        </div>
+    </div>
+    ';
+      if ( array_key_exists( 0, $this->bds ) && array_key_exists( $id + 1, $this->membres ) &&
+        $this->membres[ $id + 1 ]->bg > $this->bds[ 0 ]
+      ) {
+        $finnodeprec .= '</div>
+        </div>
+    </div>';
+      }
     }
 
 
-    $coulItem = ( $xu->t == 'p' ) ? 'redLi' : 'blueLi';
-    $aff = $id . ': ' . $this->membres[ $id ]->nom . ' (' . $vt . ')<br>' . ( $xu->parr ? ' < '
+    $aff = $id . ': ' . $this->membres[ $id ]->nom . ' ( ' . $vt . ' )<br>' . ( $xu->parr ? ' < '
         . $xu->parr : '' ) . '<br>(' .
       $xu->bg .
       ',' .
@@ -101,7 +114,8 @@ class Rsx
     return $ssnode . $node . '
     <p class="cardXu">' . $aff . '
     </p>' .
-    "\n" . '</div>' . $finnode . $finnodeprec;
+    "\n" . '</div>
+  ' . $finnode . $finnodeprec;
   }
 
 }
