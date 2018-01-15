@@ -1,4 +1,5 @@
 <?php
+include 'fonctionsRi.php';
 /**
  * Created by C7.
  * User: Li
@@ -45,7 +46,6 @@ $f = [
 // x Donc, sera appelée par:
 
 // x Code qui sera activé alors :
-include 'insert.php';
 $f = insert( 'Romain', 1, $f ); // 1 est la BG de Doro)
 $f = insert( 'Mimi', 1, $f ); // 1 est la BG de Doro)
 
@@ -58,32 +58,6 @@ $f = insert( 'Jeny', 2, $f ); // 2 est la BG de Jade)
 
 getUpline( 'jeNY', $f );
 
-
-/**
- * Retourne la Upline d'un membre
- */
-function getUpline( $nom, $f )
-{
-
-// La upline d'un membre
-
-// On récupère les bornes du sujet pour qui on veut la Upline
-  foreach ( $f as $m ) {
-    if ( strtolower( $m[ 'nom' ] ) == strtolower( $nom ) ) {
-      $bg = $m[ 'bg' ];
-      $bd = $m[ 'bd' ];
-    }
-  }
-// echo $bg.' '.$bd.'<hr>';
-
-  // On va chercher les membres de la Upline
-  /*
-  foreach($f as $m){
-      if ($m['bg']<=$bg and $m['bd']>$bd)
-    echo $m['nom'].' ('.$m['prof'].')<br>';
-  }-+
-  */
-}
 
 // Ajout d'un cops à Rom1
 $f = insert( 'Nico', 6, $f );
@@ -123,12 +97,12 @@ $f = insert( 'Pina', 1, $f );
 
 $gr = getGroupe( 1, $f );
 
-sort( $f );
-//echo '  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">';
-foreach ( $f as $m ) {
-  echo '$gr[] = new Xu( \''.$m[ 'nom' ] . '\', ' . $m[ 'bg' ] . ', ' . $m[ 'bd' ] . ', ' . $m[ 'prof' ] .
-    ');<br>';
-}
+//sort( $f );
+////echo '  <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">';
+//foreach ( $f as $m ) {
+//  echo '$gr[] = new Xu( \''.$m[ 'nom' ] . '\', ' . $m[ 'bg' ] . ', ' . $m[ 'bd' ] . ', ' . $m[ 'prof' ] .
+//    ');<br>';
+//}
 //echo '</td></tr></table>';
 
 //echo 'Groupe de';

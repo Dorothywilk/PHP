@@ -13,25 +13,24 @@ INSERT INTO NEW_FAMILLE (NFM_BG, NFM_BD, NFM_LIB)
 VALUES (35, 36, 'Roller');
 */
 
-
 /**
- * Opérationnelle
+ * @param $nom
+ * @param $bgParrain
+ * @param $f
+ * @return mixed
  */
 function insert( $nom, $bgParrain, $f )
 {
 
   foreach ( $f as $m ) {
-    if ( $m[ 'bg' ] == $bgParrain ) {
+    if ( $m[ 'bg' ] === $bgParrain ) {
       $ref = $m[ 'bd' ]; // Référence
       $profp = $m[ 'prof' ]; // Prof du parrain
+      $parr = $m[ 'nom' ];
     }
   }
 
-  // if ($nom=='Jeny') echo $ref;
-
-
   // 1) Ajouter 2 aux BD qui sont à droite ( = >= à celle de bd qui reçoit)
-
   $i = 0;
   foreach ( $f as $membre ) {
     //echo $membre['nom'].'<br>';
@@ -41,15 +40,13 @@ function insert( $nom, $bgParrain, $f )
     }
     $i++;
   }
-
-
-// 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit)
+  // 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit)
 
   $i = 0;
   foreach ( $f as $membre ) {
-    if ( $nom == 'Jeny' ) {
+//    if ( $membre[ 'nom' ] === 'Jeny' ) {
 //      echo '<h3>'.$i.' bg: '.$membre['bg'].' - bd: '. $membre['bd'].' - Nom:    '.$membre['nom'].'</h3>';
-    };
+//    };
     //  echo '+2 / bg - $i='.$i;
     if ( $membre[ 'bg' ] >= $ref ) {
       $f[ $i ][ 'bg' ] += 2;
@@ -57,16 +54,13 @@ function insert( $nom, $bgParrain, $f )
     $i++;
   }
 
-// 3)Insertion du membre avec bg =bd er (élément de référence, là, qui reçoit),
-// bd=bg +1
-  array_push( $f, [
+  // 3)Insertion du membre avec bg =bd de ref (élément de référence, là, qui reçoit),
+  $f[] = [
     'bg' => $ref,
     'bd' => $ref + 1,
-    'prof' => $profp + 1,
-    'nom' => $nom
-  ] );
-
-  //$f[2]['ok'];
+    'nom' => $nom,
+    'parr' => $parr,
+    'prof' => $profp + 1 ];
 
   return $f;
 }
@@ -108,8 +102,9 @@ function getGroupe( $bgRef, $f )
 
   $gr = [ ];
   foreach ( $f as $m ) { // BG > BgRef && BD < BdRef
-    if ( $m[ 'bg' ] >= $bgRef && $m[ 'bd' ] <= $bdRef )
-      array_push( $gr, $m );
+    if ( $m[ 'bg' ] >= $bgRef && $m[ 'bd' ] <= $bdRef ) {
+      $gr[] = $m;
+    }
   }
   return $gr;
 }
@@ -117,7 +112,7 @@ function getGroupe( $bgRef, $f )
 function getRensM( $bg, $f )
 {
   foreach ( $f as $m ) {
-    if ( $m[ 'bg' ] == $bg ) {
+    if ( $m[ 'bg' ] === $bg ) {
       return serialize( [
         'bdRef' => $m[ 'bd' ],     // Référence
         'profRef' => $m[ 'prof' ], // Prof du parrain
@@ -125,4 +120,32 @@ function getRensM( $bg, $f )
       ] );
     }
   }
+
+  return 1;
+}
+
+/**
+ * Retourne la Upline d'un membre
+ *
+ * @param $nom
+ * @param $f
+ */
+function getUpline( $nom, $f )
+{
+  //  On récupère les bornes du sujet pour qui on veut la Upline //
+  foreach ( $f as $m ) {
+    if ( strtolower( $m[ 'nom' ] ) === strtolower( $nom ) ) {
+      $bg = $m[ 'bg' ];
+      $bd = $m[ 'bd' ];
+    }
+  }
+  echo $bg . ' ' . $bd . '<hr>';
+
+  // On va chercher les membres de la Upline
+  /*
+  foreach($f as $m){
+      if ($m['bg']<=$bg and $m['bd']>$bd)
+    echo $m['nom'].' ('.$m['prof'].')<br>';
+  }-+
+  */
 }

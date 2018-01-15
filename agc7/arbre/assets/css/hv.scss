@@ -14,10 +14,10 @@ $bg_color: #efe6e2;
     margin: auto;
 
     // Pour voir sous-groupes
+    //border: 2px solid red;
+    //padding: 2px;
+    //border-radius: 10px;
     /*
-    border: 2px solid red;
-    padding: 2px;
-    border-radius: 10px;
     */
 
     .hv-item-parent {
@@ -88,3 +88,9 @@ $bg_color: #efe6e2;
   //border-radius: 7%;
 }
 
+.redLi{
+  color: #f00;
+}
+.blueLi{
+  color: #00f;
+}
