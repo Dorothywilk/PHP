@@ -11,9 +11,10 @@ class Xu
 
   public function __construct( $membre )
   {
-    $this->nom = $membre[ 'nom' ];
     $this->bg = $membre[ 'bg' ];
     $this->bd = $membre[ 'bd' ];
+    $this->nom = $membre[ 'nom' ];
+    $this->parr = $membre[ 'parr' ];
     $this->pf = $membre[ 'prof' ];
     /* t (type) : p pour parent // c pour child */
     $this->t = ( $this->bd - $this->bg === 1 ) ? 'c' : 'p';

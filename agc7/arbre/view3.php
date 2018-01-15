@@ -1,34 +1,32 @@
 <?php namespace Agc7\Arbre;
 
-include '../../tuto/cours/ri/fonctionsRi.php'; // To classify
+//include '../../tuto/cours/ri/fonctionsRi.php'; // To classify
 
 include 'class/Xu.php';
 include 'class/Rsx.php';
+include 'class/Ri.php';
+include 'assets/functions/gc7.php';
 
 
 $famille = [
-  [ 'bg' => 1, 'bd' => 2, 'nom' => 'Adminli 1', 'parr'=>null, 'prof' => 0 ],
+  [ 'bg' => 1, 'bd' => 2, 'nom' => 'Adminli', 'parr' => null, 'prof' => 0 ],
 ];
 
-$famille = insert( 'Jona', 1, $famille ); // 1 est la BG de Doro)
-$famille = insert( 'Mimi', 1, $famille );
-$famille = insert( 'Rom1', 4, $famille );
-$famille = insert( 'Jade', 4, $famille );
-$famille = insert( 'Jeny', 5, $famille );
-$famille = insert( 'Fanny', 2, $famille );
-//$famille = insert( 'Félicien', 3, $famille );
-//$famille = insert( 'Ulysse', 8, $famille );
-//$famille = insert( 'Nono', 9, $famille );
-////$famille = insert( 'Alice', 2, $famille );
+$famille = Ri::addChild( 'Jona', 1, $famille ); // 1 est la BG de Doro)
+$famille = Ri::addChild( 'Mimi', 1, $famille );
+$famille = Ri::addChild( 'Rom1', 4, $famille );
+$famille = Ri::addChild( 'Jade', 4, $famille );
+$famille = Ri::addChild( 'Chiva', 5, $famille );
+$famille = Ri::addChild( 'Fanny', 2, $famille );
+//$famille = Ri::addChild( 'Félicien', 3, $famille ); // < Fanny => Bug
+//$famille = Ri::addChild( 'Ulysse', 8, $famille );
+//$famille = Ri::addChild( 'Nono', 9, $famille );
+////$famille = Ri::addChild( 'Alice', 2, $famille );
 //
 
 sort( $famille );
 
-
-//echo '<pre>Famille: ';
-//var_dump( $famille );
-//echo '</pre>';
-//exit;
+//vd($famille);
 
 $rsx = new Rsx( $famille );
 
@@ -39,7 +37,12 @@ $rsx = new Rsx( $famille );
 //echo $rsx->nbr();
 
 foreach ( $rsx->membres as $i => $xu ) {
-  echo $i . ' : ' . $xu->nom . ' (' . $xu->bg . ', ' . $xu->bd . ')<br>' . "\n";
+  echo $i . ' : ' . $xu->nom . ( $xu->parr ? ' < ' . $xu->parr : '' ) . ' (' .
+    $xu->bg .
+    ', ' . $xu->bd
+    . ')
+  <br>' .
+    "\n";
 }
 //
 //echo $rsx->nbr() . ' membres<hr>';
@@ -50,5 +53,5 @@ echo $rsx->affVueHV();
 
 // [ 'p
 
-//echo '<br>';
-//include 'uuu.html';
+echo '<br>';
+include 'uuu.html';

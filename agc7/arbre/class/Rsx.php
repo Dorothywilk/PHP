@@ -1,4 +1,4 @@
-<?php  namespace Agc7\Arbre;
+<?php namespace Agc7\Arbre;
 
 /**
  * Created by C7.
@@ -83,12 +83,14 @@ class Rsx
     if ( $xu->bd + 1 == $this->bds[ 0 ] ) {
       $vt = '*';
       array_shift( $this->bds );
-      $finnodeprec = '</div></div></div>';
+      $finnodeprec = '</div class="div1"></div></div class="div3">';
     }
 
 
     $coulItem = ( $xu->t == 'p' ) ? 'redLi' : 'blueLi';
-    $aff = $id . ' : ' . $this->membres[ $id ]->nom . ' (' . $vt . ')<br>(' . $xu->bg .
+    $aff = $id . ': ' . $this->membres[ $id ]->nom . ' (' . $vt . ')<br>' . ( $xu->parr ? ' < '
+        . $xu->parr : '' ) . '<br>(' .
+      $xu->bg .
       ',' .
       $xu->bd .
       ' -
