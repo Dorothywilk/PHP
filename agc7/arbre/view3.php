@@ -12,13 +12,14 @@ $famille = [
   [ 'bg' => 1, 'bd' => 2, 'nom' => 'Adminli', 'parr' => null, 'prof' => 0 ],
 ];
 
-$famille = Ri::addChild( 'Jona', 1, $famille ); // 1 est la BG de Doro)
+$famille = Ri::addChild( 'Doro', 1, $famille ); // 1 est la BG de Aadminli
+$famille = Ri::addChild( 'Jona', 1, $famille );
 $famille = Ri::addChild( 'Mimi', 1, $famille );
 $famille = Ri::addChild( 'Rom1', 4, $famille );
 $famille = Ri::addChild( 'Jade', 4, $famille );
 $famille = Ri::addChild( 'Chiva', 5, $famille );
-$famille = Ri::addChild( 'Fanny', 2, $famille );
-//$famille = Ri::addChild( 'Félicien', 3, $famille ); // < Fanny => Bug
+$famille = Ri::addChild( 'Fanny', 4, $famille );
+$famille = Ri::addChild( 'Félicien', 5, $famille ); // < Fanny => Bug
 //$famille = Ri::addChild( 'Ulysse', 8, $famille );
 //$famille = Ri::addChild( 'Nono', 9, $famille );
 ////$famille = Ri::addChild( 'Alice', 2, $famille );

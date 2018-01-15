@@ -78,9 +78,9 @@ class Rsx
     $ssnode = ( $id > 0 ) ? '<div class="hv-item-child">' : '';
 
 //    $vt = serialize( $this->bds ); // valeur test
-    $vt = $this->bds[ 0 ];
+    $vt =( isset($this->bds[ 0 ])) ?$this->bds[0] :'non';
 
-    if ( $xu->bd + 1 == $this->bds[ 0 ] ) {
+    if ( isset($this->bds[ 0 ]) && $xu->bd + 1 == $this->bds[ 0 ] ) {
       $vt = '*';
       array_shift( $this->bds );
       $finnodeprec = '</div class="div1"></div></div class="div3">';
