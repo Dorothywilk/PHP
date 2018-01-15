@@ -6,7 +6,7 @@
  */
 function vd( $arr, $var = null )
 {
-  echo '<pre>: ' . $var;
+  echo '<pre> ' . ((isset($var))?$var.':':'');
   var_dump( $arr );
   echo '</pre>';
 }

@@ -2,9 +2,9 @@
 
 //include '../../tuto/cours/ri/fonctionsRi.php'; // To classify
 
-include 'class/Xu.php';
-include 'class/Rsx.php';
-include 'class/Ri.php';
+include 'class/Xu.php'; // Membre d'un réseau
+include 'class/Rsx.php'; // Réseau
+include 'class/Ri.php'; // Représentation Intervallaire
 include 'assets/functions/gc7.php';
 
 
