@@ -2,19 +2,27 @@
 
 //include '../../tuto/cours/ri/fonctionsRi.php'; // To classify
 
-include 'class/XuArr.php'; // Membre d'un réseau
-include 'class/RsxArr.php'; // Réseau
-include 'class/RiArr.php'; // Représentation Intervallaire
+include 'class/Membre.php'; // Membre d'un groupe
+include 'class/Groupe.php';
+include 'class/Ri.php'; // Représentation Intervallaire
 include 'assets/functions/gc7.php';
 
 
-$famille = [
-  [ 'bg' => 1, 'bd' => 2, 'nom' => 'Aadminli', 'parr' => null, 'prof' => 0 ],
-];
+$gr = new Groupe ( 'Aadminli' );
+echo '<hr>';
+$gr->add( 'Doro', 0 ); // 0 = N° du membre parrain
 
-$famille = RiArr::addChild( 'Doro', 1, $famille ); // 1 est la BG d'Aadminli
-$famille = RiArr::addChild( 'Mimi', 1, $famille );
-$famille = RiArr::addChild( 'Jona', 4, $famille );
+$gr->affListeMembres();
+
+
+//
+//$famille = [
+//  [ 'bg' => 1, 'bd' => 2, 'nom' => 'Aadminli', 'parr' => null, 'prof' => 0 ],
+//];
+//
+//$famille = Ri::addChild( 'Doro', 1, $famille ); // 1 est la BG d'Aadminli
+//$famille = Ri::addChild( 'Mimi', 1, $famille );
+//$famille = Ri::addChild( 'Jona', 4, $famille );
 //$famille = Ri::addChild( 'Fanny', 3, $famille ); // < Fanny => Bug
 //$famille = Ri::addChild( 'Minnie', 3, $famille );
 //$famille = Ri::addChild( 'Jade', 4, $famille );
@@ -24,11 +32,10 @@ $famille = RiArr::addChild( 'Jona', 4, $famille );
 //$famille = Ri::addChild( 'Nono', 9, $famille );
 ////$famille = Ri::addChild( 'Alice', 2, $famille );
 
-sort( $famille );
+//sort( $famille );
 
 //vd($famille);
 
-$rsx = new RsxArr( $famille );
 
 //echo '<pre>';
 //var_dump( $rsx );
@@ -39,4 +46,5 @@ $rsx = new RsxArr( $famille );
 //echo $rsx->affNomXu( 2 );
 //echo $rsx->affCardXu( 0 );
 
-echo $rsx->affVueHV();
+//$rsx = new Rsx( $famille );
+//echo $rsx->affVueHV();

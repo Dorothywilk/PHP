@@ -6,24 +6,64 @@
  * Date: 15/01/2018
  * Time: 11:49
  */
-class Rsx
+
+class Groupe
 {
   public $membres;
-  public $bds = array (); // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour
+  public $bds = array (); // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour les parents
 
-  // parents
-
-  public function __construct( $famille )
+  public function __construct( $fondateur )
   {
-    foreach ( $famille as $membre ) {
-      $this->membres [] = new Xu( $membre );
-    }
+    echo '<p class="lead">Je créé un groupe initial avec ' . $fondateur . ' comme fondateur.</p>';
+//    $this->fondateur = $fondateur;
+//    echo $fondatateur;
+
+
+    $this->membres[] = new Membre( $fondateur );
+//    vd( $this->nbr() );
+//    vd( $this );
+//vd($f);
+//    foreach ( $famille as $membre ) {
+//      $this->membres [] = new XuArr( $membre );
+//    }
+  }
+
+  public function add( $nom, $parr )
+  {
+    echo '<p class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parr}->nom . '</p>';
+
+    $parr = $this->membres[ $parr ];
+
+    // 1) Ajouter 2 aux BD qui sont à droite ( = >= à celle de bd qui reçoit)
+
+    // 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit)
+
+    // 3)Insertion du membre avec bg =bd de ref (élément de référence, là, qui reçoit),
+
+    $this->membres[] = new Membre( $nom, $parr->bd, $parr->bd + 1, $parr->nom, $parr->pf + 1, 'c' );
+
+
+//    echo $this->membres{$parr}->nom;
+
+
   }
 
   public function nbr()
   {
     return count( $this->membres );
   }
+
+  public function affListeMembres()
+  {
+    echo '<div class="lead">Liste des membres:</div>
+<ul>';
+    foreach ( $this->membres as $k => $m )
+//      echo '<li>' . $k . ' :  ' . $m->nom . '</li>';
+      echo "<li>$k :  $m->nom ($m->bg, $m->bd | Parr: $m->parr |Prof:
+$m->pf | Type: $m->t)  </li>";
+    echo '</ul>';
+  }
+
 
   public function affNomXu( $id )
   {
@@ -79,8 +119,8 @@ class Rsx
       $coulItem = 'blueLi';
     }
     $ssnode = ( $id > 0 ) ? '<div class="hv-item-child">' : '';
-
-    $vt = serialize( $this->bds ); // valeur test
+    $vt = '';
+//    $vt = ' ('.serialize( $this->bds ).') '; // valeur test
 //    $vt =( isset($this->bds[ 0 ])) ?($this->bds)) :'non';
 
     if ( array_key_exists( 0, $this->bds ) && $xu->bd + 1 === $this->bds[ 0 ] ) {
@@ -101,7 +141,7 @@ class Rsx
     }
 
 
-    $aff = $id . ': ' . $this->membres[ $id ]->nom . ' ( ' . $vt . ' )<br>' . ( $xu->parr ? ' < '
+    $aff = $id . ': ' . $this->membres[ $id ]->nom . $vt . '<br>' . ( $xu->parr ? ' < '
         . $xu->parr : '' ) . '<br>(' .
       $xu->bg .
       ',' .

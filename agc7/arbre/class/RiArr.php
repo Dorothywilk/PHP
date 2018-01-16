@@ -5,7 +5,7 @@
  * @package Agc7\Arbre
  *
  */
-class Ri
+class RiArr
 {
   public static function addChild( $nom, $bgParrain, $f )
   {
