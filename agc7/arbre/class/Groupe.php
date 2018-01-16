@@ -28,19 +28,33 @@ class Groupe
 //    }
   }
 
-  public function add( $nom, $parr )
+  public function add( $nom, $parrId )
   {
-    echo '<p class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parr}->nom . '</p>';
+    echo '<span class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</span>';
 
-    $parr = $this->membres[ $parr ];
+    $parr = $this->membres[ $parrId ];
 
-    // 1) Ajouter 2 aux BD qui sont à droite ( = >= à celle de bd qui reçoit)
 
-    // 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit)
+    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
+    $ref = $parr->bd;
+    foreach ( $this->membres as $m ) {
 
-    // 3)Insertion du membre avec bg =bd de ref (élément de référence, là, qui reçoit),
+//      echo 'Étude de ' . $m->nom . ' (' . $m->bg . ', ' . $m->bd . ')<br>';
 
-    $this->membres[] = new Membre( $nom, $parr->bd, $parr->bd + 1, $parr->nom, $parr->pf + 1, 'c' );
+      /* 1) Ajouter 2 aux BD qui sont à droite ( = >= à celle de bd qui reçoit) */
+      if ( $m->bd >= $ref ) {
+        $m->bd += 2;
+      }
+
+      /* 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit) */
+      if ( $m->bg >= $ref ) {
+        echo $m->nom;
+        $m->bg += 2;
+      }
+    }
+
+    /* 3)Insertion du membre avec bg =bd de ref (élément de référence, là, qui reçoit) */
+    $this->membres[] = new Membre( $nom, $ref, $ref + 1, $parr->nom, $parr->pf + 1, 'c' );
 
 
 //    echo $this->membres{$parr}->nom;
@@ -61,7 +75,7 @@ class Groupe
 //      echo '<li>' . $k . ' :  ' . $m->nom . '</li>';
       echo "<li>$k :  $m->nom ($m->bg, $m->bd | Parr: $m->parr |Prof:
 $m->pf | Type: $m->t)  </li>";
-    echo '</ul>';
+    echo '</ul><hr>';
   }
 
 

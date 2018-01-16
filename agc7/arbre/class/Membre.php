@@ -26,7 +26,7 @@ class Membre
       /* t (type) : c pour child // p pour parent */
       $this->t = ( $this->bd - $this->bg === 1 ) ? 'c' : 'p';
     } else {
-      echo '<p class="lead">Création du membre fondateur ' . $nom . '.</p>';
+//      echo '<p class="lead">Création du membre fondateur ' . $nom . '.</p>';
       SELF::__construct( $nom, 1, 2, null, 0, 'c' );
     }
 

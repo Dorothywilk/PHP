@@ -9,9 +9,12 @@ include 'assets/functions/gc7.php';
 
 
 $gr = new Groupe ( 'Aadminli' );
-echo '<hr>';
-$gr->add( 'Doro', 0 ); // 0 = N° du membre parrain
+$gr->affListeMembres();
 
+$gr->add( 'Doro', 0 ); // 0 = N° du membre parrain
+$gr->affListeMembres();
+
+$gr->add( 'Mimi', 0 ); // 0 = N° du membre parrain
 $gr->affListeMembres();
 
 
