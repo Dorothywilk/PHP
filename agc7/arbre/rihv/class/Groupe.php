@@ -1,4 +1,4 @@
-<?php namespace Agc7\Arbre;
+<?php namespace Agc7\Arbre\rihv;
 
 /**
  * Created by C7.
@@ -16,11 +16,13 @@ class Groupe
   private static $_instance;
 
   /**
-   * La méthode statique qui permet d'instancier ou de récupérer l'instance unique
-   **/
-  public static function getInstance( $fondateur )
+   * Méthode statique qui permet d'instancier ou de récupérer l'instance unique
+   * @param $fondateur
+   * @return Membre
+   */
+  protected static function getInstance( $fondateur )
   {
-    if ( is_null( self::$_instance ) ) {
+    if ( null === self::$_instance ) {
       echo '<p class="lead">Je créé un groupe initial avec ' . $fondateur . ' comme fondateur.</p>';
       self::$_instance = new Membre( $fondateur );
     } else {
@@ -32,18 +34,21 @@ class Groupe
   public function __construct( $fondateur )
   {
 //    vd(self::$_instance);
-    $this->membres[] = $this->getInstance( $fondateur );
+    $this->membres[] = static::getInstance( $fondateur );
   }
 
   public function add( $nom, $parrId )
   {
-    echo '<span class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</span>';
+
+//    echo '<span class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</span>';
 
     $parr = $this->membres[ $parrId ];
+    $parr->t = 'p';
 
 
-    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
+//    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
     $ref = $parr->bd;
+
     foreach ( $this->membres as $m ) {
 
 //      echo 'Étude de ' . $m->nom . ' (' . $m->bg . ', ' . $m->bd . ')<br>';
@@ -55,13 +60,22 @@ class Groupe
 
       /* 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit) */
       if ( $m->bg >= $ref ) {
-        echo $m->nom;
+//        echo $m->nom;
         $m->bg += 2;
       }
     }
-
-    /* 3)Insertion du membre avec bg =bd de ref (élément de référence, là, qui reçoit) */
-    $this->membres[] = new Membre( $nom, $ref, $ref + 1, $parr->nom, $parr->pf + 1, 'c' );
+    /* 3)Insertion du nouveau membre avec bg = bd de ref
+    (Élément de référence qui le reçoit) */
+    $nm = new Membre( $m );
+    $nm->nom = $nom;
+    $nm->bg = $ref;
+    $nm->bd = $ref + 1;
+    $nm->parr = $parr->nom;
+    $nm->pf = $parr->pf + 1;
+    vd( $nm );
+//    $membre = [ 'nom' => $nom, 'bg' => $ref, 'bd' => $ref + 1, 'parr' => $parr->nom, 'pf' => $parr->pf + 1 ];
+    $this->membres[] = new Membre( $nm );
+//    $this->membres[] = new Membre( $nom);
 
 
 //    echo $this->membres{$parr}->nom;
@@ -152,7 +166,7 @@ $m->pf | Type: $m->t)  </li>";
         </div>
     </div>
     ';
-      if ( array_key_exists( 0, $this->bds ) && array_key_exists( $id + 1, $this->membres ) &&
+      if ( array_key_exists( $id + 1, $this->membres ) &&
         $this->membres[ $id + 1 ]->bg > $this->bds[ 0 ]
       ) {
         $finnodeprec .= '</div>

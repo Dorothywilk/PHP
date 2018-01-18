@@ -1,25 +1,27 @@
-<?php namespace Agc7\Arbre;
+<?php namespace Agc7\Arbre\rihv;
 
 //include '../../tuto/cours/ri/fonctionsRi.php'; // To classify
 
 include 'class/Membre.php'; // Membre d'un groupe
-include 'class/ValidationMembre.php';
+//include 'class/ValidationMembre.php';
 include 'class/Groupe.php';
-include 'class/Ri.php'; // Représentation Intervallaire
+//include 'class/Ri.php'; // Représentation Intervallaire
 include 'assets/functions/gc7.php';
 
 
-$gr = new Groupe ( 'Aadminli');
-$gr->affListeMembres();
-
+//$gr = new Groupe ( 'Aadminli' );
 // Tentative de renommer un fondateur rejettée par le fait que la classe Groupe est un singleton
 // $gr = new Groupe ( 'Aadminli2');
+$gr = new Groupe ( 'Doro' );
 
-$gr->add( 'Doro', 0 ); // 0 = N° du membre parrain
+$gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
+$gr->add( 'Mimi', 0 ); // 0 = N° du membre parrain
+$gr->add( 'Rom1', 0 ); // 0 = N° du membre parrain
+$gr->add( 'Jade', 0 ); // 0 = N° du membre parrain
+$gr->add( 'Fanny', 1 ); // 0 = N° du membre parrain
+$gr->add( 'Jeny', 4 ); // 0 = N° du membre parrain
+//$gr->add( 'Bug', 7 ); // 0 = N° du membre parrain
 $gr->affListeMembres();
-
-//$gr->add( 'Mimi', 1 ); // 0 = N° du membre parrain
-//$gr->affListeMembres();
 
 
 //
