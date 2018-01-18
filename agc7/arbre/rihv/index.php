@@ -3,19 +3,23 @@
 //include '../../tuto/cours/ri/fonctionsRi.php'; // To classify
 
 include 'class/Membre.php'; // Membre d'un groupe
+include 'class/ValidationMembre.php';
 include 'class/Groupe.php';
 include 'class/Ri.php'; // Représentation Intervallaire
 include 'assets/functions/gc7.php';
 
 
-$gr = new Groupe ( 'Aadminli' );
+$gr = new Groupe ( 'Aadminli');
 $gr->affListeMembres();
+
+// Tentative de renommer un fondateur rejettée par le fait que la classe Groupe est un singleton
+// $gr = new Groupe ( 'Aadminli2');
 
 $gr->add( 'Doro', 0 ); // 0 = N° du membre parrain
 $gr->affListeMembres();
 
-$gr->add( 'Mimi', 0 ); // 0 = N° du membre parrain
-$gr->affListeMembres();
+//$gr->add( 'Mimi', 1 ); // 0 = N° du membre parrain
+//$gr->affListeMembres();
 
 
 //

@@ -9,12 +9,21 @@ include 'assets/functions/gc7.php';
 
 
 $famille = [
-  [ 'bg' => 1, 'bd' => 2, 'nom' => 'Aadminli', 'parr' => null, 'prof' => 0 ],
+  [ 'bg' => 1, 'bd' => 2, 'nom' => 'Lionel', 'parr' => null, 'prof' => 0 ],
 ];
 
-$famille = RiArr::addChild( 'Doro', 1, $famille ); // 1 est la BG d'Aadminli
-$famille = RiArr::addChild( 'Mimi', 1, $famille );
-$famille = RiArr::addChild( 'Jona', 4, $famille );
+$famille = RiArr::addChild( 'Smail', 1, $famille ); // 1 est la BG d'Aadminli
+$famille = RiArr::addChild( 'Thierry', 1, $famille ); // 1 est la BG d'Aadminli
+$famille = RiArr::addChild( 'Christian', 2, $famille ); // 1 est la BG d'Aadminli
+
+
+
+
+
+
+//$famille = RiArr::addChild( 'Doro', 1, $famille ); // 1 est la BG d'Aadminli
+//$famille = RiArr::addChild( 'Mimi', 1, $famille );
+//$famille = RiArr::addChild( 'Jona', 4, $famille );
 //$famille = Ri::addChild( 'Fanny', 3, $famille ); // < Fanny => Bug
 //$famille = Ri::addChild( 'Minnie', 3, $famille );
 //$famille = Ri::addChild( 'Jade', 4, $famille );

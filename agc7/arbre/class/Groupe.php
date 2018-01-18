@@ -10,22 +10,29 @@
 class Groupe
 {
   public $membres;
-  public $bds = array (); // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour les parents
+  // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour les parents
+  public $bds = array ();
+  // L'attribut qui stockera l'instance unique de cette classe singleton
+  private static $_instance;
+
+  /**
+   * La méthode statique qui permet d'instancier ou de récupérer l'instance unique
+   **/
+  public static function getInstance( $fondateur )
+  {
+    if ( is_null( self::$_instance ) ) {
+      echo '<p class="lead">Je créé un groupe initial avec ' . $fondateur . ' comme fondateur.</p>';
+      self::$_instance = new Membre( $fondateur );
+    } else {
+      echo '<p class="lead">NB: La création du fondateur ' . $fondateur . ' n\'est pas considérée car un précédent fondateur a déjà été nommé (' . self::$_instance->nom . ')...</p>';
+    }
+    return self::$_instance;
+  }
 
   public function __construct( $fondateur )
   {
-    echo '<p class="lead">Je créé un groupe initial avec ' . $fondateur . ' comme fondateur.</p>';
-//    $this->fondateur = $fondateur;
-//    echo $fondatateur;
-
-
-    $this->membres[] = new Membre( $fondateur );
-//    vd( $this->nbr() );
-//    vd( $this );
-//vd($f);
-//    foreach ( $famille as $membre ) {
-//      $this->membres [] = new XuArr( $membre );
-//    }
+//    vd(self::$_instance);
+    $this->membres[] = $this->getInstance( $fondateur );
   }
 
   public function add( $nom, $parrId )
