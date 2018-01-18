@@ -1,4 +1,4 @@
-<?php namespace Agc7\Arbre;
+<?php namespace Agc7\Arbre\Rihv;
 
 /**
  * Created by C7.
@@ -16,12 +16,15 @@ class Groupe
   private static $_instance;
 
   /**
-   * La méthode statique qui permet d'instancier ou de récupérer l'instance unique
-   **/
-  public static function getInstance( $fondateur )
+   * Méthode statique qui permet d'instancier ou de récupérer l'instance unique
+   *
+   * @param $fondateur
+   * @return Membre
+   */
+  protected static function getInstance( $fondateur )
   {
-    if ( is_null( self::$_instance ) ) {
-      echo '<p class="lead">Je créé un groupe initial avec ' . $fondateur . ' comme fondateur.</p>';
+    if ( null === self::$_instance ) {
+//      echo '<p class="lead">Je créé un groupe initial avec ' . $fondateur . ' comme fondateur.</p>';
       self::$_instance = new Membre( $fondateur );
     } else {
       echo '<p class="lead">NB: La création du fondateur ' . $fondateur . ' n\'est pas considérée car un précédent fondateur a déjà été nommé (' . self::$_instance->nom . ')...</p>';
@@ -32,17 +35,15 @@ class Groupe
   public function __construct( $fondateur )
   {
 //    vd(self::$_instance);
-    $this->membres[] = $this->getInstance( $fondateur );
+    $this->membres[] = static::getInstance( $fondateur );
   }
 
   public function add( $nom, $parrId )
   {
-    echo '<span class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</span>';
+//    echo '<div class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</div>';
 
     $parr = $this->membres[ $parrId ];
-
-
-    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
+//    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
     $ref = $parr->bd;
     foreach ( $this->membres as $m ) {
 
@@ -55,7 +56,6 @@ class Groupe
 
       /* 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit) */
       if ( $m->bg >= $ref ) {
-        echo $m->nom;
         $m->bg += 2;
       }
     }
@@ -152,7 +152,7 @@ $m->pf | Type: $m->t)  </li>";
         </div>
     </div>
     ';
-      if ( array_key_exists( 0, $this->bds ) && array_key_exists( $id + 1, $this->membres ) &&
+      if ( array_key_exists( $id + 1, $this->membres ) &&
         $this->membres[ $id + 1 ]->bg > $this->bds[ 0 ]
       ) {
         $finnodeprec .= '</div>

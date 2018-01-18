@@ -1,4 +1,4 @@
-<?php namespace Agc7\Arbre;
+<?php namespace Agc7\Arbre\Rihv;
 
 class Membre
 {
@@ -8,9 +8,9 @@ class Membre
 //  public function __construct( $nom, $params )
   public function __construct( $nom, $bg = null, $bd = null, $parr = null, $pf = null )
   {
-    if ( isset( $pf ) ) {
+    if ( null !== $pf ) {
 
-      echo '<p class = "lead">Création du membre ' . $nom . '.</p>';
+//      echo '<p class = "lead">Création du membre ' . $nom . '.</p>';
       $this->nom = $nom;
       $this->bg = $bg;
       $this->bd = $bd;
@@ -20,7 +20,7 @@ class Membre
       $this->t = ( $this->bd - $this->bg === 1 ) ? 'c' : 'p';
     } else {
 //      echo '<p class="lead">Création du membre fondateur ' . $nom . '.</p>';
-      SELF::__construct( $nom, 1, 2, null, 0, 'c' );
+      self::__construct( $nom, 1, 2, null, 0 );
     }
   }
 }
