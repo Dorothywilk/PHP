@@ -43,6 +43,7 @@ class Groupe
 //    echo '<div class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</div>';
 
     $parr = $this->membres[ $parrId ];
+    $parr->t = 'p';
 //    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
     $ref = $parr->bd;
     foreach ( $this->membres as $m ) {
