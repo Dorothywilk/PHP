@@ -26,8 +26,8 @@ $gr->add( 'Jeny', 4 );
 
 
 // Test: Création aléatoire de quelques membres
-for ( $i = 1; $i < 999; $i++ ) {
-  $fakePseudo = 'Untel' . $i;
+for ( $i = 1; $i < 99; $i++ ) {
+  $fakePseudo = 'Untel_' . $i;
   $gr->add( $fakePseudo, array_rand( $gr->membres ) );
 }
 //vd(array_rand($gr->membres));
@@ -35,7 +35,8 @@ for ( $i = 1; $i < 999; $i++ ) {
 
 // Affiche la liste des membres
 $gr->affListeMembres();
-echo $gr->affMembre( 5 );
+
+//echo $gr->affMembre( 5 );
 
 // Affiche une vue hierarchique du Groupe
 $gr->affVueHierarchique();
