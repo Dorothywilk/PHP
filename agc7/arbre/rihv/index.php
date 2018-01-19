@@ -1,7 +1,5 @@
 <?php namespace Agc7\Arbre\rihv;
 
-//include '../../tuto/cours/ri/fonctionsRi.php'; // To classify
-
 include 'class/Membre.php'; // Membre d'un groupe
 //include 'class/ValidationMembre.php';
 include 'class/Groupe.php';
@@ -20,10 +18,10 @@ $gr->add( 'Mimi', 0 );
 $gr->add( 'Rom1', 0 );
 $gr->add( 'Jade', 0 );
 $gr->add( 'Fanny', 1 );
-$gr->add( 'Jeny', 4 );
-$gr->add( 'Félicien', 3 );
-$gr->add( 'Nico', 3 );
-$gr->add( 'Lionel', 0 );
+//$gr->add( 'Jeny', 4 );
+//$gr->add( 'Félicien', 3 );
+//$gr->add( 'Nico', 3 );
+//$gr->add( 'Lionel', 0 );
 //$gr->add( 'Bug', 7 ); // 0 = N° du membre parrain // Todoli gérer controle
 
 // Affiche la liste des membres
