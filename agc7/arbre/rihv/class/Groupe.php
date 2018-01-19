@@ -240,3 +240,7 @@ class Groupe
   }
 
 }
+
+
+// todoli function pour récupérer le parrain selon RI pour comparer avec le parrain dans l'objet
+// une boucle sur le gr pour comparaison de ces valeurs
