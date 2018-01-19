@@ -18,14 +18,27 @@ $gr->add( 'Mimi', 0 );
 $gr->add( 'Rom1', 0 );
 $gr->add( 'Jade', 0 );
 $gr->add( 'Fanny', 1 );
-//$gr->add( 'Jeny', 4 );
+$gr->add( 'Jeny', 4 );
 //$gr->add( 'Félicien', 3 );
 //$gr->add( 'Nico', 3 );
 //$gr->add( 'Lionel', 0 );
 //$gr->add( 'Bug', 7 ); // 0 = N° du membre parrain // Todoli gérer controle
 
+
+// Test: Création aléatoire de quelques membres
+for ( $i = 1; $i < 999; $i++ ) {
+  $fakePseudo = 'Untel' . $i;
+  $gr->add( $fakePseudo, array_rand( $gr->membres ) );
+}
+//vd(array_rand($gr->membres));
+
+
 // Affiche la liste des membres
-//$gr->affListeMembres();
+$gr->affListeMembres();
+echo $gr->affMembre( 5 );
 
 // Affiche une vue hierarchique du Groupe
 $gr->affVueHierarchique();
+
+
+

@@ -41,11 +41,11 @@ class Groupe
   public function add( $nom, $parrId )
   {
 //    echo '<div class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</div>';
-
     $parr = $this->membres[ $parrId ];
     $parr->t = 'p';
 //    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
     $ref = $parr->bd;
+
     foreach ( $this->membres as $m ) {
 
 //      echo 'Étude de ' . $m->nom . ' (' . $m->bg . ', ' . $m->bd . ')<br>';
@@ -61,15 +61,16 @@ class Groupe
       }
     }
 
-    /* 3)Insertion du membre avec bg =bd de ref (élément de référence, là, qui reçoit) */
+    /* 3)Insertion du membre avec bg =bd de ref (Élément de référence, là, qui reçoit) */
     $this->membres[] = new Membre( $nom, $ref, $ref + 1, $parr->nom, $parr->pf + 1, 'c' );
-
-
-//    echo $this->membres{$parr}->nom;
 
 
   }
 
+  /**
+   * @return int Nombre de membres
+   *
+   */
   public function nbr()
   {
     return count( $this->membres );
@@ -77,12 +78,12 @@ class Groupe
 
   public function affListeMembres()
   {
-    echo '<div class="lead">Liste des membres:</div>
+    echo '<div class="lead">Liste des membres (Nom(BG, BD | Nom | Profondeur | Type)) :</div>
 <ul>';
     foreach ( $this->membres as $k => $m )
 //      echo '<li>' . $k . ' :  ' . $m->nom . '</li>';
-      echo "<li>$k :  $m->nom ($m->bg, $m->bd | Parr: $m->parr |Prof:
-$m->pf | Type: $m->t)  </li>";
+
+      echo "<li>$k :  $m->nom ($m->bg, $m->bd | Parr: $m->parr | Prof: $m->pf | Type: $m->t)</li>";
     echo '</ul>';
   }
 
@@ -123,7 +124,7 @@ $m->pf | Type: $m->t)  </li>";
 </section>
 ';
 
-    echo $v;
+    echo $v; // Code HTML de la vue
 
   }
 
@@ -144,15 +145,15 @@ $m->pf | Type: $m->t)  </li>";
   }
 
 
-  public function affNomXu( $id )
+  public function affMembre( $id )
   {
     if ( $id + 1 > self::nbr() ) {
       return 'Pas de membre avec cet ID';
     } else {
-      return 'Le membre dont l\'index est <strong>' . $id . '</strong> se nomme <strong>
+      return '<p class="lead">Le membre dont l\'index est <strong>' . $id . '</strong> se nomme <strong>
 ' . $this->membres[ $id ]->nom . '</strong>.<br>
 (BG: ' . $this->membres[ $id ]->bg . ' - BD: ' . $this->membres[ $id ]->bd . ' | Prof: ' .
-      $this->membres[ $id ]->pf . ')';
+      $this->membres[ $id ]->pf . ')</p>';
     }
   }
 
