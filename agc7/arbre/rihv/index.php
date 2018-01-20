@@ -1,8 +1,8 @@
 <?php namespace Agc7\Arbre\rihv;
 
+include 'class/Groupe.php';
 include 'class/Membre.php'; // Membre d'un groupe
 //include 'class/ValidationMembre.php';
-include 'class/Groupe.php';
 //include 'class/Ri.php'; // Représentation Intervallaire
 include 'assets/functions/gc7.php';
 
@@ -15,31 +15,38 @@ $gr = new Groupe ( 'Doro' );
 
 $gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
 $gr->add( 'Mimi', 0 );
-$gr->add( 'Rom1', 0 );
 $gr->add( 'Jade', 0 );
 $gr->add( 'Fanny', 1 );
-$gr->add( 'Jeny', 4 );
-//$gr->add( 'Félicien', 3 );
-//$gr->add( 'Nico', 3 );
-//$gr->add( 'Lionel', 0 );
-//$gr->add( 'Bug', 7 ); // 0 = N° du membre parrain // Todoli gérer controle
+$gr->add( 'Jeny', 3 );
+$gr->add( 'Félicien', 5 );
+$gr->add( 'Félicien', 3 );
+$gr->add( 'Nico', 3 );
+$gr->add( 'Lionel', 0 );
+$gr->add( 'Bug', 4 );
+
+//echo ( 1.28 * 50 ) - ( 1.141 * 50 ) . '<br>';
+//$m=$gr->membres[1];
+//vd($m);
+
+//echo $gr->membres[ 5 ]->nom . ' < ' . $gr->membres[ 5 ]->getParrRi( $gr );
 
 
 // Test: Création aléatoire de quelques membres
-for ( $i = 1; $i < 99; $i++ ) {
+for ( $i = 1; $i <1; $i++ ) {
   $fakePseudo = 'Untel_' . $i;
   $gr->add( $fakePseudo, array_rand( $gr->membres ) );
 }
-//vd(array_rand($gr->membres));
-
 
 // Affiche la liste des membres
 $gr->affListeMembres();
 
-//echo $gr->affMembre( 5 );
+
+//vd(array_rand($gr->membres));
+//echo $gr->membres[5]->affMembre( 5 );
 
 // Affiche une vue hierarchique du Groupe
 $gr->affVueHierarchique();
 
+echo '<br>';
 
 

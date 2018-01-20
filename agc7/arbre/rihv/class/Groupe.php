@@ -41,29 +41,33 @@ class Groupe
   public function add( $nom, $parrId )
   {
 //    echo '<div class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</div>';
-    $parr = $this->membres[ $parrId ];
-    $parr->t = 'p';
-//    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
-    $ref = $parr->bd;
+    if ( array_key_exists( $parrId, $this->membres ) ) {
 
-    foreach ( $this->membres as $m ) {
+      $parr = $this->membres[ $parrId ];
+      $parr->t = 'p';
+//    echo 'Parrain: ' . $parr->nom . ' (' . $parr->bg . ', ' . $parr->bd . ')<br>';
+      $ref = $parr->bd;
+
+      foreach ( $this->membres as $m ) {
 
 //      echo 'Étude de ' . $m->nom . ' (' . $m->bg . ', ' . $m->bd . ')<br>';
 
-      /* 1) Ajouter 2 aux BD qui sont à droite ( = >= à celle de bd qui reçoit) */
-      if ( $m->bd >= $ref ) {
-        $m->bd += 2;
+        /* 1) Ajouter 2 aux BD qui sont à droite ( = >= à celle de bd qui reçoit) */
+        if ( $m->bd >= $ref ) {
+          $m->bd += 2;
+        }
+
+        /* 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit) */
+        if ( $m->bg >= $ref ) {
+          $m->bg += 2;
+        }
       }
 
-      /* 2) Ajouter 2 aux BG qui sont à droite ( = > à celle de bd qui reçoit) */
-      if ( $m->bg >= $ref ) {
-        $m->bg += 2;
-      }
+      /* 3)Insertion du membre avec bg =bd de ref (Élément de référence, là, qui reçoit) */
+      $this->membres[] = new Membre( $nom, $ref, $ref + 1, $parr->nom, $parr->pf + 1, 'c' );
+    } else {
+      echo 'Attention: Impossible d\'ajouter ' . $nom . ': Pas de parrain avec l\'id ' . $parrId . ' !<hr>';
     }
-
-    /* 3)Insertion du membre avec bg =bd de ref (Élément de référence, là, qui reçoit) */
-    $this->membres[] = new Membre( $nom, $ref, $ref + 1, $parr->nom, $parr->pf + 1, 'c' );
-
 
   }
 
@@ -76,21 +80,43 @@ class Groupe
     return count( $this->membres );
   }
 
+
+  public function getMembre( $id )
+  {
+//    echo '<h1>'.$id.'</h1>';
+
+    if ( $id + 1 > self::nbr() ) {
+      return 'Pas de membre avec cet ID';
+    } else {
+      $m = $this->membres[ $id ];
+
+//      vd($this->membres);
+
+//      echo $m->nom.' : '.$m->getParrRi($this->membres);
+
+      return
+        $id . ': ' . $m->nom . ' (' . $m->bg . ', ' . $m->bd . ' |
+Parr: ' . $m->parr . '-' . $m->getParrRi( $this->membres ) . ' | Prof: ' . $m->pf . ' | Type: ' . $m->t .
+        ')';
+    }
+  }
+
   public function affListeMembres()
   {
     echo '<div class="lead">Liste des membres (Nom(BG, BD | Nom | Profondeur | Type)) :</div>
 <ul>';
-    foreach ( $this->membres as $k => $m )
-//      echo '<li>' . $k . ' :  ' . $m->nom . '</li>';
-
-      echo "<li>$k :  $m->nom ($m->bg, $m->bd | Parr: $m->parr | Prof: $m->pf | Type: $m->t)</li>";
+    $gr = $this;
+    foreach ( $gr->membres as $k => $m ) {
+      echo '<li>' . $this->getMembre( $k ) . '</li>';
+    }
     echo '</ul>';
   }
 
 
   public function affVueHierarchique()
   {
-    $v = '<section class="basic-style">
+    $v = '
+<section class="basic-style">
 
   <div class="hv-container">
     <div class="hv-wrapper">
@@ -112,7 +138,7 @@ class Groupe
       $xu->id = $i;
 //      echo $xu->nom . ' id =  ' . $xu->id . '<br>';
 // Affichage de la carte positionnée de l'élément
-      $v .= $this->affCardXu( $xu );
+      $v .= $this->affBloc( $xu );
     }
 
 
@@ -144,19 +170,6 @@ class Groupe
     return ( $a->bg > $b->bg ) ? +1 : -1;
   }
 
-
-  public function affMembre( $id )
-  {
-    if ( $id + 1 > self::nbr() ) {
-      return 'Pas de membre avec cet ID';
-    } else {
-      return '<p class="lead">Le membre dont l\'index est <strong>' . $id . '</strong> se nomme <strong>
-' . $this->membres[ $id ]->nom . '</strong>.<br>
-(BG: ' . $this->membres[ $id ]->bg . ' - BD: ' . $this->membres[ $id ]->bd . ' | Prof: ' .
-      $this->membres[ $id ]->pf . ')</p>';
-    }
-  }
-
   public function affVueHV()
   {
     $v = '<section class="basic-style">
@@ -167,7 +180,7 @@ class Groupe
       ';
 
     foreach ( $this->membres as $i => $xu )
-      $v .= $this->affCardXu( $xu );
+      $v .= $this->affBloc( $xu );
 
     $v .= '  </div>
         </div>
@@ -180,7 +193,7 @@ class Groupe
     return $v;
   }
 
-  public function affCardXu( $xu )
+  public function affBloc( $xu )
   {
 //    $xu = $this->membres[ $id ];
 
@@ -223,7 +236,7 @@ class Groupe
     }
 
     $aff = $xu->ido . ': ' . $this->membres[ $xu->id ]->nom . $vt . '<br>' . ( $xu->parr ? ' < '
-        . $xu->parr : '' ) . '<br>(' .
+        . $xu->parr : '' ) . '|' . $xu->getParrRi( $this->membres ) . '<br>(' .
       $xu->bg .
       ',' .
       $xu->bd .
@@ -240,7 +253,6 @@ class Groupe
   }
 
 }
-
 
 // todoli function pour récupérer le parrain selon RI pour comparer avec le parrain dans l'objet
 // une boucle sur le gr pour comparaison de ces valeurs
