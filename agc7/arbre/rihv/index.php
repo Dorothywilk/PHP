@@ -17,12 +17,12 @@ $gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
 $gr->add( 'Mimi', 0 );
 $gr->add( 'Jade', 0 );
 $gr->add( 'Fanny', 1 );
-$gr->add( 'Jeny', 3 );
-$gr->add( 'Félicien', 5 );
-$gr->add( 'Félicien', 3 );
 $gr->add( 'Nico', 3 );
 $gr->add( 'Lionel', 0 );
 $gr->add( 'Bug', 4 );
+//$gr->add( 'Jeny', 3 );
+//$gr->add( 'Félicien', 5 );
+//$gr->add( 'Félicien', 3 );
 
 //echo ( 1.28 * 50 ) - ( 1.141 * 50 ) . '<br>';
 //$m=$gr->membres[1];
