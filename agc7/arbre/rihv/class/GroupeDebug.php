@@ -7,7 +7,7 @@
  * Time: 11:49
  */
 
-class Groupe
+class GroupeDebug
 {
   public $membres;
   // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour les parents
@@ -134,7 +134,7 @@ class Groupe
 
       foreach ( $this->membres as $i => $m ) {
         $m->ido = $i; // Id d'origine
-        usort( $this->membres, __NAMESPACE__ . '\Groupe::compare_bg_membres' );
+        usort( $this->membres, __NAMESPACE__ . '\GroupeDebug::compare_bg_membres' );
         // echo $m->nom . '<br>';
       }
 
@@ -195,8 +195,8 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
       $type = 'parent';
       $coulItem = 'redLi';
       $node = '<div class="hv-item">
-        <div class="hv-item-' . $type . '">          ';
-      $finNode = '<div class="hv-item-children">
+        <div class="hv-item-' . $type . ' mbr'.$m->bd.'">          ';
+      $finNode = '<div class="hv-item-children mbr'.$m->bd.'">
 
     ';
       array_unshift( $this->bds, $m->bd );
@@ -217,26 +217,21 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
     //$vt = ' ('.serialize( $this->bds ).') '; // valeur test
 //    $vt =( isset($this->bds[ 0 ])) ?($this->bds)) :'non';
 
-    if ( array_key_exists( 0, $this->bds ) && $m->bd + 1 === $this->bds[ 0 ] ) {
-//      $vt = '*';
+    if ( array_key_exists( 0, $this->bds ) && $m->bd > $this->bds[ 0 ] && array_key_exists( $m->id + 1, $this->membres ) && $this->membres[ $m->id + 1 ]->bg > $this->bds[ 0 ] ) {
+
       array_shift( $this->bds );
       $finNodePrec = '
         </div class="finItem">
-      </div class="finParent">
+      </div class="finParent' . $this->bds[ 0 ] . '">
     ';
-      if ( array_key_exists( $m->id + 1, $this->membres ) &&
-        $this->membres[ $m->id + 1 ]->bg > $this->bds[ 0 ]
-      ) {
-        $finNodePrec .= '
+      $finNodePrec .= '
     </div class="finPrec">
 
     ';
-      }
     }
-
     $vt = '';
     foreach ( $this->bds as $k => $v ) {
-      $vt .= $k.': '.$v.'<br>';
+      $vt .= $k . ': ' . $v . '<br>';
     }
 
 
@@ -249,12 +244,12 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 
 //    $aff = $m->nom;
 //    $aff = '<span class="' . $coulItem . '">' . $aff . '</span>';
-    return $ssNode . $node . '
+    return $finNodePrec . $ssNode . $node . '
           <p class="cardM ' . $coulItem . '">' . $aff . '
           </p>' . $html . '
       ' .
     '  </div class="fin' . ucfirst( $type ) . '">
-      ' . $finNode . $finNodePrec;
+      ' . $finNode;
   }
 
 }

@@ -1,6 +1,6 @@
 <?php namespace Agc7\Arbre\Rihv;
 
-class Membre extends Groupe
+class Membre extends GroupeDebug
 {
   public $nom, $bg, $bd, $parr, $pf, $t;
   public $membres;
