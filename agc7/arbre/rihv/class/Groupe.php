@@ -11,7 +11,7 @@ class Groupe
 {
   public $membres;
   // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour les parents
-  public $bds = array ();
+  public $bds = [ ];
   // L'attribut qui stockera l'instance unique de cette classe singleton
   private static $_instance;
 
@@ -19,6 +19,7 @@ class Groupe
    * Méthode statique qui permet d'instancier ou de récupérer l'instance unique
    *
    * @param $fondateur
+   *
    * @return Membre
    */
   protected static function getInstance( $fondateur )
@@ -27,7 +28,7 @@ class Groupe
 //      echo '<p class="lead">Je créé un groupe initial avec ' . $fondateur . ' comme fondateur.</p>';
       self::$_instance = new Membre( $fondateur );
     } else {
-      echo '<p class="lead">NB: La création du fondateur ' . $fondateur . ' n\'est pas considérée car un précédent fondateur a déjà été nommé (' . self::$_instance->nom . ')...</p>';
+      //echo '<p class="lead">NB: La création du fondateur ' . $fondateur . ' n\'est pas considérée car un précédent fondateur a déjà été nommé (' . self::$_instance->nom . ')...</p>';
     }
     return self::$_instance;
   }
@@ -95,60 +96,70 @@ class Groupe
 //      echo $m->nom.' : '.$m->getParrRi($this->membres);
 
       return
-        $id . ': ' . $m->nom . ' (' . $m->bg . ', ' . $m->bd . ' |
-Parr: ' . $m->parr . '-' . $m->getParrRi( $this->membres ) . ' | Prof: ' . $m->pf . ' | Type: ' . $m->t .
+        $id . ': ' . $m->nom . ' (' . $m->bg . ', ' . $m->bd . ' | Parr: ' . $m->parr . '-' . $m->getParrRi( $this->membres ) . ' | Prof: ' . $m->pf . ' | Type: ' . $m->t .
         ')';
     }
   }
 
   public function affListeMembres()
   {
-    echo '<div class="lead">Liste des membres (Nom(BG, BD | Nom | Profondeur | Type)) :</div>
-<ul>';
+    echo '
+    <p class=" lead">Liste des membres (Nom(BG, BD | Nom | Profondeur | Type)) :</p>
+
+<article class="listeMembres">
+';
     $gr = $this;
     foreach ( $gr->membres as $k => $m ) {
-      echo '<li>' . $this->getMembre( $k ) . '</li>';
+      echo '
+    <p>' . $this->getMembre( $k ) . '</p>';
     }
-    echo '</ul>';
+    echo '
+
+</article>
+';
   }
 
 
   public function affVueHierarchique()
   {
-    $v = '
-<section class="basic-style">
+    if ( $this->nbr() - 1 ) {
 
+      $v = '
+<section class="basic-style">
   <div class="hv-container">
     <div class="hv-wrapper">
 
       ';
 
-    foreach ( $this->membres as $i => $xu ) {
-      // $v = ''; // Affichage rien pdt tri
+      foreach ( $this->membres as $i => $m ) {
+        $m->ido = $i; // Id d'origine
+        usort( $this->membres, __NAMESPACE__ . '\Groupe::compare_bg_membres' );
+        // echo $m->nom . '<br>';
+      }
 
-      $xu->ido = $i; // Id d'origine
+      foreach ( $this->membres as $i => $m ) {
+        $m->id = $i;
+        // echo $m->nom . ' id =  ' . $m->id . '<br>';
 
-      usort( $this->membres, __NAMESPACE__ . '\Groupe::compare_bg_membres' );
-//      echo $xu->nom . '<br>';
-    }
-//    echo '<hr>';
-
-
-    foreach ( $this->membres as $i => $xu ) {
-      $xu->id = $i;
-//      echo $xu->nom . ' id =  ' . $xu->id . '<br>';
-// Affichage de la carte positionnée de l'élément
-      $v .= $this->affBloc( $xu );
-    }
+        // Affichage de la carte positionnée de l'élément
+        $v .= $this->affBloc( $m );
+      }
 
 
-    $v .= '  </div>
-        </div>
-      </div>
+      $v .= '
 
+    </div>
   </div>
 </section>
+
 ';
+    } else {
+      $v = '<section
+class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une structure hiérarchique<br>avec
+ un seul membre...?</h2>
+<p class="lead">Lol...</p></section>
+';
+    }
 
     echo $v; // Code HTML de la vue
 
@@ -160,6 +171,7 @@ Parr: ' . $m->parr . '-' . $m->getParrRi( $this->membres ) . ' | Prof: ' . $m->p
    *
    * @param $a Membre A
    * @param $b Membre B
+   *
    * @return int
    */
   static public function compare_bg_membres( $a, $b )
@@ -170,89 +182,58 @@ Parr: ' . $m->parr . '-' . $m->getParrRi( $this->membres ) . ' | Prof: ' . $m->p
     return ( $a->bg > $b->bg ) ? +1 : -1;
   }
 
-  public function affVueHV()
+
+  public function affBloc( $m )
   {
-    $v = '<section class="basic-style">
+//    $m = $this->membres[ $id ];
 
-  <div class="hv-container">
-    <div class="hv-wrapper">
+//    vd( $m );
 
-      ';
-
-    foreach ( $this->membres as $i => $xu )
-      $v .= $this->affBloc( $xu );
-
-    $v .= '  </div>
-        </div>
-      </div>
-
-  </div>
-</section>
-';
-
-    return $v;
-  }
-
-  public function affBloc( $xu )
-  {
-//    $xu = $this->membres[ $id ];
-
-//    vd( $xu );
-
-    $node = $finnode = $finnodeprec = '';
-    if ( $xu->t === 'p' ) {
+    $node = $finNode = $finNodePrec = '';
+    if ( $m->t === 'p' ) {
       $type = 'parent';
       $coulItem = 'redLi';
       $node = '<div class="hv-item">
         <div class="hv-item-' . $type . '">';
-      $finnode = '  <div class="hv-item-children">
+      $finNode = '      <div class="hv-item-children">
     ';
-      array_unshift( $this->bds, $xu->bd );
+      array_unshift( $this->bds, $m->bd );
       //sort($this->bds);
     } else {
       $type = 'child';
       $coulItem = 'blueLi';
     }
-    $ssnode = ( $xu->id > 0 ) ? '<div class="hv-item-child">' : '';
+    $ssNode = ( $m->id > 0 ) ? '      <div class="hv-item-child">' : '';
     $vt = '';
 //    $vt = ' ('.serialize( $this->bds ).') '; // valeur test
 //    $vt =( isset($this->bds[ 0 ])) ?($this->bds)) :'non';
 
-    if ( array_key_exists( 0, $this->bds ) && $xu->bd + 1 === $this->bds[ 0 ] ) {
+    if ( array_key_exists( 0, $this->bds ) && $m->bd + 1 === $this->bds[ 0 ] ) {
 //      $vt = '*';
       array_shift( $this->bds );
-      $finnodeprec = '<!-- ID = ' . $xu->id . ' -->' . '
-            </div>
+      $finNodePrec = '
         </div>
-    </div>
+      </div>
     ';
-      if ( array_key_exists( $xu->id + 1, $this->membres ) &&
-        $this->membres[ $xu->id + 1 ]->bg > $this->bds[ 0 ]
+      if ( array_key_exists( $m->id + 1, $this->membres ) &&
+        $this->membres[ $m->id + 1 ]->bg > $this->bds[ 0 ]
       ) {
-        $finnodeprec .= '</div>
-        </div>
-    </div>';
+        $finNodePrec .= '</div>
+
+    ';
       }
     }
 
-    $aff = $xu->ido . ': ' . $this->membres[ $xu->id ]->nom . $vt . '<br>' . ( $xu->parr ? ' < '
-        . $xu->parr : '' ) . '|' . $xu->getParrRi( $this->membres ) . '<br>(' .
-      $xu->bg .
-      ',' .
-      $xu->bd .
-      ' -
-    Prof: ' . $xu->pf
-      . ')';
-//    $aff = $xu->nom;
-    $aff = '<span class="' . $coulItem . '">' . $aff . '</span>';
-    return $ssnode . $node . '
-    <p class="cardXu">' . $aff . '
-    </p>' .
-    "\n" . '</div>
-  ' . $finnode . $finnodeprec;
+    $aff = $m->ido . ' (' . $m->id . '): ' . $this->membres[ $m->id ]->nom . $vt . '<br>' . (
+      $m->parr ? ' &lt; ' . $m->parr : '' ) . '|' . $m->getParrRi( $this->membres ) . '<br>(' .
+      $m->bg . ',' . $m->bd . ' - Pf: ' . $m->pf . ')';
+//    $aff = $m->nom;
+//    $aff = '<span class="' . $coulItem . '">' . $aff . '</span>';
+    return $ssNode . $node . '
+            <p class="cardM ' . $coulItem . '">' . $aff . '
+            </p>' .
+    "\n" . '          </div>
+  ' . $finNode . $finNodePrec;
   }
 
 }
-
-// todoli function pour récupérer le parrain selon RI pour comparer avec le parrain dans l'objet
-// une boucle sur le gr pour comparaison de ces valeurs

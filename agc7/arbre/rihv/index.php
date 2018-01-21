@@ -13,13 +13,39 @@ include 'assets/functions/gc7.php';
 $gr = new Groupe ( 'Doro' );
 //$gr = new Groupe ( 'Doro2' );
 
+//$gr->add( 'Jona', 0 );
+//$gr->add( 'Mimi', 0 );
+//$gr->add('Jade',0);
+//
+////$gr->affListeMembres();
+//$gr->affVueHierarchique();
+//
+//// schema buggé
+//exit;
+//unset($gr);
+
+$gr = new Groupe ( 'Doro' );
 $gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
 $gr->add( 'Mimi', 0 );
 $gr->add( 'Jade', 0 );
-$gr->add( 'Fanny', 1 );
-$gr->add( 'Nico', 3 );
-$gr->add( 'Lionel', 0 );
+$gr->add( 'Fany', 1 );
+$gr->add( 'Jeny', 3 );
 $gr->add( 'Bug', 4 );
+$gr->add( 'Lionel', 0 );
+
+/* Vugé
+$gr = new Groupe ( 'Doro' );
+$gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
+$gr->add( 'Fany', 1 );
+$gr->add( 'Lionel', 0 );
+$gr->add( 'Mimi', 0 );
+$gr->add( 'Jade', 0 );
+$gr->add( 'Jeny', 3 );
+$gr->add( 'Bug', 4 );
+*/
+
+
+
 //$gr->add( 'Jeny', 3 );
 //$gr->add( 'Félicien', 5 );
 //$gr->add( 'Félicien', 3 );

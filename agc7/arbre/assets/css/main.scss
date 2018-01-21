@@ -45,10 +45,10 @@ section {
   color: yellow;
 }
 
-p.cardXu {
+p.cardM {
   margin: 0;
   background-color: #fff;
-  color: #de5454;
+  //color: #de5454;
   border-radius: 7px;
   padding: 30px;
   min-width: 100px;
@@ -127,4 +127,14 @@ p.simple-card {
   .card_img {
     width: 120px;
   }
+}
+
+article.listeMembres {
+  width: 95%;
+  margin: 5px auto;
+  line-height: .9;
+  font-size: 15px;
+  column-count: 2;
+  hyphens: auto;
+  color: #00f;
 }

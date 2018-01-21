@@ -33,17 +33,16 @@ section {
   margin-top: 50px;
   color: yellow; }
 
-p.cardXu {
+p.cardM {
   margin: 0;
   background-color: #fff;
-  color: #de5454;
   border-radius: 7px;
   padding: 30px;
   min-width: 100px;
   font-weight: bold;
   text-align: center;
   box-shadow: 0 3px 6px rgba(204, 131, 103, 0.77); }
-  p.cardXu b {
+  p.cardM b {
     font-weight: normal;
     font-size: .8em; }
 
@@ -99,5 +98,14 @@ p.simple-card {
         transform: translateY(-100%); }
   .management-hierarchy .card_img {
     width: 120px; }
+
+article.listeMembres {
+  width: 95%;
+  margin: 5px auto;
+  line-height: .9;
+  font-size: 15px;
+  column-count: 2;
+  hyphens: auto;
+  color: #00f; }
 
 /*# sourceMappingURL=main.css.map */
