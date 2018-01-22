@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../assets/css/gc7.css">
   <link rel="stylesheet" href="../../assets/css/style.css">
 
-  <link rel="stylesheet" href="assets/css/hv.css">
+  <link rel="stylesheet" href="assets/css/hv.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
 </head>
