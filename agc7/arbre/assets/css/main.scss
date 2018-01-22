@@ -25,9 +25,8 @@ section {
     margin-bottom: 50px;
   }
   .hv-container {
-    //display: flex;
     flex-grow: 1;
-    overflow: auto; //align-items: center;
+    overflow: auto;
     justify-content: center;
   }
 }
@@ -47,8 +46,8 @@ section {
 
 p.cardM {
   margin: 0;
-  background-color: #fff;
-  //color: #de5454;
+  background-color: white;
+  /*color: #de5454;*/
   border-radius: 7px;
   padding: 30px;
   min-width: 100px;

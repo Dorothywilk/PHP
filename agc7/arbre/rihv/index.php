@@ -44,7 +44,7 @@ $gr->add( 'Jeny', 3 );
 $gr->add( 'Bug', 4 );
 */
 
-echo 884*2.5;
+//echo 884*2.5;
 
 //$gr->add( 'Jeny', 3 );
 //$gr->add( 'Félicien', 5 );
@@ -64,7 +64,7 @@ for ( $i = 1; $i <1; $i++ ) {
 }
 
 // Affiche la liste des membres
-$gr->affListeMembres();
+//$gr->affListeMembres();
 
 
 //vd(array_rand($gr->membres));

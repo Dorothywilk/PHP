@@ -1,7 +1,8 @@
 $bottom-margin: 50px;
 $line-width: 2px;
 $line-color: rgba(#000, .3);
-$bg_color: #efe6e2;
+//$bg_color: #efe6e2;
+$bg_color: violet;
 
 .hv-wrapper {
   display: flex;
@@ -13,11 +14,11 @@ $bg_color: #efe6e2;
     flex-direction: column;
     margin: auto;
 
+    /*
     // Pour voir sous-groupes
     //border: 2px solid red;
     //padding: 2px;
     //border-radius: 10px;
-    /*
     */
 
     .hv-item-parent {
@@ -84,13 +85,16 @@ $bg_color: #efe6e2;
 .bloc1 {
   zoom: 1;
   color: yellow;
+  /*
   //border: 0px solid rgba(255,0,0,.1);
   //border-radius: 7%;
+  */
 }
 
-.redLi{
-  color: #f00;
+.redLi {
+  color: red;
 }
-.blueLi{
-  color: #00f;
+
+.blueLi {
+  color: blue;
 }

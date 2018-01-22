@@ -35,7 +35,8 @@ section {
 
 p.cardM {
   margin: 0;
-  background-color: #fff;
+  background-color: white;
+  /*color: #de5454;*/
   border-radius: 7px;
   padding: 30px;
   min-width: 100px;

@@ -1,6 +1,11 @@
 <?php namespace Agc7\Arbre\Rihv;
 
 /**
+ * Fichier pour Mise au Point
+ *
+ * À noter qu'on a mis des class dans le /div...
+ * Bien-sûr, à ne pas faire dans un fichier final qui plus est en production ! ;-)
+ *
  * Created by C7.
  * User: Li
  * Date: 15/01/2018
@@ -129,7 +134,6 @@ class GroupeDebug
 <section class="basic-style">
   <div class="hv-container">
     <div class="hv-wrapper">
-
       ';
 
       foreach ( $this->membres as $i => $m ) {
@@ -186,17 +190,21 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 
   public function affBloc( $m )
   {
+    $node = $finNode = $finNodePrec = '';
+
+    $html = $htmlNode = $htmlChild = "";
+
 //    $m = $this->membres[ $id ];
 
 //    vd( $m );
 
-    $node = $finNode = $finNodePrec = '';
     if ( $m->t === 'p' ) {
       $type = 'parent';
       $coulItem = 'redLi';
-      $node = '<div class="hv-item">
-        <div class="hv-item-' . $type . ' mbr'.$m->bd.'">          ';
-      $finNode = '<div class="hv-item-children mbr'.$m->bd.'">
+      $node = '
+        <div class="hv-item">
+         <div class="hv-item-' . $type . ' mbr' . $m->bd . '">          ';
+      $finNode = '<div class="hv-item-children mbr' . $m->bd . '">
 
     ';
       array_unshift( $this->bds, $m->bd );
@@ -204,15 +212,16 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
     } else {
       $type = 'child';
       $coulItem = 'blueLi';
+      $htmlNode = '';
+      $htmlChild = '
+      ';
     }
     //$html = ( $type === 'child' ) ? '
     //' : '
     //';
-    $html = '
-    ';
 
     $ssNode = ( $m->id > 0 ) ? ( '    <div class="hv-item-child">
-    ' . $html ) : '';
+    ' . $htmlNode ) : '';
 
     //$vt = ' ('.serialize( $this->bds ).') '; // valeur test
 //    $vt =( isset($this->bds[ 0 ])) ?($this->bds)) :'non';
@@ -239,7 +248,7 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 //      $m->parr ? ' &lt; ' . $m->parr : '' ) . '|' . $m->getParrRi( $this->membres ) . '<br>(' . $m->bg . ',' . $m->bd . ' - Pf: ' . $m->pf . ')';
 
 
-    $aff = $m->id . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . ' ' . $m->pf . '<br>' . $vt;
+    $aff = $m->ido . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . '-' . $m->pf . '<br>' . $vt;
 
 
 //    $aff = $m->nom;
@@ -247,9 +256,10 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
     return $finNodePrec . $ssNode . $node . '
           <p class="cardM ' . $coulItem . '">' . $aff . '
           </p>' . $html . '
-      ' .
+      ' . $htmlChild .
     '  </div class="fin' . ucfirst( $type ) . '">
-      ' . $finNode;
+      '
+    . $finNode;
   }
 
 }

@@ -7,6 +7,10 @@
     flex-direction: column;
     margin: auto;
     /*
+    // Pour voir sous-groupes
+    //border: 2px solid red;
+    //padding: 2px;
+    //border-radius: 10px;
     */ }
     .hv-wrapper .hv-item .hv-item-parent {
       margin-bottom: 50px;
@@ -51,12 +55,16 @@
 
 .bloc1 {
   zoom: 1;
-  color: yellow; }
+  color: yellow;
+  /*
+  //border: 0px solid rgba(255,0,0,.1);
+  //border-radius: 7%;
+  */ }
 
 .redLi {
-  color: #f00; }
+  color: red; }
 
 .blueLi {
-  color: #00f; }
+  color: blue; }
 
 /*# sourceMappingURL=hv.css.map */
