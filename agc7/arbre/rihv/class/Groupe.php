@@ -15,14 +15,14 @@ class Groupe {
 	/**
 	 * Mode de vue appliqué à tous les membres
 	 *
-	 * 0 ou null ou toute autre valeur que ci-dessous Tout pour dev
+	 * 0 ou '' ou null Pas de ligne ou toute autre valeur que ci-dessous Tout pour dev
 	 *   (Autre que 0 affiche aussi détail de la vue en entête de doc)
 	 * 1 Que le nom et l'Id en grand (Mode construction du groupe)
 	 * 2 id + nom et pf agrandie
-	 * 3 Que le nom
+	 * 3 Que le nom Mode Normal
 	 *
 	 */
-	const MODE = 1; // 777
+	const MODE = 777; // 777
 
 	// mec = Membre En Cours
 	public $mec;
@@ -31,7 +31,7 @@ class Groupe {
 	public $bds = [ ];
 
 	// L'attribut qui stockera l'instance unique de cette classe singleton
-	private static $_instance;
+	public static $_instance;
 
 	// Pour affichage selon MODE choisi
 	public $mode; // Détail des infos voulues
@@ -55,7 +55,7 @@ class Groupe {
 			self::$_instance = new Membre( $fondateur );
 		}
 		else {
-			//echo '<p class="lead">NB: La création du fondateur ' . $fondateur . ' n\'est pas considérée car un précédent fondateur a déjà été nommé (' . self::$_instance->nom . ')...</p>';
+			echo '<p class="lead">NB: La création du fondateur ' . $fondateur . ' n\'est pas considérée car un précédent fondateur a déjà été nommé (' . self::$_instance->nom . ')...</p>';
 		}
 
 		return self::$_instance;
@@ -70,8 +70,6 @@ class Groupe {
 		$this->mec = $this->membres[ 0 ];
 
 		//vd($this);
-
-		//array_unshift( $this->bds, $this->membres[ 0 ]->bd );
 
 		$this->initFondateur();
 
@@ -88,6 +86,7 @@ class Groupe {
 
 	}
 
+	// NB: parrId = Ido du parrain
 	public function add( $nom, $parrId )
 	{
 //    echo '<div class="lead">Ajout de ' . $nom . ' sous le parrain  ' . $this->membres{$parrId}->nom . '</div>';
@@ -177,11 +176,10 @@ class Groupe {
 	 */
 	public function affVueHierarchique()
 	{
-
 		if ( $this->nbr() - 1 ) {
 
 			// Les membres avant tris
-			//vdColl( $this->membres, '$m->membres dans l\'ordre d\'arrivée' );
+//			vdColl( $this->membres, '$m->membres dans l\'ordre d\'arrivée' );
 
 			foreach ( $this->membres as $i => $m ) {
 				$m->ido = $i; // Id d'origine
@@ -189,7 +187,7 @@ class Groupe {
 			}
 
 			// Les membres sont dans l'ordre du ver dans $this->Smembres
-			//vdColl( $this->membres, '$m->membres après tri selon leur borne gauche' );
+//			vdColl( $this->membres, '$m->membres après tri selon leur borne gauche (Déplacement du ver)' );
 
 
 			// Début de la vue
@@ -216,21 +214,18 @@ class Groupe {
 
 				if ( $m->t === 'p' ) {
 
-					$coulItem = 'redLi';
-					array_unshift( $this->bds, $m->bd );
+					$m->coulItem = 'redLi';
+					array_unshift( $this->bds, $m->bd ); // Retient la BD du noeud à fermer
 					$elt[ 'childNode' ] = '<div class="hv-item-child">
-                    '; //+
-					//$elt[ 'fChild' ]    = ''; //-
+                    ';
 
 				}
 				else {
 
+					$m->coulItem           = 'blueLi';
 					$elt[ 'childNode' ] = $elt[ 'fChildNode' ] = '';
-					$coulItem           = 'blueLi';
 
 				}
-				$m->coulItem = $coulItem;
-
 
 				// bds de Noeuds à fermer
 				$m->vt = ( isset( $this->bds[ 0 ] ) ) ? serialize( $this->bds ) : [ ];
@@ -239,7 +234,7 @@ class Groupe {
 				// mec = Membre En Cours
 				$this->mec = $m;
 
-				//vd( $m );
+//				vd( $m );
 				//vd( $this );
 
 				// html + carte
@@ -253,9 +248,10 @@ class Groupe {
 
 				if ( array_key_exists( 0, $this->bds ) // Il existe des noeud à fermer
 				     && array_key_exists( $m->id , $this->membres ) // Il y un membre suivant
-					// NB Les id sont décalé de 1 donc suivant = id et pas id+1
+					// NB Les id sont décalés de 1 donc suivant = id et pas id+1
 				) {
-					while ( array_key_exists( 0, $this->bds ) && $this->membres[ $m->id  ]->bg > $this->bds[ 0 ] ) {
+					while ( array_key_exists( 0, $this->bds ) &&
+								 $this->membres[ $m->id  ]->bg > $this->bds[ 0 ] ) {
 
 						//vd( $m->nom );
 						//vd( $m->ido );
@@ -308,7 +304,7 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 	{
 		$this->elts[ 'p' ] = '<div class="hv-item">
         <div class="hv-item-parent mbr">
-            '; //++
+            '; 
 
 		$this->elts[ 'fp' ] = '</div class="finParent">
             <div class="hv-item-children mbr">
@@ -321,10 +317,10 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
             ';
 
 		$this->elts[ 'c' ] = '<div class="hv-item-child">
-				'; // ok
+				'; 
 
 		$this->elts[ 'fc' ] = '</div class="finChild">
-'; // ok
+'; 
 	}
 	
 	public function globalHtml( $bloc = null )
@@ -346,11 +342,16 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
     	';
 	}
 
-
+/**
+* Initie les params nécessaires pour afficher le fondateur
+*
+* @return Rien
+*/
 	public function initFondateur()
 	{
 		$fondateur           = $this->mec;
 		$fondateur->ido      = 0;
+		$fondateur->id      = 0;
 		$fondateur->vt       = '';
 		$fondateur->coulItem = 'redLi';
 
@@ -389,18 +390,27 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 					$m->vt = serialize( $this->bds );
 				}
 				else {
-					$m->vt = '$vt vide';
+					// vt = variable pour VueTechnique (Ici, du array(bds) sérialisé)
+					$m->vt = '[bds] vide';
 				}
 				$infos = ( isset( $m->id ) ? $m->id
 						: '00' ) . '|' . $m->ido . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . '-' . $m->pf . '<br>' . $m->vt;
-				$mode  = 'Quasi tout';
 
 		endswitch;
-
 
 		$this->infos = $infos;
 	}
 
+	
+	/**
+	* Permet d'afficher une ligne en haut du doc précisant le mode actuel
+	* en fonction du choix fait dans la constante MODE
+	*
+	* Proriété mode
+	*
+	* Return Rien
+	*/
+	
 	public function detailsModeVue()
 	{ 
 		// On ne mmélange pas ces actions avec detailsVue, pourtant boucle très similaire, parce que cette dernière est itérative (Répétée pour chaque membre) alorqs que cette info est calculée qu'une seule fois)
@@ -427,7 +437,7 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 
 			default:
 				// Affichage complet pour dev
-				$mode = 'Quasi tout';
+				$mode = 'Quasi tout (Id|Ido Nom bg,bd-pf $vt)';
 
 		endswitch;
 

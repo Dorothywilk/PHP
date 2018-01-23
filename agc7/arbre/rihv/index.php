@@ -14,51 +14,36 @@ include 'assets/functions/gc7.php';
 //$gr = new Groupe ( 'Doro' );
 //$gr = new Groupe ( 'Doro2' );
 
-//$gr->add( 'Jona', 0 );
-//$gr->add( 'Mimi', 0 );
-//$gr->add('Jade',0);
-//
-////$gr->affListeMembres();
-//$gr->affVueHierarchique();
-//
-//// schema buggé
-//exit;
-//unset($gr);
-
+//$gr->affListeMembres();
 
 $gr = new Groupe ( 'Doro' ); // Fondateur
 
-$gr->add( 'Jona', 0 ); // 0 = Id du membre parrain
+// 0 = Ido, Id Origine (En grand en mode construction !) du membre parrain
+$gr->add( 'Jona', 0 ); 
 $gr->add( 'Mimi', 0 );
 $gr->add( 'Rom1', 0 );
 $gr->add( 'Jade', 0 );
 $gr->add( 'Félicien', 3 );
-$gr->add( 'Séb', 2 ); 
-$gr->add( 'Fany', 1 );
-//$gr->add( 'Jeny', 3 ); //$gr->add( 'Bug', 4 ); 
-//$gr->add( 'Lionel', 5 );
-
-
-
-//$gr->add( 'Jade', 0 );
-//$gr->add( 'Jeny', 3 );
-//$gr->add( 'Jona', 0 );
-
-
+//$gr->add( 'Séb', 2 ); 
 //$gr->add( 'Fany', 1 );
-//$gr->add( 'Mimi', 0 );
-//$gr->add( 'Bug', 4 );
+//$gr->add( 'Jeny', 4 );
+//$gr->add( 'Oki', 7 ); 
+//$gr->add( 'Lionel', 0 );
 
+//vd($gr);
+//echo '<h1>'.$gr->membres[5]->t.'</h1>';
 
-// todoli à refaire après révision poo
 
 //$m=$gr->membres[1];
 //vd($m);
 //echo $gr->membres[ 5 ]->nom . ' < ' . $gr->membres[ 5 ]->getParrRi( $gr );
 
 
-// Test: Création aléatoire de quelques membres
-for ( $i = 1; $i < 1; $i ++ ) {
+// Test: Création aléatoire de $nbre membres
+
+$nombre = 0;
+
+for ( $i = 1; $i < $nombre+1; $i ++ ) {
 	$fakePseudo = 'Untel_' . $i;
 	$gr->add( $fakePseudo, array_rand( $gr->membres ) );
 }
@@ -66,9 +51,10 @@ for ( $i = 1; $i < 1; $i ++ ) {
 // Affiche la liste des membres
 //$gr->affListeMembres();
 
+//echo $gr->nbr();
 
-//vd(array_rand($gr->membres));
-//echo $gr->membres[5]->affMembre( 5 );
+//Affiche le nom d'un membre au hazard
+//echo $gr->membres[array_rand($gr->membres)]->nom;
 
 // Affiche une vue hierarchique du Groupe
 $gr->affVueHierarchique();
