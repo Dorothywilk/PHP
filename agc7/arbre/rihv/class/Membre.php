@@ -1,9 +1,7 @@
 <?php namespace Agc7\Arbre\Rihv;
 
-class Membre extends GroupeDebug
-{
+class Membre extends GroupeDev {
   public $nom, $bg, $bd, $parr, $pf, $t;
-  public $membres;
 
   public function __construct( $nom, $bg = null, $bd = null, $parr = null, $pf = null )
   {
@@ -20,12 +18,15 @@ class Membre extends GroupeDebug
       // echo '<p class="lead">Création du membre fondateur ' . $nom . '.</p>';
       self::__construct( $nom, 1, 2, null, 0 );
     }
+//    parent::__construcut();
+//vd($this->membres);
   }
 
   /**
    * Donne le nom du parrain selon la Représentation Intervallaire
    *
    * @param Array $gr L'ensemble du groupe
+   *
    * @return bool Le nom s'il existe, false sinon
    */
   public function getParrRi( $gr )

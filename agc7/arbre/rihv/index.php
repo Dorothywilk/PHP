@@ -1,6 +1,6 @@
 <?php namespace Agc7\Arbre\rihv;
 
-include 'class/GroupeDebug.php';
+include 'class/GroupeDev.php';
 include 'class/Membre.php'; // Membre d'un groupe
 //include 'class/ValidationMembre.php';
 //include 'class/Ri.php'; // Représentation Intervallaire
@@ -24,42 +24,35 @@ include 'assets/functions/gc7.php';
 //exit;
 //unset($gr);
 
-$gr = new GroupeDebug ( 'Doro' );
+/*$gr = new GroupeDebug ( 'Doro' );
 $gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
 $gr->add( 'Mimi', 0 );
 $gr->add( 'Jade', 0 );
 $gr->add( 'Fany', 1 );
 $gr->add( 'Jeny', 3 );
 $gr->add( 'Bug', 4 );
-$gr->add( 'Lionel', 0 );
+$gr->add( 'Lionel', 0 );*/
 
-/* Vugé
-$gr = new Groupe ( 'Doro' );
-$gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
-$gr->add( 'Fany', 1 );
-$gr->add( 'Lionel', 0 );
-$gr->add( 'Mimi', 0 );
-$gr->add( 'Jade', 0 );
-$gr->add( 'Jeny', 3 );
-$gr->add( 'Bug', 4 );
-*/
-
-//echo 884*2.5;
-
+//Bugé
+$gr = new GroupeDev ( 'Doro' );
+//$gr->add( 'Jona', 0 ); // 0 = N° du membre parrain
+//$gr->add( 'Fany', 1 );
+//$gr->add( 'Lionel', 0 );
+//$gr->add( 'Mimi', 0 );
+//$gr->add( 'Jade', 0 );
 //$gr->add( 'Jeny', 3 );
-//$gr->add( 'Félicien', 5 );
-//$gr->add( 'Félicien', 3 );
+//$gr->add( 'Bug', 4 );
 
-//echo ( 1.28 * 50 ) - ( 1.141 * 50 ) . '<br>';
+
+// todoli à refaire après révision poo
+
 //$m=$gr->membres[1];
 //vd($m);
-
 //echo $gr->membres[ 5 ]->nom . ' < ' . $gr->membres[ 5 ]->getParrRi( $gr );
 
-//echo 5*4.4*12*;
 
 // Test: Création aléatoire de quelques membres
-for ( $i = 1; $i <1; $i++ ) {
+for ( $i = 1; $i < 10; $i++ ) {
   $fakePseudo = 'Untel_' . $i;
   $gr->add( $fakePseudo, array_rand( $gr->membres ) );
 }

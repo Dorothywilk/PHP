@@ -6,15 +6,11 @@
  * À noter qu'on a mis des class dans le /div...
  * Bien-sûr, à ne pas faire dans un fichier final qui plus est en production ! ;-)
  *
- * Created by C7.
- * User: Li
- * Date: 15/01/2018
- * Time: 11:49
  */
 
-class GroupeDebug
+class GroupeDev
 {
-  public $membres;
+  //public $membres;
 
   // Tableau des bornes droites des noeuds pour fermer les 3 div créées pour les parents
   public $bds = [ ];
@@ -233,6 +229,8 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 
 
     $aff = $m->ido . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . '-' . $m->pf . '<br>' . $vt;
+
+    $aff = $m->p;
 
 
 //    $aff = $m->nom;
@@ -464,7 +462,7 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 
       foreach ( $this->membres as $i => $m ) {
         $m->ido = $i; // Id d'origine
-        usort( $this->membres, __NAMESPACE__ . '\GroupeDebug::compare_bg_membres' );
+        usort( $this->membres, __NAMESPACE__ . '\GroupeDev::compare_bg_membres' );
       }
 
       // Les membres sont dans l'ordre du ver dans $this->Smembres
@@ -510,10 +508,15 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 
         $vt = ( isset( $this->bds[ 0 ] ) ) ? serialize( $this->bds ) : 'vide'; // bd de Noeuds à fermer
 
+        // Affichage complet pour dev
+        $infos = $m->ido . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . '-' . $m->pf . '<br>' . $vt;
 
-        // Carte du membre
+
+
+        // Affichage Varte du membre
         $carte = '<p class="cardM ' . $coulItem . '">' .
-          $m->ido . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . '-' . $m->pf . '<br>' . $vt . '
+          $infos
+          . '
             </p>
         ';
 
@@ -616,9 +619,10 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 //    $aff = $m->ido . ' (' . $m->id . '): ' . $this->membres[ $m->id ]->nom . $vt . '<br>' . (
 //      $m->parr ? ' &lt; ' . $m->parr : '' ) . '|' . $m->getParrRi( $this->membres ) . '<br>(' . $m->bg . ',' . $m->bd . ' - Pf: ' . $m->pf . ')';
 
+    // Affichage complet pour dev
+    //$aff = $m->ido . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . '-' . $m->pf . '<br>' . $vt;
 
-    $aff = $m->ido . ' ' . $m->nom . ' ' . $m->bg . ',' . $m->bd . '-' . $m->pf . '<br>' . $vt;
-
+    $aff = $m->pf;
 
 //    $aff = $m->nom;
 //    $aff = '<span class="' . $coulItem . '">' . $aff . '</span>';
@@ -629,12 +633,6 @@ class="basic-style tac"><h2>Est-ce bien nécessaire<br>de schématiser une struc
 //    '  </div class="fin' . ucfirst( $type ) . '">
 //      '
 //    . $finNode;
-  }
-
-  public
-  function getNode( $m )
-  {
-
   }
 
 }
