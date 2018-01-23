@@ -17,11 +17,12 @@ class Groupe {
 	 *
 	 * 0 ou null ou toute autre valeur que ci-dessous Tout pour dev
 	 *   (Autre que 0 affiche aussi détail de la vue en entête de doc)
-	 * 1 Que le nom
+	 * 1 Que le nom et l'Id en grand (Mode construction du groupe)
 	 * 2 id + nom et pf agrandie
+	 * 3 Que le nom
 	 *
 	 */
-	const MODE = 2; // 777
+	const MODE = 1; // 777
 
 	// mec = Membre En Cours
 	public $mec;
@@ -195,7 +196,10 @@ class Groupe {
 			$html = $this->globalHtml();
 
 			// Fondateur
-			$this->mec = $this->membres[ 0 ];
+			$fondateur = $this->membres[ 0 ];
+			$fondateur->id = 0;
+			$this->mec = $fondateur;
+				
 			$this->detailsVue();
 
 			$html .= $this->elts[ 'p' ]
@@ -356,21 +360,29 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 
 	public function detailsVue()
 	{
-
+		// Rappel: mec = Membre En Cours de traitement (Mais ça va bien comme terme! Lol)
 		$m = $this->mec;
-		//vd( $m );
+		// vd( $m );
 		switch ( self::MODE ):
 
 			case( 1 ):
-				// Pour affichage simplissime
-				$infos = $m->nom;
+				// Mode construction (Ido très visible - Id en petit dessous)
+				// Rappel: Le petit chiffre indique le déplacement du ver,
+				// ordre utile pour l'écriture du code Htmml
+				$infos = $m->nom . '<span class="grand">' . $m->ido . '</span>'.$m->id;
 				break;
 
 			case ( 2 ):
 				// Utile pour vérifier conformité grand groupes
 				$infos = $m->ido . ' ' . $m->nom . '<span class="grand">' . $m->pf . '</span>';
 				break;
+		
+			case( 3 ):
+				// Pour affichage simplissime
+				$infos = $m->nom;
+				break;
 
+		
 			default:
 				// Affichage complet pour dev
 				if ( array_key_exists( 0, $this->bds ) ) {
@@ -390,20 +402,27 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 	}
 
 	public function detailsModeVue()
-	{
+	{ 
+		// On ne mmélange pas ces actions avec detailsVue, pourtant boucle très similaire, parce que cette dernière est itérative (Répétée pour chaque membre) alorqs que cette info est calculée qu'une seule fois)
 
 		$m = $this->mec;
 		//vd( $m );
 		switch ( self::MODE ):
 
 			case( 1 ):
-				// Pour affichage simplissime
-				$mode = 'Nom uniquement';
+				// Pour construire aisément le groupe, id en grand (+nom)
+				$mode = 'Nom + Ido en grand + Id en tout petit dessous';
 				break;
 
 			case ( 2 ):
 				// Utile pour vérifier conformité grand groupes
+				// Rappel: Ido = Id d'origine (Ordre d'entrée)
 				$mode = 'Ido + Nom en petit & profondeur en grand';
+				break;
+
+			case( 3 ):
+				// Pour affichage simplissime
+				$mode = 'Nom uniquement';
 				break;
 
 			default:
@@ -426,7 +445,7 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 	{
 		$m = $this->mec;
 
-		//vd($this);
+		// vd($this);
 
 		$this->detailsVue();
 
