@@ -109,4 +109,9 @@ article.listeMembres {
   hyphens: auto;
   color: #00f; }
 
+.vdColl {
+  color: #444; }
+  .vdColl span {
+    text-decoration: underline; }
+
 /*# sourceMappingURL=main.css.map */

@@ -56,6 +56,7 @@ $gr->add( 'Bug', 4 );
 
 //echo $gr->membres[ 5 ]->nom . ' < ' . $gr->membres[ 5 ]->getParrRi( $gr );
 
+//echo 5*4.4*12*;
 
 // Test: Création aléatoire de quelques membres
 for ( $i = 1; $i <1; $i++ ) {
