@@ -114,4 +114,9 @@ article.listeMembres {
   .vdColl span {
     text-decoration: underline; }
 
+.grand {
+  display: block;
+  line-height: .7;
+  font-size: 4em; }
+
 /*# sourceMappingURL=main.css.map */
