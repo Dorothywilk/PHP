@@ -12,3 +12,5 @@ $monVehicule->reparer();
 $monVehicule->setVolumeCarburant( 100 );
 
 echo sprintf( "Il me reste %u L d'essence<br>", $monVehicule->getVolumeCarburant() ) . '<hr>';
+
+echo'Ma voiture est de marque '.strtoupper($monVehicule->getMarque());

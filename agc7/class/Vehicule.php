@@ -20,4 +20,8 @@ class Vehicule
     $this->_estRepare = true;
     echo 'Le véhicule est en réparation<br>';
   }
+  
+  function getMarque(){
+    return $this->_marque;
+  }
 }
