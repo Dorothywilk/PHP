@@ -1,6 +1,6 @@
 ## Gulp-php
 
- PHP avec sass et livereload (Utilise ici frameworh CodeIgniter)
+ PHP avec sass et livereload (Utilise ici framework CodeIgniter)
  dans n'importe quel dossier
  
  (*Installation en 5 mn: **NB 2 fichiers** tout en bas*)
@@ -25,7 +25,7 @@ git clone https://github.com/bcit-ci/CodeIgniter.git
 cd Codeigniter && mkdir assets && cd assets && mkdir css && mkdir sass
 ```
 
-Les 2 fichiers
+Ajouter les 2 fichiers
 
 ```
 npm install
@@ -44,7 +44,7 @@ npm-debug.log
 Go !
 
 ```
-g
+gulp
 ```
 
 
