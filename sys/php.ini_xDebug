@@ -1,0 +1,12 @@
+zend_extension = C:\laragon\bin\php\php-7.1.7-Win32-VC14-x64\ext\php_xdebug-2.6.0RC2-7.1-vc14-x86_64.dll
+
+[XDebug]
+xdebug.remote_enable = 1
+xdebug.remote_autostart = 1
+xdebug.remote_mode = "req"
+xdebug.profiler_enable=0
+xdebug.profiler_enable_trigger=On
+
+xdebug.remote_handler = "dbgp"
+output_buffering = Off
+implicit_flush = On
