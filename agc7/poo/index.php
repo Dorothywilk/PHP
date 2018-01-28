@@ -47,7 +47,7 @@
   // OneTrait (Trait)
   // include '../class/OneTrait.php';
 
-  echo str_repeat( '<br>&nbsp;', 50 );
+  echo str_repeat( '<br>&nbsp;', 5 );
 
   ?>
       oOo

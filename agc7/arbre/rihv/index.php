@@ -16,19 +16,18 @@ include 'assets/functions/gc7.php';
 
 //$gr->affListeMembres();
 
-$gr = new Groupe ( 'Doro' ); // Fondateur
+$gr = new Groupe ( 'Mauricette' ); // Fondateur
 
 // 0 = Ido, Id Origine (En grand en mode construction !) du membre parrain
-$gr->add( 'Jona', 0 ); 
-$gr->add( 'Mimi', 0 );
-$gr->add( 'Rom1', 0 );
-$gr->add( 'Jade', 0 );
-$gr->add( 'Félicien', 3 );
-//$gr->add( 'Séb', 2 ); 
-//$gr->add( 'Fany', 1 );
-//$gr->add( 'Jeny', 4 );
-//$gr->add( 'Oki', 7 ); 
-//$gr->add( 'Lionel', 0 );
+//$gr->add( 'Jona', 0 ); //$gr->add( 'Mimi', 0 ); //$gr->add( 'Rom1', 0 ); //$gr->add( 'Jade', 0 ); //$gr->add('Félicien', 3 );
+$gr->add( 'Paul', 0 ); 
+$gr->add( 'Fany', 1 );
+$gr->add( 'Jeny', 0 );
+$gr->add( 'Oki', 1 ); 
+$gr->add( 'Lionel', 3 );
+$gr->add( 'Lionel_2', 3 );
+$gr->add( 'Lionel_3', 3 );
+$gr->add( 'Pierre', 4 );
 
 //vd($gr);
 //echo '<h1>'.$gr->membres[5]->t.'</h1>';
@@ -41,7 +40,7 @@ $gr->add( 'Félicien', 3 );
 
 // Test: Création aléatoire de $nbre membres
 
-$nombre = 0;
+$nombre = 500;
 
 for ( $i = 1; $i < $nombre+1; $i ++ ) {
 	$fakePseudo = 'Untel_' . $i;

@@ -17,7 +17,6 @@
 		foreach ( $planetes as $planete ) {
 			echo $planete . ' ';
 		}
-<?php
 
 
 		$planetes = [ 'terre', 'lune', 'mars', 'jupiter' ];

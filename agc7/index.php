@@ -33,7 +33,7 @@
   </article>
 
   <footer>
-    <hr> &copy;2017 - GC7 | <a href="https://github.com/GrCOTE7/Do" target="_blank"><i
+    <hr> &copy;2017-2018 - GC7 | <a href="https://github.com/GrCOTE7/Do" target="_blank"><i
         class="github icon"></i></a>
   </footer>
   <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async

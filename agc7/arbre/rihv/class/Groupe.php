@@ -19,10 +19,10 @@ class Groupe {
 	 *   (Autre que 0 affiche aussi détail de la vue en entête de doc)
 	 * 1 Que le nom et l'Id en grand (Mode construction du groupe)
 	 * 2 id + nom et pf agrandie
-	 * 3 Que le nom Mode Normal
+	 * 3 Que l'Idpo et le nom Mode Normal
 	 *
 	 */
-	const MODE = 777; // 777
+	const MODE = 3; // 777
 
 	// mec = Membre En Cours
 	public $mec;
@@ -380,7 +380,7 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 		
 			case( 3 ):
 				// Pour affichage simplissime
-				$infos = $m->nom;
+				$infos = $m->ido.' '.$m->nom;
 				break;
 
 		
@@ -432,7 +432,7 @@ Est-ce bien nécessaire de schématiser une structure hiérarchique avec
 
 			case( 3 ):
 				// Pour affichage simplissime
-				$mode = 'Nom uniquement';
+				$mode = 'Ido + Nom uniquement';
 				break;
 
 			default:

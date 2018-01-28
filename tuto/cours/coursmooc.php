@@ -29,7 +29,7 @@ $n = ($r - LOCOMOTIVE) / WAGON;
 echo str_repeat('<br>', 20);
 ?>
   <hr> Cette page contient du code HTML avec des balises PHP.<br />
-  <?php/* Insérer du code PHP ici */ ?> Voici quelques petits tests :
+  <?php /* Insérer du code PHP ici */ ?> Voici quelques petits tests :
     </p>
 
     <hr>

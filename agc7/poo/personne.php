@@ -1,7 +1,6 @@
 <?php
 namespace gc7;
 
-
 include '../class/Personne.php';
 
 $personne1 = new Personne();
@@ -18,8 +17,7 @@ $personne1->sexe = 'M';
 
 $personne1->setMNom('Hamon Privé');
 
-echo $personne1->getMNom().'<hr>';
-
+echo $personne1->getMNom() . '<hr>';
 
 // Définition des attributs de la personne 2
 $personne2->nom = 'Dubois';
@@ -43,7 +41,7 @@ $personne4->taille = '155';
 $personne4->sexe = 'M';
 
 // <pre>
-	// var_dump($personne1);
+// var_dump($personne1);
 // </pre>
 
 $personne1->boire();
@@ -52,37 +50,8 @@ $personne3->manger();
 $personne4->manger();
 
 echo '<br>Personne 1 :<br/><br/>';
-echo 'Nom : ', $personne1->nom ,'<br/>';
+echo 'Nom : ', $personne1->nom, '<br/>';
 echo 'Prénom : ', $personne1->prenom;
 
-echo '<br><br>Chaque personne a ', Personne::NOMBRE_DE_BRAS ,' bras.';
-echo '<br><br>Donc, Personne 1 a aussi ', $personne1->getNbr2Bras() ,' yeux<br>', $personne1->boire().'<hr>';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+echo '<br><br>Chaque personne a ', Personne::NOMBRE_DE_BRAS, ' bras.';
+echo '<br><br>Donc, Personne 1 a aussi ', $personne1->getNbr2Bras(), ' yeux<br>', $personne1->boire() . '<hr>';
