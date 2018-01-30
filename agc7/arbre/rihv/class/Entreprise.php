@@ -9,7 +9,7 @@
 namespace Agc7\Arbre\Rihv;
 
 
-class Entreprise extends GroupeDev
+class Entreprise extends Groupe
 {
 
 }

@@ -36,10 +36,8 @@
   // Méthodes magiques __sleep() & __wakeup()
   // include 'dormeur.php';
 
-
   // Classes abstraites et finales
    include 'humains.php';
-
 
   // Iterator (Interface)
   // include 'iterator.php';
