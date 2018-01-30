@@ -1,7 +1,7 @@
 <!--# HV - Hierarchic View ()-->
 <!--#### Vertical Hierarchic View of a tree from PHP POO script with only CSS-->
 
-# Guide install MDB Gulp
+# Install MDB Gulp
 
 Use dépot git...css tree viewer
 
@@ -11,13 +11,15 @@ Based on MDB framework
 ## Install
 
 ### Prerequies:
-- ** [Nodejs](www.nodejs.org) **
-- ** Ungit ** (En console: ```npm install -g ungit```)
-- ** GULP ** (En console: ```npm install gulp -g```)
-- ** [MDB-Gulp](https://mdbootstrap.com/download/mdb-free/h97JCZaRDPSyMAzTUtEIKD2lXz/MDB-Gulp-Free.zip) **
+- **[Nodejs](www.nodejs.org)**
+- **Ungit** (En console: ```npm install -g ungit```)
+- **GULP** (En console: ```npm install gulp -g```)
+- **[MDB-Gulp](https://mdbootstrap.com/download/mdb-free/h97JCZaRDPSyMAzTUtEIKD2lXz/MDB-Gulp-Free.zip)**
 
 ### Tools
-- Brackets with some plugins (Autosave)
+- Visual Studio Editor
+- Or Brackets
+with some plugins (Autosave, Ungit, etc...)
 
 ### Dev
 Don't hesitate to fork this depository to contribute as you want
