@@ -11,5 +11,5 @@ namespace Agc7\Arbre\Rihv;
 
 class Entreprise extends Groupe
 {
-
+  
 }

@@ -13,6 +13,7 @@ class MaClasse implements Iterator {
 	}
 
 	public function key() {
+		
 		return $this->n + 1;
 	}
 

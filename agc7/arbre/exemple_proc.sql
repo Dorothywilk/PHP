@@ -59,7 +59,7 @@ INSERT INTO `parent` (`lien`, `nom`) VALUES
 
  --------------*/
 SELECT *
-FROM parent
+FROM arbre.parent
 ORDER BY lien, id;
 /*--------------
 

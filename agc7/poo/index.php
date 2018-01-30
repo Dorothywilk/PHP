@@ -17,11 +17,14 @@
 
     <?php
 
-  // Simple classe
-  // include 'personne.php';
     
+
+  // Simple classe
+  include 'personne.php';
+
   // Classe Mère & classe fille
-  //include 'vehicule.php';
+  include 'vehicule.php';
+
 
   // Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
   // include 'kid.php';
@@ -48,7 +51,6 @@
   echo str_repeat( '<br>&nbsp;', 5 );
 
   ?>
-      oOo
   </div>
 </body>
 

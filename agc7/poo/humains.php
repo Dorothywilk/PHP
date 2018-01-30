@@ -19,6 +19,8 @@ var_dump($oAlice);
  * @return void
  */
 function aff($personne) {
+
+	
 	$personne->faireDuSport();
 	echo '<br/>';
 	$personne->seDivertir();
