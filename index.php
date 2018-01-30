@@ -29,14 +29,16 @@
     <div class="main">
 
       <?php
-      
+
       // ToDoLi https://www.codecademy.com/courses/learn-html-elements/lessons/common-html-elements/exercises/headings-html?action=lesson_resume&course_redirect=learn-html
-      
+
       // ToDoDo https://www.codecademy.com/courses/learn-html-elements/lessons/intro-to-html/exercises/doctype-html?action=lesson_resume&course_redirect=learn-html
-      
-    include './tuto/cours.php';
-//      include ('cours/coursmooc.php');
-    ?>
+
+      include './tuto/cours.php';
+      // include ('cours/coursmooc.php');
+
+      ?>
+
   </article>
 
   <footer class="footerDo ">
@@ -47,5 +49,5 @@
   </div>
 </body>
 
-  
+
 </html>

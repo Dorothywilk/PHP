@@ -1,3 +1,7 @@
+
+At the end of the used php.ini
+(Find it with a simple phpinfo(); in a php file)
+
 zend_extension = C:\laragon\bin\php\php-7.1.7-Win32-VC14-x64\ext\php_xdebug-2.6.0RC2-7.1-vc14-x86_64.dll
 
 [XDebug]
