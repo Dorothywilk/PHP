@@ -106,5 +106,5 @@ Homestead.json
 
 .vscode/
 
-.vscode/
-
+/assets/css/combined.css
+/assets/css/gc7.css
