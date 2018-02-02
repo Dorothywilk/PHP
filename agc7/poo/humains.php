@@ -1,6 +1,5 @@
 <?php
-
-include '../class/EtreHumain.php';
+include './class/EtreHumain.php';
 
 $oAlice = new Femme('Alice');
 aff($oAlice);

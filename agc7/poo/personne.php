@@ -1,7 +1,7 @@
 <?php
 namespace gc7;
 
-include '../class/Personne.php';
+include './class/Personne.php';
 
 $personne1 = new Personne();
 $personne2 = new Personne();

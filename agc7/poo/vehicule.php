@@ -1,7 +1,7 @@
 <?php namespace Gc7;
 
-include '../class/vehicule.php';
-include '../class/voiture.php';
+include './class/vehicule.php';
+include './class/voiture.php';
 
 
 $maVoiture = new Voiture('Peugeot');

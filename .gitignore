@@ -82,7 +82,9 @@ crashlytics-build.properties
 fabric.properties
 ### Laravel template
 vendor/
+
 node_modules/
+package-lock.json
 npm-debug.log
 
 # Laravel 4 specific
@@ -101,3 +103,8 @@ Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+.vscode/
+
+.vscode/
+

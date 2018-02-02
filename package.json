@@ -1,0 +1,36 @@
+{
+  "name": "do",
+  "version": "1.0.0",
+  "description": "Projet d'apprentissage de diverses technologies web (PHP, POO, MySQL, CSS, etc...)",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp-connect-php": "^1.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-error-notifier": "^1.1.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-minifier": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-shorthand": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c57fr/Do.git"
+  },
+  "keywords": [
+    "PHP"
+  ],
+  "author": "GC7",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c57fr/Do/issues"
+  },
+  "homepage": "https://github.com/c57fr/Do#readme"
+}
