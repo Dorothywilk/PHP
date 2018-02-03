@@ -1,18 +1,15 @@
-<h3>Kid</h3><?php
+<?php namespace Gc7;
 
 include './class/Kid.php';
 
-$property = 'age';
-$value    = 14;
+echo '<h1>Kid</h1>';
 
 
-// echo ('age' === $property);
 
 $billy          = new Kid();
-$billy->age     = 14;
-$billy->cheveux = 'noirs';
+$billy->age     = '14a';
 
-echo 'Billy est agé de ', $billy->age, ' ans <br><br>et ses cheveux sont de couleur <hr>', $billy->cheveux;
+echo 'Billy est agé de ', $billy->age, ' ans et ses cheveux sont de couleur ', $billy->cheveux;
 
 // La propiété age est gérée par la classe, même si pas défini dans les propiété de la classe.
 

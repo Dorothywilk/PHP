@@ -1,5 +1,4 @@
 body {
-  /*background-color: wheat;*/
   font-size: 1em; }
 
 hr {
@@ -17,10 +16,6 @@ hr {
 
 .mainPoo {
   margin-top: 40px; }
-
-.ui.header:first-child {
-  margin-top: 10px;
-  /* margin-left: 10px;*/ }
 
 .gc7 .ui.message {
   /* margin-right: 100px;*/
@@ -68,7 +63,7 @@ a.navbar-brand:hover, a.navbar-brand:visited {
   height: 5px;
   font-weight: 800;
   padding: 25px 20px 25px 0 !important;
-  text-shadow: 0 0 10px red, 0 0 10px red;
+  text-shadow: 0 0 10px red, 0 0 10px red;
   margin: 0; }
 
 .navbar .navbar-brand {
@@ -98,7 +93,7 @@ div.navLi {
   /*margin: 7px 0 10px;*/
   top: 0;
   margin: 0 0 10px 0;
-  padding-top: 4px;
+  padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
   /*color: blue;*/
@@ -164,9 +159,6 @@ g {
 .float-left {
   width: 85%; }
 
-hr {
-  background-color: #000; }
-
 .pt0 {
   padding-top: 0; }
 
@@ -231,4 +223,5 @@ h1.meaDo > a:hover {
 .ti {
   font-style: italic; }
 
-/*# sourceMappingURL=gc7.css.map */
+.mt55 {
+  margin-top: 55px; }

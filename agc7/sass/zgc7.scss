@@ -1,6 +1,4 @@
 body {
-  /*background-color: wheat;*/
-
   font-size: 1em;
 }
 
@@ -24,8 +22,8 @@ hr {
 }
 
 .ui.header:first-child {
-  margin-top: 10px;
-  /* margin-left: 10px;*/
+  //margin-top: 10px;
+  ///* margin-left: 10px;*/
 }
 
 .gc7 .ui.message {
@@ -120,7 +118,7 @@ div.navLi {
   /*margin: 7px 0 10px;*/
   top: 0;
   margin: 0 0 10px 0;
-  padding-top: 4px;
+  padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
   /*color: blue;*/
@@ -202,10 +200,6 @@ g {
   width: 85%;
 }
 
-hr {
-  background-color: #000;
-}
-
 .pt0 {
   padding-top: 0;
 }
@@ -284,4 +278,8 @@ h1.meaDo > a:hover {
 
 .ti {
   font-style: italic;
+}
+
+.mt55 {
+  margin-top: 55px;
 }

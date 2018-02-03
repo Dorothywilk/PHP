@@ -53,7 +53,7 @@
     <div class="ui divider"></div>
     
     <p class="justify">
-      <img src="assets/images/picture3.jpg" alt="" id="tof" class="ui right floated image">
+      <img src="agc7/assets/img/picture3.jpg" alt="" id="tof" class="ui right floated image">
       <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea placeat, excepturi. Facili</span>
 
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Tenetur eius nulla doloribus atque laudantium
@@ -78,4 +78,3 @@
 <div class="ui bottom attached tab segment" data-tab="appGC7">
   <h3>App GC7</h3>
 </div>
-	

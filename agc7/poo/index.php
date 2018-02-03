@@ -1,4 +1,3 @@
-use gc7\personne;
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,7 +11,8 @@ use gc7\personne;
 
 <body>
 <div class="navLi mtnav">
-	<a href="/">Do</a> | P.O.O.
+	<a href="/">Do</a> |
+	<a href="/agc7">AC7</a> | P.O.O.
 </div>
 <hr>
 <div class="maingc7 mainPoo">
@@ -21,10 +21,10 @@ use gc7\personne;
 
 
 	// Simple classe
-	 include 'personne.php';
+	//include 'personne.php';
 
 	// Classe Mère & classe fille
-	// include 'vehicule.php';
+	//include 'vehicule.php';
 
 	// Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
 	//include 'kid.php';
@@ -40,7 +40,7 @@ use gc7\personne;
 	// include 'dormeur.php';
 
 	// Classes abstraites et finales
-	//  include 'humains.php';
+	  include 'humains.php';
 
 	// Iterator (Interface)
 	// include 'iterator.php';

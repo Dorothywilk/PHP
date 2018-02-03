@@ -1,5 +1,4 @@
-<?php
-namespace Gc7;
+<?php namespace Gc7;
 
 class Vehicule
 {

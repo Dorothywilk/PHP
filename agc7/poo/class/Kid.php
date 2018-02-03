@@ -1,5 +1,6 @@
-<?php
-namespace Gc7;
+<?php namespace Gc7;
+
+use Exception;
 
 class Kid {
 
@@ -10,6 +11,8 @@ class Kid {
 	 * @access public
 	 */
 	private $age;
+	protected  $cheveux = 'noir';
+
 
 	/** Protected => Sera utilisable par classe fille
 	 *
@@ -64,7 +67,11 @@ class Kid {
 			$this->age = (int) $value;
 		}
 		else {
-			throw new Exception( 'Propriété ou valeur invalide !' );
+
+			echo '<h2>Attention: age doit être une valeur numérique !</h2>
+<p>On lui attribue 14<hr></p>';
+			$this->age = 14;
+			//throw new Exception( 'Propriété ou valeur invalide !' );
 		}
 	}
 }

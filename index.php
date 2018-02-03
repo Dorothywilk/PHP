@@ -11,6 +11,7 @@
 
   <!-- <link rel="stylesheet" href="/assets/css/mdb.min.css"> -->
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/combined.css">
 </head>
 
 <body>

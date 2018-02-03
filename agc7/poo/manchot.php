@@ -10,7 +10,8 @@ class Manchot {
 	 * @return void
 	 * @access private
 	 */
-	public function __call( $method, $arguments ) {
+	public function __call( $method, $arguments )
+	{
 		echo 'Vous avez appelé la méthode ', $method, ' avec les arguments : ', implode( ', ', $arguments );
 	}
 }
@@ -18,7 +19,7 @@ class Manchot {
 $george = new Manchot();
 $george->voler( 'Afrique', 123, 'abc' );
 
-echo '<hr><hr>';
+echo '<hr>';
 
 
 class SearchEngine {
@@ -31,7 +32,8 @@ class SearchEngine {
 	 * @return array $return Tableau des résultats
 	 * @see SPDO
 	 */
-	public function search( $conditions = [ ] ) {
+	public function search( $conditions = [ ] )
+	{
 		$query = 'SELECT id FROM table';
 
 		if ( count( $conditions ) > 0 ) {
@@ -57,11 +59,8 @@ class SearchEngine {
 	 * @return array|null $return Tableau des résultats ou NULL
 	 * @see SearchEngine::search()
 	 */
-	public function __call( $method, $args ) {
-
-		echo '<pre>';
-		//echo var_dump( debug_backtrace() );
-		echo '</pre>';
+	public function __call( $method, $args )
+	{
 
 		if ( preg_match( '#^searchBy#i', $method ) ) {
 			$searchConditions = str_replace( 'searchBy', '', $method );
@@ -83,5 +82,4 @@ class SearchEngine {
 }
 
 $mySearchEngine = new SearchEngine();
-echo '$mySearchEngine->searchByNameAndDate( \'Lionel\', \'23/03/1965\' ) :<pre>' . $mySearchEngine->searchByNameAndDate( 'Lionel',
-                                                                                                                         '23/03/1965' ) . '</pre>';
+echo '$mySearchEngine->searchByNameAndDate( \'Lionel\', \'23/03/1965\' ) :<br><br>' . $mySearchEngine->searchByNameAndDate( 'Lionel', '23 / 03 / 1965' );

@@ -5,19 +5,22 @@ var gulp = require('gulp'),
     shorthand = require('gulp-shorthand'),
     cleanCss = require('gulp-clean-css'),
     minify = require('gulp-minifier'),
-    connectphp = require('gulp-connect-php');
-imagemin = require('gulp-imagemin');
+    connectphp = require('gulp-connect-php'),
+    imagemin = require('gulp-imagemin');
 
 gulp.task('serve', ['css'], function () {
-    connectphp.server({}, function () {
+    connectphp.server({
+        //baseDir: 'agc7',
+        //index: 'index.php'
+    }, function () {
         browserSync({
-            proxy: '127.0.0.1:8000',
+            proxy: '127.0.0.1:8000/agc7'
         });
     });
-    gulp.watch('agc7/sass/**/*.scss', ['css']);
-    gulp.watch('agc7/**/*.php', browserSync.reload);
-    gulp.watch('agc7/**/*.html', browserSync.reload);
-    gulp.watch('agc7/img/**/*', ['img']);
+    gulp.watch('./agc7/sass/**/*.scss', ['css']);
+    gulp.watch('./agc7/**/*.php', browserSync.reload);
+    gulp.watch('./agc7/**/*.html', browserSync.reload);
+    gulp.watch('./agc7/img/**/*', ['img']);
 });
 
 gulp.task('css', function () {
@@ -25,7 +28,7 @@ gulp.task('css', function () {
 
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(sass())
-        .pipe(gulp.dest('./assets/css'))
+        .pipe(gulp.dest('./agc7/assets/css'))
 
         .pipe(shorthand())
 
@@ -49,7 +52,7 @@ gulp.task('css', function () {
             }
         }))
 
-        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('./agc7/assets/css'))
 
         .pipe(browserSync.reload({
             stream: true
@@ -57,9 +60,9 @@ gulp.task('css', function () {
 });
 
 gulp.task('img', function () {
-    gulp.src('agc7/img/**/*')
+    gulp.src('./agc7/img/**/*')
         .pipe(imagemin({verbose: true}))
-        .pipe(gulp.dest('assets/img'))
+        .pipe(gulp.dest('./agc7/assets/img'))
 });
 
 gulp.task('default', ['serve', 'img']);
