@@ -1,7 +1,5 @@
 <?php namespace Gc7;
 
-include './class/HommeFemme.php';
-
 abstract class EtreHumain {
 	/**
 	 * Sexe de la personne

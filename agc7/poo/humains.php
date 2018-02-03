@@ -1,23 +1,29 @@
-<?php
-include './class/EtreHumain.php';
+<?php namespace Gc7;
 
-$oAlice = new Femme('Alice');
-aff($oAlice);
+include './class/EtreHumain.php';
+include './class/HommeFemme.php';
+
+echo '<h1>Classes abstraites et finales</h1>';
+
+$oAlice = new Femme( 'Alice' );
+aff( $oAlice );
 
 echo '<br/><hr><br/>';
 
-$oBob = new Homme('Bobby');
-aff($oBob);
+$oBob = new Homme( 'Bobby' );
+aff( $oBob );
 
-var_dump($oAlice);
+var_dump( $oAlice );
 
 /**
  * Affiche ce que fait une personne
  *
  * @param [type] $personne
+ *
  * @return void
  */
-function aff($personne) {
+function aff( $personne )
+{
 
 	
 	$personne->faireDuSport();

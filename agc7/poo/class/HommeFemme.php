@@ -1,4 +1,4 @@
-<?php
+<?php namespace Gc7;
 
 final class Homme extends EtreHumain
 {
