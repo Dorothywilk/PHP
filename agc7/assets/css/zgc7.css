@@ -233,7 +233,6 @@ h1.meaDo > a:hover {
   border-radius: 4px; }
 
 #poo .select-dropdown li.disabled, #poo .select-dropdown li.disabled > span {
-  line-height: 2em;
   color: #333;
   font-style: italic;
   background-color: #ffeb7c !important; }
