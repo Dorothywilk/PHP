@@ -18,6 +18,7 @@ gulp.task('serve', ['css'], function () {
         });
     });
     gulp.watch('./agc7/sass/**/*.scss', ['css']);
+    gulp.watch('./agc7/js/*.js', browserSync.reload);
     gulp.watch('./agc7/**/*.php', browserSync.reload);
     gulp.watch('./agc7/**/*.html', browserSync.reload);
     gulp.watch('./agc7/img/**/*', ['img']);

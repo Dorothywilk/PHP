@@ -6,7 +6,7 @@
 	<title>P.O.O.</title>
 	<link rel="stylesheet"
 	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-	<!--<link rel="stylesheet" href="../agc7/assets/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/mdb.min.css">
 	<link rel="stylesheet" href="../assets/css/combined.css">
 </head>
@@ -17,10 +17,17 @@
 	<a href="/agc7">AC7</a> | P.O.O.
 </div>
 <hr>
-<div class="maingc7 mainPoo">
+<div class="maingc7 mainPoo" id="poo">
 
 	<div class="container-fluid">
 		<br>
+
+		<div id="dejaChoix">
+			<?php
+			$_POST[ 'choix' ] =789;
+			echo $_POST[ 'choix' ] . "\n";
+			?>
+		</div>
 
 		<div class="row">
 
@@ -28,28 +35,35 @@
 
 				<form action="index.php" method="post">
 
+
 					<select name='choix' onchange='this.form.submit()' class="mdb-select" id="choix">
-						<option disabled>oOo</option>
-						<option>personne</option>
-						<option>vehicule</option>
+						<!--<option disabled id="sujet">Sujet</option>-->
 					</select>
-					<label>Choix de la fonction POO</label>
+					<label for="choix">Choix de la fonction POO</label>
+
 
 				</form>
 
+				<br><br><br><br>
 
-				<div id="sujet"></div>
+				<hr>
+
+				<div id="test"></div>
 
 			</div>
 
 
 			<div class="col">
+				<p id="description"></p>
 				<?php
-				var_dump( $_POST );
+				//var_dump( $_POST );
 				if ( count( $_POST ) ) {
 					echo $_POST[ 'choix' ];
 				}
 				?>
+
+				<hr>
+
 			</div>
 
 		</div>
@@ -94,40 +108,10 @@
 <script src="../assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-	$(document).ready(function () {
-		// Animations init
-		new WOW().init();
-
-		var requestURL ='poo.json';
-
-		var content = '<hr>Oki2';
-
-		$('#sujet').addClass('cr').append(requestURL).append(content);
-		$('#sujet').removeClass('cr').html(requestURL);
-
-
-		$('.mdb-select').material_select('destroy');
-		$('.mdb-select').material_select();
-
-		//$('form').addClass('cr'); // Cadre Rouge
-
-		$(".select-dropdown").click();
-		$(".select-dropdown").click();
-
-		$(".select-dropdown").mouseover(function () {
-			//console.log('enter');
-			$("ul").css('display', 'block');
-			$("ul").css('opacity', 1);
-		});
-		$(".select-dropdown").mouseout(function () {
-			//console.log('out');
-			$("ul").css('display', 'none');
-		});
-
-	});
-
-</script>
+<?php
+include './poojs.php';
+?>
+<!--<script src="../js/poo.js" type="text/javascript"></script>-->
 </body>
 
 </html>

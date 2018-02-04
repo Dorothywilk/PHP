@@ -214,7 +214,6 @@ h1.meaDo > a {
 h1.meaDo > a:hover {
   color: red;
   text-decoration: none;
-  text-shadow: 0 0 10px #880000;
   text-shadow: -1px 2px 3px orange, -2px 3px 5px #ff1813, -3px 4px 10px #000; }
 
 .tac {
@@ -232,3 +231,14 @@ h1.meaDo > a:hover {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px; }
+
+#poo .select-dropdown li.disabled, #poo .select-dropdown li.disabled > span {
+  color: #333;
+  font-style: italic;
+  background-color: #ffeb7c !important; }
+
+#poo #test {
+  color: #2582ff; }
+
+#poo #dejaChoix {
+  display: none; }

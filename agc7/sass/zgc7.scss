@@ -268,7 +268,7 @@ h1.meaDo > a {
 h1.meaDo > a:hover {
   color: red;
   text-decoration: none;
-  text-shadow: 0 0 10px #880000;
+  //text-shadow: 0 0 10px #880000;
   text-shadow: -1px 2px 3px orange, -2px 3px 5px #ff1813, -3px 4px 10px #000;
 }
 
@@ -290,4 +290,40 @@ h1.meaDo > a:hover {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+
+#poo {
+
+  .select-dropdown li.disabled, .select-dropdown li.disabled > span
+    //, .select-dropdown li.optgroup
+  {
+    color: #333;
+    font-style: italic;
+    background-color: #ffeb7c !important;
+  }
+
+  body p {
+    //color: blue;
+  }
+  #test {
+    color: #2582ff;
+  }
+  //
+  //#selectTest {
+  //  width:300px;
+  //  display:block;
+  //  margin-top:50px;
+  //  background-color: #f00;
+  //  color:#111;
+  //}
+
+  #dejaChoix {
+    display: none;
+  }
+
+  //ul {
+  //  display: block;
+  //  opacity: 1;
+  //}
+
 }
