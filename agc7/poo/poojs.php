@@ -45,23 +45,20 @@
 		//});
 		//console.log('s: ', s);
 
-
-
-
 		var html = '';
 		var disabled = '';
 
 //		var html = '<option disabled id="sujet">Sujet</option>';
 		$.each(sujets, function (k, v) {
+
 			if (!k) {
 				i = nbreSujets;
-				disabled = 'disabled';
 			} else {
 				i = k;
-				disabled = '';
 			}
+
 			//html += ('<option ' + ' ' + disabled + ' value="' + k + '" id="choix' + k + '" class="unChoix">' + i + ' ' + v.sujet + '</option>' + "\n");
-			html += ('<option ' + ' ' + disabled + ' value="' + k + '">' + i + ' ' + v.sujet + '</option>' + "\n");
+			html += ('<option ' + ' ' + ' value="' + k + '">' + i + ' ' + v.sujet + '</option>' + "\n");
 		});
 		console.log('html: ' + html);
 
@@ -72,6 +69,7 @@
 		$('.mdb-select').material_select();
 		var sdChoix = $('.select-dropdown');
 		sdChoix.append(html);
+		$('.select-dropdown li:first').addClass('disabled');
 
 		//var sdChoix = $('.mb-select');
 
@@ -106,13 +104,12 @@
 		/**
 		 * Select-dropdown du choix
 		 *
+
 		 * @type {*|jQuery|HTMLElement}
 		 */
 			//$(sdChoix).css('border', '1px solid #000'); // Cadre noir
 
 			//$(sdChoix).click();
-//		$('.select-dropdown li:first').addClass('disabled');
-
 			//$('#test').text('Choisir un autre sujet');
 
 			//sdChoix.click();
