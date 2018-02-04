@@ -6,9 +6,9 @@
 
 		var sujets = [
 			{
-				fichier: 'personne',
+				fichier: 'noChoix',
 				sujet: 'Sujets',
-				description: 'Détail du contenu de personne.php...'
+				description: 'Attente de choix...'
 			},
 			{
 				fichier: 'personne',
@@ -21,46 +21,78 @@
 				description: 'Détail du contenu de vehicule.php :...'
 			}
 		];
-
 		var nbreSujets = sujets.length - 1;
-		var html = '';
-		//var disabled = '';
 
-		//console.log(sujets[1]);
+		var file = "<?php echo ($_POST['choix'][0]); ?>";
+		console.log('file ($_POST): ' + file);
+		//console.log(sujets);
+
+		var result = $.grep(sujets, function (e) {
+			return e.fichier == file;
+		});
+
+		var s = {};
+		$.each(result[0], function (k, v) {
+			window[k] = v;
+		});
+		console.log('sujet: ', sujet);
+		console.log('fichier: ', fichier);
+		console.log('description: ', description);
+
+		//var s = {};
+		//$.each(result[0], function (k, v) {
+		//	s[k] = v;
+		//});
+		//console.log('s: ', s);
+
+
+
+
+		var html = '';
+		var disabled = '';
 
 //		var html = '<option disabled id="sujet">Sujet</option>';
-
 		$.each(sujets, function (k, v) {
-			//disabled = (k) ? '' : 'doisabled';
-			if (!k) i = nbreSujets; else i = k;
-			html += ('<option ' + ' value="' + k + '" id="choix' + k + '" class="unChoix">' + i + ' ' + v.sujet + '</option>' + "\n");
+			if (!k) {
+				i = nbreSujets;
+				disabled = 'disabled';
+			} else {
+				i = k;
+				disabled = '';
+			}
+			//html += ('<option ' + ' ' + disabled + ' value="' + k + '" id="choix' + k + '" class="unChoix">' + i + ' ' + v.sujet + '</option>' + "\n");
+			html += ('<option ' + ' ' + disabled + ' value="' + k + '">' + i + ' ' + v.sujet + '</option>' + "\n");
 		});
-		console.log(html);
-
-		$('#choix').append(html);
+		console.log('html: ' + html);
 
 
-		if ($('#dejaChoix').text() == 'abc') console.log('pas encore');
+		// Plus utile mais peut resservir + tard
+		//$('.mdb-select').material_select('destroy');
 
-		console.log($('text' + '#dejaChoix').text());
-		console.log('val' + $('#dejaChoix').val());
-		console.log($('#dejaChoix'));
-
-		// $('.mdb-select').material_select('destroy');
 		$('.mdb-select').material_select();
+		var sdChoix = $('.select-dropdown');
+		sdChoix.append(html);
 
-		var n = <?php echo ($_POST['choix']+11) ?>;
-		console.log(n+100);
+		//var sdChoix = $('.mb-select');
+
+		//$(sdChoix).click();
+		//$(sdChoix).click();
+		sdChoix.click();
+
+		//if ($('#dejaChoix').text() == 'Choix : Pas encore') console.log('pas encore');
+		//console.log($.trim($('#dejaChoix').text()));
+		//var item = $.trim($('#dejaChoix').text());
+		//console.log(item);
 
 
 		//$("ul").css('display', 'block')
 		//	.css('opacity', 1);
 
 
-		var test = $('#test'),
-			content = $('#dejaChoix').text();
-		test.addClass('cr');
-		test.html(content);
+		//var test = $('#test'),
+		//	content = $('#dejaChoix').text();
+		//test.addClass('cr');
+		//test.html(content);
 
 
 		//test.html(sujets.join('<hr>'));
@@ -70,24 +102,22 @@
 		//$('#sujet').append(content);
 		//$('#sujet').removeClass('cr').html(requestURL);
 
-		// Plus utile mais peut resservir + tard
 
 		/**
 		 * Select-dropdown du choix
 		 *
 		 * @type {*|jQuery|HTMLElement}
 		 */
-		var sdChoix = $('.select-dropdown');
-		//$(sdChoix).css('border', '1px solid #000'); // Cadre noir
+			//$(sdChoix).css('border', '1px solid #000'); // Cadre noir
 
-		$(sdChoix).click();
-		$('.select-dropdown li:first').addClass('disabled');
+			//$(sdChoix).click();
+//		$('.select-dropdown li:first').addClass('disabled');
 
-		//$('#test').text('Choisir un autre sujet');
+			//$('#test').text('Choisir un autre sujet');
 
+			//sdChoix.click();
 
-		//sdChoix.click();
-		//$('input[type=text]').val('Sujet');
+			//$('input[type=text]').val('Sujet');
 
 
 		$(sdChoix).mouseout(function (e) {
@@ -113,8 +143,9 @@
 			console.log('click');
 		})
 			.mouseover(function (e) {
-				var target = e.target.innerText;
+				var target = e.target;
 
+				console.log(target.innerText);
 				//console.log(target);
 
 

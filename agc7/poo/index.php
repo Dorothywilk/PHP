@@ -24,8 +24,12 @@
 
 		<div id="dejaChoix">
 			<?php
-			$_POST[ 'choix' ] =789;
-			echo $_POST[ 'choix' ] . "\n";
+			echo 'Choix Réel: ' . ( ! isset( $_POST[ 'choix' ][ 0 ] ) ? 'Rien' : $_POST[ 'choix' ][ 0 ] ) . '<br>';
+
+			$_POST[ 'choix' ] = [ 'noChoix' ];
+			//$_POST[ 'choix' ] = [ 'personne' ];
+			//$_POST[ 'choix' ] = [ 'vehicule' ];
+			echo 'Choix test: ' . $_POST[ 'choix' ][ 0 ];
 			?>
 		</div>
 
@@ -35,9 +39,8 @@
 
 				<form action="index.php" method="post">
 
-
 					<select name='choix' onchange='this.form.submit()' class="mdb-select" id="choix">
-						<!--<option disabled id="sujet">Sujet</option>-->
+						<!--<option disabled id="sujet">Sujets</option>-->
 					</select>
 					<label for="choix">Choix de la fonction POO</label>
 
@@ -54,18 +57,33 @@
 
 
 			<div class="col">
-				<p id="description"></p>
+				<p id="description">Description:</p>
 				<?php
+				//if ( count( $_POST ) ) {
+				//	echo $_POST[ 'choix' ];
+				//}
+				//else {
+				//	$_POST[ 'choix' ] = [ 'personne' ];
+				//	include 'personne.php';
+				//}
 				//var_dump( $_POST );
-				if ( count( $_POST ) ) {
-					echo $_POST[ 'choix' ];
-				}
 				?>
 
 				<hr>
 
 			</div>
 
+		</div>
+		<div class="row md-12">
+			<?php
+			if ( count( $_POST ) ) {
+				include $_POST[ 'choix' ][ 0 ] . '.php';
+				//var_dump( $_POST[ 'choix' ] );
+			}
+			else {
+			}
+			//var_dump( $_POST );
+			?>
 		</div>
 	</div>
 	<?php
