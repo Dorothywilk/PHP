@@ -24,12 +24,24 @@
 
 		<div id="dejaChoix">
 			<?php
-			echo 'Choix Réel: ' . ( ! isset( $_POST[ 'choix' ][ 0 ] ) ? 'Rien' : $_POST[ 'choix' ][ 0 ] ) . '<br>';
-
-			$_POST[ 'choix' ] = [ 'noChoix' ];
+			//unset($_POST);
+			//$_POST[ 'choix' ] = [ 'noChoix' ];
 			//$_POST[ 'choix' ] = [ 'personne' ];
 			//$_POST[ 'choix' ] = [ 'vehicule' ];
-			echo 'Choix test: ' . $_POST[ 'choix' ][ 0 ];
+
+			//if ( ! isset( $_POST[ 'choix' ][ 0 ] ) ) {
+			//	echo 'nothing';
+			//	$_POST[ 'choix' ] = [ 'noChoix' ];
+			//}
+			//else {
+			//	echo 'value';
+			//	$choixReel = $_POST[ 'choix' ][ 0 ];
+			//}
+			//
+			//echo 'ChoixReel: ' . $choixReel . '<br>';
+			//echo 'Choix: ' . $_POST[ 'choix' ][ 0 ] . '<br>';
+
+
 			?>
 		</div>
 
@@ -40,7 +52,7 @@
 				<form action="index.php" method="post">
 
 					<select name='choix' onchange='this.form.submit()' class="mdb-select" id="choix">
-						<!--<option disabled id="sujet">Sujets</option>-->
+						<!--<option id="noChoix">Re-init Form</option>-->
 					</select>
 					<label for="choix">Choix de la fonction POO</label>
 
@@ -75,14 +87,17 @@
 
 		</div>
 		<div class="row md-12">
+			<div id="content">
+
+			</div>
 			<?php
-			if ( count( $_POST ) ) {
-				include $_POST[ 'choix' ][ 0 ] . '.php';
-				//var_dump( $_POST[ 'choix' ] );
-			}
-			else {
-			}
-			//var_dump( $_POST );
+			//if ( $_POST[ 'choix' ][ 0 ] <> 'noChoix' ) {
+			//	include $_POST[ 'choix' ][ 0 ] . '.php';
+			//	//var_dump( $_POST[ 'choix' ] );
+			//}
+			//else {
+			//}
+			////var_dump( $_POST );
 			?>
 		</div>
 	</div>
@@ -118,7 +133,7 @@
 	// include '../class/OneTrait.php';
 
 	echo str_repeat( '<br>&nbsp;', 5 );
-
+$maVal = 777;
 	?>
 </div>
 
