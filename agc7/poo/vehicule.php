@@ -3,7 +3,6 @@
 include './class/vehicule.php';
 include './class/voiture.php';
 
-$maVal=789;
 
 $maVoiture = new Voiture('Peugeot');
 $maVoiture->demarrer();

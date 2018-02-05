@@ -232,10 +232,15 @@ h1.meaDo > a:hover {
   -moz-border-radius: 4px;
   border-radius: 4px; }
 
-#poo .select-dropdown li.disabled, #poo .select-dropdown li.disabled > span {
+#poo .select-dropdown li.disabled, #poo .select-dropdown li.disabled > span, #poo .select-dropdown li.optgroup, #poo .teteListe {
   color: #333;
   font-style: italic;
   background-color: #ffeb7c !important; }
+
+#poo .select-dropdown li.disabled.pl10, #poo .select-dropdown li.disabled > span.pl10, #poo .select-dropdown li.optgroup.pl10, #poo .teteListe.pl10 {
+  padding-left: 10px;
+  border-radius: 4px;
+  height: 2em; }
 
 #poo #test {
   color: #2582ff; }
@@ -244,3 +249,6 @@ h1.meaDo > a:hover {
   position: absolute;
   top: 5px;
   right: 10px; }
+
+#poo li:last-of-type {
+  color: red; }

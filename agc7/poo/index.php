@@ -23,24 +23,16 @@
 		<br>
 
 		<div id="dejaChoix">
+
 			<?php
-			//unset($_POST);
-			//$_POST[ 'choix' ] = [ 'noChoix' ];
-			//$_POST[ 'choix' ] = [ 'personne' ];
-			//$_POST[ 'choix' ] = [ 'vehicule' ];
+			//unset( $_POST );
+			//$_POST[ 'choix' ] = 2;
 
-			//if ( ! isset( $_POST[ 'choix' ][ 0 ] ) ) {
-			//	echo 'nothing';
-			//	$_POST[ 'choix' ] = [ 'noChoix' ];
-			//}
-			//else {
-			//	echo 'value';
-			//	$choixReel = $_POST[ 'choix' ][ 0 ];
-			//}
-			//
-			//echo 'ChoixReel: ' . $choixReel . '<br>';
-			//echo 'Choix: ' . $_POST[ 'choix' ][ 0 ] . '<br>';
-
+			if ( isset( $_POST ) && array_key_exists( 'choix', $_POST ) ) {
+				$choix = substr( $_POST[ 'choix' ], 0, min( strlen( $_POST[ 'choix' ] ), 2 ) );
+			}
+			else $choix = 0;
+			echo '$_POST[\'choix\'] : <b>' . $choix . '</b>';
 
 			?>
 		</div>
@@ -49,7 +41,8 @@
 
 			<div class="col">
 
-				<form action="index.php" method="post">
+				<!--<form id="choixForm" method="post" action="--><?php //echo $_SERVER['PHP_SELF']; ?><!--">-->
+				<form id="choixForm" method="post" action="">
 
 					<select name='choix' onchange='this.form.submit()' class="mdb-select" id="choix">
 						<!--<option id="noChoix">Re-init Form</option>-->
@@ -59,17 +52,14 @@
 
 				</form>
 
-				<br><br><br><br>
-
-				<hr>
+				<!--<br><br><br><br>-->
 
 				<div id="test"></div>
 
 			</div>
 
 
-			<div class="col">
-				<p id="description">Description:</p>
+			<div class="col" id="description">
 				<?php
 				//if ( count( $_POST ) ) {
 				//	echo $_POST[ 'choix' ];
@@ -80,8 +70,6 @@
 				//}
 				//var_dump( $_POST );
 				?>
-
-				<hr>
 
 			</div>
 
@@ -133,7 +121,7 @@
 	// include '../class/OneTrait.php';
 
 	echo str_repeat( '<br>&nbsp;', 5 );
-$maVal = 777;
+	$maVal = 777;
 	?>
 </div>
 

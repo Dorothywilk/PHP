@@ -299,14 +299,16 @@ h1.meaDo > a:hover {
 //}
 
 #poo {
-  .select-dropdown li.disabled, .select-dropdown li.disabled > span
-    //, .select-dropdown li.optgroup
-    //, #choix0
-  {
+  .select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup, .teteListe {
     //line-height: 2em;
     color: #333;
     font-style: italic;
     background-color: #ffeb7c !important;
+    &.pl10 {
+      padding-left: 10px;
+      border-radius: 4px;
+      height: 2em;
+    }
   }
 
   body p {
@@ -335,5 +337,9 @@ h1.meaDo > a:hover {
   //  display: block;
   //  opacity: 1;
   //}
+
+  li:last-of-type {
+    color: red;
+  }
 
 }
