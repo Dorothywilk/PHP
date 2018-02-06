@@ -32,17 +32,42 @@
 			{
 				fichier: 'personne',
 				sujet: 'Simple classe',
-				description: 'Détail du contenu de personne.php...'
+				description: "<h3>Class Personne</h3><br<ol><li>Propriétés et méthodes.</li><li>Constantes de classe</li><ol>"
 			},
 			{
 				fichier: 'vehicule',
 				sujet: 'Classe Mère & Fille (Héritage)',
-				description: 'Détail du contenu de vehicule.php :...'
+				description: '<h3>Classe Voiture extends Vehicule</h3>Mère & Fille (Héritage)<br><br>Une Voiture est un Vehicule'
+			},
+			{
+				fichier: 'kid',
+				sujet: 'Méthodes magiques __GET() & __SET()',
+				description: '<h3>Classe Kid</h3>Permet le contrôle pour l\'accès aux propriétés non public'
+			},
+			{
+				fichier: 'manchot',
+				sujet: 'Méthodes magiques __CALL()',
+				description: '<h3>Classe Manchot</h3></p><p>Méthode magique __CALL()</p><p>Appel d\'une méthode n\'existant pas</p>'
+			},
+			{
+				fichier: 'point',
+				sujet: 'Méthodes magiques __CLONE()',
+				description: '<h3>Classe Point</h3><p>Clone d\'un point( <code>clone ($oPt);</code> )</p><p>Méthode magique __CLONE()</p><p>Singleton</p>'
+			},
+			{
+				fichier: 'dormeur',
+				sujet: 'Méthodes magiques __SLEEP() & __WAKEUP()',
+				description: '<h3>Classe Dormeur</h3><ol><li><code>__sleep()</code> Appelée lors d’un <code>serialize()</code></li> <li><code>__wakeup()</code> Appelée lors d’un <code>unserialize()</code></li></ol>'
+			},
+			{
+				fichier: 'humains',
+				sujet: 'Classe abstraite & classe finale',
+				description: '<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br>'
 			}
 		];
 		var nbreSujets = sujets.length - 1;
 
-		var choix = parseInt("<?= $choix ?>");
+		var choix = parseInt("<?=$choix?>");
 
 		var s = sujets[choix];
 
@@ -58,7 +83,7 @@
 				h += '<option>' + i + ' ' + v.sujet + '</option>' + "\n";
 			});
 			console.log('html: ' + h);
-			$('#choix').append(h);
+			$('#choix').html(h);
 
 			// Plus utile mais peut resservir + tard
 			//$('.mdb-select').material_select('destroy');
@@ -75,10 +100,19 @@
 
 		if (choix > 0) {
 
-			$("#description").text(s.description);
-			$("#content").load('./' + s.fichier + '.php', {
-				$_POST: [choix]
-			});
+
+			console.log(gt(s.description));
+
+			console.log($("#description"));
+
+			$("#description").html(s.description);
+
+			// Todoli
+			// Ici insertion code source du fichier de base
+			// Plus tard, aussi des fichiers compl (Par ex., des classes)">
+
+			$("#content").load('./' + s.fichier + '.php', {$_POST: [choix]});
+
 		}
 
 		else {
@@ -215,8 +249,8 @@
 					//$("#content").load('./' + s.fichier + '.php', {
 					//	$_POST: [cible]
 					//});
-					$("#description").text(s.description);
-					$('#content').text('');
+					$("#description").html(s.description);
+					$('#content').html('');
 
 					//if (over[0].fichier !== 'noChoix') {
 					//}
@@ -252,7 +286,7 @@
 				//$("ul").css('display', 'none');
 				//$("#content").load('./' + s[0].fichier + '.php', {
 				//	$_POST: [choix]});
-				$("#description").text(s.description);
+				$("#description").html(s.description);
 			} else {
 				$('#description').text('');
 				$('#content').text('');
@@ -281,10 +315,10 @@
 		$('#choixForm').on('mouseout', function () {
 
 			console.log('Sortie des choixxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', s);
-			$("#description").text(s.description);
-			$("#content").load('./' + s.fichier + '.php', {
-				$_POST: [choix]
-			});
+			$("#description").html(s.description);
+			// $("#content").load('./' + s.fichier + '.php', {
+				// $_POST: [choix]
+			// });
 		});
 		/**
 		 * Nous reprenons notre exemple de formulaire de connexion
@@ -302,7 +336,15 @@
 		//});
 		//console.log('sujets2', sujets);
 		//console.log('fichier2', over2[0]);
-
+		//
+		//$('ul').css("border","2px solid green")
+		//	.on("mouseout", function(){
+		//		$(this).css("border","20px solid green");
+		//		//$(this).css('opacity', '0');
+		//		//$('.select-dropdown').click();
+		//		console.log(456);
+		//		//e.preventDefault();
+		//	});
 
 		//$('ul > li:not(:first)').css('display','none');
 

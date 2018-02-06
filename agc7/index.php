@@ -31,19 +31,19 @@
 	<article>
 
 		<?php include './installation.php';
-		// ToDoLi Remettre http://localhost/t/a_tester/ac7/ateam/mooc/index.php ds tuto/ ?>
+// ToDoLi Remettre http://localhost/t/a_tester/ac7/ateam/mooc/index.php ds tuto/ ?>
 
 	</article>
 
+</div>
 	<footer>
-		<hr> &copy;2017-2018 - GC7 | <a href="https://github.com/GrCOTE7/Do" target="_blank"><i
-				class="github icon"></i></a>
-	</footer>
+			<a href="https://github.com/c57fr/Do" target="_blank">Vous <u>devez</u> contribuer <i
+				class="github icon"></i> !</a> | &copy;2017-2018 - GC7
 	<script src="agc7/assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="agc7/assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="agc7/assets/j s/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="agc7/assets/j s/semantic.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="agc7/assets/js/appSemantic.js" type="text/javascript"
 	        charset="utf-8"></script>
-</div>
 </body>
 
 </html>

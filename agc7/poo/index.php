@@ -25,16 +25,18 @@
 		<div id="dejaChoix">
 
 			<?php
-			//unset( $_POST );
-			//$_POST[ 'choix' ] = 2;
+//unset( $_POST );
+//$_POST[ 'choix' ] = 2;
 
-			if ( isset( $_POST ) && array_key_exists( 'choix', $_POST ) ) {
-				$choix = substr( $_POST[ 'choix' ], 0, min( strlen( $_POST[ 'choix' ] ), 2 ) );
-			}
-			else $choix = 0;
-			echo '$_POST[\'choix\'] : <b>' . $choix . '</b>';
+if (isset($_POST) && array_key_exists('choix', $_POST)) {
+    $choix = substr($_POST['choix'], 0, min(strlen($_POST['choix']), 2));
+} else {
+    $choix = 0;
+}
 
-			?>
+echo '$_POST[\'choix\'] : <b>' . $choix . '</b>';
+
+?>
 		</div>
 
 		<div class="row">
@@ -49,7 +51,6 @@
 					</select>
 					<label for="choix">Choix de la fonction POO</label>
 
-
 				</form>
 
 				<!--<br><br><br><br>-->
@@ -59,72 +60,75 @@
 			</div>
 
 
-			<div class="col" id="description">
+			<div class="col"><div id="description">
 				<?php
-				//if ( count( $_POST ) ) {
-				//	echo $_POST[ 'choix' ];
-				//}
-				//else {
-				//	$_POST[ 'choix' ] = [ 'personne' ];
-				//	include 'personne.php';
-				//}
-				//var_dump( $_POST );
-				?>
-
-			</div>
+//if ( count( $_POST ) ) {
+//    echo $_POST[ 'choix' ];
+//}
+//else {
+//    $_POST[ 'choix' ] = [ 'personne' ];
+//    include 'personne.php';
+//}
+//var_dump( $_POST );
+?>
 
 		</div>
+		</div>
+
+		</div>
+		<hr class="mt20">
 		<div class="row md-12">
-			<div id="content">
+			<div id="content" class="mt10">
 
 			</div>
 			<?php
-			//if ( $_POST[ 'choix' ][ 0 ] <> 'noChoix' ) {
-			//	include $_POST[ 'choix' ][ 0 ] . '.php';
-			//	//var_dump( $_POST[ 'choix' ] );
-			//}
-			//else {
-			//}
-			////var_dump( $_POST );
-			?>
+//if ( $_POST[ 'choix' ][ 0 ] <> 'noChoix' ) {
+//    include $_POST[ 'choix' ][ 0 ] . '.php';
+//    //var_dump( $_POST[ 'choix' ] );
+//}
+//else {
+//}
+////var_dump( $_POST );
+?>
 		</div>
 	</div>
 	<?php
 
+// Simple classe
+//include 'personne.php';
 
-	// Simple classe
-	//include 'personne.php';
+// Classe Mère & classe fille
+//include 'vehicule.php';
 
-	// Classe Mère & classe fille
-	//include 'vehicule.php';
+// Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
+//include 'kid.php';
 
-	// Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
-	//include 'kid.php';
+// Méthodes magiques __call()
+// include 'manchot.php';
 
+// Méthodes magiques __clone()
+//include 'point.php';
 
-	// Méthodes magiques __call()
-	// include 'manchot.php';
+// Méthodes magiques __sleep() & __wakeup()
+// include 'dormeur.php';
 
-	// Méthodes magiques __clone()
-	//include 'point.php';
+// Classes abstraites et finales
+//  include 'humains.php';
 
-	// Méthodes magiques __sleep() & __wakeup()
-	// include 'dormeur.php';
+//** 777777777777777777777 **/
+// Iterator (Interface)
+// include 'iterator.php';
 
-	// Classes abstraites et finales
-	//  include 'humains.php';
+// OneTrait (Trait)
+// include '../class/OneTrait.php';
 
-	// Iterator (Interface)
-	// include 'iterator.php';
-
-	// OneTrait (Trait)
-	// include '../class/OneTrait.php';
-
-	echo str_repeat( '<br>&nbsp;', 5 );
-	$maVal = 777;
-	?>
+echo str_repeat('<br>&nbsp;', 5);
+$maVal = 777;
+?>
 </div>
-
+<footer>
+		<a href="https://github.com/c57fr/Do" target="_blank">Vous <u>devez</u> contribuer <i class="fa fa-github"></i> !</a> | &copy;2017-2018 - GC7
+</footer>
 <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>

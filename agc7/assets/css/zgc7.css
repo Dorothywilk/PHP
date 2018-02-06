@@ -7,7 +7,7 @@ hr {
 .maingc7 {
   font-family: roboto, "Arial", sans-serif;
   font-size: 1.2em;
-  color: #420000;
+  color: #7c0000;
   font-weight: 400;
   /*padding-top: 20px;*/
   width: 97%;
@@ -21,7 +21,8 @@ hr {
   /* margin-right: 100px;*/
   background-color: cornsilk; }
 
-.gc7, .gc7 .ui.message p {
+.gc7,
+.gc7 .ui.message p {
   color: #0045ff; }
 
 .justify {
@@ -58,25 +59,28 @@ a.navbar-brand {
   margin: 0;
   color: #ffff00 !important; }
 
-a.navbar-brand:hover, a.navbar-brand:visited {
+a.navbar-brand:hover,
+a.navbar-brand:visited {
   color: #ff0303 !important;
   height: 5px;
   font-weight: 800;
   padding: 25px 20px 25px 0 !important;
-  text-shadow: 0 0 10px red, 0 0 10px red;
+  text-shadow: 0 0 10px red, 0 0 10px red;
   margin: 0; }
 
 .navbar .navbar-brand {
   align-self: center; }
 
-.p1-0, .p1-0.navbar-brand {
+.p1-0,
+.p1-0.navbar-brand {
   color: #ff0303 !important;
   padding: 30px;
   height: 50px;
   width: 70px;
   text-align: center; }
 
-.p1-0, .p1-0.navbar-brand:hover {
+.p1-0,
+.p1-0.navbar-brand:hover {
   padding-left: 0;
   font-weight: 800;
   text-shadow: 0 0 10px red;
@@ -165,6 +169,12 @@ g {
 .mt20 {
   margin-top: 20px; }
 
+.mt50 {
+  margin-top: 50px; }
+
+.mt20 {
+  margin-top: 20px; }
+
 .jumbotron {
   border-radius: 0;
   margin: 0 auto 10px;
@@ -208,6 +218,12 @@ div.lead > ul {
 .mt20 {
   margin-top: 20px; }
 
+.mt50 {
+  margin-top: 50px; }
+
+.mt20 {
+  margin-top: 20px; }
+
 h1.meaDo > a {
   color: cornsilk; }
 
@@ -232,15 +248,51 @@ h1.meaDo > a:hover {
   -moz-border-radius: 4px;
   border-radius: 4px; }
 
-#poo .select-dropdown li.disabled, #poo .select-dropdown li.disabled > span, #poo .select-dropdown li.optgroup, #poo .teteListe {
-  color: #333;
-  font-style: italic;
-  background-color: #ffeb7c !important; }
+#poo #description {
+  width: 100%;
+  color: #7c0000;
+  border: 3px solid orange -50;
+  border-radius: 7px;
+  padding: 10px 20px;
+  background-color: #fffffa;
+  padding-bottom: 20px; }
 
-#poo .select-dropdown li.disabled.pl10, #poo .select-dropdown li.disabled > span.pl10, #poo .select-dropdown li.optgroup.pl10, #poo .teteListe.pl10 {
+#poo #description h3 {
+  color: #c24646;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 7px; }
+
+#poo .select-dropdown li.disabled,
+#poo .select-dropdown li.disabled > span,
+#poo .select-dropdown li.optgroup,
+#poo .teteListe {
+  color: #4a0000;
+  border-radius: 0 0 70px;
+  font-style: italic;
+  font-weight: bold;
+  background-color: #e06464 !important; }
+
+#poo .select-dropdown li.disabled.pl10,
+#poo .select-dropdown li.disabled > span.pl10,
+#poo .select-dropdown li.optgroup.pl10,
+#poo .teteListe.pl10 {
+  width: 96%;
+  border: 3px solid orange -50;
   padding-left: 10px;
-  border-radius: 4px;
-  height: 2em; }
+  border-radius: 7px;
+  height: 2em;
+  background-color: black; }
+
+#poo .select-dropdown li.disabled .dropdown-content,
+#poo .select-dropdown li.disabled > span .dropdown-content,
+#poo .select-dropdown li.optgroup .dropdown-content,
+#poo .teteListe .dropdown-content {
+  width: 10%; }
+
+#poo .select-wrapper span.caret {
+  z-index: 1001;
+  right: 7%; }
 
 #poo #test {
   color: #2582ff; }
@@ -250,5 +302,11 @@ h1.meaDo > a:hover {
   top: 5px;
   right: 10px; }
 
-#poo li:last-of-type {
+#poo ul {
+  border-radius: 7px;
+  border: 3px solid orange -50;
   color: red; }
+
+footer {
+  text-align: right;
+  padding: 2px 5px; }
