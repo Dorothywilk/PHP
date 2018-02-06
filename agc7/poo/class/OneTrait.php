@@ -9,7 +9,7 @@ namespace Gc7;
 class Base {
 	public function sayHello() {
 		echo '2) Passe par Base::sayHello()<br>';
-		echo 'Hello ';
+		echo '<br>Hello ';
 	}
 }
 

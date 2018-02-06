@@ -253,9 +253,8 @@ h1.meaDo > a:hover {
   color: #7c0000;
   border: 3px solid orange -50;
   border-radius: 7px;
-  padding: 10px 20px;
   background-color: #fffffa;
-  padding-bottom: 20px; }
+  padding: 10px 20px 20px; }
 
 #poo #description h3 {
   color: #c24646;

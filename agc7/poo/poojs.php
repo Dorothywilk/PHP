@@ -63,6 +63,16 @@
 				fichier: 'humains',
 				sujet: 'Classe abstraite & classe finale',
 				description: '<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br>'
+			},
+			{
+				fichier: 'iterator',
+				sujet: 'Iterator (Trait)',
+				description: '<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code>'
+			},
+			{
+				fichier: 'class/OneTrait',
+				sujet: 'OneTrait (Trait)',
+				description: '<h3>Trait SayWorld</h3><p><code>use SayWorld;</code></p>'
 			}
 		];
 		var nbreSujets = sujets.length - 1;
@@ -348,7 +358,10 @@
 
 		//$('ul > li:not(:first)').css('display','none');
 
-	})
-	;
+		// Using plain Javascript
+		//var block = document.getElementById('monCode')
+		//Prism.highlightElement(block);
+
+	});
 
 </script>
