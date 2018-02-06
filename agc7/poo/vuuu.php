@@ -19,7 +19,7 @@
 
 <body>
 <h3>Uuu</h3>
-<pre data-src="uuu.php" class="line-numbers">
+<pre data-src="https://raw.githubusercontent.com/c57fr/Do/devGc7/agc7/poo/uuu.php" class="line-numbers">
 </pre>
 
 <pre class="language-php line-numbers" data-value="1">

@@ -9,7 +9,7 @@ $choix = substr( $_POST[ 'choix' ], 0, min( strlen( $_POST[ 'choix' ] ), 2 ) );
 
 }
 else {
-	$choix = 0;
+	$choix = 123;
 }
 
 echo '$_POST[\'choix\'] : <b>' . $choix . '</b>';
