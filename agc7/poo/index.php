@@ -122,7 +122,7 @@
 			<!--</pre>-->
 			<?php
 			//var_dump($sujets);
-			echo '<pre class="language-php"><code>' . getPhpSource( $sujets->sujets[ $choix ]->fichier . '.php' ) . '</code></pre>';
+			echo '<pre class="language-php line-numbers"><code>' . getPhpSource( $sujets->sujets[ $choix ]->fichier . '.php' ) . '</code></pre>';
 			?>
 		</div>
 	</div>

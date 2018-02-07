@@ -1,7 +1,7 @@
 <script>
 	$(document).ready(function () {
 
-		/*ToDoLi Finir liste des sujets // pages POO réelles */
+		/*ToDoLi Ajouter fichers qd plus de 1 fichier utilisés */
 
 		/*ToDoLi Ajouter légère transparence aux options */
 
