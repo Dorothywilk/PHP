@@ -6,10 +6,10 @@
 	<title>P.O.O.</title>
 	<link rel="stylesheet"
 	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/mdb.min.css">
-	<link rel="stylesheet" href="assets/css/prism.css" data-noprefix/>
-	<link rel="stylesheet" href="assets/css/combined.css">
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../assets/css/mdb.min.css">
+	<link rel="stylesheet" href="../assets/css/prism.css" data-noprefix/>
+	<link rel="stylesheet" href="../assets/css/combined.css">
 </head>
 
 <body>
@@ -19,12 +19,6 @@
 </div>
 
 <hr>
-
-<div id="files">
-<?php
-	var_dump($_POST);
-?>
-</div>
 
 <div class="maingc7 mainPoo" id="poo">
 
@@ -37,7 +31,7 @@
 			//$_POST[ 'choix' ] = 2;
 
 			if ( isset( $_POST ) && array_key_exists( 'choix', $_POST ) ) {
-				$choix = substr( $_POST[ 'choix' ], 0, min( strlen( $_POST[ 'choix' ] ), 2 ) );
+				$choix = (int) substr( $_POST[ 'choix' ], 0, min( strlen( $_POST[ 'choix' ] ), 2 ) );
 			}
 			else {
 				$choix = 0;
@@ -48,10 +42,45 @@
 		</div>
 
 		<div class="row">
+				<?php
+				var_dump( 'choix', $choix );
+
+				function getPhpSource( $f )
+				{
+					$code = htmlentities( file_get_contents( $f, FALSE, null, 0 ) );
+
+					return $code;
+				}
+				$sujets = json_decode( file_get_contents( "sujets.json" ) );
+				//var_dump( $sujets);
+				var_dump( $sujets->sujets[ 1 ]->fichier );
+
+				//foreach ( $sujets->sujets as $s ) {
+				//	echo $s->fichier . '<br>';
+				//}
+
+
+				?>
+
+				<!--<pre class="language-php">-->
+				<?php
+				foreach ( $sujets->sujets as $s ) {
+					//echo '<code>'.$s->fichier . '</code>';
+					//echo $s->fichier;
+					//echo '<pre class="language-php"><code>' . getPhpSource( $s->fichier .
+					//                                                        '.php' ) . '</code></pre>';
+
+				}
+				?>
+				<!--</pre>-->
+
+		</div>
+		<div class="row">
 
 			<div class="col">
 
-				<!--<form id="choixForm" method="post" action="--><?php //echo $_SERVER['PHP_SELF']; ?><!--">-->
+				<!--<form id="choixForm" method="post" action="--><?php //echo $_SERVER['PHP_SELF'];
+				?><!--">-->
 				<form id="choixForm" method="post" action="">
 
 					<select name='choix' onchange='this.form.submit()' class="mdb-select" id="choix">
@@ -85,10 +114,16 @@
 
 		</div>
 		<hr class="mt20">
-		<div class="row md-12">
+		<button>Voir</button> Fichier utilisé:
+			<?= $sujets->sujets[ $choix ]->fichier.' | '; ?>
+		<div class="row md-12" id="files">
 			<!--<pre class="line-numbers language-php" data-src="uuu.php" data-start="1" style="white-space:pre-wrap">-->
-			<pre data-src="poo/uuu.php">
-			</pre>
+			<!--<pre data-src="../poo/uuu.php">-->
+			<!--</pre>-->
+			<?php
+			//var_dump($sujets);
+			echo '<pre class="language-php"><code>' . getPhpSource( $sujets->sujets[ $choix ]->fichier . '.php' ) . '</code></pre>';
+			?>
 		</div>
 	</div>
 	<hr class="mt20">
@@ -145,11 +180,11 @@ $maVal = 777;
 	<a href="https://github.com/c57fr/Do" target="_blank">Vous <u>devez</u> contribuer <i class="fa fa-github"></i> !</a>
 	| &copy;2017-2018 - GC7
 </footer>
-<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/prism.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/prism.js" type="text/javascript" charset="utf-8"></script>
 <?php
 include './poojs.php';
 ?>

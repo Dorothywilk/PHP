@@ -67,7 +67,7 @@
 			{
 				fichier: 'iterator',
 				sujet: 'Iterator (Trait)',
-				description: '<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code>'
+				description: '<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></p><code>key()</code></br><code>current()</code></br><code>valid()</code>'
 			},
 			{
 				fichier: 'class/OneTrait',
@@ -128,7 +128,7 @@
 			//	}
 			//);
 
-			$("#content").load('./poo/' + s.fichier + '.php');
+			$("#content").load('./' + s.fichier + '.php');
 
 
 		}
@@ -334,9 +334,10 @@
 
 			console.log('Sortie des choixxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', s);
 			$("#description").html(s.description);
-			// $("#content").load('./' + s.fichier + '.php', {
-			// $_POST: [choix]
-			// });
+			//console.log(s.fichier);
+			//$("#content").load('' + s.fichier + '.php', {
+			//	$_POST: [choix]
+			//});
 		});
 		/**
 		 * Nous reprenons notre exemple de formulaire de connexion
@@ -370,7 +371,12 @@
 		//var block = document.getElementById('monCode')
 		//Prism.highlightElement(block);
 
+		$('button').click(function(){
+			$('#files').toggle();
+			//$(this).toggle('css', 'display:block');
+		})
+
+
 	})
-	;
 
 </script>

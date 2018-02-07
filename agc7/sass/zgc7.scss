@@ -413,17 +413,17 @@ footer {
 //}
 //
 pre[class*="language-"] {
-  width: 95%;
+  width: 90%;
   margin: 5px auto;
   //  //overflow: auto;
   //  //margin-left: -50px;
 }
 
 #files {
-  margin-top: 40px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
+  width: 90%;
+  margin: 0 auto 30px;
   border-radius: 7px;
   padding: 5px 10px;
   border: $cadre;
+  display: none;
 }
