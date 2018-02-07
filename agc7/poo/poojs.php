@@ -92,7 +92,7 @@
 				i = (!k) ? nbreSujets : k;
 				h += '<option>' + i + ' ' + v.sujet + '</option>' + "\n";
 			});
-			console.log('html: ' + h);
+			//console.log('html: ' + h);
 			$('#choix').html(h);
 
 			// Plus utile mais peut resservir + tard
@@ -106,14 +106,14 @@
 
 		var sdChoix = html();
 
-		console.log('choix début ($_POST)', choix, ' => s', s);
+		//console.log('choix début ($_POST)', choix, ' => s', s);
 
 		if (choix > 0) {
 
 
-			console.log(gt(s.description));
+			//console.log(gt(s.description));
 
-			console.log($("#description"));
+			//console.log(s.fichier, $("#description"));
 
 			$("#description").html(s.description);
 
@@ -121,14 +121,22 @@
 			// Ici insertion code source du fichier de base
 			// Plus tard, aussi des fichiers compl (Par ex., des classes)">
 
-			$("#content").load('./' + s.fichier + '.php', {$_POST: [choix]});
+
+			//$("#content").load('./poo/' + s.fichier + '.php',
+			//	{
+			//		$_POST: [choix, 'personne'] // Envoie params à s.fichier
+			//	}
+			//);
+
+			$("#content").load('./poo/' + s.fichier + '.php');
+
 
 		}
 
 		else {
 
 			console.log('Pas de choix');
-			sdChoix.click();
+			//sdChoix.click(); /////////////////// ACTIVER
 
 		}
 
@@ -245,8 +253,8 @@
 				var target = e.target;
 
 
-				var cible = parseInt(nGauche((target.innerText).trim()));
-				console.log(choix, 'targetOver: ', target.innerText, 'CIBLE: ', cible);
+				var cible = parseInt(nGauche(target.innerText.trim(), 2));
+				//console.log(choix, 'targetOver: ', target.innerText, 'CIBLE: ', cible);
 
 				if (cible) {
 					var s = sujets[cible];
@@ -327,7 +335,7 @@
 			console.log('Sortie des choixxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', s);
 			$("#description").html(s.description);
 			// $("#content").load('./' + s.fichier + '.php', {
-				// $_POST: [choix]
+			// $_POST: [choix]
 			// });
 		});
 		/**
@@ -362,6 +370,7 @@
 		//var block = document.getElementById('monCode')
 		//Prism.highlightElement(block);
 
-	});
+	})
+	;
 
 </script>

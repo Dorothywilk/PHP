@@ -22,26 +22,31 @@
 	<div class="maingc7 mt20">
 
 		<?php
-
 		function getPhpSource( $f )
 		{
-			$code = htmlentities( file_get_contents( $f ) );
-			return '<pre class="language-php line-numbers"><code>'.$code.'</code></pre>';
+			$code = htmlentities( file_get_contents( $f, FALSE, null, 5 ) );
+
+			//var_dump( $code );
+
+			return $code;
 		}
 
-
-		//echo 'The code: '.getPhpSource('uuu.php');
+		//echo 'The code: ' . getPhpSource( 'uuu.php' );
 
 		?>
 
 		<h3>Avec jQ</h3>
 		<!--<pre class="language-php line-numbers" id="phpjQ"></pre>-->
-		<div id="phpjQ"></div>
-
+		<pre class="language-php line-numbers">
+			<code>
+				<div id="phpjQ"></div>
+			</code>
+		</pre>
 		<!--<span id="phpjQ"></span>-->
 
 		<h3>uuu.php en PHP</h3>
-		<pre class="language-php line-numbers"><code>
+		<pre class="language-php line-numbers">
+			<code>
 				<?php
 				echo htmlentities( file_get_contents( 'uuu.php' ) );
 				?>
@@ -60,7 +65,8 @@
 		</pre>
 
 		<h2>Depuis Github</h2>
-		<pre data-src="https://raw.githubusercontent.com/c57fr/Do/master/agc7/poo/uuu.php" class="line-numbers">
+		<!--<pre data-src="https://raw.githubusercontent.com/c57fr/Do/master/agc7/poo/uuu.php" class="line-numbers">-->
+		<pre data-src="https://rawgit.com/c57fr/Do/master/agc7/poo/uuu.php" class="line-numbers">
 		</pre>
 
 		<h3>Et son résultat</h3>
@@ -111,20 +117,34 @@
 
 <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
 
+<script src="../assets/js/prism.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
 	$(document).ready(function () {
-		if (window.File && window.FileReader && window.FileList && window.Blob) {
-			console.log('Great success! All the File APIs are supported.');
-		} else {
-			alert('The File APIs are not fully supported in this browser.');
-		};
-		var c =$('#phpjQ');
+
+		var c = $('#phpjQ');
+		c.html('echo 123;');
+		//var Prism = require('prismjs');
+
+// The code snippet you want to highlight, as a string
+		var code = "var data = 1;";
+
+// Returns a highlighted HTML string
+		var html = Prism.highlight(code, Prism.languages.javascript);
+
+		//console.log(html);
+
+		//c.html(html);
+
 		//$('#phpjQ').load('uuu.php');
 
-		//var sH = "<pre class='language-php line-numbers'><code>"+< ?php //echo htmlentities( file_get_contents( 'uuu.php' ) ); ?>//+"</code></pre>;";
+		var sH = <?php echo getPhpSource( 'uuu.php' ); ?>;
+		c.html('echo 123;');
 
-		var sH = <?php $var=json_encode(htmlentities(getPhpSource( 'uuu.php' ))); echo $var; ?>;
+		//var sH = <?php //$var=getPhpSource( 'uuu.php' ); echo $var; ?>//;
+		//var html = Prism.highlight(sH, Prism.languages.php);
+		//c.html(sH);
+
 
 		//var sH = <?php //$var = json_encode( file_get_contents( 'uuu.php' ) ); echo $var; ?>//;
 
@@ -142,7 +162,7 @@
 
 	});
 </script>
-<script src="../assets/js/prism.js" type="text/javascript" charset="utf-8"></script>
+
 <?php
 //include './poojs.php';
 ?>

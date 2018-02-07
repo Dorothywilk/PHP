@@ -6,10 +6,10 @@
 	<title>P.O.O.</title>
 	<link rel="stylesheet"
 	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/css/mdb.min.css">
-	<link rel="stylesheet" href="../assets/css/prism.css" data-noprefix />
-	<link rel="stylesheet" href="../assets/css/combined.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/mdb.min.css">
+	<link rel="stylesheet" href="assets/css/prism.css" data-noprefix/>
+	<link rel="stylesheet" href="assets/css/combined.css">
 </head>
 
 <body>
@@ -17,14 +17,21 @@
 	<a href="/">Do</a> |
 	<a href="/agc7">AC7</a> | P.O.O.
 </div>
+
 <hr>
+
+<div id="files">
+<?php
+	var_dump($_POST);
+?>
+</div>
+
 <div class="maingc7 mainPoo" id="poo">
 
 	<div class="container-fluid">
 		<br>
 
 		<div id="dejaChoix">
-
 			<?php
 			//unset( $_POST );
 			//$_POST[ 'choix' ] = 2;
@@ -35,7 +42,6 @@
 			else {
 				$choix = 0;
 			}
-
 			echo '$_POST[\'choix\'] : <b>' . $choix . '</b>';
 
 			?>
@@ -61,9 +67,8 @@
 
 			</div>
 
-
 			<div class="col">
-				<div id="description">
+				<div id="description">Choisir un sujet ci-contre....
 					<?php
 					//if ( count( $_POST ) ) {
 					//    echo $_POST[ 'choix' ];
@@ -82,70 +87,69 @@
 		<hr class="mt20">
 		<div class="row md-12">
 			<!--<pre class="line-numbers language-php" data-src="uuu.php" data-start="1" style="white-space:pre-wrap">-->
-			<pre data-src="agc7/poo/uuu.php">
+			<pre data-src="poo/uuu.php">
 			</pre>
-				<pre><code class="language-css">p { color: red }</code></pre>
-
-		</div>
-		<hr class="mt20">
-		<div class="row md-12">
-			<div id="content" class="mt10">
-
-			</div>
-			<?php
-			//if ( $_POST[ 'choix' ][ 0 ] <> 'noChoix' ) {
-			//    include $_POST[ 'choix' ][ 0 ] . '.php';
-			//    //var_dump( $_POST[ 'choix' ] );
-			//}
-			//else {
-			//}
-			////var_dump( $_POST );
-			?>
 		</div>
 	</div>
-	<?php
+	<hr class="mt20">
+	<div class="row md-12 lead">
+		<div id="content">
 
-	// Simple classe
-	//include 'personne.php';
+		</div>
+		<?php
+		//if ( $_POST[ 'choix' ][ 0 ] <> 'noChoix' ) {
+		//    include $_POST[ 'choix' ][ 0 ] . '.php';
+		//    //var_dump( $_POST[ 'choix' ] );
+		//}
+		//else {
+		//}
+		////var_dump( $_POST );
+		?>
+	</div>
+</div>
+<?php
 
-	// Classe Mère & classe fille
-	//include 'vehicule.php';
+// Simple classe
+//include 'personne.php';
 
-	// Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
-	//include 'kid.php';
+// Classe Mère & classe fille
+//include 'vehicule.php';
 
-	// Méthodes magiques __call()
-	// include 'manchot.php';
+// Classe Mère & classe fille /|\ : Bug exprès en fin de fichier
+//include 'kid.php';
 
-	// Méthodes magiques __clone()
-	//include 'point.php';
+// Méthodes magiques __call()
+// include 'manchot.php';
 
-	// Méthodes magiques __sleep() & __wakeup()
-	// include 'dormeur.php';
+// Méthodes magiques __clone()
+//include 'point.php';
 
-	// Classes abstraites et finales
-	//  include 'humains.php';
+// Méthodes magiques __sleep() & __wakeup()
+// include 'dormeur.php';
 
-	// Iterator (Interface)
-	// include 'iterator.php';
+// Classes abstraites et finales
+//  include 'humains.php';
 
-	//** 777777777777777777777 **/
-	// OneTrait (Trait)
-	// include '../class/OneTrait.php';
+// Iterator (Interface)
+// include 'iterator.php';
 
-	echo str_repeat( '<br>&nbsp;', 5 );
-	$maVal = 777;
-	?>
+//** 777777777777777777777 **/
+// OneTrait (Trait)
+// include '../class/OneTrait.php';
+
+echo str_repeat( '<br>&nbsp;', 5 );
+$maVal = 777;
+?>
 </div>
 <footer>
 	<a href="https://github.com/c57fr/Do" target="_blank">Vous <u>devez</u> contribuer <i class="fa fa-github"></i> !</a>
 	| &copy;2017-2018 - GC7
 </footer>
-<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../assets/js/prism.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/prism.js" type="text/javascript" charset="utf-8"></script>
 <?php
 include './poojs.php';
 ?>

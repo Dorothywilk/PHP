@@ -311,3 +311,15 @@ footer {
   text-align: right;
   padding: 2px 5px;
   font-size: 1em; }
+
+pre[class*="language-"] {
+  width: 95%;
+  margin: 5px auto; }
+
+#files {
+  margin-top: 40px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  padding: 5px 10px;
+  border: 3px solid orange -50; }
