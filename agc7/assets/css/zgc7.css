@@ -307,5 +307,7 @@ h1.meaDo > a:hover {
   color: red; }
 
 footer {
+  font-family: Roboto, arail;
   text-align: right;
-  padding: 2px 5px; }
+  padding: 2px 5px;
+  font-size: 1em; }

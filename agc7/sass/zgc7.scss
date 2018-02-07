@@ -392,23 +392,26 @@ h1.meaDo > a:hover {
 }
 
 footer {
+  font-family: Roboto, arail;
   text-align: right;
   padding: 2px 5px;
+  font-size: 1em;
 }
 
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  //width: 100%;
-  //padding-left: 0;
-  //white-space: pre-wrap;
-}
-
-.token :not(first-line) {
-  //margin-left: -100px;
-  //padding-left: 100px;
-  //color: red;
-}
-
-code[class*="language-"] {
-  //overflow: auto;
-  //margin-left: -50px;
-}
+//
+//:not(pre) > code[class*="language-"], pre[class*="language-"] {
+//  //width: 100%;
+//  //padding-left: 0;
+//  //white-space: pre-wrap;
+//}
+//
+//.token :not(first-line) {
+//  //margin-left: -100px;
+//  //padding-left: 100px;
+//  //color: red;
+//}
+//
+//code[class*="language-"] {
+//  //overflow: auto;
+//  //margin-left: -50px;
+//}
