@@ -7,6 +7,6 @@ Contenu:
 - Appli AGC7
 - POO
 
-![Apperçu]()
+![Apperçu](./agc7/clips/PooViewer.gif)
 
 ## En local: [Do](http://do)
