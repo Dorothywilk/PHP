@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="../assets/css/mdb.min.css">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/gc7.css">
+  <!-- <link rel="stylesheet" href="../../assets/css/style.css"> -->
+  <link rel="stylesheet" href="../assets/css/combined.css">
 
 </head>
 
@@ -21,7 +21,7 @@
   <a href="../bdd/index.php">BdD</a> |
   <a href="../poo/index.php">POO</a> |
   <a href="../arbre/index.php">Arbre</a> |
-  XU - Application RI
+  XU - Application RI pour B
 </div>
 
 <?php

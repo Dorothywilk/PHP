@@ -53,7 +53,7 @@
     <div class="ui divider"></div>
     
     <p class="justify">
-      <img src="agc7/assets/img/picture3.jpg" alt="" id="tof" class="ui right floated image">
+      <img src="assets/img/picture3.jpg" alt="" id="tof" class="ui right floated image">
       <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea placeat, excepturi. Facili</span>
 
       Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br><br>Tenetur eius nulla doloribus atque laudantium

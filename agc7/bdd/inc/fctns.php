@@ -18,8 +18,12 @@
  */
 
 function pdo( $bdd = 'ocr' )
-{
+{ try{
   return new \PDO( 'mysql:host=localhost;dbname=' . $bdd . ';charset=utf8', 'root', '', array ( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ) );
+}
+catch Exception($e){
+  return $e->message;
+}
 }
 
 $req = function ( $sql, $pdo = null, $inv = null ) { // invisible

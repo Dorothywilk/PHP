@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="../assets/css/mdb.min.css">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../assets/css/gc7.css">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- <link rel="stylesheet" href="../assets/css/gc7.css"> -->
+  <link rel="stylesheet" href="../assets/css/combined.css">
 
   <link rel="stylesheet" href="assets/css/hv.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
@@ -40,10 +40,12 @@ include 'rihv/index.php';
   <p>&copy;2017 - GC7
 </footer>
 
-<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8" async
-        defer></script>
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/popper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../assets/js/mdb.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../assets/js/app.js" type="text/javascript"></script>
+
+<!-- <script src="../assets/js/app.js" type="text/javascript"></script> -->
 
 </body>
 

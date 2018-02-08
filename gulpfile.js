@@ -14,7 +14,7 @@ gulp.task('serve', ['css'], function () {
         //index: 'index.php'
     }, function () {
         browserSync({
-            proxy: '127.0.0.1:8000/agc7'
+            proxy: '127.0.0.1:8000'
         });
     });
     gulp.watch('./agc7/sass/**/*.scss', ['css']);
