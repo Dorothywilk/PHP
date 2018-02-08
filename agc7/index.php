@@ -16,7 +16,7 @@
      style="font-size: 1.5rem;padding-left: 10px;border-bottom: 1px solid grey;padding-bottom: 7px;">
 	<!--			<a href="/" class="hoverable lkdo">Accueil</a> |-->
 	<a href="/">Accueil</a> |
-	<a href="exemples">SemanticUI</a> |
+	<a href="./exemples">SemanticUI</a> |
 	<a href="mdb.php">MDB</a> |
 	<a href="bdd/index.php">BdD</a> |
 	<a href="poo/index.php">POO</a> |

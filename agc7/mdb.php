@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Install GC7</title>
+	<title>MDB</title>
 	<link rel="shortcut icon" href="/agc7/assets/images/favicon.ico"/>
 	<!--<link rel="stylesheet" href="../agc7/assets/css/semantic.min.css">-->
 	<link rel="stylesheet"
@@ -27,7 +27,7 @@
 		<!--/. Logo -->
 
 			<span class="nav-item waves-light">
-        <a class="nav-item waves-light navbar-brand" href="/agc7">GC7</a>
+        <a class="nav-item waves-light navbar-brand" href="/agc7/">GC7</a>
       </span>
 
       <span class="nav-item waves-light">

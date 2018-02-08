@@ -3,17 +3,16 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Install GC7</title>
-	<link rel="stylesheet" href="assets/css/semantic.min.css">
-	<!--<link rel="stylesheet" href="/agc7/assets/css/semanticgc7.css">-->
-	<link rel="stylesheet" href="assets/css/combined.css">
+	<title>Semantic</title>
+	<link rel="stylesheet" href="/agc7/assets/css/semantic.min.css">
+	<link rel="stylesheet" href="/agc7/assets/css/combined.css">
 </head>
 
 <body>
 <div class="ui fixed inverted menu">
 	<div class="container lead pt0 mt5"><h1>
 			<a href="/">Accueil</a> |
-			<a href="/agc7">AGC7</a> |
+			<a href="/agc7/">AGC7</a> |
 			<a href="/agc7/mdb.php" class="active">MDB</a>
 		</h1>
 	</div>
@@ -37,9 +36,9 @@
 		<hr>
 		&copy;2017 - GC7
 	</footer>
-	<script src="assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="assets/js/appSemantic.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/agc7/assets/js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/agc7/assets/js/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/agc7/assets/js/appSemantic.js" type="text/javascript" charset="utf-8"></script>
 </div>
 </body>
 

@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 gulp.task('serve', ['css'], function () {
     connectphp.server({
-        //baseDir: 'agc7',
+        // baseDir: '/',
         //index: 'index.php'
     }, function () {
         browserSync({
