@@ -122,6 +122,9 @@
 			if ( ! is_array( $fichiers ) ) {
 				$fichiers = [ $fichiers ];
 			}
+
+			$content = $fichiers[0];
+			var_dump($content);
 			// $fichiers = (!is_array($fichiers))? 'oui':'non';
 			//var_dump( count( $fichiers ) );
 			$nbF = count( $fichiers );
@@ -134,7 +137,6 @@
 			}
 
 			?>
-
 
 			<button class="btn btn-warning"><span id="etat">Découvrir</span> le<?= $plurF . ' ' . $nbF ?> fichier<?= $plurF ?>
 				utilisé<?= $plurF ?></button>

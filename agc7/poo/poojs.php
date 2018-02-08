@@ -25,7 +25,7 @@
 
 		// console.log(sujets);
 
-		var sujets = <?= json_encode($sujets->sujets)?>;
+		var sujets = <?=json_encode($sujets->sujets)?>;
 		console.log('sujets', sujets);
 
 		var nbreSujets = sujets.length - 1;
@@ -80,8 +80,10 @@
 			//		$_POST: [choix, 'personne'] // Envoie params à s.fichier
 			//	}
 			//);
+			var content = "<?=$content?>";
+console.log(gt(content));
 
-			$("#content").load('./' + s.fichier + '.php');
+$("#content").load('./' + content + '.php');
 
 
 		}
@@ -89,7 +91,7 @@
 		else {
 
 			console.log('Pas de choix');
-			//sdChoix.click(); /////////////////// ACTIVER
+			sdChoix.click(); /////////////////// ACTIVER
 
 		}
 
