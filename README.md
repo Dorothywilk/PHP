@@ -1,8 +1,12 @@
-# PHP
-Apprentissage PHP
+# Apprentissage PHP
 
 [Lien de base: Tuto d'Emacs](https://apprendre-php.com/tutoriels.html)
 
-Appli AGC7
+Contenu:
 
-#### En local: [Do](http://do)
+- Appli AGC7
+- POO
+
+![Apperçu]()
+
+## En local: [Do](http://do)
