@@ -1,11 +1,9 @@
 <script>
 	$(document).ready(function () {
 
-		/*ToDoLi Ajouter fichers qd plus de 1 fichier utilisés */
-
 		/*ToDoLi Ajouter légère transparence aux options */
 
-		/* ToDoLi Faire tableau de Vérité pour les différents K:
+		/* ToDoLi Clarification du code: Faire tableau de Vérité pour les différents K:
 		 Il existe (ou pas) 1 choix
 		 Il existe (ou pas) 1 cible
 		 (La souris survole 1 ligne des options)

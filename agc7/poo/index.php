@@ -124,9 +124,7 @@
 			}
 
 			$content = $fichiers[0];
-			var_dump($content);
-			// $fichiers = (!is_array($fichiers))? 'oui':'non';
-			//var_dump( count( $fichiers ) );
+
 			$nbF = count( $fichiers );
 			if ( $nbF - 1 ) {
 				$plurF = 's';
