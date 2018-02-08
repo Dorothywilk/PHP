@@ -23,58 +23,11 @@
 			return jQuery.type(v);
 		}
 
-		var sujets = [
-			{
-				fichier: 'noChoix',
-				sujet: 'Sujets',
-				description: 'Attente de choix...'
-			},
-			{
-				fichier: 'personne',
-				sujet: 'Simple classe',
-				description: "<h3>Class Personne</h3><br<ol><li>Propriétés et méthodes.</li><li>Constantes de classe</li><ol>"
-			},
-			{
-				fichier: 'vehicule',
-				sujet: 'Classe Mère & Fille (Héritage)',
-				description: '<h3>Classe Voiture extends Vehicule</h3>Mère & Fille (Héritage)<br><br>Une Voiture est un Vehicule'
-			},
-			{
-				fichier: 'kid',
-				sujet: 'Méthodes magiques __GET() & __SET()',
-				description: '<h3>Classe Kid</h3>Permet le contrôle pour l\'accès aux propriétés non public'
-			},
-			{
-				fichier: 'manchot',
-				sujet: 'Méthodes magiques __CALL()',
-				description: '<h3>Classe Manchot</h3></p><p>Méthode magique __CALL()</p><p>Appel d\'une méthode n\'existant pas</p>'
-			},
-			{
-				fichier: 'point',
-				sujet: 'Méthodes magiques __CLONE()',
-				description: '<h3>Classe Point</h3><p>Clone d\'un point( <code>clone ($oPt);</code> )</p><p>Méthode magique __CLONE()</p><p>Singleton</p>'
-			},
-			{
-				fichier: 'dormeur',
-				sujet: 'Méthodes magiques __SLEEP() & __WAKEUP()',
-				description: '<h3>Classe Dormeur</h3><ol><li><code>__sleep()</code> Appelée lors d’un <code>serialize()</code></li> <li><code>__wakeup()</code> Appelée lors d’un <code>unserialize()</code></li></ol>'
-			},
-			{
-				fichier: 'humains',
-				sujet: 'Classe abstraite & classe finale',
-				description: '<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br>'
-			},
-			{
-				fichier: 'iterator',
-				sujet: 'Iterator (Trait)',
-				description: '<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></p><code>key()</code></br><code>current()</code></br><code>valid()</code>'
-			},
-			{
-				fichier: 'class/OneTrait',
-				sujet: 'OneTrait (Trait)',
-				description: '<h3>Trait SayWorld</h3><p><code>use SayWorld;</code></p>'
-			}
-		];
+		// console.log(sujets);
+
+		var sujets = <?= json_encode($sujets->sujets)?>;
+		console.log('sujets', sujets);
+
 		var nbreSujets = sujets.length - 1;
 
 		var choix = parseInt("<?=$choix?>");
@@ -269,6 +222,7 @@
 					//});
 					$("#description").html(s.description);
 					$('#content').html('');
+					$('#scripts').text('');
 
 					//if (over[0].fichier !== 'noChoix') {
 					//}
@@ -308,6 +262,7 @@
 			} else {
 				$('#description').text('');
 				$('#content').text('');
+				$('#scripts').text('');
 			}
 			//e.preventDefault();
 
@@ -371,8 +326,15 @@
 		//var block = document.getElementById('monCode')
 		//Prism.highlightElement(block);
 
-		$('button').click(function(){
-			$('#files').toggle();
+		var flip = 0;
+		var textButton = '';
+		$('button').click(function () {
+			//$(this).text("Cacher");
+			flip++;
+			console.log('ppp', flip % 2);
+			textButton = (flip % 2) ? 'Cacher' : 'Remontrer';
+			$('#etat').text(textButton);
+			$('#files').toggle("slow");
 			//$(this).toggle('css', 'display:block');
 		})
 

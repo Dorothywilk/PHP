@@ -1,5 +1,5 @@
-<?php
-namespace Gc7;
+<?php namespace Gc7;
+
 /**
  * Created by C7.
  * User: Li
@@ -7,14 +7,16 @@ namespace Gc7;
  * Time: 16:49
  */
 class Base {
-	public function sayHello() {
+	public function sayHello()
+	{
 		echo '2) Passe par Base::sayHello()<br>';
 		echo '<br>Hello ';
 	}
 }
 
 trait SayWorld {
-	public function sayHello() {
+	public function sayHello()
+	{
 		echo '1) Passe par trait SayWorld<br>';
 		parent::sayHello();
 		echo 'World!';
@@ -24,7 +26,8 @@ trait SayWorld {
 class MyHelloWorld extends Base {
 	use SayWorld;
 
-	public function sayHellouuu() {
+	public function sayHellouuu()
+	{
 		echo 'Bonjour (sayHellouuu())<br>';
 		echo '0) Passe par interne sayHello()<br>';
 		$this->sayHello();
@@ -41,7 +44,8 @@ echo '<hr>';
 class Uuu extends Base {
 	use SayWorld;
 
-	public function __construct() {
+	public function __construct()
+	{
 		echo '<p><b>Uuu</b></p>';
 		$this->sayHello();
 	}

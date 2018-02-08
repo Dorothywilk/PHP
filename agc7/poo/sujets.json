@@ -6,24 +6,34 @@
       "description": "Attente de choix..."
     },
     {
-      "fichier": "personne",
+      "fichier": [
+        "personne",
+        "class/Personne"
+      ],
       "sujet": "Simple classe",
-      "description": "<h3>Class Personne</h3><br<ol><li>Propriétés et méthodes.</li><li>Constantes de classe</li><ol>"
+      "description": "<h3>Class Personne</h3><br><ol><li>Propriétés et méthodes.</li><li>Constantes de classe</li><ol>"
     },
     {
-      "fichier": "vehicule",
+      "fichier": [
+        "vehicule",
+        "class/vehicule",
+        "class/voiture"
+      ],
       "sujet": "Classe Mère & Fille (Héritage)",
       "description": "<h3>Classe Voiture extends Vehicule</h3>Mère & Fille (Héritage)<br><br>Une Voiture est un Vehicule"
     },
     {
-      "fichier": "kid",
+      "fichier": [
+        "kid",
+        "class/Kid"
+      ],
       "sujet": "Méthodes magiques __GET() & __SET()",
       "description": "<h3>Classe Kid</h3>Permet le contrôle pour l'accès aux propriétés non public"
     },
     {
       "fichier": "manchot",
       "sujet": "Méthodes magiques __CALL()",
-      "description": "<h3>Classe Manchot</h3></p><p>Méthode magique __CALL()</p><p>Appel d'une méthode n'existant pas</p>"
+      "description": "<h3>Classe Manchot</h3></p><p>Méthode magique __CALL()</p><p>Appel d'une méthode n'existant pas</p><p>Application pour créer requête SQL</p>"
     },
     {
       "fichier": "point",
@@ -36,7 +46,11 @@
       "description": "<h3>Classe Dormeur</h3><ol><li><code>__sleep()</code> Appelée lors d’un <code>serialize()</code></li> <li><code>__wakeup()</code> Appelée lors d’un <code>unserialize()</code></li></ol>"
     },
     {
-      "fichier": "humains",
+      "fichier": [
+        "humains",
+        "class/EtreHumain",
+        "class/HommeFemme"
+      ],
       "sujet": "Classe abstraite & classe finale",
       "description": "<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br>"
     },

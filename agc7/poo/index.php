@@ -27,7 +27,7 @@
 
 		<div id="dejaChoix">
 			<?php
-			//unset( $_POST );
+			// unset( $_POST );
 			//$_POST[ 'choix' ] = 2;
 
 			if ( isset( $_POST ) && array_key_exists( 'choix', $_POST ) ) {
@@ -42,37 +42,38 @@
 		</div>
 
 		<div class="row">
-				<?php
-				var_dump( 'choix', $choix );
+			<?php
+			//var_dump( 'choix', $choix );
 
-				function getPhpSource( $f )
-				{
-					$code = htmlentities( file_get_contents( $f, FALSE, null, 0 ) );
+			function getPhpSource( $f )
+			{
+				$code = htmlentities( file_get_contents( $f, FALSE, null, 0 ) );
 
-					return $code;
-				}
-				$sujets = json_decode( file_get_contents( "sujets.json" ) );
-				//var_dump( $sujets);
-				var_dump( $sujets->sujets[ 1 ]->fichier );
+				return $code;
+			}
 
-				//foreach ( $sujets->sujets as $s ) {
-				//	echo $s->fichier . '<br>';
-				//}
+			$sujets = json_decode( file_get_contents( "sujets.json" ) );
+			// $sujetsJson = json_encode($sujets);
+			// var_dump( $sujetsJson);
+			//var_dump( $sujets->sujets[ 1 ]->fichier );
 
+			//foreach ( $sujets->sujets as $s ) {
+			//    echo $s->fichier . '<br>';
+			//}
 
-				?>
+			?>
 
-				<!--<pre class="language-php">-->
-				<?php
-				foreach ( $sujets->sujets as $s ) {
-					//echo '<code>'.$s->fichier . '</code>';
-					//echo $s->fichier;
-					//echo '<pre class="language-php"><code>' . getPhpSource( $s->fichier .
-					//                                                        '.php' ) . '</code></pre>';
+			<!--<pre class="language-php">-->
+			<?php
+			foreach ( $sujets->sujets as $s ) {
+				//echo '<code>'.$s->fichier . '</code>';
+				//echo $s->fichier;
+				//echo '<pre class="language-php"><code>' . getPhpSource( $s->fichier .
+				//                                                        '.php' ) . '</code></pre>';
 
-				}
-				?>
-				<!--</pre>-->
+			}
+			?>
+			<!--</pre>-->
 
 		</div>
 		<div class="row">
@@ -114,32 +115,60 @@
 
 		</div>
 		<hr class="mt20">
-		<button>Voir</button> Fichier utilisé:
-			<?= $sujets->sujets[ $choix ]->fichier.' | '; ?>
-		<div class="row md-12" id="files">
-			<!--<pre class="line-numbers language-php" data-src="uuu.php" data-start="1" style="white-space:pre-wrap">-->
-			<!--<pre data-src="../poo/uuu.php">-->
-			<!--</pre>-->
+		<div id="scripts">
 			<?php
-			//var_dump($sujets);
-			echo '<pre class="language-php line-numbers"><code>' . getPhpSource( $sujets->sujets[ $choix ]->fichier . '.php' ) . '</code></pre>';
+
+			$fichiers = $sujets->sujets[ $choix ]->fichier;
+			if ( ! is_array( $fichiers ) ) {
+				$fichiers = [ $fichiers ];
+			}
+			// $fichiers = (!is_array($fichiers))? 'oui':'non';
+			//var_dump( count( $fichiers ) );
+			$nbF = count( $fichiers );
+			if ( $nbF - 1 ) {
+				$plurF = 's';
+			}
+			else {
+				$plurF = '';
+				$nbF   = '';
+			}
+
+			?>
+
+
+			<button class="btn btn-warning"><span id="etat">Découvrir</span> le<?= $plurF . ' ' . $nbF ?> fichier<?= $plurF ?>
+				utilisé<?= $plurF ?></button>
+			<?php //=$sujets->sujets[$choix]->fichier . ' | ';?>
+			<div class="row md-12" id="files">
+				<!--<pre class="line-numbers language-php" data-src="uuu.php" data-start="1" style="white-space:pre-wrap">-->
+				<!--<pre data-src="../poo/uuu.php">-->
+				<!--</pre>-->
+				<?php
+				//var_dump($sujets);
+				foreach ( $fichiers as $f ) {
+					echo '<b>' . $f . '</b>.php';
+					echo '<pre class="language-php line-numbers"><code>' . getPhpSource( $f . '.php' ) . '</code></pre>';
+				}
+
+				// echo '<pre class="language-php line-numbers"><code>' . getPhpSource($sujets->sujets[$choix]->fichier . '.php') . '</code></pre>';
+				?>
+			</div>
+		</div>
+		<hr class="mt20">
+		<div class="row md-12 lead">
+			<div id="content">
+
+			</div>
+			<?php
+			//if ( $_POST[ 'choix' ][ 0 ] <> 'noChoix' ) {
+			//    include $_POST[ 'choix' ][ 0 ] . '.php';
+			//    //var_dump( $_POST[ 'choix' ] );
+			//}
+			//else {
+			//}
+			////var_dump( $_POST );
 			?>
 		</div>
-	</div>
-	<hr class="mt20">
-	<div class="row md-12 lead">
-		<div id="content">
-
-		</div>
-		<?php
-		//if ( $_POST[ 'choix' ][ 0 ] <> 'noChoix' ) {
-		//    include $_POST[ 'choix' ][ 0 ] . '.php';
-		//    //var_dump( $_POST[ 'choix' ] );
-		//}
-		//else {
-		//}
-		////var_dump( $_POST );
-		?>
 	</div>
 </div>
 <?php
