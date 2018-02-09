@@ -99,6 +99,11 @@
       "fichier": "iterator",
       "sujet": "Iterator (Trait)",
       "description": "<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code></p>"
+    },
+    {
+      "fichier": "autochargement",
+      "sujet": "Autochargement des classes utilisées",
+      "description": "<h3><code>spl_autoload_register()</code></h3><p>Ex. avec Kid</p>"
     }
   ]
 }

@@ -1,5 +1,7 @@
 <?php namespace Gc7;
 
+include 'interfaces/Renseignement.php';
+
 // À noter qu'il peut y avoir plusieurs interfaces implémentées
 class Contact implements Renseignement {
 

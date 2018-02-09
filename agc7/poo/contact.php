@@ -1,6 +1,5 @@
 <?php namespace Gc7;
 
-include 'interfaces/Renseignement.php';
 include 'class/Contact.php';
 
 $pierre = new Contact();
