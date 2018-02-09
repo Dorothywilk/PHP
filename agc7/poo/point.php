@@ -51,6 +51,9 @@ echo '=> En utilisant <code>clone()</code>, p1 et p3 sont réellement 2 objects 
 
 
 echo '<hr>';
+//////////////////////////////////////// Singleton
+
+use Exception;
 
 class Sheep {
 	/**
