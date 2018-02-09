@@ -123,7 +123,7 @@
 				$fichiers = [ $fichiers ];
 			}
 
-			$content = $fichiers[0];
+			$content = $fichiers[ 0 ];
 
 			$nbF = count( $fichiers );
 			if ( $nbF - 1 ) {

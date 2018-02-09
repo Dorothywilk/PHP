@@ -5,6 +5,8 @@ class Camion extends Vehicule {
 	// Attributs
 	private $_volumeCarburant;
 
+	const NRJ = 'Gasoil';
+
 	// Constructeur
 	public function __construct( $marque )
 	{
@@ -53,4 +55,5 @@ class Camion extends Vehicule {
 	{
 		return $this->_volumeCarburant;
 	}
+
 }

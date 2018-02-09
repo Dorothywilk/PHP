@@ -1,6 +1,6 @@
 <?php namespace Gc7;
 
-class Vehicule {
+class Vehicule1 {
 	// Attributs
 	protected $_marque;
 	protected $_estRepare;

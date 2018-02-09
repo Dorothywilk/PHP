@@ -4,24 +4,29 @@ class MaClasse implements Iterator {
 	protected $n;
 	const MAX = 5;
 
-	public function rewind() {
+	public function rewind()
+	{
 		$this->n = 0;
 	}
 
-	public function next() {
+	public function next()
+	{
 		$this->n ++;
 	}
 
-	public function key() {
+	public function key()
+	{
 		
 		return $this->n + 1;
 	}
 
-	public function current() {
+	public function current()
+	{
 		return $this->n;
 	}
 
-	public function valid() {
+	public function valid()
+	{
 		return $this->n <= self::MAX;
 	}
 }
@@ -29,7 +34,7 @@ class MaClasse implements Iterator {
 $c = new MaClasse();
 
 echo '<pre>';
-var_dump($c);
+var_dump( $c );
 echo '</pre>';
 
 foreach ( $c as $key => $val ) {

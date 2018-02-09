@@ -12,7 +12,7 @@ class Manchot {
 	 */
 	public function __call( $method, $arguments )
 	{
-		echo '<i>Aspirine... ?</i><br><br>Vous avez appelé la méthode ', $method, ' avec les arguments : " ', implode( ', ', $arguments ). ' " !!!';
+		echo '<i>Aspirine... ?</i><br><br>Vous avez appelé la méthode ', $method, ' avec les arguments : " ', implode( ', ', $arguments ) . ' " !!!';
 	}
 }
 

@@ -16,8 +16,8 @@
     {
       "fichier": [
         "vehicule",
-        "class/vehicule",
-        "class/voiture"
+        "class/Vehicule",
+        "class/Voiture"
       ],
       "sujet": "Classe Mère & Fille (Héritage)",
       "description": "<h3>Classe Voiture extends Vehicule</h3><p>Mère & Fille (Héritage)</p><p>Avec constructeur</p><br><p>Une Voiture est un Vehicule</p>"
@@ -25,11 +25,37 @@
     {
       "fichier": [
         "camion",
-        "class/vehicule",
-        "class/camion"
+        "class/Vehicule",
+        "class/Camion"
       ],
       "sujet": "Classe Mère & Fille (Surcharges)",
-      "description": "<h3>Classe Camion extends Vehicule</h3><p>Opérateur de résolution de portée ( :: )</p><p>Surcharge de propriétés & de méthodes</p><p>(Ici, du constructeur)</p><br><p>Un Camion est un Vehicule</p>"
+      "description": "<h3>Classe Camion extends Vehicule</h3><p>Opérateur de résolution de portée ( :: )</p><p>Surcharge de propriétés & de méthodes</p><p>(Ici, du constructeur)</p><p><i>À noter la <b>redéfinition possible d'une constante</b> d'une classe mère dans la classe fille (Cf. const NRJ)</i>...</p><br><p>Un Camion est un Vehicule</p>"
+    },
+    {
+      "fichier": [
+        "vehicule",
+        "class/Vehicule"
+      ],
+      "sujet": "Propriétés et méthodes STATIQUES",
+      "description": "<h3>Classe Vehicule</h3><p>Propre à la classe et non à un objet créé</p><p>Usage de Classe::propriete & Classe::methode();</p><p>Ex.: Propriété Vehicule::$parc<br>et méthode Vehicule::getParc()</p>"
+    },
+    {
+      "fichier": [
+        "humains",
+        "class/EtreHumain",
+        "class/HommeFemme"
+      ],
+      "sujet": "Classe ABSTRAITE & classe FINALE",
+      "description": "<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br>"
+    },
+    {
+      "fichier": [
+        "contact",
+        "interfaces/Renseignement",
+        "class/Contact"
+      ],
+      "sujet": "Interfaces",
+      "description": "<h3>Comme classes abstraites, mais sans propriétés</h3><p><em>Ex. Interface Renseignement</em></p><p>À noter: Peuvent contenir contantes, mais qui ne peuvent pas être surchargées dans classes qui l'implémente</p>"
     },
     {
       "fichier": [
@@ -53,15 +79,6 @@
       "fichier": "dormeur",
       "sujet": "Méthodes magiques __SLEEP() & __WAKEUP()",
       "description": "<h3>Classe Dormeur</h3><ol><li><code>__sleep()</code> Appelée lors d’un <code>serialize()</code></li> <li><code>__wakeup()</code> Appelée lors d’un <code>unserialize()</code></li></ol>"
-    },
-    {
-      "fichier": [
-        "humains",
-        "class/EtreHumain",
-        "class/HommeFemme"
-      ],
-      "sujet": "Classe abstraite & classe finale",
-      "description": "<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br>"
     },
     {
       "fichier": "iterator",

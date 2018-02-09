@@ -5,9 +5,8 @@ include './class/Kid.php';
 echo '<h1>Kid</h1>';
 
 
-
-$billy          = new Kid();
-$billy->age     = '14a';
+$billy      = new Kid();
+$billy->age = '14a';
 
 echo 'Billy est agé de ', $billy->age, ' ans et ses cheveux sont de couleur ', $billy->cheveux;
 
