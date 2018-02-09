@@ -44,7 +44,7 @@ foreach ( $c as $key => $val ) {
 }
 echo '<hr>';
 
-
+///////////////////////////////////////// Exemple 2
 class Iterateur implements Iterator {
 
 	// On déclare une variable tableau vide
