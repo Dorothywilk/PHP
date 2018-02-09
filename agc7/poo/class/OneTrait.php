@@ -1,10 +1,8 @@
 <?php namespace Gc7;
 
 /**
- * Created by C7.
- * User: Li
- * Date: 19/10/2017
- * Time: 16:49
+ * Utilisation d'une méthode à plusieurs endroits
+ * (Car limite héritage: UNe seule classe)
  */
 class Base {
 	public function sayHello()
@@ -13,6 +11,10 @@ class Base {
 		echo '<br>Hello ';
 	}
 }
+
+/*
+ * Peut avoir aussi des propriétés
+ */
 
 trait SayWorld {
 	public function sayHello()
@@ -41,8 +43,17 @@ $o->sayHellouuu();
 echo '<hr>';
 
 
+Trait SayBye {
+	public function sayBye()
+	{
+		echo 'Bye bye !';
+	}
+
+}
+
+
 class Uuu extends Base {
-	use SayWorld;
+	use SayWorld, SayBye;
 
 	public function __construct()
 	{
@@ -52,7 +63,22 @@ class Uuu extends Base {
 }
 
 $u = new Uuu;
+echo '<br>';
+$u->sayBye();
 
 
-
+/*
+ * Si plusieurs trait ont mêmes méthodes (du moins, de même nom),
+ * insteadof permet de définir les priorités.
+ * Si on doit pouvoir utiliser les 2 selon les cas, as définira un alias
+ *
+ *   Exemple: use Bonjour, MethodeBonjour{
+ *   Bonjour::hello insteadof MethodeBonjour;
+ *   MéthodeBye::bye as ciao;
+ * }
+ *
+ *
+ * Une trait peut utiliser tout ou partie d'un autre trait.
+ * (Usage de use comme pour une classe)
+ */
 
