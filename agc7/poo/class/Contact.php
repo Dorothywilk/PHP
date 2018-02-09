@@ -1,5 +1,6 @@
 <?php namespace Gc7;
 
+// À noter qu'il peut y avoir plusieurs interfaces implémentées
 class Contact implements Renseignement {
 
 	protected $adresse;
@@ -29,5 +30,12 @@ class Contact implements Renseignement {
 		return $this->source;
 	}
 
+	public function __destruct()
+	{
+		// En cas réel, code à exécuter juste avant
+		// la fin de l'utilisation d'un objet
+		// Exemple: Enregistrement en BdD, fermer la connection, etc...
+		echo 'L\'objet est en train d\'être détruit...';
+	}
 
 }

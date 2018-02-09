@@ -54,21 +54,26 @@
         "interfaces/Renseignement",
         "class/Contact"
       ],
-      "sujet": "Interfaces",
-      "description": "<h3>Comme classes abstraites, mais sans propriétés</h3><p><em>Ex. Interface Renseignement</em></p><p>À noter: Peuvent contenir contantes, mais qui ne peuvent pas être surchargées dans classes qui l'implémente</p>"
+      "sujet": "Interface",
+      "description": "<h3>Comme une classe abstraite, mais sans propriétés</h3><p><em>Ex. Interface Renseignement</em></p><p>À noter: Peuvent contenir contantes, mais qui ne peuvent pas être surchargées dans classes qui l'implémente</p><br><p>Utilisation démo de la méthode magique <code>__destruct()</code></p>"
+    },
+    {
+      "fichier": "class/OneTrait",
+      "sujet": "Trait (Trait)",
+      "description": "<h3>Trait SayWorld</h3><p><code>use SayWorld;</code></p>"
     },
     {
       "fichier": [
         "kid",
         "class/Kid"
       ],
-      "sujet": "Méthodes magiques __GET() & __SET()",
-      "description": "<h3>Classe Kid</h3>Permet le contrôle pour l'accès aux propriétés non public"
+      "sujet": "Méthodes magiques __GET(), __SET(), __ISSET(), __UNSET(), __TOSTRING() et INVOKE()",
+      "description": "<h3>Classe Kid</h3><p>Permet le contrôle pour l'accès aux propriétés non public</p><p>Il existe <code>__isset()</code> et <code>__unset()</code> pour gérer respectivement des isset() et unset() sur des propriétés qui n'existent pas</p><p><code>__toString</code> permet de retourner une chaîne qd on echo un objet de la classe (<code>__invoke()</code> similaire si objet appelé comme une fonction)</p>"
     },
     {
       "fichier": "manchot",
       "sujet": "Méthodes magiques __CALL()",
-      "description": "<h3>Classe Manchot</h3></p><p>Méthode magique __CALL()</p><p>Appel d'une méthode n'existant pas</p><p>Application pour créer requête SQL</p>"
+      "description": "<h3>Classe Manchot</h3></p><p>Méthode magique __CALL()</p><p>Appel d'une méthode n'existant pas</p><p>Ex.: Application pour créer requête SQL</p><p>Il existe <code>__callStatic()</code>"
     },
     {
       "fichier": "point",
@@ -83,12 +88,12 @@
     {
       "fichier": "iterator",
       "sujet": "Iterator (Trait)",
-      "description": "<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code>"
+      "description": "<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code></p>"
     },
     {
-      "fichier": "class/OneTrait",
-      "sujet": "OneTrait (Trait)",
-      "description": "<h3>Trait SayWorld</h3><p><code>use SayWorld;</code></p>"
+      "fichier": "pion",
+      "sujet": "Chaînage de méthodes",
+      "description": "<h3>Plusieurs méthodes de suite</h3><p>Impératif: <code>return $this;</code en fin de méthode</p>"
     }
   ]
 }

@@ -1,6 +1,7 @@
 <?php
 
 class Manchot {
+
 	/**
 	 * Methode magique __call()
 	 *
@@ -10,17 +11,29 @@ class Manchot {
 	 * @return void
 	 * @access private
 	 */
-	public function __call( $method, $arguments )
+	public function __call( $method, $argus )
 	{
-		echo '<i>Aspirine... ?</i><br><br>Vous avez appelé la méthode ', $method, ' avec les arguments : " ', implode( ', ', $arguments ) . ' " !!!';
+		// Contexte objet
+		echo '<i>Aspirine, peut-être... ?</i><br><br>En effet, vous avez appelé la méthode <b>', $method, '</b> avec les arguments : " ', implode( ', ', $argus ) . ' " pour $georges qui est un ...<b>' . get_class( $this ) . '</b> !!!';
+	}
+
+	public static function __callStatic( $nomMethode, $arguments )
+	{
+		// Contexte statique
+		echo 'Dans la classe <b>' . __CLASS__ . '</b>, la méthode "<b>' . $nomMethode . '</b>" n\'existe pas / n\'est pas accessible
+depuis un contexte statique. <br>Arguments
+passés: ' . implode( ', ', $arguments ) . '<br>';
+
 	}
 }
 
 $george = new Manchot();
 $george->voler( 'Afrique', 123, 'abc' );
-
 echo '<hr>';
 
+Manchot::lireEtTournerLesPages( 'Journal de Mickey', 'Tintin' );
+
+echo '<hr>';
 
 class SearchEngine {
 	/**

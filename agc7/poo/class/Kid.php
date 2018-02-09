@@ -10,8 +10,8 @@ class Kid {
 	 * @var int
 	 * @access public
 	 */
-	private $age;
-	protected  $cheveux = 'noir';
+	private   $age;
+	protected $cheveux = 'noir';
 
 
 	/** Protected => Sera utilisable par classe fille
@@ -45,8 +45,10 @@ class Kid {
 			return $this->age;
 		}
 		else {
-			throw new Exception( 'Propriété invalide !' );
+			//throw new Exception( 'Propriété invalide !' );
+			echo 'ATTENTION: Propriété <b>'.$property.' invalide</b> !';
 		}
+
 	}
 
 	/**
@@ -74,4 +76,20 @@ class Kid {
 			//throw new Exception( 'Propriété ou valeur invalide !' );
 		}
 	}
+
+	public function __isset( $test )
+	{
+		echo 'La propriété ' . $test . ' est inaccessible<br>';
+	}
+
+	public function __unset( $test )
+	{
+		echo '<code>unset()</code> a été appelée sur une propriété (' . $test . ') inaccessible<br>';
+	}
+
+	public function __toString()
+	{
+		return 'Je suis un élément de la classe ' . __CLASS__ . '<br><br>';
+	}
+
 }
