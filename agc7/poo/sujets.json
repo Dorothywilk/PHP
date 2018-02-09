@@ -98,7 +98,7 @@
     {
       "fichier": "iterator",
       "sujet": "Iterator (Trait)",
-      "description": "<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code></p>"
+      "description": "<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...}</code></p><p><code>rewind()</code><br><code>key()</code></br><code>current()</code><br><code>next()</code></br><code>valid()</code></p><p>2 exemples</p>"
     },
     {
       "fichier": [
@@ -108,6 +108,11 @@
       ],
       "sujet": "Autochargement des classes utilisées",
       "description": "<h3><code>spl_autoload_register()</code></h3><p>Ex. avec Kid</p>"
+    },
+    {
+      "fichier": "resolutionStatique",
+      "sujet": "Résolution statique la volée",
+      "description": "<h3></h3><h4>Référence à la classe Mère</h4><p>Classe mère: <code>self::methode()</code><br>Hors des classes: <code>Classe::methode()</code></p><h4>Référence à la classe Fille</h4><p>Classe mère: <code>static::methode()</code><br>Hors des classes: <code>Classe::methode()</code></p>"
     }
   ]
 }
