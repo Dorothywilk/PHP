@@ -1,4 +1,4 @@
-<?php
+<?php namespace Poo;
 
 class Point {
 	/**
@@ -32,18 +32,25 @@ class Point {
 }
 
 $p1 = new Point();
-$p1->setCoords( 2, 3 );
+$p1->setCoords( 1, 2 );
 
 //echo '<pre>'; // Inutile avec xDebug
 var_dump( $p1 );
 //echo '</pre>';
 
 
-$p2 = clone $p1;
-$p2->setCoords( 1, 2 );
-
+$p2 = $p1;
+$p2->setCoords( 2, 3 );
 var_dump( $p1 );
+echo 'p2 modifié => p1 aussi: p1 et p2 sont une seule et même instance<br>';
 
+$p3 = clone $p1;
+$p3->setCoords( 3, 4 );
+var_dump( $p1, $p3 );
+echo '=> En utilisant <code>clone()</code>, p1 et p3 sont réellement 2 objects identique au départ, mais distincts<br>';
+
+
+echo '<hr>';
 
 class Sheep {
 	/**

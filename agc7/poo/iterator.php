@@ -1,4 +1,4 @@
-<?php
+<?php namespace Poo;
 
 class SimpleIterateur implements Iterator {
 	protected $n;
