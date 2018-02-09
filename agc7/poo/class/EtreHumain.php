@@ -1,4 +1,4 @@
-<?php namespace Gc7;
+<?php namespace Poo;
 
 abstract class EtreHumain {
 	/**

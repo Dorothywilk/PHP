@@ -1,6 +1,6 @@
 <?php
 
-namespace gc7;
+namespace Poo;
 
 
 class Requete

@@ -1,5 +1,5 @@
 <?php
-namespace Gc7;
+namespace Poo;
 
 class Personne {
 	// Attributs

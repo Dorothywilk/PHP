@@ -1,4 +1,4 @@
-<?php namespace gc7;
+<?php namespace Poo;
 
 include './class/Personne.php';
 

@@ -1,4 +1,4 @@
-<?php namespace Gc7;
+<?php namespace Poo;
 
 include './class/EtreHumain.php';
 include './class/HommeFemme.php';

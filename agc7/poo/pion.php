@@ -1,4 +1,4 @@
-<?php namespace Gc7;
+<?php namespace Poo;
 
 $monPion = new Pion();
 $monPion->avance()->avance()->recule()->avance()->avance()->avance();
