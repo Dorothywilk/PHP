@@ -67,6 +67,7 @@
 			//console.log(s.fichier, $("#description"));
 
 			$("#description").html(s.description);
+			$("#description h3").prepend('<h2>' + choix + '. ' + s.sujet + '</h2>');
 
 			// Todoli
 			// Ici insertion code source du fichier de base
@@ -79,9 +80,9 @@
 			//	}
 			//);
 			var content = "<?=$content?>";
-console.log(gt(content));
+			console.log(gt(content));
 
-$("#content").load('./' + content + '.php');
+			$("#content").load('./' + content + '.php');
 
 
 		}
@@ -207,9 +208,9 @@ $("#content").load('./' + content + '.php');
 
 
 				var cible = parseInt(nGauche(target.innerText.trim(), 2));
-				//console.log(choix, 'targetOver: ', target.innerText, 'CIBLE: ', cible);
+				console.log(choix, 'targetOver: ', target.innerText, 'CIBLE: ', cible);
 
-				if (cible) {
+				if (cible && target.innerText != cible + ' Sujets') {
 					var s = sujets[cible];
 					//console.log('sujet oCible', s);
 					//console.log('cible fichier', oCible.fichier);
@@ -221,6 +222,8 @@ $("#content").load('./' + content + '.php');
 					//	$_POST: [cible]
 					//});
 					$("#description").html(s.description);
+					$("#description h3").prepend('<h2>' + cible + '. ' + s.sujet + '</h2>');
+
 					$('#content').html('');
 					$('#scripts').text('');
 
@@ -258,7 +261,7 @@ $("#content").load('./' + content + '.php');
 				//$("ul").css('display', 'none');
 				//$("#content").load('./' + s[0].fichier + '.php', {
 				//	$_POST: [choix]});
-				$("#description").html(s.description);
+				$("#description").html('');
 			} else {
 				$('#description').text('');
 				$('#content').text('');
@@ -278,7 +281,7 @@ $("#content").load('./' + content + '.php');
 				//$('.mdb-select').material_select();
 			}
 			console.log(e.target, 'RRRRRRRRRRRRRRRRRRR', choix);
-			$("#description").text(s.description);
+			$("#description").text('');
 			//$("#content").load('./' + s.fichier + '.php', {
 			//	$_POST: [choix]
 			//});
@@ -288,7 +291,7 @@ $("#content").load('./' + content + '.php');
 		$('#choixForm').on('mouseout', function () {
 
 			console.log('Sortie des choixxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', s);
-			$("#description").html(s.description);
+			$("#description").html('En attente de choix...');
 			//console.log(s.fichier);
 			//$("#content").load('' + s.fichier + '.php', {
 			//	$_POST: [choix]

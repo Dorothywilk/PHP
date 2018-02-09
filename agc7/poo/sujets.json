@@ -21,7 +21,8 @@
       ],
       "sujet": "Classe Mère & Fille (Héritage)",
       "description": "<h3>Classe Voiture extends Vehicule</h3><p>Mère & Fille (Héritage)</p><p>Avec constructeur</p><br><p>Une Voiture est un Vehicule</p>"
-    },    {
+    },
+    {
       "fichier": [
         "camion",
         "class/vehicule",
