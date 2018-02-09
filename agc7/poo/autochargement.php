@@ -1,9 +1,5 @@
 <?php namespace Poo;
 
-
-//echo str_replace('\\', '/',strtolower(__NAMESPACE__));
-
-
 spl_autoload_register( function ( $classe ) {
 	$classe = str_replace( 'Poo\\', 'class/', $classe );
 	echo '<h4><b>Classe ' . $classe . ' automatiquement importée</b></h4>';
@@ -11,7 +7,7 @@ spl_autoload_register( function ( $classe ) {
 } );
 
 $gt1308 = new Voiture( 'Simca' );
-echo 'Ma bonne vieille 1308 GT était une ' . strtoupper( $gt1308->getMarque() );
+echo 'Ma bonne vieille caisse était une ' . strtoupper( $gt1308->getMarque().' 1308 GT' );
 echo '<hr>';
 
 $peter = new Kid;

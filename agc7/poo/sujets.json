@@ -46,7 +46,7 @@
         "class/HommeFemme"
       ],
       "sujet": "Classe ABSTRAITE & classe FINALE",
-      "description": "<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br>"
+      "description": "<h3>Classes abstraites et finales</h3><p><code>abstract class Humain(...){}</code></p><p><code>final class Homme(){...}</code><br><code>final class Femme(){...}</code></br></p><p>N;B.: Une méthode peut aussi être déclarée finale</p>"
     },
     {
       "fichier": [
