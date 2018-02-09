@@ -86,14 +86,19 @@
       "description": "<h3>Classe Dormeur</h3><ol><li><code>__sleep()</code> Appelée lors d’un <code>serialize()</code></li> <li><code>__wakeup()</code> Appelée lors d’un <code>unserialize()</code></li></ol>"
     },
     {
-      "fichier": "iterator",
-      "sujet": "Iterator (Trait)",
-      "description": "<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code></p>"
-    },
-    {
       "fichier": "pion",
       "sujet": "Chaînage de méthodes",
       "description": "<h3>Plusieurs méthodes de suite</h3><p>Impératif: <code>return $this;</code en fin de méthode</p>"
+    },
+    {
+      "fichier": "divers",
+      "sujet": "Closures, fonctions et classes anonymes",
+      "description": "<h3>Fonctions et classes sans nom</h3><p>Exemple avec <code>array_map()</code></p>"
+    },
+    {
+      "fichier": "iterator",
+      "sujet": "Iterator (Trait)",
+      "description": "<h3>Trait Iterator</h3><p><code>class MaClasse implements Iterator{...</code></p><p><code>rewind()</code><br><code>next()</code></><code>key()</code></br><code>current()</code></br><code>valid()</code></p>"
     }
   ]
 }

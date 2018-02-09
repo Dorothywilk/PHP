@@ -136,7 +136,7 @@
 
 			?>
 
-			<button class="btn btn-warning"><span id="etat">Découvrir</span> le<?= $plurF . ' ' . $nbF ?> fichier<?= $plurF ?>
+			<button class="btn btn-warning"><span id="etat">Découvrir</span> le<?= $plurF . ' ' . $nbF ?> code<?= $plurF ?>
 				utilisé<?= $plurF ?></button>
 			<?php //=$sujets->sujets[$choix]->fichier . ' | ';?>
 			<div class="row md-12" id="files">
