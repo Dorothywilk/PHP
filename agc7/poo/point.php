@@ -47,7 +47,7 @@ echo 'p2 modifié => p1 aussi: p1 et p2 sont une seule et même instance<br>';
 $p3 = clone $p1;
 $p3->setCoords( 3, 4 );
 var_dump( $p1, $p3 );
-echo '=> En utilisant <code>clone()</code>, p1 et p3 sont réellement 2 objects identique au départ, mais distincts<br>';
+echo '=> En utilisant <code>clone()</code>, p1 et p3 sont réellement 2 objects identiques au départ, mais distincts<br>';
 
 
 echo '<hr>';
