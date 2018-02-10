@@ -18,8 +18,8 @@ echo 'a=', $a, ' | b=', $b;
 $oA = new A;
 $oB = new B;
 var_dump( $oA, $oB );
-$oB->n = &$oA->n;
-$oB->n = 777;
+$oB->nnn = &$oA->nnn;
+$oB->nnn = 777;
 var_dump( $oA, $oB );
 ?>
 Les propriétés n de A et de B sont liées
@@ -30,7 +30,7 @@ Les propriétés n de A et de B sont liées
 <?php
 $oA1    = new A;
 $oA2    = $oA1;
-$oA2->n = 2;
+$oA2->nnn = 2;
 var_dump( $oA1, $oA2 );
 ?>
 Naturellement par référence pour les objets<br>

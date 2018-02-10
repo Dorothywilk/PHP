@@ -1,9 +1,9 @@
 <?php namespace Php;
 
 class A {
-	public $n = 1;
+	public $nnn = 1;
 }
 
 class B {
-	public $n = 2;
+	public $nnn = 2;
 }
