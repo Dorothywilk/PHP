@@ -1,13 +1,6 @@
-USE ocr;
+USE aaxu;
 
 SELECT
-  id,
-  nom
+ count(*)
+FROM aaxu.xu
 
-FROM animal
-
-WHERE nom > ''
-
-ORDER BY nom
-
-LIMIT 7

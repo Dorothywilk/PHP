@@ -8,27 +8,25 @@
 /**
  * Effectue recherche MySQL + [aff]
  *
- * @param $sql      Requête MySQL : Seul param indispensable
- * @param null $pdo PDO           : Nécessaire de reporter pour garder même cession
+ * @param      $sql                 Requête MySQL : Seul param indispensable
+ * @param null $pdo                 PDO           : Nécessaire de reporter pour garder même cession
  *                                  Notamment pour transactions
- * @param null $inv Si défini, aucun affichage (Mettre 2ème param ($pdo ou null))
- *        NB: Pour aff des rands affectés, car replace() dans select => Minuscule,
- *            Fonctions agissant sur Tables en MAJ
+ * @param null $inv                 Si défini, aucun affichage (Mettre 2ème param ($pdo ou null))
+ *                                  NB: Pour aff des rands affectés, car replace() dans select => Minuscule,
+ *                                  Fonctions agissant sur Tables en MAJ
+ *
  * @return null|PDO
  */
 
 function pdo( $bdd = 'ocr' )
-{ try{
-  return new \PDO( 'mysql:host=localhost;dbname=' . $bdd . ';charset=utf8', 'root', '', array ( PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ) );
-}
-catch Exception($e){
-  return $e->message;
-}
+{
+  return new \PDO( 'mysql:host=localhost;dbname=' . $bdd . ';charset=utf8', 'root', '', [ PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ] );
 }
 
 $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
 //  aff( $pdo );
-  if ( !isset( $inv ) ) affLign( $sql, 1 );
+  if ( ! isset( $inv ) )
+    affLign( $sql, 1 );
   if ( null === $pdo ) {
 //    echo '<h1>Instanciation PDO</h1>';
     $pdo = pdo();
@@ -51,11 +49,13 @@ $req = function ( $sql, $pdo = null, $inv = null ) { // invisible
     $plur = ( $nbra > 1 ) ? 's' : ''; // Pluriel
     echo '=> ' . $nbra . ' rang' . $plur . ' affecté' . $plur;
   }
+
   return $pdo;
 };
 
 $nbr = function ( $table ) {
   $cnx = pdo();
+
   return $cnx->query( 'select count(*) from ' . $table )->fetch()[ 0 ];
 };
 
@@ -78,7 +78,8 @@ function affR( $r )
 
   //if (!isset($r[0])) $r = [$r];
 
-  if ( ! array_key_exists( 0, $r ) ) $r = [ $r ];
+  if ( ! array_key_exists( 0, $r ) )
+    $r = [ $r ];
   $ps = array_keys( (array) $r[ 0 ] ); // Get les clefs, nom des propriétés
   //aff( $ps );
 
@@ -88,10 +89,11 @@ function affR( $r )
   $i = 0;
 //  $caseTotal='';
   foreach ( $ps as $p ) {
-    $i++;
+    $i ++;
     $caseTotal[ $i ] = null;
     echo '<th>' . ucfirst( $p ) . '</th>';
-    if ( $p == 'total:' ) $caseTotal[ $i ] = 1;
+    if ( $p == 'total:' )
+      $caseTotal[ $i ] = 1;
   }
   echo '</tr></thead>';
   echo '<tr>';
@@ -99,11 +101,11 @@ function affR( $r )
     $i = 0;
     foreach ( $row as $p ) { // p comme propriété
       $MEAvt1 = $MEAvt2 = null;
-      $i++;
+      $i ++;
       if ( $caseTotal[ $i ] ) {
         $MEAvt1 = '<g style="font-size:1.2em; margin-left: 7%;">';
         $MEAvt2 = '</g>';
-        $p = number_format( $p, 2, ',', ' ' ) . '€.';
+        $p      = number_format( $p, 2, ',', ' ' ) . '€.';
       }
       echo '<td style="background-color: white">' . $MEAvt1 . $p . $MEAvt2 . '</td>';
     }
@@ -113,7 +115,7 @@ function affR( $r )
 }
 
 /**
- * @param $sql Chaîne requête SQL
+ * @param     $sql  Chaîne requête SQL
  * @param int $back 0 pour appel direct
  */
 function affLign( $sql, $back = 0 )
