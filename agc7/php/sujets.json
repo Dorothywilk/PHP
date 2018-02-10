@@ -1,0 +1,22 @@
+{
+  "sujets": [
+    {
+      "fichier": "noChoix",
+      "sujet": "Sujets",
+      "description": "Attente de choix..."
+    },
+    {
+      "fichier": [
+        "reference",
+        "class/Reference"
+      ],
+      "sujet": "Variables par références",
+      "description": "<h3>&var</h3>"
+    },
+    {
+      "fichier": "filtres",
+      "sujet": "Filtres en PHP",
+      "description": "<h3>Filtres</h3>"
+    }
+  ]
+}
