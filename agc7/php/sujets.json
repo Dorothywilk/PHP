@@ -29,7 +29,11 @@
     {
       "fichier": "exceptions",
       "sujet": "Gérer les exceptions en PHP",
-      "description": "<h3>Lancer des exceptions</h3><p><code>throw new Exception('...') ... try{...} catch{...} finally{...}</code>"
+      "description": "<h3>Lancer des exceptions</h3><p><code>throw new Exception('...') ... try{...} catch{...} finally{...}</code></p>"
+    }, {
+      "fichier": "divers",
+      "sujet": "Divers / tests",
+      "description": "<h3>Tests rapides divers/h3>"
     }
   ]
 }
