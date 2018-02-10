@@ -36,4 +36,5 @@ Gulp
 En local, recommandé de faire virtual host : [Do](http://do)
 
 ## Références
-[Lien de base: Tuto d'Emacs](https://apprendre-php.com/tutoriels.html)
+
+POO: [Tuto d'Emacs](https://apprendre-php.com/tutoriels.html)
