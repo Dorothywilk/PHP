@@ -1,4 +1,4 @@
-<?php namespace Php;
+<?php namespace app;
 
 //echo '<h3>Appel à une variable non définie</h3>';
 //echo $x;
@@ -16,14 +16,16 @@ else {
 echo '<hr>';
 
 
-set_error_handler( function ( $errNo, $errMsg )
+function gestErr( $errNo, $errMsg )
 {
 	echo 'Valeurs incorrectes... Voici le code d\'erreur:<br>
 <ul><li>Niveau d\'erreur: ' . $errNo . '</li>
 <li>Description de l\'erreur: ' . $errMsg . '</li>
 </ul>';
 	//return true;
-});
+}
+
+set_error_handler( __NAMESPACE__.'\gestErr');
 
 $z = 0;
 echo 5 / $z;
