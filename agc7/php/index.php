@@ -1,3 +1,4 @@
+<? namespace Php; ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -61,7 +62,7 @@
 
 					<select name='choix' onchange='this.form.submit()' class="mdb-select" id="choix">
 					</select>
-					<label for="choix">Choix de la fonction POO</label>
+					<label for="choix">Choix du sujet PHP</label>
 
 				</form>
 

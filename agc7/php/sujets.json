@@ -8,13 +8,16 @@
     {
       "fichier": [
         "reference",
-        "class/Reference"
+        "class/esAB"
       ],
-      "sujet": "Variables par références",
-      "description": "<h3>&var</h3>"
+      "sujet": "Variables/Propriétés par références",
+      "description": "<h3>&$var</h3>"
     },
     {
-      "fichier": "filtres",
+      "fichier": [
+        "filtres",
+        "include/listeFiltres"
+      ],
       "sujet": "Filtres en PHP",
       "description": "<h3>Filtres</h3>"
     }

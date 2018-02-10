@@ -87,7 +87,7 @@
 					<select name='choix' onchange='this.form.submit()' class="mdb-select" id="choix">
 						<!--<option id="noChoix">Re-init Form</option>-->
 					</select>
-					<label for="choix">Choix du sujet sur PHP</label>
+					<label for="choix">Choix de la fonction POO</label>
 
 				</form>
 
