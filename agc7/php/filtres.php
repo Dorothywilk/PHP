@@ -1,5 +1,6 @@
 <?php namespace Php;
 
+
 include 'include/listeFiltres.php';
 
 $txt    = '<h1>Une chaîne decaractères</</h1>';
@@ -50,3 +51,24 @@ $vf = ( filter_var( $n, 257, [
 echo '<h3>Ex.: Même vérification que précédemment,<br>
 mais avec en plus contrôle si nombre dans un interval donné :</h3><br>
 Ex.: ' . $n . ' : Entier compris dans [' . $mini . ', ' . $maxi . '] ? ' . $vf;
+echo '<hr>';
+
+
+$ip    = '127.0.0.1';
+$verif = filter_var( $ip, 275 );
+if ( $verif ) {
+	echo filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 ) . ' est bien une adresse IPv4 valide';
+}
+echo '<hr>';
+
+$email1 = ',,lio.dfsfs@ffff.com';
+$email1 = filter_var( $email1, FILTER_SANITIZE_EMAIL );
+echo $email1 . ' est un email qui a été nettoyé';
+
+echo '<hr><h3>Réserve sur certains filtres</h3>';
+
+$url1 = 'http///wikipédi<a.com';
+$url2 = filter_var( $url1, FILTER_SANITIZE_URL );
+echo 'DANGER: le filtre <code>FILTER_SANITIZE_URL</code> laisse passer les caractères &lt; et &gt;';
+var_dump( $url1, $url2 );
+

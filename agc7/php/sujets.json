@@ -20,6 +20,16 @@
       ],
       "sujet": "Filtres en PHP",
       "description": "<h3>Filtres</h3>"
+    },
+    {
+      "fichier":"erreurs",
+      "sujet": "Gérer les erreurs en PHP",
+      "description": "<h3>Gestion des erreurs</h3>"
+    },
+    {
+      "fichier":"exceptions",
+      "sujet": "Gérer les exceptions en PHP",
+      "description": "<h3>Lancer des exceptions</h3>"
     }
   ]
 }
