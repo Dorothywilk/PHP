@@ -22,14 +22,14 @@
       "description": "<h3>Filtres</h3>"
     },
     {
-      "fichier":"erreurs",
+      "fichier": "erreurs",
       "sujet": "Gérer les erreurs en PHP",
       "description": "<h3>Gestion des erreurs</h3>"
     },
     {
-      "fichier":"exceptions",
+      "fichier": "exceptions",
       "sujet": "Gérer les exceptions en PHP",
-      "description": "<h3>Lancer des exceptions</h3>"
+      "description": "<h3>Lancer des exceptions</h3><p><code>throw new Exception('...') ... try{...} catch{...} finally{...}</code>"
     }
   ]
 }

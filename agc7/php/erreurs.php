@@ -1,4 +1,4 @@
-<?php namespace app;
+<?php namespace Php;
 
 //echo '<h3>Appel à une variable non définie</h3>';
 //echo $x;
@@ -25,9 +25,15 @@ function gestErr( $errNo, $errMsg )
 	//return true;
 }
 
-set_error_handler( __NAMESPACE__.'\gestErr');
+//set_error_handler( __NAMESPACE__.'\gestErr');
+set_error_handler( 'Php\gestErr' );
 
+echo '<h3>Avec un gestionnaire d\'erreurs :</h3>';
 $z = 0;
-echo 5 / $z;
+echo '5/0 = ' . 5 / $z;
 
+restore_error_handler();
+echo '<h3>Au lieu de :</h3';
+echo '5/0 = ' . 5 / $z;
+//var_dump( __NAMESPACE__ );
 
