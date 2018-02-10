@@ -1,7 +1,9 @@
 <?php namespace Php;
 ?>
 
-<h1>Définition HTML</h1>
+<h1>Tests rapides</h1> 
+
+<h2>Balise Définition en HTML5</h2>
 
 <dl>
   <dt>HTML</dt>
