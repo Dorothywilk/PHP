@@ -324,3 +324,19 @@ pre[class*="language-"] {
   border-radius: 7px;
   padding: 5px 10px;
   display: none; }
+
+#content {
+  width: 100%; }
+
+#divers {
+  padding: 20px; }
+
+#pileFlip {
+  border: 5px solid #ffbb3d;
+  border-radius: 14px;
+  background: radial-gradient(farthest-corner at bottom left, #6baafc 20%, white 65%, red 110%); }
+
+#faceFlip {
+  border: 5px solid orange -50;
+  border-radius: 14px;
+  background: linear-gradient(55deg, #6baafc 5%, white 60%, red 110%); }

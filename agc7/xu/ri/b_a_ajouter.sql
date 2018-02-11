@@ -18,7 +18,7 @@ USE aaxu;
 -- Structure de la table `xoops_users_2_add`
 -- 
 
-CREATE TABLE `xoops_users_2_add` (
+CREATE TABLE `xoops_users_2_add` (uuuxoops_users_2_add
   `uid` int(10) unsigned NOT NULL auto_increment,
   `name` varchar(60) NOT NULL default '',
   `prenom` varchar(50) NOT NULL default '',

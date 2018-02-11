@@ -46,7 +46,7 @@ namespace GC7;
 // Sécurisation
 
 // Avec ocr1.sql
-//include( 'securisation/transactions.php' );
+include( 'securisation/transactions.php' );
 //include( 'securisation/verrous.php' );
 //include( 'securisation/requetesPreparees.php' );
 //include( 'securisation/procedures.php' );

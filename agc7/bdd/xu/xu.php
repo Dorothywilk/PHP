@@ -25,7 +25,9 @@ namespace GC7;
 	$req( $sql, $pdo );
 
 	?>
-	<h3>Last membres (À ajouter)</h3>
+
+	<h3>Dossier XU pour suivre travail réel</h3>
+	<!--<h3>Last membres (À ajouter)</h3>-->
 	<?php
 	//
 	//$sql = "SELECT @@GLOBAL.autocommit, @@SESSION.autocommit";
