@@ -4,7 +4,9 @@ var gulp = require('gulp'),
   browserSync = require('browser-sync');
 
 gulp.task('php-live', function() {
-  phpconnect.server({}, function() {
+  phpconnect.server({
+    // base:'public' // (Facultatif) Si travail ds un sous dossier
+  }, function() {
     browserSync({
       proxy: '127.0.0.1:8000'
     });
@@ -22,6 +24,7 @@ gulp.task('sass', function() {
     }))
 });
 
+// NB Les fichiers PHP doivent avoir un <body>
 gulp.watch("**/*.php", browserSync.reload);
 gulp.watch("*.html", browserSync.reload);
 gulp.watch('./sass/*.scss', ['sass'])
