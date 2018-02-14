@@ -1,6 +1,5 @@
 <?php namespace Php;
 
-
 include 'include/listeFiltres.php';
 
 $txt    = '<h1>Une chaîne decaractères</</h1>';
@@ -40,6 +39,7 @@ $n    = 150.5;
 $mini = 100;
 $maxi = 200;
 
+// vf pour VraiFaux ?
 $vf = ( filter_var( $n, 257, [
 	"options" =>
 		[
@@ -55,9 +55,11 @@ echo '<hr>';
 
 
 $ip    = '127.0.0.1';
-$verif = filter_var( $ip, 275 );
+$verif = filter_var( $ip, FILTER_VALIDATE_IP );
 if ( $verif ) {
 	echo filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 ) . ' est bien une adresse IPv4 valide';
+} else {
+	echo '<b>'.$ip. '</b> n\' est pas une adresse IPv4 valide';
 }
 echo '<hr>';
 
@@ -67,8 +69,12 @@ echo $email1 . ' est un email qui a été nettoyé';
 
 echo '<hr><h3>Réserve sur certains filtres</h3>';
 
-$url1 = 'http///wikipédi<a.com';
+$url1 = 'http///wikipédi<script>console.log(\'oooooooooooooh: DANGER !!!!\');</script>a.com';
 $url2 = filter_var( $url1, FILTER_SANITIZE_URL );
 echo 'DANGER: le filtre <code>FILTER_SANITIZE_URL</code> laisse passer les caractères &lt; et &gt;';
 var_dump( $url1, $url2 );
 
+?>
+<script>
+	// $('#modalButton').click();
+</script>

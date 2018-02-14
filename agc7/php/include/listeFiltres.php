@@ -1,7 +1,7 @@
 <?php namespace Php; ?>
 
 <p>
-	<button type="button" class="btn btn-outline-warning waves-effect" data-toggle="modal" data-target="#exampleModal">
+	<button type="button" class="btn btn-outline-warning waves-effect" data-toggle="modal" data-target="#exampleModal" id="modalButton">
 		Liste des filtres en PHP
 	</button>
 
@@ -25,7 +25,7 @@
 				?>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>

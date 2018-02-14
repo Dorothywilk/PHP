@@ -457,3 +457,8 @@ radial-gradient(farthest-corner at bottom left, rgb(107, 170, 252) 20%, white 65
   background:
    linear-gradient(55deg, rgb(107, 170, 252) 5%, white 60%, red 110%);
 }
+
+.modal-content{
+  background-color: rgba(250,240,125,0.8);
+  font-weight: bold;
+}

@@ -340,3 +340,7 @@ pre[class*="language-"] {
   border: 5px solid orange -50;
   border-radius: 14px;
   background: linear-gradient(55deg, #6baafc 5%, white 60%, red 110%); }
+
+.modal-content {
+  background-color: rgba(250, 240, 125, 0.8);
+  font-weight: bold; }

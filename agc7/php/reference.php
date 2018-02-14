@@ -17,10 +17,15 @@ echo 'a=', $a, ' | b=', $b;
 <?php
 $oA = new A;
 $oB = new B;
+echo '<pre>';
 var_dump( $oA, $oB );
+echo '</pre>';
+
 $oB->nnn = &$oA->nnn;
 $oB->nnn = 777;
+echo '<hr><pre>';
 var_dump( $oA, $oB );
+echo '</pre>';
 ?>
 Les propriétés n de A et de B sont liées
 
